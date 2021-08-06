@@ -8,7 +8,7 @@ import os
 import json
 
 results = dict(files={})
-for (source, prefix) in (("stubs", "/stubs"), ("config", "/")):
+for (source, prefix) in (("typeshed", "/typeshed/"), ("config", "/")):
     for (dirpath, dirnames, filenames) in os.walk(source):
         for f in sorted(filenames):
             path = os.path.join(dirpath, f)
