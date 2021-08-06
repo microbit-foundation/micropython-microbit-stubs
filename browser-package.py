@@ -20,4 +20,4 @@ for (source, prefix) in (("typeshed", "/typeshed/"), ("config", "/")):
             results["files"][destination] = text
 
 with open("typeshed.json", "w") as f:
-    f.write(json.dumps(results))
+    f.write(json.dumps(results, indent=2))
