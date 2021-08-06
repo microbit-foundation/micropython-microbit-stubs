@@ -1,4 +1,9 @@
 { 
+  "pythonVersion": "3.6",
+  "pythonPlatform": "Linux",
+  "typeCheckingMode": "basic",
+  "typeshedPath": "/typeshed/",
+  "include": ["src/"],
   "reportMissingModuleSource": false,
   "reportWildcardImportFromLibrary": false
  }
