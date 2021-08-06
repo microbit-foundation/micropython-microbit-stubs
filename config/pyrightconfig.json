@@ -1,1 +1,4 @@
-{ "reportMissingModuleSource": false }
+{ 
+  "reportMissingModuleSource": false,
+  "wildcardLibraryImport": false
+ }
