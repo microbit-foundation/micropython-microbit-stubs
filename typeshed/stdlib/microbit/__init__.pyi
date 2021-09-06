@@ -1,38 +1,18 @@
-"""micro:bit Micropython API
-
-Everything directly related to interacting with the hardware lives in the
-`microbit` module.  For ease of use it's recommended you start all scripts
-with::
-
-    from microbit import *
-
-The following documentation assumes you have done this.
-
-There are a few functions available directly::
-
-    # sleep for the given number of milliseconds.
-    sleep(ms)
-    # returns the number of milliseconds since the micro:bit was last switched on.
-    running_time()
-    # makes the micro:bit enter panic mode (this usually happens when the DAL runs
-    # out of memory, and causes a sad face to be drawn on the display). The error
-    # code can be any arbitrary integer value.
-    panic(error_code)
-    # resets the micro:bit.
-    reset()
-
-The rest of the functionality is provided by objects and classes in the
-microbit module, as described below.
-
-Note that the API exposes integers only (ie no floats are needed, but they may
-be accepted).  We thus use milliseconds for the standard time unit.
+"""The ``microbit`` module gives you access to all the hardware that is built-in
+into your board.
 """
 
-from . import (display as display, uart as uart, spi as spi, i2c as i2c,
-               accelerometer as accelerometer, compass as compass)
+from . import (
+    display as display,
+    uart as uart,
+    spi as spi,
+    i2c as i2c,
+    accelerometer as accelerometer,
+    compass as compass,
+    microphone as microphone,
+)
 
 from typing import Any, List, overload
-
 
 def panic(n: int) -> None:
     """Enter a panic mode. Requires restart. Pass in an arbitrary integer <= 255
@@ -41,12 +21,10 @@ def panic(n: int) -> None:
         microbit.panic(255)
     """
 
-
 def reset() -> None:
     """Restart the board."""
 
-
-def sleep(n: int) -> None:
+def sleep(n: float) -> None:
     """Wait for ``n`` milliseconds. One second is 1000 milliseconds, so::
 
         microbit.sleep(1000)
@@ -55,16 +33,13 @@ def sleep(n: int) -> None:
     a floating point number.
     """
 
-
 def running_time() -> int:
     """Return the number of milliseconds since the board was switched on or
     restarted.
     """
 
-
 def temperature() -> int:
     """Return the temperature of the micro:bit in degrees Celcius."""
-
 
 class Button:
     """Represents a button.
@@ -72,30 +47,33 @@ class Button:
     .. note::
         This class is not actually available to the user, it is only used by
         the two button instances, which are provided already initialized.
-        """
+    """
 
     def is_pressed(self) -> bool:
         """Returns ``True`` if the specified button ``button`` is pressed, and
         ``False`` otherwise.
         """
-
+        ...
     def was_pressed(self) -> bool:
         """Returns ``True`` or ``False`` to indicate if the button was pressed
         since the device started or the last time this method was called.
-        """
 
+        Calling this method will clear the press state so
+        that the button must be pressed again before this method will return
+        ``True`` again.
+        """
+        ...
     def get_presses(self) -> int:
         """Returns the running total of button presses, and resets this total
         to zero before returning.
         """
-
+        ...
 
 button_a: Button
-"""A ``Button`` instance (see below) representing the left button."""
+"""A ``Button`` instance representing the left button."""
 
 button_b: Button
 """Represents the right button."""
-
 
 class MicroBitDigitalPin:
     """
@@ -109,30 +87,24 @@ class MicroBitDigitalPin:
     NO_PULL: int = 0
     PULL_UP: int = 1
     PULL_DOWN: int = 2
-
     def read_digital(self) -> int:
         """Return 1 if the pin is high, and 0 if it's low."""
-
     def set_pull(self, value: int = (NO_PULL or PULL_UP or PULL_DOWN)) -> None:
         """Set the pull state to one of three possible values: ``pin.PULL_UP``,
         ``pin.PULL_DOWN`` or ``pin.NO_PULL`` (where ``pin`` is an instance of
         a pin). See below for discussion of default pull states.
         """
-
     def write_digital(self, value: int) -> None:
         """Set the pin to high if ``value`` is 1, or to low, if it is 0."""
-
     def write_analog(self, value: int) -> None:
         """Output a PWM signal on the pin, with the duty cycle proportional to
         the provided ``value``. The ``value`` may be either an integer or a
         floating point number between 0 (0% duty cycle) and 1023 (100% duty).
         """
-
     def set_analog_period(self, period: int) -> None:
         """Set the period of the PWM signal being output to ``period`` in
         milliseconds. The minimum valid value is 1ms.
         """
-
     def set_analog_period_microseconds(self, period: int) -> None:
         """Set the period of the PWM signal being output to ``period`` in
         microseconds. The minimum valid value is 35µs.
@@ -209,11 +181,10 @@ pin19: MicroBitDigitalPin
 pin20: MicroBitDigitalPin
 """I2C SDA."""
 
-
 class Image:
-    """The ``Image`` class is used to create images that can be displayed
-    easily on the device's LED matrix. Given an image object it's possible to
-    display it via the ``display`` API::
+    """The ``Image`` class is used to create images that can be displayed easily on
+    the device's LED matrix. Given an image object it's possible to display it via
+    the ``display`` API::
 
         display.show(Image.HAPPY)
     """
@@ -284,7 +255,6 @@ class Image:
 
     ALL_CLOCKS: List[Image]
     ALL_ARROWS: List[Image]
-
     @overload
     def __init__(self, string: str) -> None:
         """``string`` has to consist of digits 0-9 arranged into lines,
@@ -306,21 +276,34 @@ class Image:
                           "09090\n"
                           "90009")
         """
-
+        ...
     @overload
-    def __init__(self, width: int = None, height: int = None,
-                 buffer: Any = None) -> None:
+    def __init__(
+        self, width: int = None, height: int = None, buffer: Any = None
+    ) -> None:
         """Create an empty image with ``width`` columns and ``height`` rows.
         Optionally ``buffer`` can be an array of ``width``×``height`` integers
-        in range 0-9 to initialize the image.
-        """
+        in range 0-9 to initialize the image::
 
+            Image(2, 2, b'\x08\x08\x08\x08')
+
+        or::
+
+            Image(2, 2, bytearray([9,9,9,9]))
+
+        Will create a 2 x 2 pixel image at full brightness.
+
+        .. note::
+
+            Keyword arguments cannot be passed to ``buffer``.
+        """
+        ...
     def width(self) -> int:
         """Return the number of columns in the image."""
-
+        ...
     def height(self) -> int:
         """Return the numbers of rows in the image."""
-
+        ...
     def set_pixel(self, x: int, y: int, value: int) -> None:
         """Set the brightness of the pixel at column ``x`` and row ``y`` to the
         ``value``, which has to be between 0 (dark) and 9 (bright).
@@ -328,41 +311,41 @@ class Image:
         This method will raise an exception when called on any of the built-in
         read-only images, like ``Image.HEART``.
         """
-
+        ...
     def get_pixel(self, x: int, y: int) -> int:
         """Return the brightness of pixel at column ``x`` and row ``y`` as an
         integer between 0 and 9.
         """
-
+        ...
     def shift_left(self, n: int) -> Image:
         """Return a new image created by shifting the picture left by ``n``
         columns.
         """
-
+        ...
     def shift_right(self, n: int) -> Image:
         """Same as ``image.shift_left(-n)``."""
-
+        ...
     def shift_up(self, n: int) -> Image:
         """Return a new image created by shifting the picture up by ``n``
         rows.
         """
-
+        ...
     def shift_down(self, n: int) -> Image:
         """Same as ``image.shift_up(-n)``."""
-
+        ...
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
         """Return a new image by cropping the picture to a width of ``w`` and a
         height of ``h``, starting with the pixel at column ``x`` and row
         ``y``.
         """
-
+        ...
     def copy(self) -> Image:
         """Return an exact copy of the image."""
-
+        ...
     def invert(self) -> Image:
         """Return a new image by inverting the brightness of the pixels in the
         source image."""
-
+        ...
     def fill(self, value: int) -> None:
         """Set the brightness of all the pixels in the image to the
         ``value``, which has to be between 0 (dark) and 9 (bright).
@@ -370,9 +353,17 @@ class Image:
         This method will raise an exception when called on any of the built-in
         read-only images, like ``Image.HEART``.
         """
-
-    def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int = 0,
-             ydest: int = 0) -> None:
+        ...
+    def blit(
+        self,
+        src: Image,
+        x: int,
+        y: int,
+        w: int,
+        h: int,
+        xdest: int = ...,
+        ydest: int = ...,
+    ) -> None:
         """Copy the rectangle defined by ``x``, ``y``, ``w``, ``h`` from the
         image ``src`` into this image at ``xdest``, ``ydest``. Areas in the
         source rectangle, but outside the source image are treated as having a
@@ -388,19 +379,27 @@ class Image:
                 res.blit(self, x, y, w, h)
                 return res
         """
-
+        ...
     def __repr__(self) -> str:
         """Get a compact string representation of the image."""
-
+        ...
     def __str__(self) -> str:
         """Get a readable string representation of the image."""
-
+        ...
     def __add__(self, other: Image) -> Image:
         """Create a new image by adding the brightness values from the two
         images for each pixel.
         """
-
+        ...
     def __mul__(self, n: float) -> Image:
         """Create a new image by multiplying the brightness of each pixel by
         ``n``.
         """
+        ...
+
+class SoundEvent:
+    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
+
+    LOUD: SoundEvent
+    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
+    QUIET: SoundEvent

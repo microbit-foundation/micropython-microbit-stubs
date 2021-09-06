@@ -2,6 +2,34 @@
 
 AudioFrame.copyfrom is undocumented
 AudioFrame implements some operations that aren't clearly documented (e.g. you can add them, multiple by an integer...)
+The current module doc isn't enough to really understand how to use the module.
+There's more useful content in the rst doc.
+
+## __init__
+
+button.rst is good, the rest needs review
+removed (see below) from button_a 
+
+image - type of buffer in second __init__ option
+text modified to split across __init__ definitions
+"Same as" language is unhelpful.
+
+microphone - the doc style here is a bit different to elsewhere, might be less good in Pyright?
+
+## micropython
+
+opt_level has @overload with split docs
+
+micropython.schedule is missing from our docs. Why? It is on the device (checked on V2).
+
+## builtins
+
+### open
+
+Needs revisiting if we want the docs.
+We support fewer options but would be good to look at the impl to determine which.
+It looks like unknown keyword arguments are accepted without error.
+
 
 ## misc
 
