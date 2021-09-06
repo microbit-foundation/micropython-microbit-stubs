@@ -1,0 +1,15 @@
+## audio
+
+AudioFrame.copyfrom is undocumented
+AudioFrame implements some operations that aren't clearly documented (e.g. you can add them, multiple by an integer...)
+
+## misc
+
+In waveforms.py
+
+frames = [ None ] * 32
+
+is a problematic initialization pattern for arrays. Can we relax the rules?
+Is the pattern widespread?
+
+

@@ -44,8 +44,7 @@ def stop() -> None:
     ...
 
 class AudioFrame:
-    """
-    An ``AudioFrame`` object is a list of 32 samples each of which is a signed byte
+    """An ``AudioFrame`` object is a list of 32 samples each of which is a signed byte
     (whole number between -128 and 127).
 
     It takes just over 4 ms to play a single frame.
