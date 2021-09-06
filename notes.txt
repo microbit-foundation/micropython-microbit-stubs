@@ -46,3 +46,11 @@ is a problematic initialization pattern for arrays. Can we relax the rules?
 Is the pattern widespread?
 
 Are the pin types correct? To review. E.g. music.
+
+
+## neopixel
+
+Has long but important module docstring with important warnings for the user.
+I've removed the images and reproduced it otherwise in full.
+
+Some complication with write/show. Fine for stubs but will need revisiting for docs.
