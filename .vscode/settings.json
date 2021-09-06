@@ -1,3 +1,7 @@
 {
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "python.analysis.typeshedPaths": [
+    "/Users/mth/Development/microbit-foundation/micropython-microbit-stubs/typeshed/"
+  ],
+  "python.analysis.typeCheckingMode": "basic"
 }
