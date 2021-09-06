@@ -76,26 +76,48 @@ button_b: Button
 """Represents the right button."""
 
 class MicroBitDigitalPin:
-    """
-    The pull mode for a pin is automatically configured when the pin changes to an
-    input mode. Input modes are when you call ``read_analog`` / ``read_digital`` /
-    ``is_touched``. The pull mode for these is, respectively, ``NO_PULL``,
-    ``PULL_DOWN``, ``PULL_UP``. Only when in ``read_digital`` mode can you call
-    ``set_pull`` to change the pull mode from the default.
+    """The pins are your board's way to communicate with external devices connected to
+    it. There are 19 pins for your disposal, numbered 0-16 and 19-20. Pins 17 and
+    18 are not available. There is also a ``pin_logo`` **V2** and ``pin_speaker``
+    **V2** available to use with the latest micro:bit device.
     """
 
-    NO_PULL: int = 0
-    PULL_UP: int = 1
-    PULL_DOWN: int = 2
+    NO_PULL: int
+    PULL_UP: int
+    PULL_DOWN: int
     def read_digital(self) -> int:
         """Return 1 if the pin is high, and 0 if it's low."""
-    def set_pull(self, value: int = (NO_PULL or PULL_UP or PULL_DOWN)) -> None:
+        ...
+    def write_digital(self, value: int) -> None:
+        """Set the pin to high if ``value`` is 1, or to low, if it is 0."""
+        ...
+    def set_pull(self, value: int) -> None:
         """Set the pull state to one of three possible values: ``pin.PULL_UP``,
         ``pin.PULL_DOWN`` or ``pin.NO_PULL`` (where ``pin`` is an instance of
         a pin). See below for discussion of default pull states.
         """
-    def write_digital(self, value: int) -> None:
-        """Set the pin to high if ``value`` is 1, or to low, if it is 0."""
+        ...
+    def get_pull(self) -> int:
+        """Returns the pull configuration on a pin, which can be one of three
+        possible values: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``. These
+        are set using the ``set_pull()`` method or automatically configured
+        when a pin mode requires it."""
+        ...
+    def get_mode(self) -> str:
+        """Returns the pin mode. When a pin is used for a specific function, like
+        writing a digital value, or reading an analog value, the pin mode
+        changes. Pins can have one of the following modes: ``unused``,
+        ``analog``, ``read_digital``, ``write_digital``,
+        ``display``, ``button``, ``music``, ``audio``,
+        ``touch``, ``i2c``, ``spi``.
+        """
+        ...
+
+class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
+    def read_analog(self) -> int:
+        """Read the voltage applied to the pin, and return it as an integer
+        between 0 (meaning 0V) and 1023 (meaning 3.3V).
+        """
     def write_analog(self, value: int) -> None:
         """Output a PWM signal on the pin, with the duty cycle proportional to
         the provided ``value``. The ``value`` may be either an integer or a
@@ -107,79 +129,63 @@ class MicroBitDigitalPin:
         """
     def set_analog_period_microseconds(self, period: int) -> None:
         """Set the period of the PWM signal being output to ``period`` in
-        microseconds. The minimum valid value is 35µs.
-        """
-
-class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    def read_analog(self) -> int:
-        """Read the voltage applied to the pin, and return it as an integer
-        between 0 (meaning 0V) and 1023 (meaning 3.3V).
+        microseconds. The minimum valid value is 256µs.
         """
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
+    CAPACITIVE: int
+    RESISTIVE: int
     def is_touched(self) -> bool:
         """Return ``True`` if the pin is being touched with a finger, otherwise
         return ``False``.
 
-        This test is done by measuring the capacitance of the pin together with
-        whatever is connected to it. Human body has quite a large capacitance,
-        so touching the pin gives a dramatic change in reading, which can be
-        detected.
+        .. note::
+            The default touch mode for the pins on the edge connector is
+            `resistive`. The default for the logo pin **V2** is `capacitive`.
+
+        **Resistive touch**
+        This test is done by measuring how much resistance there is between the
+        pin and ground.  A low resistance gives a reading of ``True``.  To get
+        a reliable reading using a finger you may need to touch the ground pin
+        with another part of your body, for example your other hand.
+
+        **Capacitive touch**
+        This test is done by interacting with the electric field of a capacitor
+        using a finger as a conductor. `Capacitive touch
+        <https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
+        does not require you to make a ground connection as part of a circuit.
         """
+        ...
+        def set_touch_mode(value: int) -> None:
+            """
+            .. note::
+                The default touch mode for the pins on the edge connector is
+                `resistive`. The default for the logo pin **V2** is `capacitive`.
+
+            Set the touch mode for the given pin. Value can be either ``CAPACITIVE``
+            or ``RESISTIVE``. For example, ``pin0.set_touch_mode(pin0.CAPACITIVE)``.
+            """
+            ...
 
 pin0: MicroBitTouchPin
-"""Pad 0."""
-
 pin1: MicroBitTouchPin
-"""Pad 1."""
-
 pin2: MicroBitTouchPin
-"""Pad 2."""
-
 pin3: MicroBitAnalogDigitalPin
-"""Column 1."""
-
 pin4: MicroBitAnalogDigitalPin
-"""Column 2."""
-
 pin5: MicroBitDigitalPin
-"""Button A."""
-
 pin6: MicroBitDigitalPin
-"""Row 2."""
-
 pin7: MicroBitDigitalPin
-"""Row 1."""
-
 pin8: MicroBitDigitalPin
-
 pin9: MicroBitDigitalPin
-"""Row 3."""
-
 pin10: MicroBitAnalogDigitalPin
-"""Column 3."""
-
 pin11: MicroBitDigitalPin
-"""Button B."""
-
 pin12: MicroBitDigitalPin
-
 pin13: MicroBitDigitalPin
-"""SPI MOSI."""
-
 pin14: MicroBitDigitalPin
-"""SPI MISO."""
-
 pin15: MicroBitDigitalPin
-"""SPI SCK."""
-
 pin16: MicroBitDigitalPin
-
 pin19: MicroBitDigitalPin
-"""I2C SCL."""
-
 pin20: MicroBitDigitalPin
-"""I2C SDA."""
 
 class Image:
     """The ``Image`` class is used to create images that can be displayed easily on

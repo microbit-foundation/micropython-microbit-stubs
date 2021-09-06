@@ -54,3 +54,18 @@ Has long but important module docstring with important warnings for the user.
 I've removed the images and reproduced it otherwise in full.
 
 Some complication with write/show. Fine for stubs but will need revisiting for docs.
+
+## pins
+
+pins need class docs
+
+NO_PULL etc. aren't available on MicroBitDigitalPin. You need to use the instances
+to access. Can/should we model this?
+
+py:method::[a-z] shows broken docs
+
+duplicate definition of MicroBitAnalogDigitalPin
+
+get_mode docs need fixing (I've done this)
+https://github.com/microbit-foundation/micropython-microbit-v2/blob/eba8995843ebc7246765b364710543c9ffee344a/src/codal_port/microbit_pinmode.c#L97
+
