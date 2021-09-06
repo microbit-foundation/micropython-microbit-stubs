@@ -3,7 +3,6 @@
 # See the README.md file in this directory for more information.
 
 import array
-import mmap
 import sys
 from os import PathLike
 from typing import AbstractSet, Any, Container, Iterable, Protocol, Tuple, TypeVar, Union
@@ -156,8 +155,8 @@ class SupportsNoArgReadline(Protocol[_T_co]):
 class SupportsWrite(Protocol[_T_contra]):
     def write(self, __s: _T_contra) -> Any: ...
 
-ReadableBuffer = Union[bytes, bytearray, memoryview, array.array[Any], mmap.mmap]  # stable
-WriteableBuffer = Union[bytearray, memoryview, array.array[Any], mmap.mmap]  # stable
+ReadableBuffer = Union[bytes, bytearray, memoryview, array.array[Any]]  # stable
+WriteableBuffer = Union[bytearray, memoryview, array.array[Any]]  # stable
 
 # stable
 if sys.version_info >= (3, 10):
