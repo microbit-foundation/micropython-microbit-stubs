@@ -106,11 +106,6 @@ def main():
     # and print in multiple formats
     op = {}
     for module_name in modules:
-        try:
-            exec("import u{}".format(module_name))
-            print("{} has u-variant".format(module_name))
-        except ImportError:
-            pass
         exec("import {}".format(module_name))
         op[module_name] = get_api(eval(module_name), module_name)
         exec("del {}".format(module_name))
