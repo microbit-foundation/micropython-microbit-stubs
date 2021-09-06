@@ -1,0 +1,21 @@
+{
+  "name": "micropython-microbit-stubs",
+  "version": "1.0.0",
+  "description": "Temporary home for micro:bit MicroPython stubs.",
+  "scripts": {
+    "test": "pyright -p test-pyrightconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microbit-foundation/micropython-microbit-stubs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/microbit-foundation/micropython-microbit-stubs/issues"
+  },
+  "homepage": "https://github.com/microbit-foundation/micropython-microbit-stubs#readme",
+  "dependencies": {
+    "pyright": "^1.1.166"
+  }
+}
