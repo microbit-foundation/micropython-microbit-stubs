@@ -22,6 +22,11 @@ opt_level has @overload with split docs
 
 micropython.schedule is missing from our docs. Why? It is on the device (checked on V2).
 
+## music
+
+lots of necessary docs omitted from module comment
+would be no good in a hover or completion
+
 ## builtins
 
 ### open
@@ -40,4 +45,4 @@ frames = [ None ] * 32
 is a problematic initialization pattern for arrays. Can we relax the rules?
 Is the pattern widespread?
 
-
+Are the pin types correct? To review. E.g. music.
