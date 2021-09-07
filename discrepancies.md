@@ -6,6 +6,8 @@ These are working notes on discrepancies found when creating these stubs.
 
 Module docs throughout are a bit arbitrary and need review.
 
+Various docs don't line up exactly because @overload is the best way to represent their typings so requires docs to be customised for each scenario.
+
 ## Module-specific issues
 
 ### gc
@@ -20,7 +22,7 @@ AudioFrame implements some operations that aren't clearly documented (e.g. you c
 
 ### uart
 
-uart.readinto is misindented
+uart.readinto is misindented in the docs (minor).
 there's a method documented as having been removed so I've omitted it from the stubs
 
 ### microbit
@@ -31,9 +33,9 @@ there's a method documented as having been removed so I've omitted it from the s
 - __sub__ and __div__ added based on examples but not in docs.
 - microphone - the doc style here is a bit different to elsewhere, might be less good in Pyright?
 
-### micropython
+### micropython
 
-- opt_level has @overload with split docs
+- schedule is undocumented (I've not added it)
 - micropython.schedule is missing from our docs. Why? It is on the device (checked on V2).
 
 ### neopixel
@@ -46,7 +48,7 @@ Some complication with write/show. Fine for stubs but will need revisiting for d
 ws2812_write is undocumented (here and in microbit module)
 ORDER is undocumented
 
-### pins
+### pins (in microbit)
 
 get_analog_period_microseconds isn't documented
 
@@ -62,7 +64,7 @@ pins need class docs
 NO_PULL etc. aren't available on MicroBitDigitalPin. You need to use the instances
 to access. Can/should we model this?
 
-py:method::[a-z] shows broken docs where it's not rendered on readthedocs.
+py:method::[a-z] shows broken docs which are not rendered on readthedocs.
 
 duplicate definition of MicroBitAnalogDigitalPin in the docs.
 
@@ -76,28 +78,28 @@ https://github.com/microbit-foundation/micropython-microbit-v2/blob/eba8995843eb
 	mem8
 are undocumented
 
-### micropython
-
-schedule is undocumented
-
 ### os
 
-ilistdir and stat are undocumented
+ilistdir and stat are undocumented (not added)
 
 ### radio
 
 In the docs and stubs but not on a V2 (V1 not checked):
 
+```
 >>> radio.RATE_250KBIT
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'module' object has no attribute 'RATE_250KBIT'
+```
 
-## Example code failures
+## Interesting code failures
 
 In waveforms.py
 
+```python
 frames = [ None ] * 32
+```
 
 ...is a problematic initialization pattern for arrays. Can we relax the rules?
-Is the pattern widespread?
+Is the pattern widespread? What options does Pyright have to relax behaviour around None?
