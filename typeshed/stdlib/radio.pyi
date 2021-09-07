@@ -4,24 +4,23 @@ networks.
 The radio module is conceptually very simple:
 
 * Broadcast messages are of a certain configurable length (up to 251 bytes).
-* Messages received are read from a queue of configurable size (the larger the queue the more RAM is used). If the queue is full, new messages are ignored.
-* Messages are broadcast and received on a preselected channel (numbered 0-100).
+* Messages received are read from a queue of configurable size (the larger the queue the more RAM is used). If the queue is full, new messages are ignored. Reading a message removes it from the queue.
+* Messages are broadcast and received on a preselected channel (numbered 0-83).
 * Broadcasts are at a certain level of power - more power means more range.
 * Messages are filtered by address (like a house number) and group (like a named recipient at the specified address).
 * The rate of throughput can be one of three pre-determined settings.
-* Send and receieve bytes to work with arbitrary data.
+* Send and receive bytes to work with arbitrary data.
+* Use `receive_full` to obtain full details about an incoming message: the data, receiving signal strength, and a microsecond timestamp when the message arrived.
 * As a convenience for children, it's easy to send and receive messages as strings.
 * The default configuration is both sensible and compatible with other platforms that target the BBC micro:bit.
 
 To access this module you need to::
 
     import radio
-
-We assume you have done this for the examples below.
 """
 
 
-from typing import Optional
+from typing import Optional, Tuple
 
 
 RATE_250KBIT: int
@@ -38,16 +37,18 @@ def on() -> None:
     """Turns the radio on. This needs to be explicitly called since the radio
     draws power and takes up memory that you may otherwise need.
     """
+    ...
 
 
 def off() -> None:
     """Turns off the radio, thus saving power and memory."""
+    ...
 
 
 def config(length: int = 32, queue: int = 3, channel: int = 7,
            power: int = 6, address: int = 0x75626974, group: int = 0,
            data_rate: int = RATE_1MBIT) -> None:
-    """Configures various keyword based settings relating to the radio. The
+    """    Configures various keyword based settings relating to the radio. The
     available settings and their sensible default values are listed below.
 
     The ``length`` (default=32) defines the maximum length, in bytes, of a
@@ -58,7 +59,7 @@ def config(length: int = 32, queue: int = 3, channel: int = 7,
     stored on the incoming message queue. If there are no spaces left on the
     queue for incoming messages, then the incoming message is dropped.
 
-    The ``channel`` (default=7) can be an integer value from 0 to 100
+    The ``channel`` (default=7) can be an integer value from 0 to 83
     (inclusive) that defines an arbitrary "channel" to which the radio is
     tuned. Messages will be sent via this channel and only messages received
     via this channel will be put onto the incoming message queue. Each step is
@@ -87,30 +88,35 @@ def config(length: int = 32, queue: int = 3, channel: int = 7,
 
     If ``config`` is not called then the defaults described above are assumed.
     """
+    ...
 
 
 def reset() -> None:
     """Reset the settings to their default values (as listed in the documentation
     for the ``config`` function above).
     """
+    ...
 
 
 def send_bytes(message: bytes) -> None:
     """Sends a message containing bytes."""
+    ...
 
 
 def receive_bytes() -> Optional[bytes]:
     """Receive the next incoming message on the message queue. Returns ``None`` if
     there are no pending messages. Messages are returned as bytes.
     """
+    ...
 
 
 def receive_bytes_into(buffer: bytearray) -> Optional[int]:
-    """Receive the next incoming message on the message queue. Copies the message
+    """    Receive the next incoming message on the message queue. Copies the message
     into ``buffer``, trimming the end of the message if necessary.
     Returns ``None`` if there are no pending messages, otherwise it returns the length
     of the message (which might be more than the length of the buffer).
     """
+    ...
 
 
 def send(message: str) -> None:
@@ -119,6 +125,7 @@ def send(message: str) -> None:
     prepended to the front (to make it compatible with other platforms that
     target the micro:bit).
     """
+    ...
 
 
 def receive() -> Optional[str]:
@@ -132,4 +139,27 @@ def receive() -> Optional[str]:
 
     A ``ValueError`` exception is raised if conversion to string fails.
     """
+    ...
+
+def receive_full() -> Tuple[bytes, int, int]:
+    """Returns a tuple containing three values representing the next incoming
+    message on the message queue. If there are no pending messages then
+    ``None`` is returned.
+
+    The three values in the tuple represent:
+
+    * the next incoming message on the message queue as bytes.
+    * the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
+    * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
+
+    For example::
+
+        details = radio.receive_full()
+        if details:
+            msg, rssi, timestamp = details
+
+    This function is useful for providing information needed for triangulation
+    and/or triliteration with other micro:bit devices.
+    """
+    ...
 
