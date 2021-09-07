@@ -5,6 +5,11 @@ AudioFrame implements some operations that aren't clearly documented (e.g. you c
 The current module doc isn't enough to really understand how to use the module.
 There's more useful content in the rst doc.
 
+## uart
+
+uart.readinto is misindented
+there's a method documented as having been removed, I've omitted it.
+
 ## __init__
 
 button.rst is good, the rest needs review

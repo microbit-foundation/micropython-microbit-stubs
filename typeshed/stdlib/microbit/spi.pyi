@@ -52,17 +52,19 @@ def init(baudrate: int = 1000000, bits: int = 8, mode: int = 0,
     The ``sclk``, ``mosi`` and ``miso`` arguments specify the pins to use for
     each type of signal.
     """
-
+    ...
 
 def read(nbytes: int) -> bytes:
     """Read at most ``nbytes``. Returns what was read."""
-
+    ...
 
 def write(buffer: Union[bytes, bytearray]) -> None:
     """Write the ``buffer`` of bytes to the bus."""
+    ...
 
 
 def write_readinto(out: Union[bytes, bytearray], in_: bytearray) -> None:
     """Write the ``out`` buffer to the bus and read any response into the ``in``
    buffer. The length of the buffers should be the same. The buffers can be
    the same object."""
+   ...
