@@ -54,7 +54,7 @@ def interpolate_frame(screen, pcnt, grid, line):
                 screen.set_pixel(x, y, int(newval))
     # first row interpolates with the "next" line
     for x in range(DISPLAY_WIDTH):
-        mask = MASK[y][x]
+        mask = MASK[y][x] # type: ignore
         newval = ((100-pcnt) * grid[0][x] + pcnt * line[x]) / 100.0
         newval = mask * newval / 100.0
         if INVERT_DISPLAY:
@@ -62,7 +62,8 @@ def interpolate_frame(screen, pcnt, grid, line):
         else:
             screen.set_pixel(x, 0, int(newval))
 
-## Setup
+## Setup
+
 line = generate_line()
 grid = [[0 for i in range(DISPLAY_WIDTH)] for i in range(DISPLAY_HEIGHT)]
 
