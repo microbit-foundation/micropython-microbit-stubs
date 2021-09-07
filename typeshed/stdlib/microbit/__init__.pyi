@@ -2,17 +2,16 @@
 into your board.
 """
 
-from . import (
-    display as display,
-    uart as uart,
-    spi as spi,
-    i2c as i2c,
-    accelerometer as accelerometer,
-    compass as compass,
-    microphone as microphone,
-)
-
 from typing import Any, List, overload
+
+from . import accelerometer as accelerometer
+from . import compass as compass
+from . import display as display
+from . import i2c as i2c
+from . import microphone as microphone
+from . import spi as spi
+from . import uart as uart
+
 
 def panic(n: int) -> None:
     """Enter a panic mode. Requires restart. Pass in an arbitrary integer <= 255

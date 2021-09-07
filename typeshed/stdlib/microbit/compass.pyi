@@ -14,47 +14,54 @@ def calibrate() -> None:
     to the user after which they will need to rotate the device in order to
     draw a circle on the LED display.
     """
+    ...
 
 
 def is_calibrated() -> bool:
     """Returns ``True`` if the compass has been successfully calibrated, and
     returns ``False`` otherwise.
     """
+    ...
 
 
 def clear_calibration() -> None:
     """Undoes the calibration, making the compass uncalibrated again."""
+    ...
 
 
 def get_x() -> int:
-    """Gives the reading of the magnetic force on the ``x`` axis, as a
-    positive or negative integer, depending on the direction of the
-    force.
+    """Gives the reading of the magnetic field strength on the ``x`` axis in nano 
+    tesla, as a positive or negative integer, depending on the direction of the
+    field.
     """
+    ...
 
 
 def get_y() -> int:
-    """Gives the reading of the magnetic force on the ``x`` axis, as a
-    positive or negative integer, depending on the direction of the
-    force.
+    """Gives the reading of the magnetic field strength on the ``y`` axis in nano 
+    tesla, as a positive or negative integer, depending on the direction of the
+    field.
     """
+    ...
 
 
 def get_z() -> int:
-    """Gives the reading of the magnetic force on the ``x`` axis, as a
-    positive or negative integer, depending on the direction of the
-    force.
+    """Gives the reading of the magnetic field strength on the ``z`` axis in nano 
+    tesla, as a positive or negative integer, depending on the direction of the
+    field.
     """
+    ...
 
 
 def heading() -> int:
     """Gives the compass heading, calculated from the above readings, as an
     integer in the range from 0 to 360, representing the angle in degrees,
     clockwise, with north as 0.
-    If the compass has not been calibrated, then this will call ``calibrate``.
     """
+    ...
 
 
 def get_field_strength() -> int:
-    """Returns an integer indication of the magnitude of the magnetic field
-    around the device."""
+    """Returns an integer indication of the magnitude of the magnetic field around
+    the device in nano tesla."""
+    ...
