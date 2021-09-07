@@ -1,22 +1,12 @@
-import sys
 from typing import Dict, Generic, Tuple, TypeVar
 
-if sys.version_info >= (3, 10):
-    from typing import (
-        Callable,
-        ItemsView,
-        Iterable,
-        Iterator,
-        KeysView,
-        Mapping,
-        MutableMapping,
-        MutableSequence,
-        Reversible,
-        Sequence,
-        ValuesView,
-    )
-else:
-    from _collections_abc import *
+from typing import (
+    ItemsView,
+    Iterator,
+    KeysView,
+    Reversible,
+    ValuesView,
+)
 
 _S = TypeVar("_S")
 _T = TypeVar("_T")
