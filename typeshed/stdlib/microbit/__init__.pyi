@@ -9,6 +9,7 @@ from . import compass as compass
 from . import display as display
 from . import i2c as i2c
 from . import microphone as microphone
+from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
 
