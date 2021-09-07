@@ -1,14 +1,12 @@
-Temporary home for micro:bit MicroPython stubs.
+## micro:bit MicroPython stubs for editor support
 
-These are incomplete and/or wrong and need careful review.
+### Credit and licensing
 
-Standard library bits from https://github.com/cpwood/Pico-Stub
-micro:bit specific stubs from https://github.com/vlasovskikh/intellij-micropython
+builtins and utility definitions are derived from [typeshed](https://github.com/python/typeshed). Further work is required to review these to ensure that we don't have stubs for definitions MicroPython does not support. These stubs don't provide documentation.
 
-At some point I replaced the stdlib bits with the ordinary Python typeshed but
-not clear this was necessary. We could revert to the Pico ones if they have docs or are a better match to MicroPython.
+MicroPython and micro:bit stubs are based on the restructured text documentation for [micro:bit](https://github.com/bbcmicrobit/micropython/tree/v2-docs) and where not otherwise covered in micro:bit-specific docs, [MicroPython](https://github.com/micropython/micropython/tree/master/docs/library). These stubs provide documentation.
 
-All seem to be open source but obviously copied around a lot. It'd be good to
-trace back with care and document.
+Typeshed is Apache 2.0 licensed.
 
-See also https://github.com/Josverl/micropython-stubs/
+MicroPython is MIT Licensed and Copyright (c) 2013-2021 Damien P. George.
+MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The MicroPython-on-micro:bit Developers (see https://github.com/bbcmicrobit/micropython/blob/v2-docs/AUTHORS).
