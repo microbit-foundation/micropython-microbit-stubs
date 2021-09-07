@@ -23,6 +23,7 @@ audio: 3.0-
 builtins: 3.0-
 errno: 3.0-
 gc: 3.0-
+love: 3.0-
 machine: 3.0-
 math: 3.0-
 microbit: 3.0-
@@ -35,9 +36,10 @@ random: 3.0-
 speech: 3.0-
 struct: 3.0-
 sys: 3.0-
+this: 3.0-
 time: 3.0-
-typing: 3.0-
 typing_extensions: 3.0-
+typing: 3.0-
 uarray: 3.0-
 ucollections: 3.0-
 uerrno: 3.0-
