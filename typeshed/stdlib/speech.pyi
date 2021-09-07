@@ -23,7 +23,7 @@ To access this module you need to::
     import speech
 """
 
-from typeshed.stdlib.microbit import MicroBitAnalogDigitalPin, pin0
+from .microbit import MicroBitDigitalPin, pin0
 
 def translate(words: str) -> str:
     """Given English words in the string ``words``, return a string containing
@@ -43,7 +43,7 @@ def pronounce(
     speed: int = 72,
     mouth: int = 128,
     throat: int = 128,
-    pin: MicroBitAnalogDigitalPin = pin0,
+    pin: MicroBitDigitalPin = pin0,
 ) -> None:
     """Pronounce the phonemes in the string ``phonemes``. See below for details of
     how to use phonemes to finely control the output of the speech synthesiser.
@@ -62,7 +62,7 @@ def say(
     speed: int = 72,
     mouth: int = 128,
     throat: int = 128,
-    pin: MicroBitAnalogDigitalPin = pin0,
+    pin: MicroBitDigitalPin = pin0,
 ) -> None:
     """Say the English words in the string ``words``. The result is semi-accurate
     for English. Override the optional pitch, speed, mouth and throat
@@ -77,7 +77,7 @@ def sing(
     speed: int = 72,
     mouth: int = 128,
     throat: int = 128,
-    pin: MicroBitAnalogDigitalPin = pin0,
+    pin: MicroBitDigitalPin = pin0,
 ) -> None:
     """Sing the phonemes contained in the string ``phonemes``. Changing the pitch
     and duration of the note is described below. Override the optional pitch,

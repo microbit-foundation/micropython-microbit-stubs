@@ -37,11 +37,11 @@ other 5V devices connected.
     If you wish to use more than 8 Neopixels, you must use a separate 3v-5v
     power supply for the Neopixel power pin.
 """
-from microbit import MicroBitAnalogDigitalPin
+from .microbit import MicroBitDigitalPin
 from typing import Tuple
 
 class NeoPixel:
-    def __init__(self, pin: MicroBitAnalogDigitalPin, n: int, bpp: int = ...) -> None:
+    def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int = ...) -> None:
         """
         Initialise a new strip of ``n`` number of neopixel LEDs controlled via pin
         ``pin``. The **V2** micro:bit can also support RGBW neopixels, so a third

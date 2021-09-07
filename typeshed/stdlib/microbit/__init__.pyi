@@ -13,6 +13,9 @@ from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
 
+# V2 only
+from .. import audio as audio
+
 def panic(n: int) -> None:
     """Enter a panic mode. Requires restart. Pass in an arbitrary integer <= 255
     to indicate a status::
@@ -39,6 +42,15 @@ def running_time() -> int:
 
 def temperature() -> int:
     """Return the temperature of the micro:bit in degrees Celcius."""
+
+def set_volume(v: int) -> None:
+    """Sets the volume. ``v`` is a value between 0 and 255.
+
+    **V2** only.
+    
+    Out of range values will be clamped to 0 or 255.
+    """
+    ...
 
 class Button:
     """Represents a button.

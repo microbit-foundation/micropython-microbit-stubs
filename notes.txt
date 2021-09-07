@@ -1,8 +1,12 @@
 ## todo
 
-math
 pin types
 Any review
+
+
+## gc
+
+isenabled is undocumented
 
 
 ## audio
@@ -68,7 +72,19 @@ I've removed the images and reproduced it otherwise in full.
 
 Some complication with write/show. Fine for stubs but will need revisiting for docs.
 
+ws2812_write is undocumented (here and in microbit module)
+ORDER is undocumented
+
 ## pins
+
+get_analog_period_microseconds isn't documented
+
+pin_logo isn't really a pin... it just has:
+		CAPACITIVE
+		RESISTIVE
+		is_touched
+		set_touch_mode
+how to model this? currently incorrectly a touch pin.
 
 pins need class docs
 
@@ -82,3 +98,26 @@ duplicate definition of MicroBitAnalogDigitalPin
 get_mode docs need fixing (I've done this)
 https://github.com/microbit-foundation/micropython-microbit-v2/blob/eba8995843ebc7246765b364710543c9ffee344a/src/codal_port/microbit_pinmode.c#L97
 
+
+### machine
+	mem16
+	mem32
+	mem8
+are undocumented
+
+## micropython
+
+schedule is undocumented
+
+## os
+
+ilistdir and stat are undocumented
+
+## radio
+
+In the docs and stubs but not on a V2 (V1 not checked):
+
+>>> radio.RATE_250KBIT
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'RATE_250KBIT'

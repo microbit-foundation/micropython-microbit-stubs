@@ -5,7 +5,7 @@ a speaker to pin 0 and GND on the edge connector to hear the sound:
 """
 from typing import Tuple, Union, List
 
-from .microbit import pin0, MicroBitAnalogDigitalPin
+from .microbit import MicroBitDigitalPin, pin0
 
 DADADADUM: Tuple[str, ...]
 ENTERTAINER: Tuple[str, ...]
@@ -58,7 +58,7 @@ def get_tempo(self) -> Tuple[int, int]:
 
 def play(
     music: Union[str, List[str], Tuple[str, ...]],
-    pin: MicroBitAnalogDigitalPin = ...,
+    pin: MicroBitDigitalPin = ...,
     wait: bool = True,
     loop: bool = False,
 ) -> None:
@@ -86,7 +86,7 @@ def play(
     ...
 
 def pitch(
-    frequency: int, duration=..., pin: MicroBitAnalogDigitalPin = ..., wait: bool = ...
+    frequency: int, duration=..., pin: MicroBitDigitalPin = ..., wait: bool = ...
 ) -> None:
     """Plays a pitch at the integer frequency given for the specified number of
     milliseconds. For example, if the frequency is set to 440 and the length to
@@ -106,7 +106,7 @@ def pitch(
     """
     ...
 
-def stop(pin: MicroBitAnalogDigitalPin = pin0) -> None:
+def stop(pin: MicroBitDigitalPin = pin0) -> None:
     """Stops all music playback on the built-in speaker and any pin outputting
     sound. An optional argument can be provided to specify a pin, eg.
     ``music.stop(pin1)``.
