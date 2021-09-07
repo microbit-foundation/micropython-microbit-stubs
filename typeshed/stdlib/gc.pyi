@@ -2,16 +2,15 @@
 
 from typing import overload
 
-
 def enable() -> None:
     """Enable automatic garbage collection."""
     ...
 
 def disable() -> None:
-   """Disable automatic garbage collection.  Heap memory can still be allocated,
-   and garbage collection can still be initiated manually using :meth:`gc.collect`."""
+    """Disable automatic garbage collection.  Heap memory can still be allocated,
+    and garbage collection can still be initiated manually using :meth:`gc.collect`."""
 
-def collect(): -> None:
+def collect() -> None:
     """Run a garbage collection."""
     ...
 

@@ -17,8 +17,9 @@ from . import MicroBitDigitalPin, pin19, pin20
 from typing import List, Union
 from . import pin19, pin20
 
-
-def init(freq: int = 100000, sda: MicroBitDigitalPin = pin20, scl: MicroBitDigitalPin = pin19) -> None:
+def init(
+    freq: int = 100000, sda: MicroBitDigitalPin = pin20, scl: MicroBitDigitalPin = pin19
+) -> None:
     """Re-initialize peripheral with the specified clock frequency ``freq`` on the
     specified ``sda`` and ``scl`` pins.
 
@@ -43,7 +44,6 @@ def read(addr: int, n: int, repeat: bool = False) -> bytes:
     is ``True``, no stop bit will be sent.
     """
     ...
-
 
 def write(addr: int, buf: Union[bytes, bytearray], repeat=False) -> None:
     """Write bytes from ``buf`` to the device with 7-bit address ``addr``. If

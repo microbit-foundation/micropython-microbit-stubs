@@ -7,7 +7,6 @@ which is lit when the microphone is in use.
 from typing import Tuple
 from . import SoundEvent
 
-
 def current_event() -> SoundEvent:
     """
     * **return**: the name of the last recorded sound event,

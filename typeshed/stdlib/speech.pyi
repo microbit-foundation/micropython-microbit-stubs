@@ -25,7 +25,6 @@ To access this module you need to::
 
 from typeshed.stdlib.microbit import MicroBitAnalogDigitalPin, pin0
 
-
 def translate(words: str) -> str:
     """Given English words in the string ``words``, return a string containing
     a best guess at the appropriate phonemes to pronounce. The output is
@@ -38,9 +37,14 @@ def translate(words: str) -> str:
     """
     ...
 
-def pronounce(phonemes: str, pitch: int=64, speed: int=72,
-              mouth: int=128, throat: int=128, 
-              pin: MicroBitAnalogDigitalPin = pin0) -> None:
+def pronounce(
+    phonemes: str,
+    pitch: int = 64,
+    speed: int = 72,
+    mouth: int = 128,
+    throat: int = 128,
+    pin: MicroBitAnalogDigitalPin = pin0,
+) -> None:
     """Pronounce the phonemes in the string ``phonemes``. See below for details of
     how to use phonemes to finely control the output of the speech synthesiser.
     Override the optional pitch, speed, mouth and throat settings to change the
@@ -52,8 +56,14 @@ def pronounce(phonemes: str, pitch: int=64, speed: int=72,
     """
     ...
 
-def say(words: str, pitch: int=64, speed: int=72,
-              mouth: int=128, throat: int=128, pin: MicroBitAnalogDigitalPin=pin0) -> None:
+def say(
+    words: str,
+    pitch: int = 64,
+    speed: int = 72,
+    mouth: int = 128,
+    throat: int = 128,
+    pin: MicroBitAnalogDigitalPin = pin0,
+) -> None:
     """Say the English words in the string ``words``. The result is semi-accurate
     for English. Override the optional pitch, speed, mouth and throat
     settings to change the timbre (quality) of the voice. This is a short-hand
@@ -61,8 +71,14 @@ def say(words: str, pitch: int=64, speed: int=72,
     """
     ...
 
-def sing(phonemes: str, pitch: int=64, speed: int=72,
-              mouth: int=128, throat: int=128, pin: MicroBitAnalogDigitalPin=pin0) -> None:
+def sing(
+    phonemes: str,
+    pitch: int = 64,
+    speed: int = 72,
+    mouth: int = 128,
+    throat: int = 128,
+    pin: MicroBitAnalogDigitalPin = pin0,
+) -> None:
     """Sing the phonemes contained in the string ``phonemes``. Changing the pitch
     and duration of the note is described below. Override the optional pitch,
     speed, mouth and throat settings to change the timbre (quality) of the

@@ -19,9 +19,7 @@ To access this module you need to::
     import radio
 """
 
-
 from typing import Optional, Tuple
-
 
 RATE_250KBIT: int
 """Constant used to indicate a throughput of 256 Kbit a second."""
@@ -32,23 +30,26 @@ RATE_1MBIT: int
 RATE_2MBIT: int
 """Constant used to indicate a throughput of 2 MBit a second."""
 
-
 def on() -> None:
     """Turns the radio on. This needs to be explicitly called since the radio
     draws power and takes up memory that you may otherwise need.
     """
     ...
 
-
 def off() -> None:
     """Turns off the radio, thus saving power and memory."""
     ...
 
-
-def config(length: int = 32, queue: int = 3, channel: int = 7,
-           power: int = 6, address: int = 0x75626974, group: int = 0,
-           data_rate: int = RATE_1MBIT) -> None:
-    """    Configures various keyword based settings relating to the radio. The
+def config(
+    length: int = 32,
+    queue: int = 3,
+    channel: int = 7,
+    power: int = 6,
+    address: int = 0x75626974,
+    group: int = 0,
+    data_rate: int = RATE_1MBIT,
+) -> None:
+    """Configures various keyword based settings relating to the radio. The
     available settings and their sensible default values are listed below.
 
     The ``length`` (default=32) defines the maximum length, in bytes, of a
@@ -90,18 +91,15 @@ def config(length: int = 32, queue: int = 3, channel: int = 7,
     """
     ...
 
-
 def reset() -> None:
     """Reset the settings to their default values (as listed in the documentation
     for the ``config`` function above).
     """
     ...
 
-
 def send_bytes(message: bytes) -> None:
     """Sends a message containing bytes."""
     ...
-
 
 def receive_bytes() -> Optional[bytes]:
     """Receive the next incoming message on the message queue. Returns ``None`` if
@@ -109,15 +107,13 @@ def receive_bytes() -> Optional[bytes]:
     """
     ...
 
-
 def receive_bytes_into(buffer: bytearray) -> Optional[int]:
-    """    Receive the next incoming message on the message queue. Copies the message
+    """Receive the next incoming message on the message queue. Copies the message
     into ``buffer``, trimming the end of the message if necessary.
     Returns ``None`` if there are no pending messages, otherwise it returns the length
     of the message (which might be more than the length of the buffer).
     """
     ...
-
 
 def send(message: str) -> None:
     """Sends a message string. This is the equivalent of
@@ -126,7 +122,6 @@ def send(message: str) -> None:
     target the micro:bit).
     """
     ...
-
 
 def receive() -> Optional[str]:
     """Works in exactly the same way as ``receive_bytes`` but returns
@@ -162,4 +157,3 @@ def receive_full() -> Tuple[bytes, int, int]:
     and/or triliteration with other micro:bit devices.
     """
     ...
-

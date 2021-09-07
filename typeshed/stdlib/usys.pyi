@@ -2,15 +2,14 @@
 
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
-
-def exit(retval: object=...) -> NoReturn:
+def exit(retval: object = ...) -> NoReturn:
     """Terminate current program with a given exit code. Underlyingly, this
     function raise as `SystemExit` exception. If an argument is given, its
     value given as an argument to `SystemExit`.
     """
     ...
 
-def print_exception(exc: Exception, file: TextIO=...) -> None:
+def print_exception(exc: Exception, file: TextIO = ...) -> None:
     """
     Print exception with a traceback to a file-like object *file* (or
     `sys.stdout` by default).

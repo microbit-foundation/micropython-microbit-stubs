@@ -13,7 +13,6 @@ from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
 
-
 def panic(n: int) -> None:
     """Enter a panic mode. Requires restart. Pass in an arbitrary integer <= 255
     to indicate a status::
@@ -401,7 +400,7 @@ class Image:
         """
         ...
     def __sub__(self, other: Image) -> Image:
-        """Create a new image by subtracting the brightness values of the 
+        """Create a new image by subtracting the brightness values of the
         other image from this image.
         """
         ...
@@ -415,7 +414,7 @@ class Image:
         ``n``.
         """
         ...
-        
+
 class SoundEvent:
     """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
 
@@ -423,9 +422,9 @@ class SoundEvent:
     """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
     QUIET: SoundEvent
 
-
 class Sound:
     """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
+
     GIGGLE: Sound
     HAPPY: Sound
     HELLO: Sound

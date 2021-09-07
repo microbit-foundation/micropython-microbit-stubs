@@ -11,9 +11,14 @@ ODD: int
 EVEN: int
 """Even parity"""
 
-def init(baudrate: int = 9600, bits: int = 8, parity: Optional[int] = None,
-         stop: int = 1, tx: MicroBitDigitalPin = None,
-         rx: MicroBitDigitalPin = None) -> None:
+def init(
+    baudrate: int = 9600,
+    bits: int = 8,
+    parity: Optional[int] = None,
+    stop: int = 1,
+    tx: MicroBitDigitalPin = None,
+    rx: MicroBitDigitalPin = None,
+) -> None:
     """Initialize serial communication with the specified parameters on the
     specified ``tx`` and ``rx`` pins. Note that for correct communication, the parameters
     have to be the same on both communicating devices.
@@ -57,7 +62,6 @@ def init(baudrate: int = 9600, bits: int = 8, parity: Optional[int] = None,
     """
     ...
 
-
 def any() -> bool:
     """Return ``True`` if any data is waiting, else ``False``."""
     ...
@@ -99,15 +103,13 @@ def read(nbytes: int = None) -> bytes:
     """
     ...
 
-
 def readinto(buf: bytearray, nbytes: int = None) -> Optional[int]:
     """Read bytes into the ``buf``.  If ``nbytes`` is specified then read at most
-   that many bytes.  Otherwise, read at most ``len(buf)`` bytes.
+    that many bytes.  Otherwise, read at most ``len(buf)`` bytes.
 
-   Return value: number of bytes read and stored into ``buf`` or ``None`` on
-   timeout.
+    Return value: number of bytes read and stored into ``buf`` or ``None`` on
+    timeout.
     """
-
 
 def readline() -> Optional[bytes]:
     """Read a line, ending in a newline character.

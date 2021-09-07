@@ -27,8 +27,13 @@ def show(image: Image) -> None:
     ...
 
 @overload
-def show(iterable: Union[str, float, int, Iterable[Image]], delay: int = 400,
-         wait: bool = True, loop: bool =False, clear: bool = False) -> None:
+def show(
+    iterable: Union[str, float, int, Iterable[Image]],
+    delay: int = 400,
+    wait: bool = True,
+    loop: bool = False,
+    clear: bool = False,
+) -> None:
     """If ``value`` is a string, float or integer, display letters/digits in sequence.
     Otherwise, if ``value`` is an iterable sequence of images, display these images in sequence.
     Each letter, digit or image is shown with ``delay`` milliseconds between them.
@@ -51,9 +56,13 @@ def show(iterable: Union[str, float, int, Iterable[Image]], delay: int = 400,
     """
     ...
 
-
-def scroll(string: Union[str, float, int], delay: int = 150, wait: bool = True,
-           loop: bool = False, monospace: bool = False) -> None:
+def scroll(
+    string: Union[str, float, int],
+    delay: int = 150,
+    wait: bool = True,
+    loop: bool = False,
+    monospace: bool = False,
+) -> None:
     """Scrolls ``value`` horizontally on the display. If ``value`` is an integer or float it is
     first converted to a string using ``str()``. The ``delay`` parameter controls how fast
     the text is scrolling.

@@ -14,7 +14,6 @@ on the floating-point support).
 
 from typing import Any, Tuple, Union
 
-
 def calcsize(fmt: str) -> int:
     """Return the number of bytes needed to store the given *fmt*."""
     ...
@@ -33,11 +32,11 @@ def pack_into(fmt: str, buffer: bytearray, offset: int, v1: Any, *vn: Any) -> No
 
 def unpack(fmt: str, data: Union[bytes, bytearray]) -> Tuple:
     """Unpack from the *data* according to the format string *fmt*.
-   The return value is a tuple of the unpacked values.
+    The return value is a tuple of the unpacked values.
     """
     ...
 
-def unpack_from(fmt: str, buffer: Union[bytes, bytearray], offset: int=0) -> Tuple:
+def unpack_from(fmt: str, buffer: Union[bytes, bytearray], offset: int = 0) -> Tuple:
     """Unpack from the *data* starting at *offset* according to the format string
     *fmt*. *offset* may be negative to count from the end of *buffer*. The return
     value is a tuple of the unpacked values.

@@ -10,11 +10,10 @@ measuring time intervals, and for delays.
 
 from typing import Union
 
-
 def sleep(seconds: Union[int, float]) -> None:
     """
-    Sleep for the given number of seconds. You can use a floating-point number 
-    to sleep for a fractional number of seconds, or use the 
+    Sleep for the given number of seconds. You can use a floating-point number
+    to sleep for a fractional number of seconds, or use the
     :func:`utime.sleep_ms()` and :func:`utime.sleep_us()` functions.
     """
     ...
@@ -33,7 +32,7 @@ def sleep_us(us: int) -> None:
 
 def ticks_ms() -> int:
     """
-    Returns an increasing millisecond counter with an arbitrary reference point, 
+    Returns an increasing millisecond counter with an arbitrary reference point,
     that wraps around after some value.
     """
     ...
@@ -46,9 +45,9 @@ def ticks_us() -> int:
 
 def ticks_add(ticks: int, delta: int) -> int:
     """
-    Offset ticks value by a given number, which can be either positive or 
-    negative. Given a ticks value, this function allows to calculate ticks 
-    value delta ticks before or after it, following modular-arithmetic 
+    Offset ticks value by a given number, which can be either positive or
+    negative. Given a ticks value, this function allows to calculate ticks
+    value delta ticks before or after it, following modular-arithmetic
     definition of tick values.
 
     Example:
@@ -70,14 +69,14 @@ def ticks_add(ticks: int, delta: int) -> int:
 
 def ticks_diff(ticks1: int, ticks2: int) -> int:
     """
-    Measure ticks difference between values returned from 
+    Measure ticks difference between values returned from
     :func:`utime.ticks_ms()` or :func:`ticks_us()` functions, as a signed value
     which may wrap around.
 
-    The argument order is the same as for subtraction operator, 
+    The argument order is the same as for subtraction operator,
     ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.
 
-    :func:`utime.ticks_diff()` is designed to accommodate various usage 
+    :func:`utime.ticks_diff()` is designed to accommodate various usage
     patterns, among them:
 
     Polling with timeout. In this case, the order of events is known, and you
