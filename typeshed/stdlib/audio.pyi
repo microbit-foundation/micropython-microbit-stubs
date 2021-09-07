@@ -6,11 +6,11 @@ By default sound output will be via the edge connector on pin 0 and the
 a speaker to pin 0 and GND on the edge connector to hear the sounds.
 """
 
-from microbit import MicroBitDigitalPin
-from typing import Iterable
+from .microbit import MicroBitDigitalPin, Sound
+from typing import Iterable, Union
 
 def play(
-    source: Iterable[AudioFrame],
+    source: Union[Iterable[AudioFrame], Sound],
     wait: bool = True,
     pin: MicroBitDigitalPin = ...,
     return_pin: MicroBitDigitalPin = ...,

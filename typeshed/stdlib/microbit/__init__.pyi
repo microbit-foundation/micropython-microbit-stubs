@@ -412,3 +412,17 @@ class SoundEvent:
     LOUD: SoundEvent
     """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
     QUIET: SoundEvent
+
+
+class Sound:
+    """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
+    GIGGLE: Sound
+    HAPPY: Sound
+    HELLO: Sound
+    MYSTERIOUS: Sound
+    SAD: Sound
+    SLIDE: Sound
+    SOARING: Sound
+    SPRING: Sound
+    TWINKLE: Sound
+    YAWN: Sound
