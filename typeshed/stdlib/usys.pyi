@@ -1,50 +1,110 @@
-# Copyright (c) 2019, Digi International, Inc.
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
+"""system specific functions"""
 
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 
-argv: List[str] = ...
-byteorder: str = ...
-implementation: Tuple[str, Tuple[int, int, int], int] = ...
-maxsize: int = ...
-modules: Dict[str, Any] = ...  # technically [str, Module]
-path: List[str] = ...
-platform: str = ...
-version: str = ...
-version_info: Tuple[int, int, int] = ...
-
-
-def exit(arg: Optional[object] = None, /) -> None:
+def exit(retval: object=...) -> NoReturn:
+    """Terminate current program with a given exit code. Underlyingly, this
+    function raise as `SystemExit` exception. If an argument is given, its
+    value given as an argument to `SystemExit`.
     """
-    Raise a ``SystemExit`` exception, with the given argument if specified.
+    ...
 
-    Note that calling ``sys.exit()`` while at the MicroPython REPL
-    (``>>>`` prompt) has no effect.
+def print_exception(exc: Exception, file: TextIO=...) -> None:
+    """
+    Print exception with a traceback to a file-like object *file* (or
+    `sys.stdout` by default).
+
+    .. admonition:: Difference to CPython
+        :class: attention
+
+        This is simplified version of a function which appears in the
+        ``traceback`` module in CPython. Unlike ``traceback.print_exception()``,
+        this function takes just exception value instead of exception type,
+        exception value, and traceback object; *file* argument should be
+        positional; further arguments are not supported. CPython-compatible
+        ``traceback`` module can be found in `micropython-lib`.
     """
 
+argv: List[str]
+"""A mutable list of arguments the current program was started with."""
 
-def print_exception(exc: BaseException) -> None:
-    """
-    Print the given exception and its traceback to stdout.
+byteorder: str
+"""The byte order of the system (``"little"`` or ``"big"``)."""
 
-    This is a simplified version of CPython's ``traceback.print_exception()``
-    function.
-    """
+class _implementation:
+    name: str
+    version: Tuple[int, int, int]
+
+implementation: _implementation
+"""Object with information about the current Python implementation. For
+MicroPython, it has following attributes:
+
+* *name* - string "micropython"
+* *version* - tuple (major, minor, micro), e.g. (1, 7, 0)
+
+This object is the recommended way to distinguish MicroPython from other
+Python implementations (note that it still may not exist in the very
+minimal ports).
+
+.. admonition:: Difference to CPython
+    :class: attention
+
+    CPython mandates more attributes for this object, but the actual useful
+    bare minimum is implemented in MicroPython.
+"""
+
+maxsize: int
+"""
+Maximum value which a native integer type can hold on the current platform,
+or maximum value representable by MicroPython integer type, if it's smaller
+than platform max value (that is the case for MicroPython ports without
+long int support).
+
+This attribute is useful for detecting "bitness" of a platform (32-bit vs
+64-bit, etc.). It's recommended to not compare this attribute to some
+value directly, but instead count number of bits in it::
+
+bits = 0
+v = sys.maxsize
+while v:
+    bits += 1
+    v >>= 1
+if bits > 32:
+    # 64-bit (or more) platform
+    ...
+else:
+    # 32-bit (or less) platform
+    # Note that on 32-bit platform, value of bits may be less than 32
+    # (e.g. 31) due to peculiarities described above, so use "> 16",
+    # "> 32", "> 64" style of comparisons.
+"""
+
+modules: Dict[str, Any]
+"""Dictionary of loaded modules. On some ports, it may not include builtin
+   modules."""
+
+path: List[str]
+"""A mutable list of directories to search for imported modules."""
+
+platform: str
+"""The platform that MicroPython is running on. For OS/RTOS ports, this is
+usually an identifier of the OS, e.g. ``"linux"``. For baremetal ports it
+is an identifier of a board, e.g. ``"pyboard"`` for the original MicroPython
+reference board. It thus can be used to distinguish one board from another.
+If you need to check whether your program runs on MicroPython (vs other
+Python implementation), use `sys.implementation` instead.
+"""
+
+version: str
+"""Python language version that this implementation conforms to, as a string."""
+
+version_info: Tuple[int, int, int]
+"""Python language version that this implementation conforms to, as a tuple of ints.
+
+.. admonition:: Difference to CPython
+    :class: attention
+
+    Only the first three version numbers (major, minor, micro) are supported and
+    they can be referenced only by index, not by name.
+"""
