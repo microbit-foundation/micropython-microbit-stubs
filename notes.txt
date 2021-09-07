@@ -13,6 +13,7 @@ removed (see below) from button_a
 image - type of buffer in second __init__ option
 text modified to split across __init__ definitions
 "Same as" language is unhelpful.
+__sub__ and __div__ added based on examples but not in docs.
 
 microphone - the doc style here is a bit different to elsewhere, might be less good in Pyright?
 

@@ -400,12 +400,22 @@ class Image:
         images for each pixel.
         """
         ...
+    def __sub__(self, other: Image) -> Image:
+        """Create a new image by subtracting the brightness values of the 
+        other image from this image.
+        """
+        ...
     def __mul__(self, n: float) -> Image:
         """Create a new image by multiplying the brightness of each pixel by
         ``n``.
         """
         ...
-
+    def __div__(self, other: float) -> Image:
+        """Create a new image by multiplying the brightness of each pixel by
+        ``n``.
+        """
+        ...
+        
 class SoundEvent:
     """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
 
