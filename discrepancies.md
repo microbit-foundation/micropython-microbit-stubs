@@ -93,6 +93,18 @@ Traceback (most recent call last):
 AttributeError: 'module' object has no attribute 'RATE_250KBIT'
 ```
 
+### microphone
+
+```python
+>>> from microbit import *
+>>> repr(microphone.current_event())
+'None'
+>>> repr(microphone.current_event())
+"SoundEvent('loud')"
+```
+
+but [docs](https://microbit-micropython.readthedocs.io/en/v2-docs/microphone.html#microbit.microphone.current_event) (and for now stubs) claim it cannot return None
+
 ## Interesting code failures
 
 In waveforms.py
