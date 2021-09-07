@@ -8,7 +8,7 @@ measuring time intervals, and for delays.
     ``import time``, but the module is the same.
 """
 
-from typing import Optional, Union
+from typing import Union
 
 
 def sleep(seconds: Union[int, float]) -> None:

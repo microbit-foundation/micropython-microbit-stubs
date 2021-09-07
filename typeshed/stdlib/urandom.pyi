@@ -6,7 +6,7 @@ To access this module you need to::
 
     import random
 """
-from typing import Any, TypeVar, Sequence, Union, overload
+from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int: 
     """Returns an integer with ``n`` random bits.
