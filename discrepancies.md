@@ -18,7 +18,7 @@ isenabled is undocumented (not added).
 
 AudioFrame.copyfrom is undocumented (not added).
 
-AudioFrame implements some operations that aren't clearly documented (e.g. you can add them, multiple by an integer).
+AudioFrame implements some operations that aren't clearly documented (e.g. you can add them, multiply by an integer). Added to the stubs to fix examples.
 
 ### uart
 
