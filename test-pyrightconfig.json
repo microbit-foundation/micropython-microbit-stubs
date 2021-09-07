@@ -6,5 +6,9 @@
   "typeshedPath": "./typeshed/",
   "reportMissingModuleSource": false,
   "reportWildcardImportFromLibrary": false,
+  "reportInvalidStubStatement": true,
+  "reportIncompleteStub": true,
+  "reportMissingTypeStubs": true,
+
   "verboseOutput": true
  }
