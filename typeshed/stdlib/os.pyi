@@ -8,8 +8,6 @@ current system.
 To access this module you need to::
 
     import os
-
-We assume you have done this for the examples below.
 """
 
 from typing import List
