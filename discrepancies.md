@@ -8,11 +8,11 @@ Module docs throughout are a bit arbitrary and need review.
 
 ## Module-specific issues
 
-## gc
+### gc
 
 isenabled is undocumented (not added).
 
-## audio
+### audio
 
 AudioFrame.copyfrom is undocumented (not added).
 
@@ -31,12 +31,12 @@ there's a method documented as having been removed so I've omitted it from the s
 - __sub__ and __div__ added based on examples but not in docs.
 - microphone - the doc style here is a bit different to elsewhere, might be less good in Pyright?
 
-## micropython
+### micropython
 
 - opt_level has @overload with split docs
 - micropython.schedule is missing from our docs. Why? It is on the device (checked on V2).
 
-## neopixel
+### neopixel
 
 Has long but important module docstring with important warnings for the user.
 I've removed the images and reproduced it otherwise in full.
