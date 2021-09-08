@@ -32,6 +32,7 @@ there's a method documented as having been removed so I've omitted it from the s
 - "Same as" language is unhelpful.
 - __sub__ and __div__ added based on examples but not in docs.
 - microphone - the doc style here is a bit different to elsewhere, might be less good in Pyright?
+- set\_volume has examples but no docs (added in stubs)
 
 ### micropython
 
