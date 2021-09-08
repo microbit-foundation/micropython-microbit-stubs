@@ -87,9 +87,7 @@ Traceback (most recent call last):
 AttributeError: 'module' object has no attribute 'RATE_250KBIT'
 ```
 
-It's commented out in the source: https://github.com/microbit-foundation/micropython-microbit-v2/blame/eba8995843ebc7246765b364710543c9ffee344a/src/codal_port/modradio.c#L269
-
-I've added a note to the docstring for now.
+Raised https://github.com/microbit-foundation/micropython-microbit-v2/issues/87
 
 ### microphone
 
