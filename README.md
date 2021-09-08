@@ -9,5 +9,12 @@ MicroPython and micro:bit stubs are based on the restructured text documentation
 Typeshed is Apache 2.0 licensed.
 
 MicroPython is MIT Licensed and Copyright (c) 2013-2021 Damien P. George.
-MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The MicroPython-on-micro:bit Developers (see https://github.com/bbcmicrobit/micropython/blob/v2-docs/AUTHORS).
+MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The MicroPython-on-micro:bit Developers (see [the authors file](https://github.com/bbcmicrobit/micropython/blob/v2-docs/AUTHORS)).
 
+## Scripts
+
+`browser-package.py` packages the typeshed and a Pyright config file in a JSON format that can be consumed by the [alpha Python editor project](https://github.com/microbit-foundation/python-editor-next).
+
+## Testing
+
+The stubs are tested against the code in the `examples/` folder using Pyright. To run the tests locally run `npm install` to install Pyright and then `npm test`.
