@@ -1,8 +1,10 @@
 """Access and control MicroPython internals."""
 
-from typing import Any, overload
+from typing import Any, TypeVar, overload
 
-def const(expr: Any) -> Any:
+_T = TypeVar("_T")
+
+def const(expr: _T) -> _T:
     """Used to declare that the expression is a constant so that the compiler can
     optimise it. The use of this function should be as follows:
 
