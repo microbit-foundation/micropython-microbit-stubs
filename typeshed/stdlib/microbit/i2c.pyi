@@ -45,7 +45,7 @@ def read(addr: int, n: int, repeat: bool = False) -> bytes:
     """
     ...
 
-def write(addr: int, buf: Union[bytes, bytearray], repeat=False) -> None:
+def write(addr: int, buf: Union[bytes, bytearray], repeat: bool = False) -> None:
     """Write bytes from ``buf`` to the device with 7-bit address ``addr``. If
     ``repeat`` is ``True``, no stop bit will be sent.
     """

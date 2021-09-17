@@ -95,7 +95,7 @@ def is_on() -> bool:
     """Returns ``True`` if the display is on, otherwise returns ``False``."""
     ...
 
-def read_light_level():
+def read_light_level() -> int:
     """Use the display's LEDs in reverse-bias mode to sense the amount of light
     falling on the display.  Returns an integer between 0 and 255 representing
     the light level, with larger meaning more light.
