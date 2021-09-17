@@ -50,7 +50,7 @@ def set_tempo(ticks: int = ..., bpm: int = ...) -> None:
     """
     ...
 
-def get_tempo(self) -> Tuple[int, int]:
+def get_tempo() -> Tuple[int, int]:
     """
     Gets the current tempo as a tuple of integers: (ticks, bpm).
     """
@@ -86,7 +86,10 @@ def play(
     ...
 
 def pitch(
-    frequency: int, duration=..., pin: MicroBitDigitalPin = ..., wait: bool = ...
+    frequency: int,
+    duration: int = -1,
+    pin: MicroBitDigitalPin = pin0,
+    wait: bool = True,
 ) -> None:
     """Plays a pitch at the integer frequency given for the specified number of
     milliseconds. For example, if the frequency is set to 440 and the length to

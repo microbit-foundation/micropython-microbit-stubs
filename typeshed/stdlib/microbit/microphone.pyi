@@ -24,7 +24,7 @@ def was_event(event: SoundEvent) -> bool:
     """
     ...
 
-def is_event(event):
+def is_event(event: SoundEvent) -> bool:
     """
     * **event**: a sound event,  such as ``SoundEvent.LOUD`` or
       ``SoundEvent.QUIET``.
