@@ -57,7 +57,7 @@ def show(
     ...
 
 def scroll(
-    string: Union[str, float, int],
+    value: Union[str, float, int],
     delay: int = 150,
     wait: bool = True,
     loop: bool = False,
