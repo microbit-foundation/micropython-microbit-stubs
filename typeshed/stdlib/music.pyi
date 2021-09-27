@@ -29,7 +29,7 @@ JUMP_DOWN: Tuple[str, ...]
 POWER_UP: Tuple[str, ...]
 POWER_DOWN: Tuple[str, ...]
 
-def set_tempo(ticks: int = ..., bpm: int = ...) -> None:
+def set_tempo(ticks: int = 4, bpm: int = 120) -> None:
     """
     Sets the approximate tempo for playback.
 
@@ -58,7 +58,7 @@ def get_tempo() -> Tuple[int, int]:
 
 def play(
     music: Union[str, List[str], Tuple[str, ...]],
-    pin: MicroBitDigitalPin = ...,
+    pin: MicroBitDigitalPin = pin0,
     wait: bool = True,
     loop: bool = False,
 ) -> None:

@@ -38,7 +38,7 @@ def randrange(stop: int) -> int:
     ...
 
 @overload
-def randrange(start: int, stop: Union[int, None] = ..., step: int = ...) -> int:
+def randrange(start: int, stop: int, step: int = 1) -> int:
     """
     Return a randomly selected element from ``range(start, stop, step)``.
     """
