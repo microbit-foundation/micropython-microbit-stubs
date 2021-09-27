@@ -8,26 +8,75 @@ from typing import Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 
 DADADADUM: Tuple[str, ...]
+"""Melody: the opening to Beethoven’s 5th Symphony in C minor."""
+
 ENTERTAINER: Tuple[str, ...]
+"""Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."""
+
 PRELUDE: Tuple[str, ...]
+"""Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues."""
+
 ODE: Tuple[str, ...]
+"""Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor."""
+
 NYAN: Tuple[str, ...]
+"""Melody: the Nyan Cat theme (http://www.nyan.cat/).
+
+The composer is unknown. This is fair use for educational porpoises (as they say in New York)."""
+
 RINGTONE: Tuple[str, ...]
+"""Melody: something that sounds like a mobile phone ringtone.
+
+To be used to indicate an incoming message.
+"""
+
 FUNK: Tuple[str, ...]
+"""Melody: a funky bass line for secret agents and criminal masterminds."""
+
 BLUES: Tuple[str, ...]
+"""Melody: a boogie-woogie 12-bar blues walking bass."""
+
 BIRTHDAY: Tuple[str, ...]
+"""Melody: “Happy Birthday to You…”
+
+For copyright status see: http://www.bbc.co.uk/news/world-us-canada-34332853
+"""
+
 WEDDING: Tuple[str, ...]
+"""Melody: the bridal chorus from Wagner’s opera “Lohengrin”."""
+
 FUNERAL: Tuple[str, ...]
+"""Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."""
+
 PUNCHLINE: Tuple[str, ...]
+"""Melody: a fun fragment that signifies a joke has been made."""
+
 PYTHON: Tuple[str, ...]
+"""Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."""
+
 BADDY: Tuple[str, ...]
+"""Melody: silent movie era entrance of a baddy."""
+
 CHASE: Tuple[str, ...]
+"""Melody: silent movie era chase scene."""
+
 BA_DING: Tuple[str, ...]
+"""Melody: a short signal to indicate something has happened."""
+
 WAWAWAWAA: Tuple[str, ...]
+"""Melody: a very sad trombone."""
+
 JUMP_UP: Tuple[str, ...]
+"""Melody: for use in a game, indicating upward movement."""
+
 JUMP_DOWN: Tuple[str, ...]
+"""Melody: for use in a game, indicating downward movement."""
+
 POWER_UP: Tuple[str, ...]
+"""Melody: a fanfare to indicate an achievement unlocked."""
+
 POWER_DOWN: Tuple[str, ...]
+"""Melody: a sad fanfare to indicate an achievement lost."""
 
 def set_tempo(ticks: int = 4, bpm: int = 120) -> None:
     """
