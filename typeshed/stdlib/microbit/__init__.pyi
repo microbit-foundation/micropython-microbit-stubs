@@ -179,27 +179,69 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
             ...
 
 pin0: MicroBitTouchPin
+"""A MicroBitTouchPin labelled 0 on the board."""
+
 pin1: MicroBitTouchPin
+"""A MicroBitTouchPin labelled 1 on the board."""
+
 pin2: MicroBitTouchPin
+"""A MicroBitTouchPin labelled 2 on the board."""
+
 pin3: MicroBitAnalogDigitalPin
+"""A MicroBitAnalogDigitalPin."""
+
 pin4: MicroBitAnalogDigitalPin
+"""A MicroBitAnalogDigitalPin."""
+
 pin5: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin6: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin7: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin8: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin9: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin10: MicroBitAnalogDigitalPin
+"""A MicroBitAnalogDigitalPin."""
+
 pin11: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin12: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin13: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin14: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin15: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin16: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin19: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
+
 pin20: MicroBitDigitalPin
+"""A MicroBitDigitalPin."""
 
 pin_logo: MicroBitTouchPin
+"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."""
+
 pin_speaker: MicroBitAnalogDigitalPin
+"""A pin to address the micro:bit speaker.
+
+This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128)."""
 
 class Image:
     """The ``Image`` class is used to create images that can be displayed easily on
@@ -210,71 +252,200 @@ class Image:
     """
 
     HEART: Image
+    """An image."""
+
     HEART_SMALL: Image
+    """An image."""
+
     HAPPY: Image
+    """An image."""
+
     SMILE: Image
+    """An image."""
+
     SAD: Image
+    """An image."""
+
     CONFUSED: Image
+    """An image."""
+
     ANGRY: Image
+    """An image."""
+
     ASLEEP: Image
+    """An image."""
+
     SURPRISED: Image
+    """An image."""
+
     SILLY: Image
+    """An image."""
+
     FABULOUS: Image
+    """An image."""
+
     MEH: Image
+    """An image."""
+
     YES: Image
+    """An image."""
+
     NO: Image
+    """An image."""
+
     CLOCK12: Image
+    """An image."""
+
     CLOCK11: Image
+    """An image."""
+
     CLOCK10: Image
+    """An image."""
+
     CLOCK9: Image
+    """An image."""
+
     CLOCK8: Image
+    """An image."""
+
     CLOCK7: Image
+    """An image."""
+
     CLOCK6: Image
+    """An image."""
+
     CLOCK5: Image
+    """An image."""
+
     CLOCK4: Image
+    """An image."""
+
     CLOCK3: Image
+    """An image."""
+
     CLOCK2: Image
+    """An image."""
+
     CLOCK1: Image
+    """An image."""
+
     ARROW_N: Image
+    """An image."""
+
     ARROW_NE: Image
+    """An image."""
+
     ARROW_E: Image
+    """An image."""
+
     ARROW_SE: Image
+    """An image."""
+
     ARROW_S: Image
+    """An image."""
+
     ARROW_SW: Image
+    """An image."""
+
     ARROW_W: Image
+    """An image."""
+
     ARROW_NW: Image
+    """An image."""
+
     TRIANGLE: Image
+    """An image."""
+
     TRIANGLE_LEFT: Image
+    """An image."""
+
     CHESSBOARD: Image
+    """An image."""
+
     DIAMOND: Image
+    """An image."""
+
     DIAMOND_SMALL: Image
+    """An image."""
+
     SQUARE: Image
+    """An image."""
+
     SQUARE_SMALL: Image
+    """An image."""
+
     RABBIT: Image
+    """An image."""
+
     COW: Image
+    """An image."""
+
     MUSIC_CROTCHET: Image
+    """An image."""
+
     MUSIC_QUAVER: Image
+    """An image."""
+
     MUSIC_QUAVERS: Image
+    """An image."""
+
     PITCHFORK: Image
+    """An image."""
+
     XMAS: Image
+    """An image."""
+
     PACMAN: Image
+    """An image."""
+
     TARGET: Image
+    """An image."""
+
     TSHIRT: Image
+    """An image."""
+
     ROLLERSKATE: Image
+    """An image."""
+
     DUCK: Image
+    """An image."""
+
     HOUSE: Image
+    """An image."""
+
     TORTOISE: Image
+    """An image."""
+
     BUTTERFLY: Image
+    """An image."""
+
     STICKFIGURE: Image
+    """An image."""
+
     GHOST: Image
+    """An image."""
+
     SWORD: Image
+    """An image."""
+
     GIRAFFE: Image
+    """An image."""
+
     SKULL: Image
+    """An image."""
+
     UMBRELLA: Image
+    """An image."""
+
     SNAKE: Image
+    """An image."""
 
     ALL_CLOCKS: List[Image]
+    """A list containing all the CLOCK_ images in sequence."""
+
     ALL_ARROWS: List[Image]
+    """A list containing all the ARROW_ images in sequence."""
+
     @overload
     def __init__(self, string: str) -> None:
         """``string`` has to consist of digits 0-9 arranged into lines,
