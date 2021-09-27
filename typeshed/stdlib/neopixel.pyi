@@ -41,7 +41,7 @@ from .microbit import MicroBitDigitalPin
 from typing import Tuple
 
 class NeoPixel:
-    def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int = ...) -> None:
+    def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int = 3 -> None:
         """
         Initialise a new strip of ``n`` number of neopixel LEDs controlled via pin
         ``pin``. The **V2** micro:bit can also support RGBW neopixels, so a third
