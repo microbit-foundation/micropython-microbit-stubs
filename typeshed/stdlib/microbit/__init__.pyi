@@ -609,12 +609,31 @@ class Sound:
     """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
 
     GIGGLE: Sound
+    """A sound."""
+
     HAPPY: Sound
+    """A sound."""
+
     HELLO: Sound
+    """A sound."""
+
     MYSTERIOUS: Sound
+    """A sound."""
+
     SAD: Sound
+    """A sound."""
+
     SLIDE: Sound
+    """A sound."""
+
     SOARING: Sound
+    """A sound."""
+
     SPRING: Sound
+    """A sound."""
+
     TWINKLE: Sound
+    """A sound."""
+
     YAWN: Sound
+    """A sound."""
