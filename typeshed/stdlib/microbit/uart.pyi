@@ -72,11 +72,10 @@ def read(nbytes: int = None) -> bytes:
 
     Return value: a bytes object or ``None`` on timeout.
 
-    A bytes object contains a sequence of bytes. Because
-    `ASCII <https://en.wikipedia.org/wiki/ASCII>`_ characters can fit in
-    single bytes this type of object is often used to represent simple text
-    and offers methods to manipulate it as such, e.g. you can display the text
-    using the ``print()`` function.
+    A bytes object contains a sequence of bytes. Because `ASCII <https://en.wikipedia.org/wiki/ASCII>`_
+    characters can fit in single bytes this type of object is often used to
+    represent simple text and offers methods to manipulate it as such, e.g.
+    you can display the text using the ``print()`` function.
 
     You can also convert this object into a string object, and if there are
     non-ASCII characters present the encoding can be specified::

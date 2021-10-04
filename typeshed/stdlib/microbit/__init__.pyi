@@ -47,7 +47,7 @@ def set_volume(v: int) -> None:
     """Sets the volume. ``v`` is a value between 0 and 255.
 
     **V2** only.
-    
+
     Out of range values will be clamped to 0 or 255.
     """
     ...
@@ -445,7 +445,6 @@ class Image:
 
     ALL_ARROWS: List[Image]
     """A list containing all the ARROW_ images in sequence."""
-
     @overload
     def __init__(self, string: str) -> None:
         """``string`` has to consist of digits 0-9 arranged into lines,
@@ -458,13 +457,13 @@ class Image:
                           "90009")
 
         will create a 5×5 image of an X. The end of a line is indicated by a
-        colon. It's also possible to use a newline (\n) to indicate the end of
+        colon. It's also possible to use a newline (\\n) to indicate the end of
         a line like this::
 
-            image = Image("90009\n"
-                          "09090\n"
-                          "00900\n"
-                          "09090\n"
+            image = Image("90009\\n"
+                          "09090\\n"
+                          "00900\\n"
+                          "09090\\n"
                           "90009")
         """
         ...
