@@ -89,12 +89,12 @@ def set_tempo(ticks: int = 4, bpm: int = 120) -> None:
 
     Suggested default values allow the following useful behaviour:
 
-        music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
-        music.set_tempo(ticks=8) - change the “definition” of a beat
-        music.set_tempo(bpm=180) - just change the tempo
+    - music.set_tempo() – reset the tempo to default of ticks = 4, bpm = 120
+    - music.set_tempo(ticks=8) – change the “definition” of a beat
+    - music.set_tempo(bpm=180) – just change the tempo
 
     To work out the length of a tick in milliseconds is very simple arithmetic:
-    60000/bpm/ticks_per_beat . For the default values that’s
+    60000/bpm/ticks_per_beat. For the default values that’s
     60000/120/4 = 125 milliseconds or 1 beat = 500 milliseconds.
     """
     ...

@@ -84,8 +84,8 @@ def config(
 
     The ``data_rate`` (default=radio.RATE_1MBIT) indicates the speed at which
     data throughput takes place. Can be one of the following contants defined
-    in the ``radio`` module : ``RATE_250KBIT``, ``RATE_1MBIT`` or
-    ``RATE_2MBIT``.
+    in the ``radio`` module:
+    ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.
 
     If ``config`` is not called then the defaults described above are assumed.
     """

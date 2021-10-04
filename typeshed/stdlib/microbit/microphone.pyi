@@ -53,7 +53,7 @@ def set_threshold(event: SoundEvent, value: int) -> None:
 
 def sound_level() -> int:
     """
-    * **return**: a representation of the sound pressure level in the range 0 to
-      255.
+    * **return**: a representation of the sound pressure level in the range 0
+      to 255.
     """
     ...

@@ -41,10 +41,10 @@ from .microbit import MicroBitDigitalPin
 from typing import Tuple
 
 class NeoPixel:
-    def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int = 3 -> None:
+    def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int = 3) -> None:
         """
-        Initialise a new strip of ``n`` number of neopixel LEDs controlled via pin
-        ``pin``. The **V2** micro:bit can also support RGBW neopixels, so a third
+        Initialise a new strip of ``n`` number of neopixel LEDs controlled via pin ``pin``.
+        The **V2** micro:bit can also support RGBW neopixels, so a third
         argument can be passed to ``NeoPixel`` to indicate the number of bytes per
         pixel (bpp). For RGBW, this is is ``4`` rather than the default of ``3`` for
         RGB and GRB.
