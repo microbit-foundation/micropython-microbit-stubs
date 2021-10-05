@@ -1,9 +1,4 @@
-"""This module allows you to play your own sounds. If you are using a micro:bit
-**V2**, ``audio`` is also part of the ``microbit`` module.
-
-By default sound output will be via the edge connector on pin 0 and the
-:doc:`built-in speaker <speaker>` **V2**. You can connect wired headphones or
-a speaker to pin 0 and GND on the edge connector to hear the sounds.
+"""Play sounds using the micro:bit (import ``audio`` for V1 compatibility).
 """
 
 from .microbit import MicroBitDigitalPin, Sound, pin0
@@ -15,39 +10,35 @@ def play(
     pin: MicroBitDigitalPin = pin0,
     return_pin: Union[MicroBitDigitalPin, None] = None,
 ) -> None:
-    """Play the source to completion.
+    """Play a sound, for example ``audio.play(Sound.GIGGLE)``.
 
-    * **source**: ``Sound`` - The ``microbit`` module contains a list of
-      built-in sounds that your can pass to ``audio.play()``.
-
-    * **source**: ``AudioFrame`` - The source agrument can also be an iterable
-      of ``AudioFrame`` elements as described below.
-
-    * **wait**: If ``wait`` is ``True``, this function will block until the
-      source is exhausted.
-
-    * **pin**: An optional argument to specify the output pin can be used to
-    override the default of ``pin0``. If we do not want any sound to play
-    we can use ``pin=None``.
-
-    * **return_pin**: specifies a differential edge connector pin to connect
-      to an external speaker instead of ground. This is ignored for the **V2**
-      revision.
+    :param source: A built-in ``Sound`` such as ``Sound.GIGGLE`` or sample data as an iterable of ``AudioFrame`` objects.
+    :param wait: If ``wait`` is ``True``, this function will block until the sound is complete.
+    :param pin: An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``.
+    :param return_pin: Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision.
     """
 
 def is_playing() -> bool:
-    """Return ``True`` if audio is playing, otherwise return ``False``."""
+    """Check whether a sound is playing.
+
+    :return: ``True`` if audio is playing, otherwise ``False``."""
     ...
 
 def stop() -> None:
-    """Stops all audio playback."""
+    """Stop all audio playback."""
     ...
 
 class AudioFrame:
-    """An ``AudioFrame`` object is a list of 32 samples each of which is a signed byte
-    (whole number between -128 and 127).
+    """An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte
+    (whole number between 0 and 255).
 
     It takes just over 4 ms to play a single frame.
+
+    Example::
+
+        frame = AudioFrame()
+        for i in range(len(frame)):
+          frame[i] = 252 - i * 8
     """
 
     def __len__(self) -> int: ...
