@@ -1,4 +1,4 @@
-"""Communicate between micro:bitrs with the built-in radio.
+"""Communicate between micro:bits with the built-in radio.
 """
 
 from _typeshed import WriteableBuffer
