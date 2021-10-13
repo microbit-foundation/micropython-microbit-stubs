@@ -30,7 +30,7 @@ def clear() -> None:
 def show(image: Image) -> None:
     """Display an ``image``, for example ``Image.HEART``.
 
-    :param image: An image. Use a built-in image, such as ``Image.HAPPY`` or create one using the ``Image`` class.
+    :param image: An image. Use a built-in image, such as ``Image.HAPPY``, or create one using the ``Image`` class.
     """
     ...
 
