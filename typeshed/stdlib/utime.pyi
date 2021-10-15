@@ -89,7 +89,7 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
     patterns, among them:
 
     Polling with timeout. In this case, the order of events is known, and you
-    will deal only with positive results of :func:`utime.ticks_diff()`:
+    will deal only with positive results of :func:`utime.ticks_diff()`::
 
         # Wait for GPIO pin to be asserted, but at most 500us
         start = time.ticks_us()
@@ -99,7 +99,7 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
 
 
     Scheduling events. In this case, :func:`utime.ticks_diff()` result may be
-    negative if an event is overdue:
+    negative if an event is overdue::
 
         # This code snippet is not optimized
         now = time.ticks_ms()

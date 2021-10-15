@@ -8,7 +8,7 @@ def const(expr: _T) -> _T:
     """Used to declare that the expression is a constant so that the compiler can
     optimise it.
 
-    The use of this function should be as follows:
+    The use of this function should be as follows::
 
         from micropython import const
         CONST_X = const(123)

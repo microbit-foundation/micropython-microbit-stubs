@@ -74,7 +74,7 @@ def write(buf: Union[bytes, str]) -> Optional[int]:
     :param buf: A bytes object or a string.
     :return: The number of bytes written, or ``None`` on timeout.
 
-    Examples:
+    Examples::
 
         uart.write('hello world')
         uart.write(b'hello world')
