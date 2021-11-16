@@ -1,4 +1,4 @@
-"""Log data to your micro:bit."""
+"""Log data to your micro:bit V2."""
 
 from typing import Literal, Optional, Union, overload
 
