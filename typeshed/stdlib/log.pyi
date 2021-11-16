@@ -43,11 +43,11 @@ def set_labels(
 def add(
     log_data: Optional[dict[str, Union[str, int, float]]],
 ) -> None:
-    """Add a data row to the log using positional arguments.
+    """Add a data row to the log by passing a dictionary of headers and values.
 
     For example::
 
-        log.add(temp=temperature())
+        log.add({ "temp": temperature() })
 
     Each call to this function adds a row to the log.
 
