@@ -16,42 +16,21 @@ from . import uart as uart
 # V2 only
 from .. import audio as audio
 
-@overload
 def run_every(
-    callback: Callable[[], None],
-    days: int = 0,
-    h: int = 0,
-    min: int = 0,
-    s: int = 0,
-    ms: int = 0,
-) -> None:
-    """Schedule a function to be called at a given interval **V2 only**.
-
-    For example::
-
-        run_every(your_function, h=1, min=20, s=30, ms=50)
-
-    Arguments with different time units are additive.
-
-    :param callback: The callback to invoke.
-    :param days: The interval in days.
-    :param h: The interval in hours.
-    :param min: The interval in minutes.
-    :param s: The interval in seconds.
-    :param ms: The interval in milliseconds.
-    """
-
-@overload
-def run_every(
+    callback: Optional[Callable[[], None]] = None,
     days: int = 0,
     h: int = 0,
     min: int = 0,
     s: int = 0,
     ms: int = 0,
 ) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Decorator to schedule a function to be called at a given interval **V2 only**.
+    """Schedule a function to be called at a given interval **V2 only**.
 
-    For example::
+    This function can be passed a callback::
+
+        run_every(your_function, h=1, min=20, s=30, ms=50)
+
+    or used as a decorator::
 
         @run_every(h=1, min=20, s=30, ms=50)
         def your_function():
@@ -59,6 +38,7 @@ def run_every(
 
     Arguments with different time units are additive.
 
+    :param callback: The callback to invoke. Omit when using as a decorator.
     :param days: The interval in days.
     :param h: The interval in hours.
     :param min: The interval in minutes.
