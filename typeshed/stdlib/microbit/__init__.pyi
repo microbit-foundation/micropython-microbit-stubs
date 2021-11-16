@@ -48,7 +48,7 @@ def run_every(
     min: int = 0,
     s: int = 0,
     ms: int = 0,
-) -> Callable[[Callable[[], None]], None]:
+) -> Callable[[Callable[[], None]], Callable[[], None]]:
     """Decorator to schedule a function to be called at a given interval **V2 only**.
 
     For example::
