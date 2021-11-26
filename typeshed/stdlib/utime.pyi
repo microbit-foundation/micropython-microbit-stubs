@@ -1,58 +1,64 @@
-"""
-The ``utime`` module provides functions for getting the current time and date, 
-measuring time intervals, and for delays.
-
-.. note::
-    The ``utime`` module is a MicroPython implementation of the standard Python 
-    ``time`` module. It can be imported using both ``import utime`` and 
-    ``import time``, but the module is the same.
+"""Measure time and add delays to programs.
 """
 
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
     """
-    Sleep for the given number of seconds. You can use a floating-point number
-    to sleep for a fractional number of seconds, or use the
-    :func:`utime.sleep_ms()` and :func:`utime.sleep_us()` functions.
+    Delay a number of seconds.
+
+    :param seconds: The number of seconds to sleep for. Use a floating-point
+    number to sleep for a fractional number of seconds.
     """
     ...
 
 def sleep_ms(ms: int) -> None:
     """
-    Delay for given number of milliseconds, should be positive or 0.
+    Delay for given number of milliseconds.
+
+    :param ms: The number of milliseconds delay (>= 0).
     """
     ...
 
 def sleep_us(us: int) -> None:
     """
-    Delay for given number of microseconds, should be positive or 0.
+    Delay for given number of microseconds.
+
+    :param ms: The number of microseconds delay (>= 0).
     """
     ...
 
 def ticks_ms() -> int:
     """
-    Returns an increasing millisecond counter with an arbitrary reference point,
+    Get an increasing, millisecond counter with an arbitrary reference point,
     that wraps around after some value.
+
+    :return: The counter value in milliseconds.
     """
     ...
 
 def ticks_us() -> int:
     """
-    Just like :func:`utime.ticks_ms()` above, but in microseconds.
+    Get an increasing, microsecond counter with an arbitrary reference point,
+    that wraps around after some value.
+
+    :return: The counter value in microsecond.
     """
     ...
 
 def ticks_add(ticks: int, delta: int) -> int:
     """
     Offset ticks value by a given number, which can be either positive or
-    negative. Given a ticks value, this function allows to calculate ticks
+    negative.
+
+    Given a ticks value, this function allows to calculate ticks
     value delta ticks before or after it, following modular-arithmetic
     definition of tick values.
 
-    Example:
+    :param ticks: A ticks value
+    :param delta: An integer offset
 
-    .. code-block:: python
+    Example:
 
         # Find out what ticks value there was 100ms ago
         print(ticks_add(time.ticks_ms(), -100))
@@ -70,19 +76,20 @@ def ticks_add(ticks: int, delta: int) -> int:
 def ticks_diff(ticks1: int, ticks2: int) -> int:
     """
     Measure ticks difference between values returned from
-    :func:`utime.ticks_ms()` or :func:`ticks_us()` functions, as a signed value
+    ``utime.ticks_ms()`` or ``ticks_us()``, as a signed value
     which may wrap around.
+
+    :param ticks1: The value to subtract from
+    :param ticks2: The value to subtract
 
     The argument order is the same as for subtraction operator,
     ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.
 
-    :func:`utime.ticks_diff()` is designed to accommodate various usage
+    ``ticks_diff()`` is designed to accommodate various usage
     patterns, among them:
 
     Polling with timeout. In this case, the order of events is known, and you
-    will deal only with positive results of :func:`utime.ticks_diff()`:
-
-    .. code-block:: python
+    will deal only with positive results of :func:`utime.ticks_diff()`::
 
         # Wait for GPIO pin to be asserted, but at most 500us
         start = time.ticks_us()
@@ -92,10 +99,7 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
 
 
     Scheduling events. In this case, :func:`utime.ticks_diff()` result may be
-    negative if an event is overdue:
-
-
-    .. code-block:: python
+    negative if an event is overdue::
 
         # This code snippet is not optimized
         now = time.ticks_ms()

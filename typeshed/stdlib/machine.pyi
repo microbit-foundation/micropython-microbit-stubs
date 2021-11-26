@@ -1,56 +1,57 @@
-"""The machine module contains specific functions related to the micro:bit 
-hardware. Most functions in this module allow to achieve direct and 
-unrestricted access to and control of hardware blocks on a system (like CPU, 
-timers, buses, etc.). Used incorrectly, this can lead to malfunction, lockups, 
-crashes of your board, and in extreme cases, hardware damage.
+"""Low-level utilities.
 """
+from typing import Any
 from .microbit import MicroBitDigitalPin
 
 def unique_id() -> bytes:
-    """Returns a byte string with a unique identifier of a board. It will vary
-    from one board instance to another.
+    """Get a byte string with a unique identifier of a board.
+
+    :return: An identifier that varies from one board instance to another.
     """
     ...
 
 def reset() -> None:
-    """Resets the device in a manner similar to pushing the external RESET button."""
+    """Reset the device in a manner similar to pushing the external RESET button."""
     ...
 
 def freq() -> int:
-    """Returns CPU frequency in hertz."""
-    ...
+    """Get the CPU frequency in hertz.
 
-def disable_irq() -> None:
-    """Disable interrupt requests. Returns the previous IRQ state which should be
-    considered an opaque value. This return value should be passed to the
-    :func:`machine.enable_irq()` function to restore interrupts to their
-    original state, before :func:`machine.disable_irq()` was called.
+    :return: The CPU frequency.
     """
     ...
 
-def enable_irq() -> None:
-    """Re-enable interrupt requests. The *state* parameter should be the value
-    that was returned from the most recent call to the
-    :func:`machine.disable_irq()` function.
+def disable_irq() -> Any:
+    """Disable interrupt requests.
+
+    :return: the previous IRQ state which should be considered an opaque value
+
+    The return value should be passed to the ``enable_irq`` function to restore
+    interrupts to their original state.
+    """
+    ...
+
+def enable_irq(state: Any) -> None:
+    """Re-enable interrupt requests.
+
+    :param state: The value that was returned from the most recent call to the ``disable_irq`` function.
     """
     ...
 
 def time_pulse_us(
     pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int = 1000000
 ) -> int:
-    """Time a pulse on the given *pin*, and return the duration of the pulse in
-    microseconds. The *pulse_level* argument should be 0 to time a low pulse or
-    1 to time a high pulse.
+    """Time a pulse on a pin.
 
-    If the current input value of the pin is different to *pulse_level*, the
-    function first (*) waits until the pin input becomes equal to
-    *pulse_level*, then (**) times the duration that the pin is equal to
-    *pulse_level*. If the pin is already equal to *pulse_level* then timing
+    If the current input value of the pin is different to ``pulse_level``, the
+    function first waits until the pin input becomes equal to
+    ``pulse_level``, then times the duration that the pin is equal to
+    ``pulse_level``. If the pin is already equal to ``pulse_level`` then timing
     starts straight away.
 
-    The function will return -2 if there was timeout waiting for condition
-    marked (*) above, and -1 if there was timeout during the main measurement,
-    marked (**) above. The timeout is the same for both cases and given by
-    *timeout_us* (which is in microseconds).
+    :param pin: The pin to use
+    :param pulse_level: 0 to time a low pulse or 1 to time a high pulse
+    :param timeout_us: A microsecond timeout
+    :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end
     """
     ...

@@ -1,64 +1,74 @@
-"""
-This module is based upon the ``random`` module in the Python standard library.
-It contains functions for generating random behaviour.
-
-To access this module you need to::
-
-    import random
+"""Generate random numbers.
 """
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:
-    """Returns an integer with ``n`` random bits.
+    """Generate an integer with ``n`` random bits.
 
-    .. warning::
-
-        Because the underlying generator function returns at most 30 bits, ``n``
-        may only be a value between 1-30 (inclusive)."""
+    :param n: A value between 1-30 (inclusive).
+    """
     ...
 
 def seed(n: int) -> None:
-    """Initialize the random number generator with a known integer ``n``. This
-    will give you reproducibly deterministic randomness from a given starting
+    """Initialize the random number generator.
+
+    :param n: The integer seed
+
+    This will give you reproducibly deterministic randomness from a given starting
     state (``n``).
     """
     ...
 
 def randint(a: int, b: int) -> int:
-    """Return a random integer ``N`` such that ``a <= N <= b``. Alias for
-    ``randrange(a, b+1)``.
+    """Choose a random integer between ``a`` and ``b`` inclusive.
+
+    :param a: Start value for the range (inclusive)
+    :param b: End value for the range (inclusive)
+
+    Alias for ``randrange(a, b + 1)``.
     """
     ...
 
 @overload
 def randrange(stop: int) -> int:
-    """Return a randomly selected integer between zero and up to (but not
+    """Choose a randomly selected integer between zero and up to (but not
     including) ``stop``.
+
+    :param stop: End value for the range (exclusive)
     """
     ...
 
 @overload
 def randrange(start: int, stop: int, step: int = 1) -> int:
     """
-    Return a randomly selected element from ``range(start, stop, step)``.
+    Choose a randomly selected element from ``range(start, stop, step)``.
+
+    :param start: The start of the range (inclusive)
+    :param stop: The end of the range (exclusive)
+    :param step: The step.
     """
     ...
 
 _T = TypeVar("_T")
 
 def choice(seq: Sequence[_T]) -> _T:
-    """Return a random element from the non-empty sequence ``seq``. If ``seq`` is
-    empty, raises ``IndexError``.
+    """Choose a random element from the non-empty sequence ``seq``.
+
+    :param seq: A sequence.
+
+    If ``seq`` is  empty, raises ``IndexError``.
     """
     ...
 
 def random() -> float:
-    """Return the next random floating point number in the range [0.0, 1.0)"""
+    """Generate a random floating point number in the range [0.0, 1.0).
+
+    :return: The random floating point number
+    """
     ...
 
 def uniform(a: float, b: float) -> float:
     """
-    Return a random floating point number ``N`` such that ``a <= N <= b``
-    for ``a <= b`` and ``b <= N <= a`` for ``b < a``.
+    Return a random floating point number between ``a`` and ``b`` inclusive.
     """
     ...

@@ -1,7 +1,7 @@
-"""The ``microbit`` module gives you access to all the hardware that is built-in
-into your board.
+"""Pins, images, sounds, temperature and volume.
 """
 
+from _typeshed import ReadableBuffer
 from typing import Any, Callable, List, Optional, overload
 
 from . import accelerometer as accelerometer
@@ -47,142 +47,161 @@ def run_every(
     """
 
 def panic(n: int) -> None:
-    """Enter a panic mode. Requires restart. Pass in an arbitrary integer <= 255
-    to indicate a status::
+    """Enter a panic mode.
 
-        microbit.panic(255)
+    :param n: An arbitrary integer <= 255 to indicate a status.
+
+    Requires restart.
     """
 
 def reset() -> None:
     """Restart the board."""
 
 def sleep(n: float) -> None:
-    """Wait for ``n`` milliseconds. One second is 1000 milliseconds, so::
+    """Wait for ``n`` milliseconds.
+
+    :param n: The number of milliseconds to wait
+
+    One second is 1000 milliseconds, so::
 
         microbit.sleep(1000)
 
-    will pause the execution for one second.  ``n`` can be an integer or
-    a floating point number.
+    will pause the execution for one second.
     """
 
 def running_time() -> int:
-    """Return the number of milliseconds since the board was switched on or
-    restarted.
+    """Get the running time of the board.
+
+    :return: The number of milliseconds since the board was switched on or restarted.
     """
 
 def temperature() -> int:
-    """Return the temperature of the micro:bit in degrees Celcius."""
+    """Get the temperature of the micro:bit in degrees Celcius."""
 
 def set_volume(v: int) -> None:
-    """Sets the volume. ``v`` is a value between 0 and 255.
+    """Sets the volume.
 
-    **V2** only.
+    :param v: a value between 0 (low) and 255 (high).
 
     Out of range values will be clamped to 0 or 255.
+
+    **V2** only.
     """
     ...
 
 class Button:
-    """Represents a button.
-
-    .. note::
-        This class is not actually available to the user, it is only used by
-        the two button instances, which are provided already initialized.
-    """
+    """The class for the buttons `button_a` and `button_b`."""
 
     def is_pressed(self) -> bool:
-        """Returns ``True`` if the specified button ``button`` is pressed, and
-        ``False`` otherwise.
+        """Check if the button is pressed.
+
+        :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise.
         """
         ...
     def was_pressed(self) -> bool:
-        """Returns ``True`` or ``False`` to indicate if the button was pressed
-        since the device started or the last time this method was called.
+        """Check if the button was pressed since the device started or the last time this method was called.
 
         Calling this method will clear the press state so
         that the button must be pressed again before this method will return
         ``True`` again.
+
+        :return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise
         """
         ...
     def get_presses(self) -> int:
-        """Returns the running total of button presses, and resets this total
+        """Get the running total of button presses, and resets this total
         to zero before returning.
+
+        :return: The number of presses since the device started or the last time this method was called
         """
         ...
 
 button_a: Button
-"""A ``Button`` instance representing the left button."""
+"""The left button ``Button`` object."""
 
 button_b: Button
-"""Represents the right button."""
+"""The right button ``Button`` object."""
 
 class MicroBitDigitalPin:
-    """The pins are your board's way to communicate with external devices connected to
-    it. There are 19 pins for your disposal, numbered 0-16 and 19-20. Pins 17 and
-    18 are not available. There is also a ``pin_logo`` **V2** and ``pin_speaker``
-    **V2** available to use with the latest micro:bit device.
+    """A digital pin.
+
+    Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses.
     """
 
     NO_PULL: int
     PULL_UP: int
     PULL_DOWN: int
     def read_digital(self) -> int:
-        """Return 1 if the pin is high, and 0 if it's low."""
+        """Get the digital value of the pin.
+
+        :return: 1 if the pin is high, and 0 if it's low.
+        """
         ...
     def write_digital(self, value: int) -> None:
-        """Set the pin to high if ``value`` is 1, or to low, if it is 0."""
+        """Set the digital value of the pin.
+
+        :param value: ``1`` to set the pin high or ``0`` to set the pin low"""
         ...
     def set_pull(self, value: int) -> None:
-        """Set the pull state to one of three possible values: ``pin.PULL_UP``,
-        ``pin.PULL_DOWN`` or ``pin.NO_PULL`` (where ``pin`` is an instance of
-        a pin). See below for discussion of default pull states.
+        """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
+
+        :param value: The pull state from the relevant pin, e.g. ``pin0.PULL_UP``.
         """
         ...
     def get_pull(self) -> int:
-        """Returns the pull configuration on a pin, which can be one of three
-        possible values: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``. These
-        are set using the ``set_pull()`` method or automatically configured
-        when a pin mode requires it."""
+        """Get the pull state on a pin.
+
+        :return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
+
+        These are set using the ``set_pull()`` method or automatically configured
+        when a pin mode requires it.
+        """
         ...
     def get_mode(self) -> str:
-        """Returns the pin mode. When a pin is used for a specific function, like
+        """Returns the pin mode.
+
+        When a pin is used for a specific function, like
         writing a digital value, or reading an analog value, the pin mode
-        changes. Pins can have one of the following modes: ``"unused"``,
-        ``"analog"``, ``"read_digital"``, ``"write_digital"``,
-        ``"display"``, ``"button"``, ``"music"``, ``"audio"``,
-        ``"touch"``, ``"i2c"``, ``"spi"``.
+        changes.
+
+        :return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``
         """
         ...
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
+    """A pin with analog and digital features."""
+
     def read_analog(self) -> int:
-        """Read the voltage applied to the pin, and return it as an integer
-        between 0 (meaning 0V) and 1023 (meaning 3.3V).
+        """Read the voltage applied to the pin.
+
+        :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V).
         """
     def write_analog(self, value: int) -> None:
-        """Output a PWM signal on the pin, with the duty cycle proportional to
-        the provided ``value``. The ``value`` may be either an integer or a
-        floating point number between 0 (0% duty cycle) and 1023 (100% duty).
+        """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
+
+        :param value: An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty).
         """
     def set_analog_period(self, period: int) -> None:
-        """Set the period of the PWM signal being output to ``period`` in
-        milliseconds. The minimum valid value is 1ms.
+        """Set the period of the PWM signal being output to ``period`` in milliseconds.
+
+        :param period: The period in milliseconds with a minium valid value of 1ms.
         """
     def set_analog_period_microseconds(self, period: int) -> None:
-        """Set the period of the PWM signal being output to ``period`` in
-        microseconds. The minimum valid value is 256µs.
+        """Set the period of the PWM signal being output to ``period`` in microseconds.
+
+        :param period: The period in microseconds with a minium valid value of 256µs.
         """
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
+    """A pin with analog, digital and touch features."""
+
     CAPACITIVE: int
     RESISTIVE: int
     def is_touched(self) -> bool:
-        """Return ``True`` if the pin is being touched with a finger, otherwise
-        return ``False``.
+        """Check if the pin is being touched.
 
-        .. note::
-            The default touch mode for the pins on the edge connector is
-            `resistive`. The default for the logo pin **V2** is `capacitive`.
+        The default touch mode for the pins on the edge connector is `resistive`.
+        The default for the logo pin **V2** is `capacitive`.
 
         **Resistive touch**
         This test is done by measuring how much resistance there is between the
@@ -195,75 +214,77 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
         using a finger as a conductor. `Capacitive touch
         <https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
         does not require you to make a ground connection as part of a circuit.
+
+        :return: ``True`` if the pin is being touched with a finger, otherwise return ``False``.
         """
         ...
         def set_touch_mode(value: int) -> None:
             """
-            .. note::
-                The default touch mode for the pins on the edge connector is
-                `resistive`. The default for the logo pin **V2** is `capacitive`.
+            The default touch mode for the pins on the edge connector is
+            `resistive`. The default for the logo pin **V2** is `capacitive`.
 
-            Set the touch mode for the given pin. Value can be either ``CAPACITIVE``
-            or ``RESISTIVE``. For example, ``pin0.set_touch_mode(pin0.CAPACITIVE)``.
+            Set the touch mode for the given pin. Value can be
+
+            :param value: ``CAPACITIVE`` or ``RESISTIVE``, for example, ``pin0.set_touch_mode(pin0.CAPACITIVE)``
             """
             ...
 
 pin0: MicroBitTouchPin
-"""A MicroBitTouchPin labelled 0 on the board."""
+"""Pin with digital, analog and touch features."""
 
 pin1: MicroBitTouchPin
-"""A MicroBitTouchPin labelled 1 on the board."""
+"""Pin with digital, analog and touch features."""
 
 pin2: MicroBitTouchPin
-"""A MicroBitTouchPin labelled 2 on the board."""
+"""Pin with digital, analog and touch features."""
 
 pin3: MicroBitAnalogDigitalPin
-"""A MicroBitAnalogDigitalPin."""
+"""Pin with digital and analog features."""
 
 pin4: MicroBitAnalogDigitalPin
-"""A MicroBitAnalogDigitalPin."""
+"""Pin with digital and analog features."""
 
 pin5: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin6: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin7: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin8: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin9: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin10: MicroBitAnalogDigitalPin
-"""A MicroBitAnalogDigitalPin."""
+"""Pin with digital and analog features."""
 
 pin11: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin12: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin13: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin14: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin15: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin16: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin19: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin20: MicroBitDigitalPin
-"""A MicroBitDigitalPin."""
+"""Pin with digital features."""
 
 pin_logo: MicroBitTouchPin
 """A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."""
@@ -271,204 +292,205 @@ pin_logo: MicroBitTouchPin
 pin_speaker: MicroBitAnalogDigitalPin
 """A pin to address the micro:bit speaker.
 
-This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128)."""
+This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
+"""
 
 class Image:
-    """The ``Image`` class is used to create images that can be displayed easily on
-    the device's LED matrix. Given an image object it's possible to display it via
-    the ``display`` API::
+    """An image to show on the micro:bit LED display.
+
+    Given an image object it's possible to display it via the ``display`` API::
 
         display.show(Image.HAPPY)
     """
 
     HEART: Image
-    """An image."""
+    """Heart image."""
 
     HEART_SMALL: Image
-    """An image."""
+    """Small heart image."""
 
     HAPPY: Image
-    """An image."""
+    """Happy face image."""
 
     SMILE: Image
-    """An image."""
+    """Smiling face image."""
 
     SAD: Image
-    """An image."""
+    """Sad face image."""
 
     CONFUSED: Image
-    """An image."""
+    """Confused face image."""
 
     ANGRY: Image
-    """An image."""
+    """Angry face image."""
 
     ASLEEP: Image
-    """An image."""
+    """Sleeping face image."""
 
     SURPRISED: Image
-    """An image."""
+    """Surprised face image."""
 
     SILLY: Image
-    """An image."""
+    """Silly face image."""
 
     FABULOUS: Image
-    """An image."""
+    """Subglasses face image."""
 
     MEH: Image
-    """An image."""
+    """Unimpressed face image."""
 
     YES: Image
-    """An image."""
+    """Tick image."""
 
     NO: Image
-    """An image."""
+    """Cross image."""
 
     CLOCK12: Image
-    """An image."""
+    """Image with line pointing to 12 o'clock."""
 
     CLOCK11: Image
-    """An image."""
+    """Image with line pointing to 11 o'clock."""
 
     CLOCK10: Image
-    """An image."""
+    """Image with line pointing to 10 o'clock."""
 
     CLOCK9: Image
-    """An image."""
+    """Image with line pointing to 9 o'clock."""
 
     CLOCK8: Image
-    """An image."""
+    """Image with line pointing to 8 o'clock."""
 
     CLOCK7: Image
-    """An image."""
+    """Image with line pointing to 7 o'clock."""
 
     CLOCK6: Image
-    """An image."""
+    """Image with line pointing to 6 o'clock."""
 
     CLOCK5: Image
-    """An image."""
+    """Image with line pointing to 5 o'clock."""
 
     CLOCK4: Image
-    """An image."""
+    """Image with line pointing to 4 o'clock."""
 
     CLOCK3: Image
-    """An image."""
+    """Image with line pointing to 3 o'clock."""
 
     CLOCK2: Image
-    """An image."""
+    """Image with line pointing to 2 o'clock."""
 
     CLOCK1: Image
-    """An image."""
+    """Image with line pointing to 1 o'clock."""
 
     ARROW_N: Image
-    """An image."""
+    """Image of arrow pointing north."""
 
     ARROW_NE: Image
-    """An image."""
+    """Image of arrow pointing north east."""
 
     ARROW_E: Image
-    """An image."""
+    """Image of arrow pointing east."""
 
     ARROW_SE: Image
-    """An image."""
+    """Image of arrow pointing south east."""
 
     ARROW_S: Image
-    """An image."""
+    """Image of arrow pointing south."""
 
     ARROW_SW: Image
-    """An image."""
+    """Image of arrow pointing south west."""
 
     ARROW_W: Image
-    """An image."""
+    """Image of arrow pointing west."""
 
     ARROW_NW: Image
-    """An image."""
+    """Image of arrow pointing north west."""
 
     TRIANGLE: Image
-    """An image."""
+    """Image of a triangle pointing up."""
 
     TRIANGLE_LEFT: Image
-    """An image."""
+    """Image of a triangle in the left corner."""
 
     CHESSBOARD: Image
-    """An image."""
+    """Alternate LEDs lit in a chessboard pattern."""
 
     DIAMOND: Image
-    """An image."""
+    """Diamond image."""
 
     DIAMOND_SMALL: Image
-    """An image."""
+    """Small diamond image."""
 
     SQUARE: Image
-    """An image."""
+    """Square image."""
 
     SQUARE_SMALL: Image
-    """An image."""
+    """Small square image."""
 
     RABBIT: Image
-    """An image."""
+    """Rabbit image."""
 
     COW: Image
-    """An image."""
+    """Cow image."""
 
     MUSIC_CROTCHET: Image
-    """An image."""
+    """Crotchet note image."""
 
     MUSIC_QUAVER: Image
-    """An image."""
+    """Quaver note image."""
 
     MUSIC_QUAVERS: Image
-    """An image."""
+    """Pair of quavers note image."""
 
     PITCHFORK: Image
-    """An image."""
+    """Pitchfork image."""
 
     XMAS: Image
-    """An image."""
+    """Christmas tree image."""
 
     PACMAN: Image
-    """An image."""
+    """Pac-Man arcade character image."""
 
     TARGET: Image
-    """An image."""
+    """Target image."""
 
     TSHIRT: Image
-    """An image."""
+    """T-shift image."""
 
     ROLLERSKATE: Image
-    """An image."""
+    """Rollerskate image."""
 
     DUCK: Image
-    """An image."""
+    """Duck image."""
 
     HOUSE: Image
-    """An image."""
+    """House image."""
 
     TORTOISE: Image
-    """An image."""
+    """Tortoise image."""
 
     BUTTERFLY: Image
-    """An image."""
+    """Butterfly image."""
 
     STICKFIGURE: Image
-    """An image."""
+    """Stick figure image."""
 
     GHOST: Image
-    """An image."""
+    """Ghost image."""
 
     SWORD: Image
-    """An image."""
+    """Sword image."""
 
     GIRAFFE: Image
-    """An image."""
+    """Giraffe image."""
 
     SKULL: Image
-    """An image."""
+    """Skull image."""
 
     UMBRELLA: Image
-    """An image."""
+    """Umbrella image."""
 
     SNAKE: Image
-    """An image."""
+    """Snake image."""
 
     ALL_CLOCKS: List[Image]
     """A list containing all the CLOCK_ images in sequence."""
@@ -477,7 +499,9 @@ class Image:
     """A list containing all the ARROW_ images in sequence."""
     @overload
     def __init__(self, string: str) -> None:
-        """``string`` has to consist of digits 0-9 arranged into lines,
+        """Create an image from a string describing which LEDs are lit.
+
+        ``string`` has to consist of digits 0-9 arranged into lines,
         describing the image, for example::
 
             image = Image("90009:"
@@ -487,88 +511,115 @@ class Image:
                           "90009")
 
         will create a 5×5 image of an X. The end of a line is indicated by a
-        colon. It's also possible to use a newline (\\n) to indicate the end of
-        a line like this::
+        colon. It's also possible to use newlines (\\n) insead of the colons.
 
-            image = Image("90009\\n"
-                          "09090\\n"
-                          "00900\\n"
-                          "09090\\n"
-                          "90009")
+        :param string: The string describing the image.
         """
         ...
     @overload
     def __init__(
-        self, width: int = None, height: int = None, buffer: Any = None
+        self, width: int = 5, height: int = 5, buffer: ReadableBuffer = None
     ) -> None:
         """Create an empty image with ``width`` columns and ``height`` rows.
-        Optionally ``buffer`` can be an array of ``width``×``height`` integers
-        in range 0-9 to initialize the image::
+
+        :param width: Optional width of the image
+        :param height: Optional height of the image
+        :param buffer: Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
+
+        Examples::
 
             Image(2, 2, b'\x08\x08\x08\x08')
-
-        or::
-
             Image(2, 2, bytearray([9,9,9,9]))
 
-        Will create a 2 x 2 pixel image at full brightness.
-
-        .. note::
-
-            Keyword arguments cannot be passed to ``buffer``.
+        These create 2 x 2 pixel images at full brightness.
         """
         ...
     def width(self) -> int:
-        """Return the number of columns in the image."""
+        """Get the number of columns.
+
+        :return: The number of columns in the image
+        """
         ...
     def height(self) -> int:
-        """Return the numbers of rows in the image."""
+        """Get the number of rows.
+
+        :return: The number of rows in the image
+        """
         ...
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """Set the brightness of the pixel at column ``x`` and row ``y`` to the
-        ``value``, which has to be between 0 (dark) and 9 (bright).
+        """Set the brightness of a pixel.
+
+        :param x: The column number
+        :param y: The row number
+        :param value: The brightness as an integer between 0 (dark) and 9 (bright)
 
         This method will raise an exception when called on any of the built-in
         read-only images, like ``Image.HEART``.
         """
         ...
     def get_pixel(self, x: int, y: int) -> int:
-        """Return the brightness of pixel at column ``x`` and row ``y`` as an
-        integer between 0 and 9.
+        """Get the brightness of a pixel.
+
+        :param x: The column number
+        :param y: The row number
+        :return: The brightness as an integer between 0 and 9.
         """
         ...
     def shift_left(self, n: int) -> Image:
-        """Return a new image created by shifting the picture left by ``n``
-        columns.
+        """Create a new image by shifting the picture left.
+
+        :param n: The number of columns to shift by
+        :return: The shifted image
         """
         ...
     def shift_right(self, n: int) -> Image:
-        """Same as ``image.shift_left(-n)``."""
+        """Create a new image by shifting the picture right.
+
+        :param n: The number of columns to shift by
+        :return: The shifted image
+        """
         ...
     def shift_up(self, n: int) -> Image:
-        """Return a new image created by shifting the picture up by ``n``
-        rows.
+        """Create a new image by shifting the picture up.
+
+        :param n: The number of rows to shift by
+        :return: The shifted image
         """
         ...
     def shift_down(self, n: int) -> Image:
-        """Same as ``image.shift_up(-n)``."""
+        """Create a new image by shifting the picture down.
+
+        :param n: The number of rows to shift by
+        :return: The shifted image
+        """
         ...
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Return a new image by cropping the picture to a width of ``w`` and a
-        height of ``h``, starting with the pixel at column ``x`` and row
-        ``y``.
+        """Create a new image by cropping the picture.
+
+        :param x: The crop offset column
+        :param y: The crop offset row
+        :param w: The crop width
+        :param h: The crop height
+        :return: The new image
         """
         ...
     def copy(self) -> Image:
-        """Return an exact copy of the image."""
+        """Create an exact copy of the image.
+
+        :return: The new image
+        """
         ...
     def invert(self) -> Image:
-        """Return a new image by inverting the brightness of the pixels in the
-        source image."""
+        """Create a new image by inverting the brightness of the pixels in the
+        source image.
+
+        :return: The new image.
+        """
         ...
     def fill(self, value: int) -> None:
-        """Set the brightness of all the pixels in the image to the
-        ``value``, which has to be between 0 (dark) and 9 (bright).
+        """Set the brightness of all the pixels in the image.
+
+        :param value: The new brightness as a number between 0 (dark) and 9 (bright).
 
         This method will raise an exception when called on any of the built-in
         read-only images, like ``Image.HEART``.
@@ -581,13 +632,20 @@ class Image:
         y: int,
         w: int,
         h: int,
-        xdest: int = ...,
-        ydest: int = ...,
+        xdest: int = 0,
+        ydest: int = 0,
     ) -> None:
-        """Copy the rectangle defined by ``x``, ``y``, ``w``, ``h`` from the
-        image ``src`` into this image at ``xdest``, ``ydest``. Areas in the
-        source rectangle, but outside the source image are treated as having a
-        value of 0.
+        """Copy an area from another image into this image.
+
+        :param src: The source image
+        :param x: The starting column offset in the source image
+        :param y: The starting row offset in the source image
+        :param w: The number of columns to copy
+        :param h: The number of rows to copy
+        :param xdest: The column offset to modify in this image
+        :param ydest: The row offset to modify in this image
+
+        Pixels outside the source image are treated as having a brightness of 0.
 
         ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
         and ``crop()`` can are all implemented by using ``blit()``.
@@ -628,41 +686,41 @@ class Image:
         ...
 
 class SoundEvent:
+    LOUD: SoundEvent
     """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
 
-    LOUD: SoundEvent
-    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
     QUIET: SoundEvent
+    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
 
 class Sound:
     """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
 
     GIGGLE: Sound
-    """A sound."""
+    """Giggling sound."""
 
     HAPPY: Sound
-    """A sound."""
+    """Happy sound."""
 
     HELLO: Sound
-    """A sound."""
+    """Greeting sound."""
 
     MYSTERIOUS: Sound
-    """A sound."""
+    """Mysterious sound."""
 
     SAD: Sound
-    """A sound."""
+    """Sad sound."""
 
     SLIDE: Sound
-    """A sound."""
+    """Sliding sound."""
 
     SOARING: Sound
-    """A sound."""
+    """Soaring sound."""
 
     SPRING: Sound
-    """A sound."""
+    """Spring sound."""
 
     TWINKLE: Sound
-    """A sound."""
+    """Twinkling sound."""
 
     YAWN: Sound
-    """A sound."""
+    """Yawning sound."""

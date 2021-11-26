@@ -1,7 +1,4 @@
-"""This is the ``music`` module and you can use it to create and play melodies.
-By default sound output will be via the edge connector on pin 0 and the
-:doc:`built-in speaker <speaker>` **V2**. You can connect wired headphones or
-a speaker to pin 0 and GND on the edge connector to hear the sound:
+"""Create and play melodies.
 """
 from typing import Tuple, Union, List
 
@@ -79,13 +76,10 @@ POWER_DOWN: Tuple[str, ...]
 """Melody: a sad fanfare to indicate an achievement lost."""
 
 def set_tempo(ticks: int = 4, bpm: int = 120) -> None:
-    """
-    Sets the approximate tempo for playback.
+    """Sets the approximate tempo for playback.
 
-    A number of ticks (expressed as an integer) constitute a beat.
-    Each beat is to be played at a certain frequency per minute
-    (expressed as the more familiar BPM - beats per minute -
-     also as an integer).
+    :param ticks: The number of ticks constituting a beat.
+    :param bpm: An integer determining how many beats per minute.
 
     Suggested default values allow the following useful behaviour:
 
@@ -100,37 +94,26 @@ def set_tempo(ticks: int = 4, bpm: int = 120) -> None:
     ...
 
 def get_tempo() -> Tuple[int, int]:
-    """
-    Gets the current tempo as a tuple of integers: (ticks, bpm).
+    """Gets the current tempo as a tuple of integers: ``(ticks, bpm)``.
+
+    :return: The temp as a tuple with two integer values, the ticks then the beats per minute.
     """
     ...
 
 def play(
     music: Union[str, List[str], Tuple[str, ...]],
-    pin: MicroBitDigitalPin = pin0,
+    pin: Union[MicroBitDigitalPin, None] = pin0,
     wait: bool = True,
     loop: bool = False,
 ) -> None:
-    """Plays ``music`` containing the musical DSL defined above.
+    """Plays music, for example ``music.play(music.NYAN)``.
 
-    If ``music`` is a string it is expected to be a single note such as,
-    ``'c1:4'``.
+    :param music: music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
+    :param pin: the output pin for use with an external speaker (default pin 0), ``None`` for no sound.
+    :param wait: If ``wait`` is set to ``True``, this function is blocking.
+    :param loop: If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted.
 
-    If ``music`` is specified as a list of notes (as defined in the section on
-    the musical DSL, above) then they are played one after the other to perform
-    a melody.
-
-    In both cases, the ``duration`` and ``octave`` values are reset to
-    their defaults before the music (whatever it may be) is played.
-
-    An optional argument to specify the output pin can be used to override the
-    default of ``microbit.pin0``. If we do not want any sound to play we can
-    use ``pin=None``.
-
-    If ``wait`` is set to ``True``, this function is blocking.
-
-    If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called
-    (see below) or the blocking call is interrupted.
+    Many built-in melodies are defined in this module.
     """
     ...
 
@@ -140,36 +123,32 @@ def pitch(
     pin: MicroBitDigitalPin = pin0,
     wait: bool = True,
 ) -> None:
-    """Plays a pitch at the integer frequency given for the specified number of
-    milliseconds. For example, if the frequency is set to 440 and the length to
+    """Play a note.
+
+    :param frequency: An integer frequency
+    :param duration: A millisecond duration. If negative then sound is contiuous until the next call or a call to ``stop``.
+    :param wait: If ``wait`` is set to ``True``, this function is blocking.
+
+    For example, if the frequency is set to 440 and the length to
     1000 then we hear a standard concert A for one second.
 
-    Note that you can only play one pitch on one pin at any one time.
-
-    An optional argument to specify the output pin can be used to override the
-    default of ``microbit.pin0``. If we do not want any sound to play out of
-    the pins we can use ``pin=None``.
-
-    If ``wait`` is set to ``True``, this function is blocking.
-
-    If ``duration`` is negative the pitch is played continuously until either
-    the blocking call is interrupted or, in the case of a background call, a
-    new frequency is set or ``stop`` is called (see below).
+    You can only play one pitch on one pin at any one time.
     """
     ...
 
 def stop(pin: MicroBitDigitalPin = pin0) -> None:
-    """Stops all music playback on the built-in speaker and any pin outputting
-    sound. An optional argument can be provided to specify a pin, eg.
-    ``music.stop(pin1)``.
+    """Stops all music playback on the built-in speaker and any pin outputting sound.
+
+    :param pin: An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``.
     """
 
 def reset() -> None:
-    """Resets the state of the following attributes in the following way:
+    """Resets ticks, bpm, duration and octave to their default values.
 
-    * ``ticks = 4``
-    * ``bpm = 120``
-    * ``duration = 4``
-    * ``octave = 4``
+    Values:
+    - ``ticks = 4``
+    - ``bpm = 120``
+    - ``duration = 4``
+    - ``octave = 4``
     """
     ...
