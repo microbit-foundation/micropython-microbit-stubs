@@ -218,16 +218,16 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
         :return: ``True`` if the pin is being touched with a finger, otherwise return ``False``.
         """
         ...
-        def set_touch_mode(value: int) -> None:
-            """
-            The default touch mode for the pins on the edge connector is
-            `resistive`. The default for the logo pin **V2** is `capacitive`.
+    def set_touch_mode(self, value: int) -> None:
+        """
+        The default touch mode for the pins on the edge connector is
+        `resistive`. The default for the logo pin **V2** is `capacitive`.
 
-            Set the touch mode for the given pin. Value can be
+        Set the touch mode for the given pin. Value can be
 
-            :param value: ``CAPACITIVE`` or ``RESISTIVE``, for example, ``pin0.set_touch_mode(pin0.CAPACITIVE)``
-            """
-            ...
+        :param value: ``CAPACITIVE`` or ``RESISTIVE``, for example, ``pin0.set_touch_mode(pin0.CAPACITIVE)``
+        """
+        ...
 
 pin0: MicroBitTouchPin
 """Pin with digital, analog and touch features."""
