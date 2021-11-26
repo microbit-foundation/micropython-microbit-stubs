@@ -1,3 +1,6 @@
+from microbit import *
+
+
 def clicker():
     global count
     count += 1
