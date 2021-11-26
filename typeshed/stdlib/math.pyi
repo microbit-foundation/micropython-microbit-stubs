@@ -144,10 +144,15 @@ def ldexp(x: float, exp: int) -> float:
     """
     ...
 
-def log(x: float) -> float:
-    """Calculate the natural logarithm of ``x``.
+def log(x: float, base: float = e) -> float:
+    """Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm).
+
+    With one argument, return the natural logarithm of x (to base e).
+
+    With two arguments, return the logarithm of x to the given base, calculated as ``log(x)/log(base)``.
 
     :param x: A number
+    :param e: The base to use
     :return: The natural logarithm of ``x``
     """
     ...
