@@ -1,0 +1,1 @@
+directions.reverse()  # type: ignore
