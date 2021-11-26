@@ -1,3 +1,4 @@
+from microbit import *
 import music
 
 
