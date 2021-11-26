@@ -1,0 +1,1 @@
+numbers = ['zero', 'one', 2]
