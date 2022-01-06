@@ -14,7 +14,7 @@ from . import spi as spi
 from . import uart as uart
 
 # V2 only
-from .. import audio as audio
+from . import audio as audio
 
 def run_every(
     callback: Optional[Callable[[], None]] = None,
