@@ -2,7 +2,7 @@
 """
 
 from typing import Optional, Tuple
-from . import SoundEvent
+from ..microbit import SoundEvent
 
 def current_event() -> Optional[SoundEvent]:
     """Get the last recorded sound event
