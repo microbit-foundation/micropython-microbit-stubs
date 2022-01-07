@@ -2,8 +2,7 @@
 """
 
 from _typeshed import ReadableBuffer, WriteableBuffer
-from . import pin13, pin14, pin15, MicroBitDigitalPin
-from typing import Union
+from ..microbit import pin13, pin14, pin15, MicroBitDigitalPin
 
 def init(
     baudrate: int = 1000000,

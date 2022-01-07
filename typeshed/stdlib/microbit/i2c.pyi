@@ -2,9 +2,8 @@
 """
 
 from _typeshed import ReadableBuffer
-from . import MicroBitDigitalPin, pin19, pin20
-from typing import List, Union
-from . import pin19, pin20
+from ..microbit import MicroBitDigitalPin, pin19, pin20
+from typing import List
 
 def init(
     freq: int = 100000, sda: MicroBitDigitalPin = pin20, scl: MicroBitDigitalPin = pin19

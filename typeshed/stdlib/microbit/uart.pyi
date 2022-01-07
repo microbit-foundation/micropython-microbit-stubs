@@ -1,8 +1,8 @@
 """Communicate with a device using a serial interface.
 """
 
-from _typeshed import ReadableBuffer, WriteableBuffer
-from . import MicroBitDigitalPin
+from _typeshed import WriteableBuffer
+from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
 
 ODD: int
