@@ -334,7 +334,7 @@ class Image:
     """Silly face image."""
 
     FABULOUS: Image
-    """Subglasses face image."""
+    """Sunglasses face image."""
 
     MEH: Image
     """Unimpressed face image."""
