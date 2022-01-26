@@ -1,10 +1,8 @@
 from microbit import *
 
+def image_wait(myImage):
+    display.show(myImage)
+    sleep(1000)
 
-def count(n):
-    for x in range(n):
-        display.show(x)
-        sleep(1000)
-
-count(5)
-count(9)
+image_wait(Image.HEART)
+image_wait(Image.HEART_SMALL)

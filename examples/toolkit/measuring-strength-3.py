@@ -1,4 +1,4 @@
 from microbit import *
 
-
-display.scroll(compass.get_x())
+magnet_strength_x = compass.get_x()
+display.scroll(magnet_strength_x)

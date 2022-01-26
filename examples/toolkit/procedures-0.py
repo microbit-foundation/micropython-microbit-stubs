@@ -1,9 +1,8 @@
 from microbit import *
 
+def heart_wait():
+    display.show(Image.HEART)
+    sleep(1000)
 
-def countdown():
-    for x in range(9,0,-1):
-        display.show(x)
-        sleep(1000)
-
-countdown()
+heart_wait()
+display.clear()

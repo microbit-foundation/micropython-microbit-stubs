@@ -1,4 +1,4 @@
 from microbit import *
 
-
-display.scroll(accelerometer.get_x())
+x_strength = accelerometer.get_x()
+display.scroll(x_strength)
