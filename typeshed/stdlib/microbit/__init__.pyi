@@ -184,12 +184,12 @@ class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
     def set_analog_period(self, period: int) -> None:
         """Set the period of the PWM signal being output to ``period`` in milliseconds.
 
-        :param period: The period in milliseconds with a minium valid value of 1ms.
+        :param period: The period in milliseconds with a minimum valid value of 1ms.
         """
     def set_analog_period_microseconds(self, period: int) -> None:
         """Set the period of the PWM signal being output to ``period`` in microseconds.
 
-        :param period: The period in microseconds with a minium valid value of 256µs.
+        :param period: The period in microseconds with a minimum valid value of 256µs.
         """
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
