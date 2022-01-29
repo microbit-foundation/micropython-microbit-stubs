@@ -71,7 +71,7 @@ def config(
     which you want to send your message.
 
     :param data_rate: (default=radio.RATE_1MBIT) indicates the speed at which
-    data throughput takes place. Can be one of the following contants defined
+    data throughput takes place. Can be one of the following constants defined
     in the ``radio`` module:
     ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.
 
@@ -149,7 +149,7 @@ def receive_full() -> Optional[Tuple[bytes, int, int]]:
             msg, rssi, timestamp = details
 
     This function is useful for providing information needed for triangulation
-    and/or triliteration with other micro:bit devices.
+    and/or trilateration with other micro:bit devices.
 
     :return: ``None`` if there is no message, otherwise a tuple of length three with the bytes, strength and timestamp values.
     """
