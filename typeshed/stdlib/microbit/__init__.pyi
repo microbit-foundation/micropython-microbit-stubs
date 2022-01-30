@@ -454,7 +454,7 @@ class Image:
     """Target image."""
 
     TSHIRT: Image
-    """T-shift image."""
+    """T-shirt image."""
 
     ROLLERSKATE: Image
     """Rollerskate image."""
