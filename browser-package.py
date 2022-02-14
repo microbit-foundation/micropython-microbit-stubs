@@ -16,8 +16,8 @@ for (source, prefix) in (("typeshed", "/typeshed/"), ("config", "/src/")):
                 prefix, os.path.join(*path.split(os.path.sep)[1:])
             )
             print(f"{path} -> {destination}")
-            text = open(path, "r").read()
+            text = open(path, "r", encoding="utf-8").read()
             results["files"][destination] = text
 
-with open("typeshed.json", "w") as f:
+with open("typeshed.json", "w", encoding="utf-8") as f:
     f.write(json.dumps(results, indent=2))
