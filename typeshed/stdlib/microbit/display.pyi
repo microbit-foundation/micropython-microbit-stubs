@@ -40,7 +40,7 @@ def show(
     When ``value`` is an image or a list of images then each image is displayed in turn.
     When ``value`` is a string or number then each letter or digit is displayed in turn.
 
-    :param value: The value to display, a string, number, image or iterable of images (such as a list).
+    :param value: A string, number, image or list of images to show.
     :param delay: Each letter, digit or image is shown with ``delay`` milliseconds between them.
     :param wait: If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.
     :param loop: If ``loop`` is ``True``, the animation will repeat forever.
