@@ -27,7 +27,7 @@ def clear() -> None:
     ...
 
 def show(
-    value: Union[str, float, int, Image, Iterable[Image]],
+    image: Union[str, float, int, Image, Iterable[Image]],
     delay: int = 400,
     wait: bool = True,
     loop: bool = False,
@@ -37,10 +37,10 @@ def show(
 
     For example, ``display.show(Image.HEART)`` or ``display.show("ABC")``.
 
-    When ``value`` is an image or a list of images then each image is displayed in turn.
-    When ``value`` is a string or number then each letter or digit is displayed in turn.
+    When ``image`` is an image or a list of images then each image is displayed in turn.
+    If ``image`` is a string or number, each letter or digit is displayed in turn.
 
-    :param value: A string, number, image or list of images to show.
+    :param image: A string, number, image or list of images to show.
     :param delay: Each letter, digit or image is shown with ``delay`` milliseconds between them.
     :param wait: If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.
     :param loop: If ``loop`` is ``True``, the animation will repeat forever.
