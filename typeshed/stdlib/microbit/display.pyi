@@ -26,32 +26,25 @@ def clear() -> None:
     """Set the brightness of all LEDs to 0 (off)."""
     ...
 
-@overload
-def show(image: Image) -> None:
-    """Display an ``image``, for example ``Image.HEART``.
-
-    :param image: An image. Use a built-in image, such as ``Image.HAPPY``, or create one using the ``Image`` class.
-    """
-    ...
-
-@overload
 def show(
-    iterable: Union[str, float, int, Iterable[Image]],
+    value: Union[str, float, int, Image, Iterable[Image]],
     delay: int = 400,
     wait: bool = True,
     loop: bool = False,
     clear: bool = False,
 ) -> None:
-    """Display letters or images in sequence.
+    """Shows images, letters or digits on the display.
 
-    If ``value`` is a string, float or integer, display letters/digits in sequence.
-    Otherwise, if ``value`` is an iterable sequence of images, display these images in sequence.
+    For example, ``display.show(Image.HEART)`` or ``display.show("ABC")``.
 
-    :param iterable: A value to display in sequence.
+    When ``value`` is an image or a list of images then each image is displayed in turn.
+    When ``value`` is a string or number then each letter or digit is displayed in turn.
+
+    :param value: A string, number, image or list of images to show.
     :param delay: Each letter, digit or image is shown with ``delay`` milliseconds between them.
     :param wait: If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.
     :param loop: If ``loop`` is ``True``, the animation will repeat forever.
-    :param clear: If ``clear`` is ``True``, the display will be cleared after the iterable has finished.
+    :param clear: If ``clear`` is ``True``, the display will be cleared after the sequence has finished.
 
     The ``wait``, ``loop`` and ``clear`` arguments must be specified using their keyword.
     """
