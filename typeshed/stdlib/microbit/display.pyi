@@ -51,7 +51,7 @@ def show(
     ...
 
 def scroll(
-    value: Union[str, float, int],
+    text: Union[str, float, int],
     delay: int = 150,
     wait: bool = True,
     loop: bool = False,
@@ -59,7 +59,7 @@ def scroll(
 ) -> None:
     """Scrolls a number or text on the display.
 
-    :param value: The string to scroll. If ``value`` is an integer or float it is first converted to a string using ``str()``.
+    :param text: The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``.
     :param delay: The ``delay`` parameter controls how fast the text is scrolling.
     :param wait: If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.
     :param loop: If ``loop`` is ``True``, the animation will repeat forever.
