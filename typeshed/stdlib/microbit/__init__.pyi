@@ -167,15 +167,6 @@ class MicroBitDigitalPin:
         :return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``
         """
         ...
-
-class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """A pin with analog and digital features."""
-
-    def read_analog(self) -> int:
-        """Read the voltage applied to the pin.
-
-        :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V).
-        """
     def write_analog(self, value: int) -> None:
         """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
 
@@ -190,6 +181,15 @@ class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
         """Set the period of the PWM signal being output to ``period`` in microseconds.
 
         :param period: The period in microseconds with a minimum valid value of 256µs.
+        """
+
+class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
+    """A pin with analog and digital features."""
+
+    def read_analog(self) -> int:
+        """Read the voltage applied to the pin.
+
+        :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V).
         """
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
