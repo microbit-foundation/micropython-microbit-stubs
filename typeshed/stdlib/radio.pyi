@@ -4,11 +4,6 @@
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 
-RATE_250KBIT: int
-"""Constant used to indicate a throughput of 256 Kbit a second. 
-
-Not available on V2."""
-
 RATE_1MBIT: int
 """Constant used to indicate a throughput of 1 MBit a second."""
 
