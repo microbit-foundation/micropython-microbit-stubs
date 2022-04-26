@@ -16,10 +16,12 @@ def init(
     bits: int = 8,
     parity: Optional[int] = None,
     stop: int = 1,
-    tx: MicroBitDigitalPin = None,
-    rx: MicroBitDigitalPin = None,
+    tx: Optional[MicroBitDigitalPin] = None,
+    rx: Optional[MicroBitDigitalPin] = None,
 ) -> None:
     """Initialize serial communication.
+
+    Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
     :param baudrate: The speed of communication.
     :param bits: The size of bytes being transmitted. micro:bit only supports 8.
@@ -41,20 +43,26 @@ def init(
 def any() -> bool:
     """Check is any data is waiting.
 
+    Example: ``uart.any()``
+
     :return: ``True`` if any data is waiting, else ``False``.
     """
     ...
 
-def read(nbytes: int = None) -> Optional[bytes]:
+def read(nbytes: Optional[int] = None) -> Optional[bytes]:
     """Read bytes.
+
+    Example: ``uart.read()``
 
     :param nbytes: If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible
     :return: A bytes object or ``None`` on timeout
     """
     ...
 
-def readinto(buf: WriteableBuffer, nbytes: int = None) -> Optional[int]:
+def readinto(buf: WriteableBuffer, nbytes: Optional[int] = None) -> Optional[int]:
     """Read bytes into the ``buf``.
+
+    Example: ``uart.readinto(input_buffer)``
 
     :param nbytes: If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes.
     :return: number of bytes read and stored into ``buf`` or ``None`` on timeout.
@@ -64,12 +72,16 @@ def readinto(buf: WriteableBuffer, nbytes: int = None) -> Optional[int]:
 def readline() -> Optional[bytes]:
     """Read a line, ending in a newline character.
 
+    Example: ``uart.readline()``
+
     :return: The line read or ``None`` on timeout. The newline character is included in the returned bytes.
     """
     ...
 
 def write(buf: Union[bytes, str]) -> Optional[int]:
     """Write a buffer to the bus.
+
+    Example: ``uart.write('hello world')``
 
     :param buf: A bytes object or a string.
     :return: The number of bytes written, or ``None`` on timeout.

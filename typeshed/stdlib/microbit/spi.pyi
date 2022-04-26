@@ -14,6 +14,8 @@ def init(
 ) -> None:
     """Initialize SPI communication.
 
+    Example: ``spi.init()``
+
     For correct communication, the parameters have to be the same on both communicating devices.
 
     :param baudrate: The speed of communication.
@@ -28,6 +30,8 @@ def init(
 def read(nbytes: int) -> bytes:
     """Read bytes.
 
+    Example: ``spi.read(64)``
+
     :param nbytes: Maximum number of bytes to read.
     :return: The bytes read.
     """
@@ -36,12 +40,16 @@ def read(nbytes: int) -> bytes:
 def write(buffer: ReadableBuffer) -> None:
     """Write bytes to the bus.
 
+    Example: ``spi.write(bytes([1, 2, 3]))``
+
     :param buffer: A buffer to read data from.
     """
     ...
 
 def write_readinto(out: WriteableBuffer, in_: ReadableBuffer) -> None:
     """Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer.
+
+    Example: ``spi.write_readinto(out_buffer, in_buffer)``
 
     The length of the buffers should be the same. The buffers can be the same object.
 

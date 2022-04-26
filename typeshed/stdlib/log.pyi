@@ -22,6 +22,8 @@ def set_labels(
 ) -> None:
     """Set up the log file header.
 
+    Example: ``log.set_labels("x", "y", "z", log.SECONDS)``
+
     Each call to this function with positional arguments will generate a new
     header entry into the log file.
 
@@ -45,9 +47,7 @@ def add(
 ) -> None:
     """Add a data row to the log by passing a dictionary of headers and values.
 
-    For example::
-
-        log.add({ "temp": temperature() })
+    Example: ``log.add({ 'temp': temperature() })``
 
     Each call to this function adds a row to the log.
 
@@ -64,9 +64,7 @@ def add(
 def add(**kwargs: Union[str, int, float]) -> None:
     """Add a data row to the log using keyword arguments.
 
-    For example::
-
-        log.add(temp=temperature())
+    Example: ``log.add(temp=temperature())``
 
     Each call to this function adds a row to the log.
 
@@ -82,6 +80,8 @@ def add(**kwargs: Union[str, int, float]) -> None:
 def delete(full=False):
     """Deletes the contents of the log, including headers.
 
+    Example: ``log.delete()``
+
     To add the log headers the ``set_labels`` function has to be called again
     after this.
 
@@ -93,8 +93,10 @@ def delete(full=False):
 def set_mirroring(serial: bool):
     """Mirrors the data logging activity to the serial output.
 
+    Example: ``log.set_mirroring(true)``
+
     Mirroring is disabled by default.
 
-    :param serial: Pass ``True`` to mirrors the data logging activity to the serial output, ``False`` to disable mirroring.
+    :param serial: Pass ``True`` to mirror the data logging activity to the serial output, ``False`` to disable mirroring.
     """
     ...

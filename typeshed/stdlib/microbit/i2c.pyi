@@ -14,6 +14,8 @@ def init(
     :param sda: ``sda`` pin (default 20)
     :param scl: ``scl`` pin (default 19)
 
+    Example: ``i2c.init()``
+
     On a micro:bit V1 board, changing the I²C pins from defaults will make
     the accelerometer and compass stop working, as they are connected
     internally to those pins. This warning does not apply to the **V2**
@@ -25,12 +27,16 @@ def init(
 def scan() -> List[int]:
     """Scan the bus for devices.
 
+    Example: ``i2c.scan()``
+
     :return: A list of 7-bit addresses corresponding to those devices that responded to the scan.
     """
     ...
 
 def read(addr: int, n: int, repeat: bool = False) -> bytes:
     """Read bytes from a device..
+
+    Example: ``i2c.read(0x50, 64)``
 
     :param addr: The 7-bit address of the device
     :param n: The number of bytes to read
@@ -41,6 +47,8 @@ def read(addr: int, n: int, repeat: bool = False) -> bytes:
 
 def write(addr: int, buf: ReadableBuffer, repeat: bool = False) -> None:
     """Write bytes to a device.
+
+    Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
     :param addr: The 7-bit address of the device
     :param buf: A buffer containing the bytes to write

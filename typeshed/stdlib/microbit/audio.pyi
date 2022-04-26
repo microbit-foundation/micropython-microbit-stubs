@@ -10,7 +10,9 @@ def play(
     pin: MicroBitDigitalPin = pin0,
     return_pin: Union[MicroBitDigitalPin, None] = None,
 ) -> None:
-    """Play a sound, for example ``audio.play(Sound.GIGGLE)``.
+    """Play a built-in sound or custom audio frames.``.
+
+    Example: ``audio.play(Sound.GIGGLE)``
 
     :param source: A built-in ``Sound`` such as ``Sound.GIGGLE`` or sample data as an iterable of ``AudioFrame`` objects.
     :param wait: If ``wait`` is ``True``, this function will block until the sound is complete.
@@ -21,11 +23,16 @@ def play(
 def is_playing() -> bool:
     """Check whether a sound is playing.
 
+    Example: ``audio.is_playing()``
+
     :return: ``True`` if audio is playing, otherwise ``False``."""
     ...
 
 def stop() -> None:
-    """Stop all audio playback."""
+    """Stop all audio playback.
+    
+    Example: ``audio.stop()``
+    """
     ...
 
 class AudioFrame:
