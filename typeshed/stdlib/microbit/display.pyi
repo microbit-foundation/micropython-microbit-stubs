@@ -66,7 +66,7 @@ def scroll(
 ) -> None:
     """Scrolls a number or text on the display.
 
-    Example: ``display.scroll("micro:bit")``
+    Example: ``display.scroll('micro:bit)``
 
     :param text: The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``.
     :param delay: The ``delay`` parameter controls how fast the text is scrolling.
