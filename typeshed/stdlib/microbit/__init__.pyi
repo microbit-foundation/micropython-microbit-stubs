@@ -219,11 +219,10 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
         """
         ...
     def set_touch_mode(self, value: int) -> None:
-        """
+        """Set the touch mode for the pin.
+
         The default touch mode for the pins on the edge connector is
         `resistive`. The default for the logo pin **V2** is `capacitive`.
-
-        Set the touch mode for the given pin. Value can be
 
         :param value: ``CAPACITIVE`` or ``RESISTIVE``, for example, ``pin0.set_touch_mode(pin0.CAPACITIVE)``
         """
@@ -667,21 +666,29 @@ class Image:
     def __add__(self, other: Image) -> Image:
         """Create a new image by adding the brightness values from the two
         images for each pixel.
+
+        :param other: The image to add.
         """
         ...
     def __sub__(self, other: Image) -> Image:
         """Create a new image by subtracting the brightness values of the
         other image from this image.
+
+        :param other: The image to subtract.
         """
         ...
     def __mul__(self, n: float) -> Image:
         """Create a new image by multiplying the brightness of each pixel by
         ``n``.
+
+        :param n: The value to multiply by.
         """
         ...
-    def __div__(self, other: float) -> Image:
+    def __truediv__(self, n: float) -> Image:
         """Create a new image by multiplying the brightness of each pixel by
         ``n``.
+
+        :param n: The value to divide by.
         """
         ...
 
