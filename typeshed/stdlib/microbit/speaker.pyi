@@ -13,6 +13,6 @@ def off() -> None:
 def on() -> None:
     """Turn the speaker on.
 
-    Example: ``speaker.off()``
+    Example: ``speaker.on()``
     """
     ...
