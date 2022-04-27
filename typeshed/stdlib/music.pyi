@@ -78,6 +78,8 @@ POWER_DOWN: Tuple[str, ...]
 def set_tempo(ticks: int = 4, bpm: int = 120) -> None:
     """Sets the approximate tempo for playback.
 
+    Example: ``music.set_tempo(bpm=120)``
+
     :param ticks: The number of ticks constituting a beat.
     :param bpm: An integer determining how many beats per minute.
 
@@ -96,6 +98,8 @@ def set_tempo(ticks: int = 4, bpm: int = 120) -> None:
 def get_tempo() -> Tuple[int, int]:
     """Gets the current tempo as a tuple of integers: ``(ticks, bpm)``.
 
+    Example: ``ticks, beats = music.get_tempo()``
+
     :return: The temp as a tuple with two integer values, the ticks then the beats per minute.
     """
     ...
@@ -106,7 +110,9 @@ def play(
     wait: bool = True,
     loop: bool = False,
 ) -> None:
-    """Plays music, for example ``music.play(music.NYAN)``.
+    """Plays music.
+
+    Example: ``music.play(music.NYAN)``
 
     :param music: music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
     :param pin: the output pin for use with an external speaker (default pin 0), ``None`` for no sound.
@@ -125,6 +131,8 @@ def pitch(
 ) -> None:
     """Play a note.
 
+    Example: ``music.pitch(185, 1000)``
+
     :param frequency: An integer frequency
     :param duration: A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``.
     :param wait: If ``wait`` is set to ``True``, this function is blocking.
@@ -139,11 +147,15 @@ def pitch(
 def stop(pin: MicroBitDigitalPin = pin0) -> None:
     """Stops all music playback on the built-in speaker and any pin outputting sound.
 
+    Example ``music.stop()``
+
     :param pin: An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``.
     """
 
 def reset() -> None:
     """Resets ticks, bpm, duration and octave to their default values.
+
+    Example ``music.reset()``
 
     Values:
     - ``ticks = 4``
