@@ -23,7 +23,7 @@ def is_calibrated() -> bool:
 def clear_calibration() -> None:
     """Undoes the calibration, making the compass uncalibrated again.
 
-    Example: ``compass.is_calibrated()``
+    Example: ``compass.clear_calibration()``
     """
     ...
 

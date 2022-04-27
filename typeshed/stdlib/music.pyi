@@ -147,7 +147,7 @@ def pitch(
 def stop(pin: MicroBitDigitalPin = pin0) -> None:
     """Stops all music playback on the built-in speaker and any pin outputting sound.
 
-    Example ``music.stop()``
+    Example: ``music.stop()``
 
     :param pin: An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``.
     """
@@ -155,7 +155,7 @@ def stop(pin: MicroBitDigitalPin = pin0) -> None:
 def reset() -> None:
     """Resets ticks, bpm, duration and octave to their default values.
 
-    Example ``music.reset()``
+    Example: ``music.reset()``
 
     Values:
     - ``ticks = 4``
