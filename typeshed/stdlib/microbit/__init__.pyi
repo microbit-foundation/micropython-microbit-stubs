@@ -666,7 +666,7 @@ class Image:
     def fill(self, value: int) -> None:
         """Set the brightness of all the pixels in the image.
 
-        Example: ``my_image.set_brightness(5)``
+        Example: ``my_image.fill(5)``
 
         :param value: The new brightness as a number between 0 (dark) and 9 (bright).
 
@@ -742,7 +742,7 @@ class Image:
         :param n: The value to multiply by.
         """
         ...
-    def __truediv__(self, other: float) -> Image:
+    def __truediv__(self, n: float) -> Image:
         """Create a new image by dividing the brightness of each pixel by
         ``n``.
 

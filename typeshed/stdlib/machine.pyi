@@ -15,7 +15,7 @@ def unique_id() -> bytes:
 def reset() -> None:
     """Reset the device in a manner similar to pushing the external RESET button.
 
-    Example: ``machine.unique_id()``
+    Example: ``machine.reset()``
     """
     ...
 
