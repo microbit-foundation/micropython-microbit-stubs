@@ -93,7 +93,7 @@ def reset() -> None:
 def send_bytes(message: bytes) -> None:
     """Sends a message containing bytes.
 
-    Example: ``radio.send(b'hello')``
+    Example: ``radio.send_bytes(b'hello')``
 
     :param message: The bytes to send.
     """
@@ -121,7 +121,7 @@ def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
 def send(message: str) -> None:
     """Sends a message string.
 
-    Example: ``radio.send("hello")``
+    Example: ``radio.send('hello')``
 
     This is the equivalent of ``radio.send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
     prepended to the front (to make it compatible with other platforms that target the micro:bit).

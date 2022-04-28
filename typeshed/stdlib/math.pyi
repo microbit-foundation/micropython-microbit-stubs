@@ -78,7 +78,7 @@ def cos(x: float) -> float:
 def degrees(x: float) -> float:
     """Convert radians to degrees.
 
-    Example: ``math.cos(2 * math.pi)``
+    Example: ``math.degrees(2 * math.pi)``
 
     :param x: A value in radians
     :return: The value converted to degrees"""

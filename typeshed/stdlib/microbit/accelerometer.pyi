@@ -56,7 +56,7 @@ def current_gesture() -> str:
 def is_gesture(name: str) -> bool:
     """Check if the named gesture is currently active.
 
-    Example: ``accelerometer.is_gesture("shake")``
+    Example: ``accelerometer.is_gesture('shake')``
 
     MicroPython understands the following gesture names: ``"up"``, ``"down"``,
     ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,

@@ -90,7 +90,7 @@ def sing(
 ) -> None:
     """Sing phonemes.
 
-    Example: ``speech.pronounce(' /HEHLOW WERLD')``
+    Example: ``speech.sing(' /HEHLOW WERLD')``
 
     :param phonemes: The string of words to sing.
     :param pitch: A number representing the pitch of the voice
