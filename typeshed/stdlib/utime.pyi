@@ -7,6 +7,8 @@ def sleep(seconds: Union[int, float]) -> None:
     """
     Delay a number of seconds.
 
+    Example: ``utime.sleep(1)``
+
     :param seconds: The number of seconds to sleep for. Use a floating-point
     number to sleep for a fractional number of seconds.
     """
@@ -16,6 +18,8 @@ def sleep_ms(ms: int) -> None:
     """
     Delay for given number of milliseconds.
 
+    Example: ``utime.sleep_ms(1_000_000)``
+
     :param ms: The number of milliseconds delay (>= 0).
     """
     ...
@@ -23,6 +27,8 @@ def sleep_ms(ms: int) -> None:
 def sleep_us(us: int) -> None:
     """
     Delay for given number of microseconds.
+
+    Example: ``utime.sleep_us(1000)``
 
     :param ms: The number of microseconds delay (>= 0).
     """
@@ -33,6 +39,8 @@ def ticks_ms() -> int:
     Get an increasing, millisecond counter with an arbitrary reference point,
     that wraps around after some value.
 
+    Example: ``utime.ticks_ms()``
+
     :return: The counter value in milliseconds.
     """
     ...
@@ -42,7 +50,9 @@ def ticks_us() -> int:
     Get an increasing, microsecond counter with an arbitrary reference point,
     that wraps around after some value.
 
-    :return: The counter value in microsecond.
+    Example: ``utime.ticks_us()``
+
+    :return: The counter value in microseconds.
     """
     ...
 
@@ -51,6 +61,8 @@ def ticks_add(ticks: int, delta: int) -> int:
     Offset ticks value by a given number, which can be either positive or
     negative.
 
+    Example: ``utime.ticks_add(utime.ticks_ms(), 200)``
+
     Given a ticks value, this function allows to calculate ticks
     value delta ticks before or after it, following modular-arithmetic
     definition of tick values.
@@ -58,7 +70,7 @@ def ticks_add(ticks: int, delta: int) -> int:
     :param ticks: A ticks value
     :param delta: An integer offset
 
-    Example:
+    Example::
 
         # Find out what ticks value there was 100ms ago
         print(ticks_add(time.ticks_ms(), -100))
@@ -78,6 +90,8 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
     Measure ticks difference between values returned from
     ``utime.ticks_ms()`` or ``ticks_us()``, as a signed value
     which may wrap around.
+
+    Example: ``utime.ticks_diff(scheduled_time, now)``
 
     :param ticks1: The value to subtract from
     :param ticks2: The value to subtract

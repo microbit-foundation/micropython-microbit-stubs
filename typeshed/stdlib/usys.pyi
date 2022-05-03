@@ -5,7 +5,9 @@ from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 def exit(retval: object = ...) -> NoReturn:
     """Terminate current program with a given exit code.
 
-    This function raise as `SystemExit` exception. If an argument is given, its
+    Example: ``sys.exit(1)``
+
+    This function raises a `SystemExit` exception. If an argument is given, its
     value given as an argument to `SystemExit`.
     """
     ...
@@ -13,6 +15,8 @@ def exit(retval: object = ...) -> NoReturn:
 def print_exception(exc: Exception, file: TextIO = ...) -> None:
     """
     Print exception with a traceback.
+
+    Example: ``sys.print_exception(e)``
 
     :param exc: The exception to print
     :param file: A file-like object to write to (`sys.stdout` by default).

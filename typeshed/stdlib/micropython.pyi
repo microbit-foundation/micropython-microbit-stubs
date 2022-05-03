@@ -25,6 +25,8 @@ def const(expr: _T) -> _T:
 def opt_level() -> int:
     """Get the current optimisation level for the compilation of scripts.
 
+    Example: ``micropython.opt_level()``
+
     The optimisation level controls the following compilation features:
 
     - Assertions: at level 0 assertion statements are enabled and compiled
@@ -45,6 +47,8 @@ def opt_level() -> int:
 @overload
 def opt_level(level: int) -> None:
     """Sets the optimisation level for subsequent compilation of scripts.
+
+    Example: ``micropython.opt_level(1)``
 
     The optimisation level controls the following compilation features:
 
@@ -68,12 +72,16 @@ def opt_level(level: int) -> None:
 def mem_info(verbose: Any = None) -> None:
     """Print information about currently used memory.
 
+    Example: ``micropython.mem_info()``
+
     :param verbose: If the ``verbose`` argument is given then extra information is printed.
     """
     ...
 
 def qstr_info(verbose: Any = None) -> None:
     """Print information about currently interned strings.
+
+    Example: ``micropython.qstr_info()``
 
     :param verbose: If the ``verbose`` argument is given then extra information is printed.
 
@@ -87,6 +95,8 @@ def stack_use() -> int:
     """Return an integer representing the current amount of stack that is being
     used.
 
+    Example: ``micropython.stack_use()``
+
     The absolute value of this is not particularly useful, rather it
     should be used to compute differences in stack usage at different points.
 
@@ -97,6 +107,8 @@ def stack_use() -> int:
 def heap_lock() -> None:
     """Lock the heap.
 
+    Example: ``micropython.heap_lock()``
+
     When locked no memory allocation can occur and a `MemoryError` will be
     raised if any heap allocation is attempted.
     """
@@ -105,6 +117,8 @@ def heap_lock() -> None:
 def heap_unlock() -> None:
     """Unlock the heap.
 
+    Example: ``micropython.heap_unlock()``
+
     When locked no memory allocation can occur and a `MemoryError` will be
     raised if any heap allocation is attempted.
     """
@@ -112,6 +126,8 @@ def heap_unlock() -> None:
 
 def kbd_intr(chr: int) -> None:
     """Set the character that will raise a `KeyboardInterrupt` exception.
+
+    Example: ``micropython.kbd_intr(-1)``
 
     :param chr: Character code to raise the interrupt or -1 to disable capture of Ctrl-C.
 

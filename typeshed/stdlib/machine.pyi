@@ -6,16 +6,23 @@ from .microbit import MicroBitDigitalPin
 def unique_id() -> bytes:
     """Get a byte string with a unique identifier of a board.
 
+    Example: ``machine.unique_id()``
+
     :return: An identifier that varies from one board instance to another.
     """
     ...
 
 def reset() -> None:
-    """Reset the device in a manner similar to pushing the external RESET button."""
+    """Reset the device in a manner similar to pushing the external RESET button.
+
+    Example: ``machine.reset()``
+    """
     ...
 
 def freq() -> int:
     """Get the CPU frequency in hertz.
+
+    Example: ``machine.freq()``
 
     :return: The CPU frequency.
     """
@@ -23,6 +30,8 @@ def freq() -> int:
 
 def disable_irq() -> Any:
     """Disable interrupt requests.
+
+    Example: ``interrupt_state = machine.disable_irq()``
 
     :return: the previous IRQ state which should be considered an opaque value
 
@@ -34,6 +43,8 @@ def disable_irq() -> Any:
 def enable_irq(state: Any) -> None:
     """Re-enable interrupt requests.
 
+    Example: ``machine.enable_irq(interrupt_state)``
+
     :param state: The value that was returned from the most recent call to the ``disable_irq`` function.
     """
     ...
@@ -42,6 +53,8 @@ def time_pulse_us(
     pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int = 1000000
 ) -> int:
     """Time a pulse on a pin.
+
+    Example: ``time_pulse_us(pin0, 1)``
 
     If the current input value of the pin is different to ``pulse_level``, the
     function first waits until the pin input becomes equal to

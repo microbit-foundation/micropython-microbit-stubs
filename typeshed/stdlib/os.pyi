@@ -6,6 +6,8 @@ from typing import List
 def listdir() -> List[str]:
     """List files.
 
+    Example: ``os.listdir()``
+
     :return: A list of the names of all the files contained within the local
     persistent on-device file system.
     """
@@ -13,6 +15,8 @@ def listdir() -> List[str]:
 
 def remove(filename: str) -> None:
     """Remove (delete) a file.
+
+    Example: ``os.remove('data.txt')``
 
     :param filename: The file to delete.
 
@@ -23,6 +27,8 @@ def remove(filename: str) -> None:
 def size(filename: str) -> int:
     """Returns the size of a file.
 
+    Example: ``os.size('data.txt')``
+
     :param filename: The file
     :return: The size in bytes.
 
@@ -30,8 +36,10 @@ def size(filename: str) -> int:
     """
 
 def uname() -> str:
-    """Returns information identifying the current operating system. 
-    
+    """Returns information identifying the current operating system.
+
+    Example: ``os.uname()``
+
     The return value is an object with five attributes:
 
     - ``sysname`` - operating system name

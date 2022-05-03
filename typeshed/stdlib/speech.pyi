@@ -7,6 +7,8 @@ from .microbit import MicroBitDigitalPin, pin0
 def translate(words: str) -> str:
     """Translate English words to phonemes.
 
+    Example: ``speech.translate('hello world')``
+
     :param words: A string of English words.
     :return: A string containing a best guess at the appropriate phonemes to pronounce.
     The output is generated from this `text to phoneme translation table <https://github.com/s-macke/SAM/wiki/Text-to-phoneme-translation-table>`_.
@@ -28,6 +30,8 @@ def pronounce(
     pin: Optional[MicroBitDigitalPin] = pin0,
 ) -> None:
     """Pronounce phonemes.
+
+    Example: ``speech.pronounce(' /HEHLOW WERLD')``
 
     :param phonemes: The string of phonemes to pronounce
     :param pitch: A number representing the pitch of the voice
@@ -54,6 +58,8 @@ def say(
     pin: MicroBitDigitalPin = pin0,
 ) -> None:
     """Say English words.
+
+    Example: ``speech.say('hello world')``
 
     :param words: The string of words to say.
     :param pitch: A number representing the pitch of the voice
@@ -83,6 +89,8 @@ def sing(
     pin: MicroBitDigitalPin = pin0,
 ) -> None:
     """Sing phonemes.
+
+    Example: ``speech.sing(' /HEHLOW WERLD')``
 
     :param phonemes: The string of words to sing.
     :param pitch: A number representing the pitch of the voice

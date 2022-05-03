@@ -7,6 +7,8 @@ from typing import Union, overload, Iterable
 def get_pixel(x: int, y: int) -> int:
     """Get the brightness of the LED at column ``x`` and row ``y``.
 
+    Example: ``display.get_pixel(0, 0)``
+
     :param x: The display column (0..4)
     :param y: The display row (0..4)
     :return: A number between 0 (off) and 9 (bright)
@@ -16,6 +18,8 @@ def get_pixel(x: int, y: int) -> int:
 def set_pixel(x: int, y: int, value: int) -> None:
     """Set the brightness of the LED at column ``x`` and row ``y``.
 
+    Example: ``display.set_pixel(0, 0, 9)``
+
     :param x: The display column (0..4)
     :param y: The display row (0..4)
     :param value: The brightness between 0 (off) and 9 (bright)
@@ -23,7 +27,10 @@ def set_pixel(x: int, y: int, value: int) -> None:
     ...
 
 def clear() -> None:
-    """Set the brightness of all LEDs to 0 (off)."""
+    """Set the brightness of all LEDs to 0 (off).
+
+    Example: ``display.clear()``
+    """
     ...
 
 def show(
@@ -35,7 +42,7 @@ def show(
 ) -> None:
     """Shows images, letters or digits on the display.
 
-    For example, ``display.show(Image.HEART)`` or ``display.show("ABC")``.
+    Example: ``display.show(Image.HEART)``
 
     When ``image`` is an image or a list of images then each image is displayed in turn.
     If ``image`` is a string or number, each letter or digit is displayed in turn.
@@ -59,6 +66,8 @@ def scroll(
 ) -> None:
     """Scrolls a number or text on the display.
 
+    Example: ``display.scroll('micro:bit')``
+
     :param text: The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``.
     :param delay: The ``delay`` parameter controls how fast the text is scrolling.
     :param wait: If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.
@@ -71,15 +80,23 @@ def scroll(
     ...
 
 def on() -> None:
-    """Turn on the display."""
+    """Turn on the display.
+
+    Example: ``display.on()``
+    """
     ...
 
 def off() -> None:
-    """Turn off the display (allowing you to re-use the GPIO pins associated with the display for other purposes)."""
+    """Turn off the display (allowing you to re-use the GPIO pins associated with the display for other purposes).
+
+    Example: ``display.off()``
+    """
     ...
 
 def is_on() -> bool:
     """Check whether the display is on.
+
+    Example: ``display.is_on()``
 
     :return: ``True`` if the display is on, otherwise returns ``False``.
     """
@@ -87,6 +104,8 @@ def is_on() -> bool:
 
 def read_light_level() -> int:
     """Read the light level.
+
+    Example: ``display.read_light_level()``
 
     Uses the display's LEDs in reverse-bias mode to sense the amount of light
     falling on the display.

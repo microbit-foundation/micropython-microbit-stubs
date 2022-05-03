@@ -13,13 +13,18 @@ RATE_2MBIT: int
 def on() -> None:
     """Turns the radio on.
 
+    Example: ``radio.on()``
+
     This needs to be explicitly called since the radio draws power and takes
     up memory that you may otherwise need.
     """
     ...
 
 def off() -> None:
-    """Turns off the radio, saving power and memory."""
+    """Turns off the radio, saving power and memory.
+
+    Example: ``radio.off()``
+    """
     ...
 
 def config(
@@ -32,6 +37,8 @@ def config(
     data_rate: int = RATE_1MBIT,
 ) -> None:
     """Configures the radio.
+
+    Example: ``radio.config(group=42)``
 
     The default configuration is suitable for most use.
 
@@ -77,12 +84,16 @@ def config(
 def reset() -> None:
     """Reset the settings to their default values.
 
+    Example: ``radio.reset()``
+
     The defaults as as per the ``config`` function above.
     """
     ...
 
 def send_bytes(message: bytes) -> None:
     """Sends a message containing bytes.
+
+    Example: ``radio.send_bytes(b'hello')``
 
     :param message: The bytes to send.
     """
@@ -91,12 +102,16 @@ def send_bytes(message: bytes) -> None:
 def receive_bytes() -> Optional[bytes]:
     """Receive the next incoming message on the message queue.
 
+    Example: ``radio.receive_bytes()``
+
     :return: The message bytes if any, otherwise ``None``.
     """
     ...
 
 def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
     """Copy the next incoming message on the message queue into a buffer.
+
+    Example: ``radio.receive_bytes_info(buffer)``
 
     :param buffer: The target buffer. The message is truncated if larger than the buffer.
     :return: ``None`` if there are no pending messages, otherwise it returns the length of the message (which might be more than the length of the buffer).
@@ -105,6 +120,8 @@ def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
 
 def send(message: str) -> None:
     """Sends a message string.
+
+    Example: ``radio.send('hello')``
 
     This is the equivalent of ``radio.send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
     prepended to the front (to make it compatible with other platforms that target the micro:bit).
@@ -115,6 +132,8 @@ def send(message: str) -> None:
 
 def receive() -> Optional[str]:
     """Works in exactly the same way as ``receive_bytes`` but returns whatever was sent.
+
+    Example: ``radio.receive()``
 
     Equivalent to ``str(receive_bytes(), 'utf8')`` but with a check that the the first
     three bytes are ``b'\x01\x00\x01'`` (to make it compatible with other platforms that
@@ -128,6 +147,8 @@ def receive() -> Optional[str]:
 
 def receive_full() -> Optional[Tuple[bytes, int, int]]:
     """Returns a tuple containing three values representing the next incoming message on the message queue.
+
+    Example: ``radio.receive_full()``
 
     If there are no pending messages then ``None`` is returned.
 
