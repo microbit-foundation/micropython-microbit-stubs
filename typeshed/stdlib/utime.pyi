@@ -70,7 +70,7 @@ def ticks_add(ticks: int, delta: int) -> int:
     :param ticks: A ticks value
     :param delta: An integer offset
 
-    Example:
+    Example::
 
         # Find out what ticks value there was 100ms ago
         print(ticks_add(time.ticks_ms(), -100))

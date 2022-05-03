@@ -30,7 +30,7 @@ def is_playing() -> bool:
 
 def stop() -> None:
     """Stop all audio playback.
-    
+
     Example: ``audio.stop()``
     """
     ...
@@ -45,7 +45,7 @@ class AudioFrame:
 
         frame = AudioFrame()
         for i in range(len(frame)):
-          frame[i] = 252 - i * 8
+            frame[i] = 252 - i * 8
     """
 
     def __len__(self) -> int: ...
