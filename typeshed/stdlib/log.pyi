@@ -22,7 +22,7 @@ def set_labels(
 ) -> None:
     """Set up the log file header.
 
-    Example: ``log.set_labels("x", "y", "z", log.SECONDS)``
+    Example: ``log.set_labels('x', 'y', 'z', log.SECONDS)``
 
     Each call to this function with positional arguments will generate a new
     header entry into the log file.

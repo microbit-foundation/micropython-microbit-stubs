@@ -142,7 +142,7 @@ class MicroBitDigitalPin:
     def read_digital(self) -> int:
         """Get the digital value of the pin.
 
-        Example: ``value = pin1.read_digital()``
+        Example: ``value = pin0.read_digital()``
 
         :return: 1 if the pin is high, and 0 if it's low.
         """
@@ -150,14 +150,14 @@ class MicroBitDigitalPin:
     def write_digital(self, value: int) -> None:
         """Set the digital value of the pin.
 
-        Example: ``pin1.write_digital(1)``
+        Example: ``pin0.write_digital(1)``
 
         :param value: ``1`` to set the pin high or ``0`` to set the pin low"""
         ...
     def set_pull(self, value: int) -> None:
         """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
 
-        Example: ``pin1.set_pull(pin1.PULL_UP)``
+        Example: ``pin0.set_pull(pin0.PULL_UP)``
 
         :param value: The pull state from the relevant pin, e.g. ``pin0.PULL_UP``.
         """
@@ -165,7 +165,7 @@ class MicroBitDigitalPin:
     def get_pull(self) -> int:
         """Get the pull state on a pin.
 
-        Example: ``pin1.get_pull()``
+        Example: ``pin0.get_pull()``
 
         :return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
 
@@ -176,7 +176,7 @@ class MicroBitDigitalPin:
     def get_mode(self) -> str:
         """Returns the pin mode.
 
-        Example: ``pin1.get_mode()``
+        Example: ``pin0.get_mode()``
 
         When a pin is used for a specific function, like
         writing a digital value, or reading an analog value, the pin mode
@@ -188,21 +188,21 @@ class MicroBitDigitalPin:
     def write_analog(self, value: int) -> None:
         """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
 
-        Example: ``pin1.write_analog(254)``
+        Example: ``pin0.write_analog(254)``
 
         :param value: An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty).
         """
     def set_analog_period(self, period: int) -> None:
         """Set the period of the PWM signal being output to ``period`` in milliseconds.
 
-        Example: ``pin1.set_analog_period(10)``
+        Example: ``pin0.set_analog_period(10)``
 
         :param period: The period in milliseconds with a minimum valid value of 1ms.
         """
     def set_analog_period_microseconds(self, period: int) -> None:
         """Set the period of the PWM signal being output to ``period`` in microseconds.
 
-        Example: ``pin1.set_analog_period_microseconds(512)``
+        Example: ``pin0.set_analog_period_microseconds(512)``
 
         :param period: The period in microseconds with a minimum valid value of 256µs.
         """
@@ -213,7 +213,7 @@ class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
     def read_analog(self) -> int:
         """Read the voltage applied to the pin.
 
-        Example: ``pin1.read_analog()``
+        Example: ``pin0.read_analog()``
 
         :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V).
         """
@@ -226,7 +226,7 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
     def is_touched(self) -> bool:
         """Check if the pin is being touched.
 
-        Example: ``pin1.is_touched()``
+        Example: ``pin0.is_touched()``
 
         The default touch mode for the pins on the edge connector is `resistive`.
         The default for the logo pin **V2** is `capacitive`.
@@ -249,7 +249,7 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
     def set_touch_mode(self, value: int) -> None:
         """Set the touch mode for the pin.
 
-        Example: ``pin1.set_touch_mode(pin1.CAPACITIVE)``
+        Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
         The default touch mode for the pins on the edge connector is
         `resistive`. The default for the logo pin **V2** is `capacitive`.
@@ -727,7 +727,7 @@ class Image:
     def __sub__(self, other: Image) -> Image:
         """Create a new image by subtracting the brightness values of the
         other image from this image.
-        
+
         Example: ``Image.HEART - Image.HEART_SMALL``
 
         :param other: The image to subtract.
