@@ -12,14 +12,13 @@ def exit(retval: object = ...) -> NoReturn:
     """
     ...
 
-def print_exception(exc: Exception, file: TextIO = ...) -> None:
+def print_exception(exc: Exception) -> None:
     """
-    Print exception with a traceback.
+    Print an exception with a traceback.
 
     Example: ``sys.print_exception(e)``
 
     :param exc: The exception to print
-    :param file: A file-like object to write to (`sys.stdout` by default).
 
     This is simplified version of a function which appears in the
     ``traceback`` module in CPython.
