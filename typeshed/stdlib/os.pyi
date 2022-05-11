@@ -35,7 +35,26 @@ def size(filename: str) -> int:
     If the file does not exist an ``OSError`` exception will occur.
     """
 
-def uname() -> str:
+class uname_result(tuple[str, str, str, str, str]):
+    """Result of ``os.uname()``"""
+
+    @property
+    def sysname(self) -> str:
+        """Operating system name."""
+    @property
+    def nodename(self) -> str:
+        """Name of machine on network (implementation-defined)."""
+    @property
+    def release(self) -> str:
+        """Operating system release."""
+    @property
+    def version(self) -> str:
+        """Operating system version."""
+    @property
+    def machine(self) -> str:
+        """Hardware identifier."""
+
+def uname() -> uname_result:
     """Returns information identifying the current operating system.
 
     Example: ``os.uname()``
