@@ -1,3 +1,5 @@
+from typing import Tuple
+
 """Access the file system.
 """
 
@@ -35,7 +37,7 @@ def size(filename: str) -> int:
     If the file does not exist an ``OSError`` exception will occur.
     """
 
-class uname_result(tuple[str, str, str, str, str]):
+class uname_result(Tuple[str, str, str, str, str]):
     """Result of ``os.uname()``"""
     sysname: str
     """Operating system name."""
