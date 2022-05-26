@@ -20,8 +20,8 @@ def pack(fmt: str, v1: Any, *vn: Any) -> bytes:
     Example: ``ustruct.pack('hf', 1, 3.1415)``
 
     :param fmt: The format string.
-    :v1: The first value.
-    :*vn: The remaining values.
+    :param v1: The first value.
+    :param *vn: The remaining values.
     :return A bytes object encoding the values.
     """
     ...
@@ -36,8 +36,8 @@ def pack_into(
     :param fmt: The format string.
     :param buffer: The target buffer to write into.
     :param offset: The offset into the buffer. May be negative to count from the end of the buffer.
-    :v1: The first value.
-    :*vn: The remaining values.
+    :param v1: The first value.
+    :param *vn: The remaining values.
     """
     ...
 
