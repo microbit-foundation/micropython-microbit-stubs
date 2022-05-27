@@ -188,7 +188,7 @@ def log(x: float, base: float = e) -> float:
     With two arguments, return the logarithm of x to the given base, calculated as ``log(x)/log(base)``.
 
     :param x: A number
-    :param e: The base to use
+    :param base: The base to use
     :return: The natural logarithm of ``x``
     """
     ...
