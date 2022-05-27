@@ -135,7 +135,7 @@ def pitch(
 
     :param frequency: An integer frequency
     :param duration: A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``.
-    :param pin: Optional output pin (default pin0).
+    :param pin: Optional output pin (default ``pin0``).
     :param wait: If ``wait`` is set to ``True``, this function is blocking.
 
     For example, if the frequency is set to 440 and the length to
