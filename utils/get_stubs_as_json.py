@@ -1,10 +1,7 @@
 """
-    Currently returns all type stub information as a JSON file
-    with names as keys.
-    Data includes first line summary, parameter list, and parameter
-    docs which are keyed by the parameter.
-    An alternate version will be produced to create a JSON file
-    for CrowdIn translation.
+    Creates api.en.json file containing translatable 
+    parts of the API. Inclues first line of docstring
+    (summary), parameter names and parameter docs.
 """
 
 import ast
@@ -22,12 +19,30 @@ def get_stub_files():
     for root, dirs, files in os.walk(top):
         for file in files:
             file_path = os.path.join(root, file)
+            # Skip audio stubs file that imports from microbit audio.
+            if (
+                os.path.basename(os.path.dirname(file_path)) != "microbit"
+                and file == "audio.pyi"
+            ):
+                continue
             if file.endswith(".pyi"):
                 module_name = ""
-                if os.path.basename(os.path.dirname(file_path)) == "microbit":
+                file_name = ""
+
+                if file != "__init__.pyi":
+                    file_name = file.replace(".pyi", "")
+                if (
+                    os.path.basename(os.path.dirname(file_path)) == "microbit"
+                    and file_name
+                ):
+                    module_name = ".".join(["microbit", file_name])
+                elif (
+                    os.path.basename(os.path.dirname(file_path)) == "microbit"
+                    and not file_name
+                ):
                     module_name = "microbit"
                 else:
-                    module_name = file.replace(".pyi", "")
+                    module_name = file_name
                 files_to_process.append(
                     {
                         "file_name": file,
@@ -56,21 +71,21 @@ def get_key(node, class_name):
         if hasattr(node.annotation, "id"):
             parent = node.annotation.id
         if class_name and child:
-            assignmentKey = class_name + "." + child
+            assignmentKey = f"{class_name}.{child}"
         elif parent and child:
-            assignmentKey = parent + "." + child
+            assignmentKey = f"{parent}.{child}"
         else:
             assignmentKey = child
 
     if isinstance(node, ast.Assign):
         child = node.targets[0].id
         if class_name and child:
-            assignmentKey = class_name + "." + child
+            assignmentKey = f"{class_name}.{child}"
         else:
             assignmentKey = child
     if isinstance(node, (ast.FunctionDef, ast.ClassDef)):
         if class_name:
-            classFuncKey = class_name + "." + node.name
+            classFuncKey = f"{class_name}.{node.name}"
         else:
             classFuncKey = node.name
     return assignmentKey, classFuncKey
@@ -133,41 +148,68 @@ def add_module_to_key(key, file):
         return key
 
 
-def get_entry(node, key):
+def get_node_type(node):
+    if isinstance(node, ast.ClassDef):
+        return "class"
+    if isinstance(node, ast.FunctionDef):
+        return "function"
+    return "field"
+
+
+def format_translation_data(key, defaultMessage, description):
+    return {key: {"message": defaultMessage, "description": description}}
+
+
+def check_param_docs(parent_key, param_list, matched_params):
+    """Finds parameters that do not have docs"""
+    if len(param_list) != len(matched_params):
+        print(parent_key, param_list, matched_params)
+
+
+def get_entries(node, parent_key):
+    entries = {}
     docstring = get_docstring(node)
     summary, param_section = split_docstring(docstring)
+    # We don't want to translate param names if we have no summary.
+    if not summary:
+        return {}
+    if not isinstance(node, ast.Module):
+        parent_message = parent_key.split(".")[-1].replace("_", " ").strip()
+        entries = {
+            **entries,
+            **format_translation_data(
+                parent_key, parent_message, f"({get_node_type(node)} name) {summary}"
+            ),
+        }
+    summary_key = ".".join([parent_key, "summary"])
+    entries = {**entries, **format_translation_data(summary_key, summary, summary)}
     pattern = re.compile(r":param(.|\n)*?(?=\n\n|:param|:return|\Z)")
     match = pattern.finditer(param_section)
     param_defs = [m.group(0).strip() for m in match]
     param_list = get_params(node)
     matched_params = match_params_to_defs(param_list, param_defs)
-    return {
-        key: {
-            "summary": summary,
-            "params": param_list,
-            "matchedParams": matched_params,
+    # check_param_docs(parent_key, param_list, matched_params)
+    for key in matched_params:
+        # Translate param name.
+        param_name_key = ".".join([parent_key, "param-name", key])
+        entries = {
+            **entries,
+            **format_translation_data(
+                param_name_key, key, f"(parameter name) {matched_params[key]}"
+            ),
         }
-    }
-
-
-def get_blank_entry(key):
-    return {
-        key: {
-            "summary": "",
-            "params": [],
-            "matchedParams": {},
+        # Translate param doc.
+        param_doc_key = ".".join([parent_key, "param-doc", key])
+        entries = {
+            **entries,
+            **format_translation_data(
+                param_doc_key, matched_params[key], "Parameter docs"
+            ),
         }
-    }
+    return entries
 
 
 def process_node(file, data, node, key, skip_key, class_name=""):
-    if skip_key and not isinstance(node, ast.Expr):
-        # If we have an assignment without docstring.
-        # Added for the sake of completeness.
-        entry = get_blank_entry(add_module_to_key(key, file))
-        data = {**data, **entry}
-        skip_key = False
-
     if not skip_key:
         assignment_key, class_func_key = get_key(node, class_name)
         if assignment_key:
@@ -185,14 +227,7 @@ def process_node(file, data, node, key, skip_key, class_name=""):
             return "", skip_key, data
 
     skip_key = False
-    entry = get_entry(node, add_module_to_key(key, file))
-    # # Dump entries with mismatched params.
-    # # Can be used to find typos in parameter docs.
-    # entry_key =  add_module_to_key(key, file)
-    # if len(entry[entry_key]["params"]) != len(
-    #     entry[entry_key]["matchedParams"]
-    # ):
-    #     print(entry)
+    entry = get_entries(node, add_module_to_key(key, file))
     data = {**data, **entry}
     return key, skip_key, data
 
@@ -227,19 +262,9 @@ def get_docstrings_dict(file):
 
 
 def save_docstrings_as_json(data):
-    file_name = os.path.join(DIR, "stubs.json")
+    file_name = os.path.join(DIR, "api.en.json")
     with open(file_name, "w") as file:
         file.write(json.dumps(data))
-
-
-# # For testing one file
-# rel_path = "typeshed/stdlib/microbit/__init__.pyi"
-# abs_file_path = os.path.join(script_dir, "..", rel_path)
-# test_file = {
-#     "file_name": "__init__.pyi",
-#     "file_path": abs_file_path,
-#     "module_name": "microbit",
-# }
 
 
 def run():
