@@ -5,10 +5,7 @@
     in Python 3.9^.
 """
 
-# ast has been hacked to save all constants as docstrings.
-# All 'docstrings' for fields are parsed as constants in expressions.
-# See lines 1272-1281 in ast_hack.py
-import ast_hack as ast
+import ast
 from os import path
 
 script_dir = path.dirname(__file__)
@@ -58,7 +55,20 @@ def update_docstring(node, new_docstring):
 
 
 def compile_python(tree):
-    return ast.unparse(tree)
+    class UnparseHack(ast._Unparser):
+        
+        def _write_constant(self, value):
+            # Hack targetting pseudo docstrings used for constants/fields.
+            # Assume all strings are docstrings as we have no others and force triple quotes.
+            if isinstance(value, str):
+                self._write_str_avoiding_backslashes(
+                    value, quote_types=ast._MULTI_QUOTES
+                )
+            else:
+                super()._write_constant(value)
+
+    unparser = UnparseHack()
+    return unparser.visit(tree)
 
 
 def save_python_file(string_file):
