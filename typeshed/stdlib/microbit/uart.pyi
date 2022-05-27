@@ -64,6 +64,7 @@ def readinto(buf: WriteableBuffer, nbytes: Optional[int] = None) -> Optional[int
 
     Example: ``uart.readinto(input_buffer)``
 
+    :param buf: The buffer to write to.
     :param nbytes: If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes.
     :return: number of bytes read and stored into ``buf`` or ``None`` on timeout.
     """

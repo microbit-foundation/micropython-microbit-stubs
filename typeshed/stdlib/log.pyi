@@ -57,6 +57,8 @@ def add(
 
     Labels previously specified and not present in this function call will be
     skipped with an empty value in the log row.
+
+    :param log_data: The data to log as a dictionary with a key for each header.
     """
     ...
 

@@ -86,5 +86,8 @@ def uniform(a: float, b: float) -> float:
     Return a random floating point number between ``a`` and ``b`` inclusive.
 
     Example: ``urandom.uniform(0, 9)``
+
+    :param a: Start value for the range (inclusive)
+    :param b: End value for the range (inclusive)
     """
     ...

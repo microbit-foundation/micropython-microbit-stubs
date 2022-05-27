@@ -30,7 +30,7 @@ def sleep_us(us: int) -> None:
 
     Example: ``utime.sleep_us(1000)``
 
-    :param ms: The number of microseconds delay (>= 0).
+    :param us: The number of microseconds delay (>= 0).
     """
     ...
 
