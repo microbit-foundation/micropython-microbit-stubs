@@ -9,6 +9,8 @@ def exit(retval: object = ...) -> NoReturn:
 
     This function raises a `SystemExit` exception. If an argument is given, its
     value given as an argument to `SystemExit`.
+
+    :param retval: The exit code or message.
     """
     ...
 

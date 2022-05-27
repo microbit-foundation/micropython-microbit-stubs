@@ -18,6 +18,8 @@ def const(expr: _T) -> _T:
     outside the module they are declared in. On the other hand, if a constant
     begins with an underscore then it is hidden, it is not available as a
     global variable, and does not take up any memory during execution.
+
+    :param expr: A constant expression.
     """
     ...
 

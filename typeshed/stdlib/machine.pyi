@@ -69,24 +69,29 @@ def time_pulse_us(
     """
     ...
 
-
 class mem:
     """The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."""
+
     def __getitem__(self, address: int) -> int:
-        """Access a value from memory."""
+        """Access a value from memory.
+
+        :param address: The memory address.
+        :return: The value at that address as an integer.
+        """
         ...
     def __setitem__(self, address: int, value: int) -> None:
-        """Set a value at the given address."""
-        ...
+        """Set a value at the given address.
 
+        :param address: The memory address.
+        :param value: The integer value to set.
+        """
+        ...
 
 mem8: mem
 """8-bit (byte) view of memory."""
 
-
 mem16: mem
 """16-bit view of memory."""
-
 
 mem32: mem
 """32-bit view of memory."""
