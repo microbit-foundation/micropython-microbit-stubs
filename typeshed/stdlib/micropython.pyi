@@ -19,7 +19,7 @@ def const(expr: _T) -> _T:
     begins with an underscore then it is hidden, it is not available as a
     global variable, and does not take up any memory during execution.
 
-    :param expr: ...
+    :param expr: A constant expression.
     """
     ...
 
