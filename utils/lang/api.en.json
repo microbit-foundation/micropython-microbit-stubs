@@ -1,0 +1,4734 @@
+{
+  "ustruct.summary": {
+    "message": "Pack and unpack primitive data types.",
+    "description": "Pack and unpack primitive data types."
+  },
+  "ustruct.calcsize": {
+    "message": "calcsize",
+    "description": "(function name) Get the number of bytes needed to store the given ``fmt``."
+  },
+  "ustruct.calcsize.summary": {
+    "message": "Get the number of bytes needed to store the given ``fmt``.",
+    "description": "Get the number of bytes needed to store the given ``fmt``."
+  },
+  "ustruct.calcsize.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) A format string."
+  },
+  "ustruct.calcsize.param-doc.fmt": {
+    "message": "A format string.",
+    "description": "Parameter docs"
+  },
+  "ustruct.pack": {
+    "message": "pack",
+    "description": "(function name) Pack values according to a format string."
+  },
+  "ustruct.pack.summary": {
+    "message": "Pack values according to a format string.",
+    "description": "Pack values according to a format string."
+  },
+  "ustruct.pack.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
+  },
+  "ustruct.pack.param-doc.fmt": {
+    "message": "The format string.",
+    "description": "Parameter docs"
+  },
+  "ustruct.pack.param-name.v1": {
+    "message": "v1",
+    "description": "(parameter name) The first value."
+  },
+  "ustruct.pack.param-doc.v1": {
+    "message": "The first value.",
+    "description": "Parameter docs"
+  },
+  "ustruct.pack_into": {
+    "message": "pack into",
+    "description": "(function name) Pack values according to a format string."
+  },
+  "ustruct.pack_into.summary": {
+    "message": "Pack values according to a format string.",
+    "description": "Pack values according to a format string."
+  },
+  "ustruct.pack_into.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
+  },
+  "ustruct.pack_into.param-doc.fmt": {
+    "message": "The format string.",
+    "description": "Parameter docs"
+  },
+  "ustruct.pack_into.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) The target buffer to write into."
+  },
+  "ustruct.pack_into.param-doc.buffer": {
+    "message": "The target buffer to write into.",
+    "description": "Parameter docs"
+  },
+  "ustruct.pack_into.param-name.offset": {
+    "message": "offset",
+    "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
+  },
+  "ustruct.pack_into.param-doc.offset": {
+    "message": "The offset into the buffer. May be negative to count from the end of the buffer.",
+    "description": "Parameter docs"
+  },
+  "ustruct.pack_into.param-name.v1": {
+    "message": "v1",
+    "description": "(parameter name) The first value."
+  },
+  "ustruct.pack_into.param-doc.v1": {
+    "message": "The first value.",
+    "description": "Parameter docs"
+  },
+  "ustruct.unpack": {
+    "message": "unpack",
+    "description": "(function name) Unpack data according to a format string."
+  },
+  "ustruct.unpack.summary": {
+    "message": "Unpack data according to a format string.",
+    "description": "Unpack data according to a format string."
+  },
+  "ustruct.unpack.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
+  },
+  "ustruct.unpack.param-doc.fmt": {
+    "message": "The format string.",
+    "description": "Parameter docs"
+  },
+  "ustruct.unpack.param-name.data": {
+    "message": "data",
+    "description": "(parameter name) The data."
+  },
+  "ustruct.unpack.param-doc.data": {
+    "message": "The data.",
+    "description": "Parameter docs"
+  },
+  "ustruct.unpack_from": {
+    "message": "unpack from",
+    "description": "(function name) Unpack data from a buffer according to a format string."
+  },
+  "ustruct.unpack_from.summary": {
+    "message": "Unpack data from a buffer according to a format string.",
+    "description": "Unpack data from a buffer according to a format string."
+  },
+  "ustruct.unpack_from.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
+  },
+  "ustruct.unpack_from.param-doc.fmt": {
+    "message": "The format string.",
+    "description": "Parameter docs"
+  },
+  "ustruct.unpack_from.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) The source buffer to read from."
+  },
+  "ustruct.unpack_from.param-doc.buffer": {
+    "message": "The source buffer to read from.",
+    "description": "Parameter docs"
+  },
+  "ustruct.unpack_from.param-name.offset": {
+    "message": "offset",
+    "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
+  },
+  "ustruct.unpack_from.param-doc.offset": {
+    "message": "The offset into the buffer. May be negative to count from the end of the buffer.",
+    "description": "Parameter docs"
+  },
+  "speech.summary": {
+    "message": "Make the micro:bit talk, sing and make other speech like sounds.",
+    "description": "Make the micro:bit talk, sing and make other speech like sounds."
+  },
+  "speech.translate": {
+    "message": "translate",
+    "description": "(function name) Translate English words to phonemes."
+  },
+  "speech.translate.summary": {
+    "message": "Translate English words to phonemes.",
+    "description": "Translate English words to phonemes."
+  },
+  "speech.translate.param-name.words": {
+    "message": "words",
+    "description": "(parameter name) A string of English words."
+  },
+  "speech.translate.param-doc.words": {
+    "message": "A string of English words.",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce": {
+    "message": "pronounce",
+    "description": "(function name) Pronounce phonemes."
+  },
+  "speech.pronounce.summary": {
+    "message": "Pronounce phonemes.",
+    "description": "Pronounce phonemes."
+  },
+  "speech.pronounce.param-name.phonemes": {
+    "message": "phonemes",
+    "description": "(parameter name) The string of phonemes to pronounce"
+  },
+  "speech.pronounce.param-doc.phonemes": {
+    "message": "The string of phonemes to pronounce",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.pitch": {
+    "message": "pitch",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.pronounce.param-doc.pitch": {
+    "message": "A number representing the pitch of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.speed": {
+    "message": "speed",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.pronounce.param-doc.speed": {
+    "message": "A number representing the speed of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.mouth": {
+    "message": "mouth",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.pronounce.param-doc.mouth": {
+    "message": "A number representing the mouth of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.pronounce.param-doc.throat": {
+    "message": "A number representing the throat of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only."
+  },
+  "speech.pronounce.param-doc.pin": {
+    "message": "Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only.",
+    "description": "Parameter docs"
+  },
+  "speech.say": {
+    "message": "say",
+    "description": "(function name) Say English words."
+  },
+  "speech.say.summary": {
+    "message": "Say English words.",
+    "description": "Say English words."
+  },
+  "speech.say.param-name.words": {
+    "message": "words",
+    "description": "(parameter name) The string of words to say."
+  },
+  "speech.say.param-doc.words": {
+    "message": "The string of words to say.",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.pitch": {
+    "message": "pitch",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.say.param-doc.pitch": {
+    "message": "A number representing the pitch of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.speed": {
+    "message": "speed",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.say.param-doc.speed": {
+    "message": "A number representing the speed of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.mouth": {
+    "message": "mouth",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.say.param-doc.mouth": {
+    "message": "A number representing the mouth of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.say.param-doc.throat": {
+    "message": "A number representing the throat of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only."
+  },
+  "speech.say.param-doc.pin": {
+    "message": "Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only.",
+    "description": "Parameter docs"
+  },
+  "speech.sing": {
+    "message": "sing",
+    "description": "(function name) Sing phonemes."
+  },
+  "speech.sing.summary": {
+    "message": "Sing phonemes.",
+    "description": "Sing phonemes."
+  },
+  "speech.sing.param-name.phonemes": {
+    "message": "phonemes",
+    "description": "(parameter name) The string of words to sing."
+  },
+  "speech.sing.param-doc.phonemes": {
+    "message": "The string of words to sing.",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.pitch": {
+    "message": "pitch",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.sing.param-doc.pitch": {
+    "message": "A number representing the pitch of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.speed": {
+    "message": "speed",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.sing.param-doc.speed": {
+    "message": "A number representing the speed of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.mouth": {
+    "message": "mouth",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.sing.param-doc.mouth": {
+    "message": "A number representing the mouth of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.sing.param-doc.throat": {
+    "message": "A number representing the throat of the voice",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only."
+  },
+  "speech.sing.param-doc.pin": {
+    "message": "Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only.",
+    "description": "Parameter docs"
+  },
+  "math.summary": {
+    "message": "Mathematical functions.",
+    "description": "Mathematical functions."
+  },
+  "math.acos": {
+    "message": "acos",
+    "description": "(function name) Calculate the inverse cosine."
+  },
+  "math.acos.summary": {
+    "message": "Calculate the inverse cosine.",
+    "description": "Calculate the inverse cosine."
+  },
+  "math.acos.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.acos.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.asin": {
+    "message": "asin",
+    "description": "(function name) Calculate the inverse sine."
+  },
+  "math.asin.summary": {
+    "message": "Calculate the inverse sine.",
+    "description": "Calculate the inverse sine."
+  },
+  "math.asin.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.asin.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.atan": {
+    "message": "atan",
+    "description": "(function name) Calculate the inverse tangent."
+  },
+  "math.atan.summary": {
+    "message": "Calculate the inverse tangent.",
+    "description": "Calculate the inverse tangent."
+  },
+  "math.atan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.atan.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.atan2": {
+    "message": "atan2",
+    "description": "(function name) Calculate the principal value of the inverse tangent of ``y/x``."
+  },
+  "math.atan2.summary": {
+    "message": "Calculate the principal value of the inverse tangent of ``y/x``.",
+    "description": "Calculate the principal value of the inverse tangent of ``y/x``."
+  },
+  "math.atan2.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) A number"
+  },
+  "math.atan2.param-doc.y": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.atan2.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.atan2.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.ceil": {
+    "message": "ceil",
+    "description": "(function name) Round a number towards positive infinity."
+  },
+  "math.ceil.summary": {
+    "message": "Round a number towards positive infinity.",
+    "description": "Round a number towards positive infinity."
+  },
+  "math.ceil.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.ceil.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.copysign": {
+    "message": "copysign",
+    "description": "(function name) Calculate ``x`` with the sign of ``y``."
+  },
+  "math.copysign.summary": {
+    "message": "Calculate ``x`` with the sign of ``y``.",
+    "description": "Calculate ``x`` with the sign of ``y``."
+  },
+  "math.copysign.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.copysign.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.copysign.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The source of the sign for the return value"
+  },
+  "math.copysign.param-doc.y": {
+    "message": "The source of the sign for the return value",
+    "description": "Parameter docs"
+  },
+  "math.cos": {
+    "message": "cos",
+    "description": "(function name) Calculate the cosine of ``x``."
+  },
+  "math.cos.summary": {
+    "message": "Calculate the cosine of ``x``.",
+    "description": "Calculate the cosine of ``x``."
+  },
+  "math.cos.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.cos.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.degrees": {
+    "message": "degrees",
+    "description": "(function name) Convert radians to degrees."
+  },
+  "math.degrees.summary": {
+    "message": "Convert radians to degrees.",
+    "description": "Convert radians to degrees."
+  },
+  "math.degrees.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A value in radians"
+  },
+  "math.degrees.param-doc.x": {
+    "message": "A value in radians",
+    "description": "Parameter docs"
+  },
+  "math.exp": {
+    "message": "exp",
+    "description": "(function name) Calculate the exponential of ``x``."
+  },
+  "math.exp.summary": {
+    "message": "Calculate the exponential of ``x``.",
+    "description": "Calculate the exponential of ``x``."
+  },
+  "math.exp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.exp.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.fabs": {
+    "message": "fabs",
+    "description": "(function name) Return the absolute value of ``x``."
+  },
+  "math.fabs.summary": {
+    "message": "Return the absolute value of ``x``.",
+    "description": "Return the absolute value of ``x``."
+  },
+  "math.fabs.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.fabs.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.floor": {
+    "message": "floor",
+    "description": "(function name) Round a number towards negative infinity."
+  },
+  "math.floor.summary": {
+    "message": "Round a number towards negative infinity.",
+    "description": "Round a number towards negative infinity."
+  },
+  "math.floor.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.floor.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.fmod": {
+    "message": "fmod",
+    "description": "(function name) Calculate the remainder of ``x/y``."
+  },
+  "math.fmod.summary": {
+    "message": "Calculate the remainder of ``x/y``.",
+    "description": "Calculate the remainder of ``x/y``."
+  },
+  "math.fmod.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The numerator"
+  },
+  "math.fmod.param-doc.x": {
+    "message": "The numerator",
+    "description": "Parameter docs"
+  },
+  "math.fmod.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The denominator"
+  },
+  "math.fmod.param-doc.y": {
+    "message": "The denominator",
+    "description": "Parameter docs"
+  },
+  "math.frexp": {
+    "message": "frexp",
+    "description": "(function name) Decomposes a floating-point number into its mantissa and exponent."
+  },
+  "math.frexp.summary": {
+    "message": "Decomposes a floating-point number into its mantissa and exponent.",
+    "description": "Decomposes a floating-point number into its mantissa and exponent."
+  },
+  "math.frexp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A floating-point number"
+  },
+  "math.frexp.param-doc.x": {
+    "message": "A floating-point number",
+    "description": "Parameter docs"
+  },
+  "math.isfinite": {
+    "message": "isfinite",
+    "description": "(function name) Check if a value is finite."
+  },
+  "math.isfinite.summary": {
+    "message": "Check if a value is finite.",
+    "description": "Check if a value is finite."
+  },
+  "math.isfinite.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number."
+  },
+  "math.isfinite.param-doc.x": {
+    "message": "A number.",
+    "description": "Parameter docs"
+  },
+  "math.isinf": {
+    "message": "isinf",
+    "description": "(function name) Check if a value is infinite."
+  },
+  "math.isinf.summary": {
+    "message": "Check if a value is infinite.",
+    "description": "Check if a value is infinite."
+  },
+  "math.isinf.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number."
+  },
+  "math.isinf.param-doc.x": {
+    "message": "A number.",
+    "description": "Parameter docs"
+  },
+  "math.isnan": {
+    "message": "isnan",
+    "description": "(function name) Check is a value is not-a-number (NaN)."
+  },
+  "math.isnan.summary": {
+    "message": "Check is a value is not-a-number (NaN).",
+    "description": "Check is a value is not-a-number (NaN)."
+  },
+  "math.isnan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.isnan.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.ldexp": {
+    "message": "ldexp",
+    "description": "(function name) Calculate ``x * (2**exp)``."
+  },
+  "math.ldexp.summary": {
+    "message": "Calculate ``x * (2**exp)``.",
+    "description": "Calculate ``x * (2**exp)``."
+  },
+  "math.ldexp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.ldexp.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.ldexp.param-name.exp": {
+    "message": "exp",
+    "description": "(parameter name) Integer exponent"
+  },
+  "math.ldexp.param-doc.exp": {
+    "message": "Integer exponent",
+    "description": "Parameter docs"
+  },
+  "math.log": {
+    "message": "log",
+    "description": "(function name) Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
+  },
+  "math.log.summary": {
+    "message": "Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm).",
+    "description": "Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
+  },
+  "math.log.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.log.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.log.param-name.base": {
+    "message": "base",
+    "description": "(parameter name) The base to use"
+  },
+  "math.log.param-doc.base": {
+    "message": "The base to use",
+    "description": "Parameter docs"
+  },
+  "math.modf": {
+    "message": "modf",
+    "description": "(function name) Calculate the fractional and integral parts of ``x``."
+  },
+  "math.modf.summary": {
+    "message": "Calculate the fractional and integral parts of ``x``.",
+    "description": "Calculate the fractional and integral parts of ``x``."
+  },
+  "math.modf.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.modf.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.pow": {
+    "message": "pow",
+    "description": "(function name) Returns ``x`` to the power of ``y``."
+  },
+  "math.pow.summary": {
+    "message": "Returns ``x`` to the power of ``y``.",
+    "description": "Returns ``x`` to the power of ``y``."
+  },
+  "math.pow.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.pow.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.pow.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The exponent"
+  },
+  "math.pow.param-doc.y": {
+    "message": "The exponent",
+    "description": "Parameter docs"
+  },
+  "math.radians": {
+    "message": "radians",
+    "description": "(function name) Convert a degrees to radians."
+  },
+  "math.radians.summary": {
+    "message": "Convert a degrees to radians.",
+    "description": "Convert a degrees to radians."
+  },
+  "math.radians.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A value in degrees"
+  },
+  "math.radians.param-doc.x": {
+    "message": "A value in degrees",
+    "description": "Parameter docs"
+  },
+  "math.sin": {
+    "message": "sin",
+    "description": "(function name) Calculate the sine of ``x``."
+  },
+  "math.sin.summary": {
+    "message": "Calculate the sine of ``x``.",
+    "description": "Calculate the sine of ``x``."
+  },
+  "math.sin.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.sin.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.sqrt": {
+    "message": "sqrt",
+    "description": "(function name) Calculate the square root of ``x``."
+  },
+  "math.sqrt.summary": {
+    "message": "Calculate the square root of ``x``.",
+    "description": "Calculate the square root of ``x``."
+  },
+  "math.sqrt.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.sqrt.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.tan": {
+    "message": "tan",
+    "description": "(function name) Calculate the tangent of ``x``."
+  },
+  "math.tan.summary": {
+    "message": "Calculate the tangent of ``x``.",
+    "description": "Calculate the tangent of ``x``."
+  },
+  "math.tan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.tan.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.trunc": {
+    "message": "trunc",
+    "description": "(function name) Round a number towards 0."
+  },
+  "math.trunc.summary": {
+    "message": "Round a number towards 0.",
+    "description": "Round a number towards 0."
+  },
+  "math.trunc.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.trunc.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.float.e": {
+    "message": "e",
+    "description": "(field name) Base of the natural logarithm"
+  },
+  "math.float.e.summary": {
+    "message": "Base of the natural logarithm",
+    "description": "Base of the natural logarithm"
+  },
+  "math.float.pi": {
+    "message": "pi",
+    "description": "(field name) The ratio of a circle's circumference to its diameter"
+  },
+  "math.float.pi.summary": {
+    "message": "The ratio of a circle's circumference to its diameter",
+    "description": "The ratio of a circle's circumference to its diameter"
+  },
+  "neopixel.summary": {
+    "message": "Individually addressable RGB and RGBW LED strips.",
+    "description": "Individually addressable RGB and RGBW LED strips."
+  },
+  "neopixel.NeoPixel.__init__": {
+    "message": "init",
+    "description": "(function name) Initialise a new strip of neopixel LEDs controlled via a pin."
+  },
+  "neopixel.NeoPixel.__init__.summary": {
+    "message": "Initialise a new strip of neopixel LEDs controlled via a pin.",
+    "description": "Initialise a new strip of neopixel LEDs controlled via a pin."
+  },
+  "neopixel.NeoPixel.__init__.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) The pin controlling the neopixel strip."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.pin": {
+    "message": "The pin controlling the neopixel strip.",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__init__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of neopixels in the strip."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.n": {
+    "message": "The number of neopixels in the strip.",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__init__.param-name.bpp": {
+    "message": "bpp",
+    "description": "(parameter name) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass ``4`` rather than the default of ``3`` for RGB and GRB."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.bpp": {
+    "message": "Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass ``4`` rather than the default of ``3`` for RGB and GRB.",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.clear": {
+    "message": "clear",
+    "description": "(function name) Clear all the pixels."
+  },
+  "neopixel.NeoPixel.clear.summary": {
+    "message": "Clear all the pixels.",
+    "description": "Clear all the pixels."
+  },
+  "neopixel.NeoPixel.show": {
+    "message": "show",
+    "description": "(function name) Show the pixels."
+  },
+  "neopixel.NeoPixel.show.summary": {
+    "message": "Show the pixels.",
+    "description": "Show the pixels."
+  },
+  "neopixel.NeoPixel.write": {
+    "message": "write",
+    "description": "(function name) Show the pixels (microbit V2 only)."
+  },
+  "neopixel.NeoPixel.write.summary": {
+    "message": "Show the pixels (microbit V2 only).",
+    "description": "Show the pixels (microbit V2 only)."
+  },
+  "neopixel.NeoPixel.fill": {
+    "message": "fill",
+    "description": "(function name) Colour all pixels a given RGB/RGBW value."
+  },
+  "neopixel.NeoPixel.fill.summary": {
+    "message": "Colour all pixels a given RGB/RGBW value.",
+    "description": "Colour all pixels a given RGB/RGBW value."
+  },
+  "neopixel.NeoPixel.fill.param-name.colour": {
+    "message": "colour",
+    "description": "(parameter name) A tuple of the same length as the number of bytes per pixel (bpp)."
+  },
+  "neopixel.NeoPixel.fill.param-doc.colour": {
+    "message": "A tuple of the same length as the number of bytes per pixel (bpp).",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__setitem__": {
+    "message": "setitem",
+    "description": "(function name) Set a pixel colour."
+  },
+  "neopixel.NeoPixel.__setitem__.summary": {
+    "message": "Set a pixel colour.",
+    "description": "Set a pixel colour."
+  },
+  "neopixel.NeoPixel.__setitem__.param-name.key": {
+    "message": "key",
+    "description": "(parameter name) The pixel number."
+  },
+  "neopixel.NeoPixel.__setitem__.param-doc.key": {
+    "message": "The pixel number.",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__setitem__.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The colour."
+  },
+  "neopixel.NeoPixel.__setitem__.param-doc.value": {
+    "message": "The colour.",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__getitem__": {
+    "message": "getitem",
+    "description": "(function name) Get a pixel colour."
+  },
+  "neopixel.NeoPixel.__getitem__.summary": {
+    "message": "Get a pixel colour.",
+    "description": "Get a pixel colour."
+  },
+  "neopixel.NeoPixel.__getitem__.param-name.key": {
+    "message": "key",
+    "description": "(parameter name) The pixel number."
+  },
+  "neopixel.NeoPixel.__getitem__.param-doc.key": {
+    "message": "The pixel number.",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__len__": {
+    "message": "len",
+    "description": "(function name) Get length of this pixel strip."
+  },
+  "neopixel.NeoPixel.__len__.summary": {
+    "message": "Get length of this pixel strip.",
+    "description": "Get length of this pixel strip."
+  },
+  "types.LambdaType": {
+    "message": "LambdaType",
+    "description": "(class name) Create a code object.  Not for the faint of heart."
+  },
+  "types.LambdaType.summary": {
+    "message": "Create a code object.  Not for the faint of heart.",
+    "description": "Create a code object.  Not for the faint of heart."
+  },
+  "types._StaticFunctionType": {
+    "message": "StaticFunctionType",
+    "description": "(class name) Fictional type to correct the type of MethodType.__func__."
+  },
+  "types._StaticFunctionType.summary": {
+    "message": "Fictional type to correct the type of MethodType.__func__.",
+    "description": "Fictional type to correct the type of MethodType.__func__."
+  },
+  "utime.summary": {
+    "message": "Measure time and add delays to programs.",
+    "description": "Measure time and add delays to programs."
+  },
+  "utime.sleep": {
+    "message": "sleep",
+    "description": "(function name) Delay a number of seconds."
+  },
+  "utime.sleep.summary": {
+    "message": "Delay a number of seconds.",
+    "description": "Delay a number of seconds."
+  },
+  "utime.sleep.param-name.seconds": {
+    "message": "seconds",
+    "description": "(parameter name) The number of seconds to sleep for. Use a floating-point\nnumber to sleep for a fractional number of seconds."
+  },
+  "utime.sleep.param-doc.seconds": {
+    "message": "The number of seconds to sleep for. Use a floating-point\nnumber to sleep for a fractional number of seconds.",
+    "description": "Parameter docs"
+  },
+  "utime.sleep_ms": {
+    "message": "sleep ms",
+    "description": "(function name) Delay for given number of milliseconds."
+  },
+  "utime.sleep_ms.summary": {
+    "message": "Delay for given number of milliseconds.",
+    "description": "Delay for given number of milliseconds."
+  },
+  "utime.sleep_ms.param-name.ms": {
+    "message": "ms",
+    "description": "(parameter name) The number of milliseconds delay (>= 0)."
+  },
+  "utime.sleep_ms.param-doc.ms": {
+    "message": "The number of milliseconds delay (>= 0).",
+    "description": "Parameter docs"
+  },
+  "utime.sleep_us": {
+    "message": "sleep us",
+    "description": "(function name) Delay for given number of microseconds."
+  },
+  "utime.sleep_us.summary": {
+    "message": "Delay for given number of microseconds.",
+    "description": "Delay for given number of microseconds."
+  },
+  "utime.sleep_us.param-name.us": {
+    "message": "us",
+    "description": "(parameter name) The number of microseconds delay (>= 0)."
+  },
+  "utime.sleep_us.param-doc.us": {
+    "message": "The number of microseconds delay (>= 0).",
+    "description": "Parameter docs"
+  },
+  "utime.ticks_ms": {
+    "message": "ticks ms",
+    "description": "(function name) Get an increasing, millisecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "utime.ticks_ms.summary": {
+    "message": "Get an increasing, millisecond counter with an arbitrary reference point,\nthat wraps around after some value.",
+    "description": "Get an increasing, millisecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "utime.ticks_us": {
+    "message": "ticks us",
+    "description": "(function name) Get an increasing, microsecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "utime.ticks_us.summary": {
+    "message": "Get an increasing, microsecond counter with an arbitrary reference point,\nthat wraps around after some value.",
+    "description": "Get an increasing, microsecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "utime.ticks_add": {
+    "message": "ticks add",
+    "description": "(function name) Offset ticks value by a given number, which can be either positive or\nnegative."
+  },
+  "utime.ticks_add.summary": {
+    "message": "Offset ticks value by a given number, which can be either positive or\nnegative.",
+    "description": "Offset ticks value by a given number, which can be either positive or\nnegative."
+  },
+  "utime.ticks_add.param-name.ticks": {
+    "message": "ticks",
+    "description": "(parameter name) A ticks value"
+  },
+  "utime.ticks_add.param-doc.ticks": {
+    "message": "A ticks value",
+    "description": "Parameter docs"
+  },
+  "utime.ticks_add.param-name.delta": {
+    "message": "delta",
+    "description": "(parameter name) An integer offset"
+  },
+  "utime.ticks_add.param-doc.delta": {
+    "message": "An integer offset",
+    "description": "Parameter docs"
+  },
+  "utime.ticks_diff": {
+    "message": "ticks diff",
+    "description": "(function name) Measure ticks difference between values returned from\n``utime.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
+  },
+  "utime.ticks_diff.summary": {
+    "message": "Measure ticks difference between values returned from\n``utime.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around.",
+    "description": "Measure ticks difference between values returned from\n``utime.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
+  },
+  "utime.ticks_diff.param-name.ticks1": {
+    "message": "ticks1",
+    "description": "(parameter name) The value to subtract from"
+  },
+  "utime.ticks_diff.param-doc.ticks1": {
+    "message": "The value to subtract from",
+    "description": "Parameter docs"
+  },
+  "utime.ticks_diff.param-name.ticks2": {
+    "message": "ticks2",
+    "description": "(parameter name) The value to subtract"
+  },
+  "utime.ticks_diff.param-doc.ticks2": {
+    "message": "The value to subtract",
+    "description": "Parameter docs"
+  },
+  "usys.summary": {
+    "message": "system specific functions",
+    "description": "system specific functions"
+  },
+  "usys.exit": {
+    "message": "exit",
+    "description": "(function name) Terminate current program with a given exit code."
+  },
+  "usys.exit.summary": {
+    "message": "Terminate current program with a given exit code.",
+    "description": "Terminate current program with a given exit code."
+  },
+  "usys.exit.param-name.retval": {
+    "message": "retval",
+    "description": "(parameter name) The exit code or message."
+  },
+  "usys.exit.param-doc.retval": {
+    "message": "The exit code or message.",
+    "description": "Parameter docs"
+  },
+  "usys.print_exception": {
+    "message": "print exception",
+    "description": "(function name) Print an exception with a traceback."
+  },
+  "usys.print_exception.summary": {
+    "message": "Print an exception with a traceback.",
+    "description": "Print an exception with a traceback."
+  },
+  "usys.print_exception.param-name.exc": {
+    "message": "exc",
+    "description": "(parameter name) The exception to print"
+  },
+  "usys.print_exception.param-doc.exc": {
+    "message": "The exception to print",
+    "description": "Parameter docs"
+  },
+  "usys.argv": {
+    "message": "argv",
+    "description": "(field name) A mutable list of arguments the current program was started with."
+  },
+  "usys.argv.summary": {
+    "message": "A mutable list of arguments the current program was started with.",
+    "description": "A mutable list of arguments the current program was started with."
+  },
+  "usys.str.byteorder": {
+    "message": "byteorder",
+    "description": "(field name) The byte order of the system (``\"little\"`` or ``\"big\"``)."
+  },
+  "usys.str.byteorder.summary": {
+    "message": "The byte order of the system (``\"little\"`` or ``\"big\"``).",
+    "description": "The byte order of the system (``\"little\"`` or ``\"big\"``)."
+  },
+  "usys._implementation.implementation": {
+    "message": "implementation",
+    "description": "(field name) Object with information about the current Python implementation."
+  },
+  "usys._implementation.implementation.summary": {
+    "message": "Object with information about the current Python implementation.",
+    "description": "Object with information about the current Python implementation."
+  },
+  "usys.int.maxsize": {
+    "message": "maxsize",
+    "description": "(field name) \nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support)."
+  },
+  "usys.int.maxsize.summary": {
+    "message": "\nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support).",
+    "description": "\nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support)."
+  },
+  "usys.modules": {
+    "message": "modules",
+    "description": "(field name) Dictionary of loaded modules. "
+  },
+  "usys.modules.summary": {
+    "message": "Dictionary of loaded modules. ",
+    "description": "Dictionary of loaded modules. "
+  },
+  "usys.path": {
+    "message": "path",
+    "description": "(field name) A mutable list of directories to search for imported modules."
+  },
+  "usys.path.summary": {
+    "message": "A mutable list of directories to search for imported modules.",
+    "description": "A mutable list of directories to search for imported modules."
+  },
+  "usys.str.platform": {
+    "message": "platform",
+    "description": "(field name) The platform that MicroPython is running on. "
+  },
+  "usys.str.platform.summary": {
+    "message": "The platform that MicroPython is running on. ",
+    "description": "The platform that MicroPython is running on. "
+  },
+  "usys.str.version": {
+    "message": "version",
+    "description": "(field name) Python language version that this implementation conforms to, as a string."
+  },
+  "usys.str.version.summary": {
+    "message": "Python language version that this implementation conforms to, as a string.",
+    "description": "Python language version that this implementation conforms to, as a string."
+  },
+  "usys.version_info": {
+    "message": "version info",
+    "description": "(field name) Python language version that this implementation conforms to, as a tuple of ints."
+  },
+  "usys.version_info.summary": {
+    "message": "Python language version that this implementation conforms to, as a tuple of ints.",
+    "description": "Python language version that this implementation conforms to, as a tuple of ints."
+  },
+  "micropython.summary": {
+    "message": "MicroPython internals.",
+    "description": "MicroPython internals."
+  },
+  "micropython._T": {
+    "message": "T",
+    "description": "(function name) Used to declare that the expression is a constant so that the compiler can\noptimise it."
+  },
+  "micropython._T.summary": {
+    "message": "Used to declare that the expression is a constant so that the compiler can\noptimise it.",
+    "description": "Used to declare that the expression is a constant so that the compiler can\noptimise it."
+  },
+  "micropython._T.param-name.expr": {
+    "message": "expr",
+    "description": "(parameter name) A constant expression."
+  },
+  "micropython._T.param-doc.expr": {
+    "message": "A constant expression.",
+    "description": "Parameter docs"
+  },
+  "micropython.opt_level": {
+    "message": "opt level",
+    "description": "(function name) Sets the optimisation level for subsequent compilation of scripts."
+  },
+  "micropython.opt_level.summary": {
+    "message": "Sets the optimisation level for subsequent compilation of scripts.",
+    "description": "Sets the optimisation level for subsequent compilation of scripts."
+  },
+  "micropython.opt_level.param-name.level": {
+    "message": "level",
+    "description": "(parameter name) An integer optimisation level."
+  },
+  "micropython.opt_level.param-doc.level": {
+    "message": "An integer optimisation level.",
+    "description": "Parameter docs"
+  },
+  "micropython.mem_info": {
+    "message": "mem info",
+    "description": "(function name) Print information about currently used memory."
+  },
+  "micropython.mem_info.summary": {
+    "message": "Print information about currently used memory.",
+    "description": "Print information about currently used memory."
+  },
+  "micropython.mem_info.param-name.verbose": {
+    "message": "verbose",
+    "description": "(parameter name) If the ``verbose`` argument is given then extra information is printed."
+  },
+  "micropython.mem_info.param-doc.verbose": {
+    "message": "If the ``verbose`` argument is given then extra information is printed.",
+    "description": "Parameter docs"
+  },
+  "micropython.qstr_info": {
+    "message": "qstr info",
+    "description": "(function name) Print information about currently interned strings."
+  },
+  "micropython.qstr_info.summary": {
+    "message": "Print information about currently interned strings.",
+    "description": "Print information about currently interned strings."
+  },
+  "micropython.qstr_info.param-name.verbose": {
+    "message": "verbose",
+    "description": "(parameter name) If the ``verbose`` argument is given then extra information is printed."
+  },
+  "micropython.qstr_info.param-doc.verbose": {
+    "message": "If the ``verbose`` argument is given then extra information is printed.",
+    "description": "Parameter docs"
+  },
+  "micropython.stack_use": {
+    "message": "stack use",
+    "description": "(function name) Return an integer representing the current amount of stack that is being\nused."
+  },
+  "micropython.stack_use.summary": {
+    "message": "Return an integer representing the current amount of stack that is being\nused.",
+    "description": "Return an integer representing the current amount of stack that is being\nused."
+  },
+  "micropython.heap_lock": {
+    "message": "heap lock",
+    "description": "(function name) Lock the heap."
+  },
+  "micropython.heap_lock.summary": {
+    "message": "Lock the heap.",
+    "description": "Lock the heap."
+  },
+  "micropython.heap_unlock": {
+    "message": "heap unlock",
+    "description": "(function name) Unlock the heap."
+  },
+  "micropython.heap_unlock.summary": {
+    "message": "Unlock the heap.",
+    "description": "Unlock the heap."
+  },
+  "micropython.kbd_intr": {
+    "message": "kbd intr",
+    "description": "(function name) Set the character that will raise a `KeyboardInterrupt` exception."
+  },
+  "micropython.kbd_intr.summary": {
+    "message": "Set the character that will raise a `KeyboardInterrupt` exception.",
+    "description": "Set the character that will raise a `KeyboardInterrupt` exception."
+  },
+  "micropython.kbd_intr.param-name.chr": {
+    "message": "chr",
+    "description": "(parameter name) Character code to raise the interrupt or -1 to disable capture of Ctrl-C."
+  },
+  "micropython.kbd_intr.param-doc.chr": {
+    "message": "Character code to raise the interrupt or -1 to disable capture of Ctrl-C.",
+    "description": "Parameter docs"
+  },
+  "os.listdir": {
+    "message": "listdir",
+    "description": "(function name) List files."
+  },
+  "os.listdir.summary": {
+    "message": "List files.",
+    "description": "List files."
+  },
+  "os.remove": {
+    "message": "remove",
+    "description": "(function name) Remove (delete) a file."
+  },
+  "os.remove.summary": {
+    "message": "Remove (delete) a file.",
+    "description": "Remove (delete) a file."
+  },
+  "os.remove.param-name.filename": {
+    "message": "filename",
+    "description": "(parameter name) The file to delete."
+  },
+  "os.remove.param-doc.filename": {
+    "message": "The file to delete.",
+    "description": "Parameter docs"
+  },
+  "os.size": {
+    "message": "size",
+    "description": "(function name) Returns the size of a file."
+  },
+  "os.size.summary": {
+    "message": "Returns the size of a file.",
+    "description": "Returns the size of a file."
+  },
+  "os.size.param-name.filename": {
+    "message": "filename",
+    "description": "(parameter name) The file"
+  },
+  "os.size.param-doc.filename": {
+    "message": "The file",
+    "description": "Parameter docs"
+  },
+  "os.uname_result": {
+    "message": "uname result",
+    "description": "(class name) Result of ``os.uname()``"
+  },
+  "os.uname_result.summary": {
+    "message": "Result of ``os.uname()``",
+    "description": "Result of ``os.uname()``"
+  },
+  "os.uname_result.sysname": {
+    "message": "sysname",
+    "description": "(field name) Operating system name."
+  },
+  "os.uname_result.sysname.summary": {
+    "message": "Operating system name.",
+    "description": "Operating system name."
+  },
+  "os.uname_result.nodename": {
+    "message": "nodename",
+    "description": "(field name) Name of machine on network (implementation-defined)."
+  },
+  "os.uname_result.nodename.summary": {
+    "message": "Name of machine on network (implementation-defined).",
+    "description": "Name of machine on network (implementation-defined)."
+  },
+  "os.uname_result.release": {
+    "message": "release",
+    "description": "(field name) Operating system release."
+  },
+  "os.uname_result.release.summary": {
+    "message": "Operating system release.",
+    "description": "Operating system release."
+  },
+  "os.uname_result.version": {
+    "message": "version",
+    "description": "(field name) Operating system version."
+  },
+  "os.uname_result.version.summary": {
+    "message": "Operating system version.",
+    "description": "Operating system version."
+  },
+  "os.uname_result.machine": {
+    "message": "machine",
+    "description": "(field name) Hardware identifier."
+  },
+  "os.uname_result.machine.summary": {
+    "message": "Hardware identifier.",
+    "description": "Hardware identifier."
+  },
+  "os.uname": {
+    "message": "uname",
+    "description": "(function name) Returns information identifying the current operating system."
+  },
+  "os.uname.summary": {
+    "message": "Returns information identifying the current operating system.",
+    "description": "Returns information identifying the current operating system."
+  },
+  "log.summary": {
+    "message": "Log data to your micro:bit V2.",
+    "description": "Log data to your micro:bit V2."
+  },
+  "log.MILLISECONDS": {
+    "message": "MILLISECONDS",
+    "description": "(field name) Milliseconds timestamp format."
+  },
+  "log.MILLISECONDS.summary": {
+    "message": "Milliseconds timestamp format.",
+    "description": "Milliseconds timestamp format."
+  },
+  "log.SECONDS": {
+    "message": "SECONDS",
+    "description": "(field name) Seconds timestamp format."
+  },
+  "log.SECONDS.summary": {
+    "message": "Seconds timestamp format.",
+    "description": "Seconds timestamp format."
+  },
+  "log.MINUTES": {
+    "message": "MINUTES",
+    "description": "(field name) Minutes timestamp format."
+  },
+  "log.MINUTES.summary": {
+    "message": "Minutes timestamp format.",
+    "description": "Minutes timestamp format."
+  },
+  "log.HOURS": {
+    "message": "HOURS",
+    "description": "(field name) Hours timestamp format."
+  },
+  "log.HOURS.summary": {
+    "message": "Hours timestamp format.",
+    "description": "Hours timestamp format."
+  },
+  "log.DAYS": {
+    "message": "DAYS",
+    "description": "(field name) Days timestamp format."
+  },
+  "log.DAYS.summary": {
+    "message": "Days timestamp format.",
+    "description": "Days timestamp format."
+  },
+  "log.set_labels": {
+    "message": "set labels",
+    "description": "(function name) Set up the log file header."
+  },
+  "log.set_labels.summary": {
+    "message": "Set up the log file header.",
+    "description": "Set up the log file header."
+  },
+  "log.add": {
+    "message": "add",
+    "description": "(function name) Add a data row to the log using keyword arguments."
+  },
+  "log.add.summary": {
+    "message": "Add a data row to the log using keyword arguments.",
+    "description": "Add a data row to the log using keyword arguments."
+  },
+  "log.add.param-name.log_data": {
+    "message": "log_data",
+    "description": "(parameter name) The data to log as a dictionary with a key for each header."
+  },
+  "log.add.param-doc.log_data": {
+    "message": "The data to log as a dictionary with a key for each header.",
+    "description": "Parameter docs"
+  },
+  "log.delete": {
+    "message": "delete",
+    "description": "(function name) Deletes the contents of the log, including headers."
+  },
+  "log.delete.summary": {
+    "message": "Deletes the contents of the log, including headers.",
+    "description": "Deletes the contents of the log, including headers."
+  },
+  "log.delete.param-name.full": {
+    "message": "full",
+    "description": "(parameter name) Selects a \"full\" erase format that removes the data from the flash storage.\nIf set to ``False`` it uses a \"fast\" method, which invalidates the data instead of performing a slower full erase."
+  },
+  "log.delete.param-doc.full": {
+    "message": "Selects a \"full\" erase format that removes the data from the flash storage.\nIf set to ``False`` it uses a \"fast\" method, which invalidates the data instead of performing a slower full erase.",
+    "description": "Parameter docs"
+  },
+  "log.set_mirroring": {
+    "message": "set mirroring",
+    "description": "(function name) Mirrors the data logging activity to the serial output."
+  },
+  "log.set_mirroring.summary": {
+    "message": "Mirrors the data logging activity to the serial output.",
+    "description": "Mirrors the data logging activity to the serial output."
+  },
+  "log.set_mirroring.param-name.serial": {
+    "message": "serial",
+    "description": "(parameter name) Pass ``True`` to mirror the data logging activity to the serial output, ``False`` to disable mirroring."
+  },
+  "log.set_mirroring.param-doc.serial": {
+    "message": "Pass ``True`` to mirror the data logging activity to the serial output, ``False`` to disable mirroring.",
+    "description": "Parameter docs"
+  },
+  "gc.summary": {
+    "message": "Control the garbage collector",
+    "description": "Control the garbage collector"
+  },
+  "gc.enable": {
+    "message": "enable",
+    "description": "(function name) Enable automatic garbage collection."
+  },
+  "gc.enable.summary": {
+    "message": "Enable automatic garbage collection.",
+    "description": "Enable automatic garbage collection."
+  },
+  "gc.disable": {
+    "message": "disable",
+    "description": "(function name) Disable automatic garbage collection."
+  },
+  "gc.disable.summary": {
+    "message": "Disable automatic garbage collection.",
+    "description": "Disable automatic garbage collection."
+  },
+  "gc.collect": {
+    "message": "collect",
+    "description": "(function name) Run a garbage collection."
+  },
+  "gc.collect.summary": {
+    "message": "Run a garbage collection.",
+    "description": "Run a garbage collection."
+  },
+  "gc.mem_alloc": {
+    "message": "mem alloc",
+    "description": "(function name) Get the number of bytes of heap RAM that are allocated."
+  },
+  "gc.mem_alloc.summary": {
+    "message": "Get the number of bytes of heap RAM that are allocated.",
+    "description": "Get the number of bytes of heap RAM that are allocated."
+  },
+  "gc.mem_free": {
+    "message": "mem free",
+    "description": "(function name) Get the number of bytes of available heap RAM, or -1 if this amount is not known."
+  },
+  "gc.mem_free.summary": {
+    "message": "Get the number of bytes of available heap RAM, or -1 if this amount is not known.",
+    "description": "Get the number of bytes of available heap RAM, or -1 if this amount is not known."
+  },
+  "gc.threshold": {
+    "message": "threshold",
+    "description": "(function name) Set the additional GC allocation threshold."
+  },
+  "gc.threshold.summary": {
+    "message": "Set the additional GC allocation threshold.",
+    "description": "Set the additional GC allocation threshold."
+  },
+  "gc.threshold.param-name.amount": {
+    "message": "amount",
+    "description": "(parameter name) The number of bytes after which a garbage collection should be triggered."
+  },
+  "gc.threshold.param-doc.amount": {
+    "message": "The number of bytes after which a garbage collection should be triggered.",
+    "description": "Parameter docs"
+  },
+  "machine.summary": {
+    "message": "Low-level utilities.",
+    "description": "Low-level utilities."
+  },
+  "machine.unique_id": {
+    "message": "unique id",
+    "description": "(function name) Get a byte string with a unique identifier of a board."
+  },
+  "machine.unique_id.summary": {
+    "message": "Get a byte string with a unique identifier of a board.",
+    "description": "Get a byte string with a unique identifier of a board."
+  },
+  "machine.reset": {
+    "message": "reset",
+    "description": "(function name) Reset the device in a manner similar to pushing the external RESET button."
+  },
+  "machine.reset.summary": {
+    "message": "Reset the device in a manner similar to pushing the external RESET button.",
+    "description": "Reset the device in a manner similar to pushing the external RESET button."
+  },
+  "machine.freq": {
+    "message": "freq",
+    "description": "(function name) Get the CPU frequency in hertz."
+  },
+  "machine.freq.summary": {
+    "message": "Get the CPU frequency in hertz.",
+    "description": "Get the CPU frequency in hertz."
+  },
+  "machine.disable_irq": {
+    "message": "disable irq",
+    "description": "(function name) Disable interrupt requests."
+  },
+  "machine.disable_irq.summary": {
+    "message": "Disable interrupt requests.",
+    "description": "Disable interrupt requests."
+  },
+  "machine.enable_irq": {
+    "message": "enable irq",
+    "description": "(function name) Re-enable interrupt requests."
+  },
+  "machine.enable_irq.summary": {
+    "message": "Re-enable interrupt requests.",
+    "description": "Re-enable interrupt requests."
+  },
+  "machine.enable_irq.param-name.state": {
+    "message": "state",
+    "description": "(parameter name) The value that was returned from the most recent call to the ``disable_irq`` function."
+  },
+  "machine.enable_irq.param-doc.state": {
+    "message": "The value that was returned from the most recent call to the ``disable_irq`` function.",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us": {
+    "message": "time pulse us",
+    "description": "(function name) Time a pulse on a pin."
+  },
+  "machine.time_pulse_us.summary": {
+    "message": "Time a pulse on a pin.",
+    "description": "Time a pulse on a pin."
+  },
+  "machine.time_pulse_us.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) The pin to use"
+  },
+  "machine.time_pulse_us.param-doc.pin": {
+    "message": "The pin to use",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us.param-name.pulse_level": {
+    "message": "pulse_level",
+    "description": "(parameter name) 0 to time a low pulse or 1 to time a high pulse"
+  },
+  "machine.time_pulse_us.param-doc.pulse_level": {
+    "message": "0 to time a low pulse or 1 to time a high pulse",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us.param-name.timeout_us": {
+    "message": "timeout_us",
+    "description": "(parameter name) A microsecond timeout"
+  },
+  "machine.time_pulse_us.param-doc.timeout_us": {
+    "message": "A microsecond timeout",
+    "description": "Parameter docs"
+  },
+  "machine.mem": {
+    "message": "mem",
+    "description": "(class name) The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."
+  },
+  "machine.mem.summary": {
+    "message": "The class for the ``mem8``, ``mem16`` and ``mem32`` memory views.",
+    "description": "The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."
+  },
+  "machine.mem.__getitem__": {
+    "message": "getitem",
+    "description": "(function name) Access a value from memory."
+  },
+  "machine.mem.__getitem__.summary": {
+    "message": "Access a value from memory.",
+    "description": "Access a value from memory."
+  },
+  "machine.mem.__getitem__.param-name.address": {
+    "message": "address",
+    "description": "(parameter name) The memory address."
+  },
+  "machine.mem.__getitem__.param-doc.address": {
+    "message": "The memory address.",
+    "description": "Parameter docs"
+  },
+  "machine.mem.__setitem__": {
+    "message": "setitem",
+    "description": "(function name) Set a value at the given address."
+  },
+  "machine.mem.__setitem__.summary": {
+    "message": "Set a value at the given address.",
+    "description": "Set a value at the given address."
+  },
+  "machine.mem.__setitem__.param-name.address": {
+    "message": "address",
+    "description": "(parameter name) The memory address."
+  },
+  "machine.mem.__setitem__.param-doc.address": {
+    "message": "The memory address.",
+    "description": "Parameter docs"
+  },
+  "machine.mem.__setitem__.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The integer value to set."
+  },
+  "machine.mem.__setitem__.param-doc.value": {
+    "message": "The integer value to set.",
+    "description": "Parameter docs"
+  },
+  "machine.mem.mem8": {
+    "message": "mem8",
+    "description": "(field name) 8-bit (byte) view of memory."
+  },
+  "machine.mem.mem8.summary": {
+    "message": "8-bit (byte) view of memory.",
+    "description": "8-bit (byte) view of memory."
+  },
+  "machine.mem.mem16": {
+    "message": "mem16",
+    "description": "(field name) 16-bit view of memory."
+  },
+  "machine.mem.mem16.summary": {
+    "message": "16-bit view of memory.",
+    "description": "16-bit view of memory."
+  },
+  "machine.mem.mem32": {
+    "message": "mem32",
+    "description": "(field name) 32-bit view of memory."
+  },
+  "machine.mem.mem32.summary": {
+    "message": "32-bit view of memory.",
+    "description": "32-bit view of memory."
+  },
+  "music.summary": {
+    "message": "Create and play melodies.",
+    "description": "Create and play melodies."
+  },
+  "music.DADADADUM": {
+    "message": "DADADADUM",
+    "description": "(field name) Melody: the opening to Beethoven\u2019s 5th Symphony in C minor."
+  },
+  "music.DADADADUM.summary": {
+    "message": "Melody: the opening to Beethoven\u2019s 5th Symphony in C minor.",
+    "description": "Melody: the opening to Beethoven\u2019s 5th Symphony in C minor."
+  },
+  "music.ENTERTAINER": {
+    "message": "ENTERTAINER",
+    "description": "(field name) Melody: the opening fragment of Scott Joplin\u2019s Ragtime classic \u201cThe Entertainer\u201d."
+  },
+  "music.ENTERTAINER.summary": {
+    "message": "Melody: the opening fragment of Scott Joplin\u2019s Ragtime classic \u201cThe Entertainer\u201d.",
+    "description": "Melody: the opening fragment of Scott Joplin\u2019s Ragtime classic \u201cThe Entertainer\u201d."
+  },
+  "music.PRELUDE": {
+    "message": "PRELUDE",
+    "description": "(field name) Melody: the opening of the first Prelude in C Major of J.S.Bach\u2019s 48 Preludes and Fugues."
+  },
+  "music.PRELUDE.summary": {
+    "message": "Melody: the opening of the first Prelude in C Major of J.S.Bach\u2019s 48 Preludes and Fugues.",
+    "description": "Melody: the opening of the first Prelude in C Major of J.S.Bach\u2019s 48 Preludes and Fugues."
+  },
+  "music.ODE": {
+    "message": "ODE",
+    "description": "(field name) Melody: the \u201cOde to Joy\u201d theme from Beethoven\u2019s 9th Symphony in D minor."
+  },
+  "music.ODE.summary": {
+    "message": "Melody: the \u201cOde to Joy\u201d theme from Beethoven\u2019s 9th Symphony in D minor.",
+    "description": "Melody: the \u201cOde to Joy\u201d theme from Beethoven\u2019s 9th Symphony in D minor."
+  },
+  "music.NYAN": {
+    "message": "NYAN",
+    "description": "(field name) Melody: the Nyan Cat theme (http://www.nyan.cat/)."
+  },
+  "music.NYAN.summary": {
+    "message": "Melody: the Nyan Cat theme (http://www.nyan.cat/).",
+    "description": "Melody: the Nyan Cat theme (http://www.nyan.cat/)."
+  },
+  "music.RINGTONE": {
+    "message": "RINGTONE",
+    "description": "(field name) Melody: something that sounds like a mobile phone ringtone."
+  },
+  "music.RINGTONE.summary": {
+    "message": "Melody: something that sounds like a mobile phone ringtone.",
+    "description": "Melody: something that sounds like a mobile phone ringtone."
+  },
+  "music.FUNK": {
+    "message": "FUNK",
+    "description": "(field name) Melody: a funky bass line for secret agents and criminal masterminds."
+  },
+  "music.FUNK.summary": {
+    "message": "Melody: a funky bass line for secret agents and criminal masterminds.",
+    "description": "Melody: a funky bass line for secret agents and criminal masterminds."
+  },
+  "music.BLUES": {
+    "message": "BLUES",
+    "description": "(field name) Melody: a boogie-woogie 12-bar blues walking bass."
+  },
+  "music.BLUES.summary": {
+    "message": "Melody: a boogie-woogie 12-bar blues walking bass.",
+    "description": "Melody: a boogie-woogie 12-bar blues walking bass."
+  },
+  "music.BIRTHDAY": {
+    "message": "BIRTHDAY",
+    "description": "(field name) Melody: \u201cHappy Birthday to You\u2026\u201d"
+  },
+  "music.BIRTHDAY.summary": {
+    "message": "Melody: \u201cHappy Birthday to You\u2026\u201d",
+    "description": "Melody: \u201cHappy Birthday to You\u2026\u201d"
+  },
+  "music.WEDDING": {
+    "message": "WEDDING",
+    "description": "(field name) Melody: the bridal chorus from Wagner\u2019s opera \u201cLohengrin\u201d."
+  },
+  "music.WEDDING.summary": {
+    "message": "Melody: the bridal chorus from Wagner\u2019s opera \u201cLohengrin\u201d.",
+    "description": "Melody: the bridal chorus from Wagner\u2019s opera \u201cLohengrin\u201d."
+  },
+  "music.FUNERAL": {
+    "message": "FUNERAL",
+    "description": "(field name) Melody: the \u201cfuneral march\u201d otherwise known as Fr\u00e9d\u00e9ric Chopin\u2019s Piano Sonata No. 2 in B\u266d minor, Op. 35."
+  },
+  "music.FUNERAL.summary": {
+    "message": "Melody: the \u201cfuneral march\u201d otherwise known as Fr\u00e9d\u00e9ric Chopin\u2019s Piano Sonata No. 2 in B\u266d minor, Op. 35.",
+    "description": "Melody: the \u201cfuneral march\u201d otherwise known as Fr\u00e9d\u00e9ric Chopin\u2019s Piano Sonata No. 2 in B\u266d minor, Op. 35."
+  },
+  "music.PUNCHLINE": {
+    "message": "PUNCHLINE",
+    "description": "(field name) Melody: a fun fragment that signifies a joke has been made."
+  },
+  "music.PUNCHLINE.summary": {
+    "message": "Melody: a fun fragment that signifies a joke has been made.",
+    "description": "Melody: a fun fragment that signifies a joke has been made."
+  },
+  "music.PYTHON": {
+    "message": "PYTHON",
+    "description": "(field name) Melody: John Philip Sousa\u2019s march \u201cLiberty Bell\u201d aka, the theme for \u201cMonty Python\u2019s Flying Circus\u201d (after which the Python programming language is named)."
+  },
+  "music.PYTHON.summary": {
+    "message": "Melody: John Philip Sousa\u2019s march \u201cLiberty Bell\u201d aka, the theme for \u201cMonty Python\u2019s Flying Circus\u201d (after which the Python programming language is named).",
+    "description": "Melody: John Philip Sousa\u2019s march \u201cLiberty Bell\u201d aka, the theme for \u201cMonty Python\u2019s Flying Circus\u201d (after which the Python programming language is named)."
+  },
+  "music.BADDY": {
+    "message": "BADDY",
+    "description": "(field name) Melody: silent movie era entrance of a baddy."
+  },
+  "music.BADDY.summary": {
+    "message": "Melody: silent movie era entrance of a baddy.",
+    "description": "Melody: silent movie era entrance of a baddy."
+  },
+  "music.CHASE": {
+    "message": "CHASE",
+    "description": "(field name) Melody: silent movie era chase scene."
+  },
+  "music.CHASE.summary": {
+    "message": "Melody: silent movie era chase scene.",
+    "description": "Melody: silent movie era chase scene."
+  },
+  "music.BA_DING": {
+    "message": "BA DING",
+    "description": "(field name) Melody: a short signal to indicate something has happened."
+  },
+  "music.BA_DING.summary": {
+    "message": "Melody: a short signal to indicate something has happened.",
+    "description": "Melody: a short signal to indicate something has happened."
+  },
+  "music.WAWAWAWAA": {
+    "message": "WAWAWAWAA",
+    "description": "(field name) Melody: a very sad trombone."
+  },
+  "music.WAWAWAWAA.summary": {
+    "message": "Melody: a very sad trombone.",
+    "description": "Melody: a very sad trombone."
+  },
+  "music.JUMP_UP": {
+    "message": "JUMP UP",
+    "description": "(field name) Melody: for use in a game, indicating upward movement."
+  },
+  "music.JUMP_UP.summary": {
+    "message": "Melody: for use in a game, indicating upward movement.",
+    "description": "Melody: for use in a game, indicating upward movement."
+  },
+  "music.JUMP_DOWN": {
+    "message": "JUMP DOWN",
+    "description": "(field name) Melody: for use in a game, indicating downward movement."
+  },
+  "music.JUMP_DOWN.summary": {
+    "message": "Melody: for use in a game, indicating downward movement.",
+    "description": "Melody: for use in a game, indicating downward movement."
+  },
+  "music.POWER_UP": {
+    "message": "POWER UP",
+    "description": "(field name) Melody: a fanfare to indicate an achievement unlocked."
+  },
+  "music.POWER_UP.summary": {
+    "message": "Melody: a fanfare to indicate an achievement unlocked.",
+    "description": "Melody: a fanfare to indicate an achievement unlocked."
+  },
+  "music.POWER_DOWN": {
+    "message": "POWER DOWN",
+    "description": "(field name) Melody: a sad fanfare to indicate an achievement lost."
+  },
+  "music.POWER_DOWN.summary": {
+    "message": "Melody: a sad fanfare to indicate an achievement lost.",
+    "description": "Melody: a sad fanfare to indicate an achievement lost."
+  },
+  "music.set_tempo": {
+    "message": "set tempo",
+    "description": "(function name) Sets the approximate tempo for playback."
+  },
+  "music.set_tempo.summary": {
+    "message": "Sets the approximate tempo for playback.",
+    "description": "Sets the approximate tempo for playback."
+  },
+  "music.set_tempo.param-name.ticks": {
+    "message": "ticks",
+    "description": "(parameter name) The number of ticks constituting a beat."
+  },
+  "music.set_tempo.param-doc.ticks": {
+    "message": "The number of ticks constituting a beat.",
+    "description": "Parameter docs"
+  },
+  "music.set_tempo.param-name.bpm": {
+    "message": "bpm",
+    "description": "(parameter name) An integer determining how many beats per minute."
+  },
+  "music.set_tempo.param-doc.bpm": {
+    "message": "An integer determining how many beats per minute.",
+    "description": "Parameter docs"
+  },
+  "music.get_tempo": {
+    "message": "get tempo",
+    "description": "(function name) Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
+  },
+  "music.get_tempo.summary": {
+    "message": "Gets the current tempo as a tuple of integers: ``(ticks, bpm)``.",
+    "description": "Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
+  },
+  "music.play": {
+    "message": "play",
+    "description": "(function name) Plays music."
+  },
+  "music.play.summary": {
+    "message": "Plays music.",
+    "description": "Plays music."
+  },
+  "music.play.param-name.music": {
+    "message": "music",
+    "description": "(parameter name) music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_"
+  },
+  "music.play.param-doc.music": {
+    "message": "music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) the output pin for use with an external speaker (default pin 0), ``None`` for no sound."
+  },
+  "music.play.param-doc.pin": {
+    "message": "the output pin for use with an external speaker (default pin 0), ``None`` for no sound.",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is set to ``True``, this function is blocking."
+  },
+  "music.play.param-doc.wait": {
+    "message": "If ``wait`` is set to ``True``, this function is blocking.",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted."
+  },
+  "music.play.param-doc.loop": {
+    "message": "If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted.",
+    "description": "Parameter docs"
+  },
+  "music.pitch": {
+    "message": "pitch",
+    "description": "(function name) Play a note."
+  },
+  "music.pitch.summary": {
+    "message": "Play a note.",
+    "description": "Play a note."
+  },
+  "music.pitch.param-name.frequency": {
+    "message": "frequency",
+    "description": "(parameter name) An integer frequency"
+  },
+  "music.pitch.param-doc.frequency": {
+    "message": "An integer frequency",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.duration": {
+    "message": "duration",
+    "description": "(parameter name) A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``."
+  },
+  "music.pitch.param-doc.duration": {
+    "message": "A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``.",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) Optional output pin (default ``pin0``)."
+  },
+  "music.pitch.param-doc.pin": {
+    "message": "Optional output pin (default ``pin0``).",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is set to ``True``, this function is blocking."
+  },
+  "music.pitch.param-doc.wait": {
+    "message": "If ``wait`` is set to ``True``, this function is blocking.",
+    "description": "Parameter docs"
+  },
+  "music.stop": {
+    "message": "stop",
+    "description": "(function name) Stops all music playback on the built-in speaker and any pin outputting sound."
+  },
+  "music.stop.summary": {
+    "message": "Stops all music playback on the built-in speaker and any pin outputting sound.",
+    "description": "Stops all music playback on the built-in speaker and any pin outputting sound."
+  },
+  "music.stop.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``."
+  },
+  "music.stop.param-doc.pin": {
+    "message": "An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``.",
+    "description": "Parameter docs"
+  },
+  "music.reset": {
+    "message": "reset",
+    "description": "(function name) Resets ticks, bpm, duration and octave to their default values."
+  },
+  "music.reset.summary": {
+    "message": "Resets ticks, bpm, duration and octave to their default values.",
+    "description": "Resets ticks, bpm, duration and octave to their default values."
+  },
+  "radio.summary": {
+    "message": "Communicate between micro:bits with the built-in radio.",
+    "description": "Communicate between micro:bits with the built-in radio."
+  },
+  "radio.int.RATE_1MBIT": {
+    "message": "RATE 1MBIT",
+    "description": "(field name) Constant used to indicate a throughput of 1 MBit a second."
+  },
+  "radio.int.RATE_1MBIT.summary": {
+    "message": "Constant used to indicate a throughput of 1 MBit a second.",
+    "description": "Constant used to indicate a throughput of 1 MBit a second."
+  },
+  "radio.int.RATE_2MBIT": {
+    "message": "RATE 2MBIT",
+    "description": "(field name) Constant used to indicate a throughput of 2 MBit a second."
+  },
+  "radio.int.RATE_2MBIT.summary": {
+    "message": "Constant used to indicate a throughput of 2 MBit a second.",
+    "description": "Constant used to indicate a throughput of 2 MBit a second."
+  },
+  "radio.on": {
+    "message": "on",
+    "description": "(function name) Turns the radio on."
+  },
+  "radio.on.summary": {
+    "message": "Turns the radio on.",
+    "description": "Turns the radio on."
+  },
+  "radio.off": {
+    "message": "off",
+    "description": "(function name) Turns off the radio, saving power and memory."
+  },
+  "radio.off.summary": {
+    "message": "Turns off the radio, saving power and memory.",
+    "description": "Turns off the radio, saving power and memory."
+  },
+  "radio.config": {
+    "message": "config",
+    "description": "(function name) Configures the radio."
+  },
+  "radio.config.summary": {
+    "message": "Configures the radio.",
+    "description": "Configures the radio."
+  },
+  "radio.config.param-name.length": {
+    "message": "length",
+    "description": "(parameter name) (default=32) defines the maximum length, in bytes, of a\nmessage sent via the radio. It can be up to 251 bytes long (254 - 3 bytes\nfor S0, LENGTH and S1 preamble)."
+  },
+  "radio.config.param-doc.length": {
+    "message": "(default=32) defines the maximum length, in bytes, of a\nmessage sent via the radio. It can be up to 251 bytes long (254 - 3 bytes\nfor S0, LENGTH and S1 preamble).",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.queue": {
+    "message": "queue",
+    "description": "(parameter name) (default=3) specifies the number of messages that can be\nstored on the incoming message queue. If there are no spaces left on the\nqueue for incoming messages, then the incoming message is dropped."
+  },
+  "radio.config.param-doc.queue": {
+    "message": "(default=3) specifies the number of messages that can be\nstored on the incoming message queue. If there are no spaces left on the\nqueue for incoming messages, then the incoming message is dropped.",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.channel": {
+    "message": "channel",
+    "description": "(parameter name) (default=7) an integer value from 0 to 83\n(inclusive) that defines an arbitrary \"channel\" to which the radio is\ntuned. Messages will be sent via this channel and only messages received\nvia this channel will be put onto the incoming message queue. Each step is\n1MHz wide, based at 2400MHz."
+  },
+  "radio.config.param-doc.channel": {
+    "message": "(default=7) an integer value from 0 to 83\n(inclusive) that defines an arbitrary \"channel\" to which the radio is\ntuned. Messages will be sent via this channel and only messages received\nvia this channel will be put onto the incoming message queue. Each step is\n1MHz wide, based at 2400MHz.",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.power": {
+    "message": "power",
+    "description": "(parameter name) (default=6) is an integer value from 0 to 7 (inclusive) to\nindicate the strength of signal used when broadcasting a message. The\nhigher the value the stronger the signal, but the more power is consumed\nby the device. The numbering translates to positions in the following list\nof dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4."
+  },
+  "radio.config.param-doc.power": {
+    "message": "(default=6) is an integer value from 0 to 7 (inclusive) to\nindicate the strength of signal used when broadcasting a message. The\nhigher the value the stronger the signal, but the more power is consumed\nby the device. The numbering translates to positions in the following list\nof dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4.",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.address": {
+    "message": "address",
+    "description": "(parameter name) (default=0x75626974) an arbitrary name, expressed as a\n32-bit address, that's used to filter incoming packets at the hardware\nlevel, keeping only those that match the address you set. The default used\nby other micro:bit related platforms is the default setting used here."
+  },
+  "radio.config.param-doc.address": {
+    "message": "(default=0x75626974) an arbitrary name, expressed as a\n32-bit address, that's used to filter incoming packets at the hardware\nlevel, keeping only those that match the address you set. The default used\nby other micro:bit related platforms is the default setting used here.",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.group": {
+    "message": "group",
+    "description": "(parameter name) (default=0) an 8-bit value (0-255) used with the\n``address`` when filtering messages. Conceptually, \"address\" is like a\nhouse/office address and \"group\" is like the person at that address to\nwhich you want to send your message."
+  },
+  "radio.config.param-doc.group": {
+    "message": "(default=0) an 8-bit value (0-255) used with the\n``address`` when filtering messages. Conceptually, \"address\" is like a\nhouse/office address and \"group\" is like the person at that address to\nwhich you want to send your message.",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.data_rate": {
+    "message": "data_rate",
+    "description": "(parameter name) (default=radio.RATE_1MBIT) indicates the speed at which\ndata throughput takes place. Can be one of the following constants defined\nin the ``radio`` module:\n``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``."
+  },
+  "radio.config.param-doc.data_rate": {
+    "message": "(default=radio.RATE_1MBIT) indicates the speed at which\ndata throughput takes place. Can be one of the following constants defined\nin the ``radio`` module:\n``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.",
+    "description": "Parameter docs"
+  },
+  "radio.reset": {
+    "message": "reset",
+    "description": "(function name) Reset the settings to their default values."
+  },
+  "radio.reset.summary": {
+    "message": "Reset the settings to their default values.",
+    "description": "Reset the settings to their default values."
+  },
+  "radio.send_bytes": {
+    "message": "send bytes",
+    "description": "(function name) Sends a message containing bytes."
+  },
+  "radio.send_bytes.summary": {
+    "message": "Sends a message containing bytes.",
+    "description": "Sends a message containing bytes."
+  },
+  "radio.send_bytes.param-name.message": {
+    "message": "message",
+    "description": "(parameter name) The bytes to send."
+  },
+  "radio.send_bytes.param-doc.message": {
+    "message": "The bytes to send.",
+    "description": "Parameter docs"
+  },
+  "radio.receive_bytes": {
+    "message": "receive bytes",
+    "description": "(function name) Receive the next incoming message on the message queue."
+  },
+  "radio.receive_bytes.summary": {
+    "message": "Receive the next incoming message on the message queue.",
+    "description": "Receive the next incoming message on the message queue."
+  },
+  "radio.receive_bytes_into": {
+    "message": "receive bytes into",
+    "description": "(function name) Copy the next incoming message on the message queue into a buffer."
+  },
+  "radio.receive_bytes_into.summary": {
+    "message": "Copy the next incoming message on the message queue into a buffer.",
+    "description": "Copy the next incoming message on the message queue into a buffer."
+  },
+  "radio.receive_bytes_into.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) The target buffer. The message is truncated if larger than the buffer."
+  },
+  "radio.receive_bytes_into.param-doc.buffer": {
+    "message": "The target buffer. The message is truncated if larger than the buffer.",
+    "description": "Parameter docs"
+  },
+  "radio.send": {
+    "message": "send",
+    "description": "(function name) Sends a message string."
+  },
+  "radio.send.summary": {
+    "message": "Sends a message string.",
+    "description": "Sends a message string."
+  },
+  "radio.send.param-name.message": {
+    "message": "message",
+    "description": "(parameter name) The string to send."
+  },
+  "radio.send.param-doc.message": {
+    "message": "The string to send.",
+    "description": "Parameter docs"
+  },
+  "radio.receive": {
+    "message": "receive",
+    "description": "(function name) Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
+  },
+  "radio.receive.summary": {
+    "message": "Works in exactly the same way as ``receive_bytes`` but returns whatever was sent.",
+    "description": "Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
+  },
+  "radio.receive_full": {
+    "message": "receive full",
+    "description": "(function name) Returns a tuple containing three values representing the next incoming message on the message queue."
+  },
+  "radio.receive_full.summary": {
+    "message": "Returns a tuple containing three values representing the next incoming message on the message queue.",
+    "description": "Returns a tuple containing three values representing the next incoming message on the message queue."
+  },
+  "urandom.summary": {
+    "message": "Generate random numbers.",
+    "description": "Generate random numbers."
+  },
+  "urandom.getrandbits": {
+    "message": "getrandbits",
+    "description": "(function name) Generate an integer with ``n`` random bits."
+  },
+  "urandom.getrandbits.summary": {
+    "message": "Generate an integer with ``n`` random bits.",
+    "description": "Generate an integer with ``n`` random bits."
+  },
+  "urandom.getrandbits.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) A value between 1-30 (inclusive)."
+  },
+  "urandom.getrandbits.param-doc.n": {
+    "message": "A value between 1-30 (inclusive).",
+    "description": "Parameter docs"
+  },
+  "urandom.seed": {
+    "message": "seed",
+    "description": "(function name) Initialize the random number generator."
+  },
+  "urandom.seed.summary": {
+    "message": "Initialize the random number generator.",
+    "description": "Initialize the random number generator."
+  },
+  "urandom.seed.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The integer seed"
+  },
+  "urandom.seed.param-doc.n": {
+    "message": "The integer seed",
+    "description": "Parameter docs"
+  },
+  "urandom.randint": {
+    "message": "randint",
+    "description": "(function name) Choose a random integer between ``a`` and ``b`` inclusive."
+  },
+  "urandom.randint.summary": {
+    "message": "Choose a random integer between ``a`` and ``b`` inclusive.",
+    "description": "Choose a random integer between ``a`` and ``b`` inclusive."
+  },
+  "urandom.randint.param-name.a": {
+    "message": "a",
+    "description": "(parameter name) Start value for the range (inclusive)"
+  },
+  "urandom.randint.param-doc.a": {
+    "message": "Start value for the range (inclusive)",
+    "description": "Parameter docs"
+  },
+  "urandom.randint.param-name.b": {
+    "message": "b",
+    "description": "(parameter name) End value for the range (inclusive)"
+  },
+  "urandom.randint.param-doc.b": {
+    "message": "End value for the range (inclusive)",
+    "description": "Parameter docs"
+  },
+  "urandom.randrange": {
+    "message": "randrange",
+    "description": "(function name) Choose a randomly selected element from ``range(start, stop, step)``."
+  },
+  "urandom.randrange.summary": {
+    "message": "Choose a randomly selected element from ``range(start, stop, step)``.",
+    "description": "Choose a randomly selected element from ``range(start, stop, step)``."
+  },
+  "urandom.randrange.param-name.stop": {
+    "message": "stop",
+    "description": "(parameter name) The end of the range (exclusive)"
+  },
+  "urandom.randrange.param-doc.stop": {
+    "message": "The end of the range (exclusive)",
+    "description": "Parameter docs"
+  },
+  "urandom.randrange.param-name.start": {
+    "message": "start",
+    "description": "(parameter name) The start of the range (inclusive)"
+  },
+  "urandom.randrange.param-doc.start": {
+    "message": "The start of the range (inclusive)",
+    "description": "Parameter docs"
+  },
+  "urandom.randrange.param-name.step": {
+    "message": "step",
+    "description": "(parameter name) The step."
+  },
+  "urandom.randrange.param-doc.step": {
+    "message": "The step.",
+    "description": "Parameter docs"
+  },
+  "urandom._T": {
+    "message": "T",
+    "description": "(function name) Choose a random element from the non-empty sequence ``seq``."
+  },
+  "urandom._T.summary": {
+    "message": "Choose a random element from the non-empty sequence ``seq``.",
+    "description": "Choose a random element from the non-empty sequence ``seq``."
+  },
+  "urandom._T.param-name.seq": {
+    "message": "seq",
+    "description": "(parameter name) A sequence."
+  },
+  "urandom._T.param-doc.seq": {
+    "message": "A sequence.",
+    "description": "Parameter docs"
+  },
+  "urandom.random": {
+    "message": "random",
+    "description": "(function name) Generate a random floating point number in the range [0.0, 1.0)."
+  },
+  "urandom.random.summary": {
+    "message": "Generate a random floating point number in the range [0.0, 1.0).",
+    "description": "Generate a random floating point number in the range [0.0, 1.0)."
+  },
+  "urandom.uniform": {
+    "message": "uniform",
+    "description": "(function name) Return a random floating point number between ``a`` and ``b`` inclusive."
+  },
+  "urandom.uniform.summary": {
+    "message": "Return a random floating point number between ``a`` and ``b`` inclusive.",
+    "description": "Return a random floating point number between ``a`` and ``b`` inclusive."
+  },
+  "urandom.uniform.param-name.a": {
+    "message": "a",
+    "description": "(parameter name) Start value for the range (inclusive)"
+  },
+  "urandom.uniform.param-doc.a": {
+    "message": "Start value for the range (inclusive)",
+    "description": "Parameter docs"
+  },
+  "urandom.uniform.param-name.b": {
+    "message": "b",
+    "description": "(parameter name) End value for the range (inclusive)"
+  },
+  "urandom.uniform.param-doc.b": {
+    "message": "End value for the range (inclusive)",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.summary": {
+    "message": "Respond to sound using the built-in microphone (V2 only).",
+    "description": "Respond to sound using the built-in microphone (V2 only)."
+  },
+  "microbit.microphone.current_event": {
+    "message": "current event",
+    "description": "(function name) Get the last recorded sound event"
+  },
+  "microbit.microphone.current_event.summary": {
+    "message": "Get the last recorded sound event",
+    "description": "Get the last recorded sound event"
+  },
+  "microbit.microphone.was_event": {
+    "message": "was event",
+    "description": "(function name) Check if a sound was heard at least once since the last call."
+  },
+  "microbit.microphone.was_event.summary": {
+    "message": "Check if a sound was heard at least once since the last call.",
+    "description": "Check if a sound was heard at least once since the last call."
+  },
+  "microbit.microphone.was_event.param-name.event": {
+    "message": "event",
+    "description": "(parameter name) The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``"
+  },
+  "microbit.microphone.was_event.param-doc.event": {
+    "message": "The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.is_event": {
+    "message": "is event",
+    "description": "(function name) Check the most recent sound event detected."
+  },
+  "microbit.microphone.is_event.summary": {
+    "message": "Check the most recent sound event detected.",
+    "description": "Check the most recent sound event detected."
+  },
+  "microbit.microphone.is_event.param-name.event": {
+    "message": "event",
+    "description": "(parameter name) The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``"
+  },
+  "microbit.microphone.is_event.param-doc.event": {
+    "message": "The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.get_events": {
+    "message": "get events",
+    "description": "(function name) Get the sound event history as a tuple."
+  },
+  "microbit.microphone.get_events.summary": {
+    "message": "Get the sound event history as a tuple.",
+    "description": "Get the sound event history as a tuple."
+  },
+  "microbit.microphone.set_threshold": {
+    "message": "set threshold",
+    "description": "(function name) Set the threshold for a sound event."
+  },
+  "microbit.microphone.set_threshold.summary": {
+    "message": "Set the threshold for a sound event.",
+    "description": "Set the threshold for a sound event."
+  },
+  "microbit.microphone.set_threshold.param-name.event": {
+    "message": "event",
+    "description": "(parameter name) A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``."
+  },
+  "microbit.microphone.set_threshold.param-doc.event": {
+    "message": "A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``.",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.set_threshold.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The threshold level in the range 0-255."
+  },
+  "microbit.microphone.set_threshold.param-doc.value": {
+    "message": "The threshold level in the range 0-255.",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.sound_level": {
+    "message": "sound level",
+    "description": "(function name) Get the sound pressure level."
+  },
+  "microbit.microphone.sound_level.summary": {
+    "message": "Get the sound pressure level.",
+    "description": "Get the sound pressure level."
+  },
+  "microbit.speaker.summary": {
+    "message": "Control the built-in speaker (V2 only).",
+    "description": "Control the built-in speaker (V2 only)."
+  },
+  "microbit.speaker.off": {
+    "message": "off",
+    "description": "(function name) Turn the speaker off."
+  },
+  "microbit.speaker.off.summary": {
+    "message": "Turn the speaker off.",
+    "description": "Turn the speaker off."
+  },
+  "microbit.speaker.on": {
+    "message": "on",
+    "description": "(function name) Turn the speaker on."
+  },
+  "microbit.speaker.on.summary": {
+    "message": "Turn the speaker on.",
+    "description": "Turn the speaker on."
+  },
+  "microbit.i2c.summary": {
+    "message": "Communicate with devices using the I\u00b2C bus protocol.",
+    "description": "Communicate with devices using the I\u00b2C bus protocol."
+  },
+  "microbit.i2c.init": {
+    "message": "init",
+    "description": "(function name) Re-initialize a peripheral."
+  },
+  "microbit.i2c.init.summary": {
+    "message": "Re-initialize a peripheral.",
+    "description": "Re-initialize a peripheral."
+  },
+  "microbit.i2c.init.param-name.freq": {
+    "message": "freq",
+    "description": "(parameter name) clock frequency"
+  },
+  "microbit.i2c.init.param-doc.freq": {
+    "message": "clock frequency",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.init.param-name.sda": {
+    "message": "sda",
+    "description": "(parameter name) ``sda`` pin (default 20)"
+  },
+  "microbit.i2c.init.param-doc.sda": {
+    "message": "``sda`` pin (default 20)",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.init.param-name.scl": {
+    "message": "scl",
+    "description": "(parameter name) ``scl`` pin (default 19)"
+  },
+  "microbit.i2c.init.param-doc.scl": {
+    "message": "``scl`` pin (default 19)",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.scan": {
+    "message": "scan",
+    "description": "(function name) Scan the bus for devices."
+  },
+  "microbit.i2c.scan.summary": {
+    "message": "Scan the bus for devices.",
+    "description": "Scan the bus for devices."
+  },
+  "microbit.i2c.read": {
+    "message": "read",
+    "description": "(function name) Read bytes from a device.."
+  },
+  "microbit.i2c.read.summary": {
+    "message": "Read bytes from a device..",
+    "description": "Read bytes from a device.."
+  },
+  "microbit.i2c.read.param-name.addr": {
+    "message": "addr",
+    "description": "(parameter name) The 7-bit address of the device"
+  },
+  "microbit.i2c.read.param-doc.addr": {
+    "message": "The 7-bit address of the device",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.read.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of bytes to read"
+  },
+  "microbit.i2c.read.param-doc.n": {
+    "message": "The number of bytes to read",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.read.param-name.repeat": {
+    "message": "repeat",
+    "description": "(parameter name) If ``True``, no stop bit will be sent"
+  },
+  "microbit.i2c.read.param-doc.repeat": {
+    "message": "If ``True``, no stop bit will be sent",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write": {
+    "message": "write",
+    "description": "(function name) Write bytes to a device."
+  },
+  "microbit.i2c.write.summary": {
+    "message": "Write bytes to a device.",
+    "description": "Write bytes to a device."
+  },
+  "microbit.i2c.write.param-name.addr": {
+    "message": "addr",
+    "description": "(parameter name) The 7-bit address of the device"
+  },
+  "microbit.i2c.write.param-doc.addr": {
+    "message": "The 7-bit address of the device",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write.param-name.buf": {
+    "message": "buf",
+    "description": "(parameter name) A buffer containing the bytes to write"
+  },
+  "microbit.i2c.write.param-doc.buf": {
+    "message": "A buffer containing the bytes to write",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write.param-name.repeat": {
+    "message": "repeat",
+    "description": "(parameter name) If ``True``, no stop bit will be sent"
+  },
+  "microbit.i2c.write.param-doc.repeat": {
+    "message": "If ``True``, no stop bit will be sent",
+    "description": "Parameter docs"
+  },
+  "microbit.compass.summary": {
+    "message": "Use the built-in compass.",
+    "description": "Use the built-in compass."
+  },
+  "microbit.compass.calibrate": {
+    "message": "calibrate",
+    "description": "(function name) Starts the calibration process."
+  },
+  "microbit.compass.calibrate.summary": {
+    "message": "Starts the calibration process.",
+    "description": "Starts the calibration process."
+  },
+  "microbit.compass.is_calibrated": {
+    "message": "is calibrated",
+    "description": "(function name) Check is the compass is calibrated."
+  },
+  "microbit.compass.is_calibrated.summary": {
+    "message": "Check is the compass is calibrated.",
+    "description": "Check is the compass is calibrated."
+  },
+  "microbit.compass.clear_calibration": {
+    "message": "clear calibration",
+    "description": "(function name) Undoes the calibration, making the compass uncalibrated again."
+  },
+  "microbit.compass.clear_calibration.summary": {
+    "message": "Undoes the calibration, making the compass uncalibrated again.",
+    "description": "Undoes the calibration, making the compass uncalibrated again."
+  },
+  "microbit.compass.get_x": {
+    "message": "get x",
+    "description": "(function name) Get the magnetic field strength on the ``x`` axis."
+  },
+  "microbit.compass.get_x.summary": {
+    "message": "Get the magnetic field strength on the ``x`` axis.",
+    "description": "Get the magnetic field strength on the ``x`` axis."
+  },
+  "microbit.compass.get_y": {
+    "message": "get y",
+    "description": "(function name) Get the magnetic field strength on the ``y`` axis."
+  },
+  "microbit.compass.get_y.summary": {
+    "message": "Get the magnetic field strength on the ``y`` axis.",
+    "description": "Get the magnetic field strength on the ``y`` axis."
+  },
+  "microbit.compass.get_z": {
+    "message": "get z",
+    "description": "(function name) Get the magnetic field strength on the ``z`` axis."
+  },
+  "microbit.compass.get_z.summary": {
+    "message": "Get the magnetic field strength on the ``z`` axis.",
+    "description": "Get the magnetic field strength on the ``z`` axis."
+  },
+  "microbit.compass.heading": {
+    "message": "heading",
+    "description": "(function name) Get the compass heading."
+  },
+  "microbit.compass.heading.summary": {
+    "message": "Get the compass heading.",
+    "description": "Get the compass heading."
+  },
+  "microbit.compass.get_field_strength": {
+    "message": "get field strength",
+    "description": "(function name) Get the magnitude of the magnetic field around the device."
+  },
+  "microbit.compass.get_field_strength.summary": {
+    "message": "Get the magnitude of the magnetic field around the device.",
+    "description": "Get the magnitude of the magnetic field around the device."
+  },
+  "microbit.spi.summary": {
+    "message": "Communicate with devices using the serial peripheral interface (SPI) bus.",
+    "description": "Communicate with devices using the serial peripheral interface (SPI) bus."
+  },
+  "microbit.spi.init": {
+    "message": "init",
+    "description": "(function name) Initialize SPI communication."
+  },
+  "microbit.spi.init.summary": {
+    "message": "Initialize SPI communication.",
+    "description": "Initialize SPI communication."
+  },
+  "microbit.spi.init.param-name.baudrate": {
+    "message": "baudrate",
+    "description": "(parameter name) The speed of communication."
+  },
+  "microbit.spi.init.param-doc.baudrate": {
+    "message": "The speed of communication.",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.bits": {
+    "message": "bits",
+    "description": "(parameter name) The size of bytes being transmitted. Currently only ``bits=8`` is supported. However, this may change in the future."
+  },
+  "microbit.spi.init.param-doc.bits": {
+    "message": "The size of bytes being transmitted. Currently only ``bits=8`` is supported. However, this may change in the future.",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.mode": {
+    "message": "mode",
+    "description": "(parameter name) Determines the combination of clock polarity and phase - `see online table <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_."
+  },
+  "microbit.spi.init.param-doc.mode": {
+    "message": "Determines the combination of clock polarity and phase - `see online table <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_.",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.sclk": {
+    "message": "sclk",
+    "description": "(parameter name) sclk pin (default 13)"
+  },
+  "microbit.spi.init.param-doc.sclk": {
+    "message": "sclk pin (default 13)",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.mosi": {
+    "message": "mosi",
+    "description": "(parameter name) mosi pin (default 15)"
+  },
+  "microbit.spi.init.param-doc.mosi": {
+    "message": "mosi pin (default 15)",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.miso": {
+    "message": "miso",
+    "description": "(parameter name) miso pin (default 14)"
+  },
+  "microbit.spi.init.param-doc.miso": {
+    "message": "miso pin (default 14)",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read": {
+    "message": "read",
+    "description": "(function name) Read bytes."
+  },
+  "microbit.spi.read.summary": {
+    "message": "Read bytes.",
+    "description": "Read bytes."
+  },
+  "microbit.spi.read.param-name.nbytes": {
+    "message": "nbytes",
+    "description": "(parameter name) Maximum number of bytes to read."
+  },
+  "microbit.spi.read.param-doc.nbytes": {
+    "message": "Maximum number of bytes to read.",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write": {
+    "message": "write",
+    "description": "(function name) Write bytes to the bus."
+  },
+  "microbit.spi.write.summary": {
+    "message": "Write bytes to the bus.",
+    "description": "Write bytes to the bus."
+  },
+  "microbit.spi.write.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) A buffer to read data from."
+  },
+  "microbit.spi.write.param-doc.buffer": {
+    "message": "A buffer to read data from.",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write_readinto": {
+    "message": "write readinto",
+    "description": "(function name) Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
+  },
+  "microbit.spi.write_readinto.summary": {
+    "message": "Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer.",
+    "description": "Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
+  },
+  "microbit.spi.write_readinto.param-name.out": {
+    "message": "out",
+    "description": "(parameter name) The buffer to write any response to."
+  },
+  "microbit.spi.write_readinto.param-doc.out": {
+    "message": "The buffer to write any response to.",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write_readinto.param-name.in_": {
+    "message": "in_",
+    "description": "(parameter name) The buffer to read data from."
+  },
+  "microbit.spi.write_readinto.param-doc.in_": {
+    "message": "The buffer to read data from.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.summary": {
+    "message": "Play sounds using the micro:bit (import ``audio`` for V1 compatibility).",
+    "description": "Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
+  },
+  "microbit.audio.play": {
+    "message": "play",
+    "description": "(function name) Play a built-in sound or custom audio frames.``."
+  },
+  "microbit.audio.play.summary": {
+    "message": "Play a built-in sound or custom audio frames.``.",
+    "description": "Play a built-in sound or custom audio frames.``."
+  },
+  "microbit.audio.play.param-name.source": {
+    "message": "source",
+    "description": "(parameter name) A built-in ``Sound`` such as ``Sound.GIGGLE`` or sample data as an iterable of ``AudioFrame`` objects."
+  },
+  "microbit.audio.play.param-doc.source": {
+    "message": "A built-in ``Sound`` such as ``Sound.GIGGLE`` or sample data as an iterable of ``AudioFrame`` objects.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the sound is complete."
+  },
+  "microbit.audio.play.param-doc.wait": {
+    "message": "If ``wait`` is ``True``, this function will block until the sound is complete.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``."
+  },
+  "microbit.audio.play.param-doc.pin": {
+    "message": "An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.return_pin": {
+    "message": "return_pin",
+    "description": "(parameter name) Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision."
+  },
+  "microbit.audio.play.param-doc.return_pin": {
+    "message": "Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.is_playing": {
+    "message": "is playing",
+    "description": "(function name) Check whether a sound is playing."
+  },
+  "microbit.audio.is_playing.summary": {
+    "message": "Check whether a sound is playing.",
+    "description": "Check whether a sound is playing."
+  },
+  "microbit.audio.stop": {
+    "message": "stop",
+    "description": "(function name) Stop all audio playback."
+  },
+  "microbit.audio.stop.summary": {
+    "message": "Stop all audio playback.",
+    "description": "Stop all audio playback."
+  },
+  "microbit.audio.AudioFrame": {
+    "message": "AudioFrame",
+    "description": "(class name) An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
+  },
+  "microbit.audio.AudioFrame.summary": {
+    "message": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255).",
+    "description": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
+  },
+  "microbit.display.summary": {
+    "message": "Show text, images and animations on the 5\u00d75 LED display.",
+    "description": "Show text, images and animations on the 5\u00d75 LED display."
+  },
+  "microbit.display.get_pixel": {
+    "message": "get pixel",
+    "description": "(function name) Get the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.get_pixel.summary": {
+    "message": "Get the brightness of the LED at column ``x`` and row ``y``.",
+    "description": "Get the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.get_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The display column (0..4)"
+  },
+  "microbit.display.get_pixel.param-doc.x": {
+    "message": "The display column (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.get_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The display row (0..4)"
+  },
+  "microbit.display.get_pixel.param-doc.y": {
+    "message": "The display row (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel": {
+    "message": "set pixel",
+    "description": "(function name) Set the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.set_pixel.summary": {
+    "message": "Set the brightness of the LED at column ``x`` and row ``y``.",
+    "description": "Set the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.set_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The display column (0..4)"
+  },
+  "microbit.display.set_pixel.param-doc.x": {
+    "message": "The display column (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The display row (0..4)"
+  },
+  "microbit.display.set_pixel.param-doc.y": {
+    "message": "The display row (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The brightness between 0 (off) and 9 (bright)"
+  },
+  "microbit.display.set_pixel.param-doc.value": {
+    "message": "The brightness between 0 (off) and 9 (bright)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.clear": {
+    "message": "clear",
+    "description": "(function name) Set the brightness of all LEDs to 0 (off)."
+  },
+  "microbit.display.clear.summary": {
+    "message": "Set the brightness of all LEDs to 0 (off).",
+    "description": "Set the brightness of all LEDs to 0 (off)."
+  },
+  "microbit.display.show": {
+    "message": "show",
+    "description": "(function name) Shows images, letters or digits on the display."
+  },
+  "microbit.display.show.summary": {
+    "message": "Shows images, letters or digits on the display.",
+    "description": "Shows images, letters or digits on the display."
+  },
+  "microbit.display.show.param-name.image": {
+    "message": "image",
+    "description": "(parameter name) A string, number, image or list of images to show."
+  },
+  "microbit.display.show.param-doc.image": {
+    "message": "A string, number, image or list of images to show.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.delay": {
+    "message": "delay",
+    "description": "(parameter name) Each letter, digit or image is shown with ``delay`` milliseconds between them."
+  },
+  "microbit.display.show.param-doc.delay": {
+    "message": "Each letter, digit or image is shown with ``delay`` milliseconds between them.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
+  },
+  "microbit.display.show.param-doc.wait": {
+    "message": "If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
+  },
+  "microbit.display.show.param-doc.loop": {
+    "message": "If ``loop`` is ``True``, the animation will repeat forever.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.clear": {
+    "message": "clear",
+    "description": "(parameter name) If ``clear`` is ``True``, the display will be cleared after the sequence has finished."
+  },
+  "microbit.display.show.param-doc.clear": {
+    "message": "If ``clear`` is ``True``, the display will be cleared after the sequence has finished.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll": {
+    "message": "scroll",
+    "description": "(function name) Scrolls a number or text on the display."
+  },
+  "microbit.display.scroll.summary": {
+    "message": "Scrolls a number or text on the display.",
+    "description": "Scrolls a number or text on the display."
+  },
+  "microbit.display.scroll.param-name.text": {
+    "message": "text",
+    "description": "(parameter name) The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``."
+  },
+  "microbit.display.scroll.param-doc.text": {
+    "message": "The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.delay": {
+    "message": "delay",
+    "description": "(parameter name) The ``delay`` parameter controls how fast the text is scrolling."
+  },
+  "microbit.display.scroll.param-doc.delay": {
+    "message": "The ``delay`` parameter controls how fast the text is scrolling.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
+  },
+  "microbit.display.scroll.param-doc.wait": {
+    "message": "If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
+  },
+  "microbit.display.scroll.param-doc.loop": {
+    "message": "If ``loop`` is ``True``, the animation will repeat forever.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.monospace": {
+    "message": "monospace",
+    "description": "(parameter name) If ``monospace`` is ``True``, the characters will all take up 5 pixel-columns in width, otherwise there will be exactly 1 blank pixel-column between each character as they scroll."
+  },
+  "microbit.display.scroll.param-doc.monospace": {
+    "message": "If ``monospace`` is ``True``, the characters will all take up 5 pixel-columns in width, otherwise there will be exactly 1 blank pixel-column between each character as they scroll.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.on": {
+    "message": "on",
+    "description": "(function name) Turn on the display."
+  },
+  "microbit.display.on.summary": {
+    "message": "Turn on the display.",
+    "description": "Turn on the display."
+  },
+  "microbit.display.off": {
+    "message": "off",
+    "description": "(function name) Turn off the display (allowing you to re-use the GPIO pins associated with the display for other purposes)."
+  },
+  "microbit.display.off.summary": {
+    "message": "Turn off the display (allowing you to re-use the GPIO pins associated with the display for other purposes).",
+    "description": "Turn off the display (allowing you to re-use the GPIO pins associated with the display for other purposes)."
+  },
+  "microbit.display.is_on": {
+    "message": "is on",
+    "description": "(function name) Check whether the display is on."
+  },
+  "microbit.display.is_on.summary": {
+    "message": "Check whether the display is on.",
+    "description": "Check whether the display is on."
+  },
+  "microbit.display.read_light_level": {
+    "message": "read light level",
+    "description": "(function name) Read the light level."
+  },
+  "microbit.display.read_light_level.summary": {
+    "message": "Read the light level.",
+    "description": "Read the light level."
+  },
+  "microbit.uart.summary": {
+    "message": "Communicate with a device using a serial interface.",
+    "description": "Communicate with a device using a serial interface."
+  },
+  "microbit.uart.int.ODD": {
+    "message": "ODD",
+    "description": "(field name) Odd partity"
+  },
+  "microbit.uart.int.ODD.summary": {
+    "message": "Odd partity",
+    "description": "Odd partity"
+  },
+  "microbit.uart.int.EVEN": {
+    "message": "EVEN",
+    "description": "(field name) Even parity"
+  },
+  "microbit.uart.int.EVEN.summary": {
+    "message": "Even parity",
+    "description": "Even parity"
+  },
+  "microbit.uart.init": {
+    "message": "init",
+    "description": "(function name) Initialize serial communication."
+  },
+  "microbit.uart.init.summary": {
+    "message": "Initialize serial communication.",
+    "description": "Initialize serial communication."
+  },
+  "microbit.uart.init.param-name.baudrate": {
+    "message": "baudrate",
+    "description": "(parameter name) The speed of communication."
+  },
+  "microbit.uart.init.param-doc.baudrate": {
+    "message": "The speed of communication.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.bits": {
+    "message": "bits",
+    "description": "(parameter name) The size of bytes being transmitted. micro:bit only supports 8."
+  },
+  "microbit.uart.init.param-doc.bits": {
+    "message": "The size of bytes being transmitted. micro:bit only supports 8.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.parity": {
+    "message": "parity",
+    "description": "(parameter name) How parity is checked, ``None``, ``uart.ODD`` or ``uart.EVEN``."
+  },
+  "microbit.uart.init.param-doc.parity": {
+    "message": "How parity is checked, ``None``, ``uart.ODD`` or ``uart.EVEN``.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.stop": {
+    "message": "stop",
+    "description": "(parameter name) The number of stop bits, has to be 1 for micro:bit."
+  },
+  "microbit.uart.init.param-doc.stop": {
+    "message": "The number of stop bits, has to be 1 for micro:bit.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.tx": {
+    "message": "tx",
+    "description": "(parameter name) Transmitting pin."
+  },
+  "microbit.uart.init.param-doc.tx": {
+    "message": "Transmitting pin.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.rx": {
+    "message": "rx",
+    "description": "(parameter name) Receiving pin."
+  },
+  "microbit.uart.init.param-doc.rx": {
+    "message": "Receiving pin.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.any": {
+    "message": "any",
+    "description": "(function name) Check is any data is waiting."
+  },
+  "microbit.uart.any.summary": {
+    "message": "Check is any data is waiting.",
+    "description": "Check is any data is waiting."
+  },
+  "microbit.uart.read": {
+    "message": "read",
+    "description": "(function name) Read bytes."
+  },
+  "microbit.uart.read.summary": {
+    "message": "Read bytes.",
+    "description": "Read bytes."
+  },
+  "microbit.uart.read.param-name.nbytes": {
+    "message": "nbytes",
+    "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible"
+  },
+  "microbit.uart.read.param-doc.nbytes": {
+    "message": "If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readinto": {
+    "message": "readinto",
+    "description": "(function name) Read bytes into the ``buf``."
+  },
+  "microbit.uart.readinto.summary": {
+    "message": "Read bytes into the ``buf``.",
+    "description": "Read bytes into the ``buf``."
+  },
+  "microbit.uart.readinto.param-name.buf": {
+    "message": "buf",
+    "description": "(parameter name) The buffer to write to."
+  },
+  "microbit.uart.readinto.param-doc.buf": {
+    "message": "The buffer to write to.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readinto.param-name.nbytes": {
+    "message": "nbytes",
+    "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes."
+  },
+  "microbit.uart.readinto.param-doc.nbytes": {
+    "message": "If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readline": {
+    "message": "readline",
+    "description": "(function name) Read a line, ending in a newline character."
+  },
+  "microbit.uart.readline.summary": {
+    "message": "Read a line, ending in a newline character.",
+    "description": "Read a line, ending in a newline character."
+  },
+  "microbit.uart.write": {
+    "message": "write",
+    "description": "(function name) Write a buffer to the bus."
+  },
+  "microbit.uart.write.summary": {
+    "message": "Write a buffer to the bus.",
+    "description": "Write a buffer to the bus."
+  },
+  "microbit.uart.write.param-name.buf": {
+    "message": "buf",
+    "description": "(parameter name) A bytes object or a string."
+  },
+  "microbit.uart.write.param-doc.buf": {
+    "message": "A bytes object or a string.",
+    "description": "Parameter docs"
+  },
+  "microbit.accelerometer.summary": {
+    "message": "Measure the acceleration of the micro:bit and recognise gestures.",
+    "description": "Measure the acceleration of the micro:bit and recognise gestures."
+  },
+  "microbit.accelerometer.get_x": {
+    "message": "get x",
+    "description": "(function name) Get the acceleration measurement in the ``x`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_x.summary": {
+    "message": "Get the acceleration measurement in the ``x`` axis in milli-g.",
+    "description": "Get the acceleration measurement in the ``x`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_y": {
+    "message": "get y",
+    "description": "(function name) Get the acceleration measurement in the ``y`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_y.summary": {
+    "message": "Get the acceleration measurement in the ``y`` axis in milli-g.",
+    "description": "Get the acceleration measurement in the ``y`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_z": {
+    "message": "get z",
+    "description": "(function name) Get the acceleration measurement in the ``z`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_z.summary": {
+    "message": "Get the acceleration measurement in the ``z`` axis in milli-g.",
+    "description": "Get the acceleration measurement in the ``z`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_values": {
+    "message": "get values",
+    "description": "(function name) Get the acceleration measurements in all axes at once as a tuple."
+  },
+  "microbit.accelerometer.get_values.summary": {
+    "message": "Get the acceleration measurements in all axes at once as a tuple.",
+    "description": "Get the acceleration measurements in all axes at once as a tuple."
+  },
+  "microbit.accelerometer.current_gesture": {
+    "message": "current gesture",
+    "description": "(function name) Get the name of the current gesture."
+  },
+  "microbit.accelerometer.current_gesture.summary": {
+    "message": "Get the name of the current gesture.",
+    "description": "Get the name of the current gesture."
+  },
+  "microbit.accelerometer.is_gesture": {
+    "message": "is gesture",
+    "description": "(function name) Check if the named gesture is currently active."
+  },
+  "microbit.accelerometer.is_gesture.summary": {
+    "message": "Check if the named gesture is currently active.",
+    "description": "Check if the named gesture is currently active."
+  },
+  "microbit.accelerometer.is_gesture.param-name.name": {
+    "message": "name",
+    "description": "(parameter name) The gesture name."
+  },
+  "microbit.accelerometer.is_gesture.param-doc.name": {
+    "message": "The gesture name.",
+    "description": "Parameter docs"
+  },
+  "microbit.accelerometer.was_gesture": {
+    "message": "was gesture",
+    "description": "(function name) Check if the named gesture was active since the last call."
+  },
+  "microbit.accelerometer.was_gesture.summary": {
+    "message": "Check if the named gesture was active since the last call.",
+    "description": "Check if the named gesture was active since the last call."
+  },
+  "microbit.accelerometer.was_gesture.param-name.name": {
+    "message": "name",
+    "description": "(parameter name) The gesture name."
+  },
+  "microbit.accelerometer.was_gesture.param-doc.name": {
+    "message": "The gesture name.",
+    "description": "Parameter docs"
+  },
+  "microbit.accelerometer.get_gestures": {
+    "message": "get gestures",
+    "description": "(function name) Return a tuple of the gesture history."
+  },
+  "microbit.accelerometer.get_gestures.summary": {
+    "message": "Return a tuple of the gesture history.",
+    "description": "Return a tuple of the gesture history."
+  },
+  "microbit.summary": {
+    "message": "Pins, images, sounds, temperature and volume.",
+    "description": "Pins, images, sounds, temperature and volume."
+  },
+  "microbit.run_every": {
+    "message": "run every",
+    "description": "(function name) Schedule a function to be called at a given interval **V2 only**."
+  },
+  "microbit.run_every.summary": {
+    "message": "Schedule a function to be called at a given interval **V2 only**.",
+    "description": "Schedule a function to be called at a given interval **V2 only**."
+  },
+  "microbit.run_every.param-name.callback": {
+    "message": "callback",
+    "description": "(parameter name) The callback to invoke. Omit when using as a decorator."
+  },
+  "microbit.run_every.param-doc.callback": {
+    "message": "The callback to invoke. Omit when using as a decorator.",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.days": {
+    "message": "days",
+    "description": "(parameter name) The interval in days."
+  },
+  "microbit.run_every.param-doc.days": {
+    "message": "The interval in days.",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The interval in hours."
+  },
+  "microbit.run_every.param-doc.h": {
+    "message": "The interval in hours.",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.min": {
+    "message": "min",
+    "description": "(parameter name) The interval in minutes."
+  },
+  "microbit.run_every.param-doc.min": {
+    "message": "The interval in minutes.",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.s": {
+    "message": "s",
+    "description": "(parameter name) The interval in seconds."
+  },
+  "microbit.run_every.param-doc.s": {
+    "message": "The interval in seconds.",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.ms": {
+    "message": "ms",
+    "description": "(parameter name) The interval in milliseconds."
+  },
+  "microbit.run_every.param-doc.ms": {
+    "message": "The interval in milliseconds.",
+    "description": "Parameter docs"
+  },
+  "microbit.panic": {
+    "message": "panic",
+    "description": "(function name) Enter a panic mode."
+  },
+  "microbit.panic.summary": {
+    "message": "Enter a panic mode.",
+    "description": "Enter a panic mode."
+  },
+  "microbit.panic.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) An arbitrary integer <= 255 to indicate a status."
+  },
+  "microbit.panic.param-doc.n": {
+    "message": "An arbitrary integer <= 255 to indicate a status.",
+    "description": "Parameter docs"
+  },
+  "microbit.reset": {
+    "message": "reset",
+    "description": "(function name) Restart the board."
+  },
+  "microbit.reset.summary": {
+    "message": "Restart the board.",
+    "description": "Restart the board."
+  },
+  "microbit.sleep": {
+    "message": "sleep",
+    "description": "(function name) Wait for ``n`` milliseconds."
+  },
+  "microbit.sleep.summary": {
+    "message": "Wait for ``n`` milliseconds.",
+    "description": "Wait for ``n`` milliseconds."
+  },
+  "microbit.sleep.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of milliseconds to wait"
+  },
+  "microbit.sleep.param-doc.n": {
+    "message": "The number of milliseconds to wait",
+    "description": "Parameter docs"
+  },
+  "microbit.running_time": {
+    "message": "running time",
+    "description": "(function name) Get the running time of the board."
+  },
+  "microbit.running_time.summary": {
+    "message": "Get the running time of the board.",
+    "description": "Get the running time of the board."
+  },
+  "microbit.temperature": {
+    "message": "temperature",
+    "description": "(function name) Get the temperature of the micro:bit in degrees Celcius."
+  },
+  "microbit.temperature.summary": {
+    "message": "Get the temperature of the micro:bit in degrees Celcius.",
+    "description": "Get the temperature of the micro:bit in degrees Celcius."
+  },
+  "microbit.set_volume": {
+    "message": "set volume",
+    "description": "(function name) Sets the volume."
+  },
+  "microbit.set_volume.summary": {
+    "message": "Sets the volume.",
+    "description": "Sets the volume."
+  },
+  "microbit.set_volume.param-name.v": {
+    "message": "v",
+    "description": "(parameter name) a value between 0 (low) and 255 (high)."
+  },
+  "microbit.set_volume.param-doc.v": {
+    "message": "a value between 0 (low) and 255 (high).",
+    "description": "Parameter docs"
+  },
+  "microbit.Button": {
+    "message": "Button",
+    "description": "(class name) The class for the buttons `button_a` and `button_b`."
+  },
+  "microbit.Button.summary": {
+    "message": "The class for the buttons `button_a` and `button_b`.",
+    "description": "The class for the buttons `button_a` and `button_b`."
+  },
+  "microbit.Button.is_pressed": {
+    "message": "is pressed",
+    "description": "(function name) Check if the button is pressed."
+  },
+  "microbit.Button.is_pressed.summary": {
+    "message": "Check if the button is pressed.",
+    "description": "Check if the button is pressed."
+  },
+  "microbit.Button.was_pressed": {
+    "message": "was pressed",
+    "description": "(function name) Check if the button was pressed since the device started or the last time this method was called."
+  },
+  "microbit.Button.was_pressed.summary": {
+    "message": "Check if the button was pressed since the device started or the last time this method was called.",
+    "description": "Check if the button was pressed since the device started or the last time this method was called."
+  },
+  "microbit.Button.get_presses": {
+    "message": "get presses",
+    "description": "(function name) Get the running total of button presses, and resets this total\nto zero before returning."
+  },
+  "microbit.Button.get_presses.summary": {
+    "message": "Get the running total of button presses, and resets this total\nto zero before returning.",
+    "description": "Get the running total of button presses, and resets this total\nto zero before returning."
+  },
+  "microbit.Button.button_a": {
+    "message": "button a",
+    "description": "(field name) The left button ``Button`` object."
+  },
+  "microbit.Button.button_a.summary": {
+    "message": "The left button ``Button`` object.",
+    "description": "The left button ``Button`` object."
+  },
+  "microbit.Button.button_b": {
+    "message": "button b",
+    "description": "(field name) The right button ``Button`` object."
+  },
+  "microbit.Button.button_b.summary": {
+    "message": "The right button ``Button`` object.",
+    "description": "The right button ``Button`` object."
+  },
+  "microbit.MicroBitDigitalPin": {
+    "message": "MicroBitDigitalPin",
+    "description": "(class name) A digital pin."
+  },
+  "microbit.MicroBitDigitalPin.summary": {
+    "message": "A digital pin.",
+    "description": "A digital pin."
+  },
+  "microbit.MicroBitDigitalPin.PULL_DOWN": {
+    "message": "PULL DOWN",
+    "description": "(function name) Get the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.PULL_DOWN.summary": {
+    "message": "Get the digital value of the pin.",
+    "description": "Get the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital": {
+    "message": "write digital",
+    "description": "(function name) Set the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital.summary": {
+    "message": "Set the digital value of the pin.",
+    "description": "Set the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) ``1`` to set the pin high or ``0`` to set the pin low"
+  },
+  "microbit.MicroBitDigitalPin.write_digital.param-doc.value": {
+    "message": "``1`` to set the pin high or ``0`` to set the pin low",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_pull": {
+    "message": "set pull",
+    "description": "(function name) Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.summary": {
+    "message": "Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.",
+    "description": "Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The pull state from the relevant pin, e.g. ``pin0.PULL_UP``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.param-doc.value": {
+    "message": "The pull state from the relevant pin, e.g. ``pin0.PULL_UP``.",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.get_pull": {
+    "message": "get pull",
+    "description": "(function name) Get the pull state on a pin."
+  },
+  "microbit.MicroBitDigitalPin.get_pull.summary": {
+    "message": "Get the pull state on a pin.",
+    "description": "Get the pull state on a pin."
+  },
+  "microbit.MicroBitDigitalPin.get_mode": {
+    "message": "get mode",
+    "description": "(function name) Returns the pin mode."
+  },
+  "microbit.MicroBitDigitalPin.get_mode.summary": {
+    "message": "Returns the pin mode.",
+    "description": "Returns the pin mode."
+  },
+  "microbit.MicroBitDigitalPin.write_analog": {
+    "message": "write analog",
+    "description": "(function name) Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.summary": {
+    "message": "Output a PWM signal on the pin, with the duty cycle proportional to ``value``.",
+    "description": "Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty)."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.param-doc.value": {
+    "message": "An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty).",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period": {
+    "message": "set analog period",
+    "description": "(function name) Set the period of the PWM signal being output to ``period`` in milliseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.summary": {
+    "message": "Set the period of the PWM signal being output to ``period`` in milliseconds.",
+    "description": "Set the period of the PWM signal being output to ``period`` in milliseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.param-name.period": {
+    "message": "period",
+    "description": "(parameter name) The period in milliseconds with a minimum valid value of 1ms."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.param-doc.period": {
+    "message": "The period in milliseconds with a minimum valid value of 1ms.",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds": {
+    "message": "set analog period microseconds",
+    "description": "(function name) Set the period of the PWM signal being output to ``period`` in microseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.summary": {
+    "message": "Set the period of the PWM signal being output to ``period`` in microseconds.",
+    "description": "Set the period of the PWM signal being output to ``period`` in microseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-name.period": {
+    "message": "period",
+    "description": "(parameter name) The period in microseconds with a minimum valid value of 256\u00b5s."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-doc.period": {
+    "message": "The period in microseconds with a minimum valid value of 256\u00b5s.",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitAnalogDigitalPin": {
+    "message": "MicroBitAnalogDigitalPin",
+    "description": "(class name) A pin with analog and digital features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.summary": {
+    "message": "A pin with analog and digital features.",
+    "description": "A pin with analog and digital features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.read_analog": {
+    "message": "read analog",
+    "description": "(function name) Read the voltage applied to the pin."
+  },
+  "microbit.MicroBitAnalogDigitalPin.read_analog.summary": {
+    "message": "Read the voltage applied to the pin.",
+    "description": "Read the voltage applied to the pin."
+  },
+  "microbit.MicroBitTouchPin": {
+    "message": "MicroBitTouchPin",
+    "description": "(class name) A pin with analog, digital and touch features."
+  },
+  "microbit.MicroBitTouchPin.summary": {
+    "message": "A pin with analog, digital and touch features.",
+    "description": "A pin with analog, digital and touch features."
+  },
+  "microbit.MicroBitTouchPin.is_touched": {
+    "message": "is touched",
+    "description": "(function name) Check if the pin is being touched."
+  },
+  "microbit.MicroBitTouchPin.is_touched.summary": {
+    "message": "Check if the pin is being touched.",
+    "description": "Check if the pin is being touched."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode": {
+    "message": "set touch mode",
+    "description": "(function name) Set the touch mode for the pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.summary": {
+    "message": "Set the touch mode for the pin.",
+    "description": "Set the touch mode for the pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.param-doc.value": {
+    "message": "``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin.",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitTouchPin.pin0": {
+    "message": "pin0",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.MicroBitTouchPin.pin0.summary": {
+    "message": "Pin with digital, analog and touch features.",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.MicroBitTouchPin.pin1": {
+    "message": "pin1",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.MicroBitTouchPin.pin1.summary": {
+    "message": "Pin with digital, analog and touch features.",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.MicroBitTouchPin.pin2": {
+    "message": "pin2",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.MicroBitTouchPin.pin2.summary": {
+    "message": "Pin with digital, analog and touch features.",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.pin3": {
+    "message": "pin3",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.pin3.summary": {
+    "message": "Pin with digital and analog features.",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.pin4": {
+    "message": "pin4",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.pin4.summary": {
+    "message": "Pin with digital and analog features.",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.MicroBitDigitalPin.pin5": {
+    "message": "pin5",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin5.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin6": {
+    "message": "pin6",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin6.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin7": {
+    "message": "pin7",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin7.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin8": {
+    "message": "pin8",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin8.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin9": {
+    "message": "pin9",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin9.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.pin10": {
+    "message": "pin10",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.pin10.summary": {
+    "message": "Pin with digital and analog features.",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.MicroBitDigitalPin.pin11": {
+    "message": "pin11",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin11.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin12": {
+    "message": "pin12",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin12.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin13": {
+    "message": "pin13",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin13.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin14": {
+    "message": "pin14",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin14.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin15": {
+    "message": "pin15",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin15.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin16": {
+    "message": "pin16",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin16.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin19": {
+    "message": "pin19",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin19.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin20": {
+    "message": "pin20",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.MicroBitDigitalPin.pin20.summary": {
+    "message": "Pin with digital features.",
+    "description": "Pin with digital features."
+  },
+  "microbit.MicroBitTouchPin.pin_logo": {
+    "message": "pin logo",
+    "description": "(field name) A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
+  },
+  "microbit.MicroBitTouchPin.pin_logo.summary": {
+    "message": "A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode.",
+    "description": "A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
+  },
+  "microbit.MicroBitAnalogDigitalPin.pin_speaker": {
+    "message": "pin speaker",
+    "description": "(field name) A pin to address the micro:bit speaker."
+  },
+  "microbit.MicroBitAnalogDigitalPin.pin_speaker.summary": {
+    "message": "A pin to address the micro:bit speaker.",
+    "description": "A pin to address the micro:bit speaker."
+  },
+  "microbit.Image": {
+    "message": "Image",
+    "description": "(class name) An image to show on the micro:bit LED display."
+  },
+  "microbit.Image.summary": {
+    "message": "An image to show on the micro:bit LED display.",
+    "description": "An image to show on the micro:bit LED display."
+  },
+  "microbit.Image.HEART": {
+    "message": "HEART",
+    "description": "(field name) Heart image."
+  },
+  "microbit.Image.HEART.summary": {
+    "message": "Heart image.",
+    "description": "Heart image."
+  },
+  "microbit.Image.HEART_SMALL": {
+    "message": "HEART SMALL",
+    "description": "(field name) Small heart image."
+  },
+  "microbit.Image.HEART_SMALL.summary": {
+    "message": "Small heart image.",
+    "description": "Small heart image."
+  },
+  "microbit.Image.HAPPY": {
+    "message": "HAPPY",
+    "description": "(field name) Happy face image."
+  },
+  "microbit.Image.HAPPY.summary": {
+    "message": "Happy face image.",
+    "description": "Happy face image."
+  },
+  "microbit.Image.SMILE": {
+    "message": "SMILE",
+    "description": "(field name) Smiling face image."
+  },
+  "microbit.Image.SMILE.summary": {
+    "message": "Smiling face image.",
+    "description": "Smiling face image."
+  },
+  "microbit.Image.SAD": {
+    "message": "SAD",
+    "description": "(field name) Sad face image."
+  },
+  "microbit.Image.SAD.summary": {
+    "message": "Sad face image.",
+    "description": "Sad face image."
+  },
+  "microbit.Image.CONFUSED": {
+    "message": "CONFUSED",
+    "description": "(field name) Confused face image."
+  },
+  "microbit.Image.CONFUSED.summary": {
+    "message": "Confused face image.",
+    "description": "Confused face image."
+  },
+  "microbit.Image.ANGRY": {
+    "message": "ANGRY",
+    "description": "(field name) Angry face image."
+  },
+  "microbit.Image.ANGRY.summary": {
+    "message": "Angry face image.",
+    "description": "Angry face image."
+  },
+  "microbit.Image.ASLEEP": {
+    "message": "ASLEEP",
+    "description": "(field name) Sleeping face image."
+  },
+  "microbit.Image.ASLEEP.summary": {
+    "message": "Sleeping face image.",
+    "description": "Sleeping face image."
+  },
+  "microbit.Image.SURPRISED": {
+    "message": "SURPRISED",
+    "description": "(field name) Surprised face image."
+  },
+  "microbit.Image.SURPRISED.summary": {
+    "message": "Surprised face image.",
+    "description": "Surprised face image."
+  },
+  "microbit.Image.SILLY": {
+    "message": "SILLY",
+    "description": "(field name) Silly face image."
+  },
+  "microbit.Image.SILLY.summary": {
+    "message": "Silly face image.",
+    "description": "Silly face image."
+  },
+  "microbit.Image.FABULOUS": {
+    "message": "FABULOUS",
+    "description": "(field name) Sunglasses face image."
+  },
+  "microbit.Image.FABULOUS.summary": {
+    "message": "Sunglasses face image.",
+    "description": "Sunglasses face image."
+  },
+  "microbit.Image.MEH": {
+    "message": "MEH",
+    "description": "(field name) Unimpressed face image."
+  },
+  "microbit.Image.MEH.summary": {
+    "message": "Unimpressed face image.",
+    "description": "Unimpressed face image."
+  },
+  "microbit.Image.YES": {
+    "message": "YES",
+    "description": "(field name) Tick image."
+  },
+  "microbit.Image.YES.summary": {
+    "message": "Tick image.",
+    "description": "Tick image."
+  },
+  "microbit.Image.NO": {
+    "message": "NO",
+    "description": "(field name) Cross image."
+  },
+  "microbit.Image.NO.summary": {
+    "message": "Cross image.",
+    "description": "Cross image."
+  },
+  "microbit.Image.CLOCK12": {
+    "message": "CLOCK12",
+    "description": "(field name) Image with line pointing to 12 o'clock."
+  },
+  "microbit.Image.CLOCK12.summary": {
+    "message": "Image with line pointing to 12 o'clock.",
+    "description": "Image with line pointing to 12 o'clock."
+  },
+  "microbit.Image.CLOCK11": {
+    "message": "CLOCK11",
+    "description": "(field name) Image with line pointing to 11 o'clock."
+  },
+  "microbit.Image.CLOCK11.summary": {
+    "message": "Image with line pointing to 11 o'clock.",
+    "description": "Image with line pointing to 11 o'clock."
+  },
+  "microbit.Image.CLOCK10": {
+    "message": "CLOCK10",
+    "description": "(field name) Image with line pointing to 10 o'clock."
+  },
+  "microbit.Image.CLOCK10.summary": {
+    "message": "Image with line pointing to 10 o'clock.",
+    "description": "Image with line pointing to 10 o'clock."
+  },
+  "microbit.Image.CLOCK9": {
+    "message": "CLOCK9",
+    "description": "(field name) Image with line pointing to 9 o'clock."
+  },
+  "microbit.Image.CLOCK9.summary": {
+    "message": "Image with line pointing to 9 o'clock.",
+    "description": "Image with line pointing to 9 o'clock."
+  },
+  "microbit.Image.CLOCK8": {
+    "message": "CLOCK8",
+    "description": "(field name) Image with line pointing to 8 o'clock."
+  },
+  "microbit.Image.CLOCK8.summary": {
+    "message": "Image with line pointing to 8 o'clock.",
+    "description": "Image with line pointing to 8 o'clock."
+  },
+  "microbit.Image.CLOCK7": {
+    "message": "CLOCK7",
+    "description": "(field name) Image with line pointing to 7 o'clock."
+  },
+  "microbit.Image.CLOCK7.summary": {
+    "message": "Image with line pointing to 7 o'clock.",
+    "description": "Image with line pointing to 7 o'clock."
+  },
+  "microbit.Image.CLOCK6": {
+    "message": "CLOCK6",
+    "description": "(field name) Image with line pointing to 6 o'clock."
+  },
+  "microbit.Image.CLOCK6.summary": {
+    "message": "Image with line pointing to 6 o'clock.",
+    "description": "Image with line pointing to 6 o'clock."
+  },
+  "microbit.Image.CLOCK5": {
+    "message": "CLOCK5",
+    "description": "(field name) Image with line pointing to 5 o'clock."
+  },
+  "microbit.Image.CLOCK5.summary": {
+    "message": "Image with line pointing to 5 o'clock.",
+    "description": "Image with line pointing to 5 o'clock."
+  },
+  "microbit.Image.CLOCK4": {
+    "message": "CLOCK4",
+    "description": "(field name) Image with line pointing to 4 o'clock."
+  },
+  "microbit.Image.CLOCK4.summary": {
+    "message": "Image with line pointing to 4 o'clock.",
+    "description": "Image with line pointing to 4 o'clock."
+  },
+  "microbit.Image.CLOCK3": {
+    "message": "CLOCK3",
+    "description": "(field name) Image with line pointing to 3 o'clock."
+  },
+  "microbit.Image.CLOCK3.summary": {
+    "message": "Image with line pointing to 3 o'clock.",
+    "description": "Image with line pointing to 3 o'clock."
+  },
+  "microbit.Image.CLOCK2": {
+    "message": "CLOCK2",
+    "description": "(field name) Image with line pointing to 2 o'clock."
+  },
+  "microbit.Image.CLOCK2.summary": {
+    "message": "Image with line pointing to 2 o'clock.",
+    "description": "Image with line pointing to 2 o'clock."
+  },
+  "microbit.Image.CLOCK1": {
+    "message": "CLOCK1",
+    "description": "(field name) Image with line pointing to 1 o'clock."
+  },
+  "microbit.Image.CLOCK1.summary": {
+    "message": "Image with line pointing to 1 o'clock.",
+    "description": "Image with line pointing to 1 o'clock."
+  },
+  "microbit.Image.ARROW_N": {
+    "message": "ARROW N",
+    "description": "(field name) Image of arrow pointing north."
+  },
+  "microbit.Image.ARROW_N.summary": {
+    "message": "Image of arrow pointing north.",
+    "description": "Image of arrow pointing north."
+  },
+  "microbit.Image.ARROW_NE": {
+    "message": "ARROW NE",
+    "description": "(field name) Image of arrow pointing north east."
+  },
+  "microbit.Image.ARROW_NE.summary": {
+    "message": "Image of arrow pointing north east.",
+    "description": "Image of arrow pointing north east."
+  },
+  "microbit.Image.ARROW_E": {
+    "message": "ARROW E",
+    "description": "(field name) Image of arrow pointing east."
+  },
+  "microbit.Image.ARROW_E.summary": {
+    "message": "Image of arrow pointing east.",
+    "description": "Image of arrow pointing east."
+  },
+  "microbit.Image.ARROW_SE": {
+    "message": "ARROW SE",
+    "description": "(field name) Image of arrow pointing south east."
+  },
+  "microbit.Image.ARROW_SE.summary": {
+    "message": "Image of arrow pointing south east.",
+    "description": "Image of arrow pointing south east."
+  },
+  "microbit.Image.ARROW_S": {
+    "message": "ARROW S",
+    "description": "(field name) Image of arrow pointing south."
+  },
+  "microbit.Image.ARROW_S.summary": {
+    "message": "Image of arrow pointing south.",
+    "description": "Image of arrow pointing south."
+  },
+  "microbit.Image.ARROW_SW": {
+    "message": "ARROW SW",
+    "description": "(field name) Image of arrow pointing south west."
+  },
+  "microbit.Image.ARROW_SW.summary": {
+    "message": "Image of arrow pointing south west.",
+    "description": "Image of arrow pointing south west."
+  },
+  "microbit.Image.ARROW_W": {
+    "message": "ARROW W",
+    "description": "(field name) Image of arrow pointing west."
+  },
+  "microbit.Image.ARROW_W.summary": {
+    "message": "Image of arrow pointing west.",
+    "description": "Image of arrow pointing west."
+  },
+  "microbit.Image.ARROW_NW": {
+    "message": "ARROW NW",
+    "description": "(field name) Image of arrow pointing north west."
+  },
+  "microbit.Image.ARROW_NW.summary": {
+    "message": "Image of arrow pointing north west.",
+    "description": "Image of arrow pointing north west."
+  },
+  "microbit.Image.TRIANGLE": {
+    "message": "TRIANGLE",
+    "description": "(field name) Image of a triangle pointing up."
+  },
+  "microbit.Image.TRIANGLE.summary": {
+    "message": "Image of a triangle pointing up.",
+    "description": "Image of a triangle pointing up."
+  },
+  "microbit.Image.TRIANGLE_LEFT": {
+    "message": "TRIANGLE LEFT",
+    "description": "(field name) Image of a triangle in the left corner."
+  },
+  "microbit.Image.TRIANGLE_LEFT.summary": {
+    "message": "Image of a triangle in the left corner.",
+    "description": "Image of a triangle in the left corner."
+  },
+  "microbit.Image.CHESSBOARD": {
+    "message": "CHESSBOARD",
+    "description": "(field name) Alternate LEDs lit in a chessboard pattern."
+  },
+  "microbit.Image.CHESSBOARD.summary": {
+    "message": "Alternate LEDs lit in a chessboard pattern.",
+    "description": "Alternate LEDs lit in a chessboard pattern."
+  },
+  "microbit.Image.DIAMOND": {
+    "message": "DIAMOND",
+    "description": "(field name) Diamond image."
+  },
+  "microbit.Image.DIAMOND.summary": {
+    "message": "Diamond image.",
+    "description": "Diamond image."
+  },
+  "microbit.Image.DIAMOND_SMALL": {
+    "message": "DIAMOND SMALL",
+    "description": "(field name) Small diamond image."
+  },
+  "microbit.Image.DIAMOND_SMALL.summary": {
+    "message": "Small diamond image.",
+    "description": "Small diamond image."
+  },
+  "microbit.Image.SQUARE": {
+    "message": "SQUARE",
+    "description": "(field name) Square image."
+  },
+  "microbit.Image.SQUARE.summary": {
+    "message": "Square image.",
+    "description": "Square image."
+  },
+  "microbit.Image.SQUARE_SMALL": {
+    "message": "SQUARE SMALL",
+    "description": "(field name) Small square image."
+  },
+  "microbit.Image.SQUARE_SMALL.summary": {
+    "message": "Small square image.",
+    "description": "Small square image."
+  },
+  "microbit.Image.RABBIT": {
+    "message": "RABBIT",
+    "description": "(field name) Rabbit image."
+  },
+  "microbit.Image.RABBIT.summary": {
+    "message": "Rabbit image.",
+    "description": "Rabbit image."
+  },
+  "microbit.Image.COW": {
+    "message": "COW",
+    "description": "(field name) Cow image."
+  },
+  "microbit.Image.COW.summary": {
+    "message": "Cow image.",
+    "description": "Cow image."
+  },
+  "microbit.Image.MUSIC_CROTCHET": {
+    "message": "MUSIC CROTCHET",
+    "description": "(field name) Crotchet note image."
+  },
+  "microbit.Image.MUSIC_CROTCHET.summary": {
+    "message": "Crotchet note image.",
+    "description": "Crotchet note image."
+  },
+  "microbit.Image.MUSIC_QUAVER": {
+    "message": "MUSIC QUAVER",
+    "description": "(field name) Quaver note image."
+  },
+  "microbit.Image.MUSIC_QUAVER.summary": {
+    "message": "Quaver note image.",
+    "description": "Quaver note image."
+  },
+  "microbit.Image.MUSIC_QUAVERS": {
+    "message": "MUSIC QUAVERS",
+    "description": "(field name) Pair of quavers note image."
+  },
+  "microbit.Image.MUSIC_QUAVERS.summary": {
+    "message": "Pair of quavers note image.",
+    "description": "Pair of quavers note image."
+  },
+  "microbit.Image.PITCHFORK": {
+    "message": "PITCHFORK",
+    "description": "(field name) Pitchfork image."
+  },
+  "microbit.Image.PITCHFORK.summary": {
+    "message": "Pitchfork image.",
+    "description": "Pitchfork image."
+  },
+  "microbit.Image.XMAS": {
+    "message": "XMAS",
+    "description": "(field name) Christmas tree image."
+  },
+  "microbit.Image.XMAS.summary": {
+    "message": "Christmas tree image.",
+    "description": "Christmas tree image."
+  },
+  "microbit.Image.PACMAN": {
+    "message": "PACMAN",
+    "description": "(field name) Pac-Man arcade character image."
+  },
+  "microbit.Image.PACMAN.summary": {
+    "message": "Pac-Man arcade character image.",
+    "description": "Pac-Man arcade character image."
+  },
+  "microbit.Image.TARGET": {
+    "message": "TARGET",
+    "description": "(field name) Target image."
+  },
+  "microbit.Image.TARGET.summary": {
+    "message": "Target image.",
+    "description": "Target image."
+  },
+  "microbit.Image.TSHIRT": {
+    "message": "TSHIRT",
+    "description": "(field name) T-shirt image."
+  },
+  "microbit.Image.TSHIRT.summary": {
+    "message": "T-shirt image.",
+    "description": "T-shirt image."
+  },
+  "microbit.Image.ROLLERSKATE": {
+    "message": "ROLLERSKATE",
+    "description": "(field name) Rollerskate image."
+  },
+  "microbit.Image.ROLLERSKATE.summary": {
+    "message": "Rollerskate image.",
+    "description": "Rollerskate image."
+  },
+  "microbit.Image.DUCK": {
+    "message": "DUCK",
+    "description": "(field name) Duck image."
+  },
+  "microbit.Image.DUCK.summary": {
+    "message": "Duck image.",
+    "description": "Duck image."
+  },
+  "microbit.Image.HOUSE": {
+    "message": "HOUSE",
+    "description": "(field name) House image."
+  },
+  "microbit.Image.HOUSE.summary": {
+    "message": "House image.",
+    "description": "House image."
+  },
+  "microbit.Image.TORTOISE": {
+    "message": "TORTOISE",
+    "description": "(field name) Tortoise image."
+  },
+  "microbit.Image.TORTOISE.summary": {
+    "message": "Tortoise image.",
+    "description": "Tortoise image."
+  },
+  "microbit.Image.BUTTERFLY": {
+    "message": "BUTTERFLY",
+    "description": "(field name) Butterfly image."
+  },
+  "microbit.Image.BUTTERFLY.summary": {
+    "message": "Butterfly image.",
+    "description": "Butterfly image."
+  },
+  "microbit.Image.STICKFIGURE": {
+    "message": "STICKFIGURE",
+    "description": "(field name) Stick figure image."
+  },
+  "microbit.Image.STICKFIGURE.summary": {
+    "message": "Stick figure image.",
+    "description": "Stick figure image."
+  },
+  "microbit.Image.GHOST": {
+    "message": "GHOST",
+    "description": "(field name) Ghost image."
+  },
+  "microbit.Image.GHOST.summary": {
+    "message": "Ghost image.",
+    "description": "Ghost image."
+  },
+  "microbit.Image.SWORD": {
+    "message": "SWORD",
+    "description": "(field name) Sword image."
+  },
+  "microbit.Image.SWORD.summary": {
+    "message": "Sword image.",
+    "description": "Sword image."
+  },
+  "microbit.Image.GIRAFFE": {
+    "message": "GIRAFFE",
+    "description": "(field name) Giraffe image."
+  },
+  "microbit.Image.GIRAFFE.summary": {
+    "message": "Giraffe image.",
+    "description": "Giraffe image."
+  },
+  "microbit.Image.SKULL": {
+    "message": "SKULL",
+    "description": "(field name) Skull image."
+  },
+  "microbit.Image.SKULL.summary": {
+    "message": "Skull image.",
+    "description": "Skull image."
+  },
+  "microbit.Image.UMBRELLA": {
+    "message": "UMBRELLA",
+    "description": "(field name) Umbrella image."
+  },
+  "microbit.Image.UMBRELLA.summary": {
+    "message": "Umbrella image.",
+    "description": "Umbrella image."
+  },
+  "microbit.Image.SNAKE": {
+    "message": "SNAKE",
+    "description": "(field name) Snake image."
+  },
+  "microbit.Image.SNAKE.summary": {
+    "message": "Snake image.",
+    "description": "Snake image."
+  },
+  "microbit.Image.ALL_CLOCKS": {
+    "message": "ALL CLOCKS",
+    "description": "(field name) A list containing all the CLOCK_ images in sequence."
+  },
+  "microbit.Image.ALL_CLOCKS.summary": {
+    "message": "A list containing all the CLOCK_ images in sequence.",
+    "description": "A list containing all the CLOCK_ images in sequence."
+  },
+  "microbit.Image.ALL_ARROWS": {
+    "message": "ALL ARROWS",
+    "description": "(field name) A list containing all the ARROW_ images in sequence."
+  },
+  "microbit.Image.ALL_ARROWS.summary": {
+    "message": "A list containing all the ARROW_ images in sequence.",
+    "description": "A list containing all the ARROW_ images in sequence."
+  },
+  "microbit.Image.__init__": {
+    "message": "init",
+    "description": "(function name) Create an empty image with ``width`` columns and ``height`` rows."
+  },
+  "microbit.Image.__init__.summary": {
+    "message": "Create an empty image with ``width`` columns and ``height`` rows.",
+    "description": "Create an empty image with ``width`` columns and ``height`` rows."
+  },
+  "microbit.Image.__init__.param-name.string": {
+    "message": "string",
+    "description": "(parameter name) The string describing the image."
+  },
+  "microbit.Image.__init__.param-doc.string": {
+    "message": "The string describing the image.",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__.param-name.width": {
+    "message": "width",
+    "description": "(parameter name) Optional width of the image"
+  },
+  "microbit.Image.__init__.param-doc.width": {
+    "message": "Optional width of the image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__.param-name.height": {
+    "message": "height",
+    "description": "(parameter name) Optional height of the image"
+  },
+  "microbit.Image.__init__.param-doc.height": {
+    "message": "Optional height of the image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) Optional array or bytes of ``width``\u00d7``height`` integers in range 0-9 to initialize the image"
+  },
+  "microbit.Image.__init__.param-doc.buffer": {
+    "message": "Optional array or bytes of ``width``\u00d7``height`` integers in range 0-9 to initialize the image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.width": {
+    "message": "width",
+    "description": "(function name) Get the number of columns."
+  },
+  "microbit.Image.width.summary": {
+    "message": "Get the number of columns.",
+    "description": "Get the number of columns."
+  },
+  "microbit.Image.height": {
+    "message": "height",
+    "description": "(function name) Get the number of rows."
+  },
+  "microbit.Image.height.summary": {
+    "message": "Get the number of rows.",
+    "description": "Get the number of rows."
+  },
+  "microbit.Image.set_pixel": {
+    "message": "set pixel",
+    "description": "(function name) Set the brightness of a pixel."
+  },
+  "microbit.Image.set_pixel.summary": {
+    "message": "Set the brightness of a pixel.",
+    "description": "Set the brightness of a pixel."
+  },
+  "microbit.Image.set_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The column number"
+  },
+  "microbit.Image.set_pixel.param-doc.x": {
+    "message": "The column number",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.set_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The row number"
+  },
+  "microbit.Image.set_pixel.param-doc.y": {
+    "message": "The row number",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.set_pixel.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The brightness as an integer between 0 (dark) and 9 (bright)"
+  },
+  "microbit.Image.set_pixel.param-doc.value": {
+    "message": "The brightness as an integer between 0 (dark) and 9 (bright)",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.get_pixel": {
+    "message": "get pixel",
+    "description": "(function name) Get the brightness of a pixel."
+  },
+  "microbit.Image.get_pixel.summary": {
+    "message": "Get the brightness of a pixel.",
+    "description": "Get the brightness of a pixel."
+  },
+  "microbit.Image.get_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The column number"
+  },
+  "microbit.Image.get_pixel.param-doc.x": {
+    "message": "The column number",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.get_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The row number"
+  },
+  "microbit.Image.get_pixel.param-doc.y": {
+    "message": "The row number",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_left": {
+    "message": "shift left",
+    "description": "(function name) Create a new image by shifting the picture left."
+  },
+  "microbit.Image.shift_left.summary": {
+    "message": "Create a new image by shifting the picture left.",
+    "description": "Create a new image by shifting the picture left."
+  },
+  "microbit.Image.shift_left.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of columns to shift by"
+  },
+  "microbit.Image.shift_left.param-doc.n": {
+    "message": "The number of columns to shift by",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_right": {
+    "message": "shift right",
+    "description": "(function name) Create a new image by shifting the picture right."
+  },
+  "microbit.Image.shift_right.summary": {
+    "message": "Create a new image by shifting the picture right.",
+    "description": "Create a new image by shifting the picture right."
+  },
+  "microbit.Image.shift_right.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of columns to shift by"
+  },
+  "microbit.Image.shift_right.param-doc.n": {
+    "message": "The number of columns to shift by",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_up": {
+    "message": "shift up",
+    "description": "(function name) Create a new image by shifting the picture up."
+  },
+  "microbit.Image.shift_up.summary": {
+    "message": "Create a new image by shifting the picture up.",
+    "description": "Create a new image by shifting the picture up."
+  },
+  "microbit.Image.shift_up.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of rows to shift by"
+  },
+  "microbit.Image.shift_up.param-doc.n": {
+    "message": "The number of rows to shift by",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_down": {
+    "message": "shift down",
+    "description": "(function name) Create a new image by shifting the picture down."
+  },
+  "microbit.Image.shift_down.summary": {
+    "message": "Create a new image by shifting the picture down.",
+    "description": "Create a new image by shifting the picture down."
+  },
+  "microbit.Image.shift_down.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of rows to shift by"
+  },
+  "microbit.Image.shift_down.param-doc.n": {
+    "message": "The number of rows to shift by",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop": {
+    "message": "crop",
+    "description": "(function name) Create a new image by cropping the picture."
+  },
+  "microbit.Image.crop.summary": {
+    "message": "Create a new image by cropping the picture.",
+    "description": "Create a new image by cropping the picture."
+  },
+  "microbit.Image.crop.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The crop offset column"
+  },
+  "microbit.Image.crop.param-doc.x": {
+    "message": "The crop offset column",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The crop offset row"
+  },
+  "microbit.Image.crop.param-doc.y": {
+    "message": "The crop offset row",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.w": {
+    "message": "w",
+    "description": "(parameter name) The crop width"
+  },
+  "microbit.Image.crop.param-doc.w": {
+    "message": "The crop width",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The crop height"
+  },
+  "microbit.Image.crop.param-doc.h": {
+    "message": "The crop height",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.copy": {
+    "message": "copy",
+    "description": "(function name) Create an exact copy of the image."
+  },
+  "microbit.Image.copy.summary": {
+    "message": "Create an exact copy of the image.",
+    "description": "Create an exact copy of the image."
+  },
+  "microbit.Image.invert": {
+    "message": "invert",
+    "description": "(function name) Create a new image by inverting the brightness of the pixels in the\nsource image."
+  },
+  "microbit.Image.invert.summary": {
+    "message": "Create a new image by inverting the brightness of the pixels in the\nsource image.",
+    "description": "Create a new image by inverting the brightness of the pixels in the\nsource image."
+  },
+  "microbit.Image.fill": {
+    "message": "fill",
+    "description": "(function name) Set the brightness of all the pixels in the image."
+  },
+  "microbit.Image.fill.summary": {
+    "message": "Set the brightness of all the pixels in the image.",
+    "description": "Set the brightness of all the pixels in the image."
+  },
+  "microbit.Image.fill.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The new brightness as a number between 0 (dark) and 9 (bright)."
+  },
+  "microbit.Image.fill.param-doc.value": {
+    "message": "The new brightness as a number between 0 (dark) and 9 (bright).",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit": {
+    "message": "blit",
+    "description": "(function name) Copy an area from another image into this image."
+  },
+  "microbit.Image.blit.summary": {
+    "message": "Copy an area from another image into this image.",
+    "description": "Copy an area from another image into this image."
+  },
+  "microbit.Image.blit.param-name.src": {
+    "message": "src",
+    "description": "(parameter name) The source image"
+  },
+  "microbit.Image.blit.param-doc.src": {
+    "message": "The source image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The starting column offset in the source image"
+  },
+  "microbit.Image.blit.param-doc.x": {
+    "message": "The starting column offset in the source image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The starting row offset in the source image"
+  },
+  "microbit.Image.blit.param-doc.y": {
+    "message": "The starting row offset in the source image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.w": {
+    "message": "w",
+    "description": "(parameter name) The number of columns to copy"
+  },
+  "microbit.Image.blit.param-doc.w": {
+    "message": "The number of columns to copy",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The number of rows to copy"
+  },
+  "microbit.Image.blit.param-doc.h": {
+    "message": "The number of rows to copy",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.xdest": {
+    "message": "xdest",
+    "description": "(parameter name) The column offset to modify in this image"
+  },
+  "microbit.Image.blit.param-doc.xdest": {
+    "message": "The column offset to modify in this image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.ydest": {
+    "message": "ydest",
+    "description": "(parameter name) The row offset to modify in this image"
+  },
+  "microbit.Image.blit.param-doc.ydest": {
+    "message": "The row offset to modify in this image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__repr__": {
+    "message": "repr",
+    "description": "(function name) Get a compact string representation of the image."
+  },
+  "microbit.Image.__repr__.summary": {
+    "message": "Get a compact string representation of the image.",
+    "description": "Get a compact string representation of the image."
+  },
+  "microbit.Image.__str__": {
+    "message": "str",
+    "description": "(function name) Get a readable string representation of the image."
+  },
+  "microbit.Image.__str__.summary": {
+    "message": "Get a readable string representation of the image.",
+    "description": "Get a readable string representation of the image."
+  },
+  "microbit.Image.__add__": {
+    "message": "add",
+    "description": "(function name) Create a new image by adding the brightness values from the two\nimages for each pixel."
+  },
+  "microbit.Image.__add__.summary": {
+    "message": "Create a new image by adding the brightness values from the two\nimages for each pixel.",
+    "description": "Create a new image by adding the brightness values from the two\nimages for each pixel."
+  },
+  "microbit.Image.__add__.param-name.other": {
+    "message": "other",
+    "description": "(parameter name) The image to add."
+  },
+  "microbit.Image.__add__.param-doc.other": {
+    "message": "The image to add.",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__sub__": {
+    "message": "sub",
+    "description": "(function name) Create a new image by subtracting the brightness values of the\nother image from this image."
+  },
+  "microbit.Image.__sub__.summary": {
+    "message": "Create a new image by subtracting the brightness values of the\nother image from this image.",
+    "description": "Create a new image by subtracting the brightness values of the\nother image from this image."
+  },
+  "microbit.Image.__sub__.param-name.other": {
+    "message": "other",
+    "description": "(parameter name) The image to subtract."
+  },
+  "microbit.Image.__sub__.param-doc.other": {
+    "message": "The image to subtract.",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__mul__": {
+    "message": "mul",
+    "description": "(function name) Create a new image by multiplying the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__mul__.summary": {
+    "message": "Create a new image by multiplying the brightness of each pixel by\n``n``.",
+    "description": "Create a new image by multiplying the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__mul__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The value to multiply by."
+  },
+  "microbit.Image.__mul__.param-doc.n": {
+    "message": "The value to multiply by.",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__truediv__": {
+    "message": "truediv",
+    "description": "(function name) Create a new image by dividing the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__truediv__.summary": {
+    "message": "Create a new image by dividing the brightness of each pixel by\n``n``.",
+    "description": "Create a new image by dividing the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__truediv__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The value to divide by."
+  },
+  "microbit.Image.__truediv__.param-doc.n": {
+    "message": "The value to divide by.",
+    "description": "Parameter docs"
+  },
+  "microbit.SoundEvent.LOUD": {
+    "message": "LOUD",
+    "description": "(field name) Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
+  },
+  "microbit.SoundEvent.LOUD.summary": {
+    "message": "Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music.",
+    "description": "Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
+  },
+  "microbit.SoundEvent.QUIET": {
+    "message": "QUIET",
+    "description": "(field name) Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
+  },
+  "microbit.SoundEvent.QUIET.summary": {
+    "message": "Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting.",
+    "description": "Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
+  },
+  "microbit.Sound": {
+    "message": "Sound",
+    "description": "(class name) The built-in sounds can be called using ``audio.play(Sound.NAME)``."
+  },
+  "microbit.Sound.summary": {
+    "message": "The built-in sounds can be called using ``audio.play(Sound.NAME)``.",
+    "description": "The built-in sounds can be called using ``audio.play(Sound.NAME)``."
+  },
+  "microbit.Sound.GIGGLE": {
+    "message": "GIGGLE",
+    "description": "(field name) Giggling sound."
+  },
+  "microbit.Sound.GIGGLE.summary": {
+    "message": "Giggling sound.",
+    "description": "Giggling sound."
+  },
+  "microbit.Sound.HAPPY": {
+    "message": "HAPPY",
+    "description": "(field name) Happy sound."
+  },
+  "microbit.Sound.HAPPY.summary": {
+    "message": "Happy sound.",
+    "description": "Happy sound."
+  },
+  "microbit.Sound.HELLO": {
+    "message": "HELLO",
+    "description": "(field name) Greeting sound."
+  },
+  "microbit.Sound.HELLO.summary": {
+    "message": "Greeting sound.",
+    "description": "Greeting sound."
+  },
+  "microbit.Sound.MYSTERIOUS": {
+    "message": "MYSTERIOUS",
+    "description": "(field name) Mysterious sound."
+  },
+  "microbit.Sound.MYSTERIOUS.summary": {
+    "message": "Mysterious sound.",
+    "description": "Mysterious sound."
+  },
+  "microbit.Sound.SAD": {
+    "message": "SAD",
+    "description": "(field name) Sad sound."
+  },
+  "microbit.Sound.SAD.summary": {
+    "message": "Sad sound.",
+    "description": "Sad sound."
+  },
+  "microbit.Sound.SLIDE": {
+    "message": "SLIDE",
+    "description": "(field name) Sliding sound."
+  },
+  "microbit.Sound.SLIDE.summary": {
+    "message": "Sliding sound.",
+    "description": "Sliding sound."
+  },
+  "microbit.Sound.SOARING": {
+    "message": "SOARING",
+    "description": "(field name) Soaring sound."
+  },
+  "microbit.Sound.SOARING.summary": {
+    "message": "Soaring sound.",
+    "description": "Soaring sound."
+  },
+  "microbit.Sound.SPRING": {
+    "message": "SPRING",
+    "description": "(field name) Spring sound."
+  },
+  "microbit.Sound.SPRING.summary": {
+    "message": "Spring sound.",
+    "description": "Spring sound."
+  },
+  "microbit.Sound.TWINKLE": {
+    "message": "TWINKLE",
+    "description": "(field name) Twinkling sound."
+  },
+  "microbit.Sound.TWINKLE.summary": {
+    "message": "Twinkling sound.",
+    "description": "Twinkling sound."
+  },
+  "microbit.Sound.YAWN": {
+    "message": "YAWN",
+    "description": "(field name) Yawning sound."
+  },
+  "microbit.Sound.YAWN.summary": {
+    "message": "Yawning sound.",
+    "description": "Yawning sound."
+  }
+}
