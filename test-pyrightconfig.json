@@ -1,9 +1,9 @@
-{ 
+{
   "include": ["./examples"],
   "pythonVersion": "3.6",
   "pythonPlatform": "Linux",
   "typeCheckingMode": "basic",
-  "typeshedPath": "./typeshed/",
+  "typeshedPath": "./lang/en/typeshed/",
   "reportMissingModuleSource": false,
   "reportWildcardImportFromLibrary": false,
   "reportInvalidStubStatement": true,
@@ -11,4 +11,4 @@
   "reportMissingTypeStubs": true,
 
   "verboseOutput": true
- }
+}
