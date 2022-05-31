@@ -1,8 +1,7 @@
-from typing import Tuple
-
 """Access the file system.
 """
 
+from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
