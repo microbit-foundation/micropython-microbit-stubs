@@ -19,12 +19,14 @@ def get_translation_JSON():
     data = {}
     files_to_process = get_stub_files()
     for file in files_to_process:
+        if not file["python_file"]:
+            continue
         data = {**data, **get_docstrings_dict(file)}
     save_docstrings_as_json(data)
 
 
 def get_stub_files():
-    top = os.path.join(DIR, "..", "typeshed/stdlib")
+    top = os.path.join(DIR, "..", "lang/en/typeshed/stdlib")
     files_to_process = []
     for root, dirs, files in os.walk(top):
         for file in files:
@@ -58,6 +60,16 @@ def get_stub_files():
                         "file_name": file,
                         "file_path": file_path,
                         "module_name": module_name,
+                        "python_file": True,
+                    }
+                )
+            else:
+                files_to_process.append(
+                    {
+                        "file_name": file,
+                        "file_path": file_path,
+                        "module_name": "",
+                        "python_file": False,
                     }
                 )
     return files_to_process
@@ -325,6 +337,9 @@ def get_JSON_file_content(file_name):
 # Needs refactoring with get_docstrings_dict
 def update_docstrings(file, lang):
     source = get_source(file["file_path"])
+    if not file["python_file"]:
+        save_file(source, file, lang)
+        return
     tree = ast.parse(source)
     key = ""
     skip_key = False
@@ -447,7 +462,7 @@ def unparse_file(tree):
 
 
 def save_file(data, file, lang):
-    output_dir = os.path.join(DIR, f"stubs_output_test/{lang}/stdlib")
+    output_dir = os.path.join(DIR, "..", f"lang/{lang}/typeshed/stdlib")
     file_path = os.path.join(output_dir, file["file_path"].split("stdlib/")[-1])
     checked_path_list = []
     for path_segment in file_path.split("/"):
