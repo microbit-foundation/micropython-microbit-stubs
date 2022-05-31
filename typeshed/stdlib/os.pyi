@@ -1,7 +1,8 @@
+from typing import Tuple
+
 """Access the file system.
 """
 
-from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
@@ -38,7 +39,6 @@ def size(filename: str) -> int:
 
 class uname_result(Tuple[str, str, str, str, str]):
     """Result of ``os.uname()``"""
-
     sysname: str
     """Operating system name."""
 
@@ -47,10 +47,10 @@ class uname_result(Tuple[str, str, str, str, str]):
 
     release: str
     """Operating system release."""
-
+    
     version: str
     """Operating system version."""
-
+    
     machine: str
     """Hardware identifier."""
 
