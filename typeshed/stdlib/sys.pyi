@@ -1,4 +1,4 @@
-"""system specific functions"""
+"""System specific functions"""
 
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
