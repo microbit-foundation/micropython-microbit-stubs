@@ -9,8 +9,8 @@ def sleep(seconds: Union[int, float]) -> None:
 
     Example: ``utime.sleep(1)``
 
-    :param seconds: The number of seconds to sleep for. Use a floating-point
-    number to sleep for a fractional number of seconds.
+    :param seconds: The number of seconds to sleep for.
+    Use a floating-point number to sleep for a fractional number of seconds.
     """
     ...
 
