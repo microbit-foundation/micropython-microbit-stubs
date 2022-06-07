@@ -1,5 +1,5 @@
 """
-    Creates api.en.json file in CrowdIn's format
+    Creates api.en.json file in Crowdin's format
     containing translatable parts of the API
     produced from the type stubs files.
     Inclues first line of docstring (summary),
@@ -13,6 +13,10 @@ import json
 import re
 import sys
 
+from typing import Any
+
+from typing import Optional
+
 NODE_TYPES_WITH_DOCSTRINGS = (ast.FunctionDef, ast.Module, ast.ClassDef)
 DIR = os.path.dirname(__file__)
 
@@ -20,63 +24,43 @@ DIR = os.path.dirname(__file__)
 def typeshed_to_crowdin():
     data = {}
     files_to_process = get_stub_files()
-    for file in files_to_process:
-        if not file.python_file:
+    for ts_file in files_to_process:
+        if not ts_file.python_file:
             continue
-        data = {**data, **get_docstrings_dict(file)}
+        data.update(get_docstrings_dict(ts_file))
     save_docstrings_as_json(data)
 
 
 @dataclass
-class StubFile:
-    file_name: str
+class TypeshedFile:
     file_path: str
     module_name: str
     python_file: bool
 
 
-def get_stub_files() -> list[StubFile]:
+def get_stub_files() -> list[TypeshedFile]:
     top = os.path.join(DIR, "..", "lang/en/typeshed/stdlib")
-    files_to_process: list[StubFile] = []
+    files_to_process: list[TypeshedFile] = []
     for root, dirs, files in os.walk(top):
-        for file in files:
-            file_path = os.path.join(root, file)
-            # Skip audio stubs file that imports from microbit audio.
+        for name in files:
+            file_path = os.path.join(root, name)
+            # Skip audio stubs file that imports from microbit audio (so we don't include its docstring)
             if (
                 os.path.basename(os.path.dirname(file_path)) != "microbit"
-                and file == "audio.pyi"
+                and name == "audio.pyi"
             ):
                 continue
-            if file.endswith(".pyi"):
-                module_name = ""
-                file_name = ""
-
-                if file != "__init__.pyi":
-                    file_name = file.replace(".pyi", "")
-                if (
-                    os.path.basename(os.path.dirname(file_path)) == "microbit"
-                    and file_name
-                ):
-                    module_name = ".".join(["microbit", file_name])
-                elif (
-                    os.path.basename(os.path.dirname(file_path)) == "microbit"
-                    and not file_name
-                ):
-                    module_name = "microbit"
-                else:
-                    module_name = file_name
+            if name.endswith(".pyi"):
                 files_to_process.append(
-                    StubFile(
-                        file_name=file,
+                    TypeshedFile(
                         file_path=file_path,
-                        module_name=module_name,
+                        module_name=module_name_for_path(file_path),
                         python_file=True,
                     )
                 )
             else:
                 files_to_process.append(
-                    StubFile(
-                        file_name=file,
+                    TypeshedFile(
                         file_path=file_path,
                         module_name="",
                         python_file=False,
@@ -85,94 +69,75 @@ def get_stub_files() -> list[StubFile]:
     return sorted(files_to_process, key=lambda x: x.file_path)
 
 
-def get_docstrings_dict(file):
-    source = get_source(file.file_path)
-    tree = ast.parse(source)
-    data = {}
-    key = ""
-    skip_key = False
-    line_num = 0
-    for node in ast.walk(tree):
-        if hasattr(node, "lineno"):
-            end_of_file = node.lineno < line_num
-            line_num = node.lineno
-            # Stop when we reach the end of the file.
-            if end_of_file:
-                break
+def module_name_for_path(file_path: str):
+    """Hacky determination of the module name used as a translation key."""
+    name = os.path.basename(file_path)
+    in_microbit_package = os.path.basename(os.path.dirname(file_path)) == "microbit"
+    if in_microbit_package:
+        if name == "__init__.pyi":
+            return "microbit"
+        return ".".join(["microbit", os.path.splitext(name)[0]])
+    return os.path.splitext(name)[0]
 
-        if isinstance(node, ast.ClassDef):
-            key, skip_key, data = process_node_read(file, data, node, key, skip_key)
-            class_name = key
-            # Walk over nested class methods to retain association
-            # with class name.
-            for node in node.body:
-                key, skip_key, data = process_node_read(
-                    file, data, node, key, skip_key, class_name
-                )
-        else:
-            key, skip_key, data = process_node_read(file, data, node, key, skip_key)
-    return data
+
+def get_docstrings_dict(ts_file: TypeshedFile):
+    source = get_source(ts_file.file_path)
+    tree = ast.parse(source)
+
+    class DocStringCollector(ast.NodeVisitor):
+        def __init__(self):
+            self.key = []
+            self.preceding: Optional[str] = None
+            # Translation key to dict with message/description fields.
+            self.data: dict[str, dict[str, str]] = {}
+
+        def visit_Module(self, node: ast.Module) -> Any:
+            self.key.append(ts_file.module_name)
+            self.add_entries_for_node(node)
+            self.generic_visit(node)
+            self.key.pop()
+
+        def visit_ClassDef(self, node):
+            self.key.append(node.name)
+            self.add_entries_for_node(node)
+            self.generic_visit(node)
+            self.key.pop()
+
+        def visit_FunctionDef(self, node: ast.FunctionDef) -> Any:
+            self.key.append(node.name)
+            self.preceding = None
+            self.add_entries_for_node(node)
+            self.key.pop()
+
+        def visit_AnnAssign(self, node: ast.AnnAssign) -> Any:
+            self.preceding = node.target.id  # type: ignore
+
+        def visit_Assign(self, node: ast.Assign) -> Any:
+            if len(node.targets) != 1:
+                raise AssertionError()
+            self.preceding = node.targets[0].id  # type: ignore
+
+        def visit_Expr(self, node: ast.Expr) -> Any:
+            if self.preceding:
+                self.add_entries_for_node(node, [self.preceding])
+
+        def generic_visit(self, node: ast.AST) -> Any:
+            self.preceding = None
+            return super().generic_visit(node)
+
+        def add_entries_for_node(
+            self, node: ast.AST, extra_key: Optional[list[str]] = None
+        ) -> None:
+            self.data.update(get_entries(node, ".".join(self.key + (extra_key or []))))
+
+    collector = DocStringCollector()
+    collector.visit(tree)
+    return collector.data
 
 
 def get_source(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
         return file.read()
-
-
-def process_node_read(file, data, node, key, skip_key, class_name=""):
-    if not skip_key:
-        assignment_key, class_func_key = get_key(node, class_name)
-        if assignment_key:
-            key = assignment_key
-            skip_key = True
-            # We get the docstring from the Expr node
-            # in the next iteration.
-            return key, skip_key, data
-        elif class_func_key:
-            key = class_func_key
-        elif isinstance(node, ast.Module):
-            key = ""
-        else:
-            # No key, so not something we care about.
-            return "", skip_key, data
-
-    skip_key = False
-    entry = get_entries(node, add_module_to_key(key, file))
-    data = {**data, **entry}
-    return key, skip_key, data
-
-
-def get_key(node, class_name):
-    """Get field or function name and concatenate with correct
-    class name where appropriate."""
-    assignmentKey = ""
-    classFuncKey = ""
-    if isinstance(node, ast.AnnAssign):
-        child = ""
-        parent = ""
-        if hasattr(node.target, "id"):
-            child = node.target.id
-        if hasattr(node.annotation, "id"):
-            parent = node.annotation.id
-        if class_name and child:
-            assignmentKey = f"{class_name}.{child}"
-        elif parent and child:
-            assignmentKey = f"{parent}.{child}"
-        else:
-            assignmentKey = child
-
-    if isinstance(node, ast.Assign):
-        child = node.targets[0].id
-        if class_name and child:
-            assignmentKey = f"{class_name}.{child}"
-        else:
-            assignmentKey = child
-    if isinstance(node, (ast.FunctionDef, ast.ClassDef)):
-        if class_name:
-            classFuncKey = f"{class_name}.{node.name}"
-        else:
-            classFuncKey = node.name
-    return assignmentKey, classFuncKey
 
 
 def get_entries(node, parent_key):
@@ -183,38 +148,38 @@ def get_entries(node, parent_key):
     if not summary:
         return {}
     if not isinstance(node, ast.Module):
-        parent_message = parent_key.split(".")[-1].replace("_", " ").strip()
-        entries = {
-            **entries,
-            **format_translation_data(
-                parent_key, parent_message, f"({get_node_type(node)} name) {summary}"
-            ),
-        }
+        api_call_for_translation = parent_key.split(".")[-1].replace("_", " ").strip()
+        entries.update(
+            format_translation_data(
+                parent_key,
+                api_call_for_translation,
+                f"({get_node_type(node)} name) {summary}",
+            )
+        )
     summary_key = ".".join([parent_key, "summary"])
-    entries = {**entries, **format_translation_data(summary_key, summary, summary)}
+    entries.update(format_translation_data(summary_key, summary, summary))
     matched_params = get_matched_params(node, param_section)
     # check_param_docs(parent_key, param_list, matched_params)
     for key in matched_params:
         # Translate param name.
         param_name_key = ".".join([parent_key, "param-name", key])
-        entries = {
-            **entries,
-            **format_translation_data(
+        entries.update(
+            format_translation_data(
                 param_name_key, key, f"(parameter name) {matched_params[key]}"
-            ),
-        }
+            )
+        )
         # Translate param doc.
         param_doc_key = ".".join([parent_key, "param-doc", key])
-        entries = {
-            **entries,
-            **format_translation_data(
+        entries.update(
+            format_translation_data(
                 param_doc_key, matched_params[key], "Parameter docs"
-            ),
-        }
+            )
+        )
     return entries
 
 
-def get_docstring(node):
+def get_docstring(node: ast.AST):
+    """Get the docstring, returning string content for constant strings on the assumption they're for preceding fields."""
     docstring = ""
     if isinstance(node, ast.Expr):
         node = node.value
@@ -240,8 +205,8 @@ def split_docstring(docstring):
     return (summary, param_section)
 
 
-def convertToPlaceholders(msg):
-    """Convert backticks to CrowdIn placeholders."""
+def convert_to_placeholders(msg):
+    """Convert backticks to Crowdin placeholders."""
     foundIndex = msg.find("``")
     i = 1
     while foundIndex != -1:
@@ -257,7 +222,7 @@ def convertToPlaceholders(msg):
 def format_translation_data(key, defaultMessage, description):
     return {
         key: {
-            "message": convertToPlaceholders(defaultMessage),
+            "message": convert_to_placeholders(defaultMessage),
             "description": description,
         }
     }
@@ -292,8 +257,7 @@ def get_params(node):
             if node.args.vararg.arg != "self":
                 params.append(node.args.vararg.arg)
     # Remove duplicates if they exist.
-    params = list(set(params))
-    return params
+    return sorted(list(set(params)))
 
 
 def match_params_to_defs(param_list, param_defs):
@@ -491,7 +455,7 @@ def unparse_file(tree):
 
 
 def convertFromPlaceholders(data):
-    """Convert CrowdIn placeholders to backticks."""
+    """Convert Crowdin placeholders to backticks."""
     return data.replace("{{", "``").replace("}}", "``")
 
 
