@@ -283,9 +283,9 @@ def add_module_to_key(key, file):
 
 
 def check_param_docs(parent_key, param_list, matched_params):
-    """Finds parameters that do not have docs"""
+    """Fail on parameters that do not have docs."""
     if len(param_list) != len(matched_params):
-        print(parent_key, param_list, matched_params)
+        raise AssertionError(parent_key, param_list, matched_params)
 
 
 def save_docstrings_as_json(data):
