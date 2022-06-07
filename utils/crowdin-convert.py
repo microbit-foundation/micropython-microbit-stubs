@@ -256,6 +256,14 @@ def get_params(node):
         for arg in node.args.args:
             if arg.arg != "self":
                 params.append(arg.arg)
+        for arg in node.args.kwonlyargs:
+            if arg.arg != "self":
+                params.append(arg.arg)
+        if node.args.vararg:
+            if node.args.vararg.arg != "self":
+                params.append(node.args.vararg.arg)
+    # Remove duplicates if they exist.
+    params = list(set(params))
     return params
 
 
@@ -480,5 +488,5 @@ def maybe_dir(maybe_path):
         os.mkdir(maybe_path)
 
 
-# get_translation_JSON()
-translate_stubs()
+get_translation_JSON()
+# translate_stubs()
