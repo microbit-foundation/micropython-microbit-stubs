@@ -111,6 +111,14 @@
     "message": "Set up the log file header.",
     "description": "Set up the log file header."
   },
+  "log.set_labels.param-name.*args": {
+    "message": "*args",
+    "description": "(parameter name) A positional argument for each log header."
+  },
+  "log.set_labels.param-doc.*args": {
+    "message": "A positional argument for each log header.",
+    "description": "Parameter docs"
+  },
   "log.set_labels.param-name.timestamp": {
     "message": "timestamp",
     "description": "(parameter name) The timestamp unit that will be automatically added as the first column in every row.\nSetting this argument to `None` disables the timestamp.\nPass the ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``,\n``log.HOURS`` or ``log.DAYS`` values defined by this module.\nAn invalid value will throw an exception."
@@ -4403,6 +4411,14 @@
     "message": "Pack values according to a format string.",
     "description": "Pack values according to a format string."
   },
+  "ustruct.pack.param-name.*vn": {
+    "message": "*vn",
+    "description": "(parameter name) The remaining values."
+  },
+  "ustruct.pack.param-doc.*vn": {
+    "message": "The remaining values.",
+    "description": "Parameter docs"
+  },
   "ustruct.pack.param-name.fmt": {
     "message": "fmt",
     "description": "(parameter name) The format string."
@@ -4426,6 +4442,14 @@
   "ustruct.pack_into.summary": {
     "message": "Pack values according to a format string.",
     "description": "Pack values according to a format string."
+  },
+  "ustruct.pack_into.param-name.*vn": {
+    "message": "*vn",
+    "description": "(parameter name) The remaining values."
+  },
+  "ustruct.pack_into.param-doc.*vn": {
+    "message": "The remaining values.",
+    "description": "Parameter docs"
   },
   "ustruct.pack_into.param-name.buffer": {
     "message": "buffer",

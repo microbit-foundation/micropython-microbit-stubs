@@ -159,7 +159,7 @@ def get_entries(node, parent_key):
     summary_key = ".".join([parent_key, "summary"])
     entries.update(format_translation_data(summary_key, summary, summary))
     matched_params = get_matched_params(node, param_section)
-    # check_param_docs(parent_key, param_list, matched_params)
+    check_param_docs(parent_key, get_params(node), matched_params)
     for key in matched_params:
         # Translate param name.
         param_name_key = ".".join([parent_key, "param-name", key])
@@ -255,7 +255,7 @@ def get_params(node):
                 params.append(arg.arg)
         if node.args.vararg:
             if node.args.vararg.arg != "self":
-                params.append(node.args.vararg.arg)
+                params.append("*" + node.args.vararg.arg)
     # Remove duplicates if they exist.
     return sorted(list(set(params)))
 
