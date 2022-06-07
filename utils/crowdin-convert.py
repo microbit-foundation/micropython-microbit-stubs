@@ -87,27 +87,30 @@ def get_docstrings_dict(ts_file: TypeshedFile):
     class DocStringCollector(ast.NodeVisitor):
         def __init__(self):
             self.key = []
+            self.used_keys = set()
             self.preceding: Optional[str] = None
             # Translation key to dict with message/description fields.
             self.data: dict[str, dict[str, str]] = {}
 
         def visit_Module(self, node: ast.Module) -> Any:
-            self.key.append(ts_file.module_name)
-            self.add_entries_for_node(node)
+            name = ts_file.module_name
+            self.add_entries_for_node(node, name)
+
+            self.key.append(name)
             self.generic_visit(node)
             self.key.pop()
 
         def visit_ClassDef(self, node):
-            self.key.append(node.name)
-            self.add_entries_for_node(node)
+            name = node.name
+            self.add_entries_for_node(node, name)
+
+            self.key.append(name)
             self.generic_visit(node)
             self.key.pop()
 
         def visit_FunctionDef(self, node: ast.FunctionDef) -> Any:
-            self.key.append(node.name)
             self.preceding = None
-            self.add_entries_for_node(node)
-            self.key.pop()
+            self.add_entries_for_node(node, node.name)
 
         def visit_AnnAssign(self, node: ast.AnnAssign) -> Any:
             self.preceding = node.target.id  # type: ignore
@@ -119,16 +122,21 @@ def get_docstrings_dict(ts_file: TypeshedFile):
 
         def visit_Expr(self, node: ast.Expr) -> Any:
             if self.preceding:
-                self.add_entries_for_node(node, [self.preceding])
+                self.add_entries_for_node(node, self.preceding)
 
         def generic_visit(self, node: ast.AST) -> Any:
             self.preceding = None
             return super().generic_visit(node)
 
-        def add_entries_for_node(
-            self, node: ast.AST, extra_key: Optional[list[str]] = None
-        ) -> None:
-            self.data.update(get_entries(node, ".".join(self.key + (extra_key or []))))
+        def add_entries_for_node(self, node: ast.AST, name: str) -> None:
+            key_root = ".".join([*self.key, name])
+            key = key_root
+            suffix = 1
+            while key in self.used_keys:
+                key = f"{key_root}-{suffix}"
+                suffix += 1
+            self.used_keys.add(key)
+            self.data.update(get_entries(node, name, key))
 
     collector = DocStringCollector()
     collector.visit(tree)
@@ -140,7 +148,7 @@ def get_source(file_path):
         return file.read()
 
 
-def get_entries(node, parent_key):
+def get_entries(node, name, key):
     entries = {}
     docstring = get_docstring(node)
     summary, param_section = split_docstring(docstring)
@@ -148,31 +156,34 @@ def get_entries(node, parent_key):
     if not summary:
         return {}
     if not isinstance(node, ast.Module):
-        api_call_for_translation = parent_key.split(".")[-1].replace("_", " ").strip()
+        api_call_for_translation = name.replace("_", " ").strip()
         entries.update(
             format_translation_data(
-                parent_key,
+                key,
                 api_call_for_translation,
                 f"({get_node_type(node)} name) {summary}",
             )
         )
-    summary_key = ".".join([parent_key, "summary"])
+    summary_key = ".".join([key, "summary"])
     entries.update(format_translation_data(summary_key, summary, summary))
     matched_params = get_matched_params(node, param_section)
-    check_param_docs(parent_key, get_params(node), matched_params)
-    for key in matched_params:
+    check_param_docs(key, get_params(node), matched_params)
+
+    for param_key in matched_params:
         # Translate param name.
-        param_name_key = ".".join([parent_key, "param-name", key])
+        param_name_key = ".".join([key, "param-name", param_key])
         entries.update(
             format_translation_data(
-                param_name_key, key, f"(parameter name) {matched_params[key]}"
+                param_name_key,
+                param_key,
+                f"(parameter name) {matched_params[param_key]}",
             )
         )
         # Translate param doc.
-        param_doc_key = ".".join([parent_key, "param-doc", key])
+        param_doc_key = ".".join([key, "param-doc", param_key])
         entries.update(
             format_translation_data(
-                param_doc_key, matched_params[key], "Parameter docs"
+                param_doc_key, matched_params[param_key], "Parameter docs"
             )
         )
     return entries

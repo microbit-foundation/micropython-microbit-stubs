@@ -45,17 +45,25 @@
   },
   "gc.threshold": {
     "message": "threshold",
-    "description": "(function name) Set the additional GC allocation threshold."
+    "description": "(function name) Query the additional GC allocation threshold."
   },
   "gc.threshold.summary": {
+    "message": "Query the additional GC allocation threshold.",
+    "description": "Query the additional GC allocation threshold."
+  },
+  "gc.threshold-1": {
+    "message": "threshold",
+    "description": "(function name) Set the additional GC allocation threshold."
+  },
+  "gc.threshold-1.summary": {
     "message": "Set the additional GC allocation threshold.",
     "description": "Set the additional GC allocation threshold."
   },
-  "gc.threshold.param-name.amount": {
+  "gc.threshold-1.param-name.amount": {
     "message": "amount",
     "description": "(parameter name) The number of bytes after which a garbage collection should be triggered."
   },
-  "gc.threshold.param-doc.amount": {
+  "gc.threshold-1.param-doc.amount": {
     "message": "The number of bytes after which a garbage collection should be triggered.",
     "description": "Parameter docs"
   },
@@ -129,11 +137,11 @@
   },
   "log.add": {
     "message": "add",
-    "description": "(function name) Add a data row to the log using keyword arguments."
+    "description": "(function name) Add a data row to the log by passing a dictionary of headers and values."
   },
   "log.add.summary": {
-    "message": "Add a data row to the log using keyword arguments.",
-    "description": "Add a data row to the log using keyword arguments."
+    "message": "Add a data row to the log by passing a dictionary of headers and values.",
+    "description": "Add a data row to the log by passing a dictionary of headers and values."
   },
   "log.add.param-name.log_data": {
     "message": "log_data",
@@ -142,6 +150,14 @@
   "log.add.param-doc.log_data": {
     "message": "The data to log as a dictionary with a key for each header.",
     "description": "Parameter docs"
+  },
+  "log.add-1": {
+    "message": "add",
+    "description": "(function name) Add a data row to the log using keyword arguments."
+  },
+  "log.add-1.summary": {
+    "message": "Add a data row to the log using keyword arguments.",
+    "description": "Add a data row to the log using keyword arguments."
   },
   "log.delete": {
     "message": "delete",
@@ -1837,11 +1853,11 @@
   },
   "microbit.Image.__init__": {
     "message": "init",
-    "description": "(function name) Create an empty image with ``width`` columns and ``height`` rows."
+    "description": "(function name) Create an image from a string describing which LEDs are lit."
   },
   "microbit.Image.__init__.summary": {
-    "message": "Create an empty image with {{width}} columns and {{height}} rows.",
-    "description": "Create an empty image with ``width`` columns and ``height`` rows."
+    "message": "Create an image from a string describing which LEDs are lit.",
+    "description": "Create an image from a string describing which LEDs are lit."
   },
   "microbit.Image.__init__.param-name.string": {
     "message": "string",
@@ -1851,27 +1867,35 @@
     "message": "The string describing the image.",
     "description": "Parameter docs"
   },
-  "microbit.Image.__init__.param-name.buffer": {
+  "microbit.Image.__init__-1": {
+    "message": "init",
+    "description": "(function name) Create an empty image with ``width`` columns and ``height`` rows."
+  },
+  "microbit.Image.__init__-1.summary": {
+    "message": "Create an empty image with {{width}} columns and {{height}} rows.",
+    "description": "Create an empty image with ``width`` columns and ``height`` rows."
+  },
+  "microbit.Image.__init__-1.param-name.buffer": {
     "message": "buffer",
     "description": "(parameter name) Optional array or bytes of ``width``\u00d7``height`` integers in range 0-9 to initialize the image"
   },
-  "microbit.Image.__init__.param-doc.buffer": {
+  "microbit.Image.__init__-1.param-doc.buffer": {
     "message": "Optional array or bytes of {{width}}\u00d7{{height}} integers in range 0-9 to initialize the image",
     "description": "Parameter docs"
   },
-  "microbit.Image.__init__.param-name.height": {
+  "microbit.Image.__init__-1.param-name.height": {
     "message": "height",
     "description": "(parameter name) Optional height of the image"
   },
-  "microbit.Image.__init__.param-doc.height": {
+  "microbit.Image.__init__-1.param-doc.height": {
     "message": "Optional height of the image",
     "description": "Parameter docs"
   },
-  "microbit.Image.__init__.param-name.width": {
+  "microbit.Image.__init__-1.param-name.width": {
     "message": "width",
     "description": "(parameter name) Optional width of the image"
   },
-  "microbit.Image.__init__.param-doc.width": {
+  "microbit.Image.__init__-1.param-doc.width": {
     "message": "Optional width of the image",
     "description": "Parameter docs"
   },
@@ -3245,17 +3269,25 @@
   },
   "micropython.opt_level": {
     "message": "opt level",
-    "description": "(function name) Sets the optimisation level for subsequent compilation of scripts."
+    "description": "(function name) Get the current optimisation level for the compilation of scripts."
   },
   "micropython.opt_level.summary": {
+    "message": "Get the current optimisation level for the compilation of scripts.",
+    "description": "Get the current optimisation level for the compilation of scripts."
+  },
+  "micropython.opt_level-1": {
+    "message": "opt level",
+    "description": "(function name) Sets the optimisation level for subsequent compilation of scripts."
+  },
+  "micropython.opt_level-1.summary": {
     "message": "Sets the optimisation level for subsequent compilation of scripts.",
     "description": "Sets the optimisation level for subsequent compilation of scripts."
   },
-  "micropython.opt_level.param-name.level": {
+  "micropython.opt_level-1.param-name.level": {
     "message": "level",
     "description": "(parameter name) An integer optimisation level."
   },
-  "micropython.opt_level.param-doc.level": {
+  "micropython.opt_level-1.param-doc.level": {
     "message": "An integer optimisation level.",
     "description": "Parameter docs"
   },
@@ -4305,34 +4337,50 @@
   },
   "urandom.randrange": {
     "message": "randrange",
-    "description": "(function name) Choose a randomly selected element from ``range(start, stop, step)``."
+    "description": "(function name) Choose a randomly selected integer between zero and up to (but not\nincluding) ``stop``."
   },
   "urandom.randrange.summary": {
-    "message": "Choose a randomly selected element from {{range(start, stop, step)}}.",
-    "description": "Choose a randomly selected element from ``range(start, stop, step)``."
+    "message": "Choose a randomly selected integer between zero and up to (but not\nincluding) {{stop}}.",
+    "description": "Choose a randomly selected integer between zero and up to (but not\nincluding) ``stop``."
   },
   "urandom.randrange.param-name.stop": {
     "message": "stop",
-    "description": "(parameter name) The end of the range (exclusive)"
+    "description": "(parameter name) End value for the range (exclusive)"
   },
   "urandom.randrange.param-doc.stop": {
-    "message": "The end of the range (exclusive)",
+    "message": "End value for the range (exclusive)",
     "description": "Parameter docs"
   },
-  "urandom.randrange.param-name.start": {
+  "urandom.randrange-1": {
+    "message": "randrange",
+    "description": "(function name) Choose a randomly selected element from ``range(start, stop, step)``."
+  },
+  "urandom.randrange-1.summary": {
+    "message": "Choose a randomly selected element from {{range(start, stop, step)}}.",
+    "description": "Choose a randomly selected element from ``range(start, stop, step)``."
+  },
+  "urandom.randrange-1.param-name.start": {
     "message": "start",
     "description": "(parameter name) The start of the range (inclusive)"
   },
-  "urandom.randrange.param-doc.start": {
+  "urandom.randrange-1.param-doc.start": {
     "message": "The start of the range (inclusive)",
     "description": "Parameter docs"
   },
-  "urandom.randrange.param-name.step": {
+  "urandom.randrange-1.param-name.step": {
     "message": "step",
     "description": "(parameter name) The step."
   },
-  "urandom.randrange.param-doc.step": {
+  "urandom.randrange-1.param-doc.step": {
     "message": "The step.",
+    "description": "Parameter docs"
+  },
+  "urandom.randrange-1.param-name.stop": {
+    "message": "stop",
+    "description": "(parameter name) The end of the range (exclusive)"
+  },
+  "urandom.randrange-1.param-doc.stop": {
+    "message": "The end of the range (exclusive)",
     "description": "Parameter docs"
   },
   "urandom.choice": {
