@@ -7,27 +7,37 @@
 """
 
 import ast
+from dataclasses import dataclass
 import os
 import json
 import re
+import sys
 
 NODE_TYPES_WITH_DOCSTRINGS = (ast.FunctionDef, ast.Module, ast.ClassDef)
 DIR = os.path.dirname(__file__)
 
 
-def get_translation_JSON():
+def typeshed_to_crowdin():
     data = {}
     files_to_process = get_stub_files()
     for file in files_to_process:
-        if not file["python_file"]:
+        if not file.python_file:
             continue
         data = {**data, **get_docstrings_dict(file)}
     save_docstrings_as_json(data)
 
 
-def get_stub_files():
+@dataclass
+class StubFile:
+    file_name: str
+    file_path: str
+    module_name: str
+    python_file: bool
+
+
+def get_stub_files() -> list[StubFile]:
     top = os.path.join(DIR, "..", "lang/en/typeshed/stdlib")
-    files_to_process = []
+    files_to_process: list[StubFile] = []
     for root, dirs, files in os.walk(top):
         for file in files:
             file_path = os.path.join(root, file)
@@ -56,27 +66,27 @@ def get_stub_files():
                 else:
                     module_name = file_name
                 files_to_process.append(
-                    {
-                        "file_name": file,
-                        "file_path": file_path,
-                        "module_name": module_name,
-                        "python_file": True,
-                    }
+                    StubFile(
+                        file_name=file,
+                        file_path=file_path,
+                        module_name=module_name,
+                        python_file=True,
+                    )
                 )
             else:
                 files_to_process.append(
-                    {
-                        "file_name": file,
-                        "file_path": file_path,
-                        "module_name": "",
-                        "python_file": False,
-                    }
+                    StubFile(
+                        file_name=file,
+                        file_path=file_path,
+                        module_name="",
+                        python_file=False,
+                    )
                 )
-    return files_to_process
+    return sorted(files_to_process, key=lambda x: x.file_path)
 
 
 def get_docstrings_dict(file):
-    source = get_source(file["file_path"])
+    source = get_source(file.file_path)
     tree = ast.parse(source)
     data = {}
     key = ""
@@ -299,7 +309,7 @@ def match_params_to_defs(param_list, param_defs):
 
 
 def add_module_to_key(key, file):
-    module = file["module_name"]
+    module = file.module_name
     if module and key:
         return ".".join([module, key])
     elif module and not key:
@@ -317,7 +327,7 @@ def check_param_docs(parent_key, param_list, matched_params):
 def save_docstrings_as_json(data):
     file_name = os.path.join(DIR, "lang/api.en.json")
     with open(file_name, "w") as file:
-        file.write(json.dumps(data))
+        file.write(json.dumps(data, indent=2))
 
 
 # ==============================================================
@@ -326,45 +336,40 @@ en_json = {}
 translated_json = {}
 
 
-def translate_stubs():
+def crowdin_to_typeshed():
     global en_json
     global translated_json
-    en_json = get_JSON_file_content(os.path.join(DIR, "lang/api.en.json"))
-    translations_to_process = get_translated_JSON_files()
+    en_json = read_json(os.path.join(DIR, "lang/api.en.json"))
+    translations_to_process = get_translated_json_files()
     stubs_to_process = get_stub_files()
-    for translation in translations_to_process:
-        translated_json = get_JSON_file_content(translation["file_path"])
-        lang = translation["file_name"].split(".")[1]
+    for translated in translations_to_process:
+        translated_json = read_json(translated)
+        lang = os.path.basename(translated).split(".")[1]
         for stubs_file in stubs_to_process:
             update_docstrings(stubs_file, lang)
 
 
-def get_translated_JSON_files():
+def get_translated_json_files() -> list[str]:
     top = os.path.join(DIR, "lang")
-    files_to_process = []
+    files_to_process: list[str] = []
     for root, dirs, files in os.walk(top):
         for file in files:
             file_path = os.path.join(root, file)
             if file == "api.en.json":
                 continue
-            files_to_process.append(
-                {
-                    "file_name": file,
-                    "file_path": file_path,
-                }
-            )
-    return files_to_process
+            files_to_process.append(file_path)
+    return sorted(files_to_process)
 
 
-def get_JSON_file_content(file_name):
+def read_json(file_name):
     with open(file_name, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
 # Needs refactoring with get_docstrings_dict
 def update_docstrings(file, lang):
-    source = get_source(file["file_path"])
-    if not file["python_file"]:
+    source = get_source(file.file_path)
+    if not file.python_file:
         save_file(source, file, lang)
         return
     tree = ast.parse(source)
@@ -492,7 +497,7 @@ def convertFromPlaceholders(data):
 
 def save_file(data, file, lang):
     output_dir = os.path.join(DIR, "..", f"lang/{lang}/typeshed/stdlib")
-    file_path = os.path.join(output_dir, file["file_path"].split("stdlib/")[-1])
+    file_path = os.path.join(output_dir, file.file_path.split("stdlib/")[-1])
     checked_path_list = []
     for path_segment in file_path.split("/"):
         maybe_dir("/".join(checked_path_list))
@@ -509,5 +514,12 @@ def maybe_dir(maybe_path):
         os.mkdir(maybe_path)
 
 
-get_translation_JSON()
-# translate_stubs()
+if __name__ == "__main__":
+    operation = sys.argv[1]
+    if operation == "typeshed-to-crowdin":
+        typeshed_to_crowdin()
+    elif operation == "crowdin-to-typeshed":
+        crowdin_to_typeshed()
+    else:
+        print(f"Invalid operation: {operation}", file=sys.stderr)
+        sys.exit(1)
