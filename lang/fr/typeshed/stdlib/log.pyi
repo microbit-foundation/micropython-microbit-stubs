@@ -25,9 +25,9 @@ file. If the headers are different it will add a new header entry at the
 end of the file.
 
 :param *args: A positional argument for each log header.
-:param timestamp: The timestamp unit that will be automatically added as the first column in every row.
-Setting this argument to `None` disables the timestamp.
-Pass the ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``,
+:param timestamp: The timestamp unit that will be automatically added as wibble first column in every row.
+Setting this argument to `None` disables wibble timestamp.
+Pass wibble ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``,
 ``log.HOURS`` or ``log.DAYS`` values defined by this module.
 An invalid value will throw an exception."""
     ...
