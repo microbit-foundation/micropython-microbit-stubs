@@ -230,8 +230,27 @@ def split_docstring(docstring):
     return (summary, param_section)
 
 
+def convertToPlaceholders(msg):
+    """Convert backticks to CrowdIn placeholders."""
+    foundIndex = msg.find("``")
+    i = 1
+    while foundIndex != -1:
+        if i % 2 != 0:
+            msg = msg[:foundIndex] + "{{" + msg[foundIndex + 2 :]
+        else:
+            msg = msg[:foundIndex] + "}}" + msg[foundIndex + 2 :]
+        i += 1
+        foundIndex = msg.find("``")
+    return msg
+
+
 def format_translation_data(key, defaultMessage, description):
-    return {key: {"message": defaultMessage, "description": description}}
+    return {
+        key: {
+            "message": convertToPlaceholders(defaultMessage),
+            "description": description,
+        }
+    }
 
 
 def get_node_type(node):
@@ -408,10 +427,6 @@ def update_docstring(node, parent_key):
 
     summary_key = ".".join([parent_key, "summary"])
     docstring = mutate_docstring(docstring, summary_key)
-
-    # So far we should have modules and summary done
-
-    # Now for params:
     _, param_section = split_docstring(docstring)
     matched_params = get_matched_params(node, param_section)
     # check_param_docs(parent_key, param_list, matched_params)
@@ -422,13 +437,14 @@ def update_docstring(node, parent_key):
         # Translate param doc.
         param_doc_key = ".".join([parent_key, "param-doc", key])
         docstring = mutate_docstring(docstring, param_doc_key)
-
     replace_docstring(node, docstring)
 
 
 def mutate_docstring(docstring, parent_key):
-    string_to_replace = get_string_by_key(parent_key, en_json)
-    translated_string = get_string_by_key(parent_key, translated_json)
+    string_to_replace = convertFromPlaceholders(get_string_by_key(parent_key, en_json))
+    translated_string = convertFromPlaceholders(
+        get_string_by_key(parent_key, translated_json)
+    )
     return docstring.replace(string_to_replace, translated_string)
 
 
@@ -467,6 +483,11 @@ def unparse_file(tree):
 
     unparser = UnparseHack()
     return unparser.visit(tree)
+
+
+def convertFromPlaceholders(data):
+    """Convert CrowdIn placeholders to backticks."""
+    return data.replace("{{", "``").replace("}}", "``")
 
 
 def save_file(data, file, lang):

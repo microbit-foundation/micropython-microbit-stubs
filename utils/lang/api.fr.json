@@ -8,7 +8,7 @@
     "description": "(function name) Get the number of bytes needed to store the given ``fmt``."
   },
   "ustruct.calcsize.summary": {
-    "message": "Get wibble number of bytes needed to store wibble given ``fmt``.",
+    "message": "Get wibble number of bytes needed to store wibble given {{fmt}}.",
     "description": "Get the number of bytes needed to store the given ``fmt``."
   },
   "ustruct.calcsize.param-name.fmt": {
@@ -51,12 +51,12 @@
     "message": "Pack values according to a format string.",
     "description": "Pack values according to a format string."
   },
-  "ustruct.pack_into.param-name.fmt": {
-    "message": "fmt",
-    "description": "(parameter name) The format string."
+  "ustruct.pack_into.param-name.offset": {
+    "message": "offset",
+    "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
   },
-  "ustruct.pack_into.param-doc.fmt": {
-    "message": "The format string.",
+  "ustruct.pack_into.param-doc.offset": {
+    "message": "The offset into wibble buffer. May be negative to count from wibble end of wibble buffer.",
     "description": "Parameter docs"
   },
   "ustruct.pack_into.param-name.buffer": {
@@ -67,12 +67,12 @@
     "message": "The target buffer to write into.",
     "description": "Parameter docs"
   },
-  "ustruct.pack_into.param-name.offset": {
-    "message": "offset",
-    "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
+  "ustruct.pack_into.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
   },
-  "ustruct.pack_into.param-doc.offset": {
-    "message": "The offset into wibble buffer. May be negative to count from wibble end of wibble buffer.",
+  "ustruct.pack_into.param-doc.fmt": {
+    "message": "The format string.",
     "description": "Parameter docs"
   },
   "ustruct.pack_into.param-name.v1": {
@@ -123,20 +123,20 @@
     "message": "The format string.",
     "description": "Parameter docs"
   },
-  "ustruct.unpack_from.param-name.buffer": {
-    "message": "buffer",
-    "description": "(parameter name) The source buffer to read from."
-  },
-  "ustruct.unpack_from.param-doc.buffer": {
-    "message": "The source buffer to read from.",
-    "description": "Parameter docs"
-  },
   "ustruct.unpack_from.param-name.offset": {
     "message": "offset",
     "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
   },
   "ustruct.unpack_from.param-doc.offset": {
     "message": "The offset into wibble buffer. May be negative to count from wibble end of wibble buffer.",
+    "description": "Parameter docs"
+  },
+  "ustruct.unpack_from.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) The source buffer to read from."
+  },
+  "ustruct.unpack_from.param-doc.buffer": {
+    "message": "The source buffer to read from.",
     "description": "Parameter docs"
   },
   "speech.summary": {
@@ -167,12 +167,12 @@
     "message": "Pronounce phonemes.",
     "description": "Pronounce phonemes."
   },
-  "speech.pronounce.param-name.phonemes": {
-    "message": "phonemes",
-    "description": "(parameter name) The string of phonemes to pronounce"
+  "speech.pronounce.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
   },
-  "speech.pronounce.param-doc.phonemes": {
-    "message": "The string of phonemes to pronounce",
+  "speech.pronounce.param-doc.throat": {
+    "message": "A number representing wibble throat of wibble voice",
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.pitch": {
@@ -181,6 +181,14 @@
   },
   "speech.pronounce.param-doc.pitch": {
     "message": "A number representing wibble pitch of wibble voice",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.phonemes": {
+    "message": "phonemes",
+    "description": "(parameter name) The string of phonemes to pronounce"
+  },
+  "speech.pronounce.param-doc.phonemes": {
+    "message": "The string of phonemes to pronounce",
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.speed": {
@@ -199,20 +207,12 @@
     "message": "A number representing wibble mouth of wibble voice",
     "description": "Parameter docs"
   },
-  "speech.pronounce.param-name.throat": {
-    "message": "throat",
-    "description": "(parameter name) A number representing the throat of the voice"
-  },
-  "speech.pronounce.param-doc.throat": {
-    "message": "A number representing wibble throat of wibble voice",
-    "description": "Parameter docs"
-  },
   "speech.pronounce.param-name.pin": {
     "message": "pin",
     "description": "(parameter name) Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only."
   },
   "speech.pronounce.param-doc.pin": {
-    "message": "Optional argument to specify wibble output pin can be\nused to override wibble default of ``pin0``. If we do not want any sound to\nplay out of wibble pins can use ``pin=None``. microbit V2 only.",
+    "message": "Optional argument to specify wibble output pin can be\nused to override wibble default of {{pin0}}. If we do not want any sound to\nplay out of wibble pins can use {{pin=None}}. microbit V2 only.",
     "description": "Parameter docs"
   },
   "speech.say": {
@@ -223,12 +223,12 @@
     "message": "Say English words.",
     "description": "Say English words."
   },
-  "speech.say.param-name.words": {
-    "message": "words",
-    "description": "(parameter name) The string of words to say."
+  "speech.say.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
   },
-  "speech.say.param-doc.words": {
-    "message": "The string of words to say.",
+  "speech.say.param-doc.throat": {
+    "message": "A number representing wibble throat of wibble voice",
     "description": "Parameter docs"
   },
   "speech.say.param-name.pitch": {
@@ -237,6 +237,14 @@
   },
   "speech.say.param-doc.pitch": {
     "message": "A number representing wibble pitch of wibble voice",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.words": {
+    "message": "words",
+    "description": "(parameter name) The string of words to say."
+  },
+  "speech.say.param-doc.words": {
+    "message": "The string of words to say.",
     "description": "Parameter docs"
   },
   "speech.say.param-name.speed": {
@@ -255,20 +263,12 @@
     "message": "A number representing wibble mouth of wibble voice",
     "description": "Parameter docs"
   },
-  "speech.say.param-name.throat": {
-    "message": "throat",
-    "description": "(parameter name) A number representing the throat of the voice"
-  },
-  "speech.say.param-doc.throat": {
-    "message": "A number representing wibble throat of wibble voice",
-    "description": "Parameter docs"
-  },
   "speech.say.param-name.pin": {
     "message": "pin",
     "description": "(parameter name) Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only."
   },
   "speech.say.param-doc.pin": {
-    "message": "Optional argument to specify wibble output pin can be\nused to override wibble default of ``pin0``. If we do not want any sound to\nplay out of wibble pins can use ``pin=None``. microbit V2 only.",
+    "message": "Optional argument to specify wibble output pin can be\nused to override wibble default of {{pin0}}. If we do not want any sound to\nplay out of wibble pins can use {{pin=None}}. microbit V2 only.",
     "description": "Parameter docs"
   },
   "speech.sing": {
@@ -279,12 +279,12 @@
     "message": "Sing phonemes.",
     "description": "Sing phonemes."
   },
-  "speech.sing.param-name.phonemes": {
-    "message": "phonemes",
-    "description": "(parameter name) The string of words to sing."
+  "speech.sing.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
   },
-  "speech.sing.param-doc.phonemes": {
-    "message": "The string of words to sing.",
+  "speech.sing.param-doc.throat": {
+    "message": "A number representing wibble throat of wibble voice",
     "description": "Parameter docs"
   },
   "speech.sing.param-name.pitch": {
@@ -293,6 +293,14 @@
   },
   "speech.sing.param-doc.pitch": {
     "message": "A number representing wibble pitch of wibble voice",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.phonemes": {
+    "message": "phonemes",
+    "description": "(parameter name) The string of words to sing."
+  },
+  "speech.sing.param-doc.phonemes": {
+    "message": "The string of words to sing.",
     "description": "Parameter docs"
   },
   "speech.sing.param-name.speed": {
@@ -311,20 +319,12 @@
     "message": "A number representing wibble mouth of wibble voice",
     "description": "Parameter docs"
   },
-  "speech.sing.param-name.throat": {
-    "message": "throat",
-    "description": "(parameter name) A number representing the throat of the voice"
-  },
-  "speech.sing.param-doc.throat": {
-    "message": "A number representing wibble throat of wibble voice",
-    "description": "Parameter docs"
-  },
   "speech.sing.param-name.pin": {
     "message": "pin",
     "description": "(parameter name) Optional argument to specify the output pin can be\nused to override the default of ``pin0``. If we do not want any sound to\nplay out of the pins can use ``pin=None``. microbit V2 only."
   },
   "speech.sing.param-doc.pin": {
-    "message": "Optional argument to specify wibble output pin can be\nused to override wibble default of ``pin0``. If we do not want any sound to\nplay out of wibble pins can use ``pin=None``. microbit V2 only.",
+    "message": "Optional argument to specify wibble output pin can be\nused to override wibble default of {{pin0}}. If we do not want any sound to\nplay out of wibble pins can use {{pin=None}}. microbit V2 only.",
     "description": "Parameter docs"
   },
   "math.summary": {
@@ -384,22 +384,22 @@
     "description": "(function name) Calculate the principal value of the inverse tangent of ``y/x``."
   },
   "math.atan2.summary": {
-    "message": "Calculate wibble principal value of wibble inverse tangent of ``y/x``.",
+    "message": "Calculate wibble principal value of wibble inverse tangent of {{y/x}}.",
     "description": "Calculate the principal value of the inverse tangent of ``y/x``."
-  },
-  "math.atan2.param-name.y": {
-    "message": "y",
-    "description": "(parameter name) A number"
-  },
-  "math.atan2.param-doc.y": {
-    "message": "A number",
-    "description": "Parameter docs"
   },
   "math.atan2.param-name.x": {
     "message": "x",
     "description": "(parameter name) A number"
   },
   "math.atan2.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
+  "math.atan2.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) A number"
+  },
+  "math.atan2.param-doc.y": {
     "message": "A number",
     "description": "Parameter docs"
   },
@@ -424,7 +424,7 @@
     "description": "(function name) Calculate ``x`` with the sign of ``y``."
   },
   "math.copysign.summary": {
-    "message": "Calculate ``x`` with wibble sign of ``y``.",
+    "message": "Calculate {{x}} with wibble sign of {{y}}.",
     "description": "Calculate ``x`` with the sign of ``y``."
   },
   "math.copysign.param-name.x": {
@@ -448,7 +448,7 @@
     "description": "(function name) Calculate the cosine of ``x``."
   },
   "math.cos.summary": {
-    "message": "Calculate wibble cosine of ``x``.",
+    "message": "Calculate wibble cosine of {{x}}.",
     "description": "Calculate the cosine of ``x``."
   },
   "math.cos.param-name.x": {
@@ -480,7 +480,7 @@
     "description": "(function name) Calculate the exponential of ``x``."
   },
   "math.exp.summary": {
-    "message": "Calculate wibble exponential of ``x``.",
+    "message": "Calculate wibble exponential of {{x}}.",
     "description": "Calculate the exponential of ``x``."
   },
   "math.exp.param-name.x": {
@@ -496,7 +496,7 @@
     "description": "(function name) Return the absolute value of ``x``."
   },
   "math.fabs.summary": {
-    "message": "Return wibble absolute value of ``x``.",
+    "message": "Return wibble absolute value of {{x}}.",
     "description": "Return the absolute value of ``x``."
   },
   "math.fabs.param-name.x": {
@@ -528,7 +528,7 @@
     "description": "(function name) Calculate the remainder of ``x/y``."
   },
   "math.fmod.summary": {
-    "message": "Calculate wibble remainder of ``x/y``.",
+    "message": "Calculate wibble remainder of {{x/y}}.",
     "description": "Calculate the remainder of ``x/y``."
   },
   "math.fmod.param-name.x": {
@@ -616,7 +616,7 @@
     "description": "(function name) Calculate ``x * (2**exp)``."
   },
   "math.ldexp.summary": {
-    "message": "Calculate ``x * (2**exp)``.",
+    "message": "Calculate {{x * (2**exp)}}.",
     "description": "Calculate ``x * (2**exp)``."
   },
   "math.ldexp.param-name.x": {
@@ -640,16 +640,8 @@
     "description": "(function name) Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
   },
   "math.log.summary": {
-    "message": "Calculate wibble logarithm of ``x`` to wibble given base (defaults to natural logorithm).",
+    "message": "Calculate wibble logarithm of {{x}} to wibble given base (defaults to natural logorithm).",
     "description": "Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
-  },
-  "math.log.param-name.x": {
-    "message": "x",
-    "description": "(parameter name) A number"
-  },
-  "math.log.param-doc.x": {
-    "message": "A number",
-    "description": "Parameter docs"
   },
   "math.log.param-name.base": {
     "message": "base",
@@ -659,12 +651,20 @@
     "message": "The base to use",
     "description": "Parameter docs"
   },
+  "math.log.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.log.param-doc.x": {
+    "message": "A number",
+    "description": "Parameter docs"
+  },
   "math.modf": {
     "message": "modf",
     "description": "(function name) Calculate the fractional and integral parts of ``x``."
   },
   "math.modf.summary": {
-    "message": "Calculate wibble fractional and integral parts of ``x``.",
+    "message": "Calculate wibble fractional and integral parts of {{x}}.",
     "description": "Calculate the fractional and integral parts of ``x``."
   },
   "math.modf.param-name.x": {
@@ -680,7 +680,7 @@
     "description": "(function name) Returns ``x`` to the power of ``y``."
   },
   "math.pow.summary": {
-    "message": "Returns ``x`` to wibble power of ``y``.",
+    "message": "Returns {{x}} to wibble power of {{y}}.",
     "description": "Returns ``x`` to the power of ``y``."
   },
   "math.pow.param-name.x": {
@@ -720,7 +720,7 @@
     "description": "(function name) Calculate the sine of ``x``."
   },
   "math.sin.summary": {
-    "message": "Calculate wibble sine of ``x``.",
+    "message": "Calculate wibble sine of {{x}}.",
     "description": "Calculate the sine of ``x``."
   },
   "math.sin.param-name.x": {
@@ -736,7 +736,7 @@
     "description": "(function name) Calculate the square root of ``x``."
   },
   "math.sqrt.summary": {
-    "message": "Calculate wibble square root of ``x``.",
+    "message": "Calculate wibble square root of {{x}}.",
     "description": "Calculate the square root of ``x``."
   },
   "math.sqrt.param-name.x": {
@@ -752,7 +752,7 @@
     "description": "(function name) Calculate the tangent of ``x``."
   },
   "math.tan.summary": {
-    "message": "Calculate wibble tangent of ``x``.",
+    "message": "Calculate wibble tangent of {{x}}.",
     "description": "Calculate the tangent of ``x``."
   },
   "math.tan.param-name.x": {
@@ -807,14 +807,6 @@
     "message": "Initialise a new strip of neopixel LEDs controlled via a pin.",
     "description": "Initialise a new strip of neopixel LEDs controlled via a pin."
   },
-  "neopixel.NeoPixel.__init__.param-name.pin": {
-    "message": "pin",
-    "description": "(parameter name) The pin controlling the neopixel strip."
-  },
-  "neopixel.NeoPixel.__init__.param-doc.pin": {
-    "message": "The pin controlling wibble neopixel strip.",
-    "description": "Parameter docs"
-  },
   "neopixel.NeoPixel.__init__.param-name.n": {
     "message": "n",
     "description": "(parameter name) The number of neopixels in the strip."
@@ -828,7 +820,15 @@
     "description": "(parameter name) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass ``4`` rather than the default of ``3`` for RGB and GRB."
   },
   "neopixel.NeoPixel.__init__.param-doc.bpp": {
-    "message": "Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass ``4`` rawibbler than wibble default of ``3`` for RGB and GRB.",
+    "message": "Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass {{4}} rawibbler than wibble default of {{3}} for RGB and GRB.",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__init__.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) The pin controlling the neopixel strip."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.pin": {
+    "message": "The pin controlling wibble neopixel strip.",
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.clear": {
@@ -879,20 +879,20 @@
     "message": "Set a pixel colour.",
     "description": "Set a pixel colour."
   },
-  "neopixel.NeoPixel.__setitem__.param-name.key": {
-    "message": "key",
-    "description": "(parameter name) The pixel number."
-  },
-  "neopixel.NeoPixel.__setitem__.param-doc.key": {
-    "message": "The pixel number.",
-    "description": "Parameter docs"
-  },
   "neopixel.NeoPixel.__setitem__.param-name.value": {
     "message": "value",
     "description": "(parameter name) The colour."
   },
   "neopixel.NeoPixel.__setitem__.param-doc.value": {
     "message": "The colour.",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__setitem__.param-name.key": {
+    "message": "key",
+    "description": "(parameter name) The pixel number."
+  },
+  "neopixel.NeoPixel.__setitem__.param-doc.key": {
+    "message": "The pixel number.",
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.__getitem__": {
@@ -1032,16 +1032,8 @@
     "description": "(function name) Measure ticks difference between values returned from\n``utime.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
   },
   "utime.ticks_diff.summary": {
-    "message": "Measure ticks difference between values returned from\n``utime.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around.",
+    "message": "Measure ticks difference between values returned from\n{{utime.ticks_ms()}} or {{ticks_us()}}, as a signed value\nwhich may wrap around.",
     "description": "Measure ticks difference between values returned from\n``utime.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
-  },
-  "utime.ticks_diff.param-name.ticks1": {
-    "message": "ticks1",
-    "description": "(parameter name) The value to subtract from"
-  },
-  "utime.ticks_diff.param-doc.ticks1": {
-    "message": "The value to subtract from",
-    "description": "Parameter docs"
   },
   "utime.ticks_diff.param-name.ticks2": {
     "message": "ticks2",
@@ -1049,6 +1041,14 @@
   },
   "utime.ticks_diff.param-doc.ticks2": {
     "message": "The value to subtract",
+    "description": "Parameter docs"
+  },
+  "utime.ticks_diff.param-name.ticks1": {
+    "message": "ticks1",
+    "description": "(parameter name) The value to subtract from"
+  },
+  "utime.ticks_diff.param-doc.ticks1": {
+    "message": "The value to subtract from",
     "description": "Parameter docs"
   },
   "usys.summary": {
@@ -1100,7 +1100,7 @@
     "description": "(field name) The byte order of the system (``\"little\"`` or ``\"big\"``)."
   },
   "usys.str.byteorder.summary": {
-    "message": "The byte order of wibble system (``\"little\"`` or ``\"big\"``).",
+    "message": "The byte order of wibble system ({{\"little\"}} or {{\"big\"}}).",
     "description": "The byte order of the system (``\"little\"`` or ``\"big\"``)."
   },
   "usys._implementation.implementation": {
@@ -1208,7 +1208,7 @@
     "description": "(parameter name) If the ``verbose`` argument is given then extra information is printed."
   },
   "micropython.mem_info.param-doc.verbose": {
-    "message": "If wibble ``verbose`` argument is given wibblen extra information is printed.",
+    "message": "If wibble {{verbose}} argument is given wibblen extra information is printed.",
     "description": "Parameter docs"
   },
   "micropython.qstr_info": {
@@ -1224,7 +1224,7 @@
     "description": "(parameter name) If the ``verbose`` argument is given then extra information is printed."
   },
   "micropython.qstr_info.param-doc.verbose": {
-    "message": "If wibble ``verbose`` argument is given wibblen extra information is printed.",
+    "message": "If wibble {{verbose}} argument is given wibblen extra information is printed.",
     "description": "Parameter docs"
   },
   "micropython.stack_use": {
@@ -1312,7 +1312,7 @@
     "description": "(class name) Result of ``os.uname()``"
   },
   "os.uname_result.summary": {
-    "message": "Result of ``os.uname()``",
+    "message": "Result of {{os.uname()}}",
     "description": "Result of ``os.uname()``"
   },
   "os.uname_result.sysname": {
@@ -1415,6 +1415,14 @@
     "message": "Set up wibble log file header.",
     "description": "Set up the log file header."
   },
+  "log.set_labels.param-name.timestamp": {
+    "message": "timestamp",
+    "description": "(parameter name) The timestamp unit that will be automatically added as the first column in every row.\nSetting this argument to `None` disables the timestamp.\nPass the ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``,\n``log.HOURS`` or ``log.DAYS`` values defined by this module.\nAn invalid value will throw an exception."
+  },
+  "log.set_labels.param-doc.timestamp": {
+    "message": "The timestamp unit that will be automatically added as wibble first column in every row.\nSetting this argument to `None` disables wibble timestamp.\nPass wibble {{log.MILLISECONDS}}, {{log.SECONDS}}, , {{log.MINUTES}},\n{{log.HOURS}} or {{log.DAYS}} values defined by this module.\nAn invalid value will throw an exception.",
+    "description": "Parameter docs"
+  },
   "log.add": {
     "message": "add",
     "description": "(function name) Add a data row to the log using keyword arguments."
@@ -1444,7 +1452,7 @@
     "description": "(parameter name) Selects a \"full\" erase format that removes the data from the flash storage.\nIf set to ``False`` it uses a \"fast\" method, which invalidates the data instead of performing a slower full erase."
   },
   "log.delete.param-doc.full": {
-    "message": "Selects a \"full\" erase format that removes wibble data from wibble flash storage.\nIf set to ``False`` it uses a \"fast\" method, which invalidates wibble data instead of performing a slower full erase.",
+    "message": "Selects a \"full\" erase format that removes wibble data from wibble flash storage.\nIf set to {{False}} it uses a \"fast\" method, which invalidates wibble data instead of performing a slower full erase.",
     "description": "Parameter docs"
   },
   "log.set_mirroring": {
@@ -1460,7 +1468,7 @@
     "description": "(parameter name) Pass ``True`` to mirror the data logging activity to the serial output, ``False`` to disable mirroring."
   },
   "log.set_mirroring.param-doc.serial": {
-    "message": "Pass ``True`` to mirror wibble data logging activity to wibble serial output, ``False`` to disable mirroring.",
+    "message": "Pass {{True}} to mirror wibble data logging activity to wibble serial output, {{False}} to disable mirroring.",
     "description": "Parameter docs"
   },
   "gc.summary": {
@@ -1572,7 +1580,7 @@
     "description": "(parameter name) The value that was returned from the most recent call to the ``disable_irq`` function."
   },
   "machine.enable_irq.param-doc.state": {
-    "message": "The value that was returned from wibble most recent call to wibble ``disable_irq`` function.",
+    "message": "The value that was returned from wibble most recent call to wibble {{disable_irq}} function.",
     "description": "Parameter docs"
   },
   "machine.time_pulse_us": {
@@ -1583,20 +1591,20 @@
     "message": "Time a pulse on a pin.",
     "description": "Time a pulse on a pin."
   },
-  "machine.time_pulse_us.param-name.pin": {
-    "message": "pin",
-    "description": "(parameter name) The pin to use"
-  },
-  "machine.time_pulse_us.param-doc.pin": {
-    "message": "The pin to use",
-    "description": "Parameter docs"
-  },
   "machine.time_pulse_us.param-name.pulse_level": {
     "message": "pulse_level",
     "description": "(parameter name) 0 to time a low pulse or 1 to time a high pulse"
   },
   "machine.time_pulse_us.param-doc.pulse_level": {
     "message": "0 to time a low pulse or 1 to time a high pulse",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) The pin to use"
+  },
+  "machine.time_pulse_us.param-doc.pin": {
+    "message": "The pin to use",
     "description": "Parameter docs"
   },
   "machine.time_pulse_us.param-name.timeout_us": {
@@ -1612,7 +1620,7 @@
     "description": "(class name) The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."
   },
   "machine.mem.summary": {
-    "message": "The class for wibble ``mem8``, ``mem16`` and ``mem32`` memory views.",
+    "message": "The class for wibble {{mem8}}, {{mem16}} and {{mem32}} memory views.",
     "description": "The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."
   },
   "machine.mem.__getitem__": {
@@ -1639,20 +1647,20 @@
     "message": "Set a value at wibble given address.",
     "description": "Set a value at the given address."
   },
-  "machine.mem.__setitem__.param-name.address": {
-    "message": "address",
-    "description": "(parameter name) The memory address."
-  },
-  "machine.mem.__setitem__.param-doc.address": {
-    "message": "The memory address.",
-    "description": "Parameter docs"
-  },
   "machine.mem.__setitem__.param-name.value": {
     "message": "value",
     "description": "(parameter name) The integer value to set."
   },
   "machine.mem.__setitem__.param-doc.value": {
     "message": "The integer value to set.",
+    "description": "Parameter docs"
+  },
+  "machine.mem.__setitem__.param-name.address": {
+    "message": "address",
+    "description": "(parameter name) The memory address."
+  },
+  "machine.mem.__setitem__.param-doc.address": {
+    "message": "The memory address.",
     "description": "Parameter docs"
   },
   "machine.mem.mem8": {
@@ -1880,7 +1888,7 @@
     "description": "(function name) Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
   },
   "music.get_tempo.summary": {
-    "message": "Gets wibble current tempo as a tuple of integers: ``(ticks, bpm)``.",
+    "message": "Gets wibble current tempo as a tuple of integers: {{(ticks, bpm)}}.",
     "description": "Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
   },
   "music.play": {
@@ -1899,20 +1907,20 @@
     "message": "music specified in `a special notation <https://microbit-micropython.readwibbledocs.io/en/v2-docs/music.html#musical-notation>`_",
     "description": "Parameter docs"
   },
-  "music.play.param-name.pin": {
-    "message": "pin",
-    "description": "(parameter name) the output pin for use with an external speaker (default pin 0), ``None`` for no sound."
-  },
-  "music.play.param-doc.pin": {
-    "message": "wibble output pin for use with an external speaker (default pin 0), ``None`` for no sound.",
-    "description": "Parameter docs"
-  },
   "music.play.param-name.wait": {
     "message": "wait",
     "description": "(parameter name) If ``wait`` is set to ``True``, this function is blocking."
   },
   "music.play.param-doc.wait": {
-    "message": "If ``wait`` is set to ``True``, this function is blocking.",
+    "message": "If {{wait}} is set to {{True}}, this function is blocking.",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) the output pin for use with an external speaker (default pin 0), ``None`` for no sound."
+  },
+  "music.play.param-doc.pin": {
+    "message": "wibble output pin for use with an external speaker (default pin 0), {{None}} for no sound.",
     "description": "Parameter docs"
   },
   "music.play.param-name.loop": {
@@ -1920,7 +1928,7 @@
     "description": "(parameter name) If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted."
   },
   "music.play.param-doc.loop": {
-    "message": "If ``loop`` is set to ``True``, wibble tune repeats until ``stop`` is called or wibble blocking call is interrupted.",
+    "message": "If {{loop}} is set to {{True}}, wibble tune repeats until {{stop}} is called or wibble blocking call is interrupted.",
     "description": "Parameter docs"
   },
   "music.pitch": {
@@ -1931,6 +1939,14 @@
     "message": "Play a note.",
     "description": "Play a note."
   },
+  "music.pitch.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) Optional output pin (default ``pin0``)."
+  },
+  "music.pitch.param-doc.pin": {
+    "message": "Optional output pin (default {{pin0}}).",
+    "description": "Parameter docs"
+  },
   "music.pitch.param-name.frequency": {
     "message": "frequency",
     "description": "(parameter name) An integer frequency"
@@ -1939,28 +1955,20 @@
     "message": "An integer frequency",
     "description": "Parameter docs"
   },
-  "music.pitch.param-name.duration": {
-    "message": "duration",
-    "description": "(parameter name) A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``."
-  },
-  "music.pitch.param-doc.duration": {
-    "message": "A millisecond duration. If negative wibblen sound is continuous until wibble next call or a call to ``stop``.",
-    "description": "Parameter docs"
-  },
-  "music.pitch.param-name.pin": {
-    "message": "pin",
-    "description": "(parameter name) Optional output pin (default ``pin0``)."
-  },
-  "music.pitch.param-doc.pin": {
-    "message": "Optional output pin (default ``pin0``).",
-    "description": "Parameter docs"
-  },
   "music.pitch.param-name.wait": {
     "message": "wait",
     "description": "(parameter name) If ``wait`` is set to ``True``, this function is blocking."
   },
   "music.pitch.param-doc.wait": {
-    "message": "If ``wait`` is set to ``True``, this function is blocking.",
+    "message": "If {{wait}} is set to {{True}}, this function is blocking.",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.duration": {
+    "message": "duration",
+    "description": "(parameter name) A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``."
+  },
+  "music.pitch.param-doc.duration": {
+    "message": "A millisecond duration. If negative wibblen sound is continuous until wibble next call or a call to {{stop}}.",
     "description": "Parameter docs"
   },
   "music.stop": {
@@ -1976,7 +1984,7 @@
     "description": "(parameter name) An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``."
   },
   "music.stop.param-doc.pin": {
-    "message": "An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``.",
+    "message": "An optional argument can be provided to specify a pin, e.g. {{music.stop(pin1)}}.",
     "description": "Parameter docs"
   },
   "music.reset": {
@@ -2031,36 +2039,12 @@
     "message": "Configures wibble radio.",
     "description": "Configures the radio."
   },
-  "radio.config.param-name.length": {
-    "message": "length",
-    "description": "(parameter name) (default=32) defines the maximum length, in bytes, of a\nmessage sent via the radio. It can be up to 251 bytes long (254 - 3 bytes\nfor S0, LENGTH and S1 preamble)."
-  },
-  "radio.config.param-doc.length": {
-    "message": "(default=32) defines wibble maximum length, in bytes, of a\nmessage sent via wibble radio. It can be up to 251 bytes long (254 - 3 bytes\nfor S0, LENGTH and S1 preamble).",
-    "description": "Parameter docs"
-  },
-  "radio.config.param-name.queue": {
-    "message": "queue",
-    "description": "(parameter name) (default=3) specifies the number of messages that can be\nstored on the incoming message queue. If there are no spaces left on the\nqueue for incoming messages, then the incoming message is dropped."
-  },
-  "radio.config.param-doc.queue": {
-    "message": "(default=3) specifies wibble number of messages that can be\nstored on wibble incoming message queue. If wibblere are no spaces left on wibble\nqueue for incoming messages, wibblen wibble incoming message is dropped.",
-    "description": "Parameter docs"
-  },
   "radio.config.param-name.channel": {
     "message": "channel",
     "description": "(parameter name) (default=7) an integer value from 0 to 83\n(inclusive) that defines an arbitrary \"channel\" to which the radio is\ntuned. Messages will be sent via this channel and only messages received\nvia this channel will be put onto the incoming message queue. Each step is\n1MHz wide, based at 2400MHz."
   },
   "radio.config.param-doc.channel": {
     "message": "(default=7) an integer value from 0 to 83\n(inclusive) that defines an arbitrary \"channel\" to which wibble radio is\ntuned. Messages will be sent via this channel and only messages received\nvia this channel will be put onto wibble incoming message queue. Each step is\n1MHz wide, based at 2400MHz.",
-    "description": "Parameter docs"
-  },
-  "radio.config.param-name.power": {
-    "message": "power",
-    "description": "(parameter name) (default=6) is an integer value from 0 to 7 (inclusive) to\nindicate the strength of signal used when broadcasting a message. The\nhigher the value the stronger the signal, but the more power is consumed\nby the device. The numbering translates to positions in the following list\nof dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4."
-  },
-  "radio.config.param-doc.power": {
-    "message": "(default=6) is an integer value from 0 to 7 (inclusive) to\nindicate wibble strength of signal used when broadcasting a message. The\nhigher wibble value wibble stronger wibble signal, but wibble more power is consumed\nby wibble device. The numbering translates to positions in wibble following list\nof dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4.",
     "description": "Parameter docs"
   },
   "radio.config.param-name.address": {
@@ -2076,7 +2060,31 @@
     "description": "(parameter name) (default=0) an 8-bit value (0-255) used with the\n``address`` when filtering messages. Conceptually, \"address\" is like a\nhouse/office address and \"group\" is like the person at that address to\nwhich you want to send your message."
   },
   "radio.config.param-doc.group": {
-    "message": "(default=0) an 8-bit value (0-255) used with wibble\n``address`` when filtering messages. Conceptually, \"address\" is like a\nhouse/office address and \"group\" is like wibble person at that address to\nwhich you want to send your message.",
+    "message": "(default=0) an 8-bit value (0-255) used with wibble\n{{address}} when filtering messages. Conceptually, \"address\" is like a\nhouse/office address and \"group\" is like wibble person at that address to\nwhich you want to send your message.",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.length": {
+    "message": "length",
+    "description": "(parameter name) (default=32) defines the maximum length, in bytes, of a\nmessage sent via the radio. It can be up to 251 bytes long (254 - 3 bytes\nfor S0, LENGTH and S1 preamble)."
+  },
+  "radio.config.param-doc.length": {
+    "message": "(default=32) defines wibble maximum length, in bytes, of a\nmessage sent via wibble radio. It can be up to 251 bytes long (254 - 3 bytes\nfor S0, LENGTH and S1 preamble).",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.power": {
+    "message": "power",
+    "description": "(parameter name) (default=6) is an integer value from 0 to 7 (inclusive) to\nindicate the strength of signal used when broadcasting a message. The\nhigher the value the stronger the signal, but the more power is consumed\nby the device. The numbering translates to positions in the following list\nof dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4."
+  },
+  "radio.config.param-doc.power": {
+    "message": "(default=6) is an integer value from 0 to 7 (inclusive) to\nindicate wibble strength of signal used when broadcasting a message. The\nhigher wibble value wibble stronger wibble signal, but wibble more power is consumed\nby wibble device. The numbering translates to positions in wibble following list\nof dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4.",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.queue": {
+    "message": "queue",
+    "description": "(parameter name) (default=3) specifies the number of messages that can be\nstored on the incoming message queue. If there are no spaces left on the\nqueue for incoming messages, then the incoming message is dropped."
+  },
+  "radio.config.param-doc.queue": {
+    "message": "(default=3) specifies wibble number of messages that can be\nstored on wibble incoming message queue. If wibblere are no spaces left on wibble\nqueue for incoming messages, wibblen wibble incoming message is dropped.",
     "description": "Parameter docs"
   },
   "radio.config.param-name.data_rate": {
@@ -2084,7 +2092,7 @@
     "description": "(parameter name) (default=radio.RATE_1MBIT) indicates the speed at which\ndata throughput takes place. Can be one of the following constants defined\nin the ``radio`` module:\n``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``."
   },
   "radio.config.param-doc.data_rate": {
-    "message": "(default=radio.RATE_1MBIT) indicates wibble speed at which\ndata throughput takes place. Can be one of wibble following constants defined\nin wibble ``radio`` module:\n``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.",
+    "message": "(default=radio.RATE_1MBIT) indicates wibble speed at which\ndata throughput takes place. Can be one of wibble following constants defined\nin wibble {{radio}} module:\n{{RATE_250KBIT}}, {{RATE_1MBIT}} or {{RATE_2MBIT}}.",
     "description": "Parameter docs"
   },
   "radio.reset": {
@@ -2156,7 +2164,7 @@
     "description": "(function name) Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
   },
   "radio.receive.summary": {
-    "message": "Works in exactly wibble same way as ``receive_bytes`` but returns whatever was sent.",
+    "message": "Works in exactly wibble same way as {{receive_bytes}} but returns whatever was sent.",
     "description": "Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
   },
   "radio.receive_full": {
@@ -2176,7 +2184,7 @@
     "description": "(function name) Generate an integer with ``n`` random bits."
   },
   "urandom.getrandbits.summary": {
-    "message": "Generate an integer with ``n`` random bits.",
+    "message": "Generate an integer with {{n}} random bits.",
     "description": "Generate an integer with ``n`` random bits."
   },
   "urandom.getrandbits.param-name.n": {
@@ -2208,7 +2216,7 @@
     "description": "(function name) Choose a random integer between ``a`` and ``b`` inclusive."
   },
   "urandom.randint.summary": {
-    "message": "Choose a random integer between ``a`` and ``b`` inclusive.",
+    "message": "Choose a random integer between {{a}} and {{b}} inclusive.",
     "description": "Choose a random integer between ``a`` and ``b`` inclusive."
   },
   "urandom.randint.param-name.a": {
@@ -2232,7 +2240,7 @@
     "description": "(function name) Choose a randomly selected element from ``range(start, stop, step)``."
   },
   "urandom.randrange.summary": {
-    "message": "Choose a randomly selected element from ``range(start, stop, step)``.",
+    "message": "Choose a randomly selected element from {{range(start, stop, step)}}.",
     "description": "Choose a randomly selected element from ``range(start, stop, step)``."
   },
   "urandom.randrange.param-name.stop": {
@@ -2264,7 +2272,7 @@
     "description": "(function name) Choose a random element from the non-empty sequence ``seq``."
   },
   "urandom._T.summary": {
-    "message": "Choose a random element from wibble non-empty sequence ``seq``.",
+    "message": "Choose a random element from wibble non-empty sequence {{seq}}.",
     "description": "Choose a random element from the non-empty sequence ``seq``."
   },
   "urandom._T.param-name.seq": {
@@ -2288,7 +2296,7 @@
     "description": "(function name) Return a random floating point number between ``a`` and ``b`` inclusive."
   },
   "urandom.uniform.summary": {
-    "message": "Return a random floating point number between ``a`` and ``b`` inclusive.",
+    "message": "Return a random floating point number between {{a}} and {{b}} inclusive.",
     "description": "Return a random floating point number between ``a`` and ``b`` inclusive."
   },
   "urandom.uniform.param-name.a": {
@@ -2332,7 +2340,7 @@
     "description": "(parameter name) The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``"
   },
   "microbit.microphone.was_event.param-doc.event": {
-    "message": "The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``",
+    "message": "The event to check for,  such as {{SoundEvent.LOUD}} or {{SoundEvent.QUIET}}",
     "description": "Parameter docs"
   },
   "microbit.microphone.is_event": {
@@ -2348,7 +2356,7 @@
     "description": "(parameter name) The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``"
   },
   "microbit.microphone.is_event.param-doc.event": {
-    "message": "The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``",
+    "message": "The event to check for,  such as {{SoundEvent.LOUD}} or {{SoundEvent.QUIET}}",
     "description": "Parameter docs"
   },
   "microbit.microphone.get_events": {
@@ -2367,20 +2375,20 @@
     "message": "Set wibble threshold for a sound event.",
     "description": "Set the threshold for a sound event."
   },
-  "microbit.microphone.set_threshold.param-name.event": {
-    "message": "event",
-    "description": "(parameter name) A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``."
-  },
-  "microbit.microphone.set_threshold.param-doc.event": {
-    "message": "A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``.",
-    "description": "Parameter docs"
-  },
   "microbit.microphone.set_threshold.param-name.value": {
     "message": "value",
     "description": "(parameter name) The threshold level in the range 0-255."
   },
   "microbit.microphone.set_threshold.param-doc.value": {
     "message": "The threshold level in wibble range 0-255.",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.set_threshold.param-name.event": {
+    "message": "event",
+    "description": "(parameter name) A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``."
+  },
+  "microbit.microphone.set_threshold.param-doc.event": {
+    "message": "A sound event, such as {{SoundEvent.LOUD}} or {{SoundEvent.QUIET}}.",
     "description": "Parameter docs"
   },
   "microbit.microphone.sound_level": {
@@ -2423,20 +2431,12 @@
     "message": "Re-initialize a peripheral.",
     "description": "Re-initialize a peripheral."
   },
-  "microbit.i2c.init.param-name.freq": {
-    "message": "freq",
-    "description": "(parameter name) clock frequency"
-  },
-  "microbit.i2c.init.param-doc.freq": {
-    "message": "clock frequency",
-    "description": "Parameter docs"
-  },
   "microbit.i2c.init.param-name.sda": {
     "message": "sda",
     "description": "(parameter name) ``sda`` pin (default 20)"
   },
   "microbit.i2c.init.param-doc.sda": {
-    "message": "``sda`` pin (default 20)",
+    "message": "{{sda}} pin (default 20)",
     "description": "Parameter docs"
   },
   "microbit.i2c.init.param-name.scl": {
@@ -2444,7 +2444,15 @@
     "description": "(parameter name) ``scl`` pin (default 19)"
   },
   "microbit.i2c.init.param-doc.scl": {
-    "message": "``scl`` pin (default 19)",
+    "message": "{{scl}} pin (default 19)",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.init.param-name.freq": {
+    "message": "freq",
+    "description": "(parameter name) clock frequency"
+  },
+  "microbit.i2c.init.param-doc.freq": {
+    "message": "clock frequency",
     "description": "Parameter docs"
   },
   "microbit.i2c.scan": {
@@ -2484,7 +2492,7 @@
     "description": "(parameter name) If ``True``, no stop bit will be sent"
   },
   "microbit.i2c.read.param-doc.repeat": {
-    "message": "If ``True``, no stop bit will be sent",
+    "message": "If {{True}}, no stop bit will be sent",
     "description": "Parameter docs"
   },
   "microbit.i2c.write": {
@@ -2516,7 +2524,7 @@
     "description": "(parameter name) If ``True``, no stop bit will be sent"
   },
   "microbit.i2c.write.param-doc.repeat": {
-    "message": "If ``True``, no stop bit will be sent",
+    "message": "If {{True}}, no stop bit will be sent",
     "description": "Parameter docs"
   },
   "microbit.compass.summary": {
@@ -2552,7 +2560,7 @@
     "description": "(function name) Get the magnetic field strength on the ``x`` axis."
   },
   "microbit.compass.get_x.summary": {
-    "message": "Get wibble magnetic field strength on wibble ``x`` axis.",
+    "message": "Get wibble magnetic field strength on wibble {{x}} axis.",
     "description": "Get the magnetic field strength on the ``x`` axis."
   },
   "microbit.compass.get_y": {
@@ -2560,7 +2568,7 @@
     "description": "(function name) Get the magnetic field strength on the ``y`` axis."
   },
   "microbit.compass.get_y.summary": {
-    "message": "Get wibble magnetic field strength on wibble ``y`` axis.",
+    "message": "Get wibble magnetic field strength on wibble {{y}} axis.",
     "description": "Get the magnetic field strength on the ``y`` axis."
   },
   "microbit.compass.get_z": {
@@ -2568,7 +2576,7 @@
     "description": "(function name) Get the magnetic field strength on the ``z`` axis."
   },
   "microbit.compass.get_z.summary": {
-    "message": "Get wibble magnetic field strength on wibble ``z`` axis.",
+    "message": "Get wibble magnetic field strength on wibble {{z}} axis.",
     "description": "Get the magnetic field strength on the ``z`` axis."
   },
   "microbit.compass.heading": {
@@ -2599,6 +2607,22 @@
     "message": "Initialize SPI communication.",
     "description": "Initialize SPI communication."
   },
+  "microbit.spi.init.param-name.miso": {
+    "message": "miso",
+    "description": "(parameter name) miso pin (default 14)"
+  },
+  "microbit.spi.init.param-doc.miso": {
+    "message": "miso pin (default 14)",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.mosi": {
+    "message": "mosi",
+    "description": "(parameter name) mosi pin (default 15)"
+  },
+  "microbit.spi.init.param-doc.mosi": {
+    "message": "mosi pin (default 15)",
+    "description": "Parameter docs"
+  },
   "microbit.spi.init.param-name.baudrate": {
     "message": "baudrate",
     "description": "(parameter name) The speed of communication."
@@ -2612,7 +2636,7 @@
     "description": "(parameter name) The size of bytes being transmitted. Currently only ``bits=8`` is supported. However, this may change in the future."
   },
   "microbit.spi.init.param-doc.bits": {
-    "message": "The size of bytes being transmitted. Currently only ``bits=8`` is supported. However, this may change in wibble future.",
+    "message": "The size of bytes being transmitted. Currently only {{bits=8}} is supported. However, this may change in wibble future.",
     "description": "Parameter docs"
   },
   "microbit.spi.init.param-name.mode": {
@@ -2629,22 +2653,6 @@
   },
   "microbit.spi.init.param-doc.sclk": {
     "message": "sclk pin (default 13)",
-    "description": "Parameter docs"
-  },
-  "microbit.spi.init.param-name.mosi": {
-    "message": "mosi",
-    "description": "(parameter name) mosi pin (default 15)"
-  },
-  "microbit.spi.init.param-doc.mosi": {
-    "message": "mosi pin (default 15)",
-    "description": "Parameter docs"
-  },
-  "microbit.spi.init.param-name.miso": {
-    "message": "miso",
-    "description": "(parameter name) miso pin (default 14)"
-  },
-  "microbit.spi.init.param-doc.miso": {
-    "message": "miso pin (default 14)",
     "description": "Parameter docs"
   },
   "microbit.spi.read": {
@@ -2684,16 +2692,8 @@
     "description": "(function name) Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
   },
   "microbit.spi.write_readinto.summary": {
-    "message": "Write wibble ``out`` buffer to wibble bus and read any response into wibble ``in_`` buffer.",
+    "message": "Write wibble {{out}} buffer to wibble bus and read any response into wibble {{in_}} buffer.",
     "description": "Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
-  },
-  "microbit.spi.write_readinto.param-name.out": {
-    "message": "out",
-    "description": "(parameter name) The buffer to write any response to."
-  },
-  "microbit.spi.write_readinto.param-doc.out": {
-    "message": "The buffer to write any response to.",
-    "description": "Parameter docs"
   },
   "microbit.spi.write_readinto.param-name.in_": {
     "message": "in_",
@@ -2703,8 +2703,16 @@
     "message": "The buffer to read data from.",
     "description": "Parameter docs"
   },
+  "microbit.spi.write_readinto.param-name.out": {
+    "message": "out",
+    "description": "(parameter name) The buffer to write any response to."
+  },
+  "microbit.spi.write_readinto.param-doc.out": {
+    "message": "The buffer to write any response to.",
+    "description": "Parameter docs"
+  },
   "microbit.audio.summary": {
-    "message": "Play sounds using wibble micro:bit (import ``audio`` for V1 compatibility).",
+    "message": "Play sounds using wibble micro:bit (import {{audio}} for V1 compatibility).",
     "description": "Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
   },
   "microbit.audio.play": {
@@ -2712,7 +2720,7 @@
     "description": "(function name) Play a built-in sound or custom audio frames.``."
   },
   "microbit.audio.play.summary": {
-    "message": "Play a built-in sound or custom audio frames.``.",
+    "message": "Play a built-in sound or custom audio frames.{{.",
     "description": "Play a built-in sound or custom audio frames.``."
   },
   "microbit.audio.play.param-name.source": {
@@ -2720,15 +2728,7 @@
     "description": "(parameter name) A built-in ``Sound`` such as ``Sound.GIGGLE`` or sample data as an iterable of ``AudioFrame`` objects."
   },
   "microbit.audio.play.param-doc.source": {
-    "message": "A built-in ``Sound`` such as ``Sound.GIGGLE`` or sample data as an iterable of ``AudioFrame`` objects.",
-    "description": "Parameter docs"
-  },
-  "microbit.audio.play.param-name.wait": {
-    "message": "wait",
-    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the sound is complete."
-  },
-  "microbit.audio.play.param-doc.wait": {
-    "message": "If ``wait`` is ``True``, this function will block until wibble sound is complete.",
+    "message": "A built-in {{Sound}} such as {{Sound.GIGGLE}} or sample data as an iterable of {{AudioFrame}} objects.",
     "description": "Parameter docs"
   },
   "microbit.audio.play.param-name.pin": {
@@ -2736,7 +2736,15 @@
     "description": "(parameter name) An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``."
   },
   "microbit.audio.play.param-doc.pin": {
-    "message": "An optional argument to specify wibble output pin can be used to  override wibble default of ``pin0``. If we do not want any sound to play we can use ``pin=None``.",
+    "message": "An optional argument to specify wibble output pin can be used to  override wibble default of {{pin0}}. If we do not want any sound to play we can use {{pin=None}}.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the sound is complete."
+  },
+  "microbit.audio.play.param-doc.wait": {
+    "message": "If {{wait}} is {{True}}, this function will block until wibble sound is complete.",
     "description": "Parameter docs"
   },
   "microbit.audio.play.param-name.return_pin": {
@@ -2768,7 +2776,7 @@
     "description": "(class name) An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
   },
   "microbit.audio.AudioFrame.summary": {
-    "message": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255).",
+    "message": "An {{AudioFrame}} object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255).",
     "description": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
   },
   "microbit.display.summary": {
@@ -2780,7 +2788,7 @@
     "description": "(function name) Get the brightness of the LED at column ``x`` and row ``y``."
   },
   "microbit.display.get_pixel.summary": {
-    "message": "Get wibble brightness of wibble LED at column ``x`` and row ``y``.",
+    "message": "Get wibble brightness of wibble LED at column {{x}} and row {{y}}.",
     "description": "Get the brightness of the LED at column ``x`` and row ``y``."
   },
   "microbit.display.get_pixel.param-name.x": {
@@ -2804,8 +2812,16 @@
     "description": "(function name) Set the brightness of the LED at column ``x`` and row ``y``."
   },
   "microbit.display.set_pixel.summary": {
-    "message": "Set wibble brightness of wibble LED at column ``x`` and row ``y``.",
+    "message": "Set wibble brightness of wibble LED at column {{x}} and row {{y}}.",
     "description": "Set the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.set_pixel.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The brightness between 0 (off) and 9 (bright)"
+  },
+  "microbit.display.set_pixel.param-doc.value": {
+    "message": "The brightness between 0 (off) and 9 (bright)",
+    "description": "Parameter docs"
   },
   "microbit.display.set_pixel.param-name.x": {
     "message": "x",
@@ -2821,14 +2837,6 @@
   },
   "microbit.display.set_pixel.param-doc.y": {
     "message": "The display row (0..4)",
-    "description": "Parameter docs"
-  },
-  "microbit.display.set_pixel.param-name.value": {
-    "message": "value",
-    "description": "(parameter name) The brightness between 0 (off) and 9 (bright)"
-  },
-  "microbit.display.set_pixel.param-doc.value": {
-    "message": "The brightness between 0 (off) and 9 (bright)",
     "description": "Parameter docs"
   },
   "microbit.display.clear": {
@@ -2847,6 +2855,30 @@
     "message": "Shows images, letters or digits on wibble display.",
     "description": "Shows images, letters or digits on the display."
   },
+  "microbit.display.show.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
+  },
+  "microbit.display.show.param-doc.wait": {
+    "message": "If {{wait}} is {{True}}, this function will block until wibble animation is finished, owibblerwise wibble animation will happen in wibble background.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
+  },
+  "microbit.display.show.param-doc.loop": {
+    "message": "If {{loop}} is {{True}}, wibble animation will repeat forever.",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.clear": {
+    "message": "clear",
+    "description": "(parameter name) If ``clear`` is ``True``, the display will be cleared after the sequence has finished."
+  },
+  "microbit.display.show.param-doc.clear": {
+    "message": "If {{clear}} is {{True}}, wibble display will be cleared after wibble sequence has finished.",
+    "description": "Parameter docs"
+  },
   "microbit.display.show.param-name.image": {
     "message": "image",
     "description": "(parameter name) A string, number, image or list of images to show."
@@ -2860,31 +2892,7 @@
     "description": "(parameter name) Each letter, digit or image is shown with ``delay`` milliseconds between them."
   },
   "microbit.display.show.param-doc.delay": {
-    "message": "Each letter, digit or image is shown with ``delay`` milliseconds between wibblem.",
-    "description": "Parameter docs"
-  },
-  "microbit.display.show.param-name.wait": {
-    "message": "wait",
-    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
-  },
-  "microbit.display.show.param-doc.wait": {
-    "message": "If ``wait`` is ``True``, this function will block until wibble animation is finished, owibblerwise wibble animation will happen in wibble background.",
-    "description": "Parameter docs"
-  },
-  "microbit.display.show.param-name.loop": {
-    "message": "loop",
-    "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
-  },
-  "microbit.display.show.param-doc.loop": {
-    "message": "If ``loop`` is ``True``, wibble animation will repeat forever.",
-    "description": "Parameter docs"
-  },
-  "microbit.display.show.param-name.clear": {
-    "message": "clear",
-    "description": "(parameter name) If ``clear`` is ``True``, the display will be cleared after the sequence has finished."
-  },
-  "microbit.display.show.param-doc.clear": {
-    "message": "If ``clear`` is ``True``, wibble display will be cleared after wibble sequence has finished.",
+    "message": "Each letter, digit or image is shown with {{delay}} milliseconds between wibblem.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll": {
@@ -2895,20 +2903,20 @@
     "message": "Scrolls a number or text on wibble display.",
     "description": "Scrolls a number or text on the display."
   },
+  "microbit.display.scroll.param-name.monospace": {
+    "message": "monospace",
+    "description": "(parameter name) If ``monospace`` is ``True``, the characters will all take up 5 pixel-columns in width, otherwise there will be exactly 1 blank pixel-column between each character as they scroll."
+  },
+  "microbit.display.scroll.param-doc.monospace": {
+    "message": "If {{monospace}} is {{True}}, wibble characters will all take up 5 pixel-columns in width, owibblerwise wibblere will be exactly 1 blank pixel-column between each character as wibbley scroll.",
+    "description": "Parameter docs"
+  },
   "microbit.display.scroll.param-name.text": {
     "message": "text",
     "description": "(parameter name) The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``."
   },
   "microbit.display.scroll.param-doc.text": {
-    "message": "The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``.",
-    "description": "Parameter docs"
-  },
-  "microbit.display.scroll.param-name.delay": {
-    "message": "delay",
-    "description": "(parameter name) The ``delay`` parameter controls how fast the text is scrolling."
-  },
-  "microbit.display.scroll.param-doc.delay": {
-    "message": "The ``delay`` parameter controls how fast wibble text is scrolling.",
+    "message": "The string to scroll. If {{text}} is an integer or float it is first converted to a string using {{str()}}.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll.param-name.wait": {
@@ -2916,7 +2924,7 @@
     "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
   },
   "microbit.display.scroll.param-doc.wait": {
-    "message": "If ``wait`` is ``True``, this function will block until wibble animation is finished, owibblerwise wibble animation will happen in wibble background.",
+    "message": "If {{wait}} is {{True}}, this function will block until wibble animation is finished, owibblerwise wibble animation will happen in wibble background.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll.param-name.loop": {
@@ -2924,15 +2932,15 @@
     "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
   },
   "microbit.display.scroll.param-doc.loop": {
-    "message": "If ``loop`` is ``True``, wibble animation will repeat forever.",
+    "message": "If {{loop}} is {{True}}, wibble animation will repeat forever.",
     "description": "Parameter docs"
   },
-  "microbit.display.scroll.param-name.monospace": {
-    "message": "monospace",
-    "description": "(parameter name) If ``monospace`` is ``True``, the characters will all take up 5 pixel-columns in width, otherwise there will be exactly 1 blank pixel-column between each character as they scroll."
+  "microbit.display.scroll.param-name.delay": {
+    "message": "delay",
+    "description": "(parameter name) The ``delay`` parameter controls how fast the text is scrolling."
   },
-  "microbit.display.scroll.param-doc.monospace": {
-    "message": "If ``monospace`` is ``True``, wibble characters will all take up 5 pixel-columns in width, owibblerwise wibblere will be exactly 1 blank pixel-column between each character as wibbley scroll.",
+  "microbit.display.scroll.param-doc.delay": {
+    "message": "The {{delay}} parameter controls how fast wibble text is scrolling.",
     "description": "Parameter docs"
   },
   "microbit.display.on": {
@@ -2995,36 +3003,12 @@
     "message": "Initialize serial communication.",
     "description": "Initialize serial communication."
   },
-  "microbit.uart.init.param-name.baudrate": {
-    "message": "baudrate",
-    "description": "(parameter name) The speed of communication."
-  },
-  "microbit.uart.init.param-doc.baudrate": {
-    "message": "The speed of communication.",
-    "description": "Parameter docs"
-  },
-  "microbit.uart.init.param-name.bits": {
-    "message": "bits",
-    "description": "(parameter name) The size of bytes being transmitted. micro:bit only supports 8."
-  },
-  "microbit.uart.init.param-doc.bits": {
-    "message": "The size of bytes being transmitted. micro:bit only supports 8.",
-    "description": "Parameter docs"
-  },
   "microbit.uart.init.param-name.parity": {
     "message": "parity",
     "description": "(parameter name) How parity is checked, ``None``, ``uart.ODD`` or ``uart.EVEN``."
   },
   "microbit.uart.init.param-doc.parity": {
-    "message": "How parity is checked, ``None``, ``uart.ODD`` or ``uart.EVEN``.",
-    "description": "Parameter docs"
-  },
-  "microbit.uart.init.param-name.stop": {
-    "message": "stop",
-    "description": "(parameter name) The number of stop bits, has to be 1 for micro:bit."
-  },
-  "microbit.uart.init.param-doc.stop": {
-    "message": "The number of stop bits, has to be 1 for micro:bit.",
+    "message": "How parity is checked, {{None}}, {{uart.ODD}} or {{uart.EVEN}}.",
     "description": "Parameter docs"
   },
   "microbit.uart.init.param-name.tx": {
@@ -3041,6 +3025,30 @@
   },
   "microbit.uart.init.param-doc.rx": {
     "message": "Receiving pin.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.stop": {
+    "message": "stop",
+    "description": "(parameter name) The number of stop bits, has to be 1 for micro:bit."
+  },
+  "microbit.uart.init.param-doc.stop": {
+    "message": "The number of stop bits, has to be 1 for micro:bit.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.bits": {
+    "message": "bits",
+    "description": "(parameter name) The size of bytes being transmitted. micro:bit only supports 8."
+  },
+  "microbit.uart.init.param-doc.bits": {
+    "message": "The size of bytes being transmitted. micro:bit only supports 8.",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.baudrate": {
+    "message": "baudrate",
+    "description": "(parameter name) The speed of communication."
+  },
+  "microbit.uart.init.param-doc.baudrate": {
+    "message": "The speed of communication.",
     "description": "Parameter docs"
   },
   "microbit.uart.any": {
@@ -3064,7 +3072,7 @@
     "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible"
   },
   "microbit.uart.read.param-doc.nbytes": {
-    "message": "If ``nbytes`` is specified wibblen read at most that many bytes, owibblerwise read as many bytes as possible",
+    "message": "If {{nbytes}} is specified wibblen read at most that many bytes, owibblerwise read as many bytes as possible",
     "description": "Parameter docs"
   },
   "microbit.uart.readinto": {
@@ -3072,8 +3080,16 @@
     "description": "(function name) Read bytes into the ``buf``."
   },
   "microbit.uart.readinto.summary": {
-    "message": "Read bytes into wibble ``buf``.",
+    "message": "Read bytes into wibble {{buf}}.",
     "description": "Read bytes into the ``buf``."
+  },
+  "microbit.uart.readinto.param-name.nbytes": {
+    "message": "nbytes",
+    "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes."
+  },
+  "microbit.uart.readinto.param-doc.nbytes": {
+    "message": "If {{nbytes}} is specified wibblen read at most that many bytes, owibblerwise read {{len(buf)}} bytes.",
+    "description": "Parameter docs"
   },
   "microbit.uart.readinto.param-name.buf": {
     "message": "buf",
@@ -3081,14 +3097,6 @@
   },
   "microbit.uart.readinto.param-doc.buf": {
     "message": "The buffer to write to.",
-    "description": "Parameter docs"
-  },
-  "microbit.uart.readinto.param-name.nbytes": {
-    "message": "nbytes",
-    "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes."
-  },
-  "microbit.uart.readinto.param-doc.nbytes": {
-    "message": "If ``nbytes`` is specified wibblen read at most that many bytes, owibblerwise read ``len(buf)`` bytes.",
     "description": "Parameter docs"
   },
   "microbit.uart.readline": {
@@ -3124,7 +3132,7 @@
     "description": "(function name) Get the acceleration measurement in the ``x`` axis in milli-g."
   },
   "microbit.accelerometer.get_x.summary": {
-    "message": "Get wibble acceleration measurement in wibble ``x`` axis in milli-g.",
+    "message": "Get wibble acceleration measurement in wibble {{x}} axis in milli-g.",
     "description": "Get the acceleration measurement in the ``x`` axis in milli-g."
   },
   "microbit.accelerometer.get_y": {
@@ -3132,7 +3140,7 @@
     "description": "(function name) Get the acceleration measurement in the ``y`` axis in milli-g."
   },
   "microbit.accelerometer.get_y.summary": {
-    "message": "Get wibble acceleration measurement in wibble ``y`` axis in milli-g.",
+    "message": "Get wibble acceleration measurement in wibble {{y}} axis in milli-g.",
     "description": "Get the acceleration measurement in the ``y`` axis in milli-g."
   },
   "microbit.accelerometer.get_z": {
@@ -3140,7 +3148,7 @@
     "description": "(function name) Get the acceleration measurement in the ``z`` axis in milli-g."
   },
   "microbit.accelerometer.get_z.summary": {
-    "message": "Get wibble acceleration measurement in wibble ``z`` axis in milli-g.",
+    "message": "Get wibble acceleration measurement in wibble {{z}} axis in milli-g.",
     "description": "Get the acceleration measurement in the ``z`` axis in milli-g."
   },
   "microbit.accelerometer.get_values": {
@@ -3211,12 +3219,20 @@
     "message": "Schedule a function to be called at a given interval **V2 only**.",
     "description": "Schedule a function to be called at a given interval **V2 only**."
   },
-  "microbit.run_every.param-name.callback": {
-    "message": "callback",
-    "description": "(parameter name) The callback to invoke. Omit when using as a decorator."
+  "microbit.run_every.param-name.min": {
+    "message": "min",
+    "description": "(parameter name) The interval in minutes."
   },
-  "microbit.run_every.param-doc.callback": {
-    "message": "The callback to invoke. Omit when using as a decorator.",
+  "microbit.run_every.param-doc.min": {
+    "message": "The interval in minutes.",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.s": {
+    "message": "s",
+    "description": "(parameter name) The interval in seconds."
+  },
+  "microbit.run_every.param-doc.s": {
+    "message": "The interval in seconds.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.days": {
@@ -3235,20 +3251,12 @@
     "message": "The interval in hours.",
     "description": "Parameter docs"
   },
-  "microbit.run_every.param-name.min": {
-    "message": "min",
-    "description": "(parameter name) The interval in minutes."
+  "microbit.run_every.param-name.callback": {
+    "message": "callback",
+    "description": "(parameter name) The callback to invoke. Omit when using as a decorator."
   },
-  "microbit.run_every.param-doc.min": {
-    "message": "The interval in minutes.",
-    "description": "Parameter docs"
-  },
-  "microbit.run_every.param-name.s": {
-    "message": "s",
-    "description": "(parameter name) The interval in seconds."
-  },
-  "microbit.run_every.param-doc.s": {
-    "message": "The interval in seconds.",
+  "microbit.run_every.param-doc.callback": {
+    "message": "The callback to invoke. Omit when using as a decorator.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.ms": {
@@ -3288,7 +3296,7 @@
     "description": "(function name) Wait for ``n`` milliseconds."
   },
   "microbit.sleep.summary": {
-    "message": "Wait for ``n`` milliseconds.",
+    "message": "Wait for {{n}} milliseconds.",
     "description": "Wait for ``n`` milliseconds."
   },
   "microbit.sleep.param-name.n": {
@@ -3368,7 +3376,7 @@
     "description": "(field name) The left button ``Button`` object."
   },
   "microbit.Button.button_a.summary": {
-    "message": "The left button ``Button`` object.",
+    "message": "The left button {{Button}} object.",
     "description": "The left button ``Button`` object."
   },
   "microbit.Button.button_b": {
@@ -3376,7 +3384,7 @@
     "description": "(field name) The right button ``Button`` object."
   },
   "microbit.Button.button_b.summary": {
-    "message": "The right button ``Button`` object.",
+    "message": "The right button {{Button}} object.",
     "description": "The right button ``Button`` object."
   },
   "microbit.MicroBitDigitalPin": {
@@ -3408,7 +3416,7 @@
     "description": "(parameter name) ``1`` to set the pin high or ``0`` to set the pin low"
   },
   "microbit.MicroBitDigitalPin.write_digital.param-doc.value": {
-    "message": "``1`` to set wibble pin high or ``0`` to set wibble pin low",
+    "message": "{{1}} to set wibble pin high or {{0}} to set wibble pin low",
     "description": "Parameter docs"
   },
   "microbit.MicroBitDigitalPin.set_pull": {
@@ -3416,7 +3424,7 @@
     "description": "(function name) Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``."
   },
   "microbit.MicroBitDigitalPin.set_pull.summary": {
-    "message": "Set wibble pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.",
+    "message": "Set wibble pull state to one of three possible values: {{PULL_UP}}, {{PULL_DOWN}} or {{NO_PULL}}.",
     "description": "Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``."
   },
   "microbit.MicroBitDigitalPin.set_pull.param-name.value": {
@@ -3424,7 +3432,7 @@
     "description": "(parameter name) The pull state from the relevant pin, e.g. ``pin0.PULL_UP``."
   },
   "microbit.MicroBitDigitalPin.set_pull.param-doc.value": {
-    "message": "The pull state from wibble relevant pin, e.g. ``pin0.PULL_UP``.",
+    "message": "The pull state from wibble relevant pin, e.g. {{pin0.PULL_UP}}.",
     "description": "Parameter docs"
   },
   "microbit.MicroBitDigitalPin.get_pull": {
@@ -3448,7 +3456,7 @@
     "description": "(function name) Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
   },
   "microbit.MicroBitDigitalPin.write_analog.summary": {
-    "message": "Output a PWM signal on wibble pin, with wibble duty cycle proportional to ``value``.",
+    "message": "Output a PWM signal on wibble pin, with wibble duty cycle proportional to {{value}}.",
     "description": "Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
   },
   "microbit.MicroBitDigitalPin.write_analog.param-name.value": {
@@ -3464,7 +3472,7 @@
     "description": "(function name) Set the period of the PWM signal being output to ``period`` in milliseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period.summary": {
-    "message": "Set wibble period of wibble PWM signal being output to ``period`` in milliseconds.",
+    "message": "Set wibble period of wibble PWM signal being output to {{period}} in milliseconds.",
     "description": "Set the period of the PWM signal being output to ``period`` in milliseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period.param-name.period": {
@@ -3480,7 +3488,7 @@
     "description": "(function name) Set the period of the PWM signal being output to ``period`` in microseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period_microseconds.summary": {
-    "message": "Set wibble period of wibble PWM signal being output to ``period`` in microseconds.",
+    "message": "Set wibble period of wibble PWM signal being output to {{period}} in microseconds.",
     "description": "Set the period of the PWM signal being output to ``period`` in microseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-name.period": {
@@ -3536,7 +3544,7 @@
     "description": "(parameter name) ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin."
   },
   "microbit.MicroBitTouchPin.set_touch_mode.param-doc.value": {
-    "message": "``CAPACITIVE`` or ``RESISTIVE`` from wibble relevant pin.",
+    "message": "{{CAPACITIVE}} or {{RESISTIVE}} from wibble relevant pin.",
     "description": "Parameter docs"
   },
   "microbit.MicroBitTouchPin.pin0": {
@@ -4240,7 +4248,7 @@
     "description": "(function name) Create an empty image with ``width`` columns and ``height`` rows."
   },
   "microbit.Image.__init__.summary": {
-    "message": "Create an empty image with ``width`` columns and ``height`` rows.",
+    "message": "Create an empty image with {{width}} columns and {{height}} rows.",
     "description": "Create an empty image with ``width`` columns and ``height`` rows."
   },
   "microbit.Image.__init__.param-name.string": {
@@ -4251,14 +4259,6 @@
     "message": "The string describing wibble image.",
     "description": "Parameter docs"
   },
-  "microbit.Image.__init__.param-name.width": {
-    "message": "width",
-    "description": "(parameter name) Optional width of the image"
-  },
-  "microbit.Image.__init__.param-doc.width": {
-    "message": "Optional width of wibble image",
-    "description": "Parameter docs"
-  },
   "microbit.Image.__init__.param-name.height": {
     "message": "height",
     "description": "(parameter name) Optional height of the image"
@@ -4267,12 +4267,20 @@
     "message": "Optional height of wibble image",
     "description": "Parameter docs"
   },
+  "microbit.Image.__init__.param-name.width": {
+    "message": "width",
+    "description": "(parameter name) Optional width of the image"
+  },
+  "microbit.Image.__init__.param-doc.width": {
+    "message": "Optional width of wibble image",
+    "description": "Parameter docs"
+  },
   "microbit.Image.__init__.param-name.buffer": {
     "message": "buffer",
     "description": "(parameter name) Optional array or bytes of ``width``\u00d7``height`` integers in range 0-9 to initialize the image"
   },
   "microbit.Image.__init__.param-doc.buffer": {
-    "message": "Optional array or bytes of ``width``\u00d7``height`` integers in range 0-9 to initialize wibble image",
+    "message": "Optional array or bytes of {{width}}\u00d7{{height}} integers in range 0-9 to initialize wibble image",
     "description": "Parameter docs"
   },
   "microbit.Image.width": {
@@ -4299,6 +4307,14 @@
     "message": "Set wibble brightness of a pixel.",
     "description": "Set the brightness of a pixel."
   },
+  "microbit.Image.set_pixel.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The brightness as an integer between 0 (dark) and 9 (bright)"
+  },
+  "microbit.Image.set_pixel.param-doc.value": {
+    "message": "The brightness as an integer between 0 (dark) and 9 (bright)",
+    "description": "Parameter docs"
+  },
   "microbit.Image.set_pixel.param-name.x": {
     "message": "x",
     "description": "(parameter name) The column number"
@@ -4313,14 +4329,6 @@
   },
   "microbit.Image.set_pixel.param-doc.y": {
     "message": "The row number",
-    "description": "Parameter docs"
-  },
-  "microbit.Image.set_pixel.param-name.value": {
-    "message": "value",
-    "description": "(parameter name) The brightness as an integer between 0 (dark) and 9 (bright)"
-  },
-  "microbit.Image.set_pixel.param-doc.value": {
-    "message": "The brightness as an integer between 0 (dark) and 9 (bright)",
     "description": "Parameter docs"
   },
   "microbit.Image.get_pixel": {
@@ -4427,12 +4435,12 @@
     "message": "The crop offset column",
     "description": "Parameter docs"
   },
-  "microbit.Image.crop.param-name.y": {
-    "message": "y",
-    "description": "(parameter name) The crop offset row"
+  "microbit.Image.crop.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The crop height"
   },
-  "microbit.Image.crop.param-doc.y": {
-    "message": "The crop offset row",
+  "microbit.Image.crop.param-doc.h": {
+    "message": "The crop height",
     "description": "Parameter docs"
   },
   "microbit.Image.crop.param-name.w": {
@@ -4443,12 +4451,12 @@
     "message": "The crop width",
     "description": "Parameter docs"
   },
-  "microbit.Image.crop.param-name.h": {
-    "message": "h",
-    "description": "(parameter name) The crop height"
+  "microbit.Image.crop.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The crop offset row"
   },
-  "microbit.Image.crop.param-doc.h": {
-    "message": "The crop height",
+  "microbit.Image.crop.param-doc.y": {
+    "message": "The crop offset row",
     "description": "Parameter docs"
   },
   "microbit.Image.copy": {
@@ -4491,14 +4499,6 @@
     "message": "Copy an area from anowibbler image into this image.",
     "description": "Copy an area from another image into this image."
   },
-  "microbit.Image.blit.param-name.src": {
-    "message": "src",
-    "description": "(parameter name) The source image"
-  },
-  "microbit.Image.blit.param-doc.src": {
-    "message": "The source image",
-    "description": "Parameter docs"
-  },
   "microbit.Image.blit.param-name.x": {
     "message": "x",
     "description": "(parameter name) The starting column offset in the source image"
@@ -4507,28 +4507,12 @@
     "message": "The starting column offset in wibble source image",
     "description": "Parameter docs"
   },
-  "microbit.Image.blit.param-name.y": {
-    "message": "y",
-    "description": "(parameter name) The starting row offset in the source image"
+  "microbit.Image.blit.param-name.src": {
+    "message": "src",
+    "description": "(parameter name) The source image"
   },
-  "microbit.Image.blit.param-doc.y": {
-    "message": "The starting row offset in wibble source image",
-    "description": "Parameter docs"
-  },
-  "microbit.Image.blit.param-name.w": {
-    "message": "w",
-    "description": "(parameter name) The number of columns to copy"
-  },
-  "microbit.Image.blit.param-doc.w": {
-    "message": "The number of columns to copy",
-    "description": "Parameter docs"
-  },
-  "microbit.Image.blit.param-name.h": {
-    "message": "h",
-    "description": "(parameter name) The number of rows to copy"
-  },
-  "microbit.Image.blit.param-doc.h": {
-    "message": "The number of rows to copy",
+  "microbit.Image.blit.param-doc.src": {
+    "message": "The source image",
     "description": "Parameter docs"
   },
   "microbit.Image.blit.param-name.xdest": {
@@ -4539,12 +4523,36 @@
     "message": "The column offset to modify in this image",
     "description": "Parameter docs"
   },
+  "microbit.Image.blit.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The number of rows to copy"
+  },
+  "microbit.Image.blit.param-doc.h": {
+    "message": "The number of rows to copy",
+    "description": "Parameter docs"
+  },
   "microbit.Image.blit.param-name.ydest": {
     "message": "ydest",
     "description": "(parameter name) The row offset to modify in this image"
   },
   "microbit.Image.blit.param-doc.ydest": {
     "message": "The row offset to modify in this image",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.w": {
+    "message": "w",
+    "description": "(parameter name) The number of columns to copy"
+  },
+  "microbit.Image.blit.param-doc.w": {
+    "message": "The number of columns to copy",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The starting row offset in the source image"
+  },
+  "microbit.Image.blit.param-doc.y": {
+    "message": "The starting row offset in wibble source image",
     "description": "Parameter docs"
   },
   "microbit.Image.__repr__": {
@@ -4600,7 +4608,7 @@
     "description": "(function name) Create a new image by multiplying the brightness of each pixel by\n``n``."
   },
   "microbit.Image.__mul__.summary": {
-    "message": "Create a new image by multiplying wibble brightness of each pixel by\n``n``.",
+    "message": "Create a new image by multiplying wibble brightness of each pixel by\n{{n}}.",
     "description": "Create a new image by multiplying the brightness of each pixel by\n``n``."
   },
   "microbit.Image.__mul__.param-name.n": {
@@ -4616,7 +4624,7 @@
     "description": "(function name) Create a new image by dividing the brightness of each pixel by\n``n``."
   },
   "microbit.Image.__truediv__.summary": {
-    "message": "Create a new image by dividing wibble brightness of each pixel by\n``n``.",
+    "message": "Create a new image by dividing wibble brightness of each pixel by\n{{n}}.",
     "description": "Create a new image by dividing the brightness of each pixel by\n``n``."
   },
   "microbit.Image.__truediv__.param-name.n": {
@@ -4632,7 +4640,7 @@
     "description": "(field name) Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
   },
   "microbit.SoundEvent.LOUD.summary": {
-    "message": "Represents wibble transition of sound events, from ``loud`` to ``quiet`` like speaking or background music.",
+    "message": "Represents wibble transition of sound events, from {{loud}} to {{quiet}} like speaking or background music.",
     "description": "Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
   },
   "microbit.SoundEvent.QUIET": {
@@ -4640,7 +4648,7 @@
     "description": "(field name) Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
   },
   "microbit.SoundEvent.QUIET.summary": {
-    "message": "Represents wibble transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting.",
+    "message": "Represents wibble transition of sound events, from {{quiet}} to {{loud}} like clapping or shouting.",
     "description": "Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
   },
   "microbit.Sound": {
@@ -4648,7 +4656,7 @@
     "description": "(class name) The built-in sounds can be called using ``audio.play(Sound.NAME)``."
   },
   "microbit.Sound.summary": {
-    "message": "The built-in sounds can be called using ``audio.play(Sound.NAME)``.",
+    "message": "The built-in sounds can be called using {{audio.play(Sound.NAME)}}.",
     "description": "The built-in sounds can be called using ``audio.play(Sound.NAME)``."
   },
   "microbit.Sound.GIGGLE": {
