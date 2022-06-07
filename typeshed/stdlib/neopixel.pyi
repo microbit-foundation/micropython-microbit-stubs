@@ -33,7 +33,7 @@ class NeoPixel:
         """
         ...
     def write(self) -> None:
-        """Show the pixels (microbit V2 only).
+        """Show the pixels (micro:bit V2 only).
 
         Example: ``np.write()``
 
