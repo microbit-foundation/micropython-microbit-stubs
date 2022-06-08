@@ -54,7 +54,7 @@ def config(
     The default used by other micro:bit related platforms is the default setting used here.
     :param group: (default=0) an 8-bit value (0-255) used with the ``address`` when filtering messages.
     Conceptually, "address" is like a house/office address and "group" is like the person at that address to which you want to send your message.
-    :param data_rate: (default=radio.RATE_1MBIT) indicates the speed at which data throughput takes place.
+    :param data_rate: (default=``radio.RATE_1MBIT``) indicates the speed at which data throughput takes place.
     Can be one of the following constants defined in the ``radio`` module: ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.
 
     If ``config`` is not called then the defaults described above are assumed.

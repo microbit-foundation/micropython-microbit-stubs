@@ -152,7 +152,7 @@ class MicroBitDigitalPin:
 
         Example: ``pin0.write_digital(1)``
 
-        :param value: ``1`` to set the pin high or ``0`` to set the pin low"""
+        :param value: 1 to set the pin high or 0 to set the pin low"""
         ...
     def set_pull(self, value: int) -> None:
         """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
