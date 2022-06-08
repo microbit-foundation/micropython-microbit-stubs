@@ -121,15 +121,16 @@ def get_entries(node, name, key):
     # We don't want to translate param names if we have no summary.
     if not summary:
         return {}
-    if not isinstance(node, ast.Module):
-        api_name_for_translation = name.replace("_", " ").strip().lower()
-        entries.update(
-            format_translation_data(
-                key,
-                api_name_for_translation,
-                f"({get_node_type(node)} name) {summary}",
-            )
+    api_name_for_translation = name.replace("_", " ").strip().lower()
+    # Remove prefixed microbit.foo names as it's better just to translate the important part.
+    api_name_for_translation = api_name_for_translation.replace("microbit.", "")
+    entries.update(
+        format_translation_data(
+            key,
+            api_name_for_translation,
+            f"({get_node_type(node)} name) {summary}",
         )
+    )
     summary_key = ".".join([key, "summary"])
     entries.update(format_translation_data(summary_key, summary, summary))
     matched_params = get_matched_params(node, param_section)
@@ -206,6 +207,8 @@ def format_translation_data(key, defaultMessage, description):
 
 
 def get_node_type(node):
+    if isinstance(node, ast.Module):
+        return "module"
     if isinstance(node, ast.ClassDef):
         return "class"
     if isinstance(node, ast.FunctionDef):

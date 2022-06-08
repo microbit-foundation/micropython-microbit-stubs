@@ -1,4 +1,8 @@
 {
+  "gc": {
+    "message": "gc",
+    "description": "(module name) Control the garbage collector"
+  },
   "gc.summary": {
     "message": "Control le garbage collector",
     "description": "Control the garbage collector"
@@ -66,6 +70,10 @@
   "gc.threshold-1.param-doc.amount": {
     "message": "The number of bytes after which a garbage collection should be triggered.",
     "description": "Parameter docs"
+  },
+  "log": {
+    "message": "log",
+    "description": "(module name) Log data to your micro:bit V2."
   },
   "log.summary": {
     "message": "Log data to your micro:bit V2.",
@@ -190,6 +198,10 @@
   "log.set_mirroring.param-doc.serial": {
     "message": "Pass {{True}} to mirror le data logging activity to le serial output, {{False}} to disable mirroring.",
     "description": "Parameter docs"
+  },
+  "machine": {
+    "message": "machine",
+    "description": "(module name) Low-level utilities."
   },
   "machine.summary": {
     "message": "Low-level utilities.",
@@ -346,6 +358,10 @@
   "machine.mem32.summary": {
     "message": "32-bit view of memory.",
     "description": "32-bit view of memory."
+  },
+  "math": {
+    "message": "math",
+    "description": "(module name) Mathematical functions."
   },
   "math.summary": {
     "message": "Malematical functions.",
@@ -814,6 +830,10 @@
   "math.pi.summary": {
     "message": "The ratio of a circle's circumference to its diameter",
     "description": "The ratio of a circle's circumference to its diameter"
+  },
+  "microbit": {
+    "message": "microbit",
+    "description": "(module name) Pins, images, sounds, temperature and volume."
   },
   "microbit.summary": {
     "message": "Pins, images, sounds, temperature and volume.",
@@ -2355,6 +2375,10 @@
     "message": "Yawning sound.",
     "description": "Yawning sound."
   },
+  "microbit.accelerometer": {
+    "message": "accelerometer",
+    "description": "(module name) Measure the acceleration of the micro:bit and recognise gestures."
+  },
   "microbit.accelerometer.summary": {
     "message": "Measure le acceleration of le micro:bit and recognise gestures.",
     "description": "Measure the acceleration of the micro:bit and recognise gestures."
@@ -2439,6 +2463,10 @@
     "message": "Return a tuple of le gesture history.",
     "description": "Return a tuple of the gesture history."
   },
+  "microbit.audio": {
+    "message": "audio",
+    "description": "(module name) Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
+  },
   "microbit.audio.summary": {
     "message": "Play sounds using le micro:bit (import {{audio}} for V1 compatibility).",
     "description": "Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
@@ -2507,6 +2535,10 @@
     "message": "An {{AudioFrame}} object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255).",
     "description": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
   },
+  "microbit.compass": {
+    "message": "compass",
+    "description": "(module name) Use the built-in compass."
+  },
   "microbit.compass.summary": {
     "message": "Use le built-in compass.",
     "description": "Use the built-in compass."
@@ -2574,6 +2606,10 @@
   "microbit.compass.get_field_strength.summary": {
     "message": "Get le magnitude of le magnetic field around le device.",
     "description": "Get the magnitude of the magnetic field around the device."
+  },
+  "microbit.display": {
+    "message": "display",
+    "description": "(module name) Show text, images and animations on the 5\u00d75 LED display."
   },
   "microbit.display.summary": {
     "message": "Show text, images and animations on le 5\u00d75 LED display.",
@@ -2771,6 +2807,10 @@
     "message": "Read le light level.",
     "description": "Read the light level."
   },
+  "microbit.i2c": {
+    "message": "i2c",
+    "description": "(module name) Communicate with devices using the I\u00b2C bus protocol."
+  },
   "microbit.i2c.summary": {
     "message": "Communicate with devices using le I\u00b2C bus protocol.",
     "description": "Communicate with devices using the I\u00b2C bus protocol."
@@ -2879,6 +2919,10 @@
     "message": "If {{True}}, no stop bit will be sent",
     "description": "Parameter docs"
   },
+  "microbit.microphone": {
+    "message": "microphone",
+    "description": "(module name) Respond to sound using the built-in microphone (V2 only)."
+  },
   "microbit.microphone.summary": {
     "message": "Respond to sound using le built-in microphone (V2 only).",
     "description": "Respond to sound using the built-in microphone (V2 only)."
@@ -2963,6 +3007,10 @@
     "message": "Get le sound pressure level.",
     "description": "Get the sound pressure level."
   },
+  "microbit.speaker": {
+    "message": "speaker",
+    "description": "(module name) Control the built-in speaker (V2 only)."
+  },
   "microbit.speaker.summary": {
     "message": "Control le built-in speaker (V2 only).",
     "description": "Control the built-in speaker (V2 only)."
@@ -2982,6 +3030,10 @@
   "microbit.speaker.on.summary": {
     "message": "Turn le speaker on.",
     "description": "Turn the speaker on."
+  },
+  "microbit.spi": {
+    "message": "spi",
+    "description": "(module name) Communicate with devices using the serial peripheral interface (SPI) bus."
   },
   "microbit.spi.summary": {
     "message": "Communicate with devices using le serial peripheral interface (SPI) bus.",
@@ -3098,6 +3150,10 @@
   "microbit.spi.write_readinto.param-doc.out": {
     "message": "The buffer to write any response to.",
     "description": "Parameter docs"
+  },
+  "microbit.uart": {
+    "message": "uart",
+    "description": "(module name) Communicate with a device using a serial interface."
   },
   "microbit.uart.summary": {
     "message": "Communicate with a device using a serial interface.",
@@ -3247,6 +3303,10 @@
     "message": "A bytes object or a string.",
     "description": "Parameter docs"
   },
+  "micropython": {
+    "message": "micropython",
+    "description": "(module name) MicroPython internals."
+  },
   "micropython.summary": {
     "message": "MicroPython internals.",
     "description": "MicroPython internals."
@@ -3362,6 +3422,10 @@
   "micropython.kbd_intr.param-doc.chr": {
     "message": "Character code to raise le interrupt or -1 to disable capture of Ctrl-C.",
     "description": "Parameter docs"
+  },
+  "music": {
+    "message": "music",
+    "description": "(module name) Create and play melodies."
   },
   "music.summary": {
     "message": "Create and play melodies.",
@@ -3671,6 +3735,10 @@
     "message": "Resets ticks, bpm, duration and octave to leir default values.",
     "description": "Resets ticks, bpm, duration and octave to their default values."
   },
+  "neopixel": {
+    "message": "neopixel",
+    "description": "(module name) Individually addressable RGB and RGBW LED strips."
+  },
   "neopixel.summary": {
     "message": "Individually addressable RGB and RGBW LED strips.",
     "description": "Individually addressable RGB and RGBW LED strips."
@@ -3891,6 +3959,10 @@
     "message": "Returns information identifying le current operating system.",
     "description": "Returns information identifying the current operating system."
   },
+  "radio": {
+    "message": "radio",
+    "description": "(module name) Communicate between micro:bits with the built-in radio."
+  },
   "radio.summary": {
     "message": "Communicate between micro:bits with le built-in radio.",
     "description": "Communicate between micro:bits with the built-in radio."
@@ -4070,6 +4142,10 @@
   "radio.receive_full.summary": {
     "message": "Returns a tuple containing three values representing le next incoming message on le message queue.",
     "description": "Returns a tuple containing three values representing the next incoming message on the message queue."
+  },
+  "speech": {
+    "message": "speech",
+    "description": "(module name) Make the micro:bit talk, sing and make other speech like sounds."
   },
   "speech.summary": {
     "message": "Make le micro:bit talk, sing and make oler speech like sounds.",
@@ -4275,6 +4351,10 @@
     "message": "Fictional type to correct le type of MethodType.__func__.",
     "description": "Fictional type to correct the type of MethodType.__func__."
   },
+  "urandom": {
+    "message": "urandom",
+    "description": "(module name) Generate random numbers."
+  },
   "urandom.summary": {
     "message": "Generate random numbers.",
     "description": "Generate random numbers."
@@ -4430,6 +4510,10 @@
   "urandom.uniform.param-doc.b": {
     "message": "End value for le range (inclusive)",
     "description": "Parameter docs"
+  },
+  "ustruct": {
+    "message": "ustruct",
+    "description": "(module name) Pack and unpack primitive data types."
   },
   "ustruct.summary": {
     "message": "Pack and unpack primitive data types.",
@@ -4587,6 +4671,10 @@
     "message": "The offset into le buffer. May be negative to count from le end of le buffer.",
     "description": "Parameter docs"
   },
+  "usys": {
+    "message": "usys",
+    "description": "(module name) system specific functions"
+  },
   "usys.summary": {
     "message": "system specific functions",
     "description": "system specific functions"
@@ -4694,6 +4782,10 @@
   "usys.version_info.summary": {
     "message": "Python language version that this implementation conforms to, as a tuple of ints.",
     "description": "Python language version that this implementation conforms to, as a tuple of ints."
+  },
+  "utime": {
+    "message": "utime",
+    "description": "(module name) Measure time and add delays to programs."
   },
   "utime.summary": {
     "message": "Measure time and add delays to programs.",
