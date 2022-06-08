@@ -17,6 +17,7 @@ from typing import Any
 
 from typing import Optional
 
+
 NODE_TYPES_WITH_DOCSTRINGS = (ast.FunctionDef, ast.Module, ast.ClassDef)
 DIR = os.path.dirname(__file__)
 
@@ -84,51 +85,13 @@ def get_docstrings_dict(ts_file: TypeshedFile):
     source = get_source(ts_file.file_path)
     tree = ast.parse(source)
 
-    class DocStringCollector(ast.NodeVisitor):
+    class DocStringCollector(DocStringVisitor):
         def __init__(self):
-            self.key = []
-            self.used_keys = set()
-            self.preceding: Optional[str] = None
+            super().__init__(ts_file.module_name)
             # Translation key to dict with message/description fields.
             self.data: dict[str, dict[str, str]] = {}
 
-        def visit_Module(self, node: ast.Module) -> Any:
-            name = ts_file.module_name
-            self.add_entries_for_node(node, name)
-
-            self.key.append(name)
-            self.generic_visit(node)
-            self.key.pop()
-
-        def visit_ClassDef(self, node):
-            name = node.name
-            self.add_entries_for_node(node, name)
-
-            self.key.append(name)
-            self.generic_visit(node)
-            self.key.pop()
-
-        def visit_FunctionDef(self, node: ast.FunctionDef) -> Any:
-            self.preceding = None
-            self.add_entries_for_node(node, node.name)
-
-        def visit_AnnAssign(self, node: ast.AnnAssign) -> Any:
-            self.preceding = node.target.id  # type: ignore
-
-        def visit_Assign(self, node: ast.Assign) -> Any:
-            if len(node.targets) != 1:
-                raise AssertionError()
-            self.preceding = node.targets[0].id  # type: ignore
-
-        def visit_Expr(self, node: ast.Expr) -> Any:
-            if self.preceding:
-                self.add_entries_for_node(node, self.preceding)
-
-        def generic_visit(self, node: ast.AST) -> Any:
-            self.preceding = None
-            return super().generic_visit(node)
-
-        def add_entries_for_node(self, node: ast.AST, name: str) -> None:
+        def handle_docstring(self, node: ast.AST, name: str) -> None:
             key_root = ".".join([*self.key, name])
             key = key_root
             suffix = 1
@@ -348,53 +311,8 @@ def update_docstrings(ts_file: TypeshedFile, lang):
         return
     tree = ast.parse(source)
 
-    # Shares almost everything with DocStringCollector
-    # so can be refactored.
-    # self.data not needed here.
-    # update_docstring() called instead of get_entries().
-    class DocStringUpdater(ast.NodeVisitor):
-        def __init__(self):
-            self.key = []
-            self.used_keys = set()
-            self.preceding: Optional[str] = None
-
-        def visit_Module(self, node: ast.Module) -> Any:
-            name = ts_file.module_name
-            self.update_docstring_for_node(node, name)
-
-            self.key.append(name)
-            self.generic_visit(node)
-            self.key.pop()
-
-        def visit_ClassDef(self, node):
-            name = node.name
-            self.update_docstring_for_node(node, name)
-
-            self.key.append(name)
-            self.generic_visit(node)
-            self.key.pop()
-
-        def visit_FunctionDef(self, node: ast.FunctionDef) -> Any:
-            self.preceding = None
-            self.update_docstring_for_node(node, node.name)
-
-        def visit_AnnAssign(self, node: ast.AnnAssign) -> Any:
-            self.preceding = node.target.id  # type: ignore
-
-        def visit_Assign(self, node: ast.Assign) -> Any:
-            if len(node.targets) != 1:
-                raise AssertionError()
-            self.preceding = node.targets[0].id  # type: ignore
-
-        def visit_Expr(self, node: ast.Expr) -> Any:
-            if self.preceding:
-                self.update_docstring_for_node(node, self.preceding)
-
-        def generic_visit(self, node: ast.AST) -> Any:
-            self.preceding = None
-            return super().generic_visit(node)
-
-        def update_docstring_for_node(self, node: ast.AST, name: str) -> None:
+    class DocStringUpdater(DocStringVisitor):
+        def handle_docstring(self, node: ast.AST, name: str) -> None:
             key_root = ".".join([*self.key, name])
             key = key_root
             suffix = 1
@@ -404,8 +322,8 @@ def update_docstrings(ts_file: TypeshedFile, lang):
             self.used_keys.add(key)
             update_docstring(node, key)
 
-    collector = DocStringUpdater()
-    collector.visit(tree)
+    updater = DocStringUpdater(ts_file.module_name)
+    updater.visit(tree)
     data = unparse_file(tree)
     save_file(data, ts_file, lang)
 
@@ -499,6 +417,53 @@ def maybe_dir(maybe_path):
         return
     if not os.path.exists(maybe_path):
         os.mkdir(maybe_path)
+
+
+class DocStringVisitor(ast.NodeVisitor):
+    def __init__(self, module_name):
+        self.module_name = module_name
+        self.key = []
+        self.used_keys = set()
+        self.preceding: Optional[str] = None
+
+    def visit_Module(self, node: ast.Module) -> Any:
+        name = self.module_name
+        self.handle_docstring(node, name)
+
+        self.key.append(name)
+        self.generic_visit(node)
+        self.key.pop()
+
+    def visit_ClassDef(self, node):
+        name = node.name
+        self.handle_docstring(node, name)
+
+        self.key.append(name)
+        self.generic_visit(node)
+        self.key.pop()
+
+    def visit_FunctionDef(self, node: ast.FunctionDef) -> Any:
+        self.preceding = None
+        self.handle_docstring(node, node.name)
+
+    def visit_AnnAssign(self, node: ast.AnnAssign) -> Any:
+        self.preceding = node.target.id  # type: ignore
+
+    def visit_Assign(self, node: ast.Assign) -> Any:
+        if len(node.targets) != 1:
+            raise AssertionError()
+        self.preceding = node.targets[0].id  # type: ignore
+
+    def visit_Expr(self, node: ast.Expr) -> Any:
+        if self.preceding:
+            self.handle_docstring(node, self.preceding)
+
+    def generic_visit(self, node: ast.AST) -> Any:
+        self.preceding = None
+        return super().generic_visit(node)
+
+    def handle_docstring(self, node: ast.AST, name: str) -> None:
+        raise NotImplementedError()
 
 
 if __name__ == "__main__":
