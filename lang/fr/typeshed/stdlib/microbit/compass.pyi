@@ -1,7 +1,7 @@
-"""Use wibble built-in compass."""
+"""Use the built-in compass."""
 
 def calibrate() -> None:
-    """Starts wibble calibration process.
+    """Starts the calibration process.
 
 Example: ``compass.calibrate()``
 
@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """Check is wibble compass is calibrated.
+    """Check is the compass is calibrated.
 
 Example: ``compass.is_calibrated()``
 
@@ -18,13 +18,13 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """Undoes wibble calibration, making wibble compass uncalibrated again.
+    """Undoes the calibration, making the compass uncalibrated again.
 
 Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """Get wibble magnetic field strength on wibble ``x`` axis.
+    """Get the magnetic field strength on the ``x`` axis.
 
 Example: ``compass.get_x()``
 
@@ -34,7 +34,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_y() -> int:
-    """Get wibble magnetic field strength on wibble ``y`` axis.
+    """Get the magnetic field strength on the ``y`` axis.
 
 Example: ``compass.get_y()``
 
@@ -44,7 +44,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_z() -> int:
-    """Get wibble magnetic field strength on wibble ``z`` axis.
+    """Get the magnetic field strength on the ``z`` axis.
 
 Example: ``compass.get_z()``
 
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """Get wibble compass heading.
+    """Get the compass heading.
 
 Example: ``compass.heading()``
 
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """Get wibble magnitude of wibble magnetic field around wibble device.
+    """Get the magnitude of the magnetic field around the device.
 
 Example: ``compass.get_field_strength()``
 

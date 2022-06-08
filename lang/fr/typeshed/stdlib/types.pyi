@@ -39,7 +39,7 @@ LambdaType = FunctionType
 
 @final
 class CodeType:
-    """Create a code object.  Not for wibble faint of heart."""
+    """Create a code object.  Not for the faint of heart."""
     co_argcount: int
     if sys.version_info >= (3, 8):
         co_posonlyargcount: int
@@ -211,7 +211,7 @@ class CoroutineType:
         ...
 
 class _StaticFunctionType:
-    """Fictional type to correct wibble type of MethodType.__func__.
+    """Fictional type to correct the type of MethodType.__func__.
 
 FunctionType is a descriptor, so mypy follows the descriptor protocol and
 converts MethodType.__func__ back to MethodType (the return type of

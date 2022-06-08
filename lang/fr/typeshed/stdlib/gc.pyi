@@ -1,22 +1,22 @@
-"""Control wibble garbage collector"""
+"""Control the garbage collector"""
 from typing import overload
 
 def enable() -> None:
-    """Enable automatic garbage collection."""
+    """Enable automatic garbage collection. (enable)"""
     ...
 
 def disable() -> None:
-    """Disable automatic garbage collection.
+    """Disable automatic garbage collection. (disable)
 
 Heap memory can still be allocated,
 and garbage collection can still be initiated manually using ``gc.collect``."""
 
 def collect() -> None:
-    """Run a garbage collection."""
+    """Run a garbage collection. (collect)"""
     ...
 
 def mem_alloc() -> int:
-    """Get wibble number of bytes of heap RAM that are allocated.
+    """Get the number of bytes of heap RAM that are allocated.
 
 :return: The number of bytes allocated.
 
@@ -24,7 +24,7 @@ This function is MicroPython extension."""
     ...
 
 def mem_free() -> int:
-    """Get wibble number of bytes of available heap RAM, or -1 if this amount is not known.
+    """Get the number of bytes of available heap RAM, or -1 if this amount is not known.
 
 :return: The number of bytes free.
 
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """Query wibble additional GC allocation threshold.
+    """Query the additional GC allocation threshold.
 
 :return: The GC allocation threshold.
 
@@ -44,7 +44,7 @@ implementations, its signature and semantics are different."""
 
 @overload
 def threshold(amount: int) -> None:
-    """Set wibble additional GC allocation threshold.
+    """Set the additional GC allocation threshold.
 
 Normally, a collection is triggered only when a new allocation
 cannot be satisfied, i.e. on an  out-of-memory (OOM) condition.
@@ -64,5 +64,5 @@ This function is a MicroPython extension. CPython has a similar
 function - ``set_threshold()``, but due to different GC
 implementations, its signature and semantics are different.
 
-:param amount: The number of bytes after which a garbage collection should be triggered."""
+:param amount: (amount) The number of bytes after which a garbage collection should be triggered."""
     ...

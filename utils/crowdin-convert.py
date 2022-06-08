@@ -81,6 +81,10 @@ def module_name_for_path(file_path: str):
     return os.path.splitext(name)[0]
 
 
+# Translation key to dict with message/description fields.
+TranslationJSON = dict[str, dict[str, str]]
+
+
 def get_docstrings_dict(ts_file: TypeshedFile):
     source = get_source(ts_file.file_path)
     tree = ast.parse(source)
@@ -88,8 +92,7 @@ def get_docstrings_dict(ts_file: TypeshedFile):
     class DocStringCollector(DocStringVisitor):
         def __init__(self):
             super().__init__(ts_file.module_name)
-            # Translation key to dict with message/description fields.
-            self.data: dict[str, dict[str, str]] = {}
+            self.data: TranslationJSON = {}
 
         def handle_docstring(self, node: ast.AST, name: str) -> None:
             key_root = ".".join([*self.key, name])
@@ -119,11 +122,11 @@ def get_entries(node, name, key):
     if not summary:
         return {}
     if not isinstance(node, ast.Module):
-        api_call_for_translation = name.replace("_", " ").strip()
+        api_name_for_translation = name.replace("_", " ").strip().lower()
         entries.update(
             format_translation_data(
                 key,
-                api_call_for_translation,
+                api_name_for_translation,
                 f"({get_node_type(node)} name) {summary}",
             )
         )
@@ -196,7 +199,7 @@ def convert_to_placeholders(msg):
 def format_translation_data(key, defaultMessage, description):
     return {
         key: {
-            "message": convert_to_placeholders(defaultMessage),
+            "message": convert_to_placeholders(defaultMessage).replace("the", "le"),
             "description": description,
         }
     }
@@ -268,15 +271,7 @@ def save_docstrings_as_json(data):
         file.write(json.dumps(data, indent=2))
 
 
-# ==============================================================
-# Additional functions for translating stubs files.
-en_json = {}
-translated_json = {}
-
-
 def crowdin_to_typeshed():
-    global en_json
-    global translated_json
     en_json = read_json(os.path.join(DIR, "lang/api.en.json"))
     translations_to_process = get_translated_json_files()
     stubs_to_process = get_stub_files()
@@ -284,7 +279,7 @@ def crowdin_to_typeshed():
         translated_json = read_json(translated)
         lang = os.path.basename(translated).split(".")[1]
         for stubs_file in stubs_to_process:
-            update_docstrings(stubs_file, lang)
+            update_docstrings(stubs_file, lang, en_json, translated_json)
 
 
 def get_translated_json_files() -> list[str]:
@@ -304,7 +299,12 @@ def read_json(file_name):
         return json.load(file)
 
 
-def update_docstrings(ts_file: TypeshedFile, lang):
+def update_docstrings(
+    ts_file: TypeshedFile,
+    lang: str,
+    en_json: TranslationJSON,
+    translated_json: TranslationJSON,
+):
     source = get_source(ts_file.file_path)
     if not ts_file.python_file:
         save_file(source, ts_file, lang)
@@ -320,7 +320,7 @@ def update_docstrings(ts_file: TypeshedFile, lang):
                 key = f"{key_root}-{suffix}"
                 suffix += 1
             self.used_keys.add(key)
-            update_docstring(node, key)
+            update_docstring(node, key, en_json, translated_json)
 
     updater = DocStringUpdater(ts_file.module_name)
     updater.visit(tree)
@@ -328,37 +328,62 @@ def update_docstrings(ts_file: TypeshedFile, lang):
     save_file(data, ts_file, lang)
 
 
-def update_docstring(node, key):
+def update_docstring(
+    node: ast.AST, key: str, en_json: TranslationJSON, translated_json: TranslationJSON
+):
+    # This takes a straightforward approach and assumes we can just
+    # make repeated text replacements in the docstring.
     docstring = get_docstring(node)
     if not docstring:
         return
 
-    if not isinstance(node, ast.Module):
-        docstring = mutate_docstring(docstring, key)
-
+    api_name_translated = (
+        "" if isinstance(node, ast.Module) else get_string_by_key(key, translated_json)
+    )
     summary_key = ".".join([key, "summary"])
-    docstring = mutate_docstring(docstring, summary_key)
+    docstring = replace_english(
+        docstring,
+        summary_key,
+        en_json,
+        translated_json,
+        suffix=f" ({api_name_translated})",
+    )
+
     _, param_section = split_docstring(docstring)
     matched_params = get_matched_params(node, param_section)
     for param_key in matched_params:
-        # Translate param name.
-        # We need to know how exactly to place this in the stubs.
-        # param_name_key = ".".join([parent_key, "param-name", key])
-        # Translate param doc.
+        translated_param = get_string_by_key(
+            ".".join([key, "param-name", param_key]), translated_json
+        )
         param_doc_key = ".".join([key, "param-doc", param_key])
-        docstring = mutate_docstring(docstring, param_doc_key)
+        docstring = replace_english(
+            docstring,
+            param_doc_key,
+            en_json,
+            translated_json,
+            prefix=f"({translated_param}) ",
+        )
     replace_docstring(node, docstring)
 
 
-def mutate_docstring(docstring, parent_key):
-    string_to_replace = convertFromPlaceholders(get_string_by_key(parent_key, en_json))
-    translated_string = convertFromPlaceholders(
+def replace_english(
+    docstring,
+    parent_key,
+    en_json: TranslationJSON,
+    translated_json: TranslationJSON,
+    prefix="",
+    suffix="",
+):
+    string_to_replace = convert_from_placeholders(
+        get_string_by_key(parent_key, en_json)
+    )
+    translated_string = convert_from_placeholders(
         get_string_by_key(parent_key, translated_json)
     )
-    return docstring.replace(string_to_replace, translated_string)
+    return docstring.replace(string_to_replace, prefix + translated_string + suffix)
 
 
-def get_string_by_key(key, dict):
+def get_string_by_key(key: str, dict: TranslationJSON):
     return dict[key]["message"]
 
 
@@ -395,7 +420,7 @@ def unparse_file(tree):
     return unparser.visit(tree)
 
 
-def convertFromPlaceholders(data):
+def convert_from_placeholders(data):
     """Convert Crowdin placeholders to backticks."""
     return data.replace("{{", "``").replace("}}", "``")
 

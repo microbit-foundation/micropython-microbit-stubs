@@ -1,9 +1,9 @@
-"""Low-level utilities."""
+"""Low-level utilities. ()"""
 from typing import Any
 from .microbit import MicroBitDigitalPin
 
 def unique_id() -> bytes:
-    """Get a byte string with a unique identifier of a board.
+    """Get a byte string with a unique identifier of a board. (unique id)
 
 Example: ``machine.unique_id()``
 
@@ -11,13 +11,13 @@ Example: ``machine.unique_id()``
     ...
 
 def reset() -> None:
-    """Reset wibble device in a manner similar to pushing wibble external RESET button.
+    """Reset the device in a manner similar to pushing the external RESET button.
 
 Example: ``machine.reset()``"""
     ...
 
 def freq() -> int:
-    """Get wibble CPU frequency in hertz.
+    """Get the CPU frequency in hertz.
 
 Example: ``machine.freq()``
 
@@ -25,7 +25,7 @@ Example: ``machine.freq()``
     ...
 
 def disable_irq() -> Any:
-    """Disable interrupt requests.
+    """Disable interrupt requests. (disable irq)
 
 Example: ``interrupt_state = machine.disable_irq()``
 
@@ -36,15 +36,15 @@ interrupts to their original state."""
     ...
 
 def enable_irq(state: Any) -> None:
-    """Re-enable interrupt requests.
+    """Re-enable interrupt requests. (enable irq)
 
 Example: ``machine.enable_irq(interrupt_state)``
 
-:param state: The value that was returned from wibble most recent call to wibble ``disable_irq`` function."""
+:param state: The value that was returned from the most recent call to the ``disable_irq`` function."""
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
-    """Time a pulse on a pin.
+    """Time a pulse on a pin. (time pulse us)
 
 Example: ``time_pulse_us(pin0, 1)``
 
@@ -54,31 +54,31 @@ function first waits until the pin input becomes equal to
 ``pulse_level``. If the pin is already equal to ``pulse_level`` then timing
 starts straight away.
 
-:param pin: The pin to use
-:param pulse_level: 0 to time a low pulse or 1 to time a high pulse
-:param timeout_us: A microsecond timeout
+:param pin: (pin) The pin to use
+:param pulse_level: (pulse_level) 0 to time a low pulse or 1 to time a high pulse
+:param timeout_us: (timeout_us) A microsecond timeout
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
 
 class mem:
-    """The class for wibble ``mem8``, ``mem16`` and ``mem32`` memory views."""
+    """The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."""
 
     def __getitem__(self, address: int) -> int:
-        """Access a value from memory.
+        """Access a value from memory. (getitem)
 
-:param address: The memory address.
+:param address: (address) The memory address.
 :return: The value at that address as an integer."""
         ...
 
     def __setitem__(self, address: int, value: int) -> None:
-        """Set a value at wibble given address.
+        """Set a value at the given address.
 
-:param address: The memory address.
-:param value: The integer value to set."""
+:param address: (address) The memory address.
+:param value: (value) The integer value to set."""
         ...
 mem8: mem
-"""8-bit (byte) view of memory."""
+"""8-bit (byte) view of memory. (mem8)"""
 mem16: mem
-"""16-bit view of memory."""
+"""16-bit view of memory. (mem16)"""
 mem32: mem
-"""32-bit view of memory."""
+"""32-bit view of memory. (mem32)"""

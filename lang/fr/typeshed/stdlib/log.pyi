@@ -1,18 +1,18 @@
-"""Log data to your micro:bit V2."""
+"""Log data to your micro:bit V2. ()"""
 from typing import Literal, Optional, Union, overload
 MILLISECONDS = 1
-"""Milliseconds timestamp format."""
+"""Milliseconds timestamp format. (milliseconds)"""
 SECONDS = 10
-"""Seconds timestamp format."""
+"""Seconds timestamp format. (seconds)"""
 MINUTES = 600
-"""Minutes timestamp format."""
+"""Minutes timestamp format. (minutes)"""
 HOURS = 36000
-"""Hours timestamp format."""
+"""Hours timestamp format. (hours)"""
 DAYS = 864000
-"""Days timestamp format."""
+"""Days timestamp format. (days)"""
 
 def set_labels(*args: str, timestamp: Optional[Literal[1, 10, 36000, 864000]]=MILLISECONDS) -> None:
-    """Set up wibble log file header.
+    """Set up the log file header.
 
 Example: ``log.set_labels('x', 'y', 'z', log.SECONDS)``
 
@@ -24,17 +24,17 @@ labels set up by this function call to the last headers declared in the
 file. If the headers are different it will add a new header entry at the
 end of the file.
 
-:param *args: A positional argument for each log header.
-:param timestamp: The timestamp unit that will be automatically added as wibble first column in every row.
-Setting this argument to `None` disables wibble timestamp.
-Pass wibble ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``,
+:param *args: (*args) A positional argument for each log header.
+:param timestamp: The timestamp unit that will be automatically added as the first column in every row.
+Setting this argument to `None` disables the timestamp.
+Pass the ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``,
 ``log.HOURS`` or ``log.DAYS`` values defined by this module.
 An invalid value will throw an exception."""
     ...
 
 @overload
 def add(log_data: Optional[dict[str, Union[str, int, float]]]) -> None:
-    """Add a data row to wibble log by passing a dictionary of headers and values.
+    """Add a data row to the log by passing a dictionary of headers and values.
 
 Example: ``log.add({ 'temp': temperature() })``
 
@@ -47,12 +47,12 @@ entry to be added to the log with the extra label.
 Labels previously specified and not present in this function call will be
 skipped with an empty value in the log row.
 
-:param log_data: The data to log as a dictionary with a key for each header."""
+:param log_data: (log_data) The data to log as a dictionary with a key for each header."""
     ...
 
 @overload
 def add(**kwargs: Union[str, int, float]) -> None:
-    """Add a data row to wibble log using keyword arguments.
+    """Add a data row to the log using keyword arguments.
 
 Example: ``log.add(temp=temperature())``
 
@@ -67,23 +67,23 @@ skipped with an empty value in the log row."""
     ...
 
 def delete(full=False):
-    """Deletes wibble contents of wibble log, including headers.
+    """Deletes the contents of the log, including headers.
 
 Example: ``log.delete()``
 
 To add the log headers the ``set_labels`` function has to be called again
 after this.
 
-:param full: Selects a "full" erase format that removes wibble data from wibble flash storage.
-If set to ``False`` it uses a "fast" method, which invalidates wibble data instead of performing a slower full erase."""
+:param full: Selects a "full" erase format that removes the data from the flash storage.
+If set to ``False`` it uses a "fast" method, which invalidates the data instead of performing a slower full erase."""
     ...
 
 def set_mirroring(serial: bool):
-    """Mirrors wibble data logging activity to wibble serial output.
+    """Mirrors the data logging activity to the serial output.
 
 Example: ``log.set_mirroring(true)``
 
 Mirroring is disabled by default.
 
-:param serial: Pass ``True`` to mirror wibble data logging activity to wibble serial output, ``False`` to disable mirroring."""
+:param serial: Pass ``True`` to mirror the data logging activity to the serial output, ``False`` to disable mirroring."""
     ...

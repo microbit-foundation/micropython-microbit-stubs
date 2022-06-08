@@ -1,8 +1,8 @@
-"""Measure wibble acceleration of wibble micro:bit and recognise gestures."""
+"""Measure the acceleration of the micro:bit and recognise gestures."""
 from typing import Tuple
 
 def get_x() -> int:
-    """Get wibble acceleration measurement in wibble ``x`` axis in milli-g.
+    """Get the acceleration measurement in the ``x`` axis in milli-g.
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """Get wibble acceleration measurement in wibble ``y`` axis in milli-g.
+    """Get the acceleration measurement in the ``y`` axis in milli-g.
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """Get wibble acceleration measurement in wibble ``z`` axis in milli-g.
+    """Get the acceleration measurement in the ``z`` axis in milli-g.
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Get wibble acceleration measurements in all axes at once as a tuple.
+    """Get the acceleration measurements in all axes at once as a tuple.
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """Get wibble name of wibble current gesture.
+    """Get the name of the current gesture.
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """Check if wibble named gesture is currently active.
+    """Check if the named gesture is currently active.
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -56,12 +56,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: The gesture name.
+:param name: (name) The gesture name.
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """Check if wibble named gesture was active since wibble last call.
+    """Check if the named gesture was active since the last call.
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,11 +70,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: The gesture name.
+:param name: (name) The gesture name.
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """Return a tuple of wibble gesture history.
+    """Return a tuple of the gesture history.
 
 Example: ``accelerometer.get_gestures()``
 

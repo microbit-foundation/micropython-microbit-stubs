@@ -1,4 +1,4 @@
-"""Pins, images, sounds, temperature and volume."""
+"""Pins, images, sounds, temperature and volume. ()"""
 from _typeshed import ReadableBuffer
 from typing import Any, Callable, List, Optional, overload
 from . import accelerometer as accelerometer
@@ -12,7 +12,7 @@ from . import uart as uart
 from . import audio as audio
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Schedule a function to be called at a given interval **V2 only**.
+    """Schedule a function to be called at a given interval **V2 only**. (run every)
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -28,31 +28,31 @@ or used as a decorator::
 
 Arguments with different time units are additive.
 
-:param callback: The callback to invoke. Omit when using as a decorator.
-:param days: The interval in days.
-:param h: The interval in hours.
-:param min: The interval in minutes.
-:param s: The interval in seconds.
-:param ms: The interval in milliseconds."""
+:param callback: (callback) The callback to invoke. Omit when using as a decorator.
+:param days: (days) The interval in days.
+:param h: (h) The interval in hours.
+:param min: (min) The interval in minutes.
+:param s: (s) The interval in seconds.
+:param ms: (ms) The interval in milliseconds."""
 
 def panic(n: int) -> None:
-    """Enter a panic mode.
+    """Enter a panic mode. (panic)
 
 Example: ``panic(127)``
 
-:param n: An arbitrary integer <= 255 to indicate a status.
+:param n: (n) An arbitrary integer <= 255 to indicate a status.
 
 Requires restart."""
 
 def reset() -> None:
-    """Restart wibble board."""
+    """Restart the board."""
 
 def sleep(n: float) -> None:
-    """Wait for ``n`` milliseconds.
+    """Wait for ``n`` milliseconds. (sleep)
 
 Example: ``sleep(1000)``
 
-:param n: The number of milliseconds to wait
+:param n: (n) The number of milliseconds to wait
 
 One second is 1000 milliseconds, so::
 
@@ -61,19 +61,19 @@ One second is 1000 milliseconds, so::
 will pause the execution for one second."""
 
 def running_time() -> int:
-    """Get wibble running time of wibble board.
+    """Get the running time of the board.
 
 :return: The number of milliseconds since the board was switched on or restarted."""
 
 def temperature() -> int:
-    """Get wibble temperature of wibble micro:bit in degrees Celcius."""
+    """Get the temperature of the micro:bit in degrees Celcius."""
 
 def set_volume(v: int) -> None:
-    """Sets wibble volume.
+    """Sets the volume.
 
 Example: ``set_volume(127)``
 
-:param v: a value between 0 (low) and 255 (high).
+:param v: (v) a value between 0 (low) and 255 (high).
 
 Out of range values will be clamped to 0 or 255.
 
@@ -81,16 +81,16 @@ Out of range values will be clamped to 0 or 255.
     ...
 
 class Button:
-    """The class for wibble buttons `button_a` and `button_b`."""
+    """The class for the buttons `button_a` and `button_b`."""
 
     def is_pressed(self) -> bool:
-        """Check if wibble button is pressed.
+        """Check if the button is pressed.
 
 :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
         ...
 
     def was_pressed(self) -> bool:
-        """Check if wibble button was pressed since wibble device started or wibble last time this method was called.
+        """Check if the button was pressed since the device started or the last time this method was called.
 
 Calling this method will clear the press state so
 that the button must be pressed again before this method will return
@@ -100,18 +100,18 @@ that the button must be pressed again before this method will return
         ...
 
     def get_presses(self) -> int:
-        """Get wibble running total of button presses, and resets this total
+        """Get the running total of button presses, and resets this total
 to zero before returning.
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""The left button ``Button`` object."""
+"""The left button ``Button`` object. (button a)"""
 button_b: Button
-"""The right button ``Button`` object."""
+"""The right button ``Button`` object. (button b)"""
 
 class MicroBitDigitalPin:
-    """A digital pin.
+    """A digital pin. (microbitdigitalpin)
 
 Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
     NO_PULL: int
@@ -119,7 +119,7 @@ Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin
     PULL_DOWN: int
 
     def read_digital(self) -> int:
-        """Get wibble digital value of wibble pin.
+        """Get the digital value of the pin.
 
 Example: ``value = pin0.read_digital()``
 
@@ -127,23 +127,23 @@ Example: ``value = pin0.read_digital()``
         ...
 
     def write_digital(self, value: int) -> None:
-        """Set wibble digital value of wibble pin.
+        """Set the digital value of the pin.
 
 Example: ``pin0.write_digital(1)``
 
-:param value: ``1`` to set wibble pin high or ``0`` to set wibble pin low"""
+:param value: ``1`` to set the pin high or ``0`` to set the pin low"""
         ...
 
     def set_pull(self, value: int) -> None:
-        """Set wibble pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
+        """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
 
 Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: The pull state from wibble relevant pin, e.g. ``pin0.PULL_UP``."""
+:param value: The pull state from the relevant pin, e.g. ``pin0.PULL_UP``."""
         ...
 
     def get_pull(self) -> int:
-        """Get wibble pull state on a pin.
+        """Get the pull state on a pin.
 
 Example: ``pin0.get_pull()``
 
@@ -154,7 +154,7 @@ when a pin mode requires it."""
         ...
 
     def get_mode(self) -> str:
-        """Returns wibble pin mode.
+        """Returns the pin mode.
 
 Example: ``pin0.get_mode()``
 
@@ -166,43 +166,43 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """Output a PWM signal on wibble pin, with wibble duty cycle proportional to ``value``.
+        """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
 
 Example: ``pin0.write_analog(254)``
 
-:param value: An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty)."""
+:param value: (value) An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty)."""
 
     def set_analog_period(self, period: int) -> None:
-        """Set wibble period of wibble PWM signal being output to ``period`` in milliseconds.
+        """Set the period of the PWM signal being output to ``period`` in milliseconds.
 
 Example: ``pin0.set_analog_period(10)``
 
-:param period: The period in milliseconds with a minimum valid value of 1ms."""
+:param period: (period) The period in milliseconds with a minimum valid value of 1ms."""
 
     def set_analog_period_microseconds(self, period: int) -> None:
-        """Set wibble period of wibble PWM signal being output to ``period`` in microseconds.
+        """Set the period of the PWM signal being output to ``period`` in microseconds.
 
 Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: The period in microseconds with a minimum valid value of 256µs."""
+:param period: (period) The period in microseconds with a minimum valid value of 256µs."""
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """A pin with analog and digital features."""
+    """A pin with analog and digital features. (microbitanalogdigitalpin)"""
 
     def read_analog(self) -> int:
-        """Read wibble voltage applied to wibble pin.
+        """Read the voltage applied to the pin.
 
 Example: ``pin0.read_analog()``
 
 :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """A pin with analog, digital and touch features."""
+    """A pin with analog, digital and touch features. (microbittouchpin)"""
     CAPACITIVE: int
     RESISTIVE: int
 
     def is_touched(self) -> bool:
-        """Check if wibble pin is being touched.
+        """Check if the pin is being touched.
 
 Example: ``pin0.is_touched()``
 
@@ -225,201 +225,201 @@ does not require you to make a ground connection as part of a circuit.
         ...
 
     def set_touch_mode(self, value: int) -> None:
-        """Set wibble touch mode for wibble pin.
+        """Set the touch mode for the pin.
 
 Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
 The default touch mode for the pins on the edge connector is
 `resistive`. The default for the logo pin **V2** is `capacitive`.
 
-:param value: ``CAPACITIVE`` or ``RESISTIVE`` from wibble relevant pin."""
+:param value: ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin."""
         ...
 pin0: MicroBitTouchPin
-"""Pin with digital, analog and touch features."""
+"""Pin with digital, analog and touch features. (pin0)"""
 pin1: MicroBitTouchPin
-"""Pin with digital, analog and touch features."""
+"""Pin with digital, analog and touch features. (pin1)"""
 pin2: MicroBitTouchPin
-"""Pin with digital, analog and touch features."""
+"""Pin with digital, analog and touch features. (pin2)"""
 pin3: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features."""
+"""Pin with digital and analog features. (pin3)"""
 pin4: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features."""
+"""Pin with digital and analog features. (pin4)"""
 pin5: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin5)"""
 pin6: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin6)"""
 pin7: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin7)"""
 pin8: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin8)"""
 pin9: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin9)"""
 pin10: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features."""
+"""Pin with digital and analog features. (pin10)"""
 pin11: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin11)"""
 pin12: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin12)"""
 pin13: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin13)"""
 pin14: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin14)"""
 pin15: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin15)"""
 pin16: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin16)"""
 pin19: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin19)"""
 pin20: MicroBitDigitalPin
-"""Pin with digital features."""
+"""Pin with digital features. (pin20)"""
 pin_logo: MicroBitTouchPin
-"""A touch sensitive logo pin on wibble front of wibble micro:bit, which by default is set to capacitive touch mode."""
+"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."""
 pin_speaker: MicroBitAnalogDigitalPin
-"""A pin to address wibble micro:bit speaker.
+"""A pin to address the micro:bit speaker.
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """An image to show on wibble micro:bit LED display.
+    """An image to show on the micro:bit LED display.
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """Heart image."""
+    """Heart image. (heart)"""
     HEART_SMALL: Image
-    """Small heart image."""
+    """Small heart image. (heart small)"""
     HAPPY: Image
-    """Happy face image."""
+    """Happy face image. (happy)"""
     SMILE: Image
-    """Smiling face image."""
+    """Smiling face image. (smile)"""
     SAD: Image
-    """Sad face image."""
+    """Sad face image. (sad)"""
     CONFUSED: Image
-    """Confused face image."""
+    """Confused face image. (confused)"""
     ANGRY: Image
-    """Angry face image."""
+    """Angry face image. (angry)"""
     ASLEEP: Image
-    """Sleeping face image."""
+    """Sleeping face image. (asleep)"""
     SURPRISED: Image
-    """Surprised face image."""
+    """Surprised face image. (surprised)"""
     SILLY: Image
-    """Silly face image."""
+    """Silly face image. (silly)"""
     FABULOUS: Image
-    """Sunglasses face image."""
+    """Sunglasses face image. (fabulous)"""
     MEH: Image
-    """Unimpressed face image."""
+    """Unimpressed face image. (meh)"""
     YES: Image
-    """Tick image."""
+    """Tick image. (yes)"""
     NO: Image
-    """Cross image."""
+    """Cross image. (no)"""
     CLOCK12: Image
-    """Image with line pointing to 12 o'clock."""
+    """Image with line pointing to 12 o'clock. (clock12)"""
     CLOCK11: Image
-    """Image with line pointing to 11 o'clock."""
+    """Image with line pointing to 11 o'clock. (clock11)"""
     CLOCK10: Image
-    """Image with line pointing to 10 o'clock."""
+    """Image with line pointing to 10 o'clock. (clock10)"""
     CLOCK9: Image
-    """Image with line pointing to 9 o'clock."""
+    """Image with line pointing to 9 o'clock. (clock9)"""
     CLOCK8: Image
-    """Image with line pointing to 8 o'clock."""
+    """Image with line pointing to 8 o'clock. (clock8)"""
     CLOCK7: Image
-    """Image with line pointing to 7 o'clock."""
+    """Image with line pointing to 7 o'clock. (clock7)"""
     CLOCK6: Image
-    """Image with line pointing to 6 o'clock."""
+    """Image with line pointing to 6 o'clock. (clock6)"""
     CLOCK5: Image
-    """Image with line pointing to 5 o'clock."""
+    """Image with line pointing to 5 o'clock. (clock5)"""
     CLOCK4: Image
-    """Image with line pointing to 4 o'clock."""
+    """Image with line pointing to 4 o'clock. (clock4)"""
     CLOCK3: Image
-    """Image with line pointing to 3 o'clock."""
+    """Image with line pointing to 3 o'clock. (clock3)"""
     CLOCK2: Image
-    """Image with line pointing to 2 o'clock."""
+    """Image with line pointing to 2 o'clock. (clock2)"""
     CLOCK1: Image
-    """Image with line pointing to 1 o'clock."""
+    """Image with line pointing to 1 o'clock. (clock1)"""
     ARROW_N: Image
-    """Image of arrow pointing north."""
+    """Image of arrow pointing north. (arrow n)"""
     ARROW_NE: Image
-    """Image of arrow pointing north east."""
+    """Image of arrow pointing north east. (arrow ne)"""
     ARROW_E: Image
-    """Image of arrow pointing east."""
+    """Image of arrow pointing east. (arrow e)"""
     ARROW_SE: Image
-    """Image of arrow pointing south east."""
+    """Image of arrow pointing south east. (arrow se)"""
     ARROW_S: Image
-    """Image of arrow pointing south."""
+    """Image of arrow pointing south. (arrow s)"""
     ARROW_SW: Image
-    """Image of arrow pointing south west."""
+    """Image of arrow pointing south west. (arrow sw)"""
     ARROW_W: Image
-    """Image of arrow pointing west."""
+    """Image of arrow pointing west. (arrow w)"""
     ARROW_NW: Image
-    """Image of arrow pointing north west."""
+    """Image of arrow pointing north west. (arrow nw)"""
     TRIANGLE: Image
-    """Image of a triangle pointing up."""
+    """Image of a triangle pointing up. (triangle)"""
     TRIANGLE_LEFT: Image
-    """Image of a triangle in wibble left corner."""
+    """Image of a triangle in the left corner."""
     CHESSBOARD: Image
-    """Alternate LEDs lit in a chessboard pattern."""
+    """Alternate LEDs lit in a chessboard pattern. (chessboard)"""
     DIAMOND: Image
-    """Diamond image."""
+    """Diamond image. (diamond)"""
     DIAMOND_SMALL: Image
-    """Small diamond image."""
+    """Small diamond image. (diamond small)"""
     SQUARE: Image
-    """Square image."""
+    """Square image. (square)"""
     SQUARE_SMALL: Image
-    """Small square image."""
+    """Small square image. (square small)"""
     RABBIT: Image
-    """Rabbit image."""
+    """Rabbit image. (rabbit)"""
     COW: Image
-    """Cow image."""
+    """Cow image. (cow)"""
     MUSIC_CROTCHET: Image
-    """Crotchet note image."""
+    """Crotchet note image. (music crotchet)"""
     MUSIC_QUAVER: Image
-    """Quaver note image."""
+    """Quaver note image. (music quaver)"""
     MUSIC_QUAVERS: Image
-    """Pair of quavers note image."""
+    """Pair of quavers note image. (music quavers)"""
     PITCHFORK: Image
-    """Pitchfork image."""
+    """Pitchfork image. (pitchfork)"""
     XMAS: Image
-    """Christmas tree image."""
+    """Christmas tree image. (xmas)"""
     PACMAN: Image
-    """Pac-Man arcade character image."""
+    """Pac-Man arcade character image. (pacman)"""
     TARGET: Image
-    """Target image."""
+    """Target image. (target)"""
     TSHIRT: Image
-    """T-shirt image."""
+    """T-shirt image. (tshirt)"""
     ROLLERSKATE: Image
-    """Rollerskate image."""
+    """Rollerskate image. (rollerskate)"""
     DUCK: Image
-    """Duck image."""
+    """Duck image. (duck)"""
     HOUSE: Image
-    """House image."""
+    """House image. (house)"""
     TORTOISE: Image
-    """Tortoise image."""
+    """Tortoise image. (tortoise)"""
     BUTTERFLY: Image
-    """Butterfly image."""
+    """Butterfly image. (butterfly)"""
     STICKFIGURE: Image
-    """Stick figure image."""
+    """Stick figure image. (stickfigure)"""
     GHOST: Image
-    """Ghost image."""
+    """Ghost image. (ghost)"""
     SWORD: Image
-    """Sword image."""
+    """Sword image. (sword)"""
     GIRAFFE: Image
-    """Giraffe image."""
+    """Giraffe image. (giraffe)"""
     SKULL: Image
-    """Skull image."""
+    """Skull image. (skull)"""
     UMBRELLA: Image
-    """Umbrella image."""
+    """Umbrella image. (umbrella)"""
     SNAKE: Image
-    """Snake image."""
+    """Snake image. (snake)"""
     ALL_CLOCKS: List[Image]
-    """A list containing all wibble CLOCK_ images in sequence."""
+    """A list containing all the CLOCK_ images in sequence."""
     ALL_ARROWS: List[Image]
-    """A list containing all wibble ARROW_ images in sequence."""
+    """A list containing all the ARROW_ images in sequence."""
 
     @overload
     def __init__(self, string: str) -> None:
-        """Create an image from a string describing which LEDs are lit.
+        """Create an image from a string describing which LEDs are lit. (init)
 
 ``string`` has to consist of digits 0-9 arranged into lines,
 describing the image, for example::
@@ -433,16 +433,16 @@ describing the image, for example::
 will create a 5×5 image of an X. The end of a line is indicated by a
 colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: The string describing wibble image."""
+:param string: The string describing the image."""
         ...
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """Create an empty image with ``width`` columns and ``height`` rows.
+        """Create an empty image with ``width`` columns and ``height`` rows. (init)
 
-:param width: Optional width of wibble image
-:param height: Optional height of wibble image
-:param buffer: Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize wibble image
+:param width: Optional width of the image
+:param height: Optional height of the image
+:param buffer: Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
 
 Examples::
 
@@ -453,90 +453,90 @@ These create 2 x 2 pixel images at full brightness."""
         ...
 
     def width(self) -> int:
-        """Get wibble number of columns.
+        """Get the number of columns.
 
 :return: The number of columns in the image"""
         ...
 
     def height(self) -> int:
-        """Get wibble number of rows.
+        """Get the number of rows.
 
 :return: The number of rows in the image"""
         ...
 
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """Set wibble brightness of a pixel.
+        """Set the brightness of a pixel.
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: The column number
-:param y: The row number
-:param value: The brightness as an integer between 0 (dark) and 9 (bright)
+:param x: (x) The column number
+:param y: (y) The row number
+:param value: (value) The brightness as an integer between 0 (dark) and 9 (bright)
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def get_pixel(self, x: int, y: int) -> int:
-        """Get wibble brightness of a pixel.
+        """Get the brightness of a pixel.
 
 Example: ``my_image.get_pixel(0, 0)``
 
-:param x: The column number
-:param y: The row number
+:param x: (x) The column number
+:param y: (y) The row number
 :return: The brightness as an integer between 0 and 9."""
         ...
 
     def shift_left(self, n: int) -> Image:
-        """Create a new image by shifting wibble picture left.
+        """Create a new image by shifting the picture left.
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: The number of columns to shift by
+:param n: (n) The number of columns to shift by
 :return: The shifted image"""
         ...
 
     def shift_right(self, n: int) -> Image:
-        """Create a new image by shifting wibble picture right.
+        """Create a new image by shifting the picture right.
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: The number of columns to shift by
+:param n: (n) The number of columns to shift by
 :return: The shifted image"""
         ...
 
     def shift_up(self, n: int) -> Image:
-        """Create a new image by shifting wibble picture up.
+        """Create a new image by shifting the picture up.
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: The number of rows to shift by
+:param n: (n) The number of rows to shift by
 :return: The shifted image"""
         ...
 
     def shift_down(self, n: int) -> Image:
-        """Create a new image by shifting wibble picture down.
+        """Create a new image by shifting the picture down.
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: The number of rows to shift by
+:param n: (n) The number of rows to shift by
 :return: The shifted image"""
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Create a new image by cropping wibble picture.
+        """Create a new image by cropping the picture.
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: The crop offset column
-:param y: The crop offset row
-:param w: The crop width
-:param h: The crop height
+:param x: (x) The crop offset column
+:param y: (y) The crop offset row
+:param w: (w) The crop width
+:param h: (h) The crop height
 :return: The new image"""
         ...
 
     def copy(self) -> Image:
-        """Create an exact copy of wibble image.
+        """Create an exact copy of the image.
 
 Example: ``Image.HEART.copy()``
 
@@ -544,7 +544,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """Create a new image by inverting wibble brightness of wibble pixels in wibble
+        """Create a new image by inverting the brightness of the pixels in the
 source image.
 
 Example: ``Image.SMALL_HEART.invert()``
@@ -553,28 +553,28 @@ Example: ``Image.SMALL_HEART.invert()``
         ...
 
     def fill(self, value: int) -> None:
-        """Set wibble brightness of all wibble pixels in wibble image.
+        """Set the brightness of all the pixels in the image.
 
 Example: ``my_image.fill(5)``
 
-:param value: The new brightness as a number between 0 (dark) and 9 (bright).
+:param value: (value) The new brightness as a number between 0 (dark) and 9 (bright).
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """Copy an area from anowibbler image into this image.
+        """Copy an area from another image into this image.
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-:param src: The source image
-:param x: The starting column offset in wibble source image
-:param y: The starting row offset in wibble source image
-:param w: The number of columns to copy
-:param h: The number of rows to copy
-:param xdest: The column offset to modify in this image
-:param ydest: The row offset to modify in this image
+:param src: (src) The source image
+:param x: The starting column offset in the source image
+:param y: The starting row offset in the source image
+:param w: (w) The number of columns to copy
+:param h: (h) The number of rows to copy
+:param xdest: (xdest) The column offset to modify in this image
+:param ydest: (ydest) The row offset to modify in this image
 
 Pixels outside the source image are treated as having a brightness of 0.
 
@@ -590,74 +590,74 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """Get a compact string representation of wibble image."""
+        """Get a compact string representation of the image."""
         ...
 
     def __str__(self) -> str:
-        """Get a readable string representation of wibble image."""
+        """Get a readable string representation of the image."""
         ...
 
     def __add__(self, other: Image) -> Image:
-        """Create a new image by adding wibble brightness values from wibble two
+        """Create a new image by adding the brightness values from the two
 images for each pixel.
 
 Example: ``Image.HEART + Image.HAPPY``
 
-:param other: The image to add."""
+:param other: (other) The image to add."""
         ...
 
     def __sub__(self, other: Image) -> Image:
-        """Create a new image by subtracting wibble brightness values of wibble
-owibbler image from this image.
+        """Create a new image by subtracting the brightness values of the
+other image from this image.
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: The image to subtract."""
+:param other: (other) The image to subtract."""
         ...
 
     def __mul__(self, n: float) -> Image:
-        """Create a new image by multiplying wibble brightness of each pixel by
+        """Create a new image by multiplying the brightness of each pixel by
 ``n``.
 
 Example: ``Image.HEART * 0.5``
 
-:param n: The value to multiply by."""
+:param n: (n) The value to multiply by."""
         ...
 
     def __truediv__(self, n: float) -> Image:
-        """Create a new image by dividing wibble brightness of each pixel by
+        """Create a new image by dividing the brightness of each pixel by
 ``n``.
 
 Example: ``Image.HEART / 2``
 
-:param n: The value to divide by."""
+:param n: (n) The value to divide by."""
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Represents wibble transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
+    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
     QUIET: SoundEvent
-    """Represents wibble transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
+    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
 
 class Sound:
-    """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
+    """The built-in sounds can be called using ``audio.play(Sound.NAME)``. (sound)"""
     GIGGLE: Sound
-    """Giggling sound."""
+    """Giggling sound. (giggle)"""
     HAPPY: Sound
-    """Happy sound."""
+    """Happy sound. (happy)"""
     HELLO: Sound
-    """Greeting sound."""
+    """Greeting sound. (hello)"""
     MYSTERIOUS: Sound
-    """Mysterious sound."""
+    """Mysterious sound. (mysterious)"""
     SAD: Sound
-    """Sad sound."""
+    """Sad sound. (sad)"""
     SLIDE: Sound
-    """Sliding sound."""
+    """Sliding sound. (slide)"""
     SOARING: Sound
-    """Soaring sound."""
+    """Soaring sound. (soaring)"""
     SPRING: Sound
-    """Spring sound."""
+    """Spring sound. (spring)"""
     TWINKLE: Sound
-    """Twinkling sound."""
+    """Twinkling sound. (twinkle)"""
     YAWN: Sound
-    """Yawning sound."""
+    """Yawning sound. (yawn)"""

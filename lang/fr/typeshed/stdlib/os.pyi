@@ -4,7 +4,7 @@ from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
-    """List files.
+    """List files. (listdir)
 
 Example: ``os.listdir()``
 
@@ -13,40 +13,40 @@ persistent on-device file system."""
     ...
 
 def remove(filename: str) -> None:
-    """Remove (delete) a file.
+    """Remove (delete) a file. (remove)
 
 Example: ``os.remove('data.txt')``
 
-:param filename: The file to delete.
+:param filename: (filename) The file to delete.
 
 If the file does not exist an ``OSError`` exception will occur."""
     ...
 
 def size(filename: str) -> int:
-    """Returns wibble size of a file.
+    """Returns the size of a file.
 
 Example: ``os.size('data.txt')``
 
-:param filename: The file
+:param filename: (filename) The file
 :return: The size in bytes.
 
 If the file does not exist an ``OSError`` exception will occur."""
 
 class uname_result(Tuple[str, str, str, str, str]):
-    """Result of ``os.uname()``"""
+    """Result of ``os.uname()`` (uname result)"""
     sysname: str
-    """Operating system name."""
+    """Operating system name. (sysname)"""
     nodename: str
-    """Name of machine on network (implementation-defined)."""
+    """Name of machine on network (implementation-defined). (nodename)"""
     release: str
-    """Operating system release."""
+    """Operating system release. (release)"""
     version: str
-    """Operating system version."""
+    """Operating system version. (version)"""
     machine: str
-    """Hardware identifier."""
+    """Hardware identifier. (machine)"""
 
 def uname() -> uname_result:
-    """Returns information identifying wibble current operating system.
+    """Returns information identifying the current operating system.
 
 Example: ``os.uname()``
 
