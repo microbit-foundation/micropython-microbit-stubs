@@ -20,9 +20,12 @@ from typing import Optional
 
 NODE_TYPES_WITH_DOCSTRINGS = (ast.FunctionDef, ast.Module, ast.ClassDef)
 DIR = os.path.dirname(__file__)
+EN_JSON_PATH = os.path.join(DIR, "../crowdin/api.en.json")
+TRANSLATED_JSON_DIR = os.path.join(DIR, "../crowdin/translated")
 
 
 def typeshed_to_crowdin():
+    """Entrypoint to convert from English typeshed files to a JSON file for Crowdin translation."""
     data = {}
     files_to_process = get_stub_files()
     for ts_file in files_to_process:
@@ -114,6 +117,10 @@ def get_source(file_path):
         return file.read()
 
 
+def pretty_api_name(name):
+    return name.replace("_", " ").strip().lower()
+
+
 def get_entries(node, name, key):
     entries = {}
     docstring = get_docstring(node)
@@ -121,9 +128,8 @@ def get_entries(node, name, key):
     # We don't want to translate param names if we have no summary.
     if not summary:
         return {}
-    api_name_for_translation = name.replace("_", " ").strip().lower()
     # Remove prefixed microbit.foo names as it's better just to translate the important part.
-    api_name_for_translation = api_name_for_translation.replace("microbit.", "")
+    api_name_for_translation = pretty_api_name(name).replace("microbit.", "")
     entries.update(
         format_translation_data(
             key,
@@ -142,7 +148,7 @@ def get_entries(node, name, key):
         entries.update(
             format_translation_data(
                 param_name_key,
-                param_key,
+                pretty_api_name(param_key),
                 f"(parameter name) {matched_params[param_key]}",
             )
         )
@@ -200,7 +206,7 @@ def convert_to_placeholders(msg):
 def format_translation_data(key, defaultMessage, description):
     return {
         key: {
-            "message": convert_to_placeholders(defaultMessage).replace("the", "le"),
+            "message": convert_to_placeholders(defaultMessage),
             "description": description,
         }
     }
@@ -269,13 +275,13 @@ def check_param_docs(parent_key, param_list, matched_params):
 
 
 def save_docstrings_as_json(data):
-    file_name = os.path.join(DIR, "lang/api.en.json")
-    with open(file_name, "w") as file:
+    with open(EN_JSON_PATH, "w") as file:
         file.write(json.dumps(data, indent=2))
 
 
 def crowdin_to_typeshed():
-    en_json = read_json(os.path.join(DIR, "lang/api.en.json"))
+    """Entrypoint to convert from Crowdin (translated) JSON to individual typeshed files."""
+    en_json = read_json(EN_JSON_PATH)
     translations_to_process = get_translated_json_files()
     stubs_to_process = get_stub_files()
     for translated in translations_to_process:
@@ -286,14 +292,12 @@ def crowdin_to_typeshed():
 
 
 def get_translated_json_files() -> list[str]:
-    top = os.path.join(DIR, "lang")
     files_to_process: list[str] = []
-    for root, dirs, files in os.walk(top):
-        for file in files:
-            file_path = os.path.join(root, file)
-            if file == "api.en.json":
-                continue
-            files_to_process.append(file_path)
+    for root, dirs, files in os.walk(TRANSLATED_JSON_DIR):
+        for name in files:
+            if re.match(r"^api.[a-z_-]+.json$", name):
+                file_path = os.path.join(root, name)
+                files_to_process.append(file_path)
     return sorted(files_to_process)
 
 

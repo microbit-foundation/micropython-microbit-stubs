@@ -41,17 +41,17 @@ def read(nbytes: Optional[int]=None) -> Optional[bytes]:
 
 Example: ``uart.read()``
 
-:param nbytes: If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible
+:param nbytes: (nbytes) If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible
 :return: A bytes object or ``None`` on timeout"""
     ...
 
 def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
-    """Read bytes into the ``buf``.
+    """Read bytes into the ``buf``. (readinto)
 
 Example: ``uart.readinto(input_buffer)``
 
 :param buf: (buf) The buffer to write to.
-:param nbytes: If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes.
+:param nbytes: (nbytes) If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes.
 :return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
     ...
 
@@ -64,7 +64,7 @@ Example: ``uart.readline()``
     ...
 
 def write(buf: Union[bytes, str]) -> Optional[int]:
-    """Write a buffer to the bus.
+    """Write a buffer to the bus. (write)
 
 Example: ``uart.write('hello world')``
 

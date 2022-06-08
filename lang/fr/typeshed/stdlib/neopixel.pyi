@@ -13,19 +13,19 @@ RGBW neopixels are only supported by micro:bit V2.
 
 See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`_ for warnings and other advice.
 
-:param pin: The pin controlling the neopixel strip.
-:param n: The number of neopixels in the strip.
-:param bpp: Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass ``4`` rather than the default of ``3`` for RGB and GRB."""
+:param pin: (pin) The pin controlling the neopixel strip.
+:param n: (n) The number of neopixels in the strip.
+:param bpp: (bpp) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass ``4`` rather than the default of ``3`` for RGB and GRB."""
         ...
 
     def clear(self) -> None:
-        """Clear all the pixels.
+        """Clear all the pixels. (clear)
 
 Example: ``np.clear()``"""
         ...
 
     def show(self) -> None:
-        """Show the pixels.
+        """Show the pixels. (show)
 
 Example: ``np.show()``
 
@@ -33,7 +33,7 @@ Must be called for any updates to become visible."""
         ...
 
     def write(self) -> None:
-        """Show the pixels (microbit V2 only).
+        """Show the pixels (microbit V2 only). (write)
 
 Example: ``np.write()``
 
@@ -47,7 +47,7 @@ Equivalent to ``show``."""
 
 Example: ``np.fill((0, 0, 255))``
 
-:param colour: A tuple of the same length as the number of bytes per pixel (bpp).
+:param colour: (colour) A tuple of the same length as the number of bytes per pixel (bpp).
 
 Use in conjunction with ``show()`` to update the neopixels."""
         ...

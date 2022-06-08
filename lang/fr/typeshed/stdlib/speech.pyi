@@ -1,4 +1,4 @@
-"""Make the micro:bit talk, sing and make other speech like sounds."""
+"""Make the micro:bit talk, sing and make other speech like sounds. ()"""
 from typing import Optional
 from .microbit import MicroBitDigitalPin, pin0
 
@@ -24,11 +24,11 @@ def pronounce(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throa
 Example: ``speech.pronounce(' /HEHLOW WERLD')``
 
 :param phonemes: (phonemes) The string of phonemes to pronounce
-:param pitch: A number representing the pitch of the voice
-:param speed: A number representing the speed of the voice
-:param mouth: A number representing the mouth of the voice
-:param throat: A number representing the throat of the voice
-:param pin: Optional argument to specify the output pin can be
+:param pitch: (pitch) A number representing the pitch of the voice
+:param speed: (speed) A number representing the speed of the voice
+:param mouth: (mouth) A number representing the mouth of the voice
+:param throat: (throat) A number representing the throat of the voice
+:param pin: (pin) Optional argument to specify the output pin can be
 used to override the default of ``pin0``. If we do not want any sound to
 play out of the pins can use ``pin=None``. microbit V2 only.
 
@@ -44,11 +44,11 @@ def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=12
 Example: ``speech.say('hello world')``
 
 :param words: (words) The string of words to say.
-:param pitch: A number representing the pitch of the voice
-:param speed: A number representing the speed of the voice
-:param mouth: A number representing the mouth of the voice
-:param throat: A number representing the throat of the voice
-:param pin: Optional argument to specify the output pin can be
+:param pitch: (pitch) A number representing the pitch of the voice
+:param speed: (speed) A number representing the speed of the voice
+:param mouth: (mouth) A number representing the mouth of the voice
+:param throat: (throat) A number representing the throat of the voice
+:param pin: (pin) Optional argument to specify the output pin can be
 used to override the default of ``pin0``. If we do not want any sound to
 play out of the pins can use ``pin=None``. microbit V2 only.
 
@@ -67,11 +67,11 @@ def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: in
 Example: ``speech.sing(' /HEHLOW WERLD')``
 
 :param phonemes: (phonemes) The string of words to sing.
-:param pitch: A number representing the pitch of the voice
-:param speed: A number representing the speed of the voice
-:param mouth: A number representing the mouth of the voice
-:param throat: A number representing the throat of the voice
-:param pin: Optional argument to specify the output pin can be
+:param pitch: (pitch) A number representing the pitch of the voice
+:param speed: (speed) A number representing the speed of the voice
+:param mouth: (mouth) A number representing the mouth of the voice
+:param throat: (throat) A number representing the throat of the voice
+:param pin: (pin) Optional argument to specify the output pin can be
 used to override the default of ``pin0``. If we do not want any sound to
 play out of the pins can use ``pin=None``. microbit V2 only.
 

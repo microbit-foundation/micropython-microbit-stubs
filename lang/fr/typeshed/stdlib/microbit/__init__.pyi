@@ -45,7 +45,7 @@ Example: ``panic(127)``
 Requires restart."""
 
 def reset() -> None:
-    """Restart the board."""
+    """Restart the board. (reset)"""
 
 def sleep(n: float) -> None:
     """Wait for ``n`` milliseconds. (sleep)
@@ -61,15 +61,15 @@ One second is 1000 milliseconds, so::
 will pause the execution for one second."""
 
 def running_time() -> int:
-    """Get the running time of the board.
+    """Get the running time of the board. (running time)
 
 :return: The number of milliseconds since the board was switched on or restarted."""
 
 def temperature() -> int:
-    """Get the temperature of the micro:bit in degrees Celcius."""
+    """Get the temperature of the micro:bit in degrees Celcius. (temperature)"""
 
 def set_volume(v: int) -> None:
-    """Sets the volume.
+    """Sets the volume. (set volume)
 
 Example: ``set_volume(127)``
 
@@ -81,16 +81,16 @@ Out of range values will be clamped to 0 or 255.
     ...
 
 class Button:
-    """The class for the buttons `button_a` and `button_b`."""
+    """The class for the buttons `button_a` and `button_b`. (button)"""
 
     def is_pressed(self) -> bool:
-        """Check if the button is pressed.
+        """Check if the button is pressed. (is pressed)
 
 :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
         ...
 
     def was_pressed(self) -> bool:
-        """Check if the button was pressed since the device started or the last time this method was called.
+        """Check if the button was pressed since the device started or the last time this method was called. (was pressed)
 
 Calling this method will clear the press state so
 that the button must be pressed again before this method will return
@@ -101,7 +101,7 @@ that the button must be pressed again before this method will return
 
     def get_presses(self) -> int:
         """Get the running total of button presses, and resets this total
-to zero before returning.
+to zero before returning. (get presses)
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
@@ -119,7 +119,7 @@ Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin
     PULL_DOWN: int
 
     def read_digital(self) -> int:
-        """Get the digital value of the pin.
+        """Get the digital value of the pin. (read digital)
 
 Example: ``value = pin0.read_digital()``
 
@@ -127,23 +127,23 @@ Example: ``value = pin0.read_digital()``
         ...
 
     def write_digital(self, value: int) -> None:
-        """Set the digital value of the pin.
+        """Set the digital value of the pin. (write digital)
 
 Example: ``pin0.write_digital(1)``
 
-:param value: ``1`` to set the pin high or ``0`` to set the pin low"""
+:param value: (value) ``1`` to set the pin high or ``0`` to set the pin low"""
         ...
 
     def set_pull(self, value: int) -> None:
-        """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
+        """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``. (set pull)
 
 Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: The pull state from the relevant pin, e.g. ``pin0.PULL_UP``."""
+:param value: (value) The pull state from the relevant pin, e.g. ``pin0.PULL_UP``."""
         ...
 
     def get_pull(self) -> int:
-        """Get the pull state on a pin.
+        """Get the pull state on a pin. (get pull)
 
 Example: ``pin0.get_pull()``
 
@@ -154,7 +154,7 @@ when a pin mode requires it."""
         ...
 
     def get_mode(self) -> str:
-        """Returns the pin mode.
+        """Returns the pin mode. (get mode)
 
 Example: ``pin0.get_mode()``
 
@@ -166,21 +166,21 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
+        """Output a PWM signal on the pin, with the duty cycle proportional to ``value``. (write analog)
 
 Example: ``pin0.write_analog(254)``
 
 :param value: (value) An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty)."""
 
     def set_analog_period(self, period: int) -> None:
-        """Set the period of the PWM signal being output to ``period`` in milliseconds.
+        """Set the period of the PWM signal being output to ``period`` in milliseconds. (set analog period)
 
 Example: ``pin0.set_analog_period(10)``
 
 :param period: (period) The period in milliseconds with a minimum valid value of 1ms."""
 
     def set_analog_period_microseconds(self, period: int) -> None:
-        """Set the period of the PWM signal being output to ``period`` in microseconds.
+        """Set the period of the PWM signal being output to ``period`` in microseconds. (set analog period microseconds)
 
 Example: ``pin0.set_analog_period_microseconds(512)``
 
@@ -190,7 +190,7 @@ class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
     """A pin with analog and digital features. (microbitanalogdigitalpin)"""
 
     def read_analog(self) -> int:
-        """Read the voltage applied to the pin.
+        """Read the voltage applied to the pin. (read analog)
 
 Example: ``pin0.read_analog()``
 
@@ -202,7 +202,7 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
     RESISTIVE: int
 
     def is_touched(self) -> bool:
-        """Check if the pin is being touched.
+        """Check if the pin is being touched. (is touched)
 
 Example: ``pin0.is_touched()``
 
@@ -225,14 +225,14 @@ does not require you to make a ground connection as part of a circuit.
         ...
 
     def set_touch_mode(self, value: int) -> None:
-        """Set the touch mode for the pin.
+        """Set the touch mode for the pin. (set touch mode)
 
 Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
 The default touch mode for the pins on the edge connector is
 `resistive`. The default for the logo pin **V2** is `capacitive`.
 
-:param value: ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin."""
+:param value: (value) ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin."""
         ...
 pin0: MicroBitTouchPin
 """Pin with digital, analog and touch features. (pin0)"""
@@ -273,15 +273,15 @@ pin19: MicroBitDigitalPin
 pin20: MicroBitDigitalPin
 """Pin with digital features. (pin20)"""
 pin_logo: MicroBitTouchPin
-"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."""
+"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode. (pin logo)"""
 pin_speaker: MicroBitAnalogDigitalPin
-"""A pin to address the micro:bit speaker.
+"""A pin to address the micro:bit speaker. (pin speaker)
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """An image to show on the micro:bit LED display.
+    """An image to show on the micro:bit LED display. (image)
 
 Given an image object it's possible to display it via the ``display`` API::
 
@@ -357,7 +357,7 @@ Given an image object it's possible to display it via the ``display`` API::
     TRIANGLE: Image
     """Image of a triangle pointing up. (triangle)"""
     TRIANGLE_LEFT: Image
-    """Image of a triangle in the left corner."""
+    """Image of a triangle in the left corner. (triangle left)"""
     CHESSBOARD: Image
     """Alternate LEDs lit in a chessboard pattern. (chessboard)"""
     DIAMOND: Image
@@ -413,9 +413,9 @@ Given an image object it's possible to display it via the ``display`` API::
     SNAKE: Image
     """Snake image. (snake)"""
     ALL_CLOCKS: List[Image]
-    """A list containing all the CLOCK_ images in sequence."""
+    """A list containing all the CLOCK_ images in sequence. (all clocks)"""
     ALL_ARROWS: List[Image]
-    """A list containing all the ARROW_ images in sequence."""
+    """A list containing all the ARROW_ images in sequence. (all arrows)"""
 
     @overload
     def __init__(self, string: str) -> None:
@@ -433,16 +433,16 @@ describing the image, for example::
 will create a 5×5 image of an X. The end of a line is indicated by a
 colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: The string describing the image."""
+:param string: (string) The string describing the image."""
         ...
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
         """Create an empty image with ``width`` columns and ``height`` rows. (init)
 
-:param width: Optional width of the image
-:param height: Optional height of the image
-:param buffer: Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
+:param width: (width) Optional width of the image
+:param height: (height) Optional height of the image
+:param buffer: (buffer) Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
 
 Examples::
 
@@ -453,19 +453,19 @@ These create 2 x 2 pixel images at full brightness."""
         ...
 
     def width(self) -> int:
-        """Get the number of columns.
+        """Get the number of columns. (width)
 
 :return: The number of columns in the image"""
         ...
 
     def height(self) -> int:
-        """Get the number of rows.
+        """Get the number of rows. (height)
 
 :return: The number of rows in the image"""
         ...
 
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """Set the brightness of a pixel.
+        """Set the brightness of a pixel. (set pixel)
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
@@ -478,7 +478,7 @@ read-only images, like ``Image.HEART``."""
         ...
 
     def get_pixel(self, x: int, y: int) -> int:
-        """Get the brightness of a pixel.
+        """Get the brightness of a pixel. (get pixel)
 
 Example: ``my_image.get_pixel(0, 0)``
 
@@ -488,7 +488,7 @@ Example: ``my_image.get_pixel(0, 0)``
         ...
 
     def shift_left(self, n: int) -> Image:
-        """Create a new image by shifting the picture left.
+        """Create a new image by shifting the picture left. (shift left)
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
@@ -497,7 +497,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
         ...
 
     def shift_right(self, n: int) -> Image:
-        """Create a new image by shifting the picture right.
+        """Create a new image by shifting the picture right. (shift right)
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
@@ -506,7 +506,7 @@ Example: ``Image.HEART_SMALL.shift_right(1)``
         ...
 
     def shift_up(self, n: int) -> Image:
-        """Create a new image by shifting the picture up.
+        """Create a new image by shifting the picture up. (shift up)
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
@@ -515,7 +515,7 @@ Example: ``Image.HEART_SMALL.shift_up(1)``
         ...
 
     def shift_down(self, n: int) -> Image:
-        """Create a new image by shifting the picture down.
+        """Create a new image by shifting the picture down. (shift down)
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
@@ -524,7 +524,7 @@ Example: ``Image.HEART_SMALL.shift_down(1)``
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Create a new image by cropping the picture.
+        """Create a new image by cropping the picture. (crop)
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
@@ -536,7 +536,7 @@ Example: ``Image.HEART.crop(1, 1, 3, 3)``
         ...
 
     def copy(self) -> Image:
-        """Create an exact copy of the image.
+        """Create an exact copy of the image. (copy)
 
 Example: ``Image.HEART.copy()``
 
@@ -545,7 +545,7 @@ Example: ``Image.HEART.copy()``
 
     def invert(self) -> Image:
         """Create a new image by inverting the brightness of the pixels in the
-source image.
+source image. (invert)
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -553,7 +553,7 @@ Example: ``Image.SMALL_HEART.invert()``
         ...
 
     def fill(self, value: int) -> None:
-        """Set the brightness of all the pixels in the image.
+        """Set the brightness of all the pixels in the image. (fill)
 
 Example: ``my_image.fill(5)``
 
@@ -564,13 +564,13 @@ read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """Copy an area from another image into this image.
+        """Copy an area from another image into this image. (blit)
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
 :param src: (src) The source image
-:param x: The starting column offset in the source image
-:param y: The starting row offset in the source image
+:param x: (x) The starting column offset in the source image
+:param y: (y) The starting row offset in the source image
 :param w: (w) The number of columns to copy
 :param h: (h) The number of rows to copy
 :param xdest: (xdest) The column offset to modify in this image
@@ -590,16 +590,16 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """Get a compact string representation of the image."""
+        """Get a compact string representation of the image. (repr)"""
         ...
 
     def __str__(self) -> str:
-        """Get a readable string representation of the image."""
+        """Get a readable string representation of the image. (str)"""
         ...
 
     def __add__(self, other: Image) -> Image:
         """Create a new image by adding the brightness values from the two
-images for each pixel.
+images for each pixel. (add)
 
 Example: ``Image.HEART + Image.HAPPY``
 
@@ -608,7 +608,7 @@ Example: ``Image.HEART + Image.HAPPY``
 
     def __sub__(self, other: Image) -> Image:
         """Create a new image by subtracting the brightness values of the
-other image from this image.
+other image from this image. (sub)
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
@@ -617,7 +617,7 @@ Example: ``Image.HEART - Image.HEART_SMALL``
 
     def __mul__(self, n: float) -> Image:
         """Create a new image by multiplying the brightness of each pixel by
-``n``.
+``n``. (mul)
 
 Example: ``Image.HEART * 0.5``
 
@@ -626,7 +626,7 @@ Example: ``Image.HEART * 0.5``
 
     def __truediv__(self, n: float) -> Image:
         """Create a new image by dividing the brightness of each pixel by
-``n``.
+``n``. (truediv)
 
 Example: ``Image.HEART / 2``
 
@@ -635,9 +635,9 @@ Example: ``Image.HEART / 2``
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
+    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music. (loud)"""
     QUIET: SoundEvent
-    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
+    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting. (quiet)"""
 
 class Sound:
     """The built-in sounds can be called using ``audio.play(Sound.NAME)``. (sound)"""

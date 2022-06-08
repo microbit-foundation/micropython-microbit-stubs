@@ -22,15 +22,15 @@ Example: ``sys.print_exception(e)``
 This is simplified version of a function which appears in the
 ``traceback`` module in CPython."""
 argv: List[str]
-"""A mutable list of arguments the current program was started with."""
+"""A mutable list of arguments the current program was started with. (argv)"""
 byteorder: str
-"""The byte order of the system (``"little"`` or ``"big"``)."""
+"""The byte order of the system (``"little"`` or ``"big"``). (byteorder)"""
 
 class _implementation:
     name: str
     version: Tuple[int, int, int]
 implementation: _implementation
-"""Object with information about the current Python implementation.
+"""Object with information about the current Python implementation. (implementation)
 
 For MicroPython, it has following attributes:
 
@@ -49,7 +49,7 @@ maxsize: int
 Maximum value which a native integer type can hold on the current platform,
 or maximum value representable by MicroPython integer type, if it's smaller
 than platform max value (that is the case for MicroPython ports without
-long int support).
+long int support). (maxsize)
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some

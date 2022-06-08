@@ -11,13 +11,13 @@ Example: ``machine.unique_id()``
     ...
 
 def reset() -> None:
-    """Reset the device in a manner similar to pushing the external RESET button.
+    """Reset the device in a manner similar to pushing the external RESET button. (reset)
 
 Example: ``machine.reset()``"""
     ...
 
 def freq() -> int:
-    """Get the CPU frequency in hertz.
+    """Get the CPU frequency in hertz. (freq)
 
 Example: ``machine.freq()``
 
@@ -40,7 +40,7 @@ def enable_irq(state: Any) -> None:
 
 Example: ``machine.enable_irq(interrupt_state)``
 
-:param state: The value that was returned from the most recent call to the ``disable_irq`` function."""
+:param state: (state) The value that was returned from the most recent call to the ``disable_irq`` function."""
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
@@ -61,7 +61,7 @@ starts straight away.
     ...
 
 class mem:
-    """The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."""
+    """The class for the ``mem8``, ``mem16`` and ``mem32`` memory views. (mem)"""
 
     def __getitem__(self, address: int) -> int:
         """Access a value from memory. (getitem)
@@ -71,7 +71,7 @@ class mem:
         ...
 
     def __setitem__(self, address: int, value: int) -> None:
-        """Set a value at the given address.
+        """Set a value at the given address. (setitem)
 
 :param address: (address) The memory address.
 :param value: (value) The integer value to set."""

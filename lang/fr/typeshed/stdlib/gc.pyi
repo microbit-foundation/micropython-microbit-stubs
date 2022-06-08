@@ -1,4 +1,4 @@
-"""Control the garbage collector"""
+"""Control the garbage collector ()"""
 from typing import overload
 
 def enable() -> None:
@@ -16,7 +16,7 @@ def collect() -> None:
     ...
 
 def mem_alloc() -> int:
-    """Get the number of bytes of heap RAM that are allocated.
+    """Get the number of bytes of heap RAM that are allocated. (mem alloc)
 
 :return: The number of bytes allocated.
 
@@ -24,7 +24,7 @@ This function is MicroPython extension."""
     ...
 
 def mem_free() -> int:
-    """Get the number of bytes of available heap RAM, or -1 if this amount is not known.
+    """Get the number of bytes of available heap RAM, or -1 if this amount is not known. (mem free)
 
 :return: The number of bytes free.
 
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """Query the additional GC allocation threshold.
+    """Query the additional GC allocation threshold. (threshold)
 
 :return: The GC allocation threshold.
 
@@ -44,7 +44,7 @@ implementations, its signature and semantics are different."""
 
 @overload
 def threshold(amount: int) -> None:
-    """Set the additional GC allocation threshold.
+    """Set the additional GC allocation threshold. (threshold)
 
 Normally, a collection is triggered only when a new allocation
 cannot be satisfied, i.e. on an  out-of-memory (OOM) condition.

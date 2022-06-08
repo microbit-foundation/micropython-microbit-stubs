@@ -1,8 +1,8 @@
-"""Measure the acceleration of the micro:bit and recognise gestures."""
+"""Measure the acceleration of the micro:bit and recognise gestures. ()"""
 from typing import Tuple
 
 def get_x() -> int:
-    """Get the acceleration measurement in the ``x`` axis in milli-g.
+    """Get the acceleration measurement in the ``x`` axis in milli-g. (get x)
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """Get the acceleration measurement in the ``y`` axis in milli-g.
+    """Get the acceleration measurement in the ``y`` axis in milli-g. (get y)
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """Get the acceleration measurement in the ``z`` axis in milli-g.
+    """Get the acceleration measurement in the ``z`` axis in milli-g. (get z)
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Get the acceleration measurements in all axes at once as a tuple.
+    """Get the acceleration measurements in all axes at once as a tuple. (get values)
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """Get the name of the current gesture.
+    """Get the name of the current gesture. (current gesture)
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """Check if the named gesture is currently active.
+    """Check if the named gesture is currently active. (is gesture)
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -61,7 +61,7 @@ represented as strings.
     ...
 
 def was_gesture(name: str) -> bool:
-    """Check if the named gesture was active since the last call.
+    """Check if the named gesture was active since the last call. (was gesture)
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -74,7 +74,7 @@ represented as strings.
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """Return a tuple of the gesture history.
+    """Return a tuple of the gesture history. (get gestures)
 
 Example: ``accelerometer.get_gestures()``
 

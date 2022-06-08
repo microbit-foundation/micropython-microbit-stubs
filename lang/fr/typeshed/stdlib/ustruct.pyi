@@ -3,7 +3,7 @@ from _typeshed import ReadableBuffer, WriteableBuffer
 from typing import Any, Tuple, Union
 
 def calcsize(fmt: str) -> int:
-    """Get the number of bytes needed to store the given ``fmt``.
+    """Get the number of bytes needed to store the given ``fmt``. (calcsize)
 
 Example: ``ustruct.calcsize('hf')``
 
@@ -29,7 +29,7 @@ Example: ``ustruct.pack_info('hf', buffer, 1, 3.1415)``
 
 :param fmt: (fmt) The format string.
 :param buffer: (buffer) The target buffer to write into.
-:param offset: The offset into the buffer. May be negative to count from the end of the buffer.
+:param offset: (offset) The offset into the buffer. May be negative to count from the end of the buffer.
 :param v1: (v1) The first value.
 :param *vn: (*vn) The remaining values."""
     ...
@@ -51,6 +51,6 @@ Example: ``v1, v2 = ustruct.unpack_from('hf', buffer)``
 
 :param fmt: (fmt) The format string.
 :param buffer: (buffer) The source buffer to read from.
-:param offset: The offset into the buffer. May be negative to count from the end of the buffer.
+:param offset: (offset) The offset into the buffer. May be negative to count from the end of the buffer.
 :return: A tuple of the unpacked values."""
     ...

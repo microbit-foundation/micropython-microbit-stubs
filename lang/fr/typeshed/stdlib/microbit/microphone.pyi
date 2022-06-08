@@ -1,9 +1,9 @@
-"""Respond to sound using the built-in microphone (V2 only)."""
+"""Respond to sound using the built-in microphone (V2 only). ()"""
 from typing import Optional, Tuple
 from ..microbit import SoundEvent
 
 def current_event() -> Optional[SoundEvent]:
-    """Get the last recorded sound event
+    """Get the last recorded sound event (current event)
 
 Example: ``microphone.current_event()``
 
@@ -11,7 +11,7 @@ Example: ``microphone.current_event()``
     ...
 
 def was_event(event: SoundEvent) -> bool:
-    """Check if a sound was heard at least once since the last call.
+    """Check if a sound was heard at least once since the last call. (was event)
 
 Example: ``microphone.was_event(SoundEvent.LOUD)``
 
@@ -22,7 +22,7 @@ This call clears the sound history before returning.
     ...
 
 def is_event(event: SoundEvent) -> bool:
-    """Check the most recent sound event detected.
+    """Check the most recent sound event detected. (is event)
 
 Example: ``microphone.is_event(SoundEvent.LOUD)``
 
@@ -33,7 +33,7 @@ This call does not clear the sound event history.
     ...
 
 def get_events() -> Tuple[SoundEvent, ...]:
-    """Get the sound event history as a tuple.
+    """Get the sound event history as a tuple. (get events)
 
 Example: ``microphone.get_events()``
 
@@ -43,18 +43,18 @@ This call clears the sound history before returning.
     ...
 
 def set_threshold(event: SoundEvent, value: int) -> None:
-    """Set the threshold for a sound event.
+    """Set the threshold for a sound event. (set threshold)
 
 Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 
 A high threshold means the event will only trigger if the sound is very loud (>= 250 in the example).
 
 :param event: (event) A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``.
-:param value: The threshold level in the range 0-255."""
+:param value: (value) The threshold level in the range 0-255."""
     ...
 
 def sound_level() -> int:
-    """Get the sound pressure level.
+    """Get the sound pressure level. (sound level)
 
 Example: ``microphone.sound_level()``
 

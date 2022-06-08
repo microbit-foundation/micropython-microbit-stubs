@@ -10,7 +10,7 @@ Example: ``urandom.getrandbits(1)``
     ...
 
 def seed(n: int) -> None:
-    """Initialize the random number generator.
+    """Initialize the random number generator. (seed)
 
 Example: ``urandom.seed(0)``
 
@@ -25,8 +25,8 @@ def randint(a: int, b: int) -> int:
 
 Example: ``urandom.randint(0, 9)``
 
-:param a: Start value for the range (inclusive)
-:param b: End value for the range (inclusive)
+:param a: (a) Start value for the range (inclusive)
+:param b: (b) End value for the range (inclusive)
 
 Alias for ``randrange(a, b + 1)``."""
     ...
@@ -38,7 +38,7 @@ including) ``stop``. (randrange)
 
 Example: ``urandom.randrange(10)``
 
-:param stop: End value for the range (exclusive)"""
+:param stop: (stop) End value for the range (exclusive)"""
     ...
 
 @overload
@@ -47,14 +47,14 @@ def randrange(start: int, stop: int, step: int=1) -> int:
 
 Example: ``urandom.randrange(0, 10)``
 
-:param start: The start of the range (inclusive)
-:param stop: The end of the range (exclusive)
+:param start: (start) The start of the range (inclusive)
+:param stop: (stop) The end of the range (exclusive)
 :param step: (step) The step."""
     ...
 _T = TypeVar("""_T""")
 
 def choice(seq: Sequence[_T]) -> _T:
-    """Choose a random element from the non-empty sequence ``seq``.
+    """Choose a random element from the non-empty sequence ``seq``. (choice)
 
 Example: ``urandom.choice([Image.HAPPY, Image.SAD])``
 
@@ -64,7 +64,7 @@ If ``seq`` is  empty, raises ``IndexError``."""
     ...
 
 def random() -> float:
-    """Generate a random floating point number in the range [0.0, 1.0).
+    """Generate a random floating point number in the range [0.0, 1.0). (random)
 
 Example: ``urandom.random()``
 
@@ -76,6 +76,6 @@ def uniform(a: float, b: float) -> float:
 
 Example: ``urandom.uniform(0, 9)``
 
-:param a: Start value for the range (inclusive)
-:param b: End value for the range (inclusive)"""
+:param a: (a) Start value for the range (inclusive)
+:param b: (b) End value for the range (inclusive)"""
     ...

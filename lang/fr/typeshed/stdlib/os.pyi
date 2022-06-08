@@ -23,7 +23,7 @@ If the file does not exist an ``OSError`` exception will occur."""
     ...
 
 def size(filename: str) -> int:
-    """Returns the size of a file.
+    """Returns the size of a file. (size)
 
 Example: ``os.size('data.txt')``
 
@@ -46,7 +46,7 @@ class uname_result(Tuple[str, str, str, str, str]):
     """Hardware identifier. (machine)"""
 
 def uname() -> uname_result:
-    """Returns information identifying the current operating system.
+    """Returns information identifying the current operating system. (uname)
 
 Example: ``os.uname()``
 

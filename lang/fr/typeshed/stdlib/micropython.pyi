@@ -4,7 +4,7 @@ _T = TypeVar("""_T""")
 
 def const(expr: _T) -> _T:
     """Used to declare that the expression is a constant so that the compiler can
-optimise it.
+optimise it. (const)
 
 The use of this function should be as follows::
 
@@ -22,7 +22,7 @@ global variable, and does not take up any memory during execution.
 
 @overload
 def opt_level() -> int:
-    """Get the current optimisation level for the compilation of scripts.
+    """Get the current optimisation level for the compilation of scripts. (opt level)
 
 Example: ``micropython.opt_level()``
 
@@ -44,7 +44,7 @@ The optimisation level controls the following compilation features:
 
 @overload
 def opt_level(level: int) -> None:
-    """Sets the optimisation level for subsequent compilation of scripts.
+    """Sets the optimisation level for subsequent compilation of scripts. (opt level)
 
 Example: ``micropython.opt_level(1)``
 
@@ -71,7 +71,7 @@ def mem_info(verbose: Any=None) -> None:
 
 Example: ``micropython.mem_info()``
 
-:param verbose: If the ``verbose`` argument is given then extra information is printed."""
+:param verbose: (verbose) If the ``verbose`` argument is given then extra information is printed."""
     ...
 
 def qstr_info(verbose: Any=None) -> None:
@@ -79,7 +79,7 @@ def qstr_info(verbose: Any=None) -> None:
 
 Example: ``micropython.qstr_info()``
 
-:param verbose: If the ``verbose`` argument is given then extra information is printed.
+:param verbose: (verbose) If the ``verbose`` argument is given then extra information is printed.
 
 The information that is printed is implementation dependent, but currently
 includes the number of interned strings and the amount of RAM they use.  In
@@ -88,7 +88,7 @@ verbose mode it prints out the names of all RAM-interned strings."""
 
 def stack_use() -> int:
     """Return an integer representing the current amount of stack that is being
-used.
+used. (stack use)
 
 Example: ``micropython.stack_use()``
 
@@ -99,7 +99,7 @@ should be used to compute differences in stack usage at different points.
     ...
 
 def heap_lock() -> None:
-    """Lock the heap.
+    """Lock the heap. (heap lock)
 
 Example: ``micropython.heap_lock()``
 
@@ -108,7 +108,7 @@ raised if any heap allocation is attempted."""
     ...
 
 def heap_unlock() -> None:
-    """Unlock the heap.
+    """Unlock the heap. (heap unlock)
 
 Example: ``micropython.heap_unlock()``
 
@@ -117,11 +117,11 @@ raised if any heap allocation is attempted."""
     ...
 
 def kbd_intr(chr: int) -> None:
-    """Set the character that will raise a `KeyboardInterrupt` exception.
+    """Set the character that will raise a `KeyboardInterrupt` exception. (kbd intr)
 
 Example: ``micropython.kbd_intr(-1)``
 
-:param chr: Character code to raise the interrupt or -1 to disable capture of Ctrl-C.
+:param chr: (chr) Character code to raise the interrupt or -1 to disable capture of Ctrl-C.
 
 By default this is set to 3 during script execution, corresponding to Ctrl-C.
 Passing -1 to this function will disable capture of Ctrl-C, and passing 3

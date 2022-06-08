@@ -1,8 +1,8 @@
-"""Mathematical functions."""
+"""Mathematical functions. ()"""
 from typing import Tuple
 
 def acos(x: float) -> float:
-    """Calculate the inverse cosine.
+    """Calculate the inverse cosine. (acos)
 
 Example: ``math.acos(1)``
 
@@ -11,7 +11,7 @@ Example: ``math.acos(1)``
     ...
 
 def asin(x: float) -> float:
-    """Calculate the inverse sine.
+    """Calculate the inverse sine. (asin)
 
 Example: ``math.asin(0)``
 
@@ -20,7 +20,7 @@ Example: ``math.asin(0)``
     ...
 
 def atan(x: float) -> float:
-    """Calculate the inverse tangent.
+    """Calculate the inverse tangent. (atan)
 
 Example: ``math.atan(0)``
 
@@ -29,7 +29,7 @@ Example: ``math.atan(0)``
     ...
 
 def atan2(y: float, x: float) -> float:
-    """Calculate the principal value of the inverse tangent of ``y/x``.
+    """Calculate the principal value of the inverse tangent of ``y/x``. (atan2)
 
 Example: ``math.atan2(0, -1)``
 
@@ -48,17 +48,17 @@ Example: ``math.ceil(0.1)``
     ...
 
 def copysign(x: float, y: float) -> float:
-    """Calculate ``x`` with the sign of ``y``.
+    """Calculate ``x`` with the sign of ``y``. (copysign)
 
 Example: ``math.copysign(1, -1)``
 
 :param x: (x) A number
-:param y: The source of the sign for the return value
+:param y: (y) The source of the sign for the return value
 :return: ``x`` with the sign of ``y``"""
     ...
 
 def cos(x: float) -> float:
-    """Calculate the cosine of ``x``.
+    """Calculate the cosine of ``x``. (cos)
 
 Example: ``math.cos(0)``
 
@@ -76,7 +76,7 @@ Example: ``math.degrees(2 * math.pi)``
     ...
 
 def exp(x: float) -> float:
-    """Calculate the exponential of ``x``.
+    """Calculate the exponential of ``x``. (exp)
 
 Example: ``math.exp(1)``
 
@@ -85,7 +85,7 @@ Example: ``math.exp(1)``
     ...
 
 def fabs(x: float) -> float:
-    """Return the absolute value of ``x``.
+    """Return the absolute value of ``x``. (fabs)
 
 Example: ``math.fabs(-0.1)``
 
@@ -103,7 +103,7 @@ Example: ``math.floor(0.9)``
     ...
 
 def fmod(x: float, y: float) -> float:
-    """Calculate the remainder of ``x/y``.
+    """Calculate the remainder of ``x/y``. (fmod)
 
 Example: ``math.fmod(10, 3)``
 
@@ -162,7 +162,7 @@ Example: ``math.ldexp(0.5, 2)``
     ...
 
 def log(x: float, base: float=e) -> float:
-    """Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm).
+    """Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm). (log)
 
 Example: ``math.log(math.e)``
 
@@ -176,7 +176,7 @@ With two arguments, return the logarithm of x to the given base, calculated as `
     ...
 
 def modf(x: float) -> Tuple[float, float]:
-    """Calculate the fractional and integral parts of ``x``.
+    """Calculate the fractional and integral parts of ``x``. (modf)
 
 Example: ``fractional, integral = math.modf(1.5)``
 
@@ -187,7 +187,7 @@ Both the fractional and integral values have the same sign as ``x``."""
     ...
 
 def pow(x: float, y: float) -> float:
-    """Returns ``x`` to the power of ``y``.
+    """Returns ``x`` to the power of ``y``. (pow)
 
 Example: ``math.pow(4, 0.5)``
 
@@ -206,7 +206,7 @@ Example: ``math.radians(360)``
     ...
 
 def sin(x: float) -> float:
-    """Calculate the sine of ``x``.
+    """Calculate the sine of ``x``. (sin)
 
 Example: ``math.sin(math.pi/2)``
 
@@ -215,7 +215,7 @@ Example: ``math.sin(math.pi/2)``
     ...
 
 def sqrt(x: float) -> float:
-    """Calculate the square root of ``x``.
+    """Calculate the square root of ``x``. (sqrt)
 
 Example: ``math.sqrt(4)``
 
@@ -224,7 +224,7 @@ Example: ``math.sqrt(4)``
     ...
 
 def tan(x: float) -> float:
-    """Calculate the tangent of ``x``.
+    """Calculate the tangent of ``x``. (tan)
 
 Example: ``math.tan(0)``
 
@@ -241,6 +241,6 @@ Example: ``math.trunc(-0.9)``
 :return: ``x`` rounded towards zero."""
     ...
 e: float
-"""Base of the natural logarithm"""
+"""Base of the natural logarithm (e)"""
 pi: float
 """The ratio of a circle's circumference to its diameter (pi)"""

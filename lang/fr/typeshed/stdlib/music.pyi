@@ -2,15 +2,15 @@
 from typing import Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]
-"""Melody: the opening to Beethoven’s 5th Symphony in C minor."""
+"""Melody: the opening to Beethoven’s 5th Symphony in C minor. (dadadadum)"""
 ENTERTAINER: Tuple[str, ...]
-"""Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."""
+"""Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”. (entertainer)"""
 PRELUDE: Tuple[str, ...]
-"""Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues."""
+"""Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues. (prelude)"""
 ODE: Tuple[str, ...]
-"""Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor."""
+"""Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor. (ode)"""
 NYAN: Tuple[str, ...]
-"""Melody: the Nyan Cat theme (http://www.nyan.cat/).
+"""Melody: the Nyan Cat theme (http://www.nyan.cat/). (nyan)
 
 The composer is unknown. This is fair use for educational porpoises (as they say in New York)."""
 RINGTONE: Tuple[str, ...]
@@ -28,13 +28,13 @@ BIRTHDAY: Tuple[str, ...]
 For copyright status see: http://www.bbc.co.uk/news/world-us-canada-34332853
 """
 WEDDING: Tuple[str, ...]
-"""Melody: the bridal chorus from Wagner’s opera “Lohengrin”."""
+"""Melody: the bridal chorus from Wagner’s opera “Lohengrin”. (wedding)"""
 FUNERAL: Tuple[str, ...]
-"""Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."""
+"""Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35. (funeral)"""
 PUNCHLINE: Tuple[str, ...]
 """Melody: a fun fragment that signifies a joke has been made. (punchline)"""
 PYTHON: Tuple[str, ...]
-"""Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."""
+"""Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named). (python)"""
 BADDY: Tuple[str, ...]
 """Melody: silent movie era entrance of a baddy. (baddy)"""
 CHASE: Tuple[str, ...]
@@ -53,7 +53,7 @@ POWER_DOWN: Tuple[str, ...]
 """Melody: a sad fanfare to indicate an achievement lost. (power down)"""
 
 def set_tempo(ticks: int=4, bpm: int=120) -> None:
-    """Sets the approximate tempo for playback.
+    """Sets the approximate tempo for playback. (set tempo)
 
 Example: ``music.set_tempo(bpm=120)``
 
@@ -72,7 +72,7 @@ To work out the length of a tick in milliseconds is very simple arithmetic:
     ...
 
 def get_tempo() -> Tuple[int, int]:
-    """Gets the current tempo as a tuple of integers: ``(ticks, bpm)``.
+    """Gets the current tempo as a tuple of integers: ``(ticks, bpm)``. (get tempo)
 
 Example: ``ticks, beats = music.get_tempo()``
 
@@ -84,10 +84,10 @@ def play(music: Union[str, List[str], Tuple[str, ...]], pin: Union[MicroBitDigit
 
 Example: ``music.play(music.NYAN)``
 
-:param music: music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
-:param pin: the output pin for use with an external speaker (default pin 0), ``None`` for no sound.
+:param music: (music) music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
+:param pin: (pin) the output pin for use with an external speaker (default pin 0), ``None`` for no sound.
 :param wait: (wait) If ``wait`` is set to ``True``, this function is blocking.
-:param loop: If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted.
+:param loop: (loop) If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted.
 
 Many built-in melodies are defined in this module."""
     ...
@@ -98,7 +98,7 @@ def pitch(frequency: int, duration: int=-1, pin: MicroBitDigitalPin=pin0, wait: 
 Example: ``music.pitch(185, 1000)``
 
 :param frequency: (frequency) An integer frequency
-:param duration: A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``.
+:param duration: (duration) A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``.
 :param pin: (pin) Optional output pin (default ``pin0``).
 :param wait: (wait) If ``wait`` is set to ``True``, this function is blocking.
 
@@ -109,14 +109,14 @@ You can only play one pitch on one pin at any one time."""
     ...
 
 def stop(pin: MicroBitDigitalPin=pin0) -> None:
-    """Stops all music playback on the built-in speaker and any pin outputting sound.
+    """Stops all music playback on the built-in speaker and any pin outputting sound. (stop)
 
 Example: ``music.stop()``
 
 :param pin: (pin) An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``."""
 
 def reset() -> None:
-    """Resets ticks, bpm, duration and octave to their default values.
+    """Resets ticks, bpm, duration and octave to their default values. (reset)
 
 Example: ``music.reset()``
 

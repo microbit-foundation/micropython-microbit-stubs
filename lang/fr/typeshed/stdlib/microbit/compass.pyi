@@ -1,7 +1,7 @@
-"""Use the built-in compass."""
+"""Use the built-in compass. ()"""
 
 def calibrate() -> None:
-    """Starts the calibration process.
+    """Starts the calibration process. (calibrate)
 
 Example: ``compass.calibrate()``
 
@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """Check is the compass is calibrated.
+    """Check is the compass is calibrated. (is calibrated)
 
 Example: ``compass.is_calibrated()``
 
@@ -18,13 +18,13 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """Undoes the calibration, making the compass uncalibrated again.
+    """Undoes the calibration, making the compass uncalibrated again. (clear calibration)
 
 Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """Get the magnetic field strength on the ``x`` axis.
+    """Get the magnetic field strength on the ``x`` axis. (get x)
 
 Example: ``compass.get_x()``
 
@@ -34,7 +34,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_y() -> int:
-    """Get the magnetic field strength on the ``y`` axis.
+    """Get the magnetic field strength on the ``y`` axis. (get y)
 
 Example: ``compass.get_y()``
 
@@ -44,7 +44,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_z() -> int:
-    """Get the magnetic field strength on the ``z`` axis.
+    """Get the magnetic field strength on the ``z`` axis. (get z)
 
 Example: ``compass.get_z()``
 
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """Get the compass heading.
+    """Get the compass heading. (heading)
 
 Example: ``compass.heading()``
 
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """Get the magnitude of the magnetic field around the device.
+    """Get the magnitude of the magnetic field around the device. (get field strength)
 
 Example: ``compass.get_field_strength()``
 

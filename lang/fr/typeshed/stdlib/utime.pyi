@@ -46,7 +46,7 @@ Example: ``utime.ticks_us()``
 
 def ticks_add(ticks: int, delta: int) -> int:
     """Offset ticks value by a given number, which can be either positive or
-negative.
+negative. (ticks add)
 
 Example: ``utime.ticks_add(utime.ticks_ms(), 200)``
 

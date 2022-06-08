@@ -1,4 +1,4 @@
-"""Communicate with devices using the I²C bus protocol."""
+"""Communicate with devices using the I²C bus protocol. ()"""
 from _typeshed import ReadableBuffer
 from ..microbit import MicroBitDigitalPin, pin19, pin20
 from typing import List
@@ -20,7 +20,7 @@ for the motion sensors and the edge connector."""
     ...
 
 def scan() -> List[int]:
-    """Scan the bus for devices.
+    """Scan the bus for devices. (scan)
 
 Example: ``i2c.scan()``
 
@@ -32,7 +32,7 @@ def read(addr: int, n: int, repeat: bool=False) -> bytes:
 
 Example: ``i2c.read(0x50, 64)``
 
-:param addr: The 7-bit address of the device
+:param addr: (addr) The 7-bit address of the device
 :param n: (n) The number of bytes to read
 :param repeat: (repeat) If ``True``, no stop bit will be sent
 :return: The bytes read"""
@@ -43,7 +43,7 @@ def write(addr: int, buf: ReadableBuffer, repeat: bool=False) -> None:
 
 Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
-:param addr: The 7-bit address of the device
-:param buf: A buffer containing the bytes to write
+:param addr: (addr) The 7-bit address of the device
+:param buf: (buf) A buffer containing the bytes to write
 :param repeat: (repeat) If ``True``, no stop bit will be sent"""
     ...
