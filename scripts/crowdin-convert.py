@@ -173,6 +173,8 @@ def get_docstring(node: ast.AST):
             docstring = node.value
     elif isinstance(node, NODE_TYPES_WITH_DOCSTRINGS):
         docstring = ast.get_docstring(node)
+    if docstring:
+        node.docstring_marker = True  # type: ignore
     return docstring or ""
 
 
@@ -411,15 +413,22 @@ def replace_docstring(node, new_docstring):
 
 def unparse_file(tree):
     class UnparseHack(ast._Unparser):
-        def _write_constant(self, value):
-            # Hack targetting pseudo docstrings used for constants/fields.
-            # Assume all strings are docstrings as we have no others and force triple quotes.
-            if isinstance(value, str):
-                self._write_str_avoiding_backslashes(
-                    value, quote_types=ast._MULTI_QUOTES
-                )
+        def visit_Constant(self, node):
+            value = node.value
+            if isinstance(value, tuple):
+                with self.delimit("(", ")"):
+                    self.items_view(self._write_constant, value)
+            elif value is ...:
+                self.write("...")
             else:
-                super()._write_constant(value)
+                if hasattr(node, "docstring_marker"):
+                    self._write_str_avoiding_backslashes(
+                        value, quote_types=ast._MULTI_QUOTES
+                    )
+                    return
+                if node.kind == "u":
+                    self.write("u")
+                self._write_constant(node.value)
 
     unparser = UnparseHack()
     return unparser.visit(tree)

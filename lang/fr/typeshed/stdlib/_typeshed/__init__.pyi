@@ -3,15 +3,15 @@ import sys
 from os import PathLike
 from typing import AbstractSet, Any, Container, Iterable, Protocol, Tuple, TypeVar, Union
 from typing_extensions import Literal, final
-_KT = TypeVar("""_KT""")
-_KT_co = TypeVar("""_KT_co""", covariant=True)
-_KT_contra = TypeVar("""_KT_contra""", contravariant=True)
-_VT = TypeVar("""_VT""")
-_VT_co = TypeVar("""_VT_co""", covariant=True)
-_T = TypeVar("""_T""")
-_T_co = TypeVar("""_T_co""", covariant=True)
-_T_contra = TypeVar("""_T_contra""", contravariant=True)
-Self = TypeVar("""Self""")
+_KT = TypeVar('_KT')
+_KT_co = TypeVar('_KT_co', covariant=True)
+_KT_contra = TypeVar('_KT_contra', contravariant=True)
+_VT = TypeVar('_VT')
+_VT_co = TypeVar('_VT_co', covariant=True)
+_T = TypeVar('_T')
+_T_co = TypeVar('_T_co', covariant=True)
+_T_contra = TypeVar('_T_contra', contravariant=True)
+Self = TypeVar('Self')
 
 class IdentityFunction(Protocol):
 
@@ -22,7 +22,7 @@ class SupportsLessThan(Protocol):
 
     def __lt__(self, __other: Any) -> bool:
         ...
-SupportsLessThanT = TypeVar("""SupportsLessThanT""", bound=SupportsLessThan)
+SupportsLessThanT = TypeVar('SupportsLessThanT', bound=SupportsLessThan)
 
 class SupportsDivMod(Protocol[_T_contra, _T_co]):
 
@@ -70,13 +70,13 @@ class SupportsItemAccess(SupportsGetItem[_KT_contra, _VT], Protocol[_KT_contra, 
 StrPath = Union[str, PathLike[str]]
 BytesPath = Union[bytes, PathLike[bytes]]
 StrOrBytesPath = Union[str, bytes, PathLike[str], PathLike[bytes]]
-OpenTextModeUpdating = Literal["""r+""", """+r""", """rt+""", """r+t""", """+rt""", """tr+""", """t+r""", """+tr""", """w+""", """+w""", """wt+""", """w+t""", """+wt""", """tw+""", """t+w""", """+tw""", """a+""", """+a""", """at+""", """a+t""", """+at""", """ta+""", """t+a""", """+ta""", """x+""", """+x""", """xt+""", """x+t""", """+xt""", """tx+""", """t+x""", """+tx"""]
-OpenTextModeWriting = Literal["""w""", """wt""", """tw""", """a""", """at""", """ta""", """x""", """xt""", """tx"""]
-OpenTextModeReading = Literal["""r""", """rt""", """tr""", """U""", """rU""", """Ur""", """rtU""", """rUt""", """Urt""", """trU""", """tUr""", """Utr"""]
+OpenTextModeUpdating = Literal['r+', '+r', 'rt+', 'r+t', '+rt', 'tr+', 't+r', '+tr', 'w+', '+w', 'wt+', 'w+t', '+wt', 'tw+', 't+w', '+tw', 'a+', '+a', 'at+', 'a+t', '+at', 'ta+', 't+a', '+ta', 'x+', '+x', 'xt+', 'x+t', '+xt', 'tx+', 't+x', '+tx']
+OpenTextModeWriting = Literal['w', 'wt', 'tw', 'a', 'at', 'ta', 'x', 'xt', 'tx']
+OpenTextModeReading = Literal['r', 'rt', 'tr', 'U', 'rU', 'Ur', 'rtU', 'rUt', 'Urt', 'trU', 'tUr', 'Utr']
 OpenTextMode = Union[OpenTextModeUpdating, OpenTextModeWriting, OpenTextModeReading]
-OpenBinaryModeUpdating = Literal["""rb+""", """r+b""", """+rb""", """br+""", """b+r""", """+br""", """wb+""", """w+b""", """+wb""", """bw+""", """b+w""", """+bw""", """ab+""", """a+b""", """+ab""", """ba+""", """b+a""", """+ba""", """xb+""", """x+b""", """+xb""", """bx+""", """b+x""", """+bx"""]
-OpenBinaryModeWriting = Literal["""wb""", """bw""", """ab""", """ba""", """xb""", """bx"""]
-OpenBinaryModeReading = Literal["""rb""", """br""", """rbU""", """rUb""", """Urb""", """brU""", """bUr""", """Ubr"""]
+OpenBinaryModeUpdating = Literal['rb+', 'r+b', '+rb', 'br+', 'b+r', '+br', 'wb+', 'w+b', '+wb', 'bw+', 'b+w', '+bw', 'ab+', 'a+b', '+ab', 'ba+', 'b+a', '+ba', 'xb+', 'x+b', '+xb', 'bx+', 'b+x', '+bx']
+OpenBinaryModeWriting = Literal['wb', 'bw', 'ab', 'ba', 'xb', 'bx']
+OpenBinaryModeReading = Literal['rb', 'br', 'rbU', 'rUb', 'Urb', 'brU', 'bUr', 'Ubr']
 OpenBinaryMode = Union[OpenBinaryModeUpdating, OpenBinaryModeReading, OpenBinaryModeWriting]
 
 class HasFileno(Protocol):

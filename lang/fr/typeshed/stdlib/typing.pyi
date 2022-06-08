@@ -24,7 +24,7 @@ class _SpecialForm:
 
     def __getitem__(self, typeargs: Any) -> object:
         ...
-_F = TypeVar("""_F""", bound=Callable[..., Any])
+_F = TypeVar('_F', bound=Callable[..., Any])
 
 def overload(func: _F) -> _F:
     ...
@@ -81,16 +81,16 @@ if sys.version_info >= (3, 10):
     TypeAlias: _SpecialForm = ...
     TypeGuard: _SpecialForm = ...
 NoReturn = Union[None]
-_T = TypeVar("""_T""")
-_S = TypeVar("""_S""")
-_KT = TypeVar("""_KT""")
-_VT = TypeVar("""_VT""")
-_T_co = TypeVar("""_T_co""", covariant=True)
-_V_co = TypeVar("""_V_co""", covariant=True)
-_KT_co = TypeVar("""_KT_co""", covariant=True)
-_VT_co = TypeVar("""_VT_co""", covariant=True)
-_T_contra = TypeVar("""_T_contra""", contravariant=True)
-_TC = TypeVar("""_TC""", bound=Type[object])
+_T = TypeVar('_T')
+_S = TypeVar('_S')
+_KT = TypeVar('_KT')
+_VT = TypeVar('_VT')
+_T_co = TypeVar('_T_co', covariant=True)
+_V_co = TypeVar('_V_co', covariant=True)
+_KT_co = TypeVar('_KT_co', covariant=True)
+_VT_co = TypeVar('_VT_co', covariant=True)
+_T_contra = TypeVar('_T_contra', contravariant=True)
+_TC = TypeVar('_TC', bound=Type[object])
 
 def no_type_check(arg: _F) -> _F:
     ...
@@ -114,7 +114,7 @@ if sys.version_info >= (3, 7):
     OrderedDict = _Alias()
 if sys.version_info >= (3, 9):
     Annotated: _SpecialForm = ...
-AnyStr = TypeVar("""AnyStr""", str, bytes)
+AnyStr = TypeVar('AnyStr', str, bytes)
 
 def runtime_checkable(cls: _TC) -> _TC:
     ...

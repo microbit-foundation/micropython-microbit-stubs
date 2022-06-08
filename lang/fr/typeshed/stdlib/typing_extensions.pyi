@@ -1,9 +1,9 @@
 import abc
 import sys
 from typing import TYPE_CHECKING as TYPE_CHECKING, Any, AsyncContextManager as AsyncContextManager, AsyncGenerator as AsyncGenerator, AsyncIterable as AsyncIterable, AsyncIterator as AsyncIterator, Awaitable as Awaitable, Callable, ChainMap as ChainMap, ClassVar as ClassVar, ContextManager as ContextManager, Coroutine as Coroutine, Counter as Counter, DefaultDict as DefaultDict, Deque as Deque, ItemsView, KeysView, Mapping, NewType as NewType, NoReturn as NoReturn, Text as Text, Tuple, Type as Type, TypeVar, ValuesView, _Alias, overload as overload
-_T = TypeVar("""_T""")
-_F = TypeVar("""_F""", bound=Callable[..., Any])
-_TC = TypeVar("""_TC""", bound=Type[object])
+_T = TypeVar('_T')
+_F = TypeVar('_F', bound=Callable[..., Any])
+_TC = TypeVar('_TC', bound=Type[object])
 
 class _SpecialForm:
 

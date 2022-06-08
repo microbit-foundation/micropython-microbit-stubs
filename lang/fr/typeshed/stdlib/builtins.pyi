@@ -11,19 +11,19 @@ class _SupportsTrunc(Protocol):
 
     def __trunc__(self) -> int:
         ...
-_T = TypeVar("""_T""")
-_T_co = TypeVar("""_T_co""", covariant=True)
-_T_contra = TypeVar("""_T_contra""", contravariant=True)
-_KT = TypeVar("""_KT""")
-_VT = TypeVar("""_VT""")
-_S = TypeVar("""_S""")
-_T1 = TypeVar("""_T1""")
-_T2 = TypeVar("""_T2""")
-_T3 = TypeVar("""_T3""")
-_T4 = TypeVar("""_T4""")
-_T5 = TypeVar("""_T5""")
-_TT = TypeVar("""_TT""", bound="""type""")
-_TBE = TypeVar("""_TBE""", bound="""BaseException""")
+_T = TypeVar('_T')
+_T_co = TypeVar('_T_co', covariant=True)
+_T_contra = TypeVar('_T_contra', contravariant=True)
+_KT = TypeVar('_KT')
+_VT = TypeVar('_VT')
+_S = TypeVar('_S')
+_T1 = TypeVar('_T1')
+_T2 = TypeVar('_T2')
+_T3 = TypeVar('_T3')
+_T4 = TypeVar('_T4')
+_T5 = TypeVar('_T5')
+_TT = TypeVar('_TT', bound='type')
+_TBE = TypeVar('_TBE', bound='BaseException')
 
 class object:
     __doc__: str | None
@@ -196,11 +196,11 @@ class int:
     def __new__(cls: Type[_T], x: str | bytes | bytearray, base: SupportsIndex) -> _T:
         ...
 
-    def to_bytes(self, length: SupportsIndex, byteorder: Literal["""little""", """big"""], *, signed: bool=...) -> bytes:
+    def to_bytes(self, length: SupportsIndex, byteorder: Literal['little', 'big'], *, signed: bool=...) -> bytes:
         ...
 
     @classmethod
-    def from_bytes(cls, bytes: Iterable[SupportsIndex] | SupportsBytes, byteorder: Literal["""little""", """big"""], *, signed: bool=...) -> int:
+    def from_bytes(cls, bytes: Iterable[SupportsIndex] | SupportsBytes, byteorder: Literal['little', 'big'], *, signed: bool=...) -> int:
         ...
 
     def __add__(self, x: int) -> int:
@@ -1497,7 +1497,7 @@ def callable(__obj: object) -> bool:
 
 def chr(__i: int) -> str:
     ...
-_AnyStr_co = TypeVar("""_AnyStr_co""", str, bytes, covariant=True)
+_AnyStr_co = TypeVar('_AnyStr_co', str, bytes, covariant=True)
 
 class _PathLike(Protocol[_AnyStr_co]):
 
@@ -1731,8 +1731,8 @@ def ord(__c: str | bytes) -> int:
 
 def print(*values: object, sep: str | None=..., end: str | None=..., file: SupportsWrite[str] | None=..., flush: bool=...) -> None:
     ...
-_E = TypeVar("""_E""", contravariant=True)
-_M = TypeVar("""_M""", contravariant=True)
+_E = TypeVar('_E', contravariant=True)
+_M = TypeVar('_M', contravariant=True)
 
 class _SupportsPow2(Protocol[_E, _T_co]):
 
@@ -1925,9 +1925,9 @@ class OSError(Exception):
     strerror: str
     filename: Any
     filename2: Any
-    if sys.platform == """win32""":
+    if sys.platform == 'win32':
         winerror: int
-if sys.platform == """win32""":
+if sys.platform == 'win32':
     WindowsError = OSError
 
 class ArithmeticError(_StandardError):

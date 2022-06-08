@@ -1,7 +1,7 @@
 from _typeshed import SupportsWrite
 from typing import Any, Callable, Tuple, Type, TypeVar
-_T = TypeVar("""_T""")
-_FuncT = TypeVar("""_FuncT""", bound=Callable[..., Any])
+_T = TypeVar('_T')
+_FuncT = TypeVar('_FuncT', bound=Callable[..., Any])
 
 class ABCMeta(type):
     __abstractmethods__: set[str]

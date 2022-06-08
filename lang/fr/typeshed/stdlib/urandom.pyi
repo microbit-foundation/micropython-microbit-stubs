@@ -51,7 +51,7 @@ Example: ``urandom.randrange(0, 10)``
 :param stop: (stop) The end of the range (exclusive)
 :param step: (step) The step."""
     ...
-_T = TypeVar("""_T""")
+_T = TypeVar('_T')
 
 def choice(seq: Sequence[_T]) -> _T:
     """Choose a random element from the non-empty sequence ``seq``. (choice)

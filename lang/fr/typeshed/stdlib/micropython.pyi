@@ -1,6 +1,6 @@
 """MicroPython internals. (micropython)"""
 from typing import Any, TypeVar, overload
-_T = TypeVar("""_T""")
+_T = TypeVar('_T')
 
 def const(expr: _T) -> _T:
     """Used to declare that the expression is a constant so that the compiler can

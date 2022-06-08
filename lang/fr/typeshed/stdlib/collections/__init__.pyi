@@ -1,9 +1,9 @@
 import sys
 from typing import Any, Dict, Generic, ItemsView, Iterable, Iterator, KeysView, Optional, Reversible, Tuple, Type, TypeVar, Union, ValuesView
-_S = TypeVar("""_S""")
-_T = TypeVar("""_T""")
-_KT = TypeVar("""_KT""")
-_VT = TypeVar("""_VT""")
+_S = TypeVar('_S')
+_T = TypeVar('_T')
+_KT = TypeVar('_KT')
+_VT = TypeVar('_VT')
 if sys.version_info >= (3, 7):
 
     def namedtuple(typename: str, field_names: Union[str, Iterable[str]], *, rename: bool=..., module: Optional[str]=..., defaults: Optional[Iterable[Any]]=...) -> Type[Tuple[Any, ...]]:

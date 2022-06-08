@@ -1,9 +1,9 @@
 from typing import Generic, Iterable, MutableSequence, TypeVar, Union, overload
 from typing_extensions import Literal
-_IntTypeCode = Literal["""b""", """B""", """h""", """H""", """i""", """I""", """l""", """L""", """q""", """Q"""]
-_FloatTypeCode = Literal["""f""", """d"""]
+_IntTypeCode = Literal['b', 'B', 'h', 'H', 'i', 'I', 'l', 'L', 'q', 'Q']
+_FloatTypeCode = Literal['f', 'd']
 _TypeCode = Union[_IntTypeCode, _FloatTypeCode]
-_T = TypeVar("""_T""", int, float)
+_T = TypeVar('_T', int, float)
 
 class array(MutableSequence[_T], Generic[_T]):
 

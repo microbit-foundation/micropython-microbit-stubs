@@ -1,14 +1,14 @@
 import sys
 from typing import Any, AsyncGenerator, Awaitable, Callable, Generator, Generic, ItemsView, Iterable, Iterator, KeysView, Mapping, Tuple, Type, TypeVar, ValuesView, overload
 from typing_extensions import Literal, final
-_T = TypeVar("""_T""")
-_T1 = TypeVar("""_T1""")
-_T2 = TypeVar("""_T2""")
-_T_co = TypeVar("""_T_co""", covariant=True)
-_T_contra = TypeVar("""_T_contra""", contravariant=True)
-_KT = TypeVar("""_KT""")
-_VT_co = TypeVar("""_VT_co""", covariant=True)
-_V_co = TypeVar("""_V_co""", covariant=True)
+_T = TypeVar('_T')
+_T1 = TypeVar('_T1')
+_T2 = TypeVar('_T2')
+_T_co = TypeVar('_T_co', covariant=True)
+_T_contra = TypeVar('_T_contra', contravariant=True)
+_KT = TypeVar('_KT')
+_VT_co = TypeVar('_VT_co', covariant=True)
+_V_co = TypeVar('_V_co', covariant=True)
 
 @final
 class _Cell:
