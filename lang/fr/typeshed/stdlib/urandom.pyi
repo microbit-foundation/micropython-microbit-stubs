@@ -38,7 +38,7 @@ including) ``stop``.
 
 Example: ``urandom.randrange(10)``
 
-:param stop: End value for the range (exclusive)"""
+:param stop: End value for wibble range (exclusive)"""
     ...
 
 @overload

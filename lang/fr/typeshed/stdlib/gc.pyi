@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """Query the additional GC allocation threshold.
+    """Query wibble additional GC allocation threshold.
 
 :return: The GC allocation threshold.
 

@@ -279,7 +279,7 @@ def match_params_to_defs(param_list, param_defs):
             paramFromDef = param_def_split[1].replace("param ", "")
             definition = ":".join(param_def_split[2:]).strip()
             if param == paramFromDef:
-                matched = {**matched, param: definition}
+                matched.update({param: definition})
     return matched
 
 
@@ -341,81 +341,93 @@ def read_json(file_name):
         return json.load(file)
 
 
-# Needs refactoring with get_docstrings_dict
-def update_docstrings(file, lang):
-    source = get_source(file.file_path)
-    if not file.python_file:
-        save_file(source, file, lang)
+def update_docstrings(ts_file: TypeshedFile, lang):
+    source = get_source(ts_file.file_path)
+    if not ts_file.python_file:
+        save_file(source, ts_file, lang)
         return
     tree = ast.parse(source)
-    key = ""
-    skip_key = False
-    line_num = 0
-    for node in ast.walk(tree):
-        if hasattr(node, "lineno"):
-            end_of_file = node.lineno < line_num
-            line_num = node.lineno
-            # Stop when we reach the end of the file.
-            if end_of_file:
-                break
 
-        if isinstance(node, ast.ClassDef):
-            key, skip_key = process_node_write(file, node, key, skip_key)
-            class_name = key
-            # Walk over nested class methods to retain association
-            # with class name.
-            for node in node.body:
-                key, skip_key = process_node_write(
-                    file, node, key, skip_key, class_name
-                )
-        else:
-            key, skip_key = process_node_write(file, node, key, skip_key)
+    # Shares almost everything with DocStringCollector
+    # so can be refactored.
+    # self.data not needed here.
+    # update_docstring() called instead of get_entries().
+    class DocStringUpdater(ast.NodeVisitor):
+        def __init__(self):
+            self.key = []
+            self.used_keys = set()
+            self.preceding: Optional[str] = None
+
+        def visit_Module(self, node: ast.Module) -> Any:
+            name = ts_file.module_name
+            self.update_docstring_for_node(node, name)
+
+            self.key.append(name)
+            self.generic_visit(node)
+            self.key.pop()
+
+        def visit_ClassDef(self, node):
+            name = node.name
+            self.update_docstring_for_node(node, name)
+
+            self.key.append(name)
+            self.generic_visit(node)
+            self.key.pop()
+
+        def visit_FunctionDef(self, node: ast.FunctionDef) -> Any:
+            self.preceding = None
+            self.update_docstring_for_node(node, node.name)
+
+        def visit_AnnAssign(self, node: ast.AnnAssign) -> Any:
+            self.preceding = node.target.id  # type: ignore
+
+        def visit_Assign(self, node: ast.Assign) -> Any:
+            if len(node.targets) != 1:
+                raise AssertionError()
+            self.preceding = node.targets[0].id  # type: ignore
+
+        def visit_Expr(self, node: ast.Expr) -> Any:
+            if self.preceding:
+                self.update_docstring_for_node(node, self.preceding)
+
+        def generic_visit(self, node: ast.AST) -> Any:
+            self.preceding = None
+            return super().generic_visit(node)
+
+        def update_docstring_for_node(self, node: ast.AST, name: str) -> None:
+            key_root = ".".join([*self.key, name])
+            key = key_root
+            suffix = 1
+            while key in self.used_keys:
+                key = f"{key_root}-{suffix}"
+                suffix += 1
+            self.used_keys.add(key)
+            update_docstring(node, key)
+
+    collector = DocStringUpdater()
+    collector.visit(tree)
     data = unparse_file(tree)
-    save_file(data, file, lang)
+    save_file(data, ts_file, lang)
 
 
-# Needs refactoring with process_node_read
-def process_node_write(file, node, key, skip_key, class_name=""):
-    if not skip_key:
-        assignment_key, class_func_key = get_key(node, class_name)
-        if assignment_key:
-            key = assignment_key
-            skip_key = True
-            # We get the docstring from the Expr node
-            # in the next iteration.
-            return key, skip_key
-        elif class_func_key:
-            key = class_func_key
-        elif isinstance(node, ast.Module):
-            key = ""
-        else:
-            # No key, so not something we care about.
-            return "", skip_key
-
-    skip_key = False
-    update_docstring(node, add_module_to_key(key, file))
-    return key, skip_key
-
-
-def update_docstring(node, parent_key):
+def update_docstring(node, key):
     docstring = get_docstring(node)
     if not docstring:
-        return {}
+        return
 
     if not isinstance(node, ast.Module):
-        docstring = mutate_docstring(docstring, parent_key)
+        docstring = mutate_docstring(docstring, key)
 
-    summary_key = ".".join([parent_key, "summary"])
+    summary_key = ".".join([key, "summary"])
     docstring = mutate_docstring(docstring, summary_key)
     _, param_section = split_docstring(docstring)
     matched_params = get_matched_params(node, param_section)
-    # check_param_docs(parent_key, param_list, matched_params)
-    for key in matched_params:
+    for param_key in matched_params:
         # Translate param name.
         # We need to know how exactly to place this in the stubs.
         # param_name_key = ".".join([parent_key, "param-name", key])
         # Translate param doc.
-        param_doc_key = ".".join([parent_key, "param-doc", key])
+        param_doc_key = ".".join([key, "param-doc", param_key])
         docstring = mutate_docstring(docstring, param_doc_key)
     replace_docstring(node, docstring)
 

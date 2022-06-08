@@ -34,7 +34,7 @@ An invalid value will throw an exception."""
 
 @overload
 def add(log_data: Optional[dict[str, Union[str, int, float]]]) -> None:
-    """Add a data row to the log by passing a dictionary of headers and values.
+    """Add a data row to wibble log by passing a dictionary of headers and values.
 
 Example: ``log.add({ 'temp': temperature() })``
 
