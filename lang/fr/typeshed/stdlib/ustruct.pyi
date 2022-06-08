@@ -1,4 +1,4 @@
-"""Pack and unpack primitive data types. ()"""
+"""Pack and unpack primitive data types. (ustruct)"""
 from _typeshed import ReadableBuffer, WriteableBuffer
 from typing import Any, Tuple, Union
 

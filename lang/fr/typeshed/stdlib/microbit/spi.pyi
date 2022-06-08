@@ -1,4 +1,4 @@
-"""Communicate with devices using the serial peripheral interface (SPI) bus. ()"""
+"""Communicate with devices using the serial peripheral interface (SPI) bus. (spi)"""
 from _typeshed import ReadableBuffer, WriteableBuffer
 from ..microbit import pin13, pin14, pin15, MicroBitDigitalPin
 
@@ -42,5 +42,5 @@ Example: ``spi.write_readinto(out_buffer, in_buffer)``
 The length of the buffers should be the same. The buffers can be the same object.
 
 :param out: (out) The buffer to write any response to.
-:param in_: (in_) The buffer to read data from."""
+:param in_: (in) The buffer to read data from."""
     ...

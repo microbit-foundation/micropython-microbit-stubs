@@ -1,4 +1,4 @@
-"""system specific functions ()"""
+"""system specific functions (usys)"""
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:

@@ -1,4 +1,4 @@
-"""Pins, images, sounds, temperature and volume. ()"""
+"""Pins, images, sounds, temperature and volume. (microbit)"""
 from _typeshed import ReadableBuffer
 from typing import Any, Callable, List, Optional, overload
 from . import accelerometer as accelerometer

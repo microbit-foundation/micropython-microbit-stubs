@@ -1,4 +1,4 @@
-"""Low-level utilities. ()"""
+"""Low-level utilities. (machine)"""
 from typing import Any
 from .microbit import MicroBitDigitalPin
 
@@ -55,8 +55,8 @@ function first waits until the pin input becomes equal to
 starts straight away.
 
 :param pin: (pin) The pin to use
-:param pulse_level: (pulse_level) 0 to time a low pulse or 1 to time a high pulse
-:param timeout_us: (timeout_us) A microsecond timeout
+:param pulse_level: (pulse level) 0 to time a low pulse or 1 to time a high pulse
+:param timeout_us: (timeout us) A microsecond timeout
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
 

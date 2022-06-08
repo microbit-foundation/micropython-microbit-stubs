@@ -1,4 +1,4 @@
-"""Individually addressable RGB and RGBW LED strips. ()"""
+"""Individually addressable RGB and RGBW LED strips. (neopixel)"""
 from .microbit import MicroBitDigitalPin
 from typing import Tuple
 

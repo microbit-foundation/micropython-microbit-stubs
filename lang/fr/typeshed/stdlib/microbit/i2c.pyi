@@ -1,4 +1,4 @@
-"""Communicate with devices using the I²C bus protocol. ()"""
+"""Communicate with devices using the I²C bus protocol. (i2c)"""
 from _typeshed import ReadableBuffer
 from ..microbit import MicroBitDigitalPin, pin19, pin20
 from typing import List

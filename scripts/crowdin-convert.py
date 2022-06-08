@@ -344,9 +344,7 @@ def update_docstring(
     if not docstring:
         return
 
-    api_name_translated = (
-        "" if isinstance(node, ast.Module) else get_string_by_key(key, translated_json)
-    )
+    api_name_translated = get_string_by_key(key, translated_json)
     summary_key = ".".join([key, "summary"])
     docstring = replace_english(
         docstring,

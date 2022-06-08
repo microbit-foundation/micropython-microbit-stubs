@@ -1,4 +1,4 @@
-"""Use the built-in compass. ()"""
+"""Use the built-in compass. (compass)"""
 
 def calibrate() -> None:
     """Starts the calibration process. (calibrate)

@@ -1,4 +1,4 @@
-"""Control the garbage collector ()"""
+"""Control the garbage collector (gc)"""
 from typing import overload
 
 def enable() -> None:

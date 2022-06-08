@@ -1,4 +1,4 @@
-"""Communicate between micro:bits with the built-in radio. ()"""
+"""Communicate between micro:bits with the built-in radio. (radio)"""
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 RATE_1MBIT: int
@@ -58,7 +58,7 @@ by other micro:bit related platforms is the default setting used here.
 house/office address and "group" is like the person at that address to
 which you want to send your message.
 
-:param data_rate: (data_rate) (default=radio.RATE_1MBIT) indicates the speed at which
+:param data_rate: (data rate) (default=radio.RATE_1MBIT) indicates the speed at which
 data throughput takes place. Can be one of the following constants defined
 in the ``radio`` module:
 ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.

@@ -1,4 +1,4 @@
-"""Log data to your micro:bit V2. ()"""
+"""Log data to your micro:bit V2. (log)"""
 from typing import Literal, Optional, Union, overload
 MILLISECONDS = 1
 """Milliseconds timestamp format. (milliseconds)"""
@@ -47,7 +47,7 @@ entry to be added to the log with the extra label.
 Labels previously specified and not present in this function call will be
 skipped with an empty value in the log row.
 
-:param log_data: (log_data) The data to log as a dictionary with a key for each header."""
+:param log_data: (log data) The data to log as a dictionary with a key for each header."""
     ...
 
 @overload

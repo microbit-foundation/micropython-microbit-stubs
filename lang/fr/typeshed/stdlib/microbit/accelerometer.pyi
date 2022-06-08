@@ -1,4 +1,4 @@
-"""Measure the acceleration of the micro:bit and recognise gestures. ()"""
+"""Measure the acceleration of the micro:bit and recognise gestures. (accelerometer)"""
 from typing import Tuple
 
 def get_x() -> int:

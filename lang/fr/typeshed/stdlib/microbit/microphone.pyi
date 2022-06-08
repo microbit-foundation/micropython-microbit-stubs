@@ -1,4 +1,4 @@
-"""Respond to sound using the built-in microphone (V2 only). ()"""
+"""Respond to sound using the built-in microphone (V2 only). (microphone)"""
 from typing import Optional, Tuple
 from ..microbit import SoundEvent
 

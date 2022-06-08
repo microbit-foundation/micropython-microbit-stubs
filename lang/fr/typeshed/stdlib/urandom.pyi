@@ -1,4 +1,4 @@
-"""Generate random numbers. ()"""
+"""Generate random numbers. (urandom)"""
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:

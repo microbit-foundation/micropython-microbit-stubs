@@ -1,4 +1,4 @@
-"""Show text, images and animations on the 5×5 LED display. ()"""
+"""Show text, images and animations on the 5×5 LED display. (display)"""
 from ..microbit import Image
 from typing import Union, overload, Iterable
 

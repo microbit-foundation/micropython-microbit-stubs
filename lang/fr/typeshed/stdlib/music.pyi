@@ -1,4 +1,4 @@
-"""Create and play melodies. ()"""
+"""Create and play melodies. (music)"""
 from typing import Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]

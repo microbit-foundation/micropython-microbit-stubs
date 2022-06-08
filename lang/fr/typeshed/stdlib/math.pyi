@@ -1,4 +1,4 @@
-"""Mathematical functions. ()"""
+"""Mathematical functions. (math)"""
 from typing import Tuple
 
 def acos(x: float) -> float:

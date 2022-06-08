@@ -1,4 +1,4 @@
-"""Measure time and add delays to programs. ()"""
+"""Measure time and add delays to programs. (utime)"""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:

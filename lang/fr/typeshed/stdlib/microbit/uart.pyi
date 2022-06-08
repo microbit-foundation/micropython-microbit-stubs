@@ -1,4 +1,4 @@
-"""Communicate with a device using a serial interface. ()"""
+"""Communicate with a device using a serial interface. (uart)"""
 from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union

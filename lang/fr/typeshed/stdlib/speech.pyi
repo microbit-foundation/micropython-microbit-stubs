@@ -1,4 +1,4 @@
-"""Make the micro:bit talk, sing and make other speech like sounds. ()"""
+"""Make the micro:bit talk, sing and make other speech like sounds. (speech)"""
 from typing import Optional
 from .microbit import MicroBitDigitalPin, pin0
 

@@ -1,4 +1,4 @@
-"""MicroPython internals. ()"""
+"""MicroPython internals. (micropython)"""
 from typing import Any, TypeVar, overload
 _T = TypeVar("""_T""")
 
