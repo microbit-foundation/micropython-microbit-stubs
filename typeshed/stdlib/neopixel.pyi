@@ -15,7 +15,7 @@ class NeoPixel:
 
         :param pin: The pin controlling the neopixel strip.
         :param n: The number of neopixels in the strip.
-        :param bpp: Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass ``4`` rather than the default of ``3`` for RGB and GRB.
+        :param bpp: Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB.
         """
         ...
     def clear(self) -> None:
