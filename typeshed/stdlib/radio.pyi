@@ -42,19 +42,19 @@ def config(
 
     The default configuration is suitable for most use.
 
-    :param length: (default=32) defines the maximum length, in bytes, of a message sent via the radio.
+    :param length: (default=``32``) defines the maximum length, in bytes, of a message sent via the radio.
     It can be up to 251 bytes long (254 - 3 bytes for S0, LENGTH and S1 preamble).
-    :param queue: (default=3) specifies the number of messages that can be stored on the incoming message queue.
+    :param queue: (default=``3``) specifies the number of messages that can be stored on the incoming message queue.
     If there are no spaces left on the queue for incoming messages, then the incoming message is dropped.
-    :param channel: (default=7) an integer value from 0 to 83 (inclusive) that defines an arbitrary "channel" to which the radio is tuned.
+    :param channel: (default=``7``) an integer value from 0 to 83 (inclusive) that defines an arbitrary "channel" to which the radio is tuned.
     Messages will be sent via this channel and only messages received via this channel will be put onto the incoming message queue. Each step is 1MHz wide, based at 2400MHz.
-    :param power: (default=6) is an integer value from 0 to 7 (inclusive) to indicate the strength of signal used when broadcasting a message.
+    :param power: (default=``6``) is an integer value from 0 to 7 (inclusive) to indicate the strength of signal used when broadcasting a message.
     The higher the value the stronger the signal, but the more power is consumed by the device. The numbering translates to positions in the following list of dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4.
-    :param address: (default=0x75626974) an arbitrary name, expressed as a 32-bit address, that's used to filter incoming packets at the hardware level, keeping only those that match the address you set.
+    :param address: (default=``0x75626974``) an arbitrary name, expressed as a 32-bit address, that's used to filter incoming packets at the hardware level, keeping only those that match the address you set.
     The default used by other micro:bit related platforms is the default setting used here.
-    :param group: (default=0) an 8-bit value (0-255) used with the ``address`` when filtering messages.
+    :param group: (default=``0``) an 8-bit value (0-255) used with the ``address`` when filtering messages.
     Conceptually, "address" is like a house/office address and "group" is like the person at that address to which you want to send your message.
-    :param data_rate: (default=radio.RATE_1MBIT) indicates the speed at which data throughput takes place.
+    :param data_rate: (default=``radio.RATE_1MBIT``) indicates the speed at which data throughput takes place.
     Can be one of the following constants defined in the ``radio`` module: ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.
 
     If ``config`` is not called then the defaults described above are assumed.

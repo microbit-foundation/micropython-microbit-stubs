@@ -13,8 +13,8 @@ def init(
     Example: ``i2c.init()``
 
     :param freq: clock frequency
-    :param sda: ``sda`` pin (default 20)
-    :param scl: ``scl`` pin (default 19)
+    :param sda: ``sda`` pin (default ``20``)
+    :param scl: ``scl`` pin (default ``19``)
 
     On a micro:bit V1 board, changing the I²C pins from defaults will make
     the accelerometer and compass stop working, as they are connected
