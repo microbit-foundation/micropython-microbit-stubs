@@ -1,5 +1,20 @@
 # micro:bit MicroPython stubs for editor support
 
+## Translations
+
+We maintain translations of these files via Crowdin.
+
+The source content is in English in `lang/en`.
+
+The translated versions are periodically updated in this repository via a script.
+
+We translate:
+
+- First lines of all docstrings
+- First lines of parameter documentation in `:param name:`-style
+- The API name, e.g. function name, with underscores replaced with spaces to make clear it's a hint not the actual name
+- Parameter names (again with underscores replaced)
+
 ## Credit and licensing
 
 builtins and utility definitions are derived from [typeshed](https://github.com/python/typeshed). Further work is required to review these to ensure that we don't have stubs for definitions MicroPython does not support. These stubs don't provide documentation.
@@ -13,7 +28,7 @@ MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The Mi
 
 ## Scripts
 
-`browser-package.py` packages the typeshed and a Pyright config file in a JSON format that can be consumed by the [alpha Python editor project](https://github.com/microbit-foundation/python-editor-next).
+`browser-package.py` packages the typeshed and a Pyright config file in a JSON format that can be consumed by the [alpha Python editor project](https://github.com/microbit-foundation/python-editor-next). A file is created per language.
 
 ## Testing
 

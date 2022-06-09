@@ -1,3 +1,5 @@
 /typeshed.json
+/typeshed.*.json
 /node_modules/
 *.rst
+/crowdin/
