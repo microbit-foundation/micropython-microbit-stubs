@@ -111,7 +111,7 @@ def heap_lock() -> None:
 
     Example: ``micropython.heap_lock()``
 
-    When locked no memory allocation can occur and a `MemoryError` will be
+    When locked no memory allocation can occur and a ``MemoryError`` will be
     raised if any heap allocation is attempted.
     """
     ...
@@ -121,13 +121,13 @@ def heap_unlock() -> None:
 
     Example: ``micropython.heap_unlock()``
 
-    When locked no memory allocation can occur and a `MemoryError` will be
+    When locked no memory allocation can occur and a ``MemoryError`` will be
     raised if any heap allocation is attempted.
     """
     ...
 
 def kbd_intr(chr: int) -> None:
-    """Set the character that will raise a `KeyboardInterrupt` exception.
+    """Set the character that will raise a ``KeyboardInterrupt`` exception.
 
     Example: ``micropython.kbd_intr(-1)``
 

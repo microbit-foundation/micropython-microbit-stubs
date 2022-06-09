@@ -7,8 +7,8 @@ def exit(retval: object = ...) -> NoReturn:
 
     Example: ``sys.exit(1)``
 
-    This function raises a `SystemExit` exception. If an argument is given, its
-    value given as an argument to `SystemExit`.
+    This function raises a ``SystemExit`` exception. If an argument is given, its
+    value given as an argument to ``SystemExit``.
 
     :param retval: The exit code or message.
     """
@@ -95,7 +95,7 @@ the original MicroPython reference board. It thus can be used to
 distinguish one board from another.
 
 If you need to check whether your program runs on MicroPython (vs other
-Python implementation), use `sys.implementation` instead.
+Python implementation), use ``sys.implementation`` instead.
 """
 
 version: str

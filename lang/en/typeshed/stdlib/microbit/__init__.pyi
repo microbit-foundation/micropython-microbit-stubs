@@ -98,7 +98,7 @@ def set_volume(v: int) -> None:
     ...
 
 class Button:
-    """The class for the buttons `button_a` and `button_b`."""
+    """The class for the buttons ``button_a`` and ``button_b``."""
 
     def is_pressed(self) -> bool:
         """Check if the button is pressed.
@@ -228,8 +228,8 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
 
         Example: ``pin0.is_touched()``
 
-        The default touch mode for the pins on the edge connector is `resistive`.
-        The default for the logo pin **V2** is `capacitive`.
+        The default touch mode for the pins on the edge connector is ``resistive``.
+        The default for the logo pin **V2** is ``capacitive``.
 
         **Resistive touch**
         This test is done by measuring how much resistance there is between the
@@ -252,7 +252,7 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
         Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
         The default touch mode for the pins on the edge connector is
-        `resistive`. The default for the logo pin **V2** is `capacitive`.
+        ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
         :param value: ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin.
         """
