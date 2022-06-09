@@ -192,17 +192,16 @@ def split_docstring(docstring):
 
 
 def convert_to_placeholders(msg):
-    """Convert backticks to Crowdin placeholders."""
-    foundIndex = msg.find("``")
-    i = 1
-    while foundIndex != -1:
-        if i % 2 != 0:
-            msg = msg[:foundIndex] + "{{" + msg[foundIndex + 2 :]
-        else:
-            msg = msg[:foundIndex] + "}}" + msg[foundIndex + 2 :]
-        i += 1
-        foundIndex = msg.find("``")
-    return msg
+    """Avoid translation of quoted code.
+    
+       Crowdin supports various placeholders. We use %% as it's similarly non-paired.
+    """
+    return msg.replace("``", "%%")
+
+
+def convert_from_placeholders(msg):
+    """Invert the placeholders."""
+    return msg.replace("%%", "``")
 
 
 def format_translation_data(key, defaultMessage, description):
@@ -432,11 +431,6 @@ def unparse_file(tree):
 
     unparser = UnparseHack()
     return unparser.visit(tree)
-
-
-def convert_from_placeholders(data):
-    """Convert Crowdin placeholders to backticks."""
-    return data.replace("{{", "``").replace("}}", "``")
 
 
 def save_file(data, file, lang):
