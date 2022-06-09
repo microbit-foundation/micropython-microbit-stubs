@@ -28,9 +28,8 @@ Example: ``speech.pronounce(' /HEHLOW WERLD')``
 :param speed: (speed) A number representing the speed of the voice
 :param mouth: (mouth) A number representing the mouth of the voice
 :param throat: (throat) A number representing the throat of the voice
-:param pin: (pin) Optional argument to specify the output pin can be
-used to override the default of ``pin0``. If we do not want any sound to
-play out of the pins can use ``pin=None``. microbit V2 only.
+:param pin: (pin) Optional argument to specify the output pin can be used to override the default of ``pin0``.
+If we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only.
 
 Override the optional pitch, speed, mouth and throat settings to change the
 timbre (quality) of the voice.
@@ -48,9 +47,8 @@ Example: ``speech.say('hello world')``
 :param speed: (speed) A number representing the speed of the voice
 :param mouth: (mouth) A number representing the mouth of the voice
 :param throat: (throat) A number representing the throat of the voice
-:param pin: (pin) Optional argument to specify the output pin can be
-used to override the default of ``pin0``. If we do not want any sound to
-play out of the pins can use ``pin=None``. microbit V2 only.
+:param pin: (pin) Optional argument to specify the output pin can be used to override the default of ``pin0``.
+If we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only.
 
 The result is semi-accurate for English. Override the optional pitch, speed,
 mouth and throat settings to change the timbre (quality) of the voice.
@@ -71,9 +69,8 @@ Example: ``speech.sing(' /HEHLOW WERLD')``
 :param speed: (speed) A number representing the speed of the voice
 :param mouth: (mouth) A number representing the mouth of the voice
 :param throat: (throat) A number representing the throat of the voice
-:param pin: (pin) Optional argument to specify the output pin can be
-used to override the default of ``pin0``. If we do not want any sound to
-play out of the pins can use ``pin=None``. microbit V2 only.
+:param pin: (pin) Optional argument to specify the output pin can be used to override the default of ``pin0``.
+If we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only.
 
 Override the optional pitch, speed, mouth and throat settings to change
 the timbre (quality) of the voice.

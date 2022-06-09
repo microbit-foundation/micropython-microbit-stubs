@@ -26,10 +26,7 @@ end of the file.
 
 :param *args: (*args) A positional argument for each log header.
 :param timestamp: (timestamp) The timestamp unit that will be automatically added as the first column in every row.
-Setting this argument to `None` disables the timestamp.
-Pass the ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``,
-``log.HOURS`` or ``log.DAYS`` values defined by this module.
-An invalid value will throw an exception."""
+Setting this argument to `None` disables the timestamp. Pass the ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``, ``log.HOURS`` or ``log.DAYS`` values defined by this module. An invalid value will throw an exception."""
     ...
 
 @overload
