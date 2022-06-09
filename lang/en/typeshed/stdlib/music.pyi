@@ -115,7 +115,7 @@ def play(
     Example: ``music.play(music.NYAN)``
 
     :param music: music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
-    :param pin: the output pin for use with an external speaker (default pin 0), ``None`` for no sound.
+    :param pin: the output pin for use with an external speaker (default ``pin0``), ``None`` for no sound.
     :param wait: If ``wait`` is set to ``True``, this function is blocking.
     :param loop: If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted.
 
