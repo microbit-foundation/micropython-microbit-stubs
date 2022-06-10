@@ -127,6 +127,6 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
             task.run()
         elif ticks_diff(scheduled_time, now) < 0:
             print("Oops, running late, tell task to run faster!")
-            task.run(run_faster=true)
+            task.run(run_faster=True)
     """
     ...

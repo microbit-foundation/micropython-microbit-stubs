@@ -92,7 +92,7 @@ def delete(full=False):
 def set_mirroring(serial: bool):
     """Mirrors the data logging activity to the serial output.
 
-    Example: ``log.set_mirroring(true)``
+    Example: ``log.set_mirroring(True)``
 
     Mirroring is disabled by default.
 
