@@ -10,7 +10,7 @@ def play(
     pin: MicroBitDigitalPin = pin0,
     return_pin: Union[MicroBitDigitalPin, None] = None,
 ) -> None:
-    """Play a built-in sound or custom audio frames.``.
+    """Play a built-in sound or custom audio frames.
 
     Example: ``audio.play(Sound.GIGGLE)``
 
