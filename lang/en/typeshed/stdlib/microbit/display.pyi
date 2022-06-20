@@ -40,7 +40,7 @@ def show(
     loop: bool = False,
     clear: bool = False,
 ) -> None:
-    """Shows images, letters or digits on the display.
+    """Shows images, letters or digits on the LED display.
 
     Example: ``display.show(Image.HEART)``
 
@@ -64,7 +64,7 @@ def scroll(
     loop: bool = False,
     monospace: bool = False,
 ) -> None:
-    """Scrolls a number or text on the display.
+    """Scrolls a number or text on the LED display.
 
     Example: ``display.scroll('micro:bit')``
 
@@ -80,21 +80,21 @@ def scroll(
     ...
 
 def on() -> None:
-    """Turn on the display.
+    """Turn on the LED display.
 
     Example: ``display.on()``
     """
     ...
 
 def off() -> None:
-    """Turn off the display (allowing you to re-use the GPIO pins associated with the display for other purposes).
+    """Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes).
 
     Example: ``display.off()``
     """
     ...
 
 def is_on() -> bool:
-    """Check whether the display is on.
+    """Check whether the LED display is enabled.
 
     Example: ``display.is_on()``
 
