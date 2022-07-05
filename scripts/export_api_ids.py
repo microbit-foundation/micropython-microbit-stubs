@@ -1,9 +1,8 @@
 """
-    Creates api.en.json file in Crowdin's format
-    containing translatable parts of the API
-    produced from the type stubs files.
-    Inclues first line of docstring (summary),
-    parameter names and parameter docs.
+    Creates api-ids.json file which
+    contains all API calls that correspond
+    to documentation shown in the
+    Python Editor sidebar.
 """
 
 import ast
