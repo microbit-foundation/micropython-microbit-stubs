@@ -8,7 +8,7 @@
 import ast
 import os
 import json
-from crowdin_convert import (
+from common import (
     get_stub_files,
     DIR,
     TypeshedFile,
@@ -39,11 +39,8 @@ def export_api_ids():
     data_list = []
     files_to_process = get_stub_files()
     for ts_file in files_to_process:
-        if not ts_file.python_file:
-            continue
-        data_list = data_list + get_api_ids(ts_file)
-    # Remove overloads.
-    data_list = list(set(data_list))
+        if ts_file.python_file:
+            data_list = data_list + get_api_ids(ts_file)
     data_list.sort()
     data = {"apiIds": data_list}
     save_api_ids(data)
@@ -73,7 +70,13 @@ def get_api_ids(ts_file: TypeshedFile):
             self.data: list[str] = []
 
         def handle_docstring(self, node: ast.AST, name: str) -> None:
-            key = ".".join([*self.key, name])
+            key_root = ".".join([*self.key, name])
+            key = key_root
+            suffix = 1
+            while key in self.used_keys:
+                key = f"{key_root}-{suffix}"
+                suffix += 1
+            self.used_keys.add(key)
             if checkModuleRequired(ts_file.module_name):
                 self.data.append(key)
 
