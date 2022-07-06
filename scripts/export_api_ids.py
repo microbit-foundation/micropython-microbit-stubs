@@ -17,6 +17,7 @@ from common import (
 )
 
 modules = [
+    "builtins",
     "gc",
     "log",
     "machine",
