@@ -1,5 +1,6 @@
 /typeshed.json
 /typeshed.*.json
+/api-ids.json
 /node_modules/
 *.rst
 /crowdin/

@@ -7,19 +7,14 @@
 """
 
 import ast
-from dataclasses import dataclass
 import os
 import json
 import re
 import sys
-
-from typing import Any
-
-from typing import Optional
+from common import TypeshedFile, get_stub_files, DIR, get_source, DocStringVisitor
 
 
 NODE_TYPES_WITH_DOCSTRINGS = (ast.FunctionDef, ast.Module, ast.ClassDef)
-DIR = os.path.dirname(__file__)
 EN_JSON_PATH = os.path.join(DIR, "../crowdin/api.en.json")
 TRANSLATED_JSON_DIR = os.path.join(DIR, "../crowdin/translated")
 
@@ -33,55 +28,6 @@ def typeshed_to_crowdin():
             continue
         data.update(get_docstrings_dict(ts_file))
     save_docstrings_as_json(data)
-
-
-@dataclass
-class TypeshedFile:
-    file_path: str
-    module_name: str
-    python_file: bool
-
-
-def get_stub_files() -> list[TypeshedFile]:
-    top = os.path.join(DIR, "..", "lang/en/typeshed/stdlib")
-    files_to_process: list[TypeshedFile] = []
-    for root, dirs, files in os.walk(top):
-        for name in files:
-            file_path = os.path.join(root, name)
-            # Skip audio stubs file that imports from microbit audio (so we don't include its docstring)
-            if (
-                os.path.basename(os.path.dirname(file_path)) != "microbit"
-                and name == "audio.pyi"
-            ):
-                continue
-            if name.endswith(".pyi"):
-                files_to_process.append(
-                    TypeshedFile(
-                        file_path=file_path,
-                        module_name=module_name_for_path(file_path),
-                        python_file=True,
-                    )
-                )
-            else:
-                files_to_process.append(
-                    TypeshedFile(
-                        file_path=file_path,
-                        module_name="",
-                        python_file=False,
-                    )
-                )
-    return sorted(files_to_process, key=lambda x: x.file_path)
-
-
-def module_name_for_path(file_path: str):
-    """Hacky determination of the module name used as a translation key."""
-    name = os.path.basename(file_path)
-    in_microbit_package = os.path.basename(os.path.dirname(file_path)) == "microbit"
-    if in_microbit_package:
-        if name == "__init__.pyi":
-            return "microbit"
-        return ".".join(["microbit", os.path.splitext(name)[0]])
-    return os.path.splitext(name)[0]
 
 
 # Translation key to dict with message/description fields.
@@ -101,20 +47,20 @@ def get_docstrings_dict(ts_file: TypeshedFile):
             key_root = ".".join([*self.key, name])
             key = key_root
             suffix = 1
-            while key in self.used_keys:
-                key = f"{key_root}-{suffix}"
-                suffix += 1
+            if isinstance(node, ast.FunctionDef):  # ctx.id
+                for decorator in node.decorator_list:
+                    if hasattr(decorator, "id"):
+                        if decorator.id == "overload":
+                            key = f"{key}-{suffix}"
+                            while key in self.used_keys:
+                                suffix += 1
+                                key = f"{key_root}-{suffix}"
             self.used_keys.add(key)
             self.data.update(get_entries(node, name, key))
 
     collector = DocStringCollector()
     collector.visit(tree)
     return collector.data
-
-
-def get_source(file_path):
-    with open(file_path, "r", encoding="utf-8") as file:
-        return file.read()
 
 
 def pretty_api_name(name):
@@ -456,53 +402,6 @@ def maybe_dir(maybe_path):
         return
     if not os.path.exists(maybe_path):
         os.mkdir(maybe_path)
-
-
-class DocStringVisitor(ast.NodeVisitor):
-    def __init__(self, module_name):
-        self.module_name = module_name
-        self.key = []
-        self.used_keys = set()
-        self.preceding: Optional[str] = None
-
-    def visit_Module(self, node: ast.Module) -> Any:
-        name = self.module_name
-        self.handle_docstring(node, name)
-
-        self.key.append(name)
-        self.generic_visit(node)
-        self.key.pop()
-
-    def visit_ClassDef(self, node):
-        name = node.name
-        self.handle_docstring(node, name)
-
-        self.key.append(name)
-        self.generic_visit(node)
-        self.key.pop()
-
-    def visit_FunctionDef(self, node: ast.FunctionDef) -> Any:
-        self.preceding = None
-        self.handle_docstring(node, node.name)
-
-    def visit_AnnAssign(self, node: ast.AnnAssign) -> Any:
-        self.preceding = node.target.id  # type: ignore
-
-    def visit_Assign(self, node: ast.Assign) -> Any:
-        if len(node.targets) != 1:
-            raise AssertionError()
-        self.preceding = node.targets[0].id  # type: ignore
-
-    def visit_Expr(self, node: ast.Expr) -> Any:
-        if self.preceding:
-            self.handle_docstring(node, self.preceding)
-
-    def generic_visit(self, node: ast.AST) -> Any:
-        self.preceding = None
-        return super().generic_visit(node)
-
-    def handle_docstring(self, node: ast.AST, name: str) -> None:
-        raise NotImplementedError()
 
 
 if __name__ == "__main__":
