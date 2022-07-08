@@ -7,7 +7,7 @@ from typing import Any, Tuple, Union
 def calcsize(fmt: str) -> int:
     """Get the number of bytes needed to store the given ``fmt``.
 
-    Example: ``ustruct.calcsize('hf')``
+    Example: ``struct.calcsize('hf')``
 
     :param fmt: A format string.
     :return The number of bytes needed to store such a value.
@@ -17,7 +17,7 @@ def calcsize(fmt: str) -> int:
 def pack(fmt: str, v1: Any, *vn: Any) -> bytes:
     """Pack values according to a format string.
 
-    Example: ``ustruct.pack('hf', 1, 3.1415)``
+    Example: ``struct.pack('hf', 1, 3.1415)``
 
     :param fmt: The format string.
     :param v1: The first value.
@@ -31,7 +31,7 @@ def pack_into(
 ) -> None:
     """Pack values according to a format string.
 
-    Example: ``ustruct.pack_info('hf', buffer, 1, 3.1415)``
+    Example: ``struct.pack_info('hf', buffer, 1, 3.1415)``
 
     :param fmt: The format string.
     :param buffer: The target buffer to write into.
@@ -44,7 +44,7 @@ def pack_into(
 def unpack(fmt: str, data: ReadableBuffer) -> Tuple[Any, ...]:
     """Unpack data according to a format string.
 
-    Example: ``v1, v2 = ustruct.unpack('hf', buffer)``
+    Example: ``v1, v2 = struct.unpack('hf', buffer)``
 
     :param fmt: The format string.
     :param data: The data.
@@ -55,7 +55,7 @@ def unpack(fmt: str, data: ReadableBuffer) -> Tuple[Any, ...]:
 def unpack_from(fmt: str, buffer: ReadableBuffer, offset: int = 0) -> Tuple:
     """Unpack data from a buffer according to a format string.
 
-    Example: ``v1, v2 = ustruct.unpack_from('hf', buffer)``
+    Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
 
     :param fmt: The format string.
     :param buffer: The source buffer to read from.
