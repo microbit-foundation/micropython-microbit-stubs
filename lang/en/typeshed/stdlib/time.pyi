@@ -7,7 +7,7 @@ def sleep(seconds: Union[int, float]) -> None:
     """
     Delay a number of seconds.
 
-    Example: ``utime.sleep(1)``
+    Example: ``time.sleep(1)``
 
     :param seconds: The number of seconds to sleep for.
     Use a floating-point number to sleep for a fractional number of seconds.
@@ -18,7 +18,7 @@ def sleep_ms(ms: int) -> None:
     """
     Delay for given number of milliseconds.
 
-    Example: ``utime.sleep_ms(1_000_000)``
+    Example: ``time.sleep_ms(1_000_000)``
 
     :param ms: The number of milliseconds delay (>= 0).
     """
@@ -28,7 +28,7 @@ def sleep_us(us: int) -> None:
     """
     Delay for given number of microseconds.
 
-    Example: ``utime.sleep_us(1000)``
+    Example: ``time.sleep_us(1000)``
 
     :param us: The number of microseconds delay (>= 0).
     """
@@ -39,7 +39,7 @@ def ticks_ms() -> int:
     Get an increasing, millisecond counter with an arbitrary reference point,
     that wraps around after some value.
 
-    Example: ``utime.ticks_ms()``
+    Example: ``time.ticks_ms()``
 
     :return: The counter value in milliseconds.
     """
@@ -50,7 +50,7 @@ def ticks_us() -> int:
     Get an increasing, microsecond counter with an arbitrary reference point,
     that wraps around after some value.
 
-    Example: ``utime.ticks_us()``
+    Example: ``time.ticks_us()``
 
     :return: The counter value in microseconds.
     """
@@ -61,7 +61,7 @@ def ticks_add(ticks: int, delta: int) -> int:
     Offset ticks value by a given number, which can be either positive or
     negative.
 
-    Example: ``utime.ticks_add(utime.ticks_ms(), 200)``
+    Example: ``time.ticks_add(time.ticks_ms(), 200)``
 
     Given a ticks value, this function allows to calculate ticks
     value delta ticks before or after it, following modular-arithmetic
@@ -88,10 +88,10 @@ def ticks_add(ticks: int, delta: int) -> int:
 def ticks_diff(ticks1: int, ticks2: int) -> int:
     """
     Measure ticks difference between values returned from
-    ``utime.ticks_ms()`` or ``ticks_us()``, as a signed value
+    ``time.ticks_ms()`` or ``ticks_us()``, as a signed value
     which may wrap around.
 
-    Example: ``utime.ticks_diff(scheduled_time, now)``
+    Example: ``time.ticks_diff(scheduled_time, now)``
 
     :param ticks1: The value to subtract from
     :param ticks2: The value to subtract
@@ -103,7 +103,7 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
     patterns, among them:
 
     Polling with timeout. In this case, the order of events is known, and you
-    will deal only with positive results of :func:`utime.ticks_diff()`::
+    will deal only with positive results of :func:`time.ticks_diff()`::
 
         # Wait for GPIO pin to be asserted, but at most 500us
         start = time.ticks_us()
@@ -112,7 +112,7 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
                 raise TimeoutError
 
 
-    Scheduling events. In this case, :func:`utime.ticks_diff()` result may be
+    Scheduling events. In this case, :func:`time.ticks_diff()` result may be
     negative if an event is overdue::
 
         # This code snippet is not optimized
