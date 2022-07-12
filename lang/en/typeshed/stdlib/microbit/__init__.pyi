@@ -2,7 +2,7 @@
 """
 
 from _typeshed import ReadableBuffer
-from typing import Any, Callable, List, Optional, overload
+from typing import Any, Callable, ClassVar, List, Optional, Union, overload
 
 from . import accelerometer as accelerometer
 from . import compass as compass
@@ -791,3 +791,43 @@ class Sound:
 
     YAWN: Sound
     """Yawning sound."""
+
+class SoundEffect:
+    WAVE_SINE: ClassVar[int]
+    WAVE_SAWTOOTH: ClassVar[int]
+    WAVE_TRIANGLE: ClassVar[int]
+    WAVE_SQUARE: ClassVar[int]
+    WAVE_NOISE: ClassVar[int]
+
+    INTER_LINEAR: ClassVar[int]
+    INTER_CURVE: ClassVar[int]
+    INTER_LOG: ClassVar[int]
+
+    FX_NONE: ClassVar[int]
+    FX_TREMOLO: ClassVar[int]
+    FX_VIBRATO: ClassVar[int]
+    FX_WARBLE: ClassVar[int]
+
+    freq_start: int
+    freq_end: int
+    duration: int
+    vol_start: int
+    vol_end: int
+    wave: int
+    fx: int
+    interpolation: int
+
+    def __init__(
+        self,
+        preset: Optional[Union[SoundEffect, str]] = None,
+        *,
+        freq_start: Optional[int] = None,
+        freq_end: Optional[int] = None,
+        duration: Optional[int] = None,
+        vol_start: Optional[int] = None,
+        vol_end: Optional[int] = None,
+        wave: Optional[int] = None,
+        fx: Optional[int] = None,
+        interpolation: Optional[int] = None
+    ):
+        pass
