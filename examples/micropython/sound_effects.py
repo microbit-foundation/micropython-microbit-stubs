@@ -14,7 +14,7 @@ CLICK = audio.SoundEffect(
 )
 
 # Play a built in Sound Effect
-# audio.play(audio.SoundEffect.CHIRP)
+audio.play(CHIRP)
 
 # Create a Sound Effect and immediately play it
 audio.play(
