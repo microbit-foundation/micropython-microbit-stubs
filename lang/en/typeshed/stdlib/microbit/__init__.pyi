@@ -793,29 +793,67 @@ class Sound:
     """Yawning sound."""
 
 class SoundEffect:
+    """A sound effect, composed by a set of parameters configured via the constructor or attributes."""
+
     WAVE_SINE: ClassVar[int]
+    """Sine wave option used for the ``wave`` parameter."""
+
     WAVE_SAWTOOTH: ClassVar[int]
+    """Sawtooth wave option used for the ``wave`` parameter."""
+
     WAVE_TRIANGLE: ClassVar[int]
+    """Triangle wave option used for the ``wave`` parameter."""
+
     WAVE_SQUARE: ClassVar[int]
+    """Square wave option used for the ``wave`` parameter."""
+
     WAVE_NOISE: ClassVar[int]
+    """Noise option used for the ``wave`` parameter."""
 
     INTER_LINEAR: ClassVar[int]
-    INTER_CURVE: ClassVar[int]
-    INTER_LOG: ClassVar[int]
+    """Linear interpolation option used for the ``interpolation`` parameter."""
 
-    FX_NONE: ClassVar[int]
+    INTER_CURVE: ClassVar[int]
+    """Linear interpolation option used for the ``interpolation`` parameter."""
+
+    INTER_LOG: ClassVar[int]
+    """Curve interpolation option used for the ``interpolation`` parameter."""
+
+    FX_NONE: None
+    """No effect option used for the ``fx`` parameter."""
+
     FX_TREMOLO: ClassVar[int]
+    """Tremelo effect option used for the ``fx`` parameter."""
+
     FX_VIBRATO: ClassVar[int]
+    """Vibrato effect option used for the ``fx`` parameter."""
+
     FX_WARBLE: ClassVar[int]
+    """Warble effect option used for the ``fx`` parameter."""
 
     freq_start: int
+    """Start frequency in Hertz (Hz)"""
+
     freq_end: int
+    """End frequency in Hertz (Hz)"""
+
     duration: int
+    """Duration of the sound (ms), eg: ``500``"""
+
     vol_start: int
+    """Start volume value, range 0-255, eg: ``120``"""
+
     vol_end: int
+    """End volume value, range 0-255, eg: ``255``"""
+
     wave: int
+    """Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise)."""
+
     fx: int
+    """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``None``."""
+
     interpolation: int
+    """The type of curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``INTER_LINEAR``, ``INTER_CURVE``, ``INTER_LOG``."""
 
     def __init__(
         self,
@@ -830,4 +868,20 @@ class SoundEffect:
         fx: Optional[int] = None,
         interpolation: Optional[int] = None
     ):
-        pass
+        """Create a new sound effect.
+
+        All the parameters are optional, with default values listed below, and
+        they can all be modified via attributes of the same name. For example, we
+        can first create an effect ``my_effect = SoundEffect(duration=1000)``,
+        and then change its attributes ``my_effect.duration = 500``.
+
+        :param preset: Optional existing SoundEffect instance to use as a base, its values are cloned in the new instance, and any additional arguments provided overwrite the base values
+        :param freq_start: Start frequency in Hertz (Hz), default: ``500``
+        :param freq_end: End frequency in Hertz (Hz), default: ``2500``
+        :param duration: Duration of the sound (ms), default: ``500``
+        :param vol_start: Start volume value, range 0-255, default: ``255``
+        :param vol_end: End volume value, range 0-255, default: ``255``
+        :param wave: Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise).
+        :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``None``.
+        :param interpolation: The type of curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``INTER_LINEAR``, ``INTER_CURVE``, ``INTER_LOG``.
+        """
