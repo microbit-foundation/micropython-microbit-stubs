@@ -3,13 +3,13 @@ from microbit import *
 # Not the real CHIRP/WARBLE, just placeholders so we can
 # maintain the test code below more or less as per the
 # docs.
-CHIRP = SoundEffect(
+CHIRP = audio.SoundEffect(
     "110232570087411440044008880352005901003300010000000000000000010000000000"
 )
-WARBLE = SoundEffect(
+WARBLE = audio.SoundEffect(
     "110232570087411440044008880352005901003300010000000000000000010000000000"
 )
-CLICK = SoundEffect(
+CLICK = audio.SoundEffect(
     "110232570087411440044008880352005901003300010000000000000000010000000000"
 )
 
@@ -43,7 +43,7 @@ audio.play(my_effect)
 # You can also create a new effect based on an existing one, and modify
 # any of its characteristics via arguments
 audio.play(WARBLE)
-my_modified_effect = SoundEffect(WARBLE, duration=1000)
+my_modified_effect = audio.SoundEffect(WARBLE, duration=1000)
 audio.play(my_modified_effect)
 
 # Use sensor data to modify and play the existing Sound Effect instance
