@@ -74,10 +74,10 @@ class SoundEffect:
     """Linear interpolation option used for the ``interpolation`` parameter."""
 
     INTER_CURVE: ClassVar[int]
-    """Linear interpolation option used for the ``interpolation`` parameter."""
+    """Curve interpolation option used for the ``interpolation`` parameter."""
 
     INTER_LOG: ClassVar[int]
-    """Curve interpolation option used for the ``interpolation`` parameter."""
+    """Logarithmic interpolation option used for the ``interpolation`` parameter."""
 
     FX_NONE: None
     """No effect option used for the ``fx`` parameter."""
