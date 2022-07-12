@@ -50,7 +50,7 @@ audio.play(my_modified_effect)
 while True:
     my_effect.freq_start = accelerometer.get_x()
     my_effect.freq_end = accelerometer.get_y()
-    audio.play(my_effect)  #
+    audio.play(my_effect)
 
     if button_a.is_pressed():
         # On button A play an effect and once it's done show an image
