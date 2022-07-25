@@ -38,7 +38,7 @@ modules = [
 
 def export_api_ids():
     data_list = []
-    files_to_process = get_stub_files()
+    files_to_process = get_stub_files(modules)
     for ts_file in files_to_process:
         if ts_file.python_file:
             data_list = data_list + get_api_ids(ts_file)
@@ -51,14 +51,6 @@ def export_api_ids():
 def save_api_ids(data):
     with open(os.path.join(DIR, "../", "api-ids.json"), "w") as file:
         file.write(json.dumps(data, indent=2))
-
-
-def checkModuleRequired(module_name):
-    if module_name in modules:
-        return True
-    if "microbit" in module_name:
-        return True
-    return False
 
 
 def get_api_ids(ts_file: TypeshedFile):
@@ -83,8 +75,7 @@ def get_api_ids(ts_file: TypeshedFile):
                                 suffix += 1
                                 key = f"{key_root}-{suffix}"
             self.used_keys.add(key)
-            if checkModuleRequired(ts_file.module_name):
-                self.data.append(key)
+            self.data.append(key)
 
     collector = DocStringCollector()
     collector.visit(tree)
