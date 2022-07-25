@@ -18,11 +18,29 @@ NODE_TYPES_WITH_DOCSTRINGS = (ast.FunctionDef, ast.Module, ast.ClassDef)
 EN_JSON_PATH = os.path.join(DIR, "../crowdin/api.en.json")
 TRANSLATED_JSON_DIR = os.path.join(DIR, "../crowdin/translated")
 
+modules = [
+    "gc",
+    "log",
+    "machine",
+    "math",
+    "microbit",
+    "micropython",
+    "music",
+    "neopixel",
+    "os",
+    "radio",
+    "random",
+    "speech",
+    "struct",
+    "sys",
+    "time",
+]
+
 
 def typeshed_to_crowdin():
     """Entrypoint to convert from English typeshed files to a JSON file for Crowdin translation."""
     data = {}
-    files_to_process = get_stub_files()
+    files_to_process = get_stub_files(modules)
     for ts_file in files_to_process:
         if not ts_file.python_file:
             continue
@@ -231,7 +249,7 @@ def crowdin_to_typeshed():
     """Entrypoint to convert from Crowdin (translated) JSON to individual typeshed files."""
     en_json = read_json(EN_JSON_PATH)
     translations_to_process = get_translated_json_files()
-    stubs_to_process = get_stub_files()
+    stubs_to_process = get_stub_files(modules)
     for translated in translations_to_process:
         translated_json = read_json(translated)
         lang = os.path.basename(translated).split(".")[1]
