@@ -271,9 +271,14 @@ def update_docstrings(
             key_root = ".".join([*self.key, name])
             key = key_root
             suffix = 1
-            while key in self.used_keys:
-                key = f"{key_root}-{suffix}"
-                suffix += 1
+            if isinstance(node, ast.FunctionDef):  # ctx.id
+                for decorator in node.decorator_list:
+                    if hasattr(decorator, "id"):
+                        if decorator.id == "overload":
+                            key = f"{key}-{suffix}"
+                            while key in self.used_keys:
+                                suffix += 1
+                                key = f"{key_root}-{suffix}"
             self.used_keys.add(key)
             update_docstring(node, key, en_json, translated_json)
 
