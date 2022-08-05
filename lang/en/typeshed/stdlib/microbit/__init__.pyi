@@ -754,10 +754,10 @@ class Image:
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
+    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
 
     QUIET: SoundEvent
-    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
+    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
 
 class Sound:
     """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
