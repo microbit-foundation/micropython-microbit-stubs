@@ -18,11 +18,11 @@ DAYS = 864000
 """Days timestamp format."""
 
 def set_labels(
-    *args: str, timestamp: Optional[Literal[1, 10, 36000, 864000]] = MILLISECONDS
+    *args: str, timestamp: Optional[Literal[1, 10, 36000, 864000]] = SECONDS
 ) -> None:
     """Set up the log file header.
 
-    Example: ``log.set_labels('x', 'y', 'z', log.SECONDS)``
+    Example: ``log.set_labels('x', 'y', 'z', timestamp=log.MINUTES)``
 
     Each call to this function with positional arguments will generate a new
     header entry into the log file.
