@@ -44,7 +44,7 @@ def get_strength() -> int:
 
     Example: ``accelerometer.get_strength()``
 
-    :returns: The combined acceleration strength of all the axes, in milli-g.
+    :return: The combined acceleration strength of all the axes, in milli-g.
     """
     ...
 
