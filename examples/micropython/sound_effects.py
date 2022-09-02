@@ -26,7 +26,7 @@ audio.play(
         vol_end=255,
         wave=audio.SoundEffect.WAVE_TRIANGLE,
         fx=audio.SoundEffect.FX_VIBRATO,
-        interpolation=audio.SoundEffect.INTER_LOG,
+        shape=audio.SoundEffect.SHAPE_LOG,
     )
 )
 
