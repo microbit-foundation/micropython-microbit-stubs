@@ -2,7 +2,7 @@
 """
 
 from _typeshed import ReadableBuffer
-from typing import Any, Callable, ClassVar, List, Optional, Union, overload
+from typing import Any, Callable, ClassVar, List, Optional, Tuple, Union, overload
 
 from . import accelerometer as accelerometer
 from . import compass as compass
@@ -60,6 +60,21 @@ def panic(n: int) -> None:
 
 def reset() -> None:
     """Restart the board."""
+
+def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
+    """Converts a value from a range to another range.
+
+    Example: ``temp_fahrenheit = scale(30, from_=(0, 100), to=(32, 212))``
+
+    This can be useful to convert values between inputs and outputs, for example an accelerometer x value to a speaker volume.
+
+    Negative scaling is also supported, for example ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
+
+    :param value: A number to convert.
+    :param from_: A tuple to define the range to convert from.
+    :param to: A tuple to define the range to convert to.
+    :return: The ``value`` converted to the ``to`` range.
+    """
 
 def sleep(n: float) -> None:
     """Wait for ``n`` milliseconds.
