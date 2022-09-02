@@ -521,6 +521,9 @@ class Image:
     SNAKE: Image
     """Snake image."""
 
+    SCISSORS: Image
+    """Scissors image."""
+
     ALL_CLOCKS: List[Image]
     """A list containing all the CLOCK_ images in sequence."""
 
