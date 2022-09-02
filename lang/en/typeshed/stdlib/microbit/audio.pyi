@@ -70,14 +70,14 @@ class SoundEffect:
     WAVE_NOISE: ClassVar[int]
     """Noise option used for the ``wave`` parameter."""
 
-    INTER_LINEAR: ClassVar[int]
-    """Linear interpolation option used for the ``interpolation`` parameter."""
+    SHAPE_LINEAR: ClassVar[int]
+    """Linear interpolation option used for the ``shape`` parameter."""
 
-    INTER_CURVE: ClassVar[int]
-    """Curve interpolation option used for the ``interpolation`` parameter."""
+    SHAPE_CURVE: ClassVar[int]
+    """Curve interpolation option used for the ``shape`` parameter."""
 
-    INTER_LOG: ClassVar[int]
-    """Logarithmic interpolation option used for the ``interpolation`` parameter."""
+    SHAPE_LOG: ClassVar[int]
+    """Logarithmic interpolation option used for the ``shape`` parameter."""
 
     FX_NONE: None
     """No effect option used for the ``fx`` parameter."""
@@ -112,8 +112,8 @@ class SoundEffect:
     fx: int
     """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``None``."""
 
-    interpolation: int
-    """The type of curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``INTER_LINEAR``, ``INTER_CURVE``, ``INTER_LOG``."""
+    shape: int
+    """The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."""
 
     def __init__(
         self,
@@ -126,7 +126,7 @@ class SoundEffect:
         vol_end: Optional[int] = None,
         wave: Optional[int] = None,
         fx: Optional[int] = None,
-        interpolation: Optional[int] = None
+        shape: Optional[int] = None
     ):
         """Create a new sound effect.
 
@@ -143,5 +143,5 @@ class SoundEffect:
         :param vol_end: End volume value, range 0-255, default: ``255``
         :param wave: Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise).
         :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``None``.
-        :param interpolation: The type of curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``INTER_LINEAR``, ``INTER_CURVE``, ``INTER_LOG``.
+        :param shape: The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``.
         """
