@@ -35,23 +35,6 @@ def stop() -> None:
     """
     ...
 
-class AudioFrame:
-    """An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte
-    (whole number between 0 and 255).
-
-    It takes just over 4 ms to play a single frame.
-
-    Example::
-
-        frame = AudioFrame()
-        for i in range(len(frame)):
-            frame[i] = 252 - i * 8
-    """
-
-    def __len__(self) -> int: ...
-    def __setitem__(self, key: int, value: int) -> None: ...
-    def __getitem__(self, key: int) -> int: ...
-
 class SoundEffect:
     """A sound effect, composed by a set of parameters configured via the constructor or attributes."""
 
@@ -117,16 +100,14 @@ class SoundEffect:
 
     def __init__(
         self,
-        preset: Optional[Union[SoundEffect, str]] = None,
-        *,
-        freq_start: Optional[int] = None,
-        freq_end: Optional[int] = None,
-        duration: Optional[int] = None,
-        vol_start: Optional[int] = None,
-        vol_end: Optional[int] = None,
-        wave: Optional[int] = None,
+        freq_start: int = 500,
+        freq_end: int = 2500,
+        duration: int = 500,
+        vol_start: int = 255,
+        vol_end: int = 0,
+        wave: int = WAVE_SQUARE,
         fx: Optional[int] = None,
-        shape: Optional[int] = None
+        shape: int = SHAPE_LOG,
     ):
         """Create a new sound effect.
 
@@ -140,8 +121,34 @@ class SoundEffect:
         :param freq_end: End frequency in Hertz (Hz), default: ``2500``
         :param duration: Duration of the sound (ms), default: ``500``
         :param vol_start: Start volume value, range 0-255, default: ``255``
-        :param vol_end: End volume value, range 0-255, default: ``255``
+        :param vol_end: End volume value, range 0-255, default: ``0``
         :param wave: Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise).
         :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``None``.
         :param shape: The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``.
         """
+    def copy(self) -> SoundEffect:
+        """
+        :return: A copy of the SoundEffect.
+        """
+
+class AudioFrame:
+    """An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte
+    (whole number between 0 and 255).
+
+    It takes just over 4 ms to play a single frame.
+
+    Example::
+
+        frame = AudioFrame()
+        for i in range(len(frame)):
+            frame[i] = 252 - i * 8
+    """
+
+    def copyfrom(self, other: AudioFrame) -> None:
+        """Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance.
+
+        :param other: ``AudioFrame`` instance from which to copy the data.
+        """
+    def __len__(self) -> int: ...
+    def __setitem__(self, key: int, value: int) -> None: ...
+    def __getitem__(self, key: int) -> int: ...
