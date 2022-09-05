@@ -6,7 +6,7 @@ from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
 
 ODD: int
-"""Odd partity"""
+"""Odd parity"""
 
 EVEN: int
 """Even parity"""
@@ -41,7 +41,7 @@ def init(
     ...
 
 def any() -> bool:
-    """Check is any data is waiting.
+    """Check if any data is waiting.
 
     Example: ``uart.any()``
 
