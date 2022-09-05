@@ -66,7 +66,7 @@ def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> 
 
     Example: ``temp_fahrenheit = scale(30, from_=(0, 100), to=(32, 212))``
 
-    This can be useful to convert values between inputs and outputs, for example an accelerometer x value to a speaker volume.
+    This can be useful to convert values between inputs and outputs, for example an accelerometer X value to a speaker volume.
 
     Negative scaling is also supported, for example ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
 
