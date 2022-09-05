@@ -4,3 +4,4 @@
 /node_modules/
 *.rst
 /crowdin/
+__pycache__

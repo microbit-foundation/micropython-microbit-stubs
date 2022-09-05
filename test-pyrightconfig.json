@@ -3,7 +3,6 @@
   "pythonVersion": "3.6",
   "pythonPlatform": "Linux",
   "typeCheckingMode": "basic",
-  "typeshedPath": "./lang/en/typeshed/",
   "reportMissingModuleSource": false,
   "reportWildcardImportFromLibrary": false,
   "reportInvalidStubStatement": true,

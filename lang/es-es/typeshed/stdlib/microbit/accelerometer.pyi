@@ -1,0 +1,88 @@
+"""Mide la aceleración del micro:bit y reconoce gestos. (accelerometer)"""
+from typing import Tuple
+
+def get_x() -> int:
+    """Obtiene la medición de la aceleración en el eje ``x`` en mili-g. (get x)
+
+Example: ``accelerometer.get_x()``
+
+:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
+    ...
+
+def get_y() -> int:
+    """Obtiene la medición de la aceleración en el eje ``y`` en mili-g. (get y)
+
+Example: ``accelerometer.get_y()``
+
+:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
+    ...
+
+def get_z() -> int:
+    """Obtiene la medición de la aceleración en el eje ``z`` en mili-g. (get z)
+
+Example: ``accelerometer.get_z()``
+
+:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
+    ...
+
+def get_values() -> Tuple[int, int, int]:
+    """Obtiene las mediciones de las aceleraciones en todos los ejes como una tupla. (get values)
+
+Example: ``x, y, z = accelerometer.get_values()``
+
+:return: a three-element tuple of integers ordered as X, Y, Z, each value a positive or negative integer depending on direction in the range +/- 2000mg"""
+    ...
+
+def current_gesture() -> str:
+    """Obtiene el nombre del gesto actual. (current gesture)
+
+Example: ``accelerometer.current_gesture()``
+
+MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+represented as strings.
+
+:return: The current gesture"""
+    ...
+
+def is_gesture(name: str) -> bool:
+    """Comprueba si el gesto está actualmente activo. (is gesture)
+
+Example: ``accelerometer.is_gesture('shake')``
+
+MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+represented as strings.
+
+:param name: (name) El nombre del gesto.
+:return: ``True`` if the gesture is active, ``False`` otherwise."""
+    ...
+
+def was_gesture(name: str) -> bool:
+    """Comprueba si el gesto estuvo activo desde la última llamada. (was gesture)
+
+Example: ``accelerometer.was_gesture('shake')``
+
+MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+represented as strings.
+
+:param name: (name) El nombre del gesto.
+:return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
+
+def get_gestures() -> Tuple[str, ...]:
+    """Devuelve una tupla con el historial de gestos. (get gestures)
+
+Example: ``accelerometer.get_gestures()``
+
+Clears the gesture history before returning.
+
+Gestures are not updated in the background so there needs to be constant
+calls to some accelerometer method to do the gesture detection. Usually
+gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
+
+:return: The history as a tuple, most recent last."""
+    ...
