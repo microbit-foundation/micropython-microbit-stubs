@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Temporary home for micro:bit MicroPython stubs.",
   "scripts": {
-    "test": "pyright -p test-pyrightconfig.json",
+    "test": "python3 scripts/test.py",
     "i18n:typeshed-to-crowdin": "python3 scripts/crowdin_convert.py typeshed-to-crowdin",
     "i18n:crowdin-to-typeshed": "python3 scripts/crowdin_convert.py crowdin-to-typeshed",
     "export-api-ids": "python3 scripts/export_api_ids.py"

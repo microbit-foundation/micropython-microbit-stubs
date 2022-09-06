@@ -1,0 +1,46 @@
+"""シリアルペリフェラルインターフェイス（SPI）バスを使ってデバイスと通信します。 (spi)"""
+from _typeshed import ReadableBuffer, WriteableBuffer
+from ..microbit import pin13, pin14, pin15, MicroBitDigitalPin
+
+def init(baudrate: int=1000000, bits: int=8, mode: int=0, sclk: MicroBitDigitalPin=pin13, mosi: MicroBitDigitalPin=pin15, miso: MicroBitDigitalPin=pin14) -> None:
+    """SPI通信を初期化します。 (init)
+
+Example: ``spi.init()``
+
+For correct communication, the parameters have to be the same on both communicating devices.
+
+:param baudrate: (baudrate) 通信速度。
+:param bits: (bits) 送信時のビット幅。現在のところは ``bits=8`` だけをサポート。しかし、これは将来的に変更するかもしれません。
+:param mode: (mode) クロックの極性と位相の組み合わせを決定します - `オンラインの表を参照 <https://microbit-micropython.readthedocs.io/ja/v2-docs/spi.html#microbit.spi.init>`_ 。
+:param sclk: (sclk) sclk 端子（デフォルト 13）
+:param mosi: (mosi) mosi 端子（デフォルト 15）
+:param miso: (miso) miso 端子（デフォルト 14）"""
+    ...
+
+def read(nbytes: int) -> bytes:
+    """バイト列を読み取ります。 (read)
+
+Example: ``spi.read(64)``
+
+:param nbytes: (nbytes) 読み取る最大バイト数。
+:return: The bytes read."""
+    ...
+
+def write(buffer: ReadableBuffer) -> None:
+    """デバイスにバイト列を書き込みます。 (write)
+
+Example: ``spi.write(bytes([1, 2, 3]))``
+
+:param buffer: (buffer) データの読み取り元のバッファ。"""
+    ...
+
+def write_readinto(out: WriteableBuffer, in_: ReadableBuffer) -> None:
+    """``out`` バッファをバスに書き込み、任意のレスポンスを ``in_`` バッファに読み取ります。 (write readinto)
+
+Example: ``spi.write_readinto(out_buffer, in_buffer)``
+
+The length of the buffers should be the same. The buffers can be the same object.
+
+:param out: (out) レスポンスの書き込みバッファ。
+:param in_: (in) データの読み取り元のバッファ。"""
+    ...
