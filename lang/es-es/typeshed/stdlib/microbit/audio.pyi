@@ -3,17 +3,17 @@ from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import Iterable, Union
 
 def play(source: Union[Iterable[AudioFrame], Sound], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
-    """Reproduce un sonido predefinido o pistas de audio personalizadas. (play)
+    """Reproduce un sonido predefinido o pistas de audio personalizadas. (reproducir)
 
 Example: ``audio.play(Sound.GIGGLE)``
 
-:param source: (source) Un ``Sound`` predefinido como ``Sound.GIGGLE`` o datos de muestra como un iterable de objetos ``AudioFrame``.
-:param wait: (wait) Si ``wait`` es ``True`` (verdadero), la función se bloqueará hasta que el sonido finalice.
+:param source: (origen) Un ``Sound`` predefinido como ``Sound.GIGGLE`` o datos de muestra como un iterable de objetos ``AudioFrame``.
+:param wait: (esperar) Si ``wait`` es ``True`` (verdadero), la función se bloqueará hasta que el sonido finalice.
 :param pin: (pin) Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``. Si no queremos que se reproduzca ningún sonido, podemos usar ``pin=None``.
-:param return_pin: (return pin) Especifica un pin de conector de borde diferencial para conectarse a un altavoz externo en lugar de tierra. Esto se ignora para la revisión **V2**."""
+:param return_pin: (devolver pin) Especifica un pin de conector de borde diferencial para conectarse a un altavoz externo en lugar de tierra. Esto se ignora para la revisión **V2**."""
 
 def is_playing() -> bool:
-    """Comprueba si se está reproduciendo un sonido. (is playing)
+    """Comprueba si se está reproduciendo un sonido. (reproduciendo)
 
 Example: ``audio.is_playing()``
 
@@ -21,7 +21,7 @@ Example: ``audio.is_playing()``
     ...
 
 def stop() -> None:
-    """Detiene la reproducción de audio. (stop)
+    """Detiene la reproducción de audio. (detener)
 
 Example: ``audio.stop()``"""
     ...

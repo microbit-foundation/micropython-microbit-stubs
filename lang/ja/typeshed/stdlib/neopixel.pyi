@@ -15,7 +15,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: (pin) neopixelストリップを制御する端子。
 :param n: (n) ストリップ内のneopixelの数。
-:param bpp: (bpp) ピクセルあたりのバイト数。micro:bit V2 の RGBW neopixel に対応するには、RGBやGRBのデフォルト値の3ではなく、4を指定してください。"""
+:param bpp: (bpp) ピクセルあたりのバイト数。micro:bit V2 の RGBW ネオピクセルに対応するには、RGBやGRBのデフォルト値の3ではなく、4 を指定します。"""
         ...
 
     def clear(self) -> None:

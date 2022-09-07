@@ -1,8 +1,8 @@
-"""Mide la aceleración del micro:bit y reconoce gestos. (accelerometer)"""
+"""Mide la aceleración del micro:bit y reconoce gestos. (acelerómetro)"""
 from typing import Tuple
 
 def get_x() -> int:
-    """Obtiene la medición de la aceleración en el eje ``x`` en mili-g. (get x)
+    """Obtiene la medición de la aceleración en el eje ``x`` en mili-g. (obtener x)
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """Obtiene la medición de la aceleración en el eje ``y`` en mili-g. (get y)
+    """Obtiene la medición de la aceleración en el eje ``y`` en mili-g. (obtener y)
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """Obtiene la medición de la aceleración en el eje ``z`` en mili-g. (get z)
+    """Obtiene la medición de la aceleración en el eje ``z`` en mili-g. (obtener z)
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Obtiene las mediciones de las aceleraciones en todos los ejes como una tupla. (get values)
+    """Obtiene las mediciones de las aceleraciones en todos los ejes como una tupla. (obtener valores)
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """Obtiene el nombre del gesto actual. (current gesture)
+    """Obtiene el nombre del gesto actual. (gesto actual)
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """Comprueba si el gesto está actualmente activo. (is gesture)
+    """Comprueba si el gesto está actualmente activo. (gesto activo)
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -56,12 +56,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) El nombre del gesto.
+:param name: (nombre) El nombre del gesto.
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """Comprueba si el gesto estuvo activo desde la última llamada. (was gesture)
+    """Comprueba si el gesto estuvo activo desde la última llamada. (gesto anterior)
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,11 +70,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) El nombre del gesto.
+:param name: (nombre) El nombre del gesto.
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """Devuelve una tupla con el historial de gestos. (get gestures)
+    """Devuelve una tupla con el historial de gestos. (obtener gestos)
 
 Example: ``accelerometer.get_gestures()``
 

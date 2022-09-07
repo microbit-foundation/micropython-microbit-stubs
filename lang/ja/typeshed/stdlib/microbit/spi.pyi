@@ -12,9 +12,9 @@ For correct communication, the parameters have to be the same on both communicat
 :param baudrate: (baudrate) 通信速度。
 :param bits: (bits) 送信時のビット幅。現在のところは ``bits=8`` だけをサポート。しかし、これは将来的に変更するかもしれません。
 :param mode: (mode) クロックの極性と位相の組み合わせを決定します - `オンラインの表を参照 <https://microbit-micropython.readthedocs.io/ja/v2-docs/spi.html#microbit.spi.init>`_ 。
-:param sclk: (sclk) sclk 端子（デフォルト 13）
-:param mosi: (mosi) mosi 端子（デフォルト 15）
-:param miso: (miso) miso 端子（デフォルト 14）"""
+:param sclk: (sclk) sclk 端子（デフォルトは 13）
+:param mosi: (mosi) mosi 端子（デフォルトは 15）
+:param miso: (miso) miso 端子（デフォルトは 14）"""
     ...
 
 def read(nbytes: int) -> bytes:

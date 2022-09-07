@@ -1,8 +1,8 @@
-"""测量 micro:bit 的加速度并识别手势。 (accelerometer)"""
+"""测量 micro:bit 的加速度并识别手势。 (加速度传感器)"""
 from typing import Tuple
 
 def get_x() -> int:
-    """获取 ``x`` 轴上的加速度测量值（以milli-g为单位）。 (get x)
+    """获取 ``x`` 轴上的加速度测量值（以 milli-g 为单位）。 (get x)
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """获取 ``y`` 轴上的加速度测量值（以milli-g为单位）。 (get y)
+    """获取 ``y`` 轴上的加速度测量值（以 milli-g 为单位）。 (get y)
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """获取 ``z`` 轴上的加速度测量值（以milli-g为单位）。 (get z)
+    """获取 ``z`` 轴上的加速度测量值（以 milli-g 为单位）。 (get z)
 
 Example: ``accelerometer.get_z()``
 

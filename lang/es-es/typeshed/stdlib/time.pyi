@@ -2,7 +2,7 @@
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
-    """Retarda varios segundos. (sleep)
+    """Retarda varios segundos. (dormir)
 
 Example: ``time.sleep(1)``
 
@@ -11,7 +11,7 @@ Usa un número de coma flotante para generar un retardo durante un número fracc
     ...
 
 def sleep_ms(ms: int) -> None:
-    """Genera un retardo para el número dado de milisegundos. (sleep ms)
+    """Genera un retardo para el número dado de milisegundos. (dormir ms)
 
 Example: ``time.sleep_ms(1_000_000)``
 
@@ -19,7 +19,7 @@ Example: ``time.sleep_ms(1_000_000)``
     ...
 
 def sleep_us(us: int) -> None:
-    """Genera un retardo para el número dado de microsegundos. (sleep us)
+    """Genera un retardo para el número dado de microsegundos. (dormir us)
 
 Example: ``time.sleep_us(1000)``
 
@@ -27,7 +27,7 @@ Example: ``time.sleep_us(1000)``
     ...
 
 def ticks_ms() -> int:
-    """Obtiene un contador en milisegundos creciente con un punto de referencia arbitrario que se reinicia después de algún valor. (ticks ms)
+    """Obtiene un contador en milisegundos creciente con un punto de referencia arbitrario que se reinicia después de algún valor. (tics ms)
 
 Example: ``time.ticks_ms()``
 
@@ -35,7 +35,7 @@ Example: ``time.ticks_ms()``
     ...
 
 def ticks_us() -> int:
-    """Obtiene un contador en microsegundos creciente con un punto de referencia arbitrario que se reinicia después de algún valor. (ticks us)
+    """Obtiene un contador en microsegundos creciente con un punto de referencia arbitrario que se reinicia después de algún valor. (tics us)
 
 Example: ``time.ticks_us()``
 
@@ -44,7 +44,7 @@ Example: ``time.ticks_us()``
 
 def ticks_add(ticks: int, delta: int) -> int:
     """Valor de desplazamiento de tics por un número determinado, el cual puede ser positivo o
-negativo. (ticks add)
+negativo. (añadir tics)
 
 Example: ``time.ticks_add(time.ticks_ms(), 200)``
 
@@ -52,7 +52,7 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: (ticks) Un valor de tics
+:param ticks: (tics) Un valor de tics
 :param delta: (delta) Un desplazamiento entero
 
 Example::
@@ -70,12 +70,12 @@ Example::
     ...
 
 def ticks_diff(ticks1: int, ticks2: int) -> int:
-    """Mide la diferencia de tics entre los valores devueltos por ``time.ticks_ms()`` o ``ticks_us()`` como un valor con signo que se puede reiniciar. (ticks diff)
+    """Mide la diferencia de tics entre los valores devueltos por ``time.ticks_ms()`` o ``ticks_us()`` como un valor con signo que se puede reiniciar. (diferencia de tics)
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: (ticks1) El valor del que restar
-:param ticks2: (ticks2) El valor a restar
+:param ticks1: (tics1) El valor del que restar
+:param ticks2: (tics2) El valor a restar
 
 The argument order is the same as for subtraction operator,
 ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.

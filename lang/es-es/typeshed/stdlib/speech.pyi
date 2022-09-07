@@ -1,13 +1,13 @@
-"""Hacer que el micro:bit hable, cante y haga otros sonidos parecidos a la voz. (speech)"""
+"""Hacer que el micro:bit hable, cante y haga otros sonidos parecidos a la voz. (habla)"""
 from typing import Optional
 from .microbit import MicroBitDigitalPin, pin0
 
 def translate(words: str) -> str:
-    """Traducir palabras en inglés a fonemas. (translate)
+    """Traducir palabras en inglés a fonemas. (traducir)
 
 Example: ``speech.translate('hello world')``
 
-:param words: (words) Una cadena de palabras en inglés.
+:param words: (palabras) Una cadena de palabras en inglés.
 :return: A string containing a best guess at the appropriate phonemes to pronounce.
 The output is generated from this `text to phoneme translation table <https://github.com/s-macke/SAM/wiki/Text-to-phoneme-translation-table>`_.
 
@@ -23,11 +23,11 @@ def pronounce(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throa
 
 Example: ``speech.pronounce(' /HEHLOW WERLD')``
 
-:param phonemes: (phonemes) La cadena de fonemas a pronunciar
+:param phonemes: (fonemas) La cadena de fonemas a pronunciar
 :param pitch: (tono) Un número que representa el tono de la voz
 :param speed: (velocidad) Un número que representa la velocidad de la voz
 :param mouth: (boca) Un número que representa la boca de la voz
-:param throat: (throat) Un número que representa la garganta de la voz
+:param throat: (garganta) Un número que representa la garganta de la voz
 :param pin: (pin) Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
 Si no queremos que se reproduzca ningún sonido, podemos usar ``pin=None``. Solo para el micro:bit V2.
 
@@ -38,15 +38,15 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: MicroBitDigitalPin=pin0) -> None:
-    """Dice palabras en inglés. (say)
+    """Dice palabras en inglés. (decir)
 
 Example: ``speech.say('hello world')``
 
-:param words: (words) La cadena de palabras a decir.
+:param words: (palabras) La cadena de palabras a decir.
 :param pitch: (tono) Un número que representa el tono de la voz
 :param speed: (velocidad) Un número que representa la velocidad de la voz
 :param mouth: (boca) Un número que representa la boca de la voz
-:param throat: (throat) Un número que representa la garganta de la voz
+:param throat: (garganta) Un número que representa la garganta de la voz
 :param pin: (pin) Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
 Si no queremos que se reproduzca ningún sonido, podemos usar ``pin=None``. Solo para el micro:bit V2.
 
@@ -68,7 +68,7 @@ Example: ``speech.sing(' /HEHLOW WERLD')``
 :param pitch: (tono) Un número que representa el tono de la voz
 :param speed: (velocidad) Un número que representa la velocidad de la voz
 :param mouth: (boca) Un número que representa la boca de la voz
-:param throat: (throat) Un número que representa la garganta de la voz
+:param throat: (garganta) Un número que representa la garganta de la voz
 :param pin: (pin) Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
 Si no queremos que se reproduzca ningún sonido, podemos usar ``pin=None``. Solo para el micro:bit V2.
 

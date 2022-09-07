@@ -2,7 +2,7 @@
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
-    """Termina el programa actual con un código de salida determinado. (exit)
+    """Termina el programa actual con un código de salida determinado. (salir)
 
 Example: ``sys.exit(1)``
 
@@ -13,7 +13,7 @@ value given as an argument to ``SystemExit``.
     ...
 
 def print_exception(exc: Exception) -> None:
-    """Imprime una excepción con un seguimiento. (print exception)
+    """Imprime una excepción con un seguimiento. (imprimir excepción)
 
 Example: ``sys.print_exception(e)``
 
@@ -24,13 +24,13 @@ This is simplified version of a function which appears in the
 argv: List[str]
 """Una lista mutable de argumentos con los que se inició el programa actual. (argv)"""
 byteorder: str
-"""El orden de bytes del sistema (``"little"`` o ``"big"``). (byteorder)"""
+"""El orden de bytes del sistema (``"little"`` o ``"big"``). (ordenbytes)"""
 
 class _implementation:
     name: str
     version: Tuple[int, int, int]
 implementation: _implementation
-"""Objeto con información sobre la implementación actual de Python. (implementation)
+"""Objeto con información sobre la implementación actual de Python. (implementación)
 
 For MicroPython, it has following attributes:
 
@@ -49,7 +49,7 @@ maxsize: int
 Valor máximo que un tipo entero nativo puede contener en la plataforma actual
 o valor máximo representable por el tipo entero de MicroPython, en el caso de que sea más pequeño
 que el valor máximo de la plataforma (que es el caso de los puertos de MicroPython incompatibles con el
-tipo entero largo). (maxsize)
+tipo entero largo). (tamañomáx)
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some
@@ -74,7 +74,7 @@ modules: Dict[str, Any]
 
 On some ports, it may not include builtin modules."""
 path: List[str]
-"""Una lista mutable de directorios para buscar módulos importados. (path)"""
+"""Una lista mutable de directorios para buscar módulos importados. (ruta)"""
 platform: str
 """La plataforma en la que se está ejecutando MicroPython.  (plataforma)
 
@@ -89,7 +89,7 @@ Python implementation), use ``sys.implementation`` instead.
 version: str
 """Versión del lenguaje Python a la que se ajusta esta implementación, en forma de cadena. (versión)"""
 version_info: Tuple[int, int, int]
-"""Versión del lenguaje Python a la que se ajusta esta implementación, en forma de tupla de enteros. (version info)
+"""Versión del lenguaje Python a la que se ajusta esta implementación, en forma de tupla de enteros. (info de versión)
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.

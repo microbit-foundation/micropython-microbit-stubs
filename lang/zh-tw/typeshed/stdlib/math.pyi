@@ -1,4 +1,4 @@
-"""數學函數。 (math)"""
+"""數學函式。 (math)"""
 from typing import Tuple
 
 def acos(x: float) -> float:

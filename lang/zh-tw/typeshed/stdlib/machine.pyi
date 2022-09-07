@@ -40,7 +40,7 @@ def enable_irq(state: Any) -> None:
 
 Example: ``machine.enable_irq(interrupt_state)``
 
-:param state: (狀態) 從最近一次叫用 ``disable_irq`` 函數傳回的值。"""
+:param state: (狀態) 從最近一次叫用 ``disable_irq`` 函式傳回的值。"""
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:

@@ -1,4 +1,4 @@
-"""在5×5的 LED 显示屏上显示文字、图像和动画。 (display)"""
+"""在5×5的 LED 显示屏上显示文字、图像和动画。 (显示)"""
 from ..microbit import Image
 from typing import Union, overload, Iterable
 
@@ -23,51 +23,51 @@ Example: ``display.set_pixel(0, 0, 9)``
     ...
 
 def clear() -> None:
-    """将所有 LED 的亮度设置为 0（关闭）。 (clear)
+    """将所有 LED 的亮度设置为 0（关闭）。 (清除)
 
 Example: ``display.clear()``"""
     ...
 
 def show(image: Union[str, float, int, Image, Iterable[Image]], delay: int=400, wait: bool=True, loop: bool=False, clear: bool=False) -> None:
-    """在 LED 显示屏上显示图像、字母或数字。 (show)
+    """在 LED 显示屏上显示图像、字母或数字。 (显示)
 
 Example: ``display.show(Image.HEART)``
 
 When ``image`` is an image or a list of images then each image is displayed in turn.
 If ``image`` is a string or number, each letter or digit is displayed in turn.
 
-:param image: (image) 要显示的一个字符串、数字、图像或图像列表。
-:param delay: (delay) 每个字母、数字或图像之间显示的间隔时间为 ``delay`` 毫秒。
-:param wait: (wait) 如果 ``wait`` 为 ``True``，此函数将阻塞直到动画完成，否则动画将在后台发生。
+:param image: (图像) 要显示的一个字符串、数字、图像或图像列表。
+:param delay: (延迟) 每个字母、数字或图像之间显示的间隔时间为 ``delay`` 毫秒。
+:param wait: (等待) 如果 ``wait`` 为 ``True``，此函数将阻塞直到动画完成，否则动画将在后台发生。
 :param loop: (loop) 如果 ``loop`` 为 ``True``, 动画将永远重复。
-:param clear: (clear) 如果 ``clear`` 是 ``True``, 则显示将在序列完成后被清除。
+:param clear: (清除) 如果 ``clear`` 是 ``True``, 则显示将在序列完成后被清除。
 
 The ``wait``, ``loop`` and ``clear`` arguments must be specified using their keyword."""
     ...
 
 def scroll(text: Union[str, float, int], delay: int=150, wait: bool=True, loop: bool=False, monospace: bool=False) -> None:
-    """在 LED 显示屏上滚动一个数字或文本。 (scroll)
+    """在 LED 显示屏上滚动一个数字或文本。 (滚动)
 
 Example: ``display.scroll('micro:bit')``
 
-:param text: (text) 要滚动的字符串。如果 ``text`` 是整数或浮点数，则首先使用 ``str()`` 将其转换为字符串。
-:param delay: (delay) ``delay`` 参数控制文本滚动的速度。
-:param wait: (wait) 如果 ``wait`` 为 ``True``，此函数将阻塞直到动画完成，否则动画将发生在后台。
+:param text: (文本) 要滚动的字符串。如果 ``text`` 是整数或浮点数，则首先使用 ``str()`` 将其转换为字符串。
+:param delay: (延迟) ``delay`` 参数控制文本滚动的速度。
+:param wait: (等待) 如果 ``wait`` 为 ``True``，此函数将阻塞直到动画完成，否则动画将发生在后台。
 :param loop: (loop) 如果 ``loop`` 为 ``True``, 动画将永远重复。
-:param monospace: (monospace) 如果 ``monospace`` 为 ``True``，则字符的宽度都将占用 5 个像素列，否则在滚动时每个字符之间将恰好有 1 个空白像素列。
+:param monospace: (等宽) 如果 ``monospace`` 为 ``True``，则字符的宽度都将占用 5 个像素列，否则在滚动时每个字符之间将恰好有 1 个空白像素列。
 
 The ``wait``, ``loop`` and ``monospace`` arguments must be specified
 using their keyword."""
     ...
 
 def on() -> None:
-    """打开 LED 显示屏。 (on)
+    """打开 LED 显示屏。 (打开)
 
 Example: ``display.on()``"""
     ...
 
 def off() -> None:
-    """关闭 LED 显示屏（禁用显示屏可让您将 GPIO 引脚重新用于其他用途）。 (off)
+    """关闭 LED 显示屏（禁用显示屏可让您将 GPIO 引脚重新用于其他用途）。 (关闭)
 
 Example: ``display.off()``"""
     ...

@@ -1,4 +1,4 @@
-"""Controlar el recolector de basura (gc)"""
+"""Controlar el recolector de basura (rb)"""
 from typing import overload
 
 def enable() -> None:
@@ -12,7 +12,7 @@ Heap memory can still be allocated,
 and garbage collection can still be initiated manually using ``gc.collect``."""
 
 def collect() -> None:
-    """Ejecuta una recolección de basura. (collect)"""
+    """Ejecuta una recolección de basura. (recoger)"""
     ...
 
 def mem_alloc() -> int:
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """Consulta el umbral de asignación de GC (recolector de basura) adicional. (threshold)
+    """Consulta el umbral de asignación de GC (recolector de basura) adicional. (límite)
 
 :return: The GC allocation threshold.
 
@@ -44,7 +44,7 @@ implementations, its signature and semantics are different."""
 
 @overload
 def threshold(amount: int) -> None:
-    """Establece el umbral de asignación de GC (recolector de basura) adicional. (threshold)
+    """Establece el umbral de asignación de GC (recolector de basura) adicional. (límite)
 
 Normally, a collection is triggered only when a new allocation
 cannot be satisfied, i.e. on an  out-of-memory (OOM) condition.
@@ -64,5 +64,5 @@ This function is a MicroPython extension. CPython has a similar
 function - ``set_threshold()``, but due to different GC
 implementations, its signature and semantics are different.
 
-:param amount: (amount) Número de bytes después de los cuales se debe activar una recolección de basura."""
+:param amount: (cantidad) Número de bytes después de los cuales se debe activar una recolección de basura."""
     ...

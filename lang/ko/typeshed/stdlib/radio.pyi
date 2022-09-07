@@ -4,7 +4,7 @@ from typing import Optional, Tuple
 RATE_1MBIT: int
 """초당 1 MBit의 처리율을 지정하는 데 사용하는 상수 (rate 1mbit)"""
 RATE_2MBIT: int
-"""초당 2 MBit의 처리율을 지정하는 데 사용하는 상수 (rate 2mbit)"""
+"""초당 2 MBit의 처리율을 지정하는 데 사용하는 상수. (rate 2mbit)"""
 
 def on() -> None:
     """라디오를 켭니다. (on)
@@ -34,7 +34,7 @@ The default configuration is suitable for most use.
 :param channel: (channel) (기본=7) 임의의 "채널"을 라디오 채널로 설정하는 0부터 83까지의 정수(모두 포함). 메시지는 이 채널로 전송되며, 이 채널을 통해 받은 메시지만 수신 메시지 대기열에 등록됩니다. 2400MHz 기준으로 각 단계는 1MHz 대역입니다.
 :param power: (power) (기본=6) 0부터 7의 정수값(경계값 포함)으로 메시지를 송출할 때의 신호 강도를 표현합니다.
 값이 높을 수록 신호는 강해지지만 기기의 전력을 더 소모합니다. 각 숫자는 다음 dBm(데시벨 밀리와트)값 목록으로 변환됩니다: -30, -20, -16, -12, -8, -4, 0, 4.
-:param address: (address) (기본=0x75626974) 임의의 이름으로, 32비트로 표현됩니다. 하드웨어 레벨에서 수신 패킷을 필터하는 데 사용되며, 설정한 주소와 일치하는 패킷만 유지합니다. 다른 micro:bit 관련 플랫폼이 사용하는 기본값은 여기에서도 사용됩니다.
+:param address: (address) (기본=0x75626974) 임의의 이름으로, 32비트로 표현됩니다. 하드웨어 레벨에서 수신 패킷을 필터링하는 데 사용되며, 설정한 주소와 일치하는 패킷만 유지합니다. 다른 micro:bit 관련 플랫폼이 사용하는 기본값은 여기에서도 사용됩니다.
 :param group: (group) 메시지를 필터링할 때 ``address``와 함께 사용되는 8비트 값(0-255). 개념적으로 "address(주소)"는 집/사무실 주소, "group(그룹)"은 해당 주소에서 메시지를 보내고자 하는 인물입니다.
 :param data_rate: (data rate) (default=``radio.RATE_1MBIT``) 데이터 처리율의 속도를 지정합니다. ``radio`` 모듈의 다음 상수 중 하나가 될 수 있습니다: ``RATE_250KBIT``, ``RATE_1MBIT``, ``RATE_2MBIT``.
 

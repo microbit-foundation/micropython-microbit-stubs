@@ -1,4 +1,4 @@
-"""핀, 이미지, 소리, 온도 및 음량. (microbit)"""
+"""핀, 이미지, 소리, 온도 및 음량입니다. (microbit)"""
 from _typeshed import ReadableBuffer
 from typing import Any, Callable, List, Optional, overload
 from . import accelerometer as accelerometer
@@ -28,7 +28,7 @@ or used as a decorator::
 
 Arguments with different time units are additive.
 
-:param callback: (callback) 인보크(원격 실행) 기능을 호출합니다. 데코레이터(장식자)로 사용할 때는 누락합니다.
+:param callback: (callback) 인보크(원격 실행) 기능을 호출합니다. 데코레이터(장식자)로 사용할 때는 생략합니다.
 :param days: (days) 일 단위 주기입니다.
 :param h: (h) 시간 단위 주기입니다.
 :param min: (min) 분 단위 주기입니다.
@@ -73,7 +73,7 @@ def set_volume(v: int) -> None:
 
 Example: ``set_volume(127)``
 
-:param v: (v) 0(낮음) 및 255(높음) 사이의 값.
+:param v: (v) 0(낮음) 및 255(높음) 사이의 값입니다.
 
 Out of range values will be clamped to 0 or 255.
 
@@ -81,7 +81,7 @@ Out of range values will be clamped to 0 or 255.
     ...
 
 class Button:
-    """``button_a`` 및 ``button_b`` 버튼의 클래스. (button)"""
+    """``button_a`` 및 ``button_b`` 버튼의 클래스입니다. (button)"""
 
     def is_pressed(self) -> bool:
         """해당 버튼이 눌렸는지 확인합니다. (is pressed)
@@ -90,7 +90,7 @@ class Button:
         ...
 
     def was_pressed(self) -> bool:
-        """기기가 시작한 후 또는 이 방식이 호출된 후 해당 버튼이 눌렸는지 확인합니다. (was pressed)
+        """장치가 시작한 후 또는 이 메서드가 호출된 후 해당 버튼이 눌렸는지 확인합니다. (was pressed)
 
 Calling this method will clear the press state so
 that the button must be pressed again before this method will return
@@ -100,17 +100,17 @@ that the button must be pressed again before this method will return
         ...
 
     def get_presses(self) -> int:
-        """버튼이 눌린 총 횟수를 불러오고, 이 총값을 반환하기 전 초기화합니다. (get presses)
+        """버튼이 눌린 총 횟수를 불러오고, 총값을 반환하기 전 초기화합니다. (get presses)
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""왼쪽 버튼 ``Button`` 오브젝트. (button a)"""
+"""좌측 버튼 ``Button`` 개체입니다. (button a)"""
 button_b: Button
-"""오른쪽 버튼 ``Button`` 오브젝트. (button b)"""
+"""우측 버튼 ``Button`` 개체입니다. (button b)"""
 
 class MicroBitDigitalPin:
-    """디지털 핀. (microbitdigitalpin)
+    """디지털 핀입니다. (microbitdigitalpin)
 
 Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
     NO_PULL: int
@@ -130,19 +130,19 @@ Example: ``value = pin0.read_digital()``
 
 Example: ``pin0.write_digital(1)``
 
-:param value: (value) 1로 설정해 높은 핀(pin high), 0으로 설정해 낮은 핀(pin low)"""
+:param value: (value) 핀을 하이로 설정하려면 1, 로우로 설정하려면 0"""
         ...
 
     def set_pull(self, value: int) -> None:
-        """다음의 가능한 값 중 하나로 풀 상태(pull state) 설정: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``. (set pull)
+        """다음 중 하나의 값으로 풀 상태를 설정: ``PULL_UP``, ``PULL_DOWN`` 또는 ``NO_PULL`` (set pull)
 
 Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: (value) 관련 핀으로부터의 풀 상태(pull state). 예: ``pin0.PULL_UP``."""
+:param value: (value) 관련 핀의 풀 상태입니다. (예: ``pin0.PULL_UP``)"""
         ...
 
     def get_pull(self) -> int:
-        """핀의 풀 상태(pull state)를 불러옵니다. (get pull)
+        """핀의 풀 상태를 불러옵니다. (get pull)
 
 Example: ``pin0.get_pull()``
 
@@ -165,28 +165,28 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """핀의 PWM 신호를 출력, ``value``와 비례하게 듀티 사이클을 설정합니다. (write analog)
+        """핀의 PWM 신호를 출력하고 ``value``와(과) 비례하게 듀티 사이클을 설정합니다. (write analog)
 
 Example: ``pin0.write_analog(254)``
 
-:param value: (value) 0(0% 듀티 사이클) 및 1023(100% 듀티) 사이의 정수 또는 부동 소수점 수."""
+:param value: (value) 0(0% 듀티 사이클) 및 1023(100% 듀티) 사이의 정수 또는 부동 소수점 수입니다."""
 
     def set_analog_period(self, period: int) -> None:
         """PWM 신호가 출력되는 주기를 ``period``밀리초로 설정합니다. (set analog period)
 
 Example: ``pin0.set_analog_period(10)``
 
-:param period: (period) 밀리초 주기 설정(유효한 최소값은 1ms)."""
+:param period: (period) 유효한 최소값이 1ms인 밀리초 주기입니다."""
 
     def set_analog_period_microseconds(self, period: int) -> None:
         """PWM 신호가 출력되는 주기를 ``period``마이크로초로 설정합니다. (set analog period microseconds)
 
 Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: (period) 마이크로초 주기 설정(유효한 최소값은 256µs)."""
+:param period: (period) 유효한 최소값이 256µs인 마이크로초 주기입니다."""
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """아날로그 및 디지털 기능이 있는 핀. (microbitanalogdigitalpin)"""
+    """아날로그 및 디지털 기능이 있는 핀입니다. (microbitanalogdigitalpin)"""
 
     def read_analog(self) -> int:
         """핀에 적용된 전압을 읽습니다. (read analog)
@@ -196,7 +196,7 @@ Example: ``pin0.read_analog()``
 :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """아날로그, 디지털, 터치 기능이 있는 핀. (microbittouchpin)"""
+    """아날로그, 디지털, 터치 기능이 있는 핀입니다. (microbittouchpin)"""
     CAPACITIVE: int
     RESISTIVE: int
 
@@ -231,18 +231,18 @@ Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 The default touch mode for the pins on the edge connector is
 ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-:param value: (value) 관련 핀으로부터 ``CAPACITIVE`` 또는 ``RESISTIVE``."""
+:param value: (value) 관련 핀의 ``CAPACITIVE`` 또는 ``RESISTIVE``입니다."""
         ...
 pin0: MicroBitTouchPin
-"""디지털 및 아날로그, 터치 기능이 있는 핀. (pin0)"""
+"""디지털 및 아날로그, 터치 기능이 있는 핀입니다. (pin0)"""
 pin1: MicroBitTouchPin
-"""디지털 및 아날로그, 터치 기능이 있는 핀. (pin1)"""
+"""디지털 및 아날로그, 터치 기능이 있는 핀입니다. (pin1)"""
 pin2: MicroBitTouchPin
-"""디지털 및 아날로그, 터치 기능이 있는 핀. (pin2)"""
+"""디지털 및 아날로그, 터치 기능이 있는 핀입니다. (pin2)"""
 pin3: MicroBitAnalogDigitalPin
-"""디지털 및 아날로그 기능이 있는 핀. (pin3)"""
+"""디지털 및 아날로그 기능이 있는 핀입니다. (pin3)"""
 pin4: MicroBitAnalogDigitalPin
-"""디지털 및 아날로그 기능이 있는 핀. (pin4)"""
+"""디지털 및 아날로그 기능이 있는 핀입니다. (pin4)"""
 pin5: MicroBitDigitalPin
 """디지털 기능이 있는 핀입니다. (pin speaker)"""
 pin6: MicroBitDigitalPin
@@ -254,7 +254,7 @@ pin8: MicroBitDigitalPin
 pin9: MicroBitDigitalPin
 """디지털 기능이 있는 핀입니다. (pin9)"""
 pin10: MicroBitAnalogDigitalPin
-"""디지털 및 아날로그 기능이 있는 핀. (pin10)"""
+"""디지털 및 아날로그 기능이 있는 핀입니다. (pin10)"""
 pin11: MicroBitDigitalPin
 """디지털 기능이 있는 핀입니다. (pin11)"""
 pin12: MicroBitDigitalPin
@@ -272,33 +272,33 @@ pin19: MicroBitDigitalPin
 pin20: MicroBitDigitalPin
 """디지털 기능이 있는 핀입니다. (pin20)"""
 pin_logo: MicroBitTouchPin
-"""micro:bit 전면의 터치 감지 로고 핀으로, 정전식 터치 모드로 기본 설정되어있습니다. (pin logo)"""
+"""micro:bit 전면의 터치 감지 로고 핀으로, 기본값은 정전식 터치 모드입니다. (핀 로고)"""
 pin_speaker: MicroBitAnalogDigitalPin
-"""micro:bit 스피커를 처리하는 핀. (화난 얼굴 이미지.)
+"""micro:bit 스피커를 처리하는 핀입니다. (핀 스피커)
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """micro:bit LED 디스플레이에 표시할 이미지. (image)
+    """micro:bit LED 디스플레이에 표시할 이미지입니다. (image)
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """하트 이미지. (heart)"""
+    """하트 이미지입니다. (heart)"""
     HEART_SMALL: Image
-    """작은 하트 이미지. (heart small)"""
+    """작은 하트 이미지입니다. (heart small)"""
     HAPPY: Image
-    """행복한 얼굴 이미지. (happy)"""
+    """행복한 얼굴 이미지입니다. (happy)"""
     SMILE: Image
-    """미소 짓는 얼굴 이미지. (smile)"""
+    """미소 짓는 얼굴 이미지입니다. (smile)"""
     SAD: Image
-    """슬픈 얼굴 이미지. (sad)"""
+    """슬픈 얼굴 이미지입니다. (sad)"""
     CONFUSED: Image
-    """혼란스러운 얼굴 이미지. (confused)"""
+    """혼란스러운 얼굴 이미지입니다. (confused)"""
     ANGRY: Image
-    """화난 얼굴 이미지. (angry)"""
+    """화난 얼굴 이미지입니다. (angry)"""
     ASLEEP: Image
     """자는 얼굴 이미지. (asleep)"""
     SURPRISED: Image

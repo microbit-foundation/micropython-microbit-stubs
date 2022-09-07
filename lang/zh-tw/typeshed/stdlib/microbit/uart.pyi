@@ -1,23 +1,23 @@
-"""Communicate with a device using a serial interface. (uart)"""
+"""使用序列介面與裝置通訊。 (uart)"""
 from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
 ODD: int
-"""Odd partity (odd)"""
+"""奇數檢查 (odd)"""
 EVEN: int
-"""Even parity (even)"""
+"""偶數檢查 (even)"""
 
 def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
-    """Initialize serial communication. (init)
+    """初始化序列通訊。 (init)
 
 Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
-:param baudrate: (baudrate) The speed of communication.
-:param bits: (bits) The size of bytes being transmitted. micro:bit only supports 8.
-:param parity: (parity) How parity is checked, ``None``, ``uart.ODD`` or ``uart.EVEN``.
-:param stop: (stop) The number of stop bits, has to be 1 for micro:bit.
-:param tx: (tx) Transmitting pin.
-:param rx: (rx) Receiving pin.
+:param baudrate: (baudrate) 通訊速度。
+:param bits: (bits) 正在傳輸的位元組大小，micro:bit 只支援 8。
+:param parity: (parity) 如何檢查奇數，``None``、``uart.ODD`` 或 ``uart.EVEN``。
+:param stop: (stop) 停止位元的數量，micro:bit 必須為 1。
+:param tx: (tx) 發射引腳。
+:param rx: (rx) 正在接收引腳。
 
 Initializing the UART on external pins will cause the Python console on
 USB to become unaccessible, as it uses the same hardware. To bring the
@@ -29,7 +29,7 @@ For more details see `the online documentation <https://microbit-micropython.rea
     ...
 
 def any() -> bool:
-    """Check is any data is waiting. (any)
+    """Check if any data is waiting. (any)
 
 Example: ``uart.any()``
 
@@ -37,26 +37,26 @@ Example: ``uart.any()``
     ...
 
 def read(nbytes: Optional[int]=None) -> Optional[bytes]:
-    """Read bytes. (read)
+    """讀取位元組。 (read)
 
 Example: ``uart.read()``
 
-:param nbytes: (nbytes) If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible
+:param nbytes: (nbytes) 如果指定了 ``nbytes``，則最多讀取那麼多位元組，否則讀取盡可能多的位元組
 :return: A bytes object or ``None`` on timeout"""
     ...
 
 def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
-    """Read bytes into the ``buf``. (readinto)
+    """將位元組讀入 ``buf``。 (readinto)
 
 Example: ``uart.readinto(input_buffer)``
 
-:param buf: (buf) The buffer to write to.
-:param nbytes: (nbytes) If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes.
+:param buf: (buf) 要寫入的緩衝區。
+:param nbytes: (nbytes) 如果指定了 ``nbytes``，則最多讀取那麼多位元組，否則讀取 ``len(buf)`` 個位元組。
 :return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
     ...
 
 def readline() -> Optional[bytes]:
-    """Read a line, ending in a newline character. (readline)
+    """讀取一行，以換行符結尾。 (readline)
 
 Example: ``uart.readline()``
 
@@ -64,11 +64,11 @@ Example: ``uart.readline()``
     ...
 
 def write(buf: Union[bytes, str]) -> Optional[int]:
-    """Write a buffer to the bus. (write)
+    """將緩衝區寫入匯流排。 (write)
 
 Example: ``uart.write('hello world')``
 
-:param buf: (buf) A bytes object or a string.
+:param buf: (buf) 一個位元組物件或一個字串。
 :return: The number of bytes written, or ``None`` on timeout.
 
 Examples::

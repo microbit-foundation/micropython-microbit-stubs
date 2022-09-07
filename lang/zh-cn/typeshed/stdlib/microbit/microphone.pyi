@@ -11,24 +11,24 @@ Example: ``microphone.current_event()``
     ...
 
 def was_event(event: SoundEvent) -> bool:
-    """检查自上次通话后是否至少听到一次声音。 (was event)
+    """检查自上次通话后是否至少听到一次声音。 (曾经是事件)
 
 Example: ``microphone.was_event(SoundEvent.LOUD)``
 
 This call clears the sound history before returning.
 
-:param event: (event) 要检查的事件，例如 ``SoundEvent.LOUD`` 或 ``SoundEvent.QUIET``
+:param event: (事件) 要检查的事件，例如 ``SoundEvent.LOUD`` 或 ``SoundEvent.QUIET``
 :return: ``True`` if sound was heard at least once since the last call, otherwise ``False``."""
     ...
 
 def is_event(event: SoundEvent) -> bool:
-    """检查最近检测到的声音事件。 (is event)
+    """检查最近检测到的声音事件。 (是事件)
 
 Example: ``microphone.is_event(SoundEvent.LOUD)``
 
 This call does not clear the sound event history.
 
-:param event: (event) 要检查的事件，例如 ``SoundEvent.LOUD`` 或 ``SoundEvent.QUIET``
+:param event: (事件) 要检查的事件，例如 ``SoundEvent.LOUD`` 或 ``SoundEvent.QUIET``
 :return: ``True`` if sound was the most recent heard, ``False`` otherwise."""
     ...
 
@@ -49,12 +49,12 @@ Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 
 A high threshold means the event will only trigger if the sound is very loud (>= 250 in the example).
 
-:param event: (event) 声音事件，如``SoundEvent.LOUD``或``SoundEvent.QUIET``。
+:param event: (事件) 声音事件，如``SoundEvent.LOUD``或``SoundEvent.QUIET``。
 :param value: (value) 范围为0到255的阈值水平。"""
     ...
 
 def sound_level() -> int:
-    """获取声压级。 (sound level)
+    """获取声压级。 (音量 )
 
 Example: ``microphone.sound_level()``
 

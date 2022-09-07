@@ -1,7 +1,7 @@
-"""使用内置的指南针。 (compass)"""
+"""使用内置罗盘。 (compass)"""
 
 def calibrate() -> None:
-    """开始校准过程。 (calibrate)
+    """开始校准过程。 (校准)
 
 Example: ``compass.calibrate()``
 
@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """检查指南针是否已校准。 (is calibrated)
+    """检查罗盘是否已校准。 (is calibrated)
 
 Example: ``compass.is_calibrated()``
 
@@ -18,7 +18,7 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """取消校准，将指南针恢复到未校准状态。 (clear calibration)
+    """取消校准，将罗盘恢复到未校准状态。 (clear calibration)
 
 Example: ``compass.clear_calibration()``"""
     ...
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """获取指南针指向。 (heading)
+    """获取罗盘指向。 (heading)
 
 Example: ``compass.heading()``
 
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """获取设备周围磁场的强度。 (get field strength)
+    """获取设备周围磁场的强度。 (获取磁场强度)
 
 Example: ``compass.get_field_strength()``
 

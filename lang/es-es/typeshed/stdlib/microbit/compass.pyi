@@ -1,7 +1,7 @@
 """Usar la brújula incorporada. (brujula)"""
 
 def calibrate() -> None:
-    """Inicia el proceso de calibración. (calibrate)
+    """Inicia el proceso de calibración. (calibrar)
 
 Example: ``compass.calibrate()``
 
@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """Comprueba si la brújula está calibrada. (is calibrated)
+    """Comprueba si la brújula está calibrada. (está calibrado)
 
 Example: ``compass.is_calibrated()``
 
@@ -18,13 +18,13 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """Deshace la calibración, haciendo que la brújula esté otra vez sin calibrar. (clear calibration)
+    """Deshace la calibración, haciendo que la brújula esté otra vez sin calibrar. (eliminar calibración)
 
 Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """Obtiene la fuerza del campo magnético en el eje ``x``. (get x)
+    """Obtiene la fuerza del campo magnético en el eje ``x``. (obtener x)
 
 Example: ``compass.get_x()``
 
@@ -34,7 +34,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_y() -> int:
-    """Obtiene la fuerza del campo magnético en el eje ``y``. (get y)
+    """Obtiene la fuerza del campo magnético en el eje ``y``. (obtener y)
 
 Example: ``compass.get_y()``
 
@@ -44,7 +44,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_z() -> int:
-    """Obtiene la fuerza del campo magnético en el eje ``z``. (get z)
+    """Obtiene la fuerza del campo magnético en el eje ``z``. (obtener z)
 
 Example: ``compass.get_z()``
 
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """Obtiene el rumbo de la brújula. (heading)
+    """Obtiene el rumbo de la brújula. (rumbo)
 
 Example: ``compass.heading()``
 
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """Obtiene la magnitud del campo magnético alrededor del dispositivo. (get field strength)
+    """Obtiene la magnitud del campo magnético alrededor del dispositivo. (obtener fuerza del campo)
 
 Example: ``compass.get_field_strength()``
 

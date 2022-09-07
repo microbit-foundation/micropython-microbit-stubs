@@ -30,7 +30,7 @@ end of the file.
 
 @overload
 def add(log_data: Optional[dict[str, Union[str, int, float]]]) -> None:
-    """헤더 및 값의 딕셔너리를 패스하여 로그에 데이터 행을 추가합니다. (add)
+    """헤더 및 값의 딕셔너리를 패스해 로그에 데이터 행을 추가합니다. (add)
 
 Example: ``log.add({ 'temp': temperature() })``
 
@@ -70,8 +70,8 @@ Example: ``log.delete()``
 To add the log headers the ``set_labels`` function has to be called again
 after this.
 
-:param full: (full) "full(전체)" 제거 형식을 선택해 플래시 저장소에서 데이터를 제거합니다.
-만약 ``False``로 설정된 경우 "fast(빠른)" 방식을 사용해 느린 전체 제거를 수행하는 대신 데이터를 무효화합니다."""
+:param full: (full) 'full' 제거 형식을 선택해 플래시 저장소에서 데이터를 제거합니다.
+만약 ``False``로 설정된 경우 'fast' 방식을 사용해 속도가 느린 전체 제거를 수행하는 대신 데이터를 무효화합니다."""
     ...
 
 def set_mirroring(serial: bool):

@@ -2,7 +2,7 @@
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:
-    """무작위 비트가 ``n``개 있는 정수를 생성합니다 (getrandbits)
+    """무작위 비트가 ``n``개 있는 정수를 생성합니다. (getrandbits)
 
 Example: ``random.getrandbits(1)``
 
@@ -48,7 +48,7 @@ Example: ``random.randrange(0, 10)``
 
 :param start: (start) 범위의 시작(경계값 포함)
 :param stop: (stop) 범위의 끝(경계값 제외)
-:param step: (step) 스텝."""
+:param step: (step) 단계."""
     ...
 _T = TypeVar('_T')
 

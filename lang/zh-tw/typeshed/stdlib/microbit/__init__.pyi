@@ -12,7 +12,7 @@ from . import uart as uart
 from . import audio as audio
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """安排一個函數以指定的時間間隔叫用 **僅限 V2**。 (run every)
+    """安排一個函式以指定的時間間隔叫用 **僅限 V2**。 (run every)
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -196,12 +196,12 @@ Example: ``pin0.read_analog()``
 :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """具有類比、數位和接觸功能的引腳。 (microbittouchpin)"""
+    """具有類比、數位和觸控功能的引腳。 (microbittouchpin)"""
     CAPACITIVE: int
     RESISTIVE: int
 
     def is_touched(self) -> bool:
-        """檢查引腳是否受接觸。 (is touched)
+        """檢查引腳是否受觸控。 (is touched)
 
 Example: ``pin0.is_touched()``
 
@@ -224,7 +224,7 @@ does not require you to make a ground connection as part of a circuit.
         ...
 
     def set_touch_mode(self, value: int) -> None:
-        """設定引腳的接觸模式。 (set touch mode)
+        """設定引腳的觸控模式。 (set touch mode)
 
 Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
@@ -234,191 +234,191 @@ The default touch mode for the pins on the edge connector is
 :param value: (value) 相關引腳的 ``CAPACITIVE`` 或 ``RESISTIVE``。"""
         ...
 pin0: MicroBitTouchPin
-"""Pin with digital, analog and touch features. (pin0)"""
+"""具有數位、類比和觸控功能的引腳。 (引腳 0)"""
 pin1: MicroBitTouchPin
-"""Pin with digital, analog and touch features. (pin1)"""
+"""具有數位、類比和觸控功能的引腳。 (引腳 1)"""
 pin2: MicroBitTouchPin
-"""Pin with digital, analog and touch features. (pin2)"""
+"""具有數位、類比和觸控功能的引腳。 (引腳 2)"""
 pin3: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features. (pin3)"""
+"""具有數位和類比功能的引腳。 (引腳 3)"""
 pin4: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features. (pin4)"""
+"""具有數位和類比功能的引腳。 (引腳 4)"""
 pin5: MicroBitDigitalPin
-"""Pin with digital features. (pin5)"""
+"""具有數位功能的引腳。 (引腳 5)"""
 pin6: MicroBitDigitalPin
-"""Pin with digital features. (pin6)"""
+"""具有數位功能的引腳。 (引腳 6)"""
 pin7: MicroBitDigitalPin
-"""Pin with digital features. (pin7)"""
+"""具有數位功能的引腳。 (引腳 7)"""
 pin8: MicroBitDigitalPin
-"""Pin with digital features. (pin8)"""
+"""具有數位功能的引腳。 (引腳 8)"""
 pin9: MicroBitDigitalPin
-"""Pin with digital features. (pin9)"""
+"""具有數位功能的引腳。 (引腳 9)"""
 pin10: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features. (pin10)"""
+"""具有數位和類比功能的引腳。 (引腳 10)"""
 pin11: MicroBitDigitalPin
-"""Pin with digital features. (pin11)"""
+"""具有數位功能的引腳。 (引腳 11)"""
 pin12: MicroBitDigitalPin
-"""Pin with digital features. (pin12)"""
+"""具有數位功能的引腳。 (引腳 12)"""
 pin13: MicroBitDigitalPin
-"""Pin with digital features. (pin13)"""
+"""具有數位功能的引腳。 (引腳 13)"""
 pin14: MicroBitDigitalPin
-"""Pin with digital features. (pin14)"""
+"""具有數位功能的引腳。 (引腳 14)"""
 pin15: MicroBitDigitalPin
-"""Pin with digital features. (pin15)"""
+"""具有數位功能的引腳。 (引腳 15)"""
 pin16: MicroBitDigitalPin
-"""Pin with digital features. (pin16)"""
+"""具有數位功能的引腳。 (引腳 16)"""
 pin19: MicroBitDigitalPin
-"""Pin with digital features. (pin19)"""
+"""具有數位功能的引腳。 (引腳 19)"""
 pin20: MicroBitDigitalPin
-"""Pin with digital features. (pin20)"""
+"""具有數位功能的引腳。 (引腳 20)"""
 pin_logo: MicroBitTouchPin
-"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode. (pin logo)"""
+"""micro:bit 正面的觸控感應標誌引腳，預設為電容觸控模式。 (引腳標誌)"""
 pin_speaker: MicroBitAnalogDigitalPin
-"""A pin to address the micro:bit speaker. (pin speaker)
+"""用於定址 micro:bit 揚聲器的引腳。 (引腳揚聲器)
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """An image to show on the micro:bit LED display. (image)
+    """要在 micro:bit LED 顯示器上顯示的圖片。 (圖片)
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """Heart image. (heart)"""
+    """愛心圖片。 (愛心)"""
     HEART_SMALL: Image
-    """Small heart image. (heart small)"""
+    """小愛心影像。 (小愛心)"""
     HAPPY: Image
-    """Happy face image. (happy)"""
+    """開心的臉圖片。 (開心)"""
     SMILE: Image
-    """Smiling face image. (smile)"""
+    """微笑的臉圖片。 (微笑)"""
     SAD: Image
-    """Sad face image. (sad)"""
+    """傷心的臉圖片。 (傷心)"""
     CONFUSED: Image
-    """Confused face image. (confused)"""
+    """困惑的臉圖片。 (困惑)"""
     ANGRY: Image
-    """Angry face image. (angry)"""
+    """生氣的臉圖片。 (生氣)"""
     ASLEEP: Image
-    """Sleeping face image. (asleep)"""
+    """瞌睡的臉圖片。 (瞌睡)"""
     SURPRISED: Image
-    """Surprised face image. (surprised)"""
+    """驚訝的臉圖片。 (驚訝)"""
     SILLY: Image
-    """Silly face image. (silly)"""
+    """鬼臉圖片。 (鬼臉)"""
     FABULOUS: Image
-    """Sunglasses face image. (fabulous)"""
+    """戴太陽眼鏡的臉圖片。 (帥氣)"""
     MEH: Image
-    """Unimpressed face image. (meh)"""
+    """冷漠的臉圖片。 (冷漠)"""
     YES: Image
-    """Tick image. (yes)"""
+    """勾號圖片。 (贊同)"""
     NO: Image
-    """Cross image. (no)"""
+    """叉號圖片。 (拒絕)"""
     CLOCK12: Image
-    """Image with line pointing to 12 o'clock. (clock12)"""
+    """指針指向 12 點鐘的圖片。 (時鐘 12)"""
     CLOCK11: Image
-    """Image with line pointing to 11 o'clock. (clock11)"""
+    """指針指向 11 點鐘的圖片。 (時鐘 11)"""
     CLOCK10: Image
-    """Image with line pointing to 10 o'clock. (clock10)"""
+    """指針指向 10 點鐘的圖片。 (時鐘 10)"""
     CLOCK9: Image
-    """Image with line pointing to 9 o'clock. (clock9)"""
+    """指針指向 9 點鐘的圖片。 (時鐘 9)"""
     CLOCK8: Image
-    """Image with line pointing to 8 o'clock. (clock8)"""
+    """指針指向 8 點鐘的圖片。 (時鐘 8)"""
     CLOCK7: Image
-    """Image with line pointing to 7 o'clock. (clock7)"""
+    """指針指向 7 點鐘的圖片。 (時鐘 7)"""
     CLOCK6: Image
-    """Image with line pointing to 6 o'clock. (clock6)"""
+    """指針指向 6 點鐘的圖片。 (時鐘 6)"""
     CLOCK5: Image
-    """Image with line pointing to 5 o'clock. (clock5)"""
+    """指針指向 5 點鐘的圖片。 (時鐘 5)"""
     CLOCK4: Image
-    """Image with line pointing to 4 o'clock. (clock4)"""
+    """指針指向 4 點鐘的圖片。 (時鐘 4)"""
     CLOCK3: Image
-    """Image with line pointing to 3 o'clock. (clock3)"""
+    """指針指向 3 點鐘的圖片。 (時鐘 3)"""
     CLOCK2: Image
-    """Image with line pointing to 2 o'clock. (clock2)"""
+    """指針指向 2 點鐘的圖片。 (時鐘 2)"""
     CLOCK1: Image
-    """Image with line pointing to 1 o'clock. (clock1)"""
+    """指針指向 1 點鐘的圖片。 (時鐘 1)"""
     ARROW_N: Image
-    """Image of arrow pointing north. (arrow n)"""
+    """指向北方箭頭的圖片。 (北方箭頭)"""
     ARROW_NE: Image
-    """Image of arrow pointing north east. (arrow ne)"""
+    """指向東北箭頭的圖片。 (東北箭頭)"""
     ARROW_E: Image
-    """Image of arrow pointing east. (arrow e)"""
+    """指向東方箭頭的圖片。 (東方箭頭)"""
     ARROW_SE: Image
-    """Image of arrow pointing south east. (arrow se)"""
+    """指向東南箭頭的圖片。 (東南箭頭)"""
     ARROW_S: Image
-    """Image of arrow pointing south. (arrow s)"""
+    """指向南方箭頭的圖片。 (南方箭頭)"""
     ARROW_SW: Image
-    """Image of arrow pointing south west. (arrow sw)"""
+    """指向西南箭頭的圖片。 (西南箭頭)"""
     ARROW_W: Image
-    """Image of arrow pointing west. (arrow w)"""
+    """指向西方箭頭的圖片。 (西方箭頭)"""
     ARROW_NW: Image
-    """Image of arrow pointing north west. (arrow nw)"""
+    """指向西北箭頭的圖片。 (西北箭頭)"""
     TRIANGLE: Image
-    """Image of a triangle pointing up. (triangle)"""
+    """朝上三角形的圖片。 (三角形)"""
     TRIANGLE_LEFT: Image
-    """Image of a triangle in the left corner. (triangle left)"""
+    """左角三角形的圖片。 (左三角形)"""
     CHESSBOARD: Image
-    """Alternate LEDs lit in a chessboard pattern. (chessboard)"""
+    """以棋盤圖案交錯發亮的 LED 燈。 (棋盤)"""
     DIAMOND: Image
-    """Diamond image. (diamond)"""
+    """鑽石圖片。 (鑽石)"""
     DIAMOND_SMALL: Image
-    """Small diamond image. (diamond small)"""
+    """小鑽石圖片。 (小鑽石)"""
     SQUARE: Image
-    """Square image. (square)"""
+    """正方形圖片。 (正方形)"""
     SQUARE_SMALL: Image
-    """Small square image. (square small)"""
+    """小正方形圖片。 (小正方形)"""
     RABBIT: Image
-    """Rabbit image. (rabbit)"""
+    """兔子圖片。 (兔子)"""
     COW: Image
-    """Cow image. (cow)"""
+    """乳牛圖片。 (乳牛)"""
     MUSIC_CROTCHET: Image
-    """Crotchet note image. (music crotchet)"""
+    """四分音符圖片。 (四分音符)"""
     MUSIC_QUAVER: Image
-    """Quaver note image. (music quaver)"""
+    """八分音符圖片。 (八分音符)"""
     MUSIC_QUAVERS: Image
-    """Pair of quavers note image. (music quavers)"""
+    """一組八分音符圖片。 (一組八分音符)"""
     PITCHFORK: Image
-    """Pitchfork image. (pitchfork)"""
+    """乾草叉圖片。 (乾草叉)"""
     XMAS: Image
-    """Christmas tree image. (xmas)"""
+    """聖誕樹圖片。 (聖誕節)"""
     PACMAN: Image
-    """Pac-Man arcade character image. (pacman)"""
+    """吃豆人街機角色圖片。 (吃豆人)"""
     TARGET: Image
-    """Target image. (target)"""
+    """靶子圖片。 (靶子)"""
     TSHIRT: Image
-    """T-shirt image. (tshirt)"""
+    """T 恤圖片。 (T 恤)"""
     ROLLERSKATE: Image
-    """Rollerskate image. (rollerskate)"""
+    """輪式溜冰鞋圖片。 (輪式溜冰鞋)"""
     DUCK: Image
-    """Duck image. (duck)"""
+    """鴨子圖片。 (鴨子)"""
     HOUSE: Image
-    """House image. (house)"""
+    """房子圖片。 (房子)"""
     TORTOISE: Image
-    """Tortoise image. (tortoise)"""
+    """陸龜圖片。 (陸龜)"""
     BUTTERFLY: Image
-    """Butterfly image. (butterfly)"""
+    """蝴蝶圖片。 (蝴蝶)"""
     STICKFIGURE: Image
-    """Stick figure image. (stickfigure)"""
+    """簡筆人物畫圖片。 (簡筆人物畫)"""
     GHOST: Image
-    """Ghost image. (ghost)"""
+    """幽靈圖片。 (幽靈)"""
     SWORD: Image
-    """Sword image. (sword)"""
+    """劍圖片。 (劍)"""
     GIRAFFE: Image
-    """Giraffe image. (giraffe)"""
+    """長頸鹿圖片。 (長頸鹿)"""
     SKULL: Image
-    """Skull image. (skull)"""
+    """骷髏頭圖片。 (骷髏頭)"""
     UMBRELLA: Image
-    """Umbrella image. (umbrella)"""
+    """雨傘圖片。 (雨傘)"""
     SNAKE: Image
-    """Snake image. (snake)"""
+    """蛇圖片。 (蛇)"""
     ALL_CLOCKS: List[Image]
-    """A list containing all the CLOCK_ images in sequence. (all clocks)"""
+    """按順序包含所有時鐘圖片的清單。 (所有時鐘)"""
     ALL_ARROWS: List[Image]
-    """A list containing all the ARROW_ images in sequence. (all arrows)"""
+    """按順序包含所有箭頭圖片的清單。 (所有箭頭)"""
 
     @overload
     def __init__(self, string: str) -> None:
-        """Create an image from a string describing which LEDs are lit. (init)
+        """從描述點亮哪些 LED 的字串建立圖片。 (init)
 
 ``string`` has to consist of digits 0-9 arranged into lines,
 describing the image, for example::
@@ -432,16 +432,16 @@ describing the image, for example::
 will create a 5×5 image of an X. The end of a line is indicated by a
 colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: (string) The string describing the image."""
+:param string: (string) 描述圖片的字串。"""
         ...
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """Create an empty image with ``width`` columns and ``height`` rows. (init)
+        """建立一個 ``width`` 行 ``height`` 列的空白圖片。 (init)
 
-:param width: (width) Optional width of the image
-:param height: (height) Optional height of the image
-:param buffer: (buffer) Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
+:param width: (width) 可選的圖片寬度
+:param height: (height) 可選的圖片高度
+:param buffer: (buffer) 可選陣列或位元組 ``width``×``height`` 整數在 0-9 範圍內初始化圖片
 
 Examples::
 
@@ -452,90 +452,90 @@ These create 2 x 2 pixel images at full brightness."""
         ...
 
     def width(self) -> int:
-        """Get the number of columns. (width)
+        """取得行數。 (width)
 
 :return: The number of columns in the image"""
         ...
 
     def height(self) -> int:
-        """Get the number of rows. (height)
+        """取得列數。 (height)
 
 :return: The number of rows in the image"""
         ...
 
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """Set the brightness of a pixel. (set pixel)
+        """設定像素的亮度。 (set pixel)
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: (x) The column number
-:param y: (y) The row number
-:param value: (value) The brightness as an integer between 0 (dark) and 9 (bright)
+:param x: (x) 行號
+:param y: (y) 列號
+:param value: (value) 亮度為介於 0 (暗) 和 9 (亮) 之間的整數
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def get_pixel(self, x: int, y: int) -> int:
-        """Get the brightness of a pixel. (get pixel)
+        """取得像素的亮度。 (get pixel)
 
 Example: ``my_image.get_pixel(0, 0)``
 
-:param x: (x) The column number
-:param y: (y) The row number
+:param x: (x) 行號
+:param y: (y) 列號
 :return: The brightness as an integer between 0 and 9."""
         ...
 
     def shift_left(self, n: int) -> Image:
-        """Create a new image by shifting the picture left. (shift left)
+        """向左移動圖片來建立新影像。 (shift left)
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: (n) The number of columns to shift by
+:param n: (n) 要移動的行數
 :return: The shifted image"""
         ...
 
     def shift_right(self, n: int) -> Image:
-        """Create a new image by shifting the picture right. (shift right)
+        """向右移動圖片來建立新影像。 (shift right)
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: (n) The number of columns to shift by
+:param n: (n) 要移動的行數
 :return: The shifted image"""
         ...
 
     def shift_up(self, n: int) -> Image:
-        """Create a new image by shifting the picture up. (shift up)
+        """向上移動圖片來建立新影像。 (shift up)
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: (n) The number of rows to shift by
+:param n: (n) 要移動的列數
 :return: The shifted image"""
         ...
 
     def shift_down(self, n: int) -> Image:
-        """Create a new image by shifting the picture down. (shift down)
+        """向下移動圖片來建立新影像。 (shift down)
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: (n) The number of rows to shift by
+:param n: (n) 要移動的列數
 :return: The shifted image"""
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Create a new image by cropping the picture. (crop)
+        """裁剪圖片來建立新影像。 (crop)
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: (x) The crop offset column
-:param y: (y) The crop offset row
-:param w: (w) The crop width
-:param h: (h) The crop height
+:param x: (x) 裁剪位移行
+:param y: (y) 裁剪位移列
+:param w: (w) 剪裁寬度
+:param h: (h) 剪裁高度
 :return: The new image"""
         ...
 
     def copy(self) -> Image:
-        """Create an exact copy of the image. (copy)
+        """建立影像的精確副本。 (copy)
 
 Example: ``Image.HEART.copy()``
 
@@ -543,8 +543,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """Create a new image by inverting the brightness of the pixels in the
-source image. (invert)
+        """透過反轉來源影像中像素亮度來建立新影像。 (invert)
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -552,28 +551,28 @@ Example: ``Image.SMALL_HEART.invert()``
         ...
 
     def fill(self, value: int) -> None:
-        """Set the brightness of all the pixels in the image. (fill)
+        """設定影像中所有像素的亮度。 (fill)
 
 Example: ``my_image.fill(5)``
 
-:param value: (value) The new brightness as a number between 0 (dark) and 9 (bright).
+:param value: (value) 新亮度為 0 (暗) 和 9 (亮) 之間的數字。
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """Copy an area from another image into this image. (blit)
+        """將另一個影像中的一個區域複製到該影像中。 (blit)
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-:param src: (src) The source image
-:param x: (x) The starting column offset in the source image
-:param y: (y) The starting row offset in the source image
-:param w: (w) The number of columns to copy
-:param h: (h) The number of rows to copy
-:param xdest: (xdest) The column offset to modify in this image
-:param ydest: (ydest) The row offset to modify in this image
+:param src: (src) 來源影像
+:param x: (x) 來源影像中的起始資料行偏移量
+:param y: (y) 來源影像中的起始資料列偏移量
+:param w: (w) 要複製的資料行
+:param h: (h) 要複製的資料列
+:param xdest: (xdest) 此影像中要修改的資料列偏移量
+:param ydest: (ydest) 此影像中要修改的資料列偏移量
 
 Pixels outside the source image are treated as having a brightness of 0.
 
@@ -589,74 +588,70 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """Get a compact string representation of the image. (repr)"""
+        """取得影像的緊湊字串顯示。 (repr)"""
         ...
 
     def __str__(self) -> str:
-        """Get a readable string representation of the image. (str)"""
+        """取得影像的可讀字串顯示。 (str)"""
         ...
 
     def __add__(self, other: Image) -> Image:
-        """Create a new image by adding the brightness values from the two
-images for each pixel. (新增)
+        """透過將兩個影像的像素亮度值相加來建立一個新影像。 (加入)
 
 Example: ``Image.HEART + Image.HAPPY``
 
-:param other: (other) The image to add."""
+:param other: (other) 要新增的影像。"""
         ...
 
     def __sub__(self, other: Image) -> Image:
-        """Create a new image by subtracting the brightness values of the
-other image from this image. (sub)
+        """透過從該影像中減去另一個影像的亮度值，來建立一個新影像。 (sub)
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: (other) The image to subtract."""
+:param other: (other) 要減去的影像。"""
         ...
 
     def __mul__(self, n: float) -> Image:
-        """Create a new image by multiplying the brightness of each pixel by
-``n``. (mul)
+        """將各像素的亮度乘以 ``n`` 建立一個新影像。 (mul)
 
 Example: ``Image.HEART * 0.5``
 
-:param n: (n) The value to multiply by."""
+:param n: (n) 要乘以的值。"""
         ...
 
     def __truediv__(self, n: float) -> Image:
-        """Create a new image by dividing the brightness of each pixel by
-``n``. (truediv)
+        """將各像素的亮度除以 ``n`` 來創建新影像。 (truediv)
 
 Example: ``Image.HEART / 2``
 
-:param n: (n) The value to divide by."""
+:param n: (n) 要除以的值。"""
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting. (loud)"""
+    """表示聲音事件的轉換，從 ``quiet`` 到 ``loud``，如鼓掌或喊叫。 (loud)"""
     QUIET: SoundEvent
-    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music. (quiet)"""
+    """表示聲音事件的轉換，從 ``loud`` 到 ``quiet``，例如說話或背景音樂。 (quiet)"""
 
 class Sound:
-    """The built-in sounds can be called using ``audio.play(Sound.NAME)``. (sound)"""
+    """可以使用 ``audio.play(Sound.NAME)`` 調用內建聲音。 (sound)"""
     GIGGLE: Sound
-    """Giggling sound. (giggle)"""
+    """咯咯笑的聲音。 (咯咯笑)"""
     HAPPY: Sound
-    """Happy sound. (happy)"""
+    """開心的聲音。 (開心)"""
     HELLO: Sound
-    """Greeting sound. (hello)"""
+    """歡迎的聲音。 (哈囉)"""
     MYSTERIOUS: Sound
-    """Mysterious sound. (mysterious)"""
+    """神祕的聲音。 (神秘)"""
     SAD: Sound
-    """Sad sound. (sad)"""
+    """難過的聲音。 (難過)"""
     SLIDE: Sound
-    """Sliding sound. (slide)"""
+    """滑動的聲音。 (slide)"""
     SOARING: Sound
-    """Soaring sound. (soaring)"""
+    """高昂的聲音。 (高昂)"""
     SPRING: Sound
-    """Spring sound. (spring)"""
+    """彈跳的聲音。 (彈跳)"""
     TWINKLE: Sound
-    """Twinkling sound. (twinkle)"""
+    """閃亮的聲音。 (閃亮)"""
     YAWN: Sound
-    """Yawning sound. (yawn)"""
+    """呵欠的聲音。 (呵欠)"""

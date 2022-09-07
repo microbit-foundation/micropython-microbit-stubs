@@ -53,7 +53,7 @@ Use in conjunction with ``show()`` to update the neopixels."""
         ...
 
     def __setitem__(self, key: int, value: Tuple[int, ...]) -> None:
-        """Set a pixel colour. (setitem)
+        """픽셀 색상을 설정합니다. (setitem)
 
 Example: ``np[0] = (255, 0, 0)``
 

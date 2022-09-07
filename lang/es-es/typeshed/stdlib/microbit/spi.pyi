@@ -9,16 +9,16 @@ Example: ``spi.init()``
 
 For correct communication, the parameters have to be the same on both communicating devices.
 
-:param baudrate: (baudrate) La velocidad de comunicación.
+:param baudrate: (tasa de baudios) La velocidad de comunicación.
 :param bits: (bits) El ancho en bits de cada transferencia. Actualmente solo se admite ``bits=8}, pero esto puede cambiar en el futuro.
-:param mode: (mode) Determina la combinación de fase y polaridad del reloj - `ver tabla en línea <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_.
+:param mode: (modo) Determina la combinación de fase y polaridad del reloj - `ver tabla en línea <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_.
 :param sclk: (sclk) pin SCLK (por defecto, 13)
 :param mosi: (mosi) pin MOSI (por defecto, 15)
 :param miso: (miso) pin MISO (por defecto, 14)"""
     ...
 
 def read(nbytes: int) -> bytes:
-    """Lee bytes. (read)
+    """Lee bytes. (leer)
 
 Example: ``spi.read(64)``
 
@@ -27,20 +27,20 @@ Example: ``spi.read(64)``
     ...
 
 def write(buffer: ReadableBuffer) -> None:
-    """Escribe bytes en el bus. (write)
+    """Escribe bytes en el bus. (escribir)
 
 Example: ``spi.write(bytes([1, 2, 3]))``
 
-:param buffer: (buffer) Un búfer del que leer datos."""
+:param buffer: (búfer) Un búfer del que leer datos."""
     ...
 
 def write_readinto(out: WriteableBuffer, in_: ReadableBuffer) -> None:
-    """Escribe el búfer ``out`` en el bus y lee cualquier respuesta en el búfer ``in_``. (write readinto)
+    """Escribe el búfer ``out`` en el bus y lee cualquier respuesta en el búfer ``in_``. (escritura leeren)
 
 Example: ``spi.write_readinto(out_buffer, in_buffer)``
 
 The length of the buffers should be the same. The buffers can be the same object.
 
-:param out: (out) El búfer en el que escribe una respuesta.
-:param in_: (in) El búfer del que leer datos."""
+:param out: (a) El búfer en el que escribe una respuesta.
+:param in_: (de) El búfer del que leer datos."""
     ...

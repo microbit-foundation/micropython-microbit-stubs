@@ -68,12 +68,12 @@ Example::
     ...
 
 def ticks_diff(ticks1: int, ticks2: int) -> int:
-    """``utime.ticks_ms()`` や ``ticks_us()`` 関数の戻り値(ラップアラウンドである可能性のある符号付きの値)の間のティック値の差を計算します。 (ticks diff)
+    """``time.ticks_ms()`` や ``ticks_us()`` 関数の戻り値（ラップアラウンドする可能性のある符号付きの値）の間のティック値の差を計算します。 (ticks diff)
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: (ticks1) 減算される値
-:param ticks2: (ticks2) 減算する値
+:param ticks1: (ticks1) 引かられる方の値
+:param ticks2: (ticks2) 引く方の値
 
 The argument order is the same as for subtraction operator,
 ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.

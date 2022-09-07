@@ -2,13 +2,13 @@
 from typing import Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]
-"""メロディ: ベートーヴェンの第5番交響曲第5番のオープニング曲。 (dadadadum)"""
+"""メロディ: ベートーヴェンの交響曲第5番ハ短調の冒頭。 (dadadadum)"""
 ENTERTAINER: Tuple[str, ...]
-"""メロディ: スコット・ジョプリンのラグタイム・クラシック "The Entertainer" のオープニング部分。 (entertainer)"""
+"""メロディ: スコット・ジョプリンのラグタイム・クラシック『ジ・エンターテイナー 』の冒頭。 (entertainer)"""
 PRELUDE: Tuple[str, ...]
-"""メロディ: J.S.バッハの 48 のプレリュードとフーガの C メジャーの第1回プレリュードのオープニング。 (prelude)"""
+"""メロディ: J・S・バッハの前奏曲とフーガ計48曲の前奏曲第1番ハ長調の冒頭。 (prelude)"""
 ODE: Tuple[str, ...]
-"""メロディ: ベートーヴェンの交響曲第9番から「歓喜の歌」のテーマ。 (ode)"""
+"""メロディ: ベートーヴェンの交響曲第9番ニ短調より『歓喜の歌』のテーマ。 (ode)"""
 NYAN: Tuple[str, ...]
 """メロディ: Nyan Cat テーマ (http://www.nyan.cat/)。 (nyan)
 
@@ -19,22 +19,22 @@ RINGTONE: Tuple[str, ...]
 To be used to indicate an incoming message.
 """
 FUNK: Tuple[str, ...]
-"""メロディ: シークレット・エージェントと犯罪の黒幕のためのファンキーなベースライン。 (funk)"""
+"""メロディ: スパイと犯罪の黒幕用のファンキーなベースライン。 (funk)"""
 BLUES: Tuple[str, ...]
 """メロディ: ブギー・ウーギーの 12 小節のブルース・ウォーキング・ベース。 (blues)"""
 BIRTHDAY: Tuple[str, ...]
-"""メロディ: 「ハッピーバースディトゥユー ...」 (birthday)
+"""メロディ:『ハッピーバースディトゥユー ...』 (birthday)
 
 For copyright status see: http://www.bbc.co.uk/news/world-us-canada-34332853
 """
 WEDDING: Tuple[str, ...]
-"""メロディ: ワグナーのオペラ「ローエングリン」のブライダルコーラス。 (wedding)"""
+"""メロディ: ワグナーのオペラ『ローエングリン』より婚礼の合唱。 (wedding)"""
 FUNERAL: Tuple[str, ...]
-"""メロディ: フレデリック・ショパンのピアノソナタ第2番「B♭マイナー」の別名「葬儀の行進」35。 (funeral)"""
+"""メロディ: フレデリック・ショパンのピアノソナタ第2番変ロ短調 作品35（別名『葬送』）。 (funeral)"""
 PUNCHLINE: Tuple[str, ...]
-"""メロディ: ジョークが行われたことを意味する楽しい部分。 (punchline)"""
+"""メロディ: ジョークが言われたことを意味する楽しい音楽。 (punchline)"""
 PYTHON: Tuple[str, ...]
-"""メロディ: John Philip Sousa さんの行進曲「Liberty Bell」、別名「空飛ぶモンティ・パイソン」 (python)"""
+"""メロディ: ジョン・フィリップ・スーザの『自由の鐘』（『空飛ぶモンティ・パイソン』のテーマともいう）（プログラミング言語Pythonの名前の由来となった）。 (python)"""
 BADDY: Tuple[str, ...]
 """メロディ: 無声映画時代の悪役の登場。 (baddy)"""
 CHASE: Tuple[str, ...]
@@ -48,9 +48,9 @@ JUMP_UP: Tuple[str, ...]
 JUMP_DOWN: Tuple[str, ...]
 """メロディ: ゲームでの使用で、下向きの動きを示します。 (jump down)"""
 POWER_UP: Tuple[str, ...]
-"""メロディ: パワーが解放されたことを示すファンファーレ。 (power up)"""
+"""メロディ: アチーブメントを達成したことを示すファンファーレ。 (power up)"""
 POWER_DOWN: Tuple[str, ...]
-"""メロディ: パワーが失われたことを示すための悲しい運命。 (power down)"""
+"""メロディ: アチーブメントを達成しなかったことを示すファンファーレ。 (power down)"""
 
 def set_tempo(ticks: int=4, bpm: int=120) -> None:
     """再生するためのおおよそのテンポを設定します。 (set tempo)
@@ -85,7 +85,7 @@ def play(music: Union[str, List[str], Tuple[str, ...]], pin: Union[MicroBitDigit
 Example: ``music.play(music.NYAN)``
 
 :param music: (music) `特別な表記 <https://microbit-micropython.readthedocs.io/ja/v2-docs/music.html#musical-notation>`_ で指定されたミュージック
-:param pin: (ピン) 外部スピーカーをつなぐ出力端子(デフォルト ``pin0``)。音を鳴らしたくない場合は ``None`` を指定します。
+:param pin: (ピン) 外部スピーカー用出力端子（デフォルトは ``pin0``）。音を鳴らしたくない場合は ``None`` を指定します。
 :param wait: (wait) ``wait`` を ``True`` に設定した場合、この関数がブロックします。
 :param loop: (loop) ``loop`` が ``True`` の場合、曲は ``stop`` が呼び出されるか、ブロックコールが中断されるまで繰り返し再生されます。
 
@@ -99,7 +99,7 @@ Example: ``music.pitch(185, 1000)``
 
 :param frequency: (frequency) 周波数を示す整数値
 :param duration: (duration) 持続時間をミリ秒単位で指定します。負の場合、次の呼び出しか ``stop`` の呼び出しまで再生が続きます。
-:param pin: (pin) 出力端子を指定するオプション引数(デフォルト ``pin0``)。
+:param pin: (pin) オプションの出力端子（デフォルトは ``pin0``）。
 :param wait: (wait) ``wait`` を ``True`` に設定した場合、この関数がブロックします。
 
 For example, if the frequency is set to 440 and the length to
@@ -116,7 +116,7 @@ Example: ``music.stop()``
 :param pin: (pin) オプションの引数にはスピーカの繋がれている端子を指定します。たとえば ``music.stop(pin1)`` などと指定します。"""
 
 def reset() -> None:
-    """ticks、bpm、duration、octave をデフォルト値にリセットします。 (reset)
+    """ティック、bpm、持続時間、オクターブをデフォルト値にリセットします。 (reset)
 
 Example: ``music.reset()``
 

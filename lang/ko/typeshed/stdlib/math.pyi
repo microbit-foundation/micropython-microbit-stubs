@@ -1,4 +1,4 @@
-"""수학 함수. (math)"""
+"""수학 함수입니다. (math)"""
 from typing import Tuple
 
 def acos(x: float) -> float:
@@ -48,12 +48,12 @@ Example: ``math.ceil(0.1)``
     ...
 
 def copysign(x: float, y: float) -> float:
-    """``y``의 사인 값으로 ``x``를 계산합니다. (copysign)
+    """``y``의 사인 값으로 ``x``(을)를 계산합니다. (copysign)
 
 Example: ``math.copysign(1, -1)``
 
 :param x: (x) 숫자
-:param y: (y) 반환값의 사인의 근원
+:param y: (y) 반환값의 사인의 출처
 :return: ``x`` with the sign of ``y``"""
     ...
 
@@ -67,11 +67,11 @@ Example: ``math.cos(0)``
     ...
 
 def degrees(x: float) -> float:
-    """라디안을 각도로 변환합니다. (도)
+    """호도법을 각도법으로 변환합니다. (도)
 
 Example: ``math.degrees(2 * math.pi)``
 
-:param x: (x) 라디안 값
+:param x: (x) 호도법 값
 :return: The value converted to degrees"""
     ...
 
@@ -125,11 +125,11 @@ the relation ``0.5 <= abs(m) < 1`` holds.
     ...
 
 def isfinite(x: float) -> bool:
-    """값이 유한인지 확인합니다. (isfinite)
+    """값이 유한값인지 확인합니다. (isfinite)
 
 Example: ``math.isfinite(float('inf'))``
 
-:param x: (x) 숫자.
+:param x: (x) 숫자입니다.
 :return: ``True`` if ``x`` is finite, ``False`` otherwise."""
     ...
 
@@ -138,12 +138,12 @@ def isinf(x: float) -> bool:
 
 Example: ``math.isinf(float('-inf'))``
 
-:param x: (x) 숫자.
+:param x: (x) 숫자입니다.
 :return: ``True`` if ``x`` is infinite, ``False`` otherwise."""
     ...
 
 def isnan(x: float) -> bool:
-    """값이 숫자가 아닌지(NaN) 확인합니다. (isnan)
+    """값이 숫자가 아닌 값(NaN)인지 확인합니다. (isnan)
 
 Example: ``math.isnan(float('nan'))``
 
@@ -187,7 +187,7 @@ Both the fractional and integral values have the same sign as ``x``."""
     ...
 
 def pow(x: float, y: float) -> float:
-    """``y``의 제곱을 ``x``으로 반환합니다. (pow)
+    """``y``의 제곱을 ``x``(으)로 반환합니다. (pow)
 
 Example: ``math.pow(4, 0.5)``
 
@@ -197,11 +197,11 @@ Example: ``math.pow(4, 0.5)``
     ...
 
 def radians(x: float) -> float:
-    """각도를 라디안스로 변환합니다. (라디안스)
+    """각도법을 호도법으로 변환합니다. (radians)
 
 Example: ``math.radians(360)``
 
-:param x: (x) 각도의 값
+:param x: (x) 각도법 값
 :return: The value converted to radians"""
     ...
 
@@ -241,6 +241,6 @@ Example: ``math.trunc(-0.9)``
 :return: ``x`` rounded towards zero."""
     ...
 e: float
-"""자연 알고리즘의 베이스 (e)"""
+"""자연 알고리즘 베이스 (e)"""
 pi: float
 """원의 원주와 지름의 비율 (pi)"""

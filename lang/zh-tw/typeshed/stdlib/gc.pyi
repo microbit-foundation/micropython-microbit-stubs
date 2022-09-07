@@ -1,8 +1,8 @@
-"""控管垃圾資料回收機制 (gc)"""
+"""Control the garbage collector (gc)"""
 from typing import overload
 
 def enable() -> None:
-    """啟用自動垃圾收集。 (啟用)"""
+    """啟用自動記憶體管理。 (啟用)"""
     ...
 
 def disable() -> None:

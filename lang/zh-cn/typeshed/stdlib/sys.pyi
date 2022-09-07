@@ -1,31 +1,31 @@
-"""系统特定功能 (sys)"""
+"""系统特定功能 (系统)"""
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
-    """根据给定退出代码终止当前程序。 (exit)
+    """根据给定退出代码终止当前程序。 (退出)
 
 Example: ``sys.exit(1)``
 
 This function raises a ``SystemExit`` exception. If an argument is given, its
 value given as an argument to ``SystemExit``.
 
-:param retval: (retval) 退出代码或者消息。"""
+:param retval: (返回值) 退出代码或者消息。"""
     ...
 
 def print_exception(exc: Exception) -> None:
     """
-打印带有回溯的异常。 (print exception)
+打印带有回溯的异常。 (打印异常)
 
 Example: ``sys.print_exception(e)``
 
-:param exc: (exc) 需打印的异常
+:param exc: (异常) 需打印的异常
 
 This is simplified version of a function which appears in the
 ``traceback`` module in CPython."""
 argv: List[str]
-"""当前程序启动时使用的参数的可变列表。 (argv)"""
+"""当前程序启动时使用的参数的可变列表。 (参数)"""
 byteorder: str
-"""系统的字节顺序 (``"little"`` 或 ``"big"``)。 (byteorder)"""
+"""系统的字节顺序 (``"little"`` 或 ``"big"``)。 (字节序)"""
 
 class _implementation:
     name: str
@@ -48,7 +48,7 @@ bare minimum is implemented in MicroPython.
 maxsize: int
 """在当前平台上可以容纳的整数类型的最大值，
 或 MicroPython 整数类型可表示的最大值，如果它小于
-平台的最大值（这见于 MicroPython 端口不支持长整数的情况）。 (maxsize)
+平台的最大值（这见于 MicroPython 端口不支持长整数的情况）。 (最大值)
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some
@@ -69,13 +69,13 @@ value directly, but instead count number of bits in it::
         # "> 32", "> 64" style of comparisons.
 """
 modules: Dict[str, Any]
-"""已加载模块的字典。  (modules)
+"""已加载模块的字典。  (模块)
 
 On some ports, it may not include builtin modules."""
 path: List[str]
-"""用于搜索导入模块的目录的可变列表。 (path)"""
+"""用于搜索导入模块的目录的可变列表。 (路径)"""
 platform: str
-"""正在运行 MicroPython 的平台。 (platform)
+"""正在运行 MicroPython 的平台。 (平台)
 
 For OS/RTOS ports, this is usually an identifier of the OS, e.g. ``"linux"``.
 For baremetal ports it is an identifier of a board, e.g. ``"pyboard"`` for 
@@ -86,9 +86,9 @@ If you need to check whether your program runs on MicroPython (vs other
 Python implementation), use ``sys.implementation`` instead.
 """
 version: str
-"""此实现符合的 Python 语言版本，为字符串。 (version)"""
+"""此实现符合的 Python 语言版本，为字符串。 (版本)"""
 version_info: Tuple[int, int, int]
-"""此实现符合的 Python 语言版本，为整数元组。 (version info)
+"""此实现符合的 Python 语言版本，为整数元组。 (版本信息)
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.
