@@ -113,7 +113,7 @@ class SoundEffect:
 
         Example: ``my_effect = SoundEffect(duration=1000)``
 
-        All the parameters are optional, with default values listed below, and
+        All the parameters are optional, with default values as shown above, and
         they can all be modified via attributes of the same name. For example, we
         can first create an effect ``my_effect = SoundEffect(duration=1000)``,
         and then change its attributes ``my_effect.duration = 500``.
