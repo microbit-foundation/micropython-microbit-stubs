@@ -1,7 +1,7 @@
 """Manage the power modes of the micro:bit (V2 only).
 """
 
-from microbit import MicroBitTouchPin, Button
+from microbit import MicroBitDigitalPin, Button
 from typing import Optional, Tuple, Union
 
 def off() -> None:
@@ -12,14 +12,10 @@ def off() -> None:
     This is the equivalent to pressing the reset button for a few second,
     to set the board in "Off mode".
 
-    The Target MCU will go into Power Down mode. The Interface MCU will go to
-    Power Down on battery or stay awake on USB, where it will blink the red
-    LED near the USB connector.
-
     The micro:bit will only wake up if the reset button is pressed or,
     if on battery power, when a USB cable is connected.
 
-    When the board wakes up it will start for a reset state, so your programme
+    When the board wakes up it will start for a reset state, so your program
     will start running from the beginning.
     """
     ...
@@ -27,7 +23,7 @@ def off() -> None:
 def deep_sleep(
     ms: Optional[int] = None,
     wake_on: Optional[
-        Union[MicroBitTouchPin, Button] | Tuple[MicroBitTouchPin | Button, ...]
+        Union[MicroBitDigitalPin, Button] | Tuple[MicroBitDigitalPin | Button, ...]
     ] = None,
     run_every: bool = False,
 ) -> None:
@@ -35,7 +31,7 @@ def deep_sleep(
 
     Example: ``power.deep_sleep(wake_on=(button_a, button_b))``
 
-    The programme state is preserved and when it wakes up it will resume operation where it left off.
+    The program state is preserved and when it wakes up it will resume operation where it left off.
 
     Deep Sleep mode will consume more battery power than Off mode.
 
