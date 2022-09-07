@@ -111,23 +111,27 @@ class SoundEffect:
     ):
         """Create a new sound effect.
 
+        Example: ``my_effect = SoundEffect(duration=1000)``
+
         All the parameters are optional, with default values listed below, and
         they can all be modified via attributes of the same name. For example, we
         can first create an effect ``my_effect = SoundEffect(duration=1000)``,
         and then change its attributes ``my_effect.duration = 500``.
 
-        :param preset: Optional existing SoundEffect instance to use as a base, its values are cloned in the new instance, and any additional arguments provided overwrite the base values
-        :param freq_start: Start frequency in Hertz (Hz), default: ``500``
-        :param freq_end: End frequency in Hertz (Hz), default: ``2500``
-        :param duration: Duration of the sound (ms), default: ``500``
-        :param vol_start: Start volume value, range 0-255, default: ``255``
-        :param vol_end: End volume value, range 0-255, default: ``0``
+        :param freq_start: Start frequency in Hertz (Hz), a number between ``0`` and ``9999``.
+        :param freq_end: End frequency in Hertz (Hz), a number between ``0`` and ``9999``.
+        :param duration: Duration of the sound in milliseconds, a number between ``0`` and ``9999``.
+        :param vol_start: Start volume value, a number between ``0`` and ``255``.
+        :param vol_end: End volume value, a number between ``0`` and ``255``.
         :param wave: Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise).
-        :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``None``.
+        :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``.
         :param shape: The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``.
         """
     def copy(self) -> SoundEffect:
-        """
+        """Create a copy of this ``SoundEffect``.
+
+        Example: ``sound_2 = sound_1.copy()``
+
         :return: A copy of the SoundEffect.
         """
 
@@ -146,6 +150,8 @@ class AudioFrame:
 
     def copyfrom(self, other: AudioFrame) -> None:
         """Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance.
+
+        Example: ``my_frame.copyfrom(source_frame)``
 
         :param other: ``AudioFrame`` instance from which to copy the data.
         """
