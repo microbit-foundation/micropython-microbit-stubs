@@ -106,7 +106,7 @@ class SoundEffect:
         vol_start: int = 255,
         vol_end: int = 0,
         wave: int = WAVE_SQUARE,
-        fx: Optional[int] = None,
+        fx: int = FX_NONE,
         shape: int = SHAPE_LOG,
     ):
         """Create a new sound effect.
