@@ -38,7 +38,7 @@ def module_name_for_path(file_path: str):
     return os.path.splitext(name)[0]
 
 
-def get_stub_files() -> list[TypeshedFile]:
+def get_stub_files(approved_modules: list[str]) -> list[TypeshedFile]:
     top = os.path.join(DIR, "..", "lang/en/typeshed/stdlib")
     files_to_process: list[TypeshedFile] = []
     for root, dirs, files in os.walk(top):
@@ -47,26 +47,25 @@ def get_stub_files() -> list[TypeshedFile]:
             # Skip audio stubs file that imports from microbit audio
             # (so we don't include its docstring)
             if (
-                os.path.basename(os.path.dirname(file_path)) != "microbit"
-                and name == "audio.pyi"
+                os.path.basename(os.path.dirname(file_path)) in approved_modules
+                or os.path.splitext(name)[0] in approved_modules
             ):
-                continue
-            if name.endswith(".pyi"):
-                files_to_process.append(
-                    TypeshedFile(
-                        file_path=file_path,
-                        module_name=module_name_for_path(file_path),
-                        python_file=True,
+                if name.endswith(".pyi"):
+                    files_to_process.append(
+                        TypeshedFile(
+                            file_path=file_path,
+                            module_name=module_name_for_path(file_path),
+                            python_file=True,
+                        )
                     )
-                )
-            else:
-                files_to_process.append(
-                    TypeshedFile(
-                        file_path=file_path,
-                        module_name="",
-                        python_file=False,
+                else:
+                    files_to_process.append(
+                        TypeshedFile(
+                            file_path=file_path,
+                            module_name="",
+                            python_file=False,
+                        )
                     )
-                )
     return sorted(files_to_process, key=lambda x: x.file_path)
 
 

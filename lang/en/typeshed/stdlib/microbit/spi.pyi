@@ -19,7 +19,7 @@ def init(
     For correct communication, the parameters have to be the same on both communicating devices.
 
     :param baudrate: The speed of communication.
-    :param bits: The size of bytes being transmitted. Currently only ``bits=8`` is supported. However, this may change in the future.
+    :param bits: The width in bits of each transfer. Currently only ``bits=8`` is supported. However, this may change in the future.
     :param mode: Determines the combination of clock polarity and phase - `see online table <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_.
     :param sclk: sclk pin (default 13)
     :param mosi: mosi pin (default 15)
