@@ -9,8 +9,8 @@ def init(freq: int=100000, sda: MicroBitDigitalPin=pin20, scl: MicroBitDigitalPi
 Example: ``i2c.init()``
 
 :param freq: (freq) クロック周波数
-:param sda: (sda) ``sda`` 端子（デフォルト20）
-:param scl: (scl) ``scl`` 端子（デフォルト19）
+:param sda: (sda) ``sda`` 端子（デフォルトは 20）
+:param scl: (scl) ``scl`` 端子（デフォルトは 19）
 
 On a micro:bit V1 board, changing the I²C pins from defaults will make
 the accelerometer and compass stop working, as they are connected
@@ -20,7 +20,7 @@ for the motion sensors and the edge connector."""
     ...
 
 def scan() -> List[int]:
-    """デバイスのバスをスキャンします。 (scan)
+    """バスをスキャンしてデバイスを探します。 (scan)
 
 Example: ``i2c.scan()``
 

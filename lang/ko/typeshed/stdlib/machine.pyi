@@ -17,7 +17,7 @@ Example: ``machine.reset()``"""
     ...
 
 def freq() -> int:
-    """헤르츠로 CPU 진동수를 불러옵니다. (freq)
+    """헤르츠로 표시된 CPU 진동수를 불러옵니다. (freq)
 
 Example: ``machine.freq()``
 
@@ -44,7 +44,7 @@ Example: ``machine.enable_irq(interrupt_state)``
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
-    """핀의 펄스 시간을 측정합니다. (time pulse us)
+    """핀 펄스 시간을 측정합니다. (time pulse us)
 
 Example: ``time_pulse_us(pin0, 1)``
 
@@ -55,30 +55,30 @@ function first waits until the pin input becomes equal to
 starts straight away.
 
 :param pin: (핀) 사용할 핀
-:param pulse_level: (펄스 레벨) 0은 로우 펄스, 1은 하이 펄스의 시간을 측정
+:param pulse_level: (펄스 레벨) 로우 펄스의 시간을 측정하려면 0, 하이 펄스는 1
 :param timeout_us: (timeout us) 마이크로초 시간 초과
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
 
 class mem:
-    """마이크로세컨드 타임아웃 (mem)"""
+    """``mem8``, ``mem16``, ``mem32`` 메모리 뷰 클래스 (mem)"""
 
     def __getitem__(self, address: int) -> int:
-        """메모리의 값에 액세스합니다. (getitem)
+        """메모리 값에 액세스합니다. (getitem)
 
 :param address: (address) 메모리 주소입니다.
 :return: The value at that address as an integer."""
         ...
 
     def __setitem__(self, address: int, value: int) -> None:
-        """주어진 (setitem)
+        """제공된 주소에 값을 설정합니다. (setitem)
 
 :param address: (address) 메모리 주소입니다.
-:param value: (value) 정수값을 설정합니다."""
+:param value: (value) 설정할 정수값입니다."""
         ...
 mem8: mem
-"""메모리를 8비트(바이트)로 봅니다. (mem8)"""
+"""8비트(바이트) 메모리 뷰입니다. (mem8)"""
 mem16: mem
-"""메모리를 16비트로 봅니다. (mem16)"""
+"""16비트 메모리 뷰입니다. (mem16)"""
 mem32: mem
-"""메모리를 32비트로 봅니다. (mem32)"""
+"""32비트 메모리 뷰입니다. (mem32)"""

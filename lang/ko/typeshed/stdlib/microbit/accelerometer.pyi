@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """현재 제스쳐의 이름을 불러옵니다. (current gesture)
+    """현재 제스처의 이름을 불러옵니다. (current gesture)
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """해당 이름의 제스쳐가 현재 활성화 상태인지 확인합니다. (is gesture)
+    """해당 이름의 제스처가 현재 활성화 상태인지 확인합니다. (is gesture)
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -61,7 +61,7 @@ represented as strings.
     ...
 
 def was_gesture(name: str) -> bool:
-    """해당 이름의 제스쳐가 마지막 호출 이후로 활성화된 적 있는지 확인합니다. (was gesture)
+    """해당 이름의 제스처가 마지막 호출 이후로 활성화된 적 있는지 확인합니다. (was gesture)
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,11 +70,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) 제스쳐 이름.
+:param name: (name) 제스처 이름.
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """제스쳐 기록의 튜플을 반환합니다. (get gestures)
+    """제스처 기록의 튜플을 반환합니다. (get gestures)
 
 Example: ``accelerometer.get_gestures()``
 

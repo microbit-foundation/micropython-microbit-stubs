@@ -51,7 +51,7 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: (ticks) A ticks value
+:param ticks: (ticks) tick 值
 :param delta: (delta) 整數偏移量
 
 Example::

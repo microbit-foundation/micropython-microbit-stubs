@@ -441,7 +441,7 @@ colon. It's also possible to use newlines (\\n) insead of the colons.
 
 :param width: (width) イメージの幅を指定するオプション
 :param height: (height) イメージの高さを指定するオプション
-:param buffer: (buffer) イメージを初期化するためのオプションで、0 から 9 の整数値を ``width`` × ``height`` 個並べた配列またはバイト列を指定します
+:param buffer: (buffer) イメージを初期化するために、整数値（0～9）を ``width``×``height`` 個並べた配列またはバイト列を指定します
 
 Examples::
 

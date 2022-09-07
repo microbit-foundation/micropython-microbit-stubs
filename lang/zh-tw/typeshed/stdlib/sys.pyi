@@ -1,36 +1,36 @@
-"""System specific functions (sys)"""
+"""系統特定函式 (sys)"""
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
-    """Terminate current program with a given exit code. (exit)
+    """使用指定的退出代碼終止當前程式。 (exit)
 
 Example: ``sys.exit(1)``
 
 This function raises a ``SystemExit`` exception. If an argument is given, its
 value given as an argument to ``SystemExit``.
 
-:param retval: (retval) The exit code or message."""
+:param retval: (retval) 退出程式碼或訊息。"""
     ...
 
 def print_exception(exc: Exception) -> None:
-    """Print an exception with a traceback. (print exception)
+    """輸出帶有回溯的異常。 (print exception)
 
 Example: ``sys.print_exception(e)``
 
-:param exc: (exc) The exception to print
+:param exc: (exc) 輸出異常
 
 This is simplified version of a function which appears in the
 ``traceback`` module in CPython."""
 argv: List[str]
-"""A mutable list of arguments the current program was started with. (argv)"""
+"""當前程式啟動時使用的可變引數列表。 (argv)"""
 byteorder: str
-"""The byte order of the system (``"little"`` or ``"big"``). (byteorder)"""
+"""系統的位元組順序（``"little"`` 或 ``"big"``）。 (byteorder)"""
 
 class _implementation:
     name: str
     version: Tuple[int, int, int]
 implementation: _implementation
-"""Object with information about the current Python implementation. (implementation)
+"""包含關於目前 Python 執行資訊的物件。 (implementation)
 
 For MicroPython, it has following attributes:
 
@@ -45,11 +45,7 @@ CPython mandates more attributes for this object, but the actual useful
 bare minimum is implemented in MicroPython.
 """
 maxsize: int
-"""
-Maximum value which a native integer type can hold on the current platform,
-or maximum value representable by MicroPython integer type, if it's smaller
-than platform max value (that is the case for MicroPython ports without
-long int support). (maxsize)
+"""本機整數類型在當前平台上可以保存的最大值，或 MicroPython 整數類型可表示的最大值，如果它小於平台最大值（對於沒有 long int 支援的 MicroPython 連接埠就是這種情況）。 (maxsize)
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some
@@ -70,13 +66,13 @@ value directly, but instead count number of bits in it::
         # "> 32", "> 64" style of comparisons.
 """
 modules: Dict[str, Any]
-"""Dictionary of loaded modules.  (modules)
+"""載入模組的字典。 (modules)
 
 On some ports, it may not include builtin modules."""
 path: List[str]
-"""A mutable list of directories to search for imported modules. (path)"""
+"""用於搜尋匯入模組的可變字典列表。 (path)"""
 platform: str
-"""The platform that MicroPython is running on.  (platform)
+"""MicroPython 執行的平台。 (platform)
 
 For OS/RTOS ports, this is usually an identifier of the OS, e.g. ``"linux"``.
 For baremetal ports it is an identifier of a board, e.g. ``"pyboard"`` for 
@@ -87,9 +83,9 @@ If you need to check whether your program runs on MicroPython (vs other
 Python implementation), use ``sys.implementation`` instead.
 """
 version: str
-"""Python language version that this implementation conforms to, as a string. (version)"""
+"""此執行符合的 Python 語言版本，作為字串。 (version)"""
 version_info: Tuple[int, int, int]
-"""Python language version that this implementation conforms to, as a tuple of ints. (version info)
+"""此執行符合的 Python 語言版本，作為整數元組。 (version info)
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.

@@ -19,13 +19,13 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
         ...
 
     def clear(self) -> None:
-        """Borrar todos los píxeles. (clear)
+        """Borrar todos los píxeles. (borrar)
 
 Example: ``np.clear()``"""
         ...
 
     def show(self) -> None:
-        """Muestra los píxeles. (show)
+        """Muestra los píxeles. (mostrar)
 
 Example: ``np.show()``
 
@@ -33,7 +33,7 @@ Must be called for any updates to become visible."""
         ...
 
     def write(self) -> None:
-        """Muestra los píxeles (solo micro:bit V2). (write)
+        """Muestra los píxeles (solo micro:bit V2). (escribir)
 
 Example: ``np.write()``
 
@@ -43,32 +43,32 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """Colorea todos los píxeles con un valor RGB/RGBW dado. (fill)
+        """Colorea todos los píxeles con un valor RGB/RGBW dado. (llenar)
 
 Example: ``np.fill((0, 0, 255))``
 
-:param colour: (colour) Una tupla de la misma longitud que el número de bytes por píxel (bpp).
+:param colour: (color) Una tupla de la misma longitud que el número de bytes por píxel (bpp).
 
 Use in conjunction with ``show()`` to update the neopixels."""
         ...
 
     def __setitem__(self, key: int, value: Tuple[int, ...]) -> None:
-        """Establece el color de un píxel. (setitem)
+        """Establece el color de un píxel. (configurar elemento)
 
 Example: ``np[0] = (255, 0, 0)``
 
-:param key: (key) El número de píxel.
+:param key: (clave) El número de píxel.
 :param value: (valor) El color."""
 
     def __getitem__(self, key: int) -> Tuple[int, ...]:
-        """Obtiene el color de un píxel. (getitem)
+        """Obtiene el color de un píxel. (obtener elemento)
 
 Example: ``r, g, b = np[0]``
 
-:param key: (key) El número de píxel.
+:param key: (clave) El número de píxel.
 :return: The colour tuple."""
 
     def __len__(self) -> int:
-        """Obtiene la longitud de esta tira de píxeles. (len)
+        """Obtiene la longitud de esta tira de píxeles. (lon)
 
 Example: ``len(np)``"""

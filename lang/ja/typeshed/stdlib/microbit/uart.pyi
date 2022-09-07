@@ -29,7 +29,7 @@ For more details see `the online documentation <https://microbit-micropython.rea
     ...
 
 def any() -> bool:
-    """待機中のデータがあるかどうかを確認します。 (any)
+    """受信待ちのデータがあるかを確認します。 (any)
 
 Example: ``uart.any()``
 

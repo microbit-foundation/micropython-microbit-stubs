@@ -64,5 +64,5 @@ This function is a MicroPython extension. CPython has a similar
 function - ``set_threshold()``, but due to different GC
 implementations, its signature and semantics are different.
 
-:param amount: (amount) 가비지 컬렉션이 작동할 바이트 수를 설정합니다."""
+:param amount: (amount) 가비지 컬렉션이 트리거되는 바이트 수입니다."""
     ...

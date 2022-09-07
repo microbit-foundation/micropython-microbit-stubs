@@ -1,14 +1,14 @@
-"""Communicate with devices using the I²C bus protocol. (i2c)"""
+"""使用 I²C 匯流排協定與裝置通訊。 (i2c)"""
 from _typeshed import ReadableBuffer
 from ..microbit import MicroBitDigitalPin, pin19, pin20
 from typing import List
 
 def init(freq: int=100000, sda: MicroBitDigitalPin=pin20, scl: MicroBitDigitalPin=pin19) -> None:
-    """Re-initialize a peripheral. (init)
+    """重新初始化週邊設備。 (init)
 
 Example: ``i2c.init()``
 
-:param freq: (頻率) clock frequency
+:param freq: (頻率) 時脈頻率
 :param sda: (sda) ``sda`` pin (default 20)
 :param scl: (scl) ``scl`` pin (default 19)
 
@@ -20,7 +20,7 @@ for the motion sensors and the edge connector."""
     ...
 
 def scan() -> List[int]:
-    """Scan the bus for devices. (scan)
+    """掃描匯流排以尋找裝置。 (scan)
 
 Example: ``i2c.scan()``
 
@@ -28,22 +28,22 @@ Example: ``i2c.scan()``
     ...
 
 def read(addr: int, n: int, repeat: bool=False) -> bytes:
-    """Read bytes from a device.. (read)
+    """從裝置讀取位元組。 (read)
 
 Example: ``i2c.read(0x50, 64)``
 
-:param addr: (addr) The 7-bit address of the device
-:param n: (n) The number of bytes to read
-:param repeat: (repeat) If ``True``, no stop bit will be sent
+:param addr: (addr) 裝置的 7 位元地址
+:param n: (n) 要讀取的位元組數
+:param repeat: (repeat) 如果 ``True``，則不會發送停止位元
 :return: The bytes read"""
     ...
 
 def write(addr: int, buf: ReadableBuffer, repeat: bool=False) -> None:
-    """Write bytes to a device. (write)
+    """將位元組寫入裝置。 (write)
 
 Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
-:param addr: (addr) The 7-bit address of the device
-:param buf: (buf) A buffer containing the bytes to write
-:param repeat: (repeat) If ``True``, no stop bit will be sent"""
+:param addr: (addr) 裝置的 7 位元地址
+:param buf: (buf) 包含要寫入位元組的緩衝區
+:param repeat: (repeat) 如果 ``True``，則不會發送停止位元"""
     ...

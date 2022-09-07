@@ -1,70 +1,69 @@
-"""Generate random numbers. (random)"""
+"""生成隨機編號。 (random)"""
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:
-    """Generate an integer with ``n`` random bits. (getrandbits)
+    """生成具有 ``n`` 個隨機位元的整數。 (getrandbits)
 
 Example: ``random.getrandbits(1)``
 
-:param n: (n) A value between 1-30 (inclusive)."""
+:param n: (n) 介於 1-30（包含）之間的值。"""
     ...
 
 def seed(n: int) -> None:
-    """Initialize the random number generator. (seed)
+    """初始化隨機數生成器。 (seed)
 
 Example: ``random.seed(0)``
 
-:param n: (n) The integer seed
+:param n: (n) 整數種子
 
 This will give you reproducibly deterministic randomness from a given starting
 state (``n``)."""
     ...
 
 def randint(a: int, b: int) -> int:
-    """Choose a random integer between ``a`` and ``b`` inclusive. (randint)
+    """在 ``a`` 和 ``b``（包含）之間選擇一個隨機整數。 (randint)
 
 Example: ``random.randint(0, 9)``
 
-:param a: (a) Start value for the range (inclusive)
-:param b: (b) End value for the range (inclusive)
+:param a: (a) 範圍的起始值（包含）
+:param b: (b) 範圍的結束值（包括）
 
 Alias for ``randrange(a, b + 1)``."""
     ...
 
 @overload
 def randrange(stop: int) -> int:
-    """Choose a randomly selected integer between zero and up to (but not
-including) ``stop``. (randrange)
+    """在零到（但不包括）``stop`` 之間隨機選擇一個整數。 (randrange)
 
 Example: ``random.randrange(10)``
 
-:param stop: (stop) End value for the range (exclusive)"""
+:param stop: (stop) 範圍的結束值（不包括）"""
     ...
 
 @overload
 def randrange(start: int, stop: int, step: int=1) -> int:
-    """Choose a randomly selected element from ``range(start, stop, step)``. (randrange)
+    """從 ``range(start, stop, step)`` 中選擇一個隨機選擇的元素。 (randrange)
 
 Example: ``random.randrange(0, 10)``
 
-:param start: (start) The start of the range (inclusive)
-:param stop: (stop) The end of the range (exclusive)
-:param step: (step) The step."""
+:param start: (start) 範圍的開始（包含）
+:param stop: (stop) 範圍結束（不包括）
+:param step: (step) 步驟。"""
     ...
 _T = TypeVar('_T')
 
 def choice(seq: Sequence[_T]) -> _T:
-    """Choose a random element from the non-empty sequence ``seq``. (choice)
+    """從非空序列 ``seq`` 中選擇一個隨機元素。 (choice)
 
 Example: ``random.choice([Image.HAPPY, Image.SAD])``
 
-:param seq: (seq) A sequence.
+:param seq: (seq) 序列
 
 If ``seq`` is  empty, raises ``IndexError``."""
     ...
 
 def random() -> float:
-    """Generate a random floating point number in the range [0.0, 1.0). (random)
+    """在 [0.0, 1.0) 範圍內生成一個隨機浮點數。 (random)
 
 Example: ``random.random()``
 
@@ -72,10 +71,10 @@ Example: ``random.random()``
     ...
 
 def uniform(a: float, b: float) -> float:
-    """Return a random floating point number between ``a`` and ``b`` inclusive. (uniform)
+    """傳回一個介於 ``a`` 和 ``b`` 之間的隨機浮點數。 (uniform)
 
 Example: ``random.uniform(0, 9)``
 
-:param a: (a) Start value for the range (inclusive)
-:param b: (b) End value for the range (inclusive)"""
+:param a: (a) 範圍的起始值（包括）
+:param b: (b) 範圍的結束值（包括）"""
     ...

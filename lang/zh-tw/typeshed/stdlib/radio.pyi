@@ -1,13 +1,13 @@
-"""Communicate between micro:bits with the built-in radio. (radio)"""
+"""使用內建無線電在 micro:bits 之間進行通訊。 (無線電)"""
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 RATE_1MBIT: int
-"""Constant used to indicate a throughput of 1 MBit a second. (rate 1mbit)"""
+"""常數用於指示每秒 1 MBit 的傳輸量。 (rate 1mbit)"""
 RATE_2MBIT: int
-"""Constant used to indicate a throughput of 2 MBit a second. (rate 2mbit)"""
+"""常數用於指示每秒 2 MBit 的傳輸量。 (rate 2mbit)"""
 
 def on() -> None:
-    """Turns the radio on. (on)
+    """開啟無線電。 (on)
 
 Example: ``radio.on()``
 
@@ -16,38 +16,36 @@ up memory that you may otherwise need."""
     ...
 
 def off() -> None:
-    """Turns off the radio, saving power and memory. (off)
+    """關閉收音機，節省電量和記憶體。 (off)
 
 Example: ``radio.off()``"""
     ...
 
 def config(length: int=32, queue: int=3, channel: int=7, power: int=6, address: int=1969383796, group: int=0, data_rate: int=RATE_1MBIT) -> None:
-    """Configures the radio. (config)
+    """設定無線電。 (config)
 
 Example: ``radio.config(group=42)``
 
 The default configuration is suitable for most use.
 
-:param length: (length) (default=32) defines the maximum length, in bytes, of a message sent via the radio.
-It can be up to 251 bytes long (254 - 3 bytes for S0, LENGTH and S1 preamble).
-:param queue: (queue) (default=3) specifies the number of messages that can be stored on the incoming message queue.
-If there are no spaces left on the queue for incoming messages, then the incoming message is dropped.
-:param channel: (channel) (default=7) an integer value from 0 to 83 (inclusive) that defines an arbitrary "channel" to which the radio is tuned.
-Messages will be sent via this channel and only messages received via this channel will be put onto the incoming message queue. Each step is 1MHz wide, based at 2400MHz.
-:param power: (power) (default=6) is an integer value from 0 to 7 (inclusive) to indicate the strength of signal used when broadcasting a message.
-The higher the value the stronger the signal, but the more power is consumed by the device. The numbering translates to positions in the following list of dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4.
-:param address: (address) (default=0x75626974) an arbitrary name, expressed as a 32-bit address, that's used to filter incoming packets at the hardware level, keeping only those that match the address you set.
-The default used by other micro:bit related platforms is the default setting used here.
-:param group: (group) (default=0) an 8-bit value (0-255) used with the ``address`` when filtering messages.
-Conceptually, "address" is like a house/office address and "group" is like the person at that address to which you want to send your message.
-:param data_rate: (data rate) (default=``radio.RATE_1MBIT``) indicates the speed at which data throughput takes place.
-Can be one of the following constants defined in the ``radio`` module: ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.
+:param length: (長度) (default=32) 定義透過無線電發送的訊息的最大長度（以位元組為單位）。
+最長可達 251 個位元組（S0、LENGTH 和 S1 前導碼為 254 - 3 個位元組）。
+:param queue: (佇列) (default=3) 指定可以儲存在傳入訊息佇列中的訊息數。
+如果佇列中沒有留給傳入訊息的空間，則捨棄傳入訊息。
+:param channel: (頻道) (default=7) 一個從 0 到 83（包含）的整數值，定義無線電調整到的任意「頻道」。
+訊息將透過此頻道發送，只有透過此頻道接收的訊息才會放入傳入訊息佇列。每一步都是 1MHz 寬，以 2400MHz 為基礎。
+:param power: (功率) (default=6) 是一個從 0 到 7（包含）的整數值，表示無線電訊息時使用的訊號功率。
+數值越高，訊號越強，但裝置消耗的功率越多。 編號轉換為以下 dBm（分貝毫瓦）數值列表中的位置：-30、-20、-16、-12、-8、-4、0、4。
+:param address: (address) (default=0x75626974) 任意名稱，表示為 32 位地址，用於在硬體級別篩選傳入的資料套件，僅保留與您設定的地址匹配的那些。 其他 micro:bit 相關平台使用的預設設定是此處使用的預設設定。
+:param group: (群組) (default=0) 篩選訊息時與 ``address`` 一起使用的 8 位元值 (0-255)。
+從概念上講，「地址」就像一個家庭/辦公室地址，而「群組」就像您要向該地址發送訊息的人。
+:param data_rate: (資料速率) (default=``radio.RATE_1MBIT``) 表示資料傳輸量發生的速度。可以是 ``radio`` 模組中定義的下列常數之一：``RATE_250KBIT``、``RATE_1MBIT`` 或 ``RATE_2MBIT``。
 
 If ``config`` is not called then the defaults described above are assumed."""
     ...
 
 def reset() -> None:
-    """Reset the settings to their default values. (重置)
+    """將設定重置為其預設值。 (重置)
 
 Example: ``radio.reset()``
 
@@ -55,15 +53,15 @@ The defaults as as per the ``config`` function above."""
     ...
 
 def send_bytes(message: bytes) -> None:
-    """Sends a message containing bytes. (send bytes)
+    """發送包含位元組的訊息。 (send bytes)
 
 Example: ``radio.send_bytes(b'hello')``
 
-:param message: (message) The bytes to send."""
+:param message: (message) 要發送的位元組。"""
     ...
 
 def receive_bytes() -> Optional[bytes]:
-    """Receive the next incoming message on the message queue. (receive bytes)
+    """接收訊息佇列中的下一則傳入訊息。 (receive bytes)
 
 Example: ``radio.receive_bytes()``
 
@@ -71,27 +69,27 @@ Example: ``radio.receive_bytes()``
     ...
 
 def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
-    """Copy the next incoming message on the message queue into a buffer. (receive bytes into)
+    """將訊息佇列中的下一則傳入訊息複製到緩衝區中。 (receive bytes into)
 
 Example: ``radio.receive_bytes_info(buffer)``
 
-:param buffer: (buffer) The target buffer. The message is truncated if larger than the buffer.
+:param buffer: (buffer) 將訊息佇列中的下一則傳入訊息複製到緩衝區中。
 :return: ``None`` if there are no pending messages, otherwise it returns the length of the message (which might be more than the length of the buffer)."""
     ...
 
 def send(message: str) -> None:
-    """Sends a message string. (send)
+    """發送訊息字串。 (發送)
 
 Example: ``radio.send('hello')``
 
 This is the equivalent of ``radio.send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
 prepended to the front (to make it compatible with other platforms that target the micro:bit).
 
-:param message: (message) The string to send."""
+:param message: (message) 要發送的字串。"""
     ...
 
 def receive() -> Optional[str]:
-    """Works in exactly the same way as ``receive_bytes`` but returns whatever was sent. (receive)
+    """工作方式與 ``receive_bytes`` 完全相同，但會傳回發送的任何內容。 (receive)
 
 Example: ``radio.receive()``
 
@@ -105,7 +103,7 @@ A ``ValueError`` exception is raised if conversion to string fails."""
     ...
 
 def receive_full() -> Optional[Tuple[bytes, int, int]]:
-    """Returns a tuple containing three values representing the next incoming message on the message queue. (receive full)
+    """工作方式與 ``receive_bytes`` 完全相同，但會傳回發送的任何內容。 (receive full)
 
 Example: ``radio.receive_full()``
 

@@ -1,64 +1,64 @@
-"""Create and play melodies. (music)"""
+"""創作和播放旋律。 (music)"""
 from typing import Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]
-"""Melody: the opening to Beethoven’s 5th Symphony in C minor. (dadadadum)"""
+"""旋律：貝多芬 C 小調第五交響曲的開場。 (dadadadum)"""
 ENTERTAINER: Tuple[str, ...]
-"""Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”. (entertainer)"""
+"""旋律：Scott Joplin Ragtime 經典「The Entertainer」的開場。 (entertainer)"""
 PRELUDE: Tuple[str, ...]
-"""Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues. (prelude)"""
+"""旋律：巴哈 48 首前奏曲與賦格曲 C 大調第一前奏曲的開場。 (prelude)"""
 ODE: Tuple[str, ...]
-"""Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor. (ode)"""
+"""旋律：貝多芬 D 小調第九交響曲中的「歡樂頌」主題。 (ode)"""
 NYAN: Tuple[str, ...]
-"""Melody: the Nyan Cat theme (http://www.nyan.cat/). (nyan)
+"""旋律：Nyan Cat 主題 (http://www.nyan.cat/)。 (nyan)
 
 The composer is unknown. This is fair use for educational porpoises (as they say in New York)."""
 RINGTONE: Tuple[str, ...]
-"""Melody: something that sounds like a mobile phone ringtone. (ringtone)
+"""旋律：聽起來像手機鈴聲的東西。 (ringtone)
 
 To be used to indicate an incoming message.
 """
 FUNK: Tuple[str, ...]
-"""Melody: a funky bass line for secret agents and criminal masterminds. (funk)"""
+"""旋律：為秘密特工和犯罪策劃者準備的放克低音。 (funk)"""
 BLUES: Tuple[str, ...]
-"""Melody: a boogie-woogie 12-bar blues walking bass. (blues)"""
+"""旋律：布基烏基 12 小節藍調走路低音。 (blues)"""
 BIRTHDAY: Tuple[str, ...]
-"""Melody: “Happy Birthday to You…” (birthday)
+"""旋律：「祝你生日快樂…」 (birthday)
 
 For copyright status see: http://www.bbc.co.uk/news/world-us-canada-34332853
 """
 WEDDING: Tuple[str, ...]
-"""Melody: the bridal chorus from Wagner’s opera “Lohengrin”. (wedding)"""
+"""旋律：華格納歌劇《羅恩格林》中的新娘合唱。 (wedding)"""
 FUNERAL: Tuple[str, ...]
-"""Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35. (funeral)"""
+"""旋律：「葬禮進行曲」，也被稱為蕭邦的 Piano Sonata No. 2 in B♭ minor, Op. 35。 (funeral)"""
 PUNCHLINE: Tuple[str, ...]
-"""Melody: a fun fragment that signifies a joke has been made. (punchline)"""
+"""旋律：一段有趣的音樂，表示說了一個笑話。 (punchline)"""
 PYTHON: Tuple[str, ...]
-"""Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named). (python)"""
+"""旋律：約翰菲利普蘇薩的進行曲「Liberty Bell」，又名「蒙提派森的飛行馬戲團」的主題曲（Python 程式語言以此命名）。 (python)"""
 BADDY: Tuple[str, ...]
-"""Melody: silent movie era entrance of a baddy. (baddy)"""
+"""旋律：無聲電影時代的壞人登場。 (baddy)"""
 CHASE: Tuple[str, ...]
-"""Melody: silent movie era chase scene. (chase)"""
+"""旋律：無聲電影時代的追逐場景。 (chase)"""
 BA_DING: Tuple[str, ...]
-"""Melody: a short signal to indicate something has happened. (ba ding)"""
+"""旋律：表示某事發生的簡短訊號。 (ba ding)"""
 WAWAWAWAA: Tuple[str, ...]
-"""Melody: a very sad trombone. (wawawawaa)"""
+"""旋律：非常悲傷的長號。 (wawawawaa)"""
 JUMP_UP: Tuple[str, ...]
-"""Melody: for use in a game, indicating upward movement. (jump up)"""
+"""旋律：用於遊戲中，代表向上移動。 (jump up)"""
 JUMP_DOWN: Tuple[str, ...]
-"""Melody: for use in a game, indicating downward movement. (jump down)"""
+"""旋律：用於遊戲中，表示向下移動。 (jump down)"""
 POWER_UP: Tuple[str, ...]
-"""Melody: a fanfare to indicate an achievement unlocked. (power up)"""
+"""旋律：表示已解鎖成就的號角齊鳴。 (power up)"""
 POWER_DOWN: Tuple[str, ...]
-"""Melody: a sad fanfare to indicate an achievement lost. (power down)"""
+"""旋律：表示失去成就的悲傷號角聲。 (power down)"""
 
 def set_tempo(ticks: int=4, bpm: int=120) -> None:
-    """Sets the approximate tempo for playback. (set tempo)
+    """設定播放的大致速度。 (set tempo)
 
 Example: ``music.set_tempo(bpm=120)``
 
-:param ticks: (ticks) The number of ticks constituting a beat.
-:param bpm: (bpm) An integer determining how many beats per minute.
+:param ticks: (ticks) 構成節拍的 tick 數。
+:param bpm: (bpm) 一個整數，決定每分鐘有多少次節拍。
 
 Suggested default values allow the following useful behaviour:
 
@@ -72,7 +72,7 @@ To work out the length of a tick in milliseconds is very simple arithmetic:
     ...
 
 def get_tempo() -> Tuple[int, int]:
-    """Gets the current tempo as a tuple of integers: ``(ticks, bpm)``. (get tempo)
+    """以整數元組的形式獲取當前速度：``(ticks, bpm)``。 (取得節奏)
 
 Example: ``ticks, beats = music.get_tempo()``
 
@@ -80,27 +80,27 @@ Example: ``ticks, beats = music.get_tempo()``
     ...
 
 def play(music: Union[str, List[str], Tuple[str, ...]], pin: Union[MicroBitDigitalPin, None]=pin0, wait: bool=True, loop: bool=False) -> None:
-    """Plays music. (play)
+    """播放音樂。 (播放)
 
 Example: ``music.play(music.NYAN)``
 
-:param music: (music) music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
-:param pin: (引腳) the output pin for use with an external speaker (default ``pin0``), ``None`` for no sound.
-:param wait: (wait) If ``wait`` is set to ``True``, this function is blocking.
-:param loop: (loop) If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted.
+:param music: (music) 特殊音符中指定的音樂 <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
+:param pin: (引腳) 用於外接揚聲器的輸出引腳（預設為 ``pin0``），``None`` 表示無聲音。
+:param wait: (wait) 如果 ``wait`` 設定為 ``True``，則此函式會封鎖。
+:param loop: (loop) 如果 ``loop`` 設定為 ``True``，曲調會重複直到呼叫 ``stop`` 或封鎖呼叫被中斷。
 
 Many built-in melodies are defined in this module."""
     ...
 
 def pitch(frequency: int, duration: int=-1, pin: MicroBitDigitalPin=pin0, wait: bool=True) -> None:
-    """Play a note. (音調)
+    """彈奏一個音符。 (音調)
 
 Example: ``music.pitch(185, 1000)``
 
-:param frequency: (頻率) An integer frequency
-:param duration: (duration) A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``.
-:param pin: (引腳) Optional output pin (default ``pin0``).
-:param wait: (wait) If ``wait`` is set to ``True``, this function is blocking.
+:param frequency: (頻率) 整數頻率
+:param duration: (duration) 毫秒的持續時間。如果是否定的，則聲音將持續到下一次呼叫或對 ``stop`` 的呼叫。
+:param pin: (引腳) 可選輸出引腳（預設 ``pin0``）。
+:param wait: (wait) 如果 ``wait`` 設定為 ``True``，則此函式為封鎖。
 
 For example, if the frequency is set to 440 and the length to
 1000 then we hear a standard concert A for one second.
@@ -109,14 +109,14 @@ You can only play one pitch on one pin at any one time."""
     ...
 
 def stop(pin: MicroBitDigitalPin=pin0) -> None:
-    """Stops all music playback on the built-in speaker and any pin outputting sound. (stop)
+    """停止內建揚聲器上的所有音樂播放和任何引腳輸出聲音。 (stop)
 
 Example: ``music.stop()``
 
-:param pin: (引腳) An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``."""
+:param pin: (引腳) 可以提供一個可選引數來指定一個引腳，例如``music.stop(pin1)``。"""
 
 def reset() -> None:
-    """Resets ticks, bpm, duration and octave to their default values. (重置)
+    """將 tick、bpm、持續時間和八度音程重置為其預設值。 (可以提供一個可選參數來指定一個引腳，例如{{music.stop(pin1)}}。)
 
 Example: ``music.reset()``
 

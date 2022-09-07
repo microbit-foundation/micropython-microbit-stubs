@@ -22,7 +22,7 @@ global variable, and does not take up any memory during execution.
 
 @overload
 def opt_level() -> int:
-    """Obtiene el nivel actual de optimización para la compilación de scripts. (opt level)
+    """Obtiene el nivel actual de optimización para la compilación de scripts. (nivel de opt)
 
 Example: ``micropython.opt_level()``
 
@@ -44,7 +44,7 @@ The optimisation level controls the following compilation features:
 
 @overload
 def opt_level(level: int) -> None:
-    """Establece el nivel de optimización para la posterior compilación de scripts. (opt level)
+    """Establece el nivel de optimización para la posterior compilación de scripts. (nivel de opt)
 
 Example: ``micropython.opt_level(1)``
 
@@ -63,11 +63,11 @@ The optimisation level controls the following compilation features:
 
 The default optimisation level is usually level 0.
 
-:param level: (level) Un entero que representa el nivel de optimización."""
+:param level: (nivel) Un entero que representa el nivel de optimización."""
     ...
 
 def mem_info(verbose: Any=None) -> None:
-    """Imprime información sobre la memoria usada en este momento. (mem info)
+    """Imprime información sobre la memoria usada en este momento. (info de mem)
 
 Example: ``micropython.mem_info()``
 
@@ -75,7 +75,7 @@ Example: ``micropython.mem_info()``
     ...
 
 def qstr_info(verbose: Any=None) -> None:
-    """Imprime información sobre las cadenas internadas en este momento. (qstr info)
+    """Imprime información sobre las cadenas internadas en este momento. (info de cad actual)
 
 Example: ``micropython.qstr_info()``
 
@@ -87,7 +87,7 @@ verbose mode it prints out the names of all RAM-interned strings."""
     ...
 
 def stack_use() -> int:
-    """Devuelve un entero que representa la cantidad de pila que se está usando en este momento. (stack use)
+    """Devuelve un entero que representa la cantidad de pila que se está usando en este momento. (pila usada)
 
 Example: ``micropython.stack_use()``
 
@@ -98,7 +98,7 @@ should be used to compute differences in stack usage at different points.
     ...
 
 def heap_lock() -> None:
-    """Bloquea el montón. (bloquear el montón)
+    """Bloquea el montón. (bloquear montón)
 
 Example: ``micropython.heap_lock()``
 
@@ -116,11 +116,11 @@ raised if any heap allocation is attempted."""
     ...
 
 def kbd_intr(chr: int) -> None:
-    """Establece qué carácter lanzará una excepción ``KeyboardInterrupt``. (kbd intr)
+    """Establece qué carácter lanzará una excepción ``KeyboardInterrupt``. (intr tecl)
 
 Example: ``micropython.kbd_intr(-1)``
 
-:param chr: (chr) Código de carácter que lanzará la interrupción o -1 para desactivar la captura de Ctrl + C.
+:param chr: (car) Código de carácter que lanzará la interrupción o -1 para desactivar la captura de Ctrl + C.
 
 By default this is set to 3 during script execution, corresponding to Ctrl-C.
 Passing -1 to this function will disable capture of Ctrl-C, and passing 3

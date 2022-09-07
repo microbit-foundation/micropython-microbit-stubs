@@ -11,7 +11,7 @@ Example: ``machine.unique_id()``
     ...
 
 def reset() -> None:
-    """以类似于按下外部 RESET 按键的方式重置设备。 (reset)
+    """以类似于按下外部 RESET （重置）按钮的方式重置设备。 (reset)
 
 Example: ``machine.reset()``"""
     ...
@@ -55,7 +55,7 @@ function first waits until the pin input becomes equal to
 starts straight away.
 
 :param pin: (引脚) 要使用的引脚
-:param pulse_level: (pulse level) 0来计时低脉冲或1来计时高脉冲。
+:param pulse_level: (pulse level) 0 来计时低脉冲或 1 来计时高脉冲。
 :param timeout_us: (timeout us) 微秒超时
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
@@ -77,8 +77,8 @@ class mem:
 :param value: (value) 要设置的整数值。"""
         ...
 mem8: mem
-"""8位(字节) 内存视图。 (mem8)"""
+"""8 位(字节) 内存视图。 (mem8)"""
 mem16: mem
-"""16位内存视图。 (mem16)"""
+"""16 位内存视图。 (mem16)"""
 mem32: mem
-"""32位内存视图。 (mem32)"""
+"""32 位内存视图。 (mem32)"""

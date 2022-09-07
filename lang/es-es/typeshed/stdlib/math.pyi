@@ -11,7 +11,7 @@ Example: ``math.acos(1)``
     ...
 
 def asin(x: float) -> float:
-    """Calcula el inverso del seno. (asin)
+    """Calcula el inverso del seno. (asen)
 
 Example: ``math.asin(0)``
 
@@ -39,7 +39,7 @@ Example: ``math.atan2(0, -1)``
     ...
 
 def ceil(x: float) -> float:
-    """Redondea un número hacia el infinito positivo. (ceil)
+    """Redondea un número hacia el infinito positivo. (hacia arriba)
 
 Example: ``math.ceil(0.1)``
 
@@ -94,7 +94,7 @@ Example: ``math.fabs(-0.1)``
     ...
 
 def floor(x: float) -> int:
-    """Redondea un número hacia el infinito negativo. (floor)
+    """Redondea un número hacia el infinito negativo. (hacia abajo)
 
 Example: ``math.floor(0.9)``
 
@@ -125,7 +125,7 @@ the relation ``0.5 <= abs(m) < 1`` holds.
     ...
 
 def isfinite(x: float) -> bool:
-    """Comprueba si un valor es finito. (isfinite)
+    """Comprueba si un valor es finito. (esfinito)
 
 Example: ``math.isfinite(float('inf'))``
 
@@ -134,7 +134,7 @@ Example: ``math.isfinite(float('inf'))``
     ...
 
 def isinf(x: float) -> bool:
-    """Compruebe si un valor es infinito. (isinf)
+    """Compruebe si un valor es infinito. (esinf)
 
 Example: ``math.isinf(float('-inf'))``
 
@@ -143,7 +143,7 @@ Example: ``math.isinf(float('-inf'))``
     ...
 
 def isnan(x: float) -> bool:
-    """Comprueba si un valor no es un número (NaN, not-a-number en inglés). (isnan)
+    """Comprueba si un valor no es un número (NaN, not-a-number en inglés). (esnan)
 
 Example: ``math.isnan(float('nan'))``
 
@@ -162,7 +162,7 @@ Example: ``math.ldexp(0.5, 2)``
     ...
 
 def log(x: float, base: float=e) -> float:
-    """Calcula el logaritmo de ``x`` en la base dada (por defecto, el logaritmo natural). (log)
+    """Calcula el logaritmo de ``x`` en la base dada (por defecto, el logaritmo natural). (registrar)
 
 Example: ``math.log(math.e)``
 
@@ -206,7 +206,7 @@ Example: ``math.radians(360)``
     ...
 
 def sin(x: float) -> float:
-    """Calcula el seno de ``x``. (sin)
+    """Calcula el seno de ``x``. (sen)
 
 Example: ``math.sin(math.pi/2)``
 

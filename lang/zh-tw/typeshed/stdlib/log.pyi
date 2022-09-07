@@ -1,11 +1,11 @@
-"""將資料記錄到您的 micro:bit V2。 (紀錄)"""
+"""將資料記錄到您的 micro:bit V2。 (記錄)"""
 from typing import Literal, Optional, Union, overload
 MILLISECONDS = 1
 """毫秒時間郵戳格式。 (毫秒)"""
 SECONDS = 10
 """秒時間郵戳格式。 (秒)"""
 MINUTES = 600
-"""分鐘 (分鐘)"""
+"""分鐘時間郵戳格式 (分鐘)"""
 HOURS = 36000
 """小時時間郵戳格式。 (小時)"""
 DAYS = 864000
@@ -24,14 +24,14 @@ labels set up by this function call to the last headers declared in the
 file. If the headers are different it will add a new header entry at the
 end of the file.
 
-:param *args: (*args) 各記錄標頭的位置參數。
+:param *args: (*args) 各記錄標頭的位置引數。
 :param timestamp: (時間郵戳) 將自動新增為每行第一列的時間郵戳單元。
-將此參數設定為 ``None`` 會禁用時間郵戳。傳遞此模組定義的 ``log.MILLISECONDS``、``log.SECONDS``、``log.MINUTES``、``log.HOURS`` 或 ``log.DAYS`` 值。 無效值將引發異常。"""
+將此引數設定為 ``None`` 會禁用時間郵戳。傳遞此模組定義的 ``log.MILLISECONDS``、``log.SECONDS``、``log.MINUTES``、``log.HOURS`` 或 ``log.DAYS`` 值。 無效值將引發異常。"""
     ...
 
 @overload
 def add(log_data: Optional[dict[str, Union[str, int, float]]]) -> None:
-    """透過傳遞標頭和數值的字典將資料行新增至紀錄中。 (新增)
+    """透過傳遞標頭和數值的字典將資料行新增至紀錄中。 (加入)
 
 Example: ``log.add({ 'temp': temperature() })``
 
@@ -44,12 +44,12 @@ entry to be added to the log with the extra label.
 Labels previously specified and not present in this function call will be
 skipped with an empty value in the log row.
 
-:param log_data: (紀錄資料) 若要記錄為字典的資料，每個標頭都有一個金鑰。"""
+:param log_data: (記錄資料) 若要記錄為字典的資料，每個標頭都有一個金鑰。"""
     ...
 
 @overload
 def add(**kwargs: Union[str, int, float]) -> None:
-    """使用關鍵字參數將資料行新增至紀錄中。 (新增)
+    """使用關鍵字引數將資料行新增至紀錄中。 (加入)
 
 Example: ``log.add(temp=temperature())``
 

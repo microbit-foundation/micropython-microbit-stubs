@@ -1,4 +1,4 @@
-"""可单独寻址的 RGB 和 RGBW LED 灯带。 (neopixel)"""
+"""可单独寻址的 RGB 和 RGBW LED 灯带。 (Neopixel)"""
 from .microbit import MicroBitDigitalPin
 from typing import Tuple
 
@@ -15,17 +15,17 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: (引脚) 控制 neopixel 灯带的引脚。
 :param n: (n) 灯带中 neopixel 灯珠的数量。
-:param bpp: (bpp) 每个像素的字节数。对于 RGB 和 GRB 而言，只有将该值设置为 4 而不是默认值 3，micro:bit V2 RGBW neopixel 才能支持。"""
+:param bpp: (每像素字节数) 每个像素的字节数。对于 RGB 和 GRB 而言，只有将该值设置为 4 而不是默认值 3，micro:bit V2 RGBW neopixel 才能支持。"""
         ...
 
     def clear(self) -> None:
-        """清除所有像素。 (clear)
+        """清除所有像素。 (清除)
 
 Example: ``np.clear()``"""
         ...
 
     def show(self) -> None:
-        """显示像素。 (show)
+        """显示像素。 (显示)
 
 Example: ``np.show()``
 
@@ -33,7 +33,7 @@ Must be called for any updates to become visible."""
         ...
 
     def write(self) -> None:
-        """显示像素（仅限 micro:bit V2）。 (write)
+        """显示像素（仅限 micro:bit V2）。 (写入)
 
 Example: ``np.write()``
 
@@ -44,11 +44,11 @@ Equivalent to ``show``."""
 
     def fill(self, colour: Tuple[int, ...]) -> None:
         """
-用给定的 RGB/RGBW 值为所有像素着色。 (fill)
+用给定的 RGB/RGBW 值为所有像素着色。 (填充)
 
 Example: ``np.fill((0, 0, 255))``
 
-:param colour: (colour) 长度与每像素字节数 (bpp) 相同的元组。
+:param colour: (颜色) 长度与每像素字节数 (bpp) 相同的元组。
 
 Use in conjunction with ``show()`` to update the neopixels."""
         ...
@@ -58,7 +58,7 @@ Use in conjunction with ``show()`` to update the neopixels."""
 
 Example: ``np[0] = (255, 0, 0)``
 
-:param key: (key) 像素数。
+:param key: (键) 像素数。
 :param value: (value) 颜色。"""
 
     def __getitem__(self, key: int) -> Tuple[int, ...]:
@@ -66,10 +66,10 @@ Example: ``np[0] = (255, 0, 0)``
 
 Example: ``r, g, b = np[0]``
 
-:param key: (key) 像素数。
+:param key: (键) 像素数。
 :return: The colour tuple."""
 
     def __len__(self) -> int:
-        """获取此像素条的长度。 (len)
+        """获取此像素条的长度。 (长度)
 
 Example: ``len(np)``"""

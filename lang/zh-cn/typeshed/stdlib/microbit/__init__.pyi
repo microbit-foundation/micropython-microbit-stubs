@@ -1,4 +1,4 @@
-"""引脚、图像、声音、温度和音量。 (microbit)"""
+"""引脚、图像、声音、温度和音量。 (Microbit)"""
 from _typeshed import ReadableBuffer
 from typing import Any, Callable, List, Optional, overload
 from . import accelerometer as accelerometer
@@ -12,7 +12,7 @@ from . import uart as uart
 from . import audio as audio
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """安排按给定的时间间隔调用一个函数**仅限 V2**。 (run every)
+    """安排按给定的时间间隔调用一个函数**仅限 V2**。 (周期性运行)
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -31,16 +31,16 @@ Arguments with different time units are additive.
 :param callback: (callback) 要调用的回调。当用作装饰器时省略。
 :param days: (days) 以天为单位的间隔。
 :param h: (h) 以小时为单位的间隔。
-:param min: (min) 以分钟为单位的间隔。
-:param s: (s) 以秒为单位的间隔。
-:param ms: (ms) 以毫秒为单位的间隔。"""
+:param min: (分钟) 以分钟为单位的间隔。
+:param s: (秒) 以秒为单位的间隔。
+:param ms: (毫秒) 以毫秒为单位的间隔。"""
 
 def panic(n: int) -> None:
-    """进入panic 模式（恐慌）。 (panic)
+    """进入 panic （恐慌）模式。 (恐慌)
 
 Example: ``panic(127)``
 
-:param n: (n) 一个 <= 255的任意整数，以表示一个状态。
+:param n: (n) 一个 <= 255 的任意整数，以表示一个状态。
 
 Requires restart."""
 
@@ -48,7 +48,7 @@ def reset() -> None:
     """重启主板。 (reset)"""
 
 def sleep(n: float) -> None:
-    """等待 ``n`` 毫秒。 (sleep)
+    """等待 ``n`` 毫秒。 (休眠)
 
 Example: ``sleep(1000)``
 
@@ -81,16 +81,16 @@ Out of range values will be clamped to 0 or 255.
     ...
 
 class Button:
-    """按键 ``button_a`` 和 ``button_b`` 的类。 (button)"""
+    """按钮 ``button_a`` 和 ``button_b`` 的类。 (button)"""
 
     def is_pressed(self) -> bool:
-        """检查按键是否被按下。 (is pressed)
+        """检查按钮是否被按下。 (is pressed)
 
 :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
         ...
 
     def was_pressed(self) -> bool:
-        """检查按键自设备启动以来或者上次调用此方法之后是否被按下。 (was pressed)
+        """检查按钮自设备启动以来或者上次调用此方法之后是否被按下。 (was pressed)
 
 Calling this method will clear the press state so
 that the button must be pressed again before this method will return
@@ -100,7 +100,7 @@ that the button must be pressed again before this method will return
         ...
 
     def get_presses(self) -> int:
-        """获得按键按下的总计次数，并在返回之前将该总计次数重置为0。 (get presses)
+        """获得按钮被按下的总计次数，并在返回之前将该总计次数重置为 0。 (get presses)
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
@@ -110,7 +110,7 @@ button_b: Button
 """右键 ``Button`` 对象。 (button b)"""
 
 class MicroBitDigitalPin:
-    """数字引脚。 (microbitdigitalpin)
+    """数字引脚。 (Microbit 数字引脚)
 
 Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
     NO_PULL: int
@@ -134,7 +134,7 @@ Example: ``pin0.write_digital(1)``
         ...
 
     def set_pull(self, value: int) -> None:
-        """将拉取状态设置为以下三个可能的值之一：``PULL_UP``、``PULL_DOWN``或N``NO_PULL``。 (set pull)
+        """将拉取状态设置为以下三个可能的值之一：``PULL_UP``、``PULL_DOWN`` 或 N``NO_PULL``。 (set pull)
 
 Example: ``pin0.set_pull(pin0.PULL_UP)``
 
@@ -165,7 +165,7 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """在引脚上输出 PWM 信号，占空比为``value``。 (write analog)
+        """在引脚上输出 PWM 信号，占空比为 ``value``。 (write analog)
 
 Example: ``pin0.write_analog(254)``
 
@@ -231,64 +231,65 @@ Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 The default touch mode for the pins on the edge connector is
 ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-:param value: (value)  来自相关引脚的``CAPACITIVE`` 或 ``RESISTIVE``。"""
+:param value: (value)  来自相关引脚的 ``CAPACITIVE`` 或 ``RESISTIVE``。"""
         ...
 pin0: MicroBitTouchPin
-"""具有数字、模拟和触摸功能的引脚。 (pin0)"""
+"""具有数字、模拟和触摸功能的引脚。 (引脚0)"""
 pin1: MicroBitTouchPin
-"""具有数字、模拟和触摸功能的引脚。 (pin1)"""
+"""具有数字、模拟和触摸功能的引脚。 (引脚1)"""
 pin2: MicroBitTouchPin
-"""具有数字、模拟和触摸功能的引脚。 (pin2)"""
+"""具有数字、模拟和触摸功能的引脚。 (引脚2)"""
 pin3: MicroBitAnalogDigitalPin
-"""具有数字和模拟功能的引脚。 (pin3)"""
+"""具有数字和模拟功能的引脚。 (引脚3)"""
 pin4: MicroBitAnalogDigitalPin
-"""具有数字和模拟功能的引脚。 (pin4)"""
+"""具有数字和模拟功能的引脚。 (引脚4)"""
 pin5: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin5)"""
+"""具有数字功能的引脚。 (引脚5)"""
 pin6: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin6)"""
+"""具有数字功能的引脚。 (引脚6)"""
 pin7: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin7)"""
+"""具有数字功能的引脚。 (引脚7)"""
 pin8: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin8)"""
+"""具有数字功能的引脚。 (引脚8)"""
 pin9: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin9)"""
+"""具有数字功能的引脚。 (引脚9)"""
 pin10: MicroBitAnalogDigitalPin
-"""具有数字和模拟功能的引脚。 (pin10)"""
+"""具有数字和模拟功能的引脚。 (引脚10)"""
 pin11: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin11)"""
+"""具有数字功能的引脚。 (引脚11)"""
 pin12: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin12)"""
+"""具有数字功能的引脚。 (引脚12)"""
 pin13: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin13)"""
+"""具有数字功能的引脚。 (引脚13)"""
 pin14: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin14)"""
+"""具有数字功能的引脚。 (引脚14)"""
 pin15: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin15)"""
+"""具有数字功能的引脚。 (引脚15)"""
 pin16: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin16)"""
+"""具有数字功能的引脚。 (引脚16)"""
 pin19: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin19)"""
+"""具有数字功能的引脚。 (引脚19)"""
 pin20: MicroBitDigitalPin
-"""具有数字功能的引脚。 (pin20)"""
+"""具有数字功能的引脚。 (引脚20)"""
 pin_logo: MicroBitTouchPin
-"""micro:bit 正面的触摸感应徽标引脚，默认设置为电容触摸模式。 (pin logo)"""
+"""micro:bit 正面的触摸感应标志引脚，默认设置为电容式触摸模式。 (引脚标志
+)"""
 pin_speaker: MicroBitAnalogDigitalPin
-"""用于对 micro:bit 扬声器寻址的引脚。 (pin speaker)
+"""用于对 micro:bit 扬声器寻址的引脚。 (扬声器引脚)
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """在micro:bit LED显示屏上显示的图像。 (image)
+    """在 micro:bit LED 显示屏上显示的图像。 (图像)
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """心形图像 (heart)"""
+    """心形图像 (心形)"""
     HEART_SMALL: Image
-    """小的心形图像。 (heart small)"""
+    """小的心形图像。 (小的心形)"""
     HAPPY: Image
     """快乐的脸部图像。 (happy)"""
     SMILE: Image
@@ -304,74 +305,74 @@ Given an image object it's possible to display it via the ``display`` API::
     SURPRISED: Image
     """惊讶的脸部图像。 (surprised)"""
     SILLY: Image
-    """傻傻的脸部图像。 (silly)"""
+    """傻傻的脸部图像。 (傻的)"""
     FABULOUS: Image
-    """戴墨镜的脸部图像。 (fabulous)"""
+    """戴墨镜的脸部图像。 (极好的)"""
     MEH: Image
-    """印象平平的脸部图像 (meh)"""
+    """印象平平的脸部图像 (不感兴趣的)"""
     YES: Image
-    """对勾图像。 (yes)"""
+    """对勾图像。 (是的)"""
     NO: Image
-    """打叉图像。 (no)"""
+    """打叉图像。 (不是)"""
     CLOCK12: Image
-    """指针指向12点钟位置的图像。 (clock12)"""
+    """指针指向 12 点钟位置的图像。 (时钟12点)"""
     CLOCK11: Image
-    """指针指向11点钟位置的图像。 (clock11)"""
+    """指针指向 11 点钟位置的图像。 (时钟11点)"""
     CLOCK10: Image
-    """指针指向10点钟位置的图像。 (clock10)"""
+    """指针指向 10 点钟位置的图像。 (时钟10点)"""
     CLOCK9: Image
-    """指针指向9点钟位置的图像。 (clock9)"""
+    """指针指向 9 点钟位置的图像。 (时钟9点)"""
     CLOCK8: Image
-    """指针指向8点钟位置的图像。 (clock8)"""
+    """指针指向 8 点钟位置的图像。 (时钟8点)"""
     CLOCK7: Image
-    """指针指向7点钟位置的图像。 (clock7)"""
+    """指针指向 7 点钟位置的图像。 (时钟7点)"""
     CLOCK6: Image
-    """指针指向6点钟位置的图像。 (clock6)"""
+    """指针指向 6 点钟位置的图像。 (时钟6点)"""
     CLOCK5: Image
-    """指针指向5点钟位置的图像。 (clock5)"""
+    """指针指向 5 点钟位置的图像。 (时钟5点)"""
     CLOCK4: Image
-    """指针指向4点钟位置的图像。 (clock4)"""
+    """指针指向 4 点钟位置的图像。 (时钟4点)"""
     CLOCK3: Image
-    """指针指向3点钟位置的图像。 (clock3)"""
+    """指针指向 3 点钟位置的图像。 (时钟3点)"""
     CLOCK2: Image
-    """指针指向2点钟位置的图像。 (clock2)"""
+    """指针指向 2 点钟位置的图像。 (时钟2点)"""
     CLOCK1: Image
-    """指针指向1点钟位置的图像。 (clock1)"""
+    """指针指向 1 点钟位置的图像。 (时钟1点)"""
     ARROW_N: Image
-    """指向北方的箭头的图像。 (arrow n)"""
+    """指向北方的箭头的图像。 (箭头（指向北）)"""
     ARROW_NE: Image
-    """指向东北方的箭头的图像。 (arrow ne)"""
+    """指向东北方的箭头的图像。 (箭头（指向东北）)"""
     ARROW_E: Image
-    """指向东方的箭头的图像。 (arrow e)"""
+    """指向东方的箭头的图像。 (箭头（指向东）)"""
     ARROW_SE: Image
-    """指向东南方的箭头的图像。 (arrow se)"""
+    """指向东南方的箭头的图像。 (箭头（指向东南）)"""
     ARROW_S: Image
-    """指向南方的箭头图像。 (arrow s)"""
+    """指向南方的箭头图像。 (箭头（指向南）)"""
     ARROW_SW: Image
-    """指向西南方的箭头的图像。 (arrow sw)"""
+    """指向西南方的箭头的图像。 (箭头（指向西南）)"""
     ARROW_W: Image
-    """指向西方的箭头的图像。 (arrow w)"""
+    """指向西方的箭头的图像。 (箭头（指向西）)"""
     ARROW_NW: Image
-    """指向西北方的箭头的图像。 (arrow nw)"""
+    """指向西北方的箭头的图像。 (箭头（指向西北）)"""
     TRIANGLE: Image
-    """向上的三角形图像。 (triangle)"""
+    """向上的三角形图像。 (三角)"""
     TRIANGLE_LEFT: Image
     """左角的三角形图像。 (
 triangle left)"""
     CHESSBOARD: Image
-    """按棋盘式交替点亮 LED。 (chessboard)"""
+    """按棋盘式交替点亮 LED。 (国际象棋棋盘)"""
     DIAMOND: Image
-    """钻石图像。 (diamond)"""
+    """钻石图像。 (菱形)"""
     DIAMOND_SMALL: Image
-    """小钻石图像。 (diamond small)"""
+    """小钻石图像。 (小的菱形)"""
     SQUARE: Image
-    """方形图像。 (square)"""
+    """方形图像。 (正方形)"""
     SQUARE_SMALL: Image
     """小的方形图像。 (square small)"""
     RABBIT: Image
-    """兔子图像。 (rabbit)"""
+    """兔子图像。 (兔子)"""
     COW: Image
-    """奶牛图像。 (cow)"""
+    """奶牛图像。 (牛)"""
     MUSIC_CROTCHET: Image
     """音乐音符图像 (music crotchet)"""
     MUSIC_QUAVER: Image
@@ -379,7 +380,7 @@ triangle left)"""
     MUSIC_QUAVERS: Image
     """一对八分音符图像。 (music quavers)"""
     PITCHFORK: Image
-    """干草叉图像。 (pitchfork)"""
+    """干草叉图像。 (干草叉)"""
     XMAS: Image
     """圣诞树图像。 (xmas)"""
     PACMAN: Image
@@ -387,32 +388,32 @@ triangle left)"""
     TARGET: Image
     """目标图像 (target)"""
     TSHIRT: Image
-    """T 恤图像。 (tshirt)"""
+    """T 恤图像。 (T恤)"""
     ROLLERSKATE: Image
     """轮滑图像。 (rollerskate)"""
     DUCK: Image
-    """鸭子图像。 (duck)"""
+    """鸭子图像。 (鸭子)"""
     HOUSE: Image
-    """房子图像。 (house)"""
+    """房子图像。 (房子)"""
     TORTOISE: Image
-    """乌龟图像。 (tortoise)"""
+    """乌龟图像。 (乌龟)"""
     BUTTERFLY: Image
-    """蝴蝶图像 (butterfly)"""
+    """蝴蝶图像 (蝴蝶)"""
     STICKFIGURE: Image
     """
-火柴人图像。 (stickfigure)"""
+火柴人图像。 (简笔人物画)"""
     GHOST: Image
-    """幽灵图像。 (ghost)"""
+    """幽灵图像。 (幽灵)"""
     SWORD: Image
-    """利剑图像。 (sword)"""
+    """利剑图像。 (剑)"""
     GIRAFFE: Image
-    """长颈鹿图像。 (giraffe)"""
+    """长颈鹿图像。 (长颈鹿)"""
     SKULL: Image
-    """骷髅图像。 (skull)"""
+    """骷髅图像。 (骷髅)"""
     UMBRELLA: Image
-    """雨伞图像。 (umbrella)"""
+    """雨伞图像。 (雨伞)"""
     SNAKE: Image
-    """蛇图像。 (snake)"""
+    """蛇图像。 (蛇)"""
     ALL_CLOCKS: List[Image]
     """按顺序包含所有 CLOCK_ 图像的列表（时钟）。 (all clocks)"""
     ALL_ARROWS: List[Image]
@@ -441,9 +442,9 @@ colon. It's also possible to use newlines (\\n) insead of the colons.
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
         """创建一幅具有 ``width`` 列和 ``height`` 行的空白图像。 (init)
 
-:param width: (width) 可选的图像宽度
-:param height: (height) 可选的图像高度
-:param buffer: (buffer) 用可选数组或在 0-9 范围内的``width``×``height`` 整数字节来初始化图像
+:param width: (宽度) 可选的图像宽度
+:param height: (高度) 可选的图像高度
+:param buffer: (缓冲区) 用可选数组或在 0-9 范围内的 ``width`` × ``height`` 整数字节来初始化图像
 
 Examples::
 
@@ -454,13 +455,13 @@ These create 2 x 2 pixel images at full brightness."""
         ...
 
     def width(self) -> int:
-        """获取列数。 (width)
+        """获取列数。 (宽度)
 
 :return: The number of columns in the image"""
         ...
 
     def height(self) -> int:
-        """获取行数。 (height)
+        """获取行数。 (高度)
 
 :return: The number of rows in the image"""
         ...
@@ -525,7 +526,7 @@ Example: ``Image.HEART_SMALL.shift_down(1)``
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """通过裁剪图片来创建一幅新图像。 (crop)
+        """通过裁剪图片来创建一幅新图像。 (裁剪)
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
@@ -537,7 +538,7 @@ Example: ``Image.HEART.crop(1, 1, 3, 3)``
         ...
 
     def copy(self) -> Image:
-        """创建图像的精确副本。 (copy)
+        """创建图像的精确副本。 (复制)
 
 Example: ``Image.HEART.copy()``
 
@@ -545,7 +546,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """通过反转源图像中像素的亮度来创建一幅新图像。 (invert)
+        """通过反转源图像中像素的亮度来创建一幅新图像。 (反转)
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -553,7 +554,7 @@ Example: ``Image.SMALL_HEART.invert()``
         ...
 
     def fill(self, value: int) -> None:
-        """设置图像中所有像素的亮度。 (fill)
+        """设置图像中所有像素的亮度。 (填充)
 
 Example: ``my_image.fill(5)``
 
@@ -568,13 +569,13 @@ read-only images, like ``Image.HEART``."""
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-:param src: (src) 源图像
+:param src: (来源) 源图像
 :param x: (x) 源图像的起始列偏移量
 :param y: (y) 源图像的起始行偏移量
 :param w: (w) 要复制的列数
 :param h: (h) 要复制的行数
-:param xdest: (xdest) 此图像中要修改的列偏移量
-:param ydest: (ydest) 此图像中要修改的行偏移量
+:param xdest: (x偏离量) 此图像中要修改的列偏移量
+:param ydest: (y偏离量) 此图像中要修改的行偏移量
 
 Pixels outside the source image are treated as having a brightness of 0.
 
@@ -590,11 +591,11 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """获取图像的缩小字符串表示。 (repr)"""
+        """获取图像的缩小字符串表示。 (表示)"""
         ...
 
     def __str__(self) -> str:
-        """获取图像的可读字符串表示。 (str)"""
+        """获取图像的可读字符串表示。 (字符串)"""
         ...
 
     def __add__(self, other: Image) -> Image:
@@ -602,19 +603,19 @@ For example, img.crop(x, y, w, h) can be implemented as::
 
 Example: ``Image.HEART + Image.HAPPY``
 
-:param other: (other) 要添加的图像。"""
+:param other: (其他) 要添加的图像。"""
         ...
 
     def __sub__(self, other: Image) -> Image:
-        """通过从此图像中减去另一幅图像的亮度值来创建一幅新图像。 (sub)
+        """通过从此图像中减去另一幅图像的亮度值来创建一幅新图像。 (减去)
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: (other) 要减去的图像。"""
+:param other: (其他) 要减去的图像。"""
         ...
 
     def __mul__(self, n: float) -> Image:
-        """通过将每个像素的亮度乘以``n`` 来创建一幅新图像。 (mul)
+        """通过将每个像素的亮度乘以 ``n`` 来创建一幅新图像。 (相乘)
 
 Example: ``Image.HEART * 0.5``
 
@@ -622,7 +623,7 @@ Example: ``Image.HEART * 0.5``
         ...
 
     def __truediv__(self, n: float) -> Image:
-        """通过将每个像素的亮度除以``n`` 来创建一幅新图像。 (truediv)
+        """通过将每个像素的亮度除以 ``n`` 来创建一幅新图像。 (除以)
 
 Example: ``Image.HEART / 2``
 
@@ -631,30 +632,30 @@ Example: ``Image.HEART / 2``
 
 class SoundEvent:
     LOUD: SoundEvent
-    """表示声音事件从``quiet``到``loud``的过渡，如拍手或者喊叫。 (loud)"""
+    """表示声音事件从``quiet``到``loud``的过渡，如拍手或者喊叫。 (大声)"""
     QUIET: SoundEvent
-    """表示声音事件从``loud``到``quiet``的过渡，如说话或者背景音乐。 (quiet)"""
+    """表示声音事件从``loud``到``quiet``的过渡，如说话或者背景音乐。 (安静)"""
 
 class Sound:
-    """可以使用 ``audio.play(Sound.NAME)`` 调用内置声音。 (sound)"""
+    """可以使用 ``audio.play(Sound.NAME)`` 调用内置声音。 (声音)"""
     GIGGLE: Sound
-    """咯咯的声音。 (giggle)"""
+    """咯咯的声音。 (咯咯笑)"""
     HAPPY: Sound
     """快乐的声音。 (happy)"""
     HELLO: Sound
-    """问候声。 (hello)"""
+    """问候声。 (你好)"""
     MYSTERIOUS: Sound
-    """神秘的声音 (mysterious)"""
+    """神秘的声音 (神秘的)"""
     SAD: Sound
     """
 悲伤的声音。 (sad)"""
     SLIDE: Sound
-    """滑动声。 (slide)"""
+    """滑动声。 (滑动)"""
     SOARING: Sound
-    """翱翔的声音。 (soaring)"""
+    """翱翔的声音。 (高昂)"""
     SPRING: Sound
-    """春天的声音。 (spring)"""
+    """春天的声音。 (弹簧)"""
     TWINKLE: Sound
-    """闪烁的声音。 (twinkle)"""
+    """闪烁的声音。 (闪烁)"""
     YAWN: Sound
-    """打哈欠的声音。 (yawn)"""
+    """打哈欠的声音。 (打哈欠)"""

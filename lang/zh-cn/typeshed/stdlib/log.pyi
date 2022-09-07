@@ -1,4 +1,4 @@
-"""将数据记录到你的 micro:bit V2。 (log)"""
+"""将数据记录到您的 micro:bit V2。 (log)"""
 from typing import Literal, Optional, Union, overload
 MILLISECONDS = 1
 """毫秒时间戳格式。 (milliseconds)"""
@@ -26,7 +26,7 @@ end of the file.
 
 :param *args: (*args) 每个日志头的位置参数。
 :param timestamp: (timestamp) 将自动添加为每行第一列的时间戳单位。
-将此参数设置为 ``None``来禁用时间戳。传递此模块定义的 ``log.MILLISECONDS``、 ``log.SECONDS``、 ``log.MINUTES``、 ``log.HOURS`` 或 ``log.DAYS`` 值。 无效的值会抛出异常。"""
+将此参数设置为 ``None`` 来禁用时间戳。传递此模块定义的 ``log.MILLISECONDS``、 ``log.SECONDS``、 ``log.MINUTES``、 ``log.HOURS`` 或 ``log.DAYS`` 值。 无效的值会抛出异常。"""
     ...
 
 @overload
@@ -76,11 +76,11 @@ after this.
     ...
 
 def set_mirroring(serial: bool):
-    """将数据日志活动镜像到串行输出。 (set mirroring)
+    """把数据记录活动镜像到串行输出。 (set mirroring)
 
 Example: ``log.set_mirroring(True)``
 
 Mirroring is disabled by default.
 
-:param serial: (serial)  ``True`` 则镜像数据日志活动到串行输出，``False``则禁用镜像。"""
+:param serial: (serial) ``True`` 则把数据记录活动镜像到串行输出，``False`` 则禁用镜像。"""
     ...

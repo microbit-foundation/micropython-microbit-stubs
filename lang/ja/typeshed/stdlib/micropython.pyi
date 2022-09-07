@@ -74,7 +74,7 @@ Example: ``micropython.mem_info()``
     ...
 
 def qstr_info(verbose: Any=None) -> None:
-    """現在のところの隔離化文字列(内部に蓄えられている文字列)に関する情報を表示します。  (qstr info)
+    """現在インターンされている文字列に関する情報を表示します。  (qstr info)
 
 Example: ``micropython.qstr_info()``
 

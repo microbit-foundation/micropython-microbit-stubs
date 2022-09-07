@@ -3,19 +3,19 @@ from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
 ODD: int
-"""Paridad impar (odd)"""
+"""Paridad impar (impar)"""
 EVEN: int
-"""Paridad par (even)"""
+"""Paridad par (par)"""
 
 def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
     """Inicializa la comunicación serie. (init)
 
 Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
-:param baudrate: (baudrate) La velocidad de comunicación.
+:param baudrate: (tasa de baudios) La velocidad de comunicación.
 :param bits: (bits) El tamaño de bytes transmitidos; micro:bit solo admite 8.
-:param parity: (parity) Cómo se comprueba la paridad: ``None``, ``uart.ODD`` o ``uart.EVEN``.
-:param stop: (stop) El número de bits de parada; tiene que ser 1 para el micro:bit.
+:param parity: (paridad) Cómo se comprueba la paridad: ``None``, ``uart.ODD`` o ``uart.EVEN``.
+:param stop: (detener) El número de bits de parada; tiene que ser 1 para el micro:bit.
 :param tx: (tx) Pin transmisor.
 :param rx: (rx) Pin receptor.
 
@@ -29,7 +29,7 @@ For more details see `the online documentation <https://microbit-micropython.rea
     ...
 
 def any() -> bool:
-    """Comprueba si hay algún dato esperando. (any)
+    """Check if any data is waiting. (algún)
 
 Example: ``uart.any()``
 
@@ -37,7 +37,7 @@ Example: ``uart.any()``
     ...
 
 def read(nbytes: Optional[int]=None) -> Optional[bytes]:
-    """Lee bytes. (read)
+    """Lee bytes. (leer)
 
 Example: ``uart.read()``
 
@@ -46,17 +46,17 @@ Example: ``uart.read()``
     ...
 
 def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
-    """Lee bytes en el ``buf``. (readinto)
+    """Lee bytes en el ``buf``. (leeren)
 
 Example: ``uart.readinto(input_buffer)``
 
-:param buf: (buf) El búfer en el que escribir.
+:param buf: (búf) El búfer en el que escribir.
 :param nbytes: (nbytes) Si se especifica ``nbytes``, lee como máximo ese número de bytes; si no, lee ``len(buf)`` bytes.
 :return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
     ...
 
 def readline() -> Optional[bytes]:
-    """Lee una línea, terminando en un carácter de nueva línea. (readline)
+    """Lee una línea, terminando en un carácter de nueva línea. (leerlínea)
 
 Example: ``uart.readline()``
 
@@ -64,11 +64,11 @@ Example: ``uart.readline()``
     ...
 
 def write(buf: Union[bytes, str]) -> Optional[int]:
-    """Escribe un búfer en el bus. (write)
+    """Escribe un búfer en el bus. (escribir)
 
 Example: ``uart.write('hello world')``
 
-:param buf: (buf) Un objeto de bytes o una cadena.
+:param buf: (búf) Un objeto de bytes o una cadena.
 :return: The number of bytes written, or ``None`` on timeout.
 
 Examples::

@@ -1,8 +1,8 @@
-"""测量时间并给程序添加延迟。 (time)"""
+"""测量时间并给程序添加延迟。 (时间)"""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
-    """延迟几秒钟。 (sleep)
+    """延迟几秒钟。 (休眠)
 
 Example: ``time.sleep(1)``
 
@@ -11,23 +11,23 @@ Example: ``time.sleep(1)``
     ...
 
 def sleep_ms(ms: int) -> None:
-    """延迟给定的毫秒数。 (sleep ms)
+    """延迟给定的毫秒数。 (休眠延迟以毫秒计算)
 
 Example: ``time.sleep_ms(1_000_000)``
 
-:param ms: (ms) 延迟的毫秒数 (>= 0)。"""
+:param ms: (毫秒) 延迟的毫秒数 (>= 0)。"""
     ...
 
 def sleep_us(us: int) -> None:
-    """延迟给定的微秒数。 (sleep us)
+    """延迟给定的微秒数。 (休眠延迟以微秒计算)
 
 Example: ``time.sleep_us(1000)``
 
-:param us: (us) 延迟的微秒数 (>= 0)。"""
+:param us: (微秒) 延迟的微秒数 (>= 0)。"""
     ...
 
 def ticks_ms() -> int:
-    """获取一个具有任意参考点、递增的毫秒级计数器，该计数器在某个值之后能够绕回。 (ticks ms)
+    """获取一个具有任意参考点、递增的毫秒级计数器，该计数器在某个值之后能够绕回。 (毫秒级刻度)
 
 Example: ``time.ticks_ms()``
 
@@ -35,7 +35,7 @@ Example: ``time.ticks_ms()``
     ...
 
 def ticks_us() -> int:
-    """获取一个具有任意参考点、递增的微秒级计数器，该计数器在某个值之后能够绕回。 (ticks us)
+    """获取一个具有任意参考点、递增的微秒级计数器，该计数器在某个值之后能够绕回。 (微秒级刻度)
 
 Example: ``time.ticks_us()``
 
@@ -43,7 +43,7 @@ Example: ``time.ticks_us()``
     ...
 
 def ticks_add(ticks: int, delta: int) -> int:
-    """给定数字的偏移刻度值，可以是正数或负数。 (ticks add)
+    """给定数字的偏移刻度值，可以是正数或负数。 (增加刻度)
 
 Example: ``time.ticks_add(time.ticks_ms(), 200)``
 
@@ -51,7 +51,7 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: (ticks) 一个刻度值
+:param ticks: (刻度) 一个刻度值
 :param delta: (delta) 整数偏移量
 
 Example::
@@ -69,12 +69,12 @@ Example::
     ...
 
 def ticks_diff(ticks1: int, ticks2: int) -> int:
-    """测量函数``time.ticks_ms()``或者函数``ticks_us()``返回值之间的 ticks 差。本参数为一个有可能绕回的带符号数值。 (ticks diff)
+    """测量函数``time.ticks_ms()``或者函数``ticks_us()``返回值之间的刻度差。本参数为一个有可能绕回的带符号数值。 (刻度差)
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: (ticks1) 要被减的值
-:param ticks2: (ticks2) 要减去的值
+:param ticks1: (刻度1) 要被减的值
+:param ticks2: (刻度2) 要减去的值
 
 The argument order is the same as for subtraction operator,
 ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.

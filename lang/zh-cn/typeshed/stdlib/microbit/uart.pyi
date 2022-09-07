@@ -1,24 +1,24 @@
-"""使用串行接口与设备通信。 (uart)"""
+"""使用串行接口与设备通信。 (通用异步收发器（UART）)"""
 from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
 ODD: int
-"""奇校验 (odd)"""
+"""奇校验 (奇数)"""
 EVEN: int
 """
-偶校验 (even)"""
+偶校验 (偶数)"""
 
 def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
     """初始化串行通信。 (init)
 
 Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
-:param baudrate: (baudrate) 通信速度。
-:param bits: (bits) 正在传输的字节大小。micro:bit 仅支持 8 字节。
-:param parity: (parity) 如何检查奇偶性，``None``、``uart.ODD`` 或 ``uart.EVEN``。
-:param stop: (stop) 停止位的数量，对于 micro:bit，必须为 1。
-:param tx: (tx) 传输引脚。
-:param rx: (rx) 接收引脚。
+:param baudrate: (波特率) 通信速度。
+:param bits: (位数) 正在传输的字节大小。micro:bit 仅支持 8 字节。
+:param parity: (奇偶校验) 如何检查奇偶性，``None``、``uart.ODD`` 或 ``uart.EVEN``。
+:param stop: (停止) 停止位的数量，对于 micro:bit，必须为 1。
+:param tx: (发送引脚) 传输引脚。
+:param rx: (接收引脚) 接收引脚。
 
 Initializing the UART on external pins will cause the Python console on
 USB to become unaccessible, as it uses the same hardware. To bring the
@@ -30,7 +30,7 @@ For more details see `the online documentation <https://microbit-micropython.rea
     ...
 
 def any() -> bool:
-    """检查是否有任何数据正在等待。 (any)
+    """检查是否有任何数据正在等待。 (任何)
 
 Example: ``uart.any()``
 
@@ -38,26 +38,26 @@ Example: ``uart.any()``
     ...
 
 def read(nbytes: Optional[int]=None) -> Optional[bytes]:
-    """读取字节。 (read)
+    """读取字节。 (读取)
 
 Example: ``uart.read()``
 
-:param nbytes: (nbytes) 如果指定了 ``nbytes``，则最多读取那么多字节，否则读取尽可能多的字节
+:param nbytes: (字节数) 如果指定了 ``nbytes``，则最多读取那么多字节，否则读取尽可能多的字节
 :return: A bytes object or ``None`` on timeout"""
     ...
 
 def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
-    """读取字节到 ``buf``。 (readinto)
+    """读取字节到 ``buf``。 (读入)
 
 Example: ``uart.readinto(input_buffer)``
 
-:param buf: (buf) 要写入的缓存。
-:param nbytes: (nbytes) 如果指定了 ``nbytes``，则最多读取那么多字节，否则读取 ``len(buf)`` 个字节。
+:param buf: (缓冲区) 要写入的缓存。
+:param nbytes: (字节数) 如果指定了 ``nbytes``，则最多读取那么多字节，否则读取 ``len(buf)`` 个字节。
 :return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
     ...
 
 def readline() -> Optional[bytes]:
-    """读取一行，以换行符结尾。 (readline)
+    """读取一行，以换行符结尾。 (读取一行)
 
 Example: ``uart.readline()``
 
@@ -65,11 +65,11 @@ Example: ``uart.readline()``
     ...
 
 def write(buf: Union[bytes, str]) -> Optional[int]:
-    """将缓冲区写入总线。 (write)
+    """将缓冲区写入总线。 (写入)
 
 Example: ``uart.write('hello world')``
 
-:param buf: (buf) 一个字节对象或一个字符串。
+:param buf: (缓冲区) 一个字节对象或一个字符串。
 :return: The number of bytes written, or ``None`` on timeout.
 
 Examples::

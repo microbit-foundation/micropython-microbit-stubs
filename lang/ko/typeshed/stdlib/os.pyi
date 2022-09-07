@@ -42,7 +42,7 @@ class uname_result(Tuple[str, str, str, str, str]):
     version: str
     """운영 체제 버전. (version)"""
     machine: str
-    """하드웨어 식별자 (machine)"""
+    """하드웨어 식별자. (machine)"""
 
 def uname() -> uname_result:
     """현재 운영 시스템을 식별하는 정보를 반환합니다. (uname)

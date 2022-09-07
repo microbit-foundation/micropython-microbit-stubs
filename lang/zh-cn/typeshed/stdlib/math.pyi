@@ -49,7 +49,7 @@ Example: ``math.ceil(0.1)``
     ...
 
 def copysign(x: float, y: float) -> float:
-    """获取 ``y`` 的符号和 ``x``的绝对值。 (copysign)
+    """获取 ``y`` 的符号和 ``x`` 的绝对值。 (copysign)
 
 Example: ``math.copysign(1, -1)``
 
@@ -77,7 +77,7 @@ Example: ``math.degrees(2 * math.pi)``
     ...
 
 def exp(x: float) -> float:
-    """计算E的``x``指数。 (exp)
+    """计算 E 的 ``x`` 指数。 (exp)
 
 Example: ``math.exp(1)``
 
@@ -86,7 +86,7 @@ Example: ``math.exp(1)``
     ...
 
 def fabs(x: float) -> float:
-    """返回``x`` 的绝对值。 (fabs)
+    """返回 ``x`` 的绝对值。 (fabs)
 
 Example: ``math.fabs(-0.1)``
 
@@ -104,7 +104,7 @@ Example: ``math.floor(0.9)``
     ...
 
 def fmod(x: float, y: float) -> float:
-    """计算 ``x/y`` 的余数。 (fmod)
+    """计算 ``x/y`` 的余数。 (浮点余数)
 
 Example: ``math.fmod(10, 3)``
 
@@ -113,7 +113,7 @@ Example: ``math.fmod(10, 3)``
     ...
 
 def frexp(x: float) -> Tuple[float, int]:
-    """将一个浮点数分解为其尾数和指数。 (frexp)
+    """将一个浮点数分解为其尾数和指数。 (浮点指数)
 
 Example: ``mantissa, exponent = math.frexp(2)``
 
@@ -126,7 +126,7 @@ the relation ``0.5 <= abs(m) < 1`` holds.
     ...
 
 def isfinite(x: float) -> bool:
-    """检查值是否有限。 (isfinite)
+    """检查值是否有限。 (是有限的)
 
 Example: ``math.isfinite(float('inf'))``
 
@@ -135,7 +135,7 @@ Example: ``math.isfinite(float('inf'))``
     ...
 
 def isinf(x: float) -> bool:
-    """检查值是否无限。 (isinf)
+    """检查值是否无限。 (是无限的)
 
 Example: ``math.isinf(float('-inf'))``
 
@@ -144,7 +144,7 @@ Example: ``math.isinf(float('-inf'))``
     ...
 
 def isnan(x: float) -> bool:
-    """检查一个值是否不是一个数字 (NaN)。 (isnan)
+    """检查一个值是否不是一个数字 (NaN)。 (不是数字)
 
 Example: ``math.isnan(float('nan'))``
 
@@ -153,7 +153,7 @@ Example: ``math.isnan(float('nan'))``
     ...
 
 def ldexp(x: float, exp: int) -> float:
-    """计算 ``x * (2**exp)`` 。 (ldexp)
+    """计算 ``x * (2**exp)`` 。 (加载指数)
 
 Example: ``math.ldexp(0.5, 2)``
 
@@ -177,7 +177,7 @@ With two arguments, return the logarithm of x to the given base, calculated as `
     ...
 
 def modf(x: float) -> Tuple[float, float]:
-    """计算 ``x`` 的小数和整数部分。 (modf)
+    """计算 ``x`` 的小数和整数部分。 (浮点取模)
 
 Example: ``fractional, integral = math.modf(1.5)``
 
@@ -188,7 +188,7 @@ Both the fractional and integral values have the same sign as ``x``."""
     ...
 
 def pow(x: float, y: float) -> float:
-    """返回 ``x`` 的 ``y``次幂。 (pow)
+    """返回 ``x`` 的 ``y``次幂。 (幂数)
 
 Example: ``math.pow(4, 0.5)``
 
@@ -208,7 +208,7 @@ Example: ``math.radians(360)``
 
 def sin(x: float) -> float:
     """
-计算 ``x`` 的正弦值。 (sin)
+计算 ``x`` 的正弦值。 (正弦)
 
 Example: ``math.sin(math.pi/2)``
 
@@ -217,7 +217,7 @@ Example: ``math.sin(math.pi/2)``
     ...
 
 def sqrt(x: float) -> float:
-    """计算 ``x`` 的平方根。 (sqrt)
+    """计算 ``x`` 的平方根。 (平方根)
 
 Example: ``math.sqrt(4)``
 
@@ -226,7 +226,7 @@ Example: ``math.sqrt(4)``
     ...
 
 def tan(x: float) -> float:
-    """计算 ``x`` 的正切。 (tan)
+    """计算 ``x`` 的正切。 (正切)
 
 Example: ``math.tan(0)``
 
@@ -235,7 +235,7 @@ Example: ``math.tan(0)``
     ...
 
 def trunc(x: float) -> int:
-    """将数字向 0 舍入。 (trunc)
+    """将数字向 0 舍入。 (截断)
 
 Example: ``math.trunc(-0.9)``
 

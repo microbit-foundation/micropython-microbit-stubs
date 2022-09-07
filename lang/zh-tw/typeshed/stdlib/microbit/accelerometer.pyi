@@ -1,8 +1,8 @@
-"""Measure the acceleration of the micro:bit and recognise gestures. (accelerometer)"""
+"""測量 micro:bit 的加速度並識別手勢。 (加速度感測器)"""
 from typing import Tuple
 
 def get_x() -> int:
-    """Get the acceleration measurement in the ``x`` axis in milli-g. (get x)
+    """取得 ``x`` 軸上的加速度測量值（以毫克為單位）。 (取得 x)
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """Get the acceleration measurement in the ``y`` axis in milli-g. (get y)
+    """取得 ``y`` 軸上的加速度測量值（以毫克為單位）。 (取得 y)
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """Get the acceleration measurement in the ``z`` axis in milli-g. (get z)
+    """取得 ``z`` 軸上的加速度測量值（以毫克為單位）。 (取得 z)
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Get the acceleration measurements in all axes at once as a tuple. (get values)
+    """一次獲取所有軸上的加速度測量值作為元組。 (取得數值)
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """Get the name of the current gesture. (current gesture)
+    """取得目前手勢的名稱。 (目前手勢)
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """Check if the named gesture is currently active. (is gesture)
+    """檢查命名手勢當前是否處於活動狀態。 (is 手勢)
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -56,12 +56,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) The gesture name.
+:param name: (名稱) 手勢名稱
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """Check if the named gesture was active since the last call. (was gesture)
+    """檢查命名手勢自上次通話後是否處於活動狀態。 (was 手勢)
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,11 +70,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) The gesture name.
+:param name: (名稱) 手勢名稱
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """Return a tuple of the gesture history. (get gestures)
+    """傳回手勢歷史紀錄的元組。 (取得手勢)
 
 Example: ``accelerometer.get_gestures()``
 
