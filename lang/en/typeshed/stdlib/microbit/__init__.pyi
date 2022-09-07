@@ -28,7 +28,7 @@ def run_every(
 
     Example: ``run_every(my_logging, min=5)``
 
-    This function can be uses in two ways.
+    ``run_every`` can be used in two ways:
 
     As a Decorator - placed on top of the function to schedule. For example::
 
