@@ -2,7 +2,7 @@
 """
 
 from ..microbit import MicroBitDigitalPin, Sound, pin0
-from typing import ClassVar, Iterable, Optional, Union
+from typing import ClassVar, Iterable, Union
 
 def play(
     source: Union[Iterable[AudioFrame], Sound, SoundEffect],

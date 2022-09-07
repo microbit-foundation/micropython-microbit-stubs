@@ -1,10 +1,13 @@
 """Pins, images, sounds, temperature and volume.
 """
 
-from _typeshed import ReadableBuffer
-from typing import Any, Callable, ClassVar, List, Optional, Tuple, Union, overload
+from typing import Any, Callable, List, Optional, Tuple, overload
 
+from _typeshed import ReadableBuffer
+
+# V2 only
 from . import accelerometer as accelerometer
+from . import audio as audio
 from . import compass as compass
 from . import display as display
 from . import i2c as i2c
@@ -12,9 +15,6 @@ from . import microphone as microphone
 from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
-
-# V2 only
-from . import audio as audio
 
 def run_every(
     callback: Optional[Callable[[], None]] = None,
