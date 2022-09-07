@@ -62,7 +62,7 @@ class SoundEffect:
     SHAPE_LOG: ClassVar[int]
     """Logarithmic interpolation option used for the ``shape`` parameter."""
 
-    FX_NONE: None
+    FX_NONE: ClassVar[int]
     """No effect option used for the ``fx`` parameter."""
 
     FX_TREMOLO: ClassVar[int]
@@ -106,7 +106,7 @@ class SoundEffect:
         vol_start: int = 255,
         vol_end: int = 0,
         wave: int = WAVE_SQUARE,
-        fx: Optional[int] = None,
+        fx: int = FX_NONE,
         shape: int = SHAPE_LOG,
     ):
         """Create a new sound effect.
