@@ -75,28 +75,28 @@ class SoundEffect:
     """Warble effect option used for the ``fx`` parameter."""
 
     freq_start: int
-    """Start frequency in Hertz (Hz)"""
+    """Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
 
     freq_end: int
-    """End frequency in Hertz (Hz)"""
+    """End frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
 
     duration: int
-    """Duration of the sound (ms), eg: ``500``"""
+    """Duration of the sound in milliseconds, a number between ``0`` and ``9999``"""
 
     vol_start: int
-    """Start volume value, range 0-255, eg: ``120``"""
+    """Start volume value, a number between ``0`` and ``255``"""
 
     vol_end: int
-    """End volume value, range 0-255, eg: ``255``"""
+    """End volume value, a number between ``0`` and ``255``"""
 
     wave: int
-    """Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise)."""
+    """Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise)"""
 
     fx: int
-    """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``None``."""
+    """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"""
 
     shape: int
-    """The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."""
+    """The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"""
 
     def __init__(
         self,
