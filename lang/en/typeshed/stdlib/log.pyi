@@ -32,7 +32,7 @@ def set_labels(
     log file. If this function call contains any new labels not already
     present, it will generate a new header row with the additional columns.
 
-    By default the first column contains a time stamp for each row. The time
+    By default the first column contains a timestamp for each row. The time
     unit can be selected via the timestamp argument.
 
     :param *labels: Any number of positional arguments, each corresponding to an entry in the log header.
