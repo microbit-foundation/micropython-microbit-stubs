@@ -22,7 +22,7 @@ def set_labels(
 ) -> None:
     """Set up the log file header.
 
-    Example: ``log.set_labels("X", "Y", "Z", timestamp=log.MINUTES)``
+    Example: ``log.set_labels('X', 'Y', 'Z', timestamp=log.MINUTES)``
 
     Ideally this function should be called a single time, before any data is
     logged, to configure the data table header once.
