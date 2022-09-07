@@ -9,7 +9,7 @@ def off() -> None:
 
     Example: ``power.off()``
 
-    This is the equivalent to pressing the reset button for a few second,
+    This is the equivalent to pressing the reset button for a few seconds,
     to set the board in "Off mode".
 
     The micro:bit will only wake up if the reset button is pressed or,
