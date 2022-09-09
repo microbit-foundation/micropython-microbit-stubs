@@ -1,4 +1,4 @@
-"""Usar la brújula incorporada. (brujula)"""
+"""Usar la brújula incorporada. (brújula)"""
 
 def calibrate() -> None:
     """Inicia el proceso de calibración. (calibrar)

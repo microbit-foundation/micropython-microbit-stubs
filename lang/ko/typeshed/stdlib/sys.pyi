@@ -1,15 +1,15 @@
-"""시스템 특정 기능(함수) (sys)"""
+"""시스템 특정 함수 (sys)"""
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
-    """주어진 exit 코드로 현재 프로그램을 종료합니다. (exit)
+    """주어진 종료 코드로 현재 프로그램을 종료합니다. (exit)
 
 Example: ``sys.exit(1)``
 
 This function raises a ``SystemExit`` exception. If an argument is given, its
 value given as an argument to ``SystemExit``.
 
-:param retval: (retval) exit 코드 또는 메시지."""
+:param retval: (retval) 종료 코드 또는 메시지입니다."""
     ...
 
 def print_exception(exc: Exception) -> None:
@@ -22,7 +22,7 @@ Example: ``sys.print_exception(e)``
 This is simplified version of a function which appears in the
 ``traceback`` module in CPython."""
 argv: List[str]
-"""현재 프로그램과 같이 시작된 인자의 가변 목록. (argv)"""
+"""현재 프로그램과 같이 시작된 인자의 가변 리스트입니다. (argv)"""
 byteorder: str
 """시스템의 바이트 순서를 (``"little"`` 또는 ``"big"``)으로 정렬합니다. (byteorder)"""
 
@@ -45,7 +45,7 @@ CPython mandates more attributes for this object, but the actual useful
 bare minimum is implemented in MicroPython.
 """
 maxsize: int
-"""현재 플랫폼에서 자연 정수 유형이 지원할 수 있는 최대 값, 또는 값이 플랫폼의 최대 값보다 작다면 MicroPython 정수 유형으로 표현할 수 있는 최대 값(long int를 지원하지 않는 MicroPython 포트의 경우). (maxsize)
+"""현재 플랫폼에서 자연 정수 유형이 지원할 수 있는 최대 값, 또는 값이 플랫폼의 최대 값보다 작다면 MicroPython 정수 유형으로 표현할 수 있는 최대 값(long int를 지원하지 않는 MicroPython 포트의 경우)입니다. (maxsize)
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some
@@ -66,11 +66,11 @@ value directly, but instead count number of bits in it::
         # "> 32", "> 64" style of comparisons.
 """
 modules: Dict[str, Any]
-"""로드된 모듈의 딕셔너리. (modules)
+"""로드된 모듈의 딕셔너리입니다. (modules)
 
 On some ports, it may not include builtin modules."""
 path: List[str]
-"""불러온 모듈을 검색하기 위한 딕셔너리 가변 리스트. (path)"""
+"""불러온 모듈을 검색하기 위한 딕셔너리 가변 리스트입니다. (path)"""
 platform: str
 """MicroPython이 구동되고 있는 플랫폼. (platform)
 

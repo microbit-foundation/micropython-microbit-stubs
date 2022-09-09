@@ -33,7 +33,7 @@ Must be called for any updates to become visible."""
         ...
 
     def write(self) -> None:
-        """顯示像素（僅限 micro:bit V2）。 (write)
+        """顯示像素 (僅限 micro:bit V2)。 (write)
 
 Example: ``np.write()``
 

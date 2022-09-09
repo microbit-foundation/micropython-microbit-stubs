@@ -1,16 +1,16 @@
-"""I²C 버스 프로토콜을 활용해 기기와 통신합니다. (i2c)"""
+"""I²C 버스 프로토콜을 사용해 기기와 통신합니다. (i2c)"""
 from _typeshed import ReadableBuffer
 from ..microbit import MicroBitDigitalPin, pin19, pin20
 from typing import List
 
 def init(freq: int=100000, sda: MicroBitDigitalPin=pin20, scl: MicroBitDigitalPin=pin19) -> None:
-    """주변 기기를 다시 초기화합니다. (init)
+    """주변 장치를 다시 초기화합니다. (init)
 
 Example: ``i2c.init()``
 
-:param freq: (freq) clock frequency
-:param sda: (sda) ``scl`` 핀 (기본 20)
-:param scl: (scl) ``scl`` 핀 (기본 19)
+:param freq: (freq) 클럭 진동수
+:param sda: (sda) ``scl`` 핀(기본값 20)
+:param scl: (scl) ``scl`` 핀(기본값 19)
 
 On a micro:bit V1 board, changing the I²C pins from defaults will make
 the accelerometer and compass stop working, as they are connected
@@ -20,7 +20,7 @@ for the motion sensors and the edge connector."""
     ...
 
 def scan() -> List[int]:
-    """버스를 스캔하여 기기를 찾습니다. (scan)
+    """버스에서 장치를 스캔합니다. (scan)
 
 Example: ``i2c.scan()``
 
@@ -28,22 +28,22 @@ Example: ``i2c.scan()``
     ...
 
 def read(addr: int, n: int, repeat: bool=False) -> bytes:
-    """기기로부터 바이트 값을 읽습니다. (read)
+    """장치에서 바이트 값을 읽습니다.. (read)
 
 Example: ``i2c.read(0x50, 64)``
 
-:param addr: (addr) 기기의 7비트 주소
-:param n: (n) 읽을 바이트의 수
-:param repeat: (repeat) ``True``인 경우 스톱 비트가 전송되지 않음
+:param addr: (addr) 장치의 7비트 주소
+:param n: (n) 읽을 바이트 수
+:param repeat: (repeat) ``True``인 경우 스톱 비트가 전송되지 않습니다
 :return: The bytes read"""
     ...
 
 def write(addr: int, buf: ReadableBuffer, repeat: bool=False) -> None:
-    """기기에 바이트를 작성합니다. (write)
+    """장치에 바이트를 작성합니다. (write)
 
 Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
-:param addr: (addr) 기기의 7비트 주소
+:param addr: (addr) 장치의 7비트 주소
 :param buf: (buf) 작성할 바이트가 포함된 버퍼
-:param repeat: (repeat) ``True``인 경우 스톱 비트가 전송되지 않음"""
+:param repeat: (repeat) ``True``인 경우 스톱 비트가 전송되지 않습니다"""
     ...

@@ -3,7 +3,7 @@ from typing import Any, TypeVar, overload
 _T = TypeVar('_T')
 
 def const(expr: _T) -> _T:
-    """用於宣告表達式為常數，以便編譯器對其進行最佳化。 (const)
+    """用於宣告運算式為常數，以便編譯器對其進行最佳化。 (const)
 
 The use of this function should be as follows::
 
@@ -16,7 +16,7 @@ outside the module they are declared in. On the other hand, if a constant
 begins with an underscore then it is hidden, it is not available as a
 global variable, and does not take up any memory during execution.
 
-:param expr: (expr) 一個常數表達式。"""
+:param expr: (expr) 一個常數運算式。"""
     ...
 
 @overload
@@ -119,7 +119,7 @@ def kbd_intr(chr: int) -> None:
 
 Example: ``micropython.kbd_intr(-1)``
 
-:param chr: (chr) 用於引發中斷的字元程式碼或 -1 以禁用 Ctrl-C 的擷取。
+:param chr: (chr) 用於引發中斷的字元程式碼或 -1，以停用 Ctrl-C 的擷取。
 
 By default this is set to 3 during script execution, corresponding to Ctrl-C.
 Passing -1 to this function will disable capture of Ctrl-C, and passing 3

@@ -24,11 +24,12 @@ def pronounce(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throa
 Example: ``speech.pronounce(' /HEHLOW WERLD')``
 
 :param phonemes: (phonemes) 發音的音素字串
-:param pitch: (音調) 代表聲音音高的數字
+:param pitch: (間距) 代表聲音音高的數字
 :param speed: (speed) 代表聲音速度的數字
 :param mouth: (mouth) 一個代表聲音的嘴巴的數字
 :param throat: (throat) 代表聲音的喉嚨的數字
-:param pin: (引腳) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
+:param pin: (引腳
+) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
 如果我們不想從引腳上播放任何聲音，可以使用 ``pin=None``。僅限 micro:bit。
 
 Override the optional pitch, speed, mouth and throat settings to change the
@@ -43,11 +44,12 @@ def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=12
 Example: ``speech.say('hello world')``
 
 :param words: (words) 要說的一串詞。
-:param pitch: (音調) 代表聲音音高的數字
+:param pitch: (間距) 代表聲音音高的數字
 :param speed: (speed) 代表聲音速度的數字
 :param mouth: (mouth) 一個代表聲音的嘴巴的數字
 :param throat: (throat) 代表聲音的喉嚨的數字
-:param pin: (引腳) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
+:param pin: (引腳
+) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
 如果我們不想從引腳上播放任何聲音，可以使用 ``pin=None``。 僅限 micro:bit。
 
 The result is semi-accurate for English. Override the optional pitch, speed,
@@ -65,11 +67,12 @@ def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: in
 Example: ``speech.sing(' /HEHLOW WERLD')``
 
 :param phonemes: (phonemes) 要唱的一串詞。
-:param pitch: (音調) 代表聲音音高的數字
+:param pitch: (間距) 代表聲音音高的數字
 :param speed: (speed) 代表聲音速度的數字
 :param mouth: (mouth) 一個代表聲音的嘴巴的數字
 :param throat: (throat) 代表聲音的喉嚨的數字
-:param pin: (引腳) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
+:param pin: (引腳
+) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
 如果我們不想從引腳上播放任何聲音，可以使用 ``pin=None``。僅限 micro:bit。
 
 Override the optional pitch, speed, mouth and throat settings to change

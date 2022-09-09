@@ -61,7 +61,7 @@ represented as strings.
     ...
 
 def was_gesture(name: str) -> bool:
-    """해당 이름의 제스처가 마지막 호출 이후로 활성화된 적 있는지 확인합니다. (was gesture)
+    """해당 이름의 제스처가 마지막 호출 이후로 활성화된 적이 있는지 확인합니다. (was gesture)
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,7 +70,7 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) 제스처 이름.
+:param name: (name) 제스처 이름입니다.
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:

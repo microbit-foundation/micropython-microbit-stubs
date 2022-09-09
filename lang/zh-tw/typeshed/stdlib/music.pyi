@@ -4,7 +4,7 @@ from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]
 """旋律：貝多芬 C 小調第五交響曲的開場。 (dadadadum)"""
 ENTERTAINER: Tuple[str, ...]
-"""旋律：Scott Joplin Ragtime 經典「The Entertainer」的開場。 (entertainer)"""
+"""旋律：史考特喬普林的名曲《演藝人》開場。 (entertainer)"""
 PRELUDE: Tuple[str, ...]
 """旋律：巴哈 48 首前奏曲與賦格曲 C 大調第一前奏曲的開場。 (prelude)"""
 ODE: Tuple[str, ...]
@@ -30,11 +30,11 @@ For copyright status see: http://www.bbc.co.uk/news/world-us-canada-34332853
 WEDDING: Tuple[str, ...]
 """旋律：華格納歌劇《羅恩格林》中的新娘合唱。 (wedding)"""
 FUNERAL: Tuple[str, ...]
-"""旋律：「葬禮進行曲」，也被稱為蕭邦的 Piano Sonata No. 2 in B♭ minor, Op. 35。 (funeral)"""
+"""旋律：《葬禮進行曲》，亦稱為蕭邦的「降 b 小調第二號鋼琴奏鳴曲」。 (funeral)"""
 PUNCHLINE: Tuple[str, ...]
 """旋律：一段有趣的音樂，表示說了一個笑話。 (punchline)"""
 PYTHON: Tuple[str, ...]
-"""旋律：約翰菲利普蘇薩的進行曲「Liberty Bell」，又名「蒙提派森的飛行馬戲團」的主題曲（Python 程式語言以此命名）。 (python)"""
+"""旋律：約翰菲利普蘇薩的進行曲《自由鐘》，又名《蒙提派森的飛行馬戲團》的主題曲 (Python 程式語言以此命名)。 (python)"""
 BADDY: Tuple[str, ...]
 """旋律：無聲電影時代的壞人登場。 (baddy)"""
 CHASE: Tuple[str, ...]
@@ -72,7 +72,7 @@ To work out the length of a tick in milliseconds is very simple arithmetic:
     ...
 
 def get_tempo() -> Tuple[int, int]:
-    """以整數元組的形式獲取當前速度：``(ticks, bpm)``。 (取得節奏)
+    """以整數元組的形式獲取當前速度：``(ticks, bpm)``。 (get tempo)
 
 Example: ``ticks, beats = music.get_tempo()``
 
@@ -80,12 +80,13 @@ Example: ``ticks, beats = music.get_tempo()``
     ...
 
 def play(music: Union[str, List[str], Tuple[str, ...]], pin: Union[MicroBitDigitalPin, None]=pin0, wait: bool=True, loop: bool=False) -> None:
-    """播放音樂。 (播放)
+    """播放音樂。 (play)
 
 Example: ``music.play(music.NYAN)``
 
 :param music: (music) 特殊音符中指定的音樂 <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
-:param pin: (引腳) 用於外接揚聲器的輸出引腳（預設為 ``pin0``），``None`` 表示無聲音。
+:param pin: (引腳
+) 用於外接揚聲器的輸出引腳 (預設為 ``pin0``)，``None`` 表示無聲音。
 :param wait: (wait) 如果 ``wait`` 設定為 ``True``，則此函式會封鎖。
 :param loop: (loop) 如果 ``loop`` 設定為 ``True``，曲調會重複直到呼叫 ``stop`` 或封鎖呼叫被中斷。
 
@@ -93,13 +94,14 @@ Many built-in melodies are defined in this module."""
     ...
 
 def pitch(frequency: int, duration: int=-1, pin: MicroBitDigitalPin=pin0, wait: bool=True) -> None:
-    """彈奏一個音符。 (音調)
+    """彈奏一個音符。 (間距)
 
 Example: ``music.pitch(185, 1000)``
 
 :param frequency: (頻率) 整數頻率
 :param duration: (duration) 毫秒的持續時間。如果是否定的，則聲音將持續到下一次呼叫或對 ``stop`` 的呼叫。
-:param pin: (引腳) 可選輸出引腳（預設 ``pin0``）。
+:param pin: (引腳
+) 可選輸出引腳 (預設值 ``pin0``)。
 :param wait: (wait) 如果 ``wait`` 設定為 ``True``，則此函式為封鎖。
 
 For example, if the frequency is set to 440 and the length to
@@ -113,10 +115,11 @@ def stop(pin: MicroBitDigitalPin=pin0) -> None:
 
 Example: ``music.stop()``
 
-:param pin: (引腳) 可以提供一個可選引數來指定一個引腳，例如``music.stop(pin1)``。"""
+:param pin: (引腳
+) 可以提供一個可選引數來指定一個引腳，例如``music.stop(pin1)``。"""
 
 def reset() -> None:
-    """將 tick、bpm、持續時間和八度音程重置為其預設值。 (可以提供一個可選參數來指定一個引腳，例如{{music.stop(pin1)}}。)
+    """將 tick、bpm、持續時間和八度音程重置為其預設值。 (reset)
 
 Example: ``music.reset()``
 

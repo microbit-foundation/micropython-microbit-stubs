@@ -1,9 +1,9 @@
-"""파일 시스템에 접근합니다. (os)"""
+"""파일 시스템에 액세스합니다. (os)"""
 from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
-    """파일 목록을 불러옵니다. (listdir)
+    """파일을 나열합니다. (listdir)
 
 Example: ``os.listdir()``
 
@@ -16,7 +16,7 @@ def remove(filename: str) -> None:
 
 Example: ``os.remove('data.txt')``
 
-:param filename: (filename) 삭제할 파일.
+:param filename: (filename) 삭제할 파일입니다.
 
 If the file does not exist an ``OSError`` exception will occur."""
     ...
@@ -34,15 +34,15 @@ If the file does not exist an ``OSError`` exception will occur."""
 class uname_result(Tuple[str, str, str, str, str]):
     """``os.uname()``의 결과 (uname result)"""
     sysname: str
-    """운영 체제 이름. (sysname)"""
+    """운영 체제 이름입니다. (sysname)"""
     nodename: str
-    """네트워크 상의 머신 이름(구현 방법에 따라 정의됨). (nodename)"""
+    """네트워크상의 머신 이름입니다(구현 방법에 따라 정의됨). (nodename)"""
     release: str
-    """운영 체제 릴리즈. (release)"""
+    """운영 체제 릴리스입니다. (release)"""
     version: str
-    """운영 체제 버전. (version)"""
+    """운영 체제 버전입니다. (version)"""
     machine: str
-    """하드웨어 식별자. (machine)"""
+    """하드웨어 식별자입니다. (machine)"""
 
 def uname() -> uname_result:
     """현재 운영 시스템을 식별하는 정보를 반환합니다. (uname)

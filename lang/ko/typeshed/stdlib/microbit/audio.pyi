@@ -1,4 +1,4 @@
-"""micro:bit을 활용해 소리 재생(V1 호환성의 경우 ``audio`` 입력). (audio)"""
+"""micro:bit을 활용해 소리를 재생합니다(V1 호환을 위해서는 ``audio``를 가져오세요). (audio)"""
 from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import Iterable, Union
 
@@ -7,10 +7,10 @@ def play(source: Union[Iterable[AudioFrame], Sound], wait: bool=True, pin: Micro
 
 Example: ``audio.play(Sound.GIGGLE)``
 
-:param source: (source) ``Sound.GIGGLE`` 등의 내장된 ``Sound`` 또는 ``AudioFrame`` 오브젝트의 연속형 자료 샘플 데이터.
-:param wait: (wait) ``wait``이 ``True``인 경우 사운드 재생이 완료될 때까지 이 기능(함수)이 차단됩니다.
-:param pin: (핀) ``pin0``의 기본값을 무시하고 사용할 출력 핀을 특정하는 선택형 인자입니다. 사운드를 재생하고 싶지 않다면 ``pin=None``을 사용할 수 있습니다.
-:param return_pin: (return pin) 접지 대신 외부 스피커에 연결할 차동 엣지 커넥터(differential edge connector) 핀을 특정합니다. **V2** 리비전에서는 무시됩니다."""
+:param source: (source) ``Sound.GIGGLE`` 등의 내장된 ``Sound`` 또는 ``AudioFrame`` 오브젝트의 연속형 자료 샘플 데이터입니다.
+:param wait: (wait) ``wait``이 ``True``인 경우 사운드 재생이 완료될 때까지 이 함수가 차단됩니다.
+:param pin: (핀) ``pin0``의 기본값을 덮어쓰는 데 사용할 출력 핀을 특정하는 인자입니다(선택 사항). 사운드를 재생하고 싶지 않다면 ``pin=None``을 사용할 수 있습니다.
+:param return_pin: (return pin) 접지 대신 외부 스피커에 연결할 차동 엣지 커넥터 핀을 특정합니다. **V2** 수정 버전에서는 무시합니다."""
 
 def is_playing() -> bool:
     """소리가 재생 중인지 체크합니다. (is playing)
@@ -27,7 +27,7 @@ Example: ``audio.stop()``"""
     ...
 
 class AudioFrame:
-    """``AudioFrame`` 오브젝트는 부호가 없는 바이트(unsigned byte) 샘플 32개의 목록입니다. (whole number between 0 and 255). (audioframe)
+    """``AudioFrame`` 오브젝트는 부호 없는 바이트 샘플 32개의 리스트입니다(0에서 255 사이의 모든 숫자). (audioframe)
 
 It takes just over 4 ms to play a single frame.
 

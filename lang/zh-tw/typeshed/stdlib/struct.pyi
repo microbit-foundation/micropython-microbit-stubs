@@ -3,11 +3,11 @@ from _typeshed import ReadableBuffer, WriteableBuffer
 from typing import Any, Tuple, Union
 
 def calcsize(fmt: str) -> int:
-    """取得儲存特定 ``fmt`` 所需的位元組數。 (calcsize)
+    """取得存儲特定 ``fmt`` 所需的位元組數。 (calcsize)
 
 Example: ``struct.calcsize('hf')``
 
-:param fmt: (fmt) 格式字串
+:param fmt: (fmt) 格式字串。
 :return The number of bytes needed to store such a value."""
     ...
 

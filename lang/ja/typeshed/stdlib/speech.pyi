@@ -1,4 +1,4 @@
-"""micro:bit に話をさせ、歌わせ、その他の音声のようなサウンドを作らせます。 (speech)"""
+"""micro:bit に話させたり、歌わせたり、その他の音声のようなサウンドを作らせたりします。 (speech)"""
 from typing import Optional
 from .microbit import MicroBitDigitalPin, pin0
 
@@ -24,13 +24,12 @@ def pronounce(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throa
 Example: ``speech.pronounce(' /HEHLOW WERLD')``
 
 :param phonemes: (phonemes) 発音する音素の文字列
-:param pitch: (pitch) 音声のピッチを表す数値
+:param pitch: (pitch) 音声の音高を表す数値
 :param speed: (speed) 音声の速度を表す数値
 :param mouth: (mouth) 音声の口の動きを表す数値
 :param throat: (throat) 音声の喉の動きを表す数値
 :param pin: (ピン) 出力端子をデフォルトの ``pin0`` から変えるためのオプション引数。
-音を鳴らしたくない場合は ``pin=None`` を指定します。
-micro:bit V2 のみで使えます。
+音を鳴らしたくない場合は ``pin=None`` を指定します。micro:bit V2 のみで使えます。
 
 Override the optional pitch, speed, mouth and throat settings to change the
 timbre (quality) of the voice.
@@ -44,13 +43,12 @@ def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=12
 Example: ``speech.say('hello world')``
 
 :param words: (words) 発声する言葉の文字列。
-:param pitch: (pitch) 音声のピッチを表す数値
+:param pitch: (pitch) 音声の音高を表す数値
 :param speed: (speed) 音声の速度を表す数値
 :param mouth: (mouth) 音声の口の動きを表す数値
 :param throat: (throat) 音声の喉の動きを表す数値
 :param pin: (ピン) 出力端子をデフォルトの ``pin0`` から変えるためのオプション引数。
-音を鳴らしたくない場合は ``pin=None`` を指定します。
-micro:bit V2 のみで使えます。
+音を鳴らしたくない場合は ``pin=None`` を指定します。micro:bit V2 のみで使えます。
 
 The result is semi-accurate for English. Override the optional pitch, speed,
 mouth and throat settings to change the timbre (quality) of the voice.
@@ -67,13 +65,12 @@ def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: in
 Example: ``speech.sing(' /HEHLOW WERLD')``
 
 :param phonemes: (phonemes) 歌う言葉の文字列。
-:param pitch: (pitch) 音声のピッチを表す数値
+:param pitch: (pitch) 音声の音高を表す数値
 :param speed: (speed) 音声の速度を表す数値
 :param mouth: (mouth) 音声の口の動きを表す数値
 :param throat: (throat) 音声の喉の動きを表す数値
 :param pin: (ピン) 出力端子をデフォルトの ``pin0`` から変えるためのオプション引数。
-音を鳴らしたくない場合は ``pin=None`` を指定します。
-micro:bit V2 のみで使えます。
+音を鳴らしたくない場合は ``pin=None`` を指定します。micro:bit V2 のみで使えます。
 
 Override the optional pitch, speed, mouth and throat settings to change
 the timbre (quality) of the voice.

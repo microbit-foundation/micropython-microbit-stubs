@@ -14,7 +14,7 @@ def sleep_ms(ms: int) -> None:
 
 Example: ``time.sleep_ms(1_000_000)``
 
-:param ms: (ms) 遅延するミリ秒数(>= 0)。"""
+:param ms: (ms) 遅延するミリ秒数（>= 0）。"""
     ...
 
 def sleep_us(us: int) -> None:
@@ -22,7 +22,7 @@ def sleep_us(us: int) -> None:
 
 Example: ``time.sleep_us(1000)``
 
-:param us: (us) 遅延するマイクロ秒数(>= 0)。"""
+:param us: (us) 遅延するマイクロ秒数（>= 0）。"""
     ...
 
 def ticks_ms() -> int:

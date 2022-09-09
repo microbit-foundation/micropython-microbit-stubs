@@ -5,7 +5,7 @@ from typing import Tuple
 class NeoPixel:
 
     def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int=3) -> None:
-        """端子を介して制御するneopixel LEDの新しいストリップを初期化します。 (init)
+        """端子を介して制御するネオピクセルLEDの新しいストリップを初期化します。 (init)
 
 Example: ``np = neopixel.NeoPixel(pin0, 8)``
 
@@ -13,8 +13,8 @@ RGBW neopixels are only supported by micro:bit V2.
 
 See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`_ for warnings and other advice.
 
-:param pin: (pin) neopixelストリップを制御する端子。
-:param n: (n) ストリップ内のneopixelの数。
+:param pin: (pin) ネオピクセルストリップを制御する端子。
+:param n: (n) ストリップ内のネオピクセルの数。
 :param bpp: (bpp) ピクセルあたりのバイト数。micro:bit V2 の RGBW ネオピクセルに対応するには、RGBやGRBのデフォルト値の3ではなく、4 を指定します。"""
         ...
 
@@ -33,7 +33,7 @@ Must be called for any updates to become visible."""
         ...
 
     def write(self) -> None:
-        """ピクセルを表示します(micro:bit V2 のみ)。 (write)
+        """ピクセルを表示します（micro:bit V2 のみ）。 (write)
 
 Example: ``np.write()``
 
@@ -43,11 +43,11 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """指定したRGB/RGBW値をすべてのピクセルに設定します。 (fill)
+        """指定した RGB/RGBW 値をすべてのピクセルに設定します。 (fill)
 
 Example: ``np.fill((0, 0, 255))``
 
-:param colour: (colour) ピクセルあたりのバイト数(bpp)と同じ長さのタプル。
+:param colour: (colour) ピクセルあたりのバイト数（bpp）と同じ長さのタプル。
 
 Use in conjunction with ``show()`` to update the neopixels."""
         ...

@@ -12,7 +12,7 @@ persistent on-device file system."""
     ...
 
 def remove(filename: str) -> None:
-    """移除（刪除）一個檔案。 (remove)
+    """移除 (刪除) 一個檔案。 (remove)
 
 Example: ``os.remove('data.txt')``
 
@@ -32,17 +32,17 @@ Example: ``os.size('data.txt')``
 If the file does not exist an ``OSError`` exception will occur."""
 
 class uname_result(Tuple[str, str, str, str, str]):
-    """``os.uname()`` 的結果 (未命名結果)"""
+    """``os.uname()`` 的結果 (uname result)"""
     sysname: str
     """作業系統名稱。 (sysname)"""
     nodename: str
-    """網路上的機器名稱（實現定義）。 (nodename)"""
+    """網路上的機器名稱 (執行定義)。 (nodename)"""
     release: str
     """作業系統發佈。 (release)"""
     version: str
     """作業系統版本。 (version)"""
     machine: str
-    """硬體標識碼。 (機器)"""
+    """硬體識別碼。 (machine)"""
 
 def uname() -> uname_result:
     """傳回標識目前作業系統的資訊。 (uname)

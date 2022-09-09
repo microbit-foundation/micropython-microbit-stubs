@@ -113,7 +113,7 @@ def stop(pin: MicroBitDigitalPin=pin0) -> None:
 
 Example: ``music.stop()``
 
-:param pin: (pin) オプションの引数にはスピーカの繋がれている端子を指定します。たとえば ``music.stop(pin1)`` などと指定します。"""
+:param pin: (pin) オプションの引数には、たとえば ``music.stop(pin1)`` などの端子を指定できます。"""
 
 def reset() -> None:
     """ティック、bpm、持続時間、オクターブをデフォルト値にリセットします。 (reset)
