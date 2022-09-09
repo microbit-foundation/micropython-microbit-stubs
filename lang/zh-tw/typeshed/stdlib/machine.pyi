@@ -1,9 +1,9 @@
-"""低等實用工具程序。 (機器)"""
+"""低等實用工具程序。 (machine)"""
 from typing import Any
 from .microbit import MicroBitDigitalPin
 
 def unique_id() -> bytes:
-    """獲取具有板子的唯一標識碼的位元組字串。 (唯一標識碼)
+    """取得具有板的唯一識別碼之位元組字串。 (unique id)
 
 Example: ``machine.unique_id()``
 
@@ -11,13 +11,13 @@ Example: ``machine.unique_id()``
     ...
 
 def reset() -> None:
-    """以類似於按下外部 RESET 按鈕的方式重置設備。 (重置)
+    """以類似於按下外部 RESET 按鍵的方式重置裝置。 (reset)
 
 Example: ``machine.reset()``"""
     ...
 
 def freq() -> int:
-    """得到以赫茲為單位的 CPU 頻率。 (頻率)
+    """取得以赫茲為單位的 CPU 頻率。 (頻率)
 
 Example: ``machine.freq()``
 
@@ -40,7 +40,7 @@ def enable_irq(state: Any) -> None:
 
 Example: ``machine.enable_irq(interrupt_state)``
 
-:param state: (狀態) 從最近一次叫用 ``disable_irq`` 函式傳回的值。"""
+:param state: (state) 從最近一次叫用 ``disable_irq`` 函式傳回的值。"""
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
@@ -54,8 +54,9 @@ function first waits until the pin input becomes equal to
 ``pulse_level``. If the pin is already equal to ``pulse_level`` then timing
 starts straight away.
 
-:param pin: (引腳) 要使用的引腳
-:param pulse_level: (脈衝電平) 0 到計時低脈衝或 1 到計時高脈衝
+:param pin: (引腳
+) 要使用的引腳
+:param pulse_level: (pulse level) 0 到計時低脈衝或 1 到計時高脈衝
 :param timeout_us: (timeout us) 微秒超時
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...

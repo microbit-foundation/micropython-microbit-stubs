@@ -24,7 +24,7 @@ This is simplified version of a function which appears in the
 argv: List[str]
 """現在のプログラム開始時の引数の変更可能なリスト。 (argv)"""
 byteorder: str
-"""システムのバイト順(``"little"`` または ``"big"``)。 (byteorder)"""
+"""システムのバイト順（``"little"`` または ``"big"``）。 (byteorder)"""
 
 class _implementation:
     name: str
@@ -70,7 +70,7 @@ modules: Dict[str, Any]
 
 On some ports, it may not include builtin modules."""
 path: List[str]
-"""importするモジュールを検索するディレクトリの変更可能なリスト。 (path)"""
+"""インポートするモジュールを検索するディレクトリの変更可能なリスト。 (path)"""
 platform: str
 """MicroPython が実行されているプラ\u200b\u200bットフォーム。 (platform)
 

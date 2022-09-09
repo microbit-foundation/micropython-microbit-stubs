@@ -50,7 +50,7 @@ def unpack_from(fmt: str, buffer: ReadableBuffer, offset: int=0) -> Tuple:
 Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
 
 :param fmt: (fmt) フォーマット文字列。
-:param buffer: (buffer) 読み込むソースバッファ。
+:param buffer: (buffer) 読み込み元のバッファ。
 :param offset: (offset) バッファのオフセット。負の場合はバッファの最後からのオフセットになります。
 :return: A tuple of the unpacked values."""
     ...

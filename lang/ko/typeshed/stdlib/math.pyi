@@ -48,7 +48,7 @@ Example: ``math.ceil(0.1)``
     ...
 
 def copysign(x: float, y: float) -> float:
-    """``y``의 사인 값으로 ``x``(을)를 계산합니다. (copysign)
+    """``y``의 사인 값으로 ``x``를 계산합니다. (copysign)
 
 Example: ``math.copysign(1, -1)``
 
@@ -162,7 +162,7 @@ Example: ``math.ldexp(0.5, 2)``
     ...
 
 def log(x: float, base: float=e) -> float:
-    """``x``의 로그(대수)를 주어진 베이스에 따라 계산합니다(자연로그가 기본값). (log)
+    """``x``의 로그를 주어진 베이스에 따라 계산합니다(자연로그가 기본값). (log)
 
 Example: ``math.log(math.e)``
 

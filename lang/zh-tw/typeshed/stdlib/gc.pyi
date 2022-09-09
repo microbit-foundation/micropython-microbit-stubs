@@ -2,17 +2,17 @@
 from typing import overload
 
 def enable() -> None:
-    """啟用自動記憶體管理。 (啟用)"""
+    """啟用自動記憶體管理。 (enable)"""
     ...
 
 def disable() -> None:
-    """停用自動垃圾收集。 (停用)
+    """停用自動記憶體管理。 (disable)
 
 Heap memory can still be allocated,
 and garbage collection can still be initiated manually using ``gc.collect``."""
 
 def collect() -> None:
-    """執行垃圾資料回收。 (收集)"""
+    """執行自動記憶體管理 (collect)"""
     ...
 
 def mem_alloc() -> int:
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """查詢額外的GC分配閾值。 (閾值)
+    """查詢額外的GC分配閾值。 (threshold)
 
 :return: The GC allocation threshold.
 
@@ -44,7 +44,7 @@ implementations, its signature and semantics are different."""
 
 @overload
 def threshold(amount: int) -> None:
-    """設定額外的 GC 分配閾值。 (閾值)
+    """設定其他 GC 分配閾值。 (threshold)
 
 Normally, a collection is triggered only when a new allocation
 cannot be satisfied, i.e. on an  out-of-memory (OOM) condition.
@@ -64,5 +64,5 @@ This function is a MicroPython extension. CPython has a similar
 function - ``set_threshold()``, but due to different GC
 implementations, its signature and semantics are different.
 
-:param amount: (數量) 應該觸發垃圾回收的位元組。"""
+:param amount: (amount) 應該觸發自動記憶體管理之後的位元組。"""
     ...

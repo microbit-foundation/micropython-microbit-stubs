@@ -1,4 +1,4 @@
-"""직렬 인터페이스를 사용해 기기와 통신합니다. (uart)"""
+"""직렬 인터페이스를 사용해 장치와 통신합니다. (uart)"""
 from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
@@ -12,12 +12,12 @@ def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=
 
 Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
-:param baudrate: (baudrate) 통신의 속도.
-:param bits: (bits) 전송되는 바이트의 크기. micro:bit은 8만 지원합니다.
-:param parity: (패리티) 패리티가 체크되는 방식, ``None``, ``uart.ODD`` 또는 ``uart.EVEN``을 사용합니다.
-:param stop: (stop) 스톱 비트의 번호, micro:bit는 1이어야 합니다.
-:param tx: (tx) 전송하는 핀.
-:param rx: (rx) 수신하는 핀.
+:param baudrate: (baudrate) 통신 속도입니다.
+:param bits: (bits) 전송되는 바이트의 크기입니다. micro:bit는 8바이트만 지원합니다.
+:param parity: (패리티) 패리티가 체크되는 방식으로 ``None``, ``uart.ODD`` 또는 ``uart.EVEN``을 사용합니다.
+:param stop: (stop) 스톱 비트의 번호입니다. micro:bit는 1이어야 합니다.
+:param tx: (tx) 전송하는 핀입니다.
+:param rx: (rx) 수신하는 핀입니다.
 
 Initializing the UART on external pins will cause the Python console on
 USB to become unaccessible, as it uses the same hardware. To bring the
@@ -41,7 +41,7 @@ def read(nbytes: Optional[int]=None) -> Optional[bytes]:
 
 Example: ``uart.read()``
 
-:param nbytes: (nbytes) ``nbytes``가 특정된 만큼의 바이트를 읽습니다. 그럴 수 없는 경우 최대한 많은 바이트를 읽습니다.
+:param nbytes: (nbytes) ``nbytes``가 특정되어 있다면 해당 바이트 수만큼 읽습니다. 특정되지 않은 경우 최대한 많은 바이트를 읽습니다.
 :return: A bytes object or ``None`` on timeout"""
     ...
 
@@ -50,8 +50,8 @@ def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
 
 Example: ``uart.readinto(input_buffer)``
 
-:param buf: (buf) 바이트를 기록할 버퍼.
-:param nbytes: (nbytes) ``nbytes``가 특정된 만큼의 바이트를 읽습니다. 그럴 수 없는 경우 ``len(buf)`` 바이트를 읽습니다.
+:param buf: (buf) 바이트를 기록할 버퍼입니다.
+:param nbytes: (nbytes) ``nbytes``가 특정되어 있다면 해당 바이트 수만큼 읽습니다. 특정되지 않은 경우 ``len(buf)``바이트를 읽습니다.
 :return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
     ...
 
@@ -68,7 +68,7 @@ def write(buf: Union[bytes, str]) -> Optional[int]:
 
 Example: ``uart.write('hello world')``
 
-:param buf: (buf) 바이트 오브젝트 또는 문자열.
+:param buf: (buf) 바이트 오브젝트 또는 문자열입니다.
 :return: The number of bytes written, or ``None`` on timeout.
 
 Examples::

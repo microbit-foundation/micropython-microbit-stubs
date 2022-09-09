@@ -4,13 +4,13 @@ from ..microbit import MicroBitDigitalPin, pin19, pin20
 from typing import List
 
 def init(freq: int=100000, sda: MicroBitDigitalPin=pin20, scl: MicroBitDigitalPin=pin19) -> None:
-    """重新初始化週邊設備。 (init)
+    """重新初始化周邊設備。 (init)
 
 Example: ``i2c.init()``
 
 :param freq: (頻率) 時脈頻率
-:param sda: (sda) ``sda`` pin (default 20)
-:param scl: (scl) ``scl`` pin (default 19)
+:param sda: (sda) ``sda`` 引腳 (預設 20)
+:param scl: (scl) ``scl`` 引腳 (預設 19)
 
 On a micro:bit V1 board, changing the I²C pins from defaults will make
 the accelerometer and compass stop working, as they are connected

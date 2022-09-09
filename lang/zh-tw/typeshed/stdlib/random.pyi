@@ -1,4 +1,4 @@
-"""生成隨機編號。 (random)"""
+"""生成隨機數。 (random)"""
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:
@@ -6,7 +6,7 @@ def getrandbits(n: int) -> int:
 
 Example: ``random.getrandbits(1)``
 
-:param n: (n) 介於 1-30（包含）之間的值。"""
+:param n: (n) 介於 1-30 (包含) 之間的值。"""
     ...
 
 def seed(n: int) -> None:
@@ -21,23 +21,23 @@ state (``n``)."""
     ...
 
 def randint(a: int, b: int) -> int:
-    """在 ``a`` 和 ``b``（包含）之間選擇一個隨機整數。 (randint)
+    """在 ``a`` 和 ``b`` (包含) 之間選擇一個隨機整數。 (randint)
 
 Example: ``random.randint(0, 9)``
 
-:param a: (a) 範圍的起始值（包含）
-:param b: (b) 範圍的結束值（包括）
+:param a: (a) 範圍的起始值 (包含)
+:param b: (b) 範圍的結束值 (包含)
 
 Alias for ``randrange(a, b + 1)``."""
     ...
 
 @overload
 def randrange(stop: int) -> int:
-    """在零到（但不包括）``stop`` 之間隨機選擇一個整數。 (randrange)
+    """在零到 (但不包括) ``stop`` 之間隨機選擇一個整數。 (randrange)
 
 Example: ``random.randrange(10)``
 
-:param stop: (stop) 範圍的結束值（不包括）"""
+:param stop: (stop) 範圍的結束值 (排除)"""
     ...
 
 @overload
@@ -46,8 +46,8 @@ def randrange(start: int, stop: int, step: int=1) -> int:
 
 Example: ``random.randrange(0, 10)``
 
-:param start: (start) 範圍的開始（包含）
-:param stop: (stop) 範圍結束（不包括）
+:param start: (start) 範圍的開始 (包含)
+:param stop: (stop) 範圍結束 (排除)
 :param step: (step) 步驟。"""
     ...
 _T = TypeVar('_T')
@@ -75,6 +75,6 @@ def uniform(a: float, b: float) -> float:
 
 Example: ``random.uniform(0, 9)``
 
-:param a: (a) 範圍的起始值（包括）
-:param b: (b) 範圍的結束值（包括）"""
+:param a: (a) 範圍的起始值 (包括)
+:param b: (b) 範圍的結束值 (包含)"""
     ...

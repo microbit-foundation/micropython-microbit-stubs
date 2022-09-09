@@ -1,4 +1,4 @@
-"""使用序列週邊設備接口 (SPI) 匯流排與裝置通訊。 (spi)"""
+"""使用周邊設備介面 (SPI) 匯流排與裝置進行通訊。 (spi)"""
 from _typeshed import ReadableBuffer, WriteableBuffer
 from ..microbit import pin13, pin14, pin15, MicroBitDigitalPin
 

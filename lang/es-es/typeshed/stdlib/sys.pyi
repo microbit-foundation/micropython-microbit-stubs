@@ -70,7 +70,7 @@ value directly, but instead count number of bits in it::
         # "> 32", "> 64" style of comparisons.
 """
 modules: Dict[str, Any]
-"""Diccionario de módulos cargados.  (módulo)
+"""Diccionario de módulos cargados.  (módulos)
 
 On some ports, it may not include builtin modules."""
 path: List[str]

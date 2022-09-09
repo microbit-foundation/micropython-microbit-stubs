@@ -28,7 +28,7 @@ or used as a decorator::
 
 Arguments with different time units are additive.
 
-:param callback: (callback) 要叫用的回呼。 做為裝飾器時省略。
+:param callback: (callback) 要叫用的回呼。 做為裝飾項目時省略。
 :param days: (days) 以天數為單位的間隔。
 :param h: (h) 以小時為單位的間隔。
 :param min: (min) 以分鐘為單位的間隔。
@@ -45,7 +45,7 @@ Example: ``panic(127)``
 Requires restart."""
 
 def reset() -> None:
-    """重啟板子。 (重置)"""
+    """重啟板子。 (reset)"""
 
 def sleep(n: float) -> None:
     """等待 ``n`` 毫秒。 (sleep)
@@ -100,7 +100,7 @@ that the button must be pressed again before this method will return
         ...
 
     def get_presses(self) -> int:
-        """取得按下按鈕的執行總數，並在傳回前將此總數重置為零。 (get presses)
+        """取得按下按鈕的執行總數，並在傳回前，將此總數重設為零。 (get presses)
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
@@ -130,7 +130,7 @@ Example: ``value = pin0.read_digital()``
 
 Example: ``pin0.write_digital(1)``
 
-:param value: (value) 1 將引腳設為高電平或 0 將引腳設為低電平"""
+:param value: (value) 1 將引腳設為高電平，或 0 將引腳設為低電平"""
         ...
 
     def set_pull(self, value: int) -> None:
@@ -234,187 +234,187 @@ The default touch mode for the pins on the edge connector is
 :param value: (value) 相關引腳的 ``CAPACITIVE`` 或 ``RESISTIVE``。"""
         ...
 pin0: MicroBitTouchPin
-"""具有數位、類比和觸控功能的引腳。 (引腳 0)"""
+"""具有數位、類比和觸控功能的引腳。 (pin0)"""
 pin1: MicroBitTouchPin
-"""具有數位、類比和觸控功能的引腳。 (引腳 1)"""
+"""具有數位、類比和觸控功能的引腳。 (pin1)"""
 pin2: MicroBitTouchPin
-"""具有數位、類比和觸控功能的引腳。 (引腳 2)"""
+"""具有數位、類比和觸控功能的引腳。 (pin2)"""
 pin3: MicroBitAnalogDigitalPin
-"""具有數位和類比功能的引腳。 (引腳 3)"""
+"""具有數位和類比功能的引腳。 (pin3)"""
 pin4: MicroBitAnalogDigitalPin
-"""具有數位和類比功能的引腳。 (引腳 4)"""
+"""具有數位和類比功能的引腳。 (pin4)"""
 pin5: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 5)"""
+"""具有數位功能的引腳。 (pin5)"""
 pin6: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 6)"""
+"""具有數位功能的引腳。 (pin6)"""
 pin7: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 7)"""
+"""具有數位功能的引腳。 (pin7)"""
 pin8: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 8)"""
+"""具有數位功能的引腳。 (pin8)"""
 pin9: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 9)"""
+"""具有數位功能的引腳。 (pin9)"""
 pin10: MicroBitAnalogDigitalPin
-"""具有數位和類比功能的引腳。 (引腳 10)"""
+"""具有數位和類比功能的引腳。 (pin10)"""
 pin11: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 11)"""
+"""具有數位功能的引腳。 (pin11)"""
 pin12: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 12)"""
+"""具有數位功能的引腳。 (pin12)"""
 pin13: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 13)"""
+"""具有數位功能的引腳。 (pin13)"""
 pin14: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 14)"""
+"""具有數位功能的引腳。 (pin14)"""
 pin15: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 15)"""
+"""具有數位功能的引腳。 (pin15)"""
 pin16: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 16)"""
+"""具有數位功能的引腳。 (pin16)"""
 pin19: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 19)"""
+"""具有數位功能的引腳。 (pin19)"""
 pin20: MicroBitDigitalPin
-"""具有數位功能的引腳。 (引腳 20)"""
+"""具有數位功能的引腳。 (pin20)"""
 pin_logo: MicroBitTouchPin
-"""micro:bit 正面的觸控感應標誌引腳，預設為電容觸控模式。 (引腳標誌)"""
+"""micro:bit 正面的觸控感應標誌引腳，預設為電容觸控模式。 (pin logo)"""
 pin_speaker: MicroBitAnalogDigitalPin
-"""用於定址 micro:bit 揚聲器的引腳。 (引腳揚聲器)
+"""用於定址 micro:bit 揚聲器的引腳。 (pin speaker)
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """要在 micro:bit LED 顯示器上顯示的圖片。 (圖片)
+    """要在 micro:bit LED 顯示器上顯示的圖片。 (image)
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """愛心圖片。 (愛心)"""
+    """愛心圖片。 (heart)"""
     HEART_SMALL: Image
-    """小愛心影像。 (小愛心)"""
+    """小愛心影像。 (heart small)"""
     HAPPY: Image
-    """開心的臉圖片。 (開心)"""
+    """開心的臉圖片。 (happy)"""
     SMILE: Image
-    """微笑的臉圖片。 (微笑)"""
+    """微笑的臉圖片。 (smile)"""
     SAD: Image
-    """傷心的臉圖片。 (傷心)"""
+    """傷心的臉圖片。 (sad)"""
     CONFUSED: Image
-    """困惑的臉圖片。 (困惑)"""
+    """困惑的臉圖片。 (confused)"""
     ANGRY: Image
-    """生氣的臉圖片。 (生氣)"""
+    """生氣的臉圖片。 (angry)"""
     ASLEEP: Image
-    """瞌睡的臉圖片。 (瞌睡)"""
+    """瞌睡的臉圖片。 (asleep)"""
     SURPRISED: Image
-    """驚訝的臉圖片。 (驚訝)"""
+    """驚訝的臉圖片。 (surprised)"""
     SILLY: Image
-    """鬼臉圖片。 (鬼臉)"""
+    """鬼臉圖片。 (silly)"""
     FABULOUS: Image
-    """戴太陽眼鏡的臉圖片。 (帥氣)"""
+    """戴太陽眼鏡的臉圖片。 (fabulous)"""
     MEH: Image
-    """冷漠的臉圖片。 (冷漠)"""
+    """冷漠的臉圖片。 (meh)"""
     YES: Image
-    """勾號圖片。 (贊同)"""
+    """勾號圖片。 (yes)"""
     NO: Image
-    """叉號圖片。 (拒絕)"""
+    """叉號圖片。 (no)"""
     CLOCK12: Image
-    """指針指向 12 點鐘的圖片。 (時鐘 12)"""
+    """指針指向 12 點鐘的圖片。 (clock12)"""
     CLOCK11: Image
-    """指針指向 11 點鐘的圖片。 (時鐘 11)"""
+    """指針指向 11 點鐘的圖片。 (clock11)"""
     CLOCK10: Image
-    """指針指向 10 點鐘的圖片。 (時鐘 10)"""
+    """指針指向 10 點鐘的圖片。 (clock10)"""
     CLOCK9: Image
-    """指針指向 9 點鐘的圖片。 (時鐘 9)"""
+    """指針指向 9 點鐘的圖片。 (clock9)"""
     CLOCK8: Image
-    """指針指向 8 點鐘的圖片。 (時鐘 8)"""
+    """指針指向 8 點鐘的圖片。 (clock8)"""
     CLOCK7: Image
-    """指針指向 7 點鐘的圖片。 (時鐘 7)"""
+    """指針指向 7 點鐘的圖片。 (clock7)"""
     CLOCK6: Image
-    """指針指向 6 點鐘的圖片。 (時鐘 6)"""
+    """指針指向 6 點鐘的圖片。 (clock6)"""
     CLOCK5: Image
-    """指針指向 5 點鐘的圖片。 (時鐘 5)"""
+    """指針指向 5 點鐘的圖片。 (clock5)"""
     CLOCK4: Image
-    """指針指向 4 點鐘的圖片。 (時鐘 4)"""
+    """指針指向 4 點鐘的圖片。 (clock4)"""
     CLOCK3: Image
-    """指針指向 3 點鐘的圖片。 (時鐘 3)"""
+    """指針指向 3 點鐘的圖片。 (clock3)"""
     CLOCK2: Image
-    """指針指向 2 點鐘的圖片。 (時鐘 2)"""
+    """指針指向 2 點鐘的圖片。 (clock2)"""
     CLOCK1: Image
-    """指針指向 1 點鐘的圖片。 (時鐘 1)"""
+    """指針指向 1 點鐘的圖片。 (clock1)"""
     ARROW_N: Image
-    """指向北方箭頭的圖片。 (北方箭頭)"""
+    """指向北方箭頭的圖片。 (arrow n)"""
     ARROW_NE: Image
-    """指向東北箭頭的圖片。 (東北箭頭)"""
+    """指向東北箭頭的圖片。 (arrow ne)"""
     ARROW_E: Image
-    """指向東方箭頭的圖片。 (東方箭頭)"""
+    """指向東方箭頭的圖片。 (arrow e)"""
     ARROW_SE: Image
-    """指向東南箭頭的圖片。 (東南箭頭)"""
+    """指向東南箭頭的圖片。 (arrow se)"""
     ARROW_S: Image
-    """指向南方箭頭的圖片。 (南方箭頭)"""
+    """指向南方箭頭的圖片。 (arrow s)"""
     ARROW_SW: Image
-    """指向西南箭頭的圖片。 (西南箭頭)"""
+    """指向西南箭頭的圖片。 (arrow sw)"""
     ARROW_W: Image
-    """指向西方箭頭的圖片。 (西方箭頭)"""
+    """指向西方箭頭的圖片。 (arrow w)"""
     ARROW_NW: Image
-    """指向西北箭頭的圖片。 (西北箭頭)"""
+    """指向西北箭頭的圖片。 (arrow nw)"""
     TRIANGLE: Image
-    """朝上三角形的圖片。 (三角形)"""
+    """朝上三角形的圖片。 (triangle)"""
     TRIANGLE_LEFT: Image
-    """左角三角形的圖片。 (左三角形)"""
+    """左角三角形的圖片。 (triangle left)"""
     CHESSBOARD: Image
-    """以棋盤圖案交錯發亮的 LED 燈。 (棋盤)"""
+    """以棋盤圖案交錯發亮的 LED 燈。 (chessboard)"""
     DIAMOND: Image
-    """鑽石圖片。 (鑽石)"""
+    """鑽石圖片。 (diamond)"""
     DIAMOND_SMALL: Image
-    """小鑽石圖片。 (小鑽石)"""
+    """小鑽石圖片。 (diamond small)"""
     SQUARE: Image
-    """正方形圖片。 (正方形)"""
+    """正方形圖片。 (square)"""
     SQUARE_SMALL: Image
-    """小正方形圖片。 (小正方形)"""
+    """小正方形圖片。 (square small)"""
     RABBIT: Image
-    """兔子圖片。 (兔子)"""
+    """兔子圖片。 (rabbit)"""
     COW: Image
-    """乳牛圖片。 (乳牛)"""
+    """乳牛圖片。 (cow)"""
     MUSIC_CROTCHET: Image
-    """四分音符圖片。 (四分音符)"""
+    """四分音符圖片。 (music crotchet)"""
     MUSIC_QUAVER: Image
-    """八分音符圖片。 (八分音符)"""
+    """八分音符圖片。 (music quaver)"""
     MUSIC_QUAVERS: Image
-    """一組八分音符圖片。 (一組八分音符)"""
+    """一組八分音符圖片。 (music quavers)"""
     PITCHFORK: Image
-    """乾草叉圖片。 (乾草叉)"""
+    """乾草叉圖片。 (pitchfork)"""
     XMAS: Image
-    """聖誕樹圖片。 (聖誕節)"""
+    """聖誕樹圖片。 (xmas)"""
     PACMAN: Image
-    """吃豆人街機角色圖片。 (吃豆人)"""
+    """吃豆人街機角色圖片。 (pacman)"""
     TARGET: Image
-    """靶子圖片。 (靶子)"""
+    """靶子圖片。 (target)"""
     TSHIRT: Image
-    """T 恤圖片。 (T 恤)"""
+    """T 恤圖片。 (tshirt)"""
     ROLLERSKATE: Image
-    """輪式溜冰鞋圖片。 (輪式溜冰鞋)"""
+    """輪式溜冰鞋圖片。 (rollerskate)"""
     DUCK: Image
-    """鴨子圖片。 (鴨子)"""
+    """鴨子圖片。 (duck)"""
     HOUSE: Image
-    """房子圖片。 (房子)"""
+    """房子圖片。 (house)"""
     TORTOISE: Image
-    """陸龜圖片。 (陸龜)"""
+    """陸龜圖片。 (tortoise)"""
     BUTTERFLY: Image
-    """蝴蝶圖片。 (蝴蝶)"""
+    """蝴蝶圖片。 (butterfly)"""
     STICKFIGURE: Image
-    """簡筆人物畫圖片。 (簡筆人物畫)"""
+    """簡筆人物畫圖片。 (stickfigure)"""
     GHOST: Image
-    """幽靈圖片。 (幽靈)"""
+    """幽靈圖片。 (ghost)"""
     SWORD: Image
-    """劍圖片。 (劍)"""
+    """劍圖片。 (sword)"""
     GIRAFFE: Image
-    """長頸鹿圖片。 (長頸鹿)"""
+    """長頸鹿圖片。 (giraffe)"""
     SKULL: Image
-    """骷髏頭圖片。 (骷髏頭)"""
+    """骷髏頭圖片。 (skull)"""
     UMBRELLA: Image
-    """雨傘圖片。 (雨傘)"""
+    """雨傘圖片。 (umbrella)"""
     SNAKE: Image
-    """蛇圖片。 (蛇)"""
+    """蛇圖片。 (snake)"""
     ALL_CLOCKS: List[Image]
-    """按順序包含所有時鐘圖片的清單。 (所有時鐘)"""
+    """按順序包含所有時鐘圖片的清單。 (all clocks)"""
     ALL_ARROWS: List[Image]
-    """按順序包含所有箭頭圖片的清單。 (所有箭頭)"""
+    """按順序包含所有箭頭圖片的清單。 (all arrows)"""
 
     @overload
     def __init__(self, string: str) -> None:
@@ -441,7 +441,7 @@ colon. It's also possible to use newlines (\\n) insead of the colons.
 
 :param width: (width) 可選的圖片寬度
 :param height: (height) 可選的圖片高度
-:param buffer: (buffer) 可選陣列或位元組 ``width``×``height`` 整數在 0-9 範圍內初始化圖片
+:param buffer: (buffer) 用可選陣列或在 0-9 範圍內的 ``width``×``height`` 整數位元組，來初始化圖片
 
 Examples::
 
@@ -487,7 +487,7 @@ Example: ``my_image.get_pixel(0, 0)``
         ...
 
     def shift_left(self, n: int) -> Image:
-        """向左移動圖片來建立新影像。 (shift left)
+        """透過向左移動圖片，以建立一個新影像。 (shift left)
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
@@ -496,7 +496,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
         ...
 
     def shift_right(self, n: int) -> Image:
-        """向右移動圖片來建立新影像。 (shift right)
+        """透過向右移動圖片，以建立一個新影像。 (shift right)
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
@@ -543,7 +543,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """透過反轉來源影像中像素亮度來建立新影像。 (invert)
+        """透過反轉來源影像中像素亮度，以建立一個新影像。 (invert)
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -596,7 +596,7 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __add__(self, other: Image) -> Image:
-        """透過將兩個影像的像素亮度值相加來建立一個新影像。 (加入)
+        """透過將兩個影像的像素亮度值相加，以建立一個新影像。 (add)
 
 Example: ``Image.HEART + Image.HAPPY``
 
@@ -604,7 +604,7 @@ Example: ``Image.HEART + Image.HAPPY``
         ...
 
     def __sub__(self, other: Image) -> Image:
-        """透過從該影像中減去另一個影像的亮度值，來建立一個新影像。 (sub)
+        """透過從該影像中減去另一個影像的亮度值，以建立一個新影像。 (sub)
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
@@ -636,22 +636,22 @@ class SoundEvent:
 class Sound:
     """可以使用 ``audio.play(Sound.NAME)`` 調用內建聲音。 (sound)"""
     GIGGLE: Sound
-    """咯咯笑的聲音。 (咯咯笑)"""
+    """咯咯笑的聲音。 (giggle)"""
     HAPPY: Sound
-    """開心的聲音。 (開心)"""
+    """開心的聲音。 (happy)"""
     HELLO: Sound
-    """歡迎的聲音。 (哈囉)"""
+    """歡迎的聲音。 (hello)"""
     MYSTERIOUS: Sound
-    """神祕的聲音。 (神秘)"""
+    """神祕的聲音。 (mysterious)"""
     SAD: Sound
-    """難過的聲音。 (難過)"""
+    """難過的聲音。 (sad)"""
     SLIDE: Sound
     """滑動的聲音。 (slide)"""
     SOARING: Sound
-    """高昂的聲音。 (高昂)"""
+    """高昂的聲音。 (soaring)"""
     SPRING: Sound
-    """彈跳的聲音。 (彈跳)"""
+    """彈跳的聲音。 (spring)"""
     TWINKLE: Sound
-    """閃亮的聲音。 (閃亮)"""
+    """閃亮的聲音。 (twinkle)"""
     YAWN: Sound
-    """呵欠的聲音。 (呵欠)"""
+    """呵欠的聲音。 (yawn)"""

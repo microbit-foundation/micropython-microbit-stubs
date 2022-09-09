@@ -1,17 +1,17 @@
-"""測量時間並為程式增加延遲。 (時間)"""
+"""測量時間並為程式增加延遲。 (time)"""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
-    """延遲秒數。 (睡眠)
+    """延遲秒數。 (sleep)
 
 Example: ``time.sleep(1)``
 
-:param seconds: (秒) 睡眠的秒數。
+:param seconds: (seconds) 睡眠的秒數。
 使用浮點數代替分數來計算秒數。"""
     ...
 
 def sleep_ms(ms: int) -> None:
-    """延遲指定的毫秒數。 (睡眠 ms)
+    """延遲指定的毫秒數。 (sleep ms)
 
 Example: ``time.sleep_ms(1_000_000)``
 
@@ -19,7 +19,7 @@ Example: ``time.sleep_ms(1_000_000)``
     ...
 
 def sleep_us(us: int) -> None:
-    """延遲指定的微秒數。 (睡眠 us)
+    """延遲指定的微秒數。 (sleep us)
 
 Example: ``time.sleep_us(1000)``
 

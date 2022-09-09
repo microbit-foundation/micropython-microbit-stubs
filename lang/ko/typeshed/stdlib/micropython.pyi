@@ -1,4 +1,4 @@
-"""MicroPython 내부요소. (micropython)"""
+"""MicroPython 내부 정보입니다. (micropython)"""
 from typing import Any, TypeVar, overload
 _T = TypeVar('_T')
 
@@ -16,7 +16,7 @@ outside the module they are declared in. On the other hand, if a constant
 begins with an underscore then it is hidden, it is not available as a
 global variable, and does not take up any memory during execution.
 
-:param expr: (expr) 상수 표현식."""
+:param expr: (expr) 상수 표현식입니다."""
     ...
 
 @overload
@@ -62,15 +62,15 @@ The optimisation level controls the following compilation features:
 
 The default optimisation level is usually level 0.
 
-:param level: (level) 정수로 된 최적화 레벨."""
+:param level: (level) 정수로 된 최적화 레벨입니다."""
     ...
 
 def mem_info(verbose: Any=None) -> None:
-    """현재 사용된 메모리에 대한 정보를 프린트합니다. (mem info)
+    """현재 사용 중인 메모리에 대한 정보를 프린트합니다. (mem info)
 
 Example: ``micropython.mem_info()``
 
-:param verbose: (verbose) ``verbose`` 인자가 주어지면 추가 정보가 프린트됩니다."""
+:param verbose: (verbose) ``verbose`` 인자가 주어지면 추가 정보를 프린트합니다."""
     ...
 
 def qstr_info(verbose: Any=None) -> None:
@@ -78,7 +78,7 @@ def qstr_info(verbose: Any=None) -> None:
 
 Example: ``micropython.qstr_info()``
 
-:param verbose: (verbose) ``verbose`` 인자가 주어지면 추가 정보가 프린트됩니다.
+:param verbose: (verbose) ``verbose`` 인자가 주어지면 추가 정보를 프린트합니다.
 
 The information that is printed is implementation dependent, but currently
 includes the number of interned strings and the amount of RAM they use.  In
@@ -86,7 +86,7 @@ verbose mode it prints out the names of all RAM-interned strings."""
     ...
 
 def stack_use() -> int:
-    """현재 사용된 스택의 수를 표현하는 정수를 반환합니다. (stack use)
+    """현재 사용 중인 스택의 수를 나타내는 정수를 반환합니다. (stack use)
 
 Example: ``micropython.stack_use()``
 
@@ -115,11 +115,11 @@ raised if any heap allocation is attempted."""
     ...
 
 def kbd_intr(chr: int) -> None:
-    """``KeyboardInterrupt`` 예외를 일으킬 글자를 설정합니다. (kbd intr)
+    """``KeyboardInterrupt`` 예외를 제기할 문자를 설정합니다. (kbd intr)
 
 Example: ``micropython.kbd_intr(-1)``
 
-:param chr: (chr) 인터럽트를 일으키는 문자 코드
+:param chr: (chr) 인터럽트를 제기하기 위한 문자 코드입니다. -1은 Ctrl-C 캡처를 비활성화합니다.
 
 By default this is set to 3 during script execution, corresponding to Ctrl-C.
 Passing -1 to this function will disable capture of Ctrl-C, and passing 3

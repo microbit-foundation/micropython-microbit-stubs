@@ -7,8 +7,8 @@ def get_pixel(x: int, y: int) -> int:
 
 Example: ``display.get_pixel(0, 0)``
 
-:param x: (x) 디스플레이 열 (0..4)
-:param y: (y) 디스플레이 행 (0..4)
+:param x: (x) 디스플레이 열(0..4)
+:param y: (y) 디스플레이 행(0..4)
 :return: A number between 0 (off) and 9 (bright)"""
     ...
 
@@ -17,26 +17,26 @@ def set_pixel(x: int, y: int, value: int) -> None:
 
 Example: ``display.set_pixel(0, 0, 9)``
 
-:param x: (x) 디스플레이 열 (0..4)
-:param y: (y) 디스플레이 행 (0..4)
+:param x: (x) 디스플레이 열(0..4)
+:param y: (y) 디스플레이 행(0..4)
 :param value: (value) 0(꺼짐)과 9(밝음) 사이의 밝기"""
     ...
 
 def clear() -> None:
-    """모든 LED의 밝기를 0(꺼짐). (clear)
+    """모든 LED의 밝기를 0(꺼짐)으로 설정합니다. (clear)
 
 Example: ``display.clear()``"""
     ...
 
 def show(image: Union[str, float, int, Image, Iterable[Image]], delay: int=400, wait: bool=True, loop: bool=False, clear: bool=False) -> None:
-    """LED 디스플레이의 이미지, 글자 또는 숫자를 표시합니다. (show)
+    """LED 디스플레이에 이미지, 글자 또는 숫자를 표시합니다. (show)
 
 Example: ``display.show(Image.HEART)``
 
 When ``image`` is an image or a list of images then each image is displayed in turn.
 If ``image`` is a string or number, each letter or digit is displayed in turn.
 
-:param image: (image) 표시할 이미지 목록의 문자열, 숫자, 이미지.
+:param image: (image) 표시할 문자열, 숫자, 이미지 또는 이미지 리스트입니다.
 :param delay: (delay) ``delay``밀리초의 지연 시간을 두고 각 글자, 숫자 또는 이미지가 표시됩니다.
 :param wait: (wait) ``wait``가 ``True``인 경우 이 기능은 애니메이션이 종료될 때까지 차단됩니다. 그렇지 않은 경우 애니메이션이 백그라운드에서 재생됩니다.
 :param loop: (loop) ``loop``가 ``True``인 경우 애니메이션이 무한 반복됩니다.

@@ -2,14 +2,14 @@
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
-    """使用指定的退出代碼終止當前程式。 (exit)
+    """使用指定的退出代碼來終止當前程式。 (exit)
 
 Example: ``sys.exit(1)``
 
 This function raises a ``SystemExit`` exception. If an argument is given, its
 value given as an argument to ``SystemExit``.
 
-:param retval: (retval) 退出程式碼或訊息。"""
+:param retval: (retval) 退出代碼或訊息。"""
     ...
 
 def print_exception(exc: Exception) -> None:
@@ -24,7 +24,7 @@ This is simplified version of a function which appears in the
 argv: List[str]
 """當前程式啟動時使用的可變引數列表。 (argv)"""
 byteorder: str
-"""系統的位元組順序（``"little"`` 或 ``"big"``）。 (byteorder)"""
+"""系統的位元組順序 (``"little"`` 或 ``"big"``)。 (byteorder)"""
 
 class _implementation:
     name: str
@@ -45,7 +45,8 @@ CPython mandates more attributes for this object, but the actual useful
 bare minimum is implemented in MicroPython.
 """
 maxsize: int
-"""本機整數類型在當前平台上可以保存的最大值，或 MicroPython 整數類型可表示的最大值，如果它小於平台最大值（對於沒有 long int 支援的 MicroPython 連接埠就是這種情況）。 (maxsize)
+"""
+本機整數類型在當前平台上可以保存的最大值，或 MicroPython 整數類型可表示的最大值，如果它小於平台最大值 (對於沒有 long int 支援的 MicroPython 連接埠，就是這種情況)。 (maxsize)
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some

@@ -1,4 +1,4 @@
-"""ファイルシステムのアクセス。 (os)"""
+"""ファイルシステムにアクセスします。 (os)"""
 from typing import Tuple
 from typing import List
 
@@ -38,7 +38,7 @@ class uname_result(Tuple[str, str, str, str, str]):
     sysname: str
     """オペレーティングシステム名。 (sysname)"""
     nodename: str
-    """ネットワーク上のマシンの名前(実装定義)。 (nodename)"""
+    """ネットワーク上のマシンの名前（実装定義）。 (nodename)"""
     release: str
     """オペレーティングシステムのリリース。 (release)"""
     version: str

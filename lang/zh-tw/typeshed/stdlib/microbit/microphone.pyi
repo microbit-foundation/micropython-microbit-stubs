@@ -1,4 +1,4 @@
-"""使用內建麥克風回應聲音（僅限 V2）。 (麥克風)"""
+"""使用內建麥克風回應聲音 (僅限 V2)。 (microphone)"""
 from typing import Optional, Tuple
 from ..microbit import SoundEvent
 
@@ -43,7 +43,7 @@ This call clears the sound history before returning.
     ...
 
 def set_threshold(event: SoundEvent, value: int) -> None:
-    """設置聲音事件的閾值。 (set threshold)
+    """設定聲音事件的閾值。 (set threshold)
 
 Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 

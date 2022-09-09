@@ -81,7 +81,7 @@ Out of range values will be clamped to 0 or 255.
     ...
 
 class Button:
-    """``button_a`` 및 ``button_b`` 버튼의 클래스입니다. (button)"""
+    """``button_a`` 및 ``button_b`` 버튼 클래스입니다. (button)"""
 
     def is_pressed(self) -> bool:
         """해당 버튼이 눌렸는지 확인합니다. (is pressed)
@@ -165,7 +165,7 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """핀의 PWM 신호를 출력하고 ``value``와(과) 비례하게 듀티 사이클을 설정합니다. (write analog)
+        """핀의 PWM 신호를 출력하고 ``value``와(과) 비례해 듀티 사이클을 설정합니다. (write analog)
 
 Example: ``pin0.write_analog(254)``
 
@@ -300,121 +300,121 @@ Given an image object it's possible to display it via the ``display`` API::
     ANGRY: Image
     """화난 얼굴 이미지입니다. (angry)"""
     ASLEEP: Image
-    """자는 얼굴 이미지. (asleep)"""
+    """자는 얼굴 이미지입니다. (asleep)"""
     SURPRISED: Image
-    """놀란 얼굴 이미지. (surprised)"""
+    """놀란 얼굴 이미지입니다. (surprised)"""
     SILLY: Image
-    """우스꽝스러운 얼굴 이미지. (silly)"""
+    """우스꽝스러운 얼굴 이미지입니다. (silly)"""
     FABULOUS: Image
-    """선글라스 얼굴 이미지. (fabulous)"""
+    """선글라스를 쓴 얼굴 이미지입니다. (fabulous)"""
     MEH: Image
-    """지루한 얼굴 이미지. (meh)"""
+    """지루한 얼굴 이미지입니다. (meh)"""
     YES: Image
-    """Tick 이미지. (yes)"""
+    """체크 표시 이미지입니다. (yes)"""
     NO: Image
-    """크로스 이미지. (no)"""
+    """엑스 표시 이미지입니다. (no)"""
     CLOCK12: Image
-    """12시 정각을 가리키는 이미지. (clock12)"""
+    """12시 정각을 가리키는 이미지입니다. (clock12)"""
     CLOCK11: Image
-    """11시 정각을 가리키는 이미지. (clock11)"""
+    """11시 정각을 가리키는 이미지입니다. (clock11)"""
     CLOCK10: Image
-    """10시 정각을 가리키는 이미지. (clock10)"""
+    """10시 정각을 가리키는 이미지입니다. (clock10)"""
     CLOCK9: Image
-    """9시 정각을 가리키는 이미지. (clock9)"""
+    """9시 정각을 가리키는 이미지입니다. (clock9)"""
     CLOCK8: Image
-    """8시 정각을 가리키는 이미지. (clock8)"""
+    """8시 정각을 가리키는 이미지입니다. (clock8)"""
     CLOCK7: Image
-    """7시 정각을 가리키는 이미지. (clock7)"""
+    """7시 정각을 가리키는 이미지입니다. (clock7)"""
     CLOCK6: Image
-    """6시 정각을 가리키는 이미지. (clock6)"""
+    """6시 정각을 가리키는 이미지입니다. (clock6)"""
     CLOCK5: Image
-    """5시 정각을 가리키는 이미지. (clock5)"""
+    """5시 정각을 가리키는 이미지입니다. (clock5)"""
     CLOCK4: Image
-    """4시 정각을 가리키는 이미지. (clock4)"""
+    """4시 정각을 가리키는 이미지입니다. (clock4)"""
     CLOCK3: Image
-    """3시 정각을 가리키는 이미지. (clock3)"""
+    """3시 정각을 가리키는 이미지입니다. (clock3)"""
     CLOCK2: Image
-    """2시 정각을 가리키는 이미지. (clock2)"""
+    """2시 정각을 가리키는 이미지입니다. (clock2)"""
     CLOCK1: Image
-    """1시 정각을 가리키는 이미지. (clock1)"""
+    """1시 정각을 가리키는 이미지입니다. (clock1)"""
     ARROW_N: Image
-    """북쪽을 가리키는 화살표 이미지. (arrow n)"""
+    """북쪽을 가리키는 화살표 이미지입니다. (arrow n)"""
     ARROW_NE: Image
-    """북동쪽을 가리키는 화살표 이미지. (arrow ne)"""
+    """북동쪽을 가리키는 화살표 이미지입니다. (arrow ne)"""
     ARROW_E: Image
-    """동쪽을 가리키는 화살표 이미지. (arrow e)"""
+    """동쪽을 가리키는 화살표 이미지입니다. (arrow e)"""
     ARROW_SE: Image
-    """남동쪽을 가리키는 화살표 이미지. (arrow se)"""
+    """남동쪽을 가리키는 화살표 이미지입니다. (arrow se)"""
     ARROW_S: Image
-    """남쪽을 가리키는 화살표 이미지. (arrow s)"""
+    """남쪽을 가리키는 화살표 이미지입니다. (arrow s)"""
     ARROW_SW: Image
-    """남서쪽을 가리키는 화살표 이미지. (arrow sw)"""
+    """남서쪽을 가리키는 화살표 이미지입니다. (arrow sw)"""
     ARROW_W: Image
-    """서쪽을 가리키는 화살표 이미지. (arrow w)"""
+    """서쪽을 가리키는 화살표 이미지입니다. (arrow w)"""
     ARROW_NW: Image
-    """북서쪽을 가리키는 화살표 이미지. (arrow nw)"""
+    """북서쪽을 가리키는 화살표 이미지입니다. (arrow nw)"""
     TRIANGLE: Image
-    """위쪽을 가리키는 삼각형 이미지. (triangle)"""
+    """위쪽을 가리키는 삼각형 이미지입니다. (triangle)"""
     TRIANGLE_LEFT: Image
-    """왼쪽을 가리키는 삼각형 이미지. (triangle left)"""
+    """좌측 구석의 삼각형 이미지입니다. (triangle left)"""
     CHESSBOARD: Image
-    """체스판 패턴으로 비치는 여러 LED. (chessboard)"""
+    """체스판 패턴으로 깜빡이는 LED 불빛입니다. (chessboard)"""
     DIAMOND: Image
-    """다이아몬드 이미지. (diamond)"""
+    """다이아몬드 이미지입니다. (diamond)"""
     DIAMOND_SMALL: Image
-    """작은 다이아몬드 이미지. (diamond small)"""
+    """작은 다이아몬드 이미지입니다. (diamond small)"""
     SQUARE: Image
-    """사각형 이미지. (square)"""
+    """사각형 이미지입니다. (square)"""
     SQUARE_SMALL: Image
-    """작은 사각형 이미지. (square small)"""
+    """작은 사각형 이미지입니다. (square small)"""
     RABBIT: Image
-    """토끼 이미지. (rabbit)"""
+    """토끼 이미지입니다. (rabbit)"""
     COW: Image
-    """소 이미지. (cow)"""
+    """소 이미지입니다. (cow)"""
     MUSIC_CROTCHET: Image
-    """사분음표 이미지. (music crotchet)"""
+    """사분음표 이미지입니다. (music crotchet)"""
     MUSIC_QUAVER: Image
-    """Quaver note image. (music quaver)"""
+    """팔분음표 이미지입니다. (music quaver)"""
     MUSIC_QUAVERS: Image
-    """Pair of quavers note image. (music quavers)"""
+    """두 개의 팔분음표 이미지입니다. (music quavers)"""
     PITCHFORK: Image
-    """쇠스랑 이미지. (pitchfork)"""
+    """쇠스랑 이미지입니다. (pitchfork)"""
     XMAS: Image
-    """크리스마스 나무 이미지. (xmas)"""
+    """크리스마스 나무 이미지입니다. (xmas)"""
     PACMAN: Image
-    """Pac-Man 아케이드 캐릭터 이미지. (pacman)"""
+    """오락실 캐릭터 Pac-Man 이미지입니다. (pacman)"""
     TARGET: Image
-    """표적 이미지. (target)"""
+    """표적 이미지입니다. (target)"""
     TSHIRT: Image
-    """티셔츠 이미지. (tshirt)"""
+    """티셔츠 이미지입니다. (tshirt)"""
     ROLLERSKATE: Image
-    """롤러스케이트 이미지. (rollerskate)"""
+    """롤러스케이트 이미지입니다. (rollerskate)"""
     DUCK: Image
-    """오리 이미지. (duck)"""
+    """오리 이미지입니다. (duck)"""
     HOUSE: Image
-    """집 이미지. (house)"""
+    """집 이미지입니다. (house)"""
     TORTOISE: Image
-    """거북 이미지. (tortoise)"""
+    """거북이 이미지입니다. (tortoise)"""
     BUTTERFLY: Image
-    """나비 이미지. (butterfly)"""
+    """나비 이미지입니다. (butterfly)"""
     STICKFIGURE: Image
-    """스틱 피규어 이미지. (stickfigure)"""
+    """막대인간 이미지입니다. (stickfigure)"""
     GHOST: Image
-    """유령 이미지. (ghost)"""
+    """유령 이미지입니다. (ghost)"""
     SWORD: Image
-    """칼 이미지. (sword)"""
+    """칼 이미지입니다. (sword)"""
     GIRAFFE: Image
-    """기린 이미지. (giraffe)"""
+    """기린 이미지입니다. (giraffe)"""
     SKULL: Image
-    """해골 이미지. (skull)"""
+    """해골 이미지입니다. (skull)"""
     UMBRELLA: Image
-    """우산 이미지. (umbrella)"""
+    """우산 이미지입니다. (umbrella)"""
     SNAKE: Image
-    """뱀 이미지 (snake)"""
+    """뱀 이미지입니다. (snake)"""
     ALL_CLOCKS: List[Image]
-    """모든 CLOCK_ 이미지를 순서대로 나열한 목록. (all clocks)"""
+    """모든 CLOCK_ 이미지를 순서대로 나열한 리스트입니다. (all clocks)"""
     ALL_ARROWS: List[Image]
-    """모든 ARROW_ 이미지를 순서대로 나열한 목록. (all arrows)"""
+    """모든 ARROW_ 이미지를 순서대로 나열한 리스트입니다. (all arrows)"""
 
     @overload
     def __init__(self, string: str) -> None:
@@ -432,16 +432,16 @@ describing the image, for example::
 will create a 5×5 image of an X. The end of a line is indicated by a
 colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: (string) 이미지를 설명하는 문자열."""
+:param string: (string) 이미지를 설명하는 문자열입니다."""
         ...
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
         """``width`` 열과 ``height`` 행의 비어있는 이미지를 생성합니다. (init)
 
-:param width: (width) 선택 사항으로 이미지의 너비 설정
-:param height: (height) 선택 사항으로 이미지의 높이 설정
-:param buffer: (buffer) 선택 사항으로, 0-9 범위 정수로 된 ``width``x``height``의 어레이 또는 바이트로 이미지 초기 내용 설정
+:param width: (width) 이미지 너비(선택 사항)
+:param height: (height) 이미지 높이(선택 사항)
+:param buffer: (buffer) 0~9의 범위에 속하는 정수로 구성된 ``width``x``height`` 배열 또는 바이트(선택 사항)
 
 Examples::
 
@@ -468,8 +468,8 @@ These create 2 x 2 pixel images at full brightness."""
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: (x) 열의 번호
-:param y: (y) 행의 번호
+:param x: (x) 열 번호
+:param y: (y) 행 번호
 :param value: (value) 0(어두움)과 9(밝음) 사이의 정수로 밝기를 설정합니다.
 
 This method will raise an exception when called on any of the built-in
@@ -481,13 +481,13 @@ read-only images, like ``Image.HEART``."""
 
 Example: ``my_image.get_pixel(0, 0)``
 
-:param x: (x) 열의 번호
-:param y: (y) 행의 번호
+:param x: (x) 열 번호
+:param y: (y) 행 번호
 :return: The brightness as an integer between 0 and 9."""
         ...
 
     def shift_left(self, n: int) -> Image:
-        """사진을 왼쪽으로 옮겨 새로운 이미지를 생성합니다. (shift left)
+        """사진을 좌측으로 옮겨 새로운 이미지를 생성합니다. (shift left)
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
@@ -496,7 +496,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
         ...
 
     def shift_right(self, n: int) -> Image:
-        """옮길 열의 수 (shift right)
+        """사진을 우측으로 옮겨 새로운 이미지를 생성합니다. (shift right)
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
@@ -505,7 +505,7 @@ Example: ``Image.HEART_SMALL.shift_right(1)``
         ...
 
     def shift_up(self, n: int) -> Image:
-        """사진을 위쪽으로 옮겨 새로운 이미지를 생성합니다. (shift up)
+        """사진을 상단으로 옮겨 새로운 이미지를 생성합니다. (shift up)
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
@@ -514,7 +514,7 @@ Example: ``Image.HEART_SMALL.shift_up(1)``
         ...
 
     def shift_down(self, n: int) -> Image:
-        """사진을 아래쪽으로 옮겨 새로운 이미지를 생성합니다. (shift down)
+        """사진을 하단으로 옮겨 새로운 이미지를 생성합니다. (shift down)
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
@@ -523,19 +523,19 @@ Example: ``Image.HEART_SMALL.shift_down(1)``
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """사진을 크롭하고 새로운 이미지를 생성합니다. (crop)
+        """사진을 잘라 내 새로운 이미지를 생성합니다. (crop)
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: (x) 크롭 오프셋 열
-:param y: (y) 크롭 오프셋 행
-:param w: (w) 크롭 너비
-:param h: (h) 크롭 높이
+:param x: (x) 자르기 오프셋 열
+:param y: (y) 자르기 오프셋 행
+:param w: (w) 자르기 너비
+:param h: (h) 자르기 높이
 :return: The new image"""
         ...
 
     def copy(self) -> Image:
-        """이미지와 정확히 같은 사본을 생성합니다. (copy)
+        """이미지와 동일한 사본을 생성합니다. (copy)
 
 Example: ``Image.HEART.copy()``
 
@@ -543,7 +543,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """소스 이미지에 있는 픽셀을 밝기를 반전하여 새로운 이미지를 생성합니다. (invert)
+        """소스 이미지에 있는 픽셀을 밝기를 반전해 새로운 이미지를 생성합니다. (invert)
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -555,7 +555,7 @@ Example: ``Image.SMALL_HEART.invert()``
 
 Example: ``my_image.fill(5)``
 
-:param value: (value) 새로운 밝기를 0(어두움)과 9(밝기) 사이로 설정.
+:param value: (value) 새로운 밝기를 0(어두움)과 9(밝기) 사이로 설정합니다.
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
@@ -567,12 +567,12 @@ read-only images, like ``Image.HEART``."""
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
 :param src: (src) 소스 이미지
-:param x: (x) 소스 이미지 내 시작하는 열의 오프셋
-:param y: (y) 소스 이미지 내 시작하는 행의 오프셋
+:param x: (x) 소스 이미지 내 시작 열 오프셋
+:param y: (y) 소스 이미지 내 시작 행 오프셋
 :param w: (w) 복사할 열의 수
-:param h: (h) 복사할 행의 번호
-:param xdest: (xdest) 이 이미지에서 변형할 열의 오프셋
-:param ydest: (ydest) 이 이미지에서 변형할 행의 오프셋
+:param h: (h) 복사할 행 번호
+:param xdest: (xdest) 이 이미지에서 수정할 열의 오프셋
+:param ydest: (ydest) 이 이미지에서 수정할 행의 오프셋
 
 Pixels outside the source image are treated as having a brightness of 0.
 
@@ -588,11 +588,11 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """이미지에 해당하는 컴팩트 스트링(간소화된 문자열)을 불러옵니다. (repr)"""
+        """이미지에 해당하는 컴팩트 스트링을 불러옵니다. (repr)"""
         ...
 
     def __str__(self) -> str:
-        """이미지에 해당하는 가독 문자열을 불러옵니다. (str)"""
+        """이미지에 해당하는 읽기 가능 문자열을 불러옵니다. (str)"""
         ...
 
     def __add__(self, other: Image) -> Image:
@@ -600,7 +600,7 @@ For example, img.crop(x, y, w, h) can be implemented as::
 
 Example: ``Image.HEART + Image.HAPPY``
 
-:param other: (other) 더할 이미지."""
+:param other: (other) 더할 이미지입니다."""
         ...
 
     def __sub__(self, other: Image) -> Image:
@@ -608,7 +608,7 @@ Example: ``Image.HEART + Image.HAPPY``
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: (other) 뺄 이미지"""
+:param other: (other) 뺄 이미지입니다."""
         ...
 
     def __mul__(self, n: float) -> Image:
@@ -616,7 +616,7 @@ Example: ``Image.HEART - Image.HEART_SMALL``
 
 Example: ``Image.HEART * 0.5``
 
-:param n: (n) 배율의 값."""
+:param n: (n) 곱할 값입니다."""
         ...
 
     def __truediv__(self, n: float) -> Image:
@@ -624,34 +624,34 @@ Example: ``Image.HEART * 0.5``
 
 Example: ``Image.HEART / 2``
 
-:param n: (n) 나눌 값."""
+:param n: (n) 나눌 값입니다."""
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
     """``quiet``에서 박수 또는 함성 등 ``loud``로 소리 이벤트의 변화를 나타냅니다. (loud)"""
     QUIET: SoundEvent
-    """``loud``에서 말소리 또는 배경 음악 등 ``quiet``으로 소리 이벤트의 변화를 나타냅니다. (quiet)"""
+    """``loud``에서 말소리 또는 배경 음악 등 ``quiet``로 소리 이벤트의 변화를 나타냅니다. (quiet)"""
 
 class Sound:
     """``audio.play(Sound.NAME)``을 사용해 내장된 소리를 호출합니다. (sound)"""
     GIGGLE: Sound
-    """웃는 소리. (giggle)"""
+    """웃는 소리입니다. (giggle)"""
     HAPPY: Sound
-    """행복해하는 소리. (happy)"""
+    """행복해하는 소리입니다. (happy)"""
     HELLO: Sound
-    """인사 소리. (hello)"""
+    """인사 소리입니다. (hello)"""
     MYSTERIOUS: Sound
-    """수상한 소리. (mysterious)"""
+    """신비한 소리입니다. (mysterious)"""
     SAD: Sound
-    """슬퍼하는 소리. (sad)"""
+    """슬퍼하는 소리입니다. (sad)"""
     SLIDE: Sound
-    """슬라이드 소리. (slide)"""
+    """슬라이드 소리입니다. (slide)"""
     SOARING: Sound
-    """솟아오르는 소리. (soaring)"""
+    """솟아오르는 소리입니다. (soaring)"""
     SPRING: Sound
-    """스프링 소리. (spring)"""
+    """스프링 소리입니다. (spring)"""
     TWINKLE: Sound
-    """반짝이는 소리. (twinkle)"""
+    """반짝이는 소리입니다. (twinkle)"""
     YAWN: Sound
-    """하품 소리. (yawn)"""
+    """하품 소리입니다. (yawn)"""

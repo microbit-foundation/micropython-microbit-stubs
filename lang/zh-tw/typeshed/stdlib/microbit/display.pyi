@@ -1,9 +1,9 @@
-"""在 5×5 LED 顯示器上顯示文字、影像和動畫。 (顯示)"""
+"""在 5×5 LED 顯示器上顯示文字、影像和動畫。 (display)"""
 from ..microbit import Image
 from typing import Union, overload, Iterable
 
 def get_pixel(x: int, y: int) -> int:
-    """取得 ``x`` 列和 ``y`` 行的 LED 亮度。 (取得像素)
+    """取得 ``x`` 列和 ``y`` 行的 LED 亮度。 (get pixel)
 
 Example: ``display.get_pixel(0, 0)``
 
@@ -13,17 +13,17 @@ Example: ``display.get_pixel(0, 0)``
     ...
 
 def set_pixel(x: int, y: int, value: int) -> None:
-    """在 ``x`` 資料行和 ``y`` 資料列設定 LED 的亮度。 (設定像素)
+    """在 ``x`` 資料行和 ``y`` 資料列設定 LED 的亮度。 (set pixel)
 
 Example: ``display.set_pixel(0, 0, 9)``
 
 :param x: (x) 顯示資料行 (0..4)
 :param y: (y) 顯示資料列 (0..4)
-:param value: (數值) 0（關閉）和 9（最亮）之間的亮度"""
+:param value: (value) 0 (關閉) 和 9 (最亮) 之間的亮度"""
     ...
 
 def clear() -> None:
-    """將所有 LED 的亮度設定為 0（關閉）。 (clear)
+    """將所有 LED 的亮度設定為 0 (關閉)。 (clear)
 
 Example: ``display.clear()``"""
     ...
@@ -36,7 +36,7 @@ Example: ``display.show(Image.HEART)``
 When ``image`` is an image or a list of images then each image is displayed in turn.
 If ``image`` is a string or number, each letter or digit is displayed in turn.
 
-:param image: (圖片) 要顯示的字串、數字、影像或影像列表。
+:param image: (image) 要顯示的字串、數字、影像或影像列表。
 :param delay: (delay) 每個字母、數字或影像之間的顯示時間為 ``delay`` 毫秒。
 :param wait: (wait) 如果 ``wait`` 為 ``True``，此函式將封鎖直到動畫完成，否則動畫將在背景發生。
 :param loop: (loop) 如果 ``loop`` 為 ``True``，動畫將永遠重複。
@@ -67,7 +67,7 @@ Example: ``display.on()``"""
     ...
 
 def off() -> None:
-    """關閉 LED 顯示器（停用顯示器可讓您將 GPIO 引腳重新用於其他目的）。 (off)
+    """關閉 LED 顯示器 (停用顯示器，可讓您將 GPIO 引腳重新用於其他目的)。 (off)
 
 Example: ``display.off()``"""
     ...

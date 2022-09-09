@@ -18,7 +18,7 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """보정을 해제하여 나침반을 보정하지 않은 상태로 만듭니다. (clear calibration)
+    """보정을 해제해 나침반을 보정하지 않은 상태로 설정합니다. (clear calibration)
 
 Example: ``compass.clear_calibration()``"""
     ...
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """기기 주변의 자기장 규모를 불러옵니다. (get field strength)
+    """장치 주변의 자기장 규모를 불러옵니다. (get field strength)
 
 Example: ``compass.get_field_strength()``
 
