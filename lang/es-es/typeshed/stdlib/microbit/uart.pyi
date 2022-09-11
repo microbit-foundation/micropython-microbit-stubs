@@ -1,4 +1,4 @@
-"""Comunicarse con un dispositivo usando una interfaz serie. (uart)"""
+"""Comunicarse con un dispositivo usando una interfaz serie."""
 from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
@@ -8,16 +8,16 @@ EVEN: int
 """Paridad par (par)"""
 
 def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
-    """Inicializa la comunicación serie. (init)
+    """Inicializa la comunicación serie.
 
 Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
 :param baudrate: (tasa de baudios) La velocidad de comunicación.
-:param bits: (bits) El tamaño de bytes transmitidos; micro:bit solo admite 8.
+:param bits: El tamaño de bytes transmitidos; micro:bit solo admite 8.
 :param parity: (paridad) Cómo se comprueba la paridad: ``None``, ``uart.ODD`` o ``uart.EVEN``.
 :param stop: (detener) El número de bits de parada; tiene que ser 1 para el micro:bit.
-:param tx: (tx) Pin transmisor.
-:param rx: (rx) Pin receptor.
+:param tx: Pin transmisor.
+:param rx: Pin receptor.
 
 Initializing the UART on external pins will cause the Python console on
 USB to become unaccessible, as it uses the same hardware. To bring the
@@ -41,7 +41,7 @@ def read(nbytes: Optional[int]=None) -> Optional[bytes]:
 
 Example: ``uart.read()``
 
-:param nbytes: (nbytes) Si se especifica ``nbytes``, lee como máximo ese número de bytes; si no, lee tantos bytes como sea posible
+:param nbytes: Si se especifica ``nbytes``, lee como máximo ese número de bytes; si no, lee tantos bytes como sea posible
 :return: A bytes object or ``None`` on timeout"""
     ...
 
@@ -51,7 +51,7 @@ def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
 Example: ``uart.readinto(input_buffer)``
 
 :param buf: (búf) El búfer en el que escribir.
-:param nbytes: (nbytes) Si se especifica ``nbytes``, lee como máximo ese número de bytes; si no, lee ``len(buf)`` bytes.
+:param nbytes: Si se especifica ``nbytes``, lee como máximo ese número de bytes; si no, lee ``len(buf)`` bytes.
 :return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
     ...
 

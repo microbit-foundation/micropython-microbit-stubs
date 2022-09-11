@@ -5,11 +5,10 @@ from typing import Optional, Union
 ODD: int
 """奇校验 (奇数)"""
 EVEN: int
-"""
-偶校验 (偶数)"""
+"""偶校验 (偶数)"""
 
 def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
-    """初始化串行通信。 (init)
+    """初始化串行通信。
 
 Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 

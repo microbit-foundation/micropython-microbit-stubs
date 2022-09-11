@@ -5,7 +5,7 @@ from typing import Tuple
 class NeoPixel:
 
     def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int=3) -> None:
-        """初始化一条通过一个引脚控制的新 neopixel LED 灯带。 (init)
+        """初始化一条通过一个引脚控制的新 neopixel LED 灯带。
 
 Example: ``np = neopixel.NeoPixel(pin0, 8)``
 
@@ -14,7 +14,7 @@ RGBW neopixels are only supported by micro:bit V2.
 See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`_ for warnings and other advice.
 
 :param pin: (引脚) 控制 neopixel 灯带的引脚。
-:param n: (n) 灯带中 neopixel 灯珠的数量。
+:param n: 灯带中 neopixel 灯珠的数量。
 :param bpp: (每像素字节数) 每个像素的字节数。对于 RGB 和 GRB 而言，只有将该值设置为 4 而不是默认值 3，micro:bit V2 RGBW neopixel 才能支持。"""
         ...
 
@@ -43,8 +43,7 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """
-用给定的 RGB/RGBW 值为所有像素着色。 (填充)
+        """用给定的 RGB/RGBW 值为所有像素着色。 (填充)
 
 Example: ``np.fill((0, 0, 255))``
 
@@ -54,15 +53,15 @@ Use in conjunction with ``show()`` to update the neopixels."""
         ...
 
     def __setitem__(self, key: int, value: Tuple[int, ...]) -> None:
-        """设置像素颜色 (setitem)
+        """设置像素颜色
 
 Example: ``np[0] = (255, 0, 0)``
 
 :param key: (键) 像素数。
-:param value: (value) 颜色。"""
+:param value: 颜色。"""
 
     def __getitem__(self, key: int) -> Tuple[int, ...]:
-        """获取像素颜色。 (getitem)
+        """获取像素颜色。
 
 Example: ``r, g, b = np[0]``
 

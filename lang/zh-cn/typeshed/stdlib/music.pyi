@@ -2,7 +2,7 @@
 from typing import Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]
-"""旋律：《贝多芬 C 小调第五交响曲》开场曲。 (dadadadum)"""
+"""旋律：《贝多芬 C 小调第五交响曲》开场曲。"""
 ENTERTAINER: Tuple[str, ...]
 """旋律：斯科特·乔普林的拉格泰姆经典“演艺人”的开场片段。 (演艺人)"""
 PRELUDE: Tuple[str, ...]
@@ -40,21 +40,20 @@ BADDY: Tuple[str, ...]
 CHASE: Tuple[str, ...]
 """旋律：无声电影时代的追逐场景。 (追逐)"""
 BA_DING: Tuple[str, ...]
-"""旋律：表示某事发生的简短信号。 (ba ding )"""
+"""旋律：表示某事发生的简短信号。"""
 WAWAWAWAA: Tuple[str, ...]
-"""旋律：非常悲伤的长号。 (wawawawaa)"""
+"""旋律：非常悲伤的长号。"""
 JUMP_UP: Tuple[str, ...]
-"""旋律：用于游戏中，表示向上运动。 (jump up)"""
+"""旋律：用于游戏中，表示向上运动。"""
 JUMP_DOWN: Tuple[str, ...]
-"""旋律：用于游戏中，表示向下运动。 (jump down)"""
+"""旋律：用于游戏中，表示向下运动。"""
 POWER_UP: Tuple[str, ...]
 """旋律：表示解锁成就的号角。 (能力增强)"""
 POWER_DOWN: Tuple[str, ...]
 """旋律：表示失去成就的悲伤号角。 (能力减弱)"""
 
 def set_tempo(ticks: int=4, bpm: int=120) -> None:
-    """
-设置播放的大致节奏。 (设置节奏)
+    """设置播放的大致节奏。 (设置节奏)
 
 Example: ``music.set_tempo(bpm=120)``
 
@@ -88,7 +87,7 @@ Example: ``music.play(music.NYAN)``
 :param music: (音乐) `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_中指定的音乐
 :param pin: (引脚) 用于外接扬声器的输出引脚（默认为 ``pin0``），``None`` 表示无声音。
 :param wait: (等待) 如果 ``wait`` 设置为 ``True``，则此函数阻塞。
-:param loop: (loop) 如果 ``loop`` 设置为 ``True``，曲调会重复直到调用 ``stop`` 或阻塞调用被中断。
+:param loop: 如果 ``loop`` 设置为 ``True``，曲调会重复直到调用 ``stop`` 或阻塞调用被中断。
 
 Many built-in melodies are defined in this module."""
     ...
@@ -117,7 +116,7 @@ Example: ``music.stop()``
 :param pin: (引脚) 可以提供可选参数来指定一个引脚，如``music.stop(pin1)``。"""
 
 def reset() -> None:
-    """将 ticks、bpm、duration 和 octave重置为默认值。 (reset)
+    """将 ticks、bpm、duration 和 octave重置为默认值。
 
 Example: ``music.reset()``
 

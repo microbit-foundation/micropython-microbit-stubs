@@ -1,22 +1,22 @@
-"""ガベージコレクターを制御します。 (gc)"""
+"""ガベージコレクターを制御します。"""
 from typing import overload
 
 def enable() -> None:
-    """自動ガベージコレクションを有効にします。 (enable)"""
+    """自動ガベージコレクションを有効にします。"""
     ...
 
 def disable() -> None:
-    """自動ガベージコレクションを無効にします。 (disable)
+    """自動ガベージコレクションを無効にします。
 
 Heap memory can still be allocated,
 and garbage collection can still be initiated manually using ``gc.collect``."""
 
 def collect() -> None:
-    """ガベージコレクションを実行します。 (collect)"""
+    """ガベージコレクションを実行します。"""
     ...
 
 def mem_alloc() -> int:
-    """割り当てられているヒープRAMのバイト数を取得します。 (mem alloc)
+    """割り当てられているヒープRAMのバイト数を取得します。
 
 :return: The number of bytes allocated.
 
@@ -24,7 +24,7 @@ This function is MicroPython extension."""
     ...
 
 def mem_free() -> int:
-    """使用可能なヒープRAMのバイト数を取得します。この量が不明の場合は -1が返されます。 (mem free)
+    """使用可能なヒープRAMのバイト数を取得します。この量が不明の場合は -1が返されます。
 
 :return: The number of bytes free.
 
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """追加のGC 割り当てしきい値を照会します。 (threshold)
+    """追加のGC 割り当てしきい値を照会します。
 
 :return: The GC allocation threshold.
 
@@ -44,7 +44,7 @@ implementations, its signature and semantics are different."""
 
 @overload
 def threshold(amount: int) -> None:
-    """追加の GC 割り当てしきい値を設定します。 (threshold)
+    """追加の GC 割り当てしきい値を設定します。
 
 Normally, a collection is triggered only when a new allocation
 cannot be satisfied, i.e. on an  out-of-memory (OOM) condition.
@@ -64,5 +64,5 @@ This function is a MicroPython extension. CPython has a similar
 function - ``set_threshold()``, but due to different GC
 implementations, its signature and semantics are different.
 
-:param amount: (amount) ガベージコレクションを起こすバイト数。"""
+:param amount: ガベージコレクションを起こすバイト数。"""
     ...

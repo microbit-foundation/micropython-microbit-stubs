@@ -1,10 +1,10 @@
-"""Componentes internos de MicroPython. (micropython)"""
+"""Componentes internos de MicroPython."""
 from typing import Any, TypeVar, overload
 _T = TypeVar('_T')
 
 def const(expr: _T) -> _T:
     """Se usa para declarar que la expresión es una constante para que el compilador pueda
-optimizarla. (const)
+optimizarla.
 
 The use of this function should be as follows::
 
@@ -17,7 +17,7 @@ outside the module they are declared in. On the other hand, if a constant
 begins with an underscore then it is hidden, it is not available as a
 global variable, and does not take up any memory during execution.
 
-:param expr: (expr) Una expresión constante."""
+:param expr: Una expresión constante."""
     ...
 
 @overload
@@ -71,7 +71,7 @@ def mem_info(verbose: Any=None) -> None:
 
 Example: ``micropython.mem_info()``
 
-:param verbose: (verbose) Si se pasa el argumento ``verbose``, se imprime información adicional."""
+:param verbose: Si se pasa el argumento ``verbose``, se imprime información adicional."""
     ...
 
 def qstr_info(verbose: Any=None) -> None:
@@ -79,7 +79,7 @@ def qstr_info(verbose: Any=None) -> None:
 
 Example: ``micropython.qstr_info()``
 
-:param verbose: (verbose) Si se pasa el argumento ``verbose``, se imprime información adicional.
+:param verbose: Si se pasa el argumento ``verbose``, se imprime información adicional.
 
 The information that is printed is implementation dependent, but currently
 includes the number of interned strings and the amount of RAM they use.  In

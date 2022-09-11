@@ -1,33 +1,33 @@
-"""시간을 측정하고 프로그램에 지연을 추가합니다. (time)"""
+"""시간을 측정하고 프로그램에 지연을 추가합니다."""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
-    """초 단위로 지연을 추가합니다. (sleep)
+    """초 단위로 지연을 추가합니다.
 
 Example: ``time.sleep(1)``
 
-:param seconds: (seconds) 초 단위만큼 슬립에 들어갑니다.
+:param seconds: 초 단위만큼 슬립에 들어갑니다.
 부동 소수점 수를 사용해 초 단위 미만만큼 슬립에 들어갑니다."""
     ...
 
 def sleep_ms(ms: int) -> None:
-    """밀리초 단위로 딜레이를 부여합니다. (sleep ms)
+    """밀리초 단위로 딜레이를 부여합니다.
 
 Example: ``time.sleep_ms(1_000_000)``
 
-:param ms: (ms) 밀리초 단위의 지연(>= 0)."""
+:param ms: 밀리초 단위의 지연(>= 0)."""
     ...
 
 def sleep_us(us: int) -> None:
-    """마이크로초 단위로 지연을 추가합니다. (sleep us)
+    """마이크로초 단위로 지연을 추가합니다.
 
 Example: ``time.sleep_us(1000)``
 
-:param us: (us) 마이크로초 단위의 지연(>= 0)."""
+:param us: 마이크로초 단위의 지연(>= 0)."""
     ...
 
 def ticks_ms() -> int:
-    """임의의 레퍼런스 포인트가 있는 점진적으로 증가하는 밀리초 카운터로, 일부 값을 따라 래핑합니다. (ticks ms)
+    """임의의 레퍼런스 포인트가 있는 점진적으로 증가하는 밀리초 카운터로, 일부 값을 따라 래핑합니다.
 
 Example: ``time.ticks_ms()``
 
@@ -35,7 +35,7 @@ Example: ``time.ticks_ms()``
     ...
 
 def ticks_us() -> int:
-    """임의의 레퍼런스 포인트가 있는 점진적으로 증가하는 마이크로초 카운터로, 일부 값을 따라 래핑합니다. (ticks us)
+    """임의의 레퍼런스 포인트가 있는 점진적으로 증가하는 마이크로초 카운터로, 일부 값을 따라 래핑합니다.
 
 Example: ``time.ticks_us()``
 
@@ -43,7 +43,7 @@ Example: ``time.ticks_us()``
     ...
 
 def ticks_add(ticks: int, delta: int) -> int:
-    """주어진 숫자에 따라 틱 값을 오프셋으로 사용합니다. 양수나 음수일 수 있습니다. (ticks add)
+    """주어진 숫자에 따라 틱 값을 오프셋으로 사용합니다. 양수나 음수일 수 있습니다.
 
 Example: ``time.ticks_add(time.ticks_ms(), 200)``
 
@@ -51,8 +51,8 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: (ticks) 틱 값
-:param delta: (delta) 정수 오프셋
+:param ticks: 틱 값
+:param delta: 정수 오프셋
 
 Example::
 
@@ -69,12 +69,12 @@ Example::
     ...
 
 def ticks_diff(ticks1: int, ticks2: int) -> int:
-    """``time.ticks_ms()`` 또는 ``ticks_us()``에서 반환된 값 사이의 틱 차이를 측정합니다. 서명된 값은 래핑될 수 있습니다. (ticks diff)
+    """``time.ticks_ms()`` 또는 ``ticks_us()``에서 반환된 값 사이의 틱 차이를 측정합니다. 서명된 값은 래핑될 수 있습니다.
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: (ticks1) 빼기 전의 값
-:param ticks2: (ticks2) 뺄 값
+:param ticks1: 빼기 전의 값
+:param ticks2: 뺄 값
 
 The argument order is the same as for subtraction operator,
 ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.

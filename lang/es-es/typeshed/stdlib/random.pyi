@@ -2,11 +2,11 @@
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:
-    """Genera un entero con ``n`` bits aleatorios. (getrandbits)
+    """Genera un entero con ``n`` bits aleatorios.
 
 Example: ``random.getrandbits(1)``
 
-:param n: (n) Un valor entre 1 - 30 (inclusive)."""
+:param n: Un valor entre 1 - 30 (inclusive)."""
     ...
 
 def seed(n: int) -> None:
@@ -14,7 +14,7 @@ def seed(n: int) -> None:
 
 Example: ``random.seed(0)``
 
-:param n: (n) La semilla como un número entero
+:param n: La semilla como un número entero
 
 This will give you reproducibly deterministic randomness from a given starting
 state (``n``)."""
@@ -25,8 +25,8 @@ def randint(a: int, b: int) -> int:
 
 Example: ``random.randint(0, 9)``
 
-:param a: (a) Valor inicial para el rango (inclusive)
-:param b: (b) Valor final para el rango (inclusive)
+:param a: Valor inicial para el rango (inclusive)
+:param b: Valor final para el rango (inclusive)
 
 Alias for ``randrange(a, b + 1)``."""
     ...
@@ -75,6 +75,6 @@ def uniform(a: float, b: float) -> float:
 
 Example: ``random.uniform(0, 9)``
 
-:param a: (a) Valor inicial para el rango (inclusive)
-:param b: (b) Valor final para el rango (inclusive)"""
+:param a: Valor inicial para el rango (inclusive)
+:param b: Valor final para el rango (inclusive)"""
     ...

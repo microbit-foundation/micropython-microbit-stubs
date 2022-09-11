@@ -1,34 +1,34 @@
-"""Mesurer le temps et ajouter des retards aux programmes. (time)"""
+"""Mesurer le temps et ajouter des retards aux programmes."""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
-    """Temporiser d'un certain nombre de secondes. (sleep)
+    """Temporiser d'un certain nombre de secondes.
 
 Example: ``time.sleep(1)``
 
-:param seconds: (seconds) Le nombre de secondes pendant lesquelles dormir.
+:param seconds: Le nombre de secondes pendant lesquelles dormir.
 Utiliser un nombre à virgule flottante pour dormir pendant un nombre fractionnaire de secondes."""
     ...
 
 def sleep_ms(ms: int) -> None:
-    """Temporiser pour un nombre donné de millisecondes. (sleep ms)
+    """Temporiser pour un nombre donné de millisecondes.
 
 Example: ``time.sleep_ms(1_000_000)``
 
-:param ms: (ms) Le nombre de millisecondes à attendre (>= 0)."""
+:param ms: Le nombre de millisecondes à attendre (>= 0)."""
     ...
 
 def sleep_us(us: int) -> None:
-    """Temporiser pour un nombre donné de microsecondes. (sleep us)
+    """Temporiser pour un nombre donné de microsecondes.
 
 Example: ``time.sleep_us(1000)``
 
-:param us: (us) Le nombre de microsecondes à attendre (>= 0)."""
+:param us: Le nombre de microsecondes à attendre (>= 0)."""
     ...
 
 def ticks_ms() -> int:
     """Obtenir un compteur croissant en millisecondes avec un point de référence arbitraire.
-Le compteur revient à zéro après une certaine valeur. (ticks ms)
+Le compteur revient à zéro après une certaine valeur.
 
 Example: ``time.ticks_ms()``
 
@@ -37,7 +37,7 @@ Example: ``time.ticks_ms()``
 
 def ticks_us() -> int:
     """Obtenir un compteur croissant en microsecondes avec un point de référence arbitraire.
-Le compteur revient à zéro après une certaine valeur. (ticks us)
+Le compteur revient à zéro après une certaine valeur.
 
 Example: ``time.ticks_us()``
 
@@ -45,7 +45,7 @@ Example: ``time.ticks_us()``
     ...
 
 def ticks_add(ticks: int, delta: int) -> int:
-    """Décaler les ticks par un nombre donné, positif ou négatif. (ticks add)
+    """Décaler les ticks par un nombre donné, positif ou négatif.
 
 Example: ``time.ticks_add(time.ticks_ms(), 200)``
 
@@ -53,8 +53,8 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: (ticks) Une valeur de ticks
-:param delta: (delta) Un entier représentant le décalage
+:param ticks: Une valeur de ticks
+:param delta: Un entier représentant le décalage
 
 Example::
 
@@ -73,12 +73,12 @@ Example::
 def ticks_diff(ticks1: int, ticks2: int) -> int:
     """Mesurer la différence des ticks entre les valeurs retournées par
 ``time.ticks_ms()`` ou ``ticks_us()``, sous la forme d'une valeur signée
-qui peut passer plusieurs fois par zéro. (ticks diff)
+qui peut passer plusieurs fois par zéro.
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: (ticks1) La valeur à partir de laquelle soustraire
-:param ticks2: (ticks2) La valeur à soustraire
+:param ticks1: La valeur à partir de laquelle soustraire
+:param ticks2: La valeur à soustraire
 
 The argument order is the same as for subtraction operator,
 ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.

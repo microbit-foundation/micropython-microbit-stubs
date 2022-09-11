@@ -1,13 +1,13 @@
-"""使用內建無線電在 micro:bits 之間進行通訊。 (radio)"""
+"""使用內建無線電在 micro:bits 之間進行通訊。"""
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 RATE_1MBIT: int
-"""常數用於指示每秒 1 MBit 的傳輸量。 (rate 1mbit)"""
+"""常數用於指示每秒 1 MBit 的傳輸量。"""
 RATE_2MBIT: int
-"""常數用於指示每秒 2 MBit 的傳輸量。 (rate 2mbit)"""
+"""常數用於指示每秒 2 MBit 的傳輸量。"""
 
 def on() -> None:
-    """開啟無線電。 (on)
+    """開啟無線電。
 
 Example: ``radio.on()``
 
@@ -16,38 +16,38 @@ up memory that you may otherwise need."""
     ...
 
 def off() -> None:
-    """關閉收音機，節省電量和記憶體。 (off)
+    """關閉收音機，節省電量和記憶體。
 
 Example: ``radio.off()``"""
     ...
 
 def config(length: int=32, queue: int=3, channel: int=7, power: int=6, address: int=1969383796, group: int=0, data_rate: int=RATE_1MBIT) -> None:
-    """設定無線電。 (config)
+    """設定無線電。
 
 Example: ``radio.config(group=42)``
 
 The default configuration is suitable for most use.
 
-:param length: (length) (default=32) 定義透過無線電傳送的訊息的最大長度 (以位元組為單位)。
+:param length: (default=32) 定義透過無線電傳送的訊息的最大長度 (以位元組為單位)。
 最長可達 251 個位元組 (S0、LENGTH 和 S1 前序編碼為 254 - 3 個位元組)。
-:param queue: (queue) (default=3) 指定可以存儲在傳入訊息佇列中的訊息數。
+:param queue: (default=3) 指定可以存儲在傳入訊息佇列中的訊息數。
 如果佇列中沒有空間可留給傳入訊息，則捨棄傳入訊息。
-:param channel: (channel) (default=7) 一個從 0 到 83 (包含) 的整數值，定義無線電調整到的任意 "channel"。
+:param channel: (default=7) 一個從 0 到 83 (包含) 的整數值，定義無線電調整到的任意 "channel"。
 訊息將透過此頻道傳送。只有透過此頻道接收的訊息，才會放入傳入訊息佇列。每一步都是 1MHz 寬，以 2400MHz 為基礎。
-:param power: (power) (default=6) 是一個從 0 到 7 (包含) 的整數值，表示無線電訊息時使用的訊號功率。
+:param power: (default=6) 是一個從 0 到 7 (包含) 的整數值，表示無線電訊息時使用的訊號功率。
 數值越高，訊號越強，但裝置消耗的功率越多。編號轉換為下列 dBm (分貝毫瓦) 數值列表中的位置：-30、-20、-16、-12、-8、-4、0、4。
-:param address: (address) (default=0x75626974) 任意名稱，表示為 32 位元地址，用於在硬體級別篩選傳入的資料套件，僅保留與您設定的地址相符的那些。
+:param address: (default=0x75626974) 任意名稱，表示為 32 位元地址，用於在硬體級別篩選傳入的資料套件，僅保留與您設定的地址相符的那些。
 其他 micro:bit 相關平台使用的預設設定，則是此處使用的預設設定。
-:param group: (group) (default=0) 篩選訊息時與 ``address`` 一起使用的 8 位元值 (0-255)。
+:param group: (default=0) 篩選訊息時與 ``address`` 一起使用的 8 位元值 (0-255)。
 從概念上講，"address" 就像一個家庭/辦公室地址，而 "group" 就像您要向該地址傳送訊息的人。
-:param data_rate: (data rate) (default=``radio.RATE_1MBIT``) 表示資料傳輸量發生的速度。
+:param data_rate: (default=``radio.RATE_1MBIT``) 表示資料傳輸量發生的速度。
 可以是 ``radio`` 模組中定義的下列常數之一：``RATE_250KBIT``、``RATE_1MBIT`` 或 ``RATE_2MBIT``。
 
 If ``config`` is not called then the defaults described above are assumed."""
     ...
 
 def reset() -> None:
-    """將設定重置為其預設值。 (reset)
+    """將設定重置為其預設值。
 
 Example: ``radio.reset()``
 
@@ -55,15 +55,15 @@ The defaults as as per the ``config`` function above."""
     ...
 
 def send_bytes(message: bytes) -> None:
-    """發送包含位元組的訊息。 (send bytes)
+    """發送包含位元組的訊息。
 
 Example: ``radio.send_bytes(b'hello')``
 
-:param message: (message) 要發送的位元組。"""
+:param message: 要發送的位元組。"""
     ...
 
 def receive_bytes() -> Optional[bytes]:
-    """接收訊息佇列中的下一則傳入訊息。 (receive bytes)
+    """接收訊息佇列中的下一則傳入訊息。
 
 Example: ``radio.receive_bytes()``
 
@@ -71,27 +71,27 @@ Example: ``radio.receive_bytes()``
     ...
 
 def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
-    """將訊息佇列中的下一則傳入訊息複製到緩衝區中。 (receive bytes into)
+    """將訊息佇列中的下一則傳入訊息複製到緩衝區中。
 
 Example: ``radio.receive_bytes_info(buffer)``
 
-:param buffer: (buffer) 將訊息佇列中的下一則傳入訊息複製到緩衝區中。
+:param buffer: 將訊息佇列中的下一則傳入訊息複製到緩衝區中。
 :return: ``None`` if there are no pending messages, otherwise it returns the length of the message (which might be more than the length of the buffer)."""
     ...
 
 def send(message: str) -> None:
-    """發送訊息字串。 (send)
+    """發送訊息字串。
 
 Example: ``radio.send('hello')``
 
 This is the equivalent of ``radio.send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
 prepended to the front (to make it compatible with other platforms that target the micro:bit).
 
-:param message: (message) 要發送的字串。"""
+:param message: 要發送的字串。"""
     ...
 
 def receive() -> Optional[str]:
-    """工作方式與 ``receive_bytes`` 完全相同，但會傳回發送的任何內容。 (receive)
+    """工作方式與 ``receive_bytes`` 完全相同，但會傳回發送的任何內容。
 
 Example: ``radio.receive()``
 
@@ -105,7 +105,7 @@ A ``ValueError`` exception is raised if conversion to string fails."""
     ...
 
 def receive_full() -> Optional[Tuple[bytes, int, int]]:
-    """工作方式與 ``receive_bytes`` 完全相同，但會傳回發送的任何內容。 (receive full)
+    """工作方式與 ``receive_bytes`` 完全相同，但會傳回發送的任何內容。
 
 Example: ``radio.receive_full()``
 

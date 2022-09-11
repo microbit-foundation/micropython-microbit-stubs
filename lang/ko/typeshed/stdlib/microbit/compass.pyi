@@ -1,7 +1,7 @@
 """내장된 나침반을 사용합니다. (나침반)"""
 
 def calibrate() -> None:
-    """보정 프로세스를 시작합니다. (calibrate)
+    """보정 프로세스를 시작합니다.
 
 Example: ``compass.calibrate()``
 
@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """나침반이 보정되었는지 확인합니다. (is calibrated)
+    """나침반이 보정되었는지 확인합니다.
 
 Example: ``compass.is_calibrated()``
 
@@ -18,13 +18,13 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """보정을 해제해 나침반을 보정하지 않은 상태로 설정합니다. (clear calibration)
+    """보정을 해제해 나침반을 보정하지 않은 상태로 설정합니다.
 
 Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """``x`` 축의 자기장 강도를 불러옵니다. (get x)
+    """``x`` 축의 자기장 강도를 불러옵니다.
 
 Example: ``compass.get_x()``
 
@@ -34,7 +34,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_y() -> int:
-    """``y`` 축의 자기장 강도를 불러옵니다. (get y)
+    """``y`` 축의 자기장 강도를 불러옵니다.
 
 Example: ``compass.get_y()``
 
@@ -44,7 +44,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_z() -> int:
-    """``z`` 축의 자기장 강도를 불러옵니다. (get z)
+    """``z`` 축의 자기장 강도를 불러옵니다.
 
 Example: ``compass.get_z()``
 
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """나침반의 방향을 불러옵니다. (heading)
+    """나침반의 방향을 불러옵니다.
 
 Example: ``compass.heading()``
 
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """장치 주변의 자기장 규모를 불러옵니다. (get field strength)
+    """장치 주변의 자기장 규모를 불러옵니다.
 
 Example: ``compass.get_field_strength()``
 

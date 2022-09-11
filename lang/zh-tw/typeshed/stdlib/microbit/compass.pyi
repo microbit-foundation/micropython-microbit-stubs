@@ -1,7 +1,7 @@
 """使用內建指南針。 (羅盤)"""
 
 def calibrate() -> None:
-    """開始校準程序。 (calibrate)
+    """開始校準程序。
 
 Example: ``compass.calibrate()``
 
@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """檢查指南針是否已校準。 (is calibrated)
+    """檢查指南針是否已校準。
 
 Example: ``compass.is_calibrated()``
 
@@ -18,13 +18,13 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """撤消校準，使指南針再次未校準。 (clear calibration)
+    """撤消校準，使指南針再次未校準。
 
 Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """取得 ``x`` 軸上的磁場強度。 (get x)
+    """取得 ``x`` 軸上的磁場強度。
 
 Example: ``compass.get_x()``
 
@@ -34,7 +34,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_y() -> int:
-    """取得 ``y`` 軸上的磁場強度。 (get y)
+    """取得 ``y`` 軸上的磁場強度。
 
 Example: ``compass.get_y()``
 
@@ -44,7 +44,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_z() -> int:
-    """取得 ``z`` 軸上的磁場強度。 (get z)
+    """取得 ``z`` 軸上的磁場強度。
 
 Example: ``compass.get_z()``
 
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """取得指南針方向。 (heading)
+    """取得指南針方向。
 
 Example: ``compass.heading()``
 
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """獲取裝置周圍磁場的大小。 (get field strength)
+    """獲取裝置周圍磁場的大小。
 
 Example: ``compass.get_field_strength()``
 

@@ -6,7 +6,7 @@ def getrandbits(n: int) -> int:
 
 Example: ``random.getrandbits(1)``
 
-:param n: (n) 一个在1到30之间（包含30）的数值。"""
+:param n: 一个在1到30之间（包含30）的数值。"""
     ...
 
 def seed(n: int) -> None:
@@ -14,7 +14,7 @@ def seed(n: int) -> None:
 
 Example: ``random.seed(0)``
 
-:param n: (n) 整数种子
+:param n: 整数种子
 
 This will give you reproducibly deterministic randomness from a given starting
 state (``n``)."""
@@ -25,8 +25,8 @@ def randint(a: int, b: int) -> int:
 
 Example: ``random.randint(0, 9)``
 
-:param a: (a) 区间起始值（包含）
-:param b: (b) 区间结束值（包含）
+:param a: 区间起始值（包含）
+:param b: 区间结束值（包含）
 
 Alias for ``randrange(a, b + 1)``."""
     ...
@@ -75,6 +75,6 @@ def uniform(a: float, b: float) -> float:
 
 Example: ``random.uniform(0, 9)``
 
-:param a: (a) 区间起始值（包含）
-:param b: (b) 区间结束值（包含）"""
+:param a: 区间起始值（包含）
+:param b: 区间结束值（包含）"""
     ...

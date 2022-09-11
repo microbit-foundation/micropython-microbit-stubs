@@ -1,20 +1,20 @@
-"""Comunicarse con dispositivos que usan el bus de interfaz de periféricos serie (SPI, por sus siglas en inglés). (spi)"""
+"""Comunicarse con dispositivos que usan el bus de interfaz de periféricos serie (SPI, por sus siglas en inglés)."""
 from _typeshed import ReadableBuffer, WriteableBuffer
 from ..microbit import pin13, pin14, pin15, MicroBitDigitalPin
 
 def init(baudrate: int=1000000, bits: int=8, mode: int=0, sclk: MicroBitDigitalPin=pin13, mosi: MicroBitDigitalPin=pin15, miso: MicroBitDigitalPin=pin14) -> None:
-    """Inicializa la comunicación SPI. (init)
+    """Inicializa la comunicación SPI.
 
 Example: ``spi.init()``
 
 For correct communication, the parameters have to be the same on both communicating devices.
 
 :param baudrate: (tasa de baudios) La velocidad de comunicación.
-:param bits: (bits) El ancho en bits de cada transferencia. Actualmente solo se admite ``bits=8}, pero esto puede cambiar en el futuro.
+:param bits: El ancho en bits de cada transferencia. Actualmente solo se admite ``bits=8}, pero esto puede cambiar en el futuro.
 :param mode: (modo) Determina la combinación de fase y polaridad del reloj - `ver tabla en línea <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_.
-:param sclk: (sclk) pin SCLK (por defecto, 13)
-:param mosi: (mosi) pin MOSI (por defecto, 15)
-:param miso: (miso) pin MISO (por defecto, 14)"""
+:param sclk: pin SCLK (por defecto, 13)
+:param mosi: pin MOSI (por defecto, 15)
+:param miso: pin MISO (por defecto, 14)"""
     ...
 
 def read(nbytes: int) -> bytes:
@@ -22,7 +22,7 @@ def read(nbytes: int) -> bytes:
 
 Example: ``spi.read(64)``
 
-:param nbytes: (nbytes) Número máximo de bytes a leer.
+:param nbytes: Número máximo de bytes a leer.
 :return: The bytes read."""
     ...
 

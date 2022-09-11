@@ -1,22 +1,22 @@
-"""Contrôler le ramasse-miettes (gc)"""
+"""Contrôler le ramasse-miettes"""
 from typing import overload
 
 def enable() -> None:
-    """Active la collecte automatique du ramasse-miettes. (enable)"""
+    """Active la collecte automatique du ramasse-miettes."""
     ...
 
 def disable() -> None:
-    """Désactive la collecte automatique du ramasse-miettes. (disable)
+    """Désactive la collecte automatique du ramasse-miettes.
 
 Heap memory can still be allocated,
 and garbage collection can still be initiated manually using ``gc.collect``."""
 
 def collect() -> None:
-    """Exécute une collecte avec le ramasse-miettes (collect)"""
+    """Exécute une collecte avec le ramasse-miettes"""
     ...
 
 def mem_alloc() -> int:
-    """Obtenir le nombre d'octets alloués pour le tas en RAM (mem alloc)
+    """Obtenir le nombre d'octets alloués pour le tas en RAM
 
 :return: The number of bytes allocated.
 
@@ -24,7 +24,7 @@ This function is MicroPython extension."""
     ...
 
 def mem_free() -> int:
-    """Obtenir le nombre d'octets disponibles pour le tas en RAM, ou -1 si ce nombre est inconnu. (mem free)
+    """Obtenir le nombre d'octets disponibles pour le tas en RAM, ou -1 si ce nombre est inconnu.
 
 :return: The number of bytes free.
 
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """Demander le seuil d'allocation supplémentaire GC. (threshold)
+    """Demander le seuil d'allocation supplémentaire GC.
 
 :return: The GC allocation threshold.
 
@@ -44,7 +44,7 @@ implementations, its signature and semantics are different."""
 
 @overload
 def threshold(amount: int) -> None:
-    """Fixer le seuil d'allocation supplémentaire GC. (threshold)
+    """Fixer le seuil d'allocation supplémentaire GC.
 
 Normally, a collection is triggered only when a new allocation
 cannot be satisfied, i.e. on an  out-of-memory (OOM) condition.
@@ -64,5 +64,5 @@ This function is a MicroPython extension. CPython has a similar
 function - ``set_threshold()``, but due to different GC
 implementations, its signature and semantics are different.
 
-:param amount: (amount) Le nombre d'octets après lequel un passage du ramasse-miettes doit être déclenché."""
+:param amount: Le nombre d'octets après lequel un passage du ramasse-miettes doit être déclenché."""
     ...

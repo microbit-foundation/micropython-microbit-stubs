@@ -1,4 +1,4 @@
-"""Funciones específicas del sistema (sys)"""
+"""Funciones específicas del sistema"""
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
@@ -9,7 +9,7 @@ Example: ``sys.exit(1)``
 This function raises a ``SystemExit`` exception. If an argument is given, its
 value given as an argument to ``SystemExit``.
 
-:param retval: (retval) El mensaje o código de salida."""
+:param retval: El mensaje o código de salida."""
     ...
 
 def print_exception(exc: Exception) -> None:
@@ -17,12 +17,12 @@ def print_exception(exc: Exception) -> None:
 
 Example: ``sys.print_exception(e)``
 
-:param exc: (exc) La excepción a imprimir
+:param exc: La excepción a imprimir
 
 This is simplified version of a function which appears in the
 ``traceback`` module in CPython."""
 argv: List[str]
-"""Una lista mutable de argumentos con los que se inició el programa actual. (argv)"""
+"""Una lista mutable de argumentos con los que se inició el programa actual."""
 byteorder: str
 """El orden de bytes del sistema (``"little"`` o ``"big"``). (ordenbytes)"""
 
@@ -70,13 +70,13 @@ value directly, but instead count number of bits in it::
         # "> 32", "> 64" style of comparisons.
 """
 modules: Dict[str, Any]
-"""Diccionario de módulos cargados.  (módulos)
+"""Diccionario de módulos cargados. (módulos) 
 
 On some ports, it may not include builtin modules."""
 path: List[str]
 """Una lista mutable de directorios para buscar módulos importados. (ruta)"""
 platform: str
-"""La plataforma en la que se está ejecutando MicroPython.  (plataforma)
+"""La plataforma en la que se está ejecutando MicroPython. (plataforma) 
 
 For OS/RTOS ports, this is usually an identifier of the OS, e.g. ``"linux"``.
 For baremetal ports it is an identifier of a board, e.g. ``"pyboard"`` for 

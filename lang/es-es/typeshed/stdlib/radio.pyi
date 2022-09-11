@@ -1,4 +1,4 @@
-"""Comunicarse entre micro:bits con la radio incorporada. (radio)"""
+"""Comunicarse entre micro:bits con la radio incorporada."""
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 RATE_1MBIT: int
@@ -22,7 +22,7 @@ Example: ``radio.off()``"""
     ...
 
 def config(length: int=32, queue: int=3, channel: int=7, power: int=6, address: int=1969383796, group: int=0, data_rate: int=RATE_1MBIT) -> None:
-    """Configura la radio. (config)
+    """Configura la radio.
 
 Example: ``radio.config(group=42)``
 

@@ -24,7 +24,7 @@ labels set up by this function call to the last headers declared in the
 file. If the headers are different it will add a new header entry at the
 end of the file.
 
-:param *args: (*args) Un argumento posicional para cada cabecera de registro.
+:param *args: Un argumento posicional para cada cabecera de registro.
 :param timestamp: (marca de tiempo) La unidad de marca temporal que se añadirá automáticamente como la primera columna en cada fila.
 Establecer este argumento a ``None`` desactiva la marca temporal. Se le pueden pasar los valores ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS`` o ``log.DAYS`` definidos en este módulo. Un valor no válido lanzará una excepción."""
     ...

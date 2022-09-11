@@ -3,23 +3,23 @@ from ..microbit import Image
 from typing import Union, overload, Iterable
 
 def get_pixel(x: int, y: int) -> int:
-    """获取第``y``行第``x``列的 LED 亮度。 (get pixel)
+    """获取第``y``行第``x``列的 LED 亮度。
 
 Example: ``display.get_pixel(0, 0)``
 
-:param x: (x) 显示屏的列(0..4)
-:param y: (y) 显示行 (0..4)
+:param x: 显示屏的列(0..4)
+:param y: 显示行 (0..4)
 :return: A number between 0 (off) and 9 (bright)"""
     ...
 
 def set_pixel(x: int, y: int, value: int) -> None:
-    """设置在 ``x`` 列和 ``y`` 行的 LED 的亮度。 (set pixel)
+    """设置在 ``x`` 列和 ``y`` 行的 LED 的亮度。
 
 Example: ``display.set_pixel(0, 0, 9)``
 
-:param x: (x) 显示屏的列(0..4)
-:param y: (y) 显示行 (0..4)
-:param value: (value) 在 0 (关闭) 和 9 (亮) 之间的亮度"""
+:param x: 显示屏的列(0..4)
+:param y: 显示行 (0..4)
+:param value: 在 0 (关闭) 和 9 (亮) 之间的亮度"""
     ...
 
 def clear() -> None:
@@ -39,7 +39,7 @@ If ``image`` is a string or number, each letter or digit is displayed in turn.
 :param image: (图像) 要显示的一个字符串、数字、图像或图像列表。
 :param delay: (延迟) 每个字母、数字或图像之间显示的间隔时间为 ``delay`` 毫秒。
 :param wait: (等待) 如果 ``wait`` 为 ``True``，此函数将阻塞直到动画完成，否则动画将在后台发生。
-:param loop: (loop) 如果 ``loop`` 为 ``True``, 动画将永远重复。
+:param loop: 如果 ``loop`` 为 ``True``, 动画将永远重复。
 :param clear: (清除) 如果 ``clear`` 是 ``True``, 则显示将在序列完成后被清除。
 
 The ``wait``, ``loop`` and ``clear`` arguments must be specified using their keyword."""
@@ -53,7 +53,7 @@ Example: ``display.scroll('micro:bit')``
 :param text: (文本) 要滚动的字符串。如果 ``text`` 是整数或浮点数，则首先使用 ``str()`` 将其转换为字符串。
 :param delay: (延迟) ``delay`` 参数控制文本滚动的速度。
 :param wait: (等待) 如果 ``wait`` 为 ``True``，此函数将阻塞直到动画完成，否则动画将发生在后台。
-:param loop: (loop) 如果 ``loop`` 为 ``True``, 动画将永远重复。
+:param loop: 如果 ``loop`` 为 ``True``, 动画将永远重复。
 :param monospace: (等宽) 如果 ``monospace`` 为 ``True``，则字符的宽度都将占用 5 个像素列，否则在滚动时每个字符之间将恰好有 1 个空白像素列。
 
 The ``wait``, ``loop`` and ``monospace`` arguments must be specified
@@ -73,7 +73,7 @@ Example: ``display.off()``"""
     ...
 
 def is_on() -> bool:
-    """检查 LED 显示屏是否启用。 (is on)
+    """检查 LED 显示屏是否启用。
 
 Example: ``display.is_on()``
 
@@ -81,8 +81,7 @@ Example: ``display.is_on()``
     ...
 
 def read_light_level() -> int:
-    """读取亮度。 (
-read light level)
+    """读取亮度。
 
 Example: ``display.read_light_level()``
 

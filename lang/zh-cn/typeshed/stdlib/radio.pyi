@@ -46,7 +46,7 @@ If ``config`` is not called then the defaults described above are assumed."""
     ...
 
 def reset() -> None:
-    """将设置重设为默认值。 (reset)
+    """将设置重设为默认值。
 
 Example: ``radio.reset()``
 
