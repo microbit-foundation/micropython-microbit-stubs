@@ -1,4 +1,4 @@
-"""低等實用工具程序。"""
+"""低階公用程式。"""
 from typing import Any
 from .microbit import MicroBitDigitalPin
 

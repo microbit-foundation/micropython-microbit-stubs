@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """一次取得所有軸上的加速度測量值作為元組。
+    """一次取得所有軸上的加速度測量值做為元組。
 
 Example: ``x, y, z = accelerometer.get_values()``
 

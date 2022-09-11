@@ -15,7 +15,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: (引腳) 控制 NeoPixel 燈條的引腳。
 :param n: 燈條中的 NeoPixel 數。
-:param bpp: 各像素位元組數。 對於 micro:bit V2 RGBW neopixel 支持，傳遞 4 而不是 RGB 和 GRB 的預設值 3。"""
+:param bpp: 各像素位元組數。對於 micro:bit V2 RGBW neopixel 支援，傳遞 4 而不是 RGB 和 GRB 的預設值 3。"""
         ...
 
     def clear(self) -> None:

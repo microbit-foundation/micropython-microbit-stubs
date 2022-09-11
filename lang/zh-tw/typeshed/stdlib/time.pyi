@@ -74,7 +74,7 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: (tick 1) 要減去的值
+:param ticks1: (tick 1) 要被減的值
 :param ticks2: (tick 2) 要減去的值
 
 The argument order is the same as for subtraction operator,

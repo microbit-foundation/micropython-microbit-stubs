@@ -10,11 +10,11 @@ Example: ``spi.init()``
 For correct communication, the parameters have to be the same on both communicating devices.
 
 :param baudrate: 通訊速度。
-:param bits: 每次傳輸的位元寬度。目前僅支持 ``bits=8``。 但是，這種情況在未來可能會改變。
+:param bits: 每次傳輸的位元寬度。目前僅支援 ``bits=8``。然而，這種情況在未來可能會改變。
 :param mode: 確定時脈極性和相位的組合 - 請見線上表格 <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_。
-:param sclk: sclk pin (default 13)
-:param mosi: mosi pin (default 15)
-:param miso: miso pin (default 14)"""
+:param sclk: sclk 引腳 (預設 13)
+:param mosi: mosi 引腳 (預設 15)
+:param miso: miso 引腳 (預設 14)"""
     ...
 
 def read(nbytes: int) -> bytes:

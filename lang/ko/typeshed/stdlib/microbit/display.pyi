@@ -36,7 +36,7 @@ Example: ``display.show(Image.HEART)``
 When ``image`` is an image or a list of images then each image is displayed in turn.
 If ``image`` is a string or number, each letter or digit is displayed in turn.
 
-:param image: 표시할 문자열, 숫자, 이미지 또는 이미지 리스트입니다.
+:param image: 표시할 문자열, 숫자, 이미지 또는 이미지 목록입니다.
 :param delay: ``delay``밀리초의 지연 시간을 두고 각 글자, 숫자 또는 이미지가 표시됩니다.
 :param wait: ``wait``가 ``True``인 경우 이 기능은 애니메이션이 종료될 때까지 차단됩니다. 그렇지 않은 경우 애니메이션이 백그라운드에서 재생됩니다.
 :param loop: ``loop``가 ``True``인 경우 애니메이션이 무한 반복됩니다.

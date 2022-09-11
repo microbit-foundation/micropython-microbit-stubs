@@ -47,7 +47,7 @@ If ``config`` is not called then the defaults described above are assumed."""
     ...
 
 def reset() -> None:
-    """將設定重置為其預設值。
+    """將設定重設為其預設值。
 
 Example: ``radio.reset()``
 
@@ -55,11 +55,11 @@ The defaults as as per the ``config`` function above."""
     ...
 
 def send_bytes(message: bytes) -> None:
-    """發送包含位元組的訊息。
+    """傳送包含位元組的訊息。
 
 Example: ``radio.send_bytes(b'hello')``
 
-:param message: 要發送的位元組。"""
+:param message: 要傳送的位元組。"""
     ...
 
 def receive_bytes() -> Optional[bytes]:
@@ -80,18 +80,18 @@ Example: ``radio.receive_bytes_info(buffer)``
     ...
 
 def send(message: str) -> None:
-    """發送訊息字串。
+    """傳送訊息字串。
 
 Example: ``radio.send('hello')``
 
 This is the equivalent of ``radio.send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
 prepended to the front (to make it compatible with other platforms that target the micro:bit).
 
-:param message: 要發送的字串。"""
+:param message: 要傳送的字串。"""
     ...
 
 def receive() -> Optional[str]:
-    """工作方式與 ``receive_bytes`` 完全相同，但會傳回發送的任何內容。
+    """工作方式與 ``receive_bytes`` 完全相同，但會傳回傳送的任何內容。
 
 Example: ``radio.receive()``
 
@@ -105,7 +105,7 @@ A ``ValueError`` exception is raised if conversion to string fails."""
     ...
 
 def receive_full() -> Optional[Tuple[bytes, int, int]]:
-    """工作方式與 ``receive_bytes`` 完全相同，但會傳回發送的任何內容。
+    """傳回一個包含三個數值的元組，用來代表訊息佇列中的下一則傳入訊息。
 
 Example: ``radio.receive_full()``
 

@@ -48,7 +48,7 @@ Example: ``random.randrange(0, 10)``
 
 :param start: 범위 시작(경계값 포함)
 :param stop: 범위 끝(경계값 제외)
-:param step: 단계입니다."""
+:param step: 걸음 수입니다."""
     ...
 _T = TypeVar('_T')
 

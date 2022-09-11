@@ -7,9 +7,9 @@ def play(source: Union[Iterable[AudioFrame], Sound], wait: bool=True, pin: Micro
 
 Example: ``audio.play(Sound.GIGGLE)``
 
-:param source: 內建 ``Sound`` 例如 ``Sound.GIGGLE`` 或作為 ``AudioFrame`` 對象的可迭代樣本資料。
+:param source: 內建 ``Sound``，例如 ``Sound.GIGGLE``，或做為 ``AudioFrame`` 對象的可迭代樣本資料。
 :param wait: 如果 ``wait`` 為 ``True``，此函式將會封鎖，直到聲音完成。
-:param pin: (引腳) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。如果我們不想播放任何聲音，我們可以使用 ``pin=None``。
+:param pin: (引腳) 指定輸出引腳的可選引數，可用於覆寫預設值 ``pin0``。如果我們不想播放任何聲音，我們可以使用 ``pin=None``。
 :param return_pin: 指定差分邊緣連接器引腳，以連接到外部揚聲器而不是接地。在 **V2** 修訂版中，這將會被忽略。"""
 
 def is_playing() -> bool:

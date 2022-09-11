@@ -70,7 +70,7 @@ def mem_info(verbose: Any=None) -> None:
 
 Example: ``micropython.mem_info()``
 
-:param verbose: 如果給出 ``verbose`` 引數，則輸出額外資訊。"""
+:param verbose: 如果給出 ``verbose`` 引數，則會輸出額外資訊。"""
     ...
 
 def qstr_info(verbose: Any=None) -> None:
@@ -115,7 +115,7 @@ raised if any heap allocation is attempted."""
     ...
 
 def kbd_intr(chr: int) -> None:
-    """設定將觸發 ``KeyboardInterrupt`` 異常的字元。
+    """設定將觸發 ``KeyboardInterrupt`` 例外狀況的字元。
 
 Example: ``micropython.kbd_intr(-1)``
 

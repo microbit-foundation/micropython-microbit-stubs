@@ -45,7 +45,7 @@ class uname_result(Tuple[str, str, str, str, str]):
     """硬體識別碼。"""
 
 def uname() -> uname_result:
-    """傳回標識目前作業系統的資訊。
+    """傳回識別目前作業系統的資訊。
 
 Example: ``os.uname()``
 

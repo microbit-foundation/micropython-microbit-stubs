@@ -13,11 +13,11 @@ value given as an argument to ``SystemExit``.
     ...
 
 def print_exception(exc: Exception) -> None:
-    """輸出帶有回溯的異常。
+    """輸出帶有回溯的例外狀況。
 
 Example: ``sys.print_exception(e)``
 
-:param exc: 輸出異常
+:param exc: 輸出例外狀況
 
 This is simplified version of a function which appears in the
 ``traceback`` module in CPython."""
@@ -84,9 +84,9 @@ If you need to check whether your program runs on MicroPython (vs other
 Python implementation), use ``sys.implementation`` instead.
 """
 version: str
-"""此執行符合的 Python 語言版本，作為字串。"""
+"""此執行符合的 Python 語言版本，做為字串。"""
 version_info: Tuple[int, int, int]
-"""此執行符合的 Python 語言版本，作為整數元組。
+"""此執行符合的 Python 語言版本，做為整數元組。
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.
