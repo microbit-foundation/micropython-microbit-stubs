@@ -1,4 +1,4 @@
-"""Pines, imágenes, sonidos, temperatura y volumen. (microbit)"""
+"""Pines, imágenes, sonidos, temperatura y volumen."""
 from _typeshed import ReadableBuffer
 from typing import Any, Callable, List, Optional, overload
 from . import accelerometer as accelerometer
@@ -28,19 +28,19 @@ or used as a decorator::
 
 Arguments with different time units are additive.
 
-:param callback: (callback) La función "callback" (devolución de llamada) que se llama; omitir si se usa en un patrón "Decorator"
+:param callback: La función "callback" (devolución de llamada) que se llama; omitir si se usa en un patrón "Decorator"
 :param days: (días) El intervalo en días.
-:param h: (h) El intervalo en horas.
-:param min: (min) El intervalo en minutos.
-:param s: (s) El intervalo en segundos.
-:param ms: (ms) El intervalo en milisegundos."""
+:param h: El intervalo en horas.
+:param min: El intervalo en minutos.
+:param s: El intervalo en segundos.
+:param ms: El intervalo en milisegundos."""
 
 def panic(n: int) -> None:
     """Entra en modo pánico (pánico)
 
 Example: ``panic(127)``
 
-:param n: (n) Un entero arbitrario <= 255 para indicar un estado.
+:param n: Un entero arbitrario <= 255 para indicar un estado.
 
 Requires restart."""
 
@@ -52,7 +52,7 @@ def sleep(n: float) -> None:
 
 Example: ``sleep(1000)``
 
-:param n: (n) El número de milisegundos a esperar
+:param n: El número de milisegundos a esperar
 
 One second is 1000 milliseconds, so::
 
@@ -73,7 +73,7 @@ def set_volume(v: int) -> None:
 
 Example: ``set_volume(127)``
 
-:param v: (v) un valor entre 0 (bajo) y 255 (alto).
+:param v: un valor entre 0 (bajo) y 255 (alto).
 
 Out of range values will be clamped to 0 or 255.
 
@@ -235,43 +235,43 @@ The default touch mode for the pins on the edge connector is
 :param value: (valor) ``CAPACITIVE`` o ``RESISTIVE`` del pin correspondiente."""
         ...
 pin0: MicroBitTouchPin
-"""Pin con funciones digitales, analógicas y táctiles. (pin0)"""
+"""Pin con funciones digitales, analógicas y táctiles."""
 pin1: MicroBitTouchPin
-"""Pin con funciones digitales, analógicas y táctiles. (pin1)"""
+"""Pin con funciones digitales, analógicas y táctiles."""
 pin2: MicroBitTouchPin
-"""Pin con funciones digitales, analógicas y táctiles. (pin2)"""
+"""Pin con funciones digitales, analógicas y táctiles."""
 pin3: MicroBitAnalogDigitalPin
-"""Pin con funciones digitales y analógicas. (pin3)"""
+"""Pin con funciones digitales y analógicas."""
 pin4: MicroBitAnalogDigitalPin
-"""Pin con funciones digitales y analógicas. (pin4)"""
+"""Pin con funciones digitales y analógicas."""
 pin5: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin5)"""
+"""Pin con funciones digitales."""
 pin6: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin6)"""
+"""Pin con funciones digitales."""
 pin7: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin7)"""
+"""Pin con funciones digitales."""
 pin8: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin8)"""
+"""Pin con funciones digitales."""
 pin9: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin9)"""
+"""Pin con funciones digitales."""
 pin10: MicroBitAnalogDigitalPin
-"""Pin con funciones digitales y analógicas. (pin10)"""
+"""Pin con funciones digitales y analógicas."""
 pin11: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin11)"""
+"""Pin con funciones digitales."""
 pin12: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin12)"""
+"""Pin con funciones digitales."""
 pin13: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin13)"""
+"""Pin con funciones digitales."""
 pin14: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin14)"""
+"""Pin con funciones digitales."""
 pin15: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin15)"""
+"""Pin con funciones digitales."""
 pin16: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin16)"""
+"""Pin con funciones digitales."""
 pin19: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin19)"""
+"""Pin con funciones digitales."""
 pin20: MicroBitDigitalPin
-"""Pin con funciones digitales. (pin20)"""
+"""Pin con funciones digitales."""
 pin_logo: MicroBitTouchPin
 """Un pin táctil sensible en la parte frontal del micro:bit que por defecto está configurado en modo táctil capacitivo. (pin de logo)"""
 pin_speaker: MicroBitAnalogDigitalPin
@@ -313,7 +313,7 @@ Given an image object it's possible to display it via the ``display`` API::
     YES: Image
     """Imagen de verificación. (sí)"""
     NO: Image
-    """Imagen de cruz. (no)"""
+    """Imagen de cruz."""
     CLOCK12: Image
     """Imagen de una línea apuntando a las 12:00. (reloj12)"""
     CLOCK11: Image
@@ -383,7 +383,7 @@ Given an image object it's possible to display it via the ``display`` API::
     XMAS: Image
     """Imagen de un árbol de Navidad. (navidad)"""
     PACMAN: Image
-    """Imagen del personaje de videojuegos Pac-Man. (pacman)"""
+    """Imagen del personaje de videojuegos Pac-Man."""
     TARGET: Image
     """Imagen de un objetivo. (diana)"""
     TSHIRT: Image
@@ -419,7 +419,7 @@ Given an image object it's possible to display it via the ``display`` API::
 
     @overload
     def __init__(self, string: str) -> None:
-        """Crea una imagen a partir de una cadena que describe los LED que están encendidos. (init)
+        """Crea una imagen a partir de una cadena que describe los LED que están encendidos.
 
 ``string`` has to consist of digits 0-9 arranged into lines,
 describing the image, for example::
@@ -438,7 +438,7 @@ colon. It's also possible to use newlines (\\n) insead of the colons.
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """Crea una imagen vacía con ``width`` columnas y ``height`` filas. (init)
+        """Crea una imagen vacía con ``width`` columnas y ``height`` filas.
 
 :param width: (ancho) Ancho opcional de la imagen
 :param height: (altura) Altura opcional de la imagen
@@ -469,8 +469,8 @@ These create 2 x 2 pixel images at full brightness."""
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: (x) El número de columna
-:param y: (y) El número de fila
+:param x: El número de columna
+:param y: El número de fila
 :param value: (valor) El brillo expresado como un entero entre 0 (oscuro) y 9 (brillante)
 
 This method will raise an exception when called on any of the built-in
@@ -482,8 +482,8 @@ read-only images, like ``Image.HEART``."""
 
 Example: ``my_image.get_pixel(0, 0)``
 
-:param x: (x) El número de columna
-:param y: (y) El número de fila
+:param x: El número de columna
+:param y: El número de fila
 :return: The brightness as an integer between 0 and 9."""
         ...
 
@@ -492,7 +492,7 @@ Example: ``my_image.get_pixel(0, 0)``
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: (n) El número de columnas a desplazar
+:param n: El número de columnas a desplazar
 :return: The shifted image"""
         ...
 
@@ -501,7 +501,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: (n) El número de columnas a desplazar
+:param n: El número de columnas a desplazar
 :return: The shifted image"""
         ...
 
@@ -510,7 +510,7 @@ Example: ``Image.HEART_SMALL.shift_right(1)``
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: (n) El número de filas a desplazar
+:param n: El número de filas a desplazar
 :return: The shifted image"""
         ...
 
@@ -519,7 +519,7 @@ Example: ``Image.HEART_SMALL.shift_up(1)``
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: (n) El número de filas a desplazar
+:param n: El número de filas a desplazar
 :return: The shifted image"""
         ...
 
@@ -528,10 +528,10 @@ Example: ``Image.HEART_SMALL.shift_down(1)``
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: (x) La columna de desplazamiento del recorte
-:param y: (y) La fila de desplazamiento del recorte
+:param x: La columna de desplazamiento del recorte
+:param y: La fila de desplazamiento del recorte
 :param w: (a) El ancho del recorte
-:param h: (h) La altura del recorte
+:param h: La altura del recorte
 :return: The new image"""
         ...
 
@@ -564,17 +564,17 @@ read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """Copia un área de otra imagen en esta imagen. (blit)
+        """Copia un área de otra imagen en esta imagen.
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
 :param src: (org) La imagen de origen
-:param x: (x) El desplazamiento de columna inicial en la imagen de origen
-:param y: (y) El desplazamiento de fila inicial en la imagen de origen
+:param x: El desplazamiento de columna inicial en la imagen de origen
+:param y: El desplazamiento de fila inicial en la imagen de origen
 :param w: (a) El número de columnas a copiar
-:param h: (h) El número de filas a copiar
-:param xdest: (xdest) El desplazamiento de columna a modificar en esta imagen
-:param ydest: (ydest) El desplazamiento de fila a modificar en esta imagen
+:param h: El número de filas a copiar
+:param xdest: El desplazamiento de columna a modificar en esta imagen
+:param ydest: El desplazamiento de fila a modificar en esta imagen
 
 Pixels outside the source image are treated as having a brightness of 0.
 
@@ -590,7 +590,7 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """Obtiene una representación en cadena compacta de la imagen. (repr)"""
+        """Obtiene una representación en cadena compacta de la imagen."""
         ...
 
     def __str__(self) -> str:
@@ -615,19 +615,19 @@ Example: ``Image.HEART - Image.HEART_SMALL``
         ...
 
     def __mul__(self, n: float) -> Image:
-        """Crea una nueva imagen multiplicando el brillo de cada píxel por ``n``. (mul)
+        """Crea una nueva imagen multiplicando el brillo de cada píxel por ``n``.
 
 Example: ``Image.HEART * 0.5``
 
-:param n: (n) El valor por el que multiplicar."""
+:param n: El valor por el que multiplicar."""
         ...
 
     def __truediv__(self, n: float) -> Image:
-        """Crea una nueva imagen dividiendo el brillo de cada píxel entre ``n``. (truediv)
+        """Crea una nueva imagen dividiendo el brillo de cada píxel entre ``n``.
 
 Example: ``Image.HEART / 2``
 
-:param n: (n) El valor entre el que dividir."""
+:param n: El valor entre el que dividir."""
         ...
 
 class SoundEvent:

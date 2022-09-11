@@ -54,14 +54,14 @@ function first waits until the pin input becomes equal to
 ``pulse_level``. If the pin is already equal to ``pulse_level`` then timing
 starts straight away.
 
-:param pin: (pin) Pin a usar
+:param pin: Pin a usar
 :param pulse_level: (nivel de estado) 0 para cronometrar un estado bajo o 1 para un estado alto
 :param timeout_us: (tiempo de espera us) Tiempo de espera en microsegundos
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
 
 class mem:
-    """Clase para las vistas de memoria ``mem8``, ``mem16`` y ``mem32``. (mem)"""
+    """Clase para las vistas de memoria ``mem8``, ``mem16`` y ``mem32``."""
 
     def __getitem__(self, address: int) -> int:
         """Accede a un valor de la memoria. (obtener elemento)
@@ -77,8 +77,8 @@ class mem:
 :param value: (valor) El valor entero a establecer."""
         ...
 mem8: mem
-"""Vista de memoria de 8 bits (byte). (mem8)"""
+"""Vista de memoria de 8 bits (byte)."""
 mem16: mem
-"""Vista de memoria de 16 bits. (mem16)"""
+"""Vista de memoria de 16 bits."""
 mem32: mem
-"""Vista de memoria de 32 bits. (mem32)"""
+"""Vista de memoria de 32 bits."""

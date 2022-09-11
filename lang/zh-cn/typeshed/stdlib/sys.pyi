@@ -13,8 +13,7 @@ value given as an argument to ``SystemExit``.
     ...
 
 def print_exception(exc: Exception) -> None:
-    """
-打印带有回溯的异常。 (打印异常)
+    """打印带有回溯的异常。 (打印异常)
 
 Example: ``sys.print_exception(e)``
 
@@ -31,7 +30,7 @@ class _implementation:
     name: str
     version: Tuple[int, int, int]
 implementation: _implementation
-"""包含有关当前 Python 实现的信息的对象。 (implementation)
+"""包含有关当前 Python 实现的信息的对象。
 
 For MicroPython, it has following attributes:
 
@@ -46,7 +45,8 @@ CPython mandates more attributes for this object, but the actual useful
 bare minimum is implemented in MicroPython.
 """
 maxsize: int
-"""在当前平台上可以容纳的整数类型的最大值，
+"""
+在当前平台上可以容纳的整数类型的最大值，
 或 MicroPython 整数类型可表示的最大值，如果它小于
 平台的最大值（这见于 MicroPython 端口不支持长整数的情况）。 (最大值)
 
@@ -69,13 +69,13 @@ value directly, but instead count number of bits in it::
         # "> 32", "> 64" style of comparisons.
 """
 modules: Dict[str, Any]
-"""已加载模块的字典。  (模块)
+"""已加载模块的字典。 (模块) 
 
 On some ports, it may not include builtin modules."""
 path: List[str]
 """用于搜索导入模块的目录的可变列表。 (路径)"""
 platform: str
-"""正在运行 MicroPython 的平台。 (平台)
+"""正在运行 MicroPython 的平台。 (平台) 
 
 For OS/RTOS ports, this is usually an identifier of the OS, e.g. ``"linux"``.
 For baremetal ports it is an identifier of a board, e.g. ``"pyboard"`` for 

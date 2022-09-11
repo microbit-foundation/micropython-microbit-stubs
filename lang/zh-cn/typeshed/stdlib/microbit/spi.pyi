@@ -3,7 +3,7 @@ from _typeshed import ReadableBuffer, WriteableBuffer
 from ..microbit import pin13, pin14, pin15, MicroBitDigitalPin
 
 def init(baudrate: int=1000000, bits: int=8, mode: int=0, sclk: MicroBitDigitalPin=pin13, mosi: MicroBitDigitalPin=pin15, miso: MicroBitDigitalPin=pin14) -> None:
-    """初始化串行外设接口（SPI ）通信。 (init)
+    """初始化串行外设接口（SPI ）通信。
 
 Example: ``spi.init()``
 

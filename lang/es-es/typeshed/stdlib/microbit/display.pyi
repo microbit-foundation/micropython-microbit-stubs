@@ -7,8 +7,8 @@ def get_pixel(x: int, y: int) -> int:
 
 Example: ``display.get_pixel(0, 0)``
 
-:param x: (x) La columna de la pantalla (0..4)
-:param y: (y) La fila de la pantalla (0..4)
+:param x: La columna de la pantalla (0..4)
+:param y: La fila de la pantalla (0..4)
 :return: A number between 0 (off) and 9 (bright)"""
     ...
 
@@ -17,8 +17,8 @@ def set_pixel(x: int, y: int, value: int) -> None:
 
 Example: ``display.set_pixel(0, 0, 9)``
 
-:param x: (x) La columna de la pantalla (0..4)
-:param y: (y) La fila de la pantalla (0..4)
+:param x: La columna de la pantalla (0..4)
+:param y: La fila de la pantalla (0..4)
 :param value: (valor) El brillo entre 0 (apagado) y 9 (brillante)"""
     ...
 
@@ -54,7 +54,7 @@ Example: ``display.scroll('micro:bit')``
 :param delay: (retardo) El parámetro ``delay`` controla la velocidad de desplazamiento del texto.
 :param wait: (esperar) Si ``wait`` es ``True`` (verdadero), la función se bloqueará hasta que finalice la animación; de lo contrario, la animación se ejecutará en segundo plano.
 :param loop: (bucle) Si ``loop`` es ``True`` (verdadero), la animación se repetirá para siempre.
-:param monospace: (monospace) Si ``monospace`` es ``True`` (verdadero), todos los caracteres ocuparán columnas de 5 píxeles de ancho; de lo contrario, habrá exactamente 1 columna de píxeles vacíos entre cada carácter a medida que se desplazan.
+:param monospace: Si ``monospace`` es ``True`` (verdadero), todos los caracteres ocuparán columnas de 5 píxeles de ancho; de lo contrario, habrá exactamente 1 columna de píxeles vacíos entre cada carácter a medida que se desplazan.
 
 The ``wait``, ``loop`` and ``monospace`` arguments must be specified
 using their keyword."""

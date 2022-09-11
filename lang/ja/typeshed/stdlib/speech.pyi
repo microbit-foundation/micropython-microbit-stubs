@@ -1,13 +1,13 @@
-"""micro:bit に話させたり、歌わせたり、その他の音声のようなサウンドを作らせたりします。 (speech)"""
+"""micro:bit に話させたり、歌わせたり、その他の音声のようなサウンドを作らせたりします。"""
 from typing import Optional
 from .microbit import MicroBitDigitalPin, pin0
 
 def translate(words: str) -> str:
-    """英単語の並びを音素に変換します。 (translate)
+    """英単語の並びを音素に変換します。
 
 Example: ``speech.translate('hello world')``
 
-:param words: (words) 英単語の並びの文字列。
+:param words: 英単語の並びの文字列。
 :return: A string containing a best guess at the appropriate phonemes to pronounce.
 The output is generated from this `text to phoneme translation table <https://github.com/s-macke/SAM/wiki/Text-to-phoneme-translation-table>`_.
 
@@ -19,15 +19,15 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def pronounce(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: Optional[MicroBitDigitalPin]=pin0) -> None:
-    """音素を発声します。 (pronounce)
+    """音素を発声します。
 
 Example: ``speech.pronounce(' /HEHLOW WERLD')``
 
-:param phonemes: (phonemes) 発音する音素の文字列
-:param pitch: (pitch) 音声の音高を表す数値
-:param speed: (speed) 音声の速度を表す数値
-:param mouth: (mouth) 音声の口の動きを表す数値
-:param throat: (throat) 音声の喉の動きを表す数値
+:param phonemes: 発音する音素の文字列
+:param pitch: 音声の音高を表す数値
+:param speed: 音声の速度を表す数値
+:param mouth: 音声の口の動きを表す数値
+:param throat: 音声の喉の動きを表す数値
 :param pin: (ピン) 出力端子をデフォルトの ``pin0`` から変えるためのオプション引数。
 音を鳴らしたくない場合は ``pin=None`` を指定します。micro:bit V2 のみで使えます。
 
@@ -38,15 +38,15 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: MicroBitDigitalPin=pin0) -> None:
-    """英単語の並びを発声します。 (say)
+    """英単語の並びを発声します。
 
 Example: ``speech.say('hello world')``
 
-:param words: (words) 発声する言葉の文字列。
-:param pitch: (pitch) 音声の音高を表す数値
-:param speed: (speed) 音声の速度を表す数値
-:param mouth: (mouth) 音声の口の動きを表す数値
-:param throat: (throat) 音声の喉の動きを表す数値
+:param words: 発声する言葉の文字列。
+:param pitch: 音声の音高を表す数値
+:param speed: 音声の速度を表す数値
+:param mouth: 音声の口の動きを表す数値
+:param throat: 音声の喉の動きを表す数値
 :param pin: (ピン) 出力端子をデフォルトの ``pin0`` から変えるためのオプション引数。
 音を鳴らしたくない場合は ``pin=None`` を指定します。micro:bit V2 のみで使えます。
 
@@ -60,15 +60,15 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: MicroBitDigitalPin=pin0) -> None:
-    """音素を歌います。 (sing)
+    """音素を歌います。
 
 Example: ``speech.sing(' /HEHLOW WERLD')``
 
-:param phonemes: (phonemes) 歌う言葉の文字列。
-:param pitch: (pitch) 音声の音高を表す数値
-:param speed: (speed) 音声の速度を表す数値
-:param mouth: (mouth) 音声の口の動きを表す数値
-:param throat: (throat) 音声の喉の動きを表す数値
+:param phonemes: 歌う言葉の文字列。
+:param pitch: 音声の音高を表す数値
+:param speed: 音声の速度を表す数値
+:param mouth: 音声の口の動きを表す数値
+:param throat: 音声の喉の動きを表す数値
 :param pin: (ピン) 出力端子をデフォルトの ``pin0`` から変えるためのオプション引数。
 音を鳴らしたくない場合は ``pin=None`` を指定します。micro:bit V2 のみで使えます。
 

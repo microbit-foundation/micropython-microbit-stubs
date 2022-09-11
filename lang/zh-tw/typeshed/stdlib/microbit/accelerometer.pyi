@@ -1,8 +1,8 @@
-"""測量 micro:bit 的加速度並識別手勢。 (accelerometer)"""
+"""測量 micro:bit 的加速度並識別手勢。"""
 from typing import Tuple
 
 def get_x() -> int:
-    """取得 ``x`` 軸上的加速度測量值 (以毫克為單位)。 (get x)
+    """取得 ``x`` 軸上的加速度測量值 (以毫克為單位)。
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """取得 ``y`` 軸上的加速度測量值 (以毫克為單位)。 (get y)
+    """取得 ``y`` 軸上的加速度測量值 (以毫克為單位)。
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """取得 ``z`` 軸上的加速度測量值 (以毫克為單位)。 (get z)
+    """取得 ``z`` 軸上的加速度測量值 (以毫克為單位)。
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """一次取得所有軸上的加速度測量值作為元組。 (get values)
+    """一次取得所有軸上的加速度測量值作為元組。
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """取得目前手勢的名稱。 (current gesture)
+    """取得目前手勢的名稱。
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """檢查命名的手勢目前是否處於活動狀態。 (is gesture)
+    """檢查命名的手勢目前是否處於活動狀態。
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -56,12 +56,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) 手勢名稱
+:param name: 手勢名稱
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """檢查命名手勢自上次通話後是否處於活動狀態。 (was gesture)
+    """檢查命名手勢自上次通話後是否處於活動狀態。
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,11 +70,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) 手勢名稱
+:param name: 手勢名稱
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """傳回手勢歷史紀錄的元組。 (get gestures)
+    """傳回手勢歷史紀錄的元組。
 
 Example: ``accelerometer.get_gestures()``
 

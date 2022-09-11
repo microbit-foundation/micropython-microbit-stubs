@@ -4,11 +4,11 @@ from ..microbit import MicroBitDigitalPin, pin19, pin20
 from typing import List
 
 def init(freq: int=100000, sda: MicroBitDigitalPin=pin20, scl: MicroBitDigitalPin=pin19) -> None:
-    """重新初始化外设。 (init)
+    """重新初始化外设。
 
 Example: ``i2c.init()``
 
-:param freq: (freq) 时钟频率
+:param freq: 时钟频率
 :param sda: (SDA引脚) ``sda`` 引脚(默认 20)
 :param scl: (SCL引脚) ``scl`` 引脚(默认 19)
 
@@ -33,8 +33,8 @@ def read(addr: int, n: int, repeat: bool=False) -> bytes:
 Example: ``i2c.read(0x50, 64)``
 
 :param addr: (地址) 设备的 7 位地址
-:param n: (n) 要读取的字节数
-:param repeat: (repeat) 如果为 ``True``，则不发送停止位
+:param n: 要读取的字节数
+:param repeat: 如果为 ``True``，则不发送停止位
 :return: The bytes read"""
     ...
 
@@ -45,5 +45,5 @@ Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
 :param addr: (地址) 设备的 7 位地址
 :param buf: (缓冲区) 包含要写入的字节的缓冲区
-:param repeat: (repeat) 如果为 ``True``，则不发送停止位"""
+:param repeat: 如果为 ``True``，则不发送停止位"""
     ...

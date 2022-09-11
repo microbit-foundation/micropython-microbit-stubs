@@ -1,4 +1,4 @@
-"""직렬 주변 장치 인터페이스(SPI) 버스를 사용해 장치와 통신합니다. (spi)"""
+"""직렬 주변 장치 인터페이스(SPI) 버스를 사용해 장치와 통신합니다."""
 from _typeshed import ReadableBuffer, WriteableBuffer
 from ..microbit import pin13, pin14, pin15, MicroBitDigitalPin
 
@@ -9,38 +9,38 @@ Example: ``spi.init()``
 
 For correct communication, the parameters have to be the same on both communicating devices.
 
-:param baudrate: (baudrate) 통신 속도입니다.
-:param bits: (bits) 각 전송의 비트의 너비입니다. 현재 ``bits=8``만 지원되나 향후 변경될 수 있습니다.
-:param mode: (mode) 클럭 극성과 페이즈의 조합을 결정합니다. 온라인 테이블을 참조하세요 <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_.
-:param sclk: (sclk) sclk 핀(기본값 13)
-:param mosi: (mosi) mosi 핀(기본값 15)
-:param miso: (miso) miso 핀(기본값 14)"""
+:param baudrate: 통신 속도입니다.
+:param bits: 각 전송의 비트의 너비입니다. 현재 ``bits=8``만 지원되나 향후 변경될 수 있습니다.
+:param mode: 클럭 극성과 페이즈의 조합을 결정합니다. 온라인 테이블을 참조하세요 <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_.
+:param sclk: sclk 핀(기본값 13)
+:param mosi: mosi 핀(기본값 15)
+:param miso: miso 핀(기본값 14)"""
     ...
 
 def read(nbytes: int) -> bytes:
-    """바이트를 읽습니다. (read)
+    """바이트를 읽습니다.
 
 Example: ``spi.read(64)``
 
-:param nbytes: (nbytes) 읽을 바이트의 최대 수입니다.
+:param nbytes: 읽을 바이트의 최대 수입니다.
 :return: The bytes read."""
     ...
 
 def write(buffer: ReadableBuffer) -> None:
-    """버스에 바이트를 작성합니다. (write)
+    """버스에 바이트를 작성합니다.
 
 Example: ``spi.write(bytes([1, 2, 3]))``
 
-:param buffer: (buffer) 데이터를 읽을 버퍼입니다."""
+:param buffer: 데이터를 읽을 버퍼입니다."""
     ...
 
 def write_readinto(out: WriteableBuffer, in_: ReadableBuffer) -> None:
-    """버스에 ``out`` 버퍼를 작성하고 발생하는 ``in_`` 버퍼의 모든 응답을 읽습니다. (write readinto)
+    """버스에 ``out`` 버퍼를 작성하고 발생하는 ``in_`` 버퍼의 모든 응답을 읽습니다.
 
 Example: ``spi.write_readinto(out_buffer, in_buffer)``
 
 The length of the buffers should be the same. The buffers can be the same object.
 
-:param out: (out) 응답을 작성할 버퍼입니다.
-:param in_: (in) 데이터를 읽을 버퍼입니다."""
+:param out: 응답을 작성할 버퍼입니다.
+:param in_: 데이터를 읽을 버퍼입니다."""
     ...

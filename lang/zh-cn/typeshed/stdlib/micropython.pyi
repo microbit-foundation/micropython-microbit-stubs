@@ -66,7 +66,7 @@ The default optimisation level is usually level 0.
     ...
 
 def mem_info(verbose: Any=None) -> None:
-    """打印与当前使用内存相关的信息。 (mem info)
+    """打印与当前使用内存相关的信息。
 
 Example: ``micropython.mem_info()``
 

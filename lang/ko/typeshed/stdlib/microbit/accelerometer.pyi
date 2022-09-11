@@ -1,8 +1,8 @@
-"""micro:bit의 가속도를 측정하고 제스쳐를 인식합니다. (accelerometer)"""
+"""micro:bit의 가속도를 측정하고 제스쳐를 인식합니다."""
 from typing import Tuple
 
 def get_x() -> int:
-    """``x`` 축의 가속도 측정값을 milli-g로 불러옵니다. (get x)
+    """``x`` 축의 가속도 측정값을 milli-g로 불러옵니다.
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """``y`` 축의 가속도 측정값을 milli-g로 불러옵니다. (get y)
+    """``y`` 축의 가속도 측정값을 milli-g로 불러옵니다.
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """``z`` 축의 가속도 측정값을 milli-g로 불러옵니다. (get z)
+    """``z`` 축의 가속도 측정값을 milli-g로 불러옵니다.
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """한 번에 모든 축의 가속도 측정값을 튜플로 불러옵니다. (get values)
+    """한 번에 모든 축의 가속도 측정값을 튜플로 불러옵니다.
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """현재 제스처의 이름을 불러옵니다. (current gesture)
+    """현재 제스처의 이름을 불러옵니다.
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """해당 이름의 제스처가 현재 활성화 상태인지 확인합니다. (is gesture)
+    """해당 이름의 제스처가 현재 활성화 상태인지 확인합니다.
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -56,12 +56,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) 제스쳐 이름.
+:param name: 제스쳐 이름.
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """해당 이름의 제스처가 마지막 호출 이후로 활성화된 적이 있는지 확인합니다. (was gesture)
+    """해당 이름의 제스처가 마지막 호출 이후로 활성화된 적이 있는지 확인합니다.
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,11 +70,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) 제스처 이름입니다.
+:param name: 제스처 이름입니다.
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """제스처 기록의 튜플을 반환합니다. (get gestures)
+    """제스처 기록의 튜플을 반환합니다.
 
 Example: ``accelerometer.get_gestures()``
 

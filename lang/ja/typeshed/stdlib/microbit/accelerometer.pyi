@@ -1,8 +1,8 @@
-"""micro:bitの加速度測定とジェスチャー認識をします。 (accelerometer)"""
+"""micro:bitの加速度測定とジェスチャー認識をします。"""
 from typing import Tuple
 
 def get_x() -> int:
-    """``x`` 軸の加速度測定値をミリg単位で取得します。 (get x)
+    """``x`` 軸の加速度測定値をミリg単位で取得します。
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """``y`` 軸の加速度測定値をミリg単位で取得します。 (get y)
+    """``y`` 軸の加速度測定値をミリg単位で取得します。
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """``z`` 軸の加速度測定値をミリg単位で取得します。 (get z)
+    """``z`` 軸の加速度測定値をミリg単位で取得します。
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """すべての軸の加速度測定値をタプルとして一度に取得します。 (get values)
+    """すべての軸の加速度測定値をタプルとして一度に取得します。
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """現在のジェスチャーの名前を取得します。 (current gesture)
+    """現在のジェスチャーの名前を取得します。
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """指定した名前のジェスチャーが現在アクティブであるかどうかを確認します。 (is gesture)
+    """指定した名前のジェスチャーが現在アクティブであるかどうかを確認します。
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -56,12 +56,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) ジェスチャー名。
+:param name: ジェスチャー名。
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """直前の呼び出し以降に、指定した名前のジェスチャーがアクティブになったかどうかを確認します。 (was gesture)
+    """直前の呼び出し以降に、指定した名前のジェスチャーがアクティブになったかどうかを確認します。
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,11 +70,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) ジェスチャー名。
+:param name: ジェスチャー名。
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """ジェスチャー履歴のタプルを返します。 (get gestures)
+    """ジェスチャー履歴のタプルを返します。
 
 Example: ``accelerometer.get_gestures()``
 

@@ -28,7 +28,7 @@ Example: ``speech.pronounce(' /HEHLOW WERLD')``
 :param speed: (velocidad) Un número que representa la velocidad de la voz
 :param mouth: (boca) Un número que representa la boca de la voz
 :param throat: (garganta) Un número que representa la garganta de la voz
-:param pin: (pin) Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
+:param pin: Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
 Si no queremos que se reproduzca ningún sonido, podemos usar ``pin=None``. Solo para el micro:bit V2.
 
 Override the optional pitch, speed, mouth and throat settings to change the
@@ -47,7 +47,7 @@ Example: ``speech.say('hello world')``
 :param speed: (velocidad) Un número que representa la velocidad de la voz
 :param mouth: (boca) Un número que representa la boca de la voz
 :param throat: (garganta) Un número que representa la garganta de la voz
-:param pin: (pin) Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
+:param pin: Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
 Si no queremos que se reproduzca ningún sonido, podemos usar ``pin=None``. Solo para el micro:bit V2.
 
 The result is semi-accurate for English. Override the optional pitch, speed,
@@ -69,7 +69,7 @@ Example: ``speech.sing(' /HEHLOW WERLD')``
 :param speed: (velocidad) Un número que representa la velocidad de la voz
 :param mouth: (boca) Un número que representa la boca de la voz
 :param throat: (garganta) Un número que representa la garganta de la voz
-:param pin: (pin) Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
+:param pin: Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``.
 Si no queremos que se reproduzca ningún sonido, podemos usar ``pin=None``. Solo para el micro:bit V2.
 
 Override the optional pitch, speed, mouth and throat settings to change

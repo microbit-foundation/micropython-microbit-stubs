@@ -1,9 +1,9 @@
-"""使用内置麦克风响应声音（仅限 V2）。 (microphone)"""
+"""使用内置麦克风响应声音（仅限 V2）。"""
 from typing import Optional, Tuple
 from ..microbit import SoundEvent
 
 def current_event() -> Optional[SoundEvent]:
-    """获取最后录制的声音事件 (current event)
+    """获取最后录制的声音事件
 
 Example: ``microphone.current_event()``
 
@@ -33,7 +33,7 @@ This call does not clear the sound event history.
     ...
 
 def get_events() -> Tuple[SoundEvent, ...]:
-    """以元组的形式获取声音事件历史。 (get events)
+    """以元组的形式获取声音事件历史。
 
 Example: ``microphone.get_events()``
 
@@ -43,18 +43,18 @@ This call clears the sound history before returning.
     ...
 
 def set_threshold(event: SoundEvent, value: int) -> None:
-    """设置声音事件的阈值。 (set threshold)
+    """设置声音事件的阈值。
 
 Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 
 A high threshold means the event will only trigger if the sound is very loud (>= 250 in the example).
 
 :param event: (事件) 声音事件，如``SoundEvent.LOUD``或``SoundEvent.QUIET``。
-:param value: (value) 范围为0到255的阈值水平。"""
+:param value: 范围为0到255的阈值水平。"""
     ...
 
 def sound_level() -> int:
-    """获取声压级。 (音量 )
+    """获取声压级。 (音量)
 
 Example: ``microphone.sound_level()``
 

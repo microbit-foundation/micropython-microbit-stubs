@@ -1,11 +1,11 @@
-"""Tiras de LED RGB y RGBW accesibles individualmente. (neopixel)"""
+"""Tiras de LED RGB y RGBW accesibles individualmente."""
 from .microbit import MicroBitDigitalPin
 from typing import Tuple
 
 class NeoPixel:
 
     def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int=3) -> None:
-        """Inicializa una nueva tira de LED NeoPixel controlada a través de un pin. (init)
+        """Inicializa una nueva tira de LED NeoPixel controlada a través de un pin.
 
 Example: ``np = neopixel.NeoPixel(pin0, 8)``
 
@@ -13,9 +13,9 @@ RGBW neopixels are only supported by micro:bit V2.
 
 See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`_ for warnings and other advice.
 
-:param pin: (pin) El pin que controla la tira NeoPixel.
-:param n: (n) El número de LED NeoPixel de la tira.
-:param bpp: (bpp) Bytes por píxel. Para compatibilidad con NeoPixel RGBW de micro:bit V2, pasa 4 en lugar del valor predeterminado 3 para RGB y GRB."""
+:param pin: El pin que controla la tira NeoPixel.
+:param n: El número de LED NeoPixel de la tira.
+:param bpp: Bytes por píxel. Para compatibilidad con NeoPixel RGBW de micro:bit V2, pasa 4 en lugar del valor predeterminado 3 para RGB y GRB."""
         ...
 
     def clear(self) -> None:

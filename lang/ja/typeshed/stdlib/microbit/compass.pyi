@@ -1,7 +1,7 @@
 """内蔵のコンパスを使います。 (方位磁針（コンパス）)"""
 
 def calibrate() -> None:
-    """調整処理を開始します。 (calibrate)
+    """調整処理を開始します。
 
 Example: ``compass.calibrate()``
 
@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """コンパスが調整されているかどうかを確認します。 (is calibrated)
+    """コンパスが調整されているかどうかを確認します。
 
 Example: ``compass.is_calibrated()``
 
@@ -18,13 +18,13 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """調整を取り消し、コンパスを未調整状態にします。 (clear calibration)
+    """調整を取り消し、コンパスを未調整状態にします。
 
 Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """``x`` 軸の磁場強度を取得します。 (get x)
+    """``x`` 軸の磁場強度を取得します。
 
 Example: ``compass.get_x()``
 
@@ -34,7 +34,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_y() -> int:
-    """``y`` 軸の磁場強度を取得します。 (get y)
+    """``y`` 軸の磁場強度を取得します。
 
 Example: ``compass.get_y()``
 
@@ -44,7 +44,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_z() -> int:
-    """``z`` 軸の磁場強度を取得します。 (get z)
+    """``z`` 軸の磁場強度を取得します。
 
 Example: ``compass.get_z()``
 
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """コンパスの方位を取得します。 (heading)
+    """コンパスの方位を取得します。
 
 Example: ``compass.heading()``
 
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """デバイスのまわりの磁場の強さを取得します。 (get field strength)
+    """デバイスのまわりの磁場の強さを取得します。
 
 Example: ``compass.get_field_strength()``
 

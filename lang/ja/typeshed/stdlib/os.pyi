@@ -1,11 +1,9 @@
-"""ファイルシステムにアクセスします。 (os)"""
+"""ファイルシステムにアクセスします。"""
 from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
     """ファイルすべての名前のリストを取得します。
-
- (listdir)
 
 Example: ``os.listdir()``
 
@@ -14,40 +12,40 @@ persistent on-device file system."""
     ...
 
 def remove(filename: str) -> None:
-    """ファイルを削除します。 (remove)
+    """ファイルを削除します。
 
 Example: ``os.remove('data.txt')``
 
-:param filename: (filename) 削除するファイルの名前。
+:param filename: 削除するファイルの名前。
 
 If the file does not exist an ``OSError`` exception will occur."""
     ...
 
 def size(filename: str) -> int:
-    """ファイルのサイズを返します。 (size)
+    """ファイルのサイズを返します。
 
 Example: ``os.size('data.txt')``
 
-:param filename: (filename) ファイル
+:param filename: ファイル
 :return: The size in bytes.
 
 If the file does not exist an ``OSError`` exception will occur."""
 
 class uname_result(Tuple[str, str, str, str, str]):
-    """``os.uname()`` の結果 (uname result)"""
+    """``os.uname()`` の結果"""
     sysname: str
-    """オペレーティングシステム名。 (sysname)"""
+    """オペレーティングシステム名。"""
     nodename: str
-    """ネットワーク上のマシンの名前（実装定義）。 (nodename)"""
+    """ネットワーク上のマシンの名前（実装定義）。"""
     release: str
-    """オペレーティングシステムのリリース。 (release)"""
+    """オペレーティングシステムのリリース。"""
     version: str
-    """オペレーティングシステムのバージョン。 (version)"""
+    """オペレーティングシステムのバージョン。"""
     machine: str
-    """ハードウェア識別子。 (machine)"""
+    """ハードウェア識別子。"""
 
 def uname() -> uname_result:
-    """現在のオペレーティングシステムを識別する情報を返します。 (uname)
+    """現在のオペレーティングシステムを識別する情報を返します。
 
 Example: ``os.uname()``
 

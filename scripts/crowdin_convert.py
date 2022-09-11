@@ -82,7 +82,8 @@ def get_docstrings_dict(ts_file: TypeshedFile):
 
 
 def pretty_api_name(name):
-    return name.replace("_", " ").strip().lower()
+    # Remove prefixed microbit.foo names as it's better just to translate the important part.
+    return name.replace("_", " ").strip().lower().replace("microbit.", "")
 
 
 def get_entries(node, name, key):
@@ -92,8 +93,7 @@ def get_entries(node, name, key):
     # We don't want to translate param names if we have no summary.
     if not summary:
         return {}
-    # Remove prefixed microbit.foo names as it's better just to translate the important part.
-    api_name_for_translation = pretty_api_name(name).replace("microbit.", "")
+    api_name_for_translation = pretty_api_name(name)
     entries.update(
         format_translation_data(
             key,
@@ -315,21 +315,33 @@ def update_docstring(
     if not docstring:
         return
 
+    # We only use this if actually translated.
     api_name_translated = get_string_by_key(key, translated_json)
+    api_name_en = get_string_by_key(key, en_json)
+    api_name_suffix = (
+        ""
+        if not api_name_translated or api_name_translated == api_name_en
+        else f" ({api_name_translated})"
+    )
     summary_key = ".".join([key, "summary"])
     docstring = replace_english(
         docstring,
         summary_key,
         en_json,
         translated_json,
-        suffix=f" ({api_name_translated})",
+        suffix=api_name_suffix,
     )
 
     _, param_section = split_docstring(docstring)
     matched_params = get_matched_params(node, param_section)
     for param_key in matched_params:
-        translated_param = get_string_by_key(
-            ".".join([key, "param-name", param_key]), translated_json
+        full_param_key = ".".join([key, "param-name", param_key])
+        param_name_translated = get_string_by_key(full_param_key, translated_json)
+        param_name_en = get_string_by_key(full_param_key, en_json)
+        param_prefix = (
+            ""
+            if not param_name_translated or param_name_translated == param_name_en
+            else f"({param_name_translated}) "
         )
         param_doc_key = ".".join([key, "param-doc", param_key])
         docstring = replace_english(
@@ -337,7 +349,7 @@ def update_docstring(
             param_doc_key,
             en_json,
             translated_json,
-            prefix=f"({translated_param}) ",
+            prefix=param_prefix,
         )
     replace_docstring(node, docstring)
 
@@ -360,7 +372,8 @@ def replace_english(
 
 
 def get_string_by_key(key: str, dict: TranslationJSON):
-    return dict[key]["message"]
+    result = dict[key]["message"]
+    return result.strip() if result else result
 
 
 def replace_docstring(node, new_docstring):

@@ -28,9 +28,9 @@ or used as a decorator::
 
 Arguments with different time units are additive.
 
-:param callback: (callback) 要调用的回调。当用作装饰器时省略。
-:param days: (days) 以天为单位的间隔。
-:param h: (h) 以小时为单位的间隔。
+:param callback: 要调用的回调。当用作装饰器时省略。
+:param days: 以天为单位的间隔。
+:param h: 以小时为单位的间隔。
 :param min: (分钟) 以分钟为单位的间隔。
 :param s: (秒) 以秒为单位的间隔。
 :param ms: (毫秒) 以毫秒为单位的间隔。"""
@@ -40,19 +40,19 @@ def panic(n: int) -> None:
 
 Example: ``panic(127)``
 
-:param n: (n) 一个 <= 255 的任意整数，以表示一个状态。
+:param n: 一个 <= 255 的任意整数，以表示一个状态。
 
 Requires restart."""
 
 def reset() -> None:
-    """重启主板。 (reset)"""
+    """重启主板。"""
 
 def sleep(n: float) -> None:
     """等待 ``n`` 毫秒。 (休眠)
 
 Example: ``sleep(1000)``
 
-:param n: (n) 要等待的毫秒数
+:param n: 要等待的毫秒数
 
 One second is 1000 milliseconds, so::
 
@@ -61,19 +61,19 @@ One second is 1000 milliseconds, so::
 will pause the execution for one second."""
 
 def running_time() -> int:
-    """获取主板的运行时间。 (running time)
+    """获取主板的运行时间。
 
 :return: The number of milliseconds since the board was switched on or restarted."""
 
 def temperature() -> int:
-    """以摄氏度为单位获取 micro:bit 的温度。 (temperature)"""
+    """以摄氏度为单位获取 micro:bit 的温度。"""
 
 def set_volume(v: int) -> None:
-    """设置音量。 (set volume)
+    """设置音量。
 
 Example: ``set_volume(127)``
 
-:param v: (v) 一个介于 0 (低) 和 255 (高) 之间的值。
+:param v: 一个介于 0 (低) 和 255 (高) 之间的值。
 
 Out of range values will be clamped to 0 or 255.
 
@@ -81,16 +81,16 @@ Out of range values will be clamped to 0 or 255.
     ...
 
 class Button:
-    """按钮 ``button_a`` 和 ``button_b`` 的类。 (button)"""
+    """按钮 ``button_a`` 和 ``button_b`` 的类。"""
 
     def is_pressed(self) -> bool:
-        """检查按钮是否被按下。 (is pressed)
+        """检查按钮是否被按下。
 
 :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
         ...
 
     def was_pressed(self) -> bool:
-        """检查按钮自设备启动以来或者上次调用此方法之后是否被按下。 (was pressed)
+        """检查按钮自设备启动以来或者上次调用此方法之后是否被按下。
 
 Calling this method will clear the press state so
 that the button must be pressed again before this method will return
@@ -100,14 +100,14 @@ that the button must be pressed again before this method will return
         ...
 
     def get_presses(self) -> int:
-        """获得按钮被按下的总计次数，并在返回之前将该总计次数重置为 0。 (get presses)
+        """获得按钮被按下的总计次数，并在返回之前将该总计次数重置为 0。
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""左键 ``Button`` 对象。 (button a)"""
+"""左键 ``Button`` 对象。"""
 button_b: Button
-"""右键 ``Button`` 对象。 (button b)"""
+"""右键 ``Button`` 对象。"""
 
 class MicroBitDigitalPin:
     """数字引脚。 (Microbit 数字引脚)
@@ -118,7 +118,7 @@ Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin
     PULL_DOWN: int
 
     def read_digital(self) -> int:
-        """获取引脚的数字值。 (read digital)
+        """获取引脚的数字值。
 
 Example: ``value = pin0.read_digital()``
 
@@ -126,23 +126,23 @@ Example: ``value = pin0.read_digital()``
         ...
 
     def write_digital(self, value: int) -> None:
-        """设置引脚的数字值。 (write digital)
+        """设置引脚的数字值。
 
 Example: ``pin0.write_digital(1)``
 
-:param value: (value) 1 将引脚设置为高电平，或 0 将引脚设置为低电平"""
+:param value: 1 将引脚设置为高电平，或 0 将引脚设置为低电平"""
         ...
 
     def set_pull(self, value: int) -> None:
-        """将拉取状态设置为以下三个可能的值之一：``PULL_UP``、``PULL_DOWN`` 或 N``NO_PULL``。 (set pull)
+        """将拉取状态设置为以下三个可能的值之一：``PULL_UP``、``PULL_DOWN`` 或 N``NO_PULL``。
 
 Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: (value) 相关引脚的拉取状态，例如： ``pin0.PULL_UP``。"""
+:param value: 相关引脚的拉取状态，例如： ``pin0.PULL_UP``。"""
         ...
 
     def get_pull(self) -> int:
-        """获取引脚上的拉取状态。 (get pull)
+        """获取引脚上的拉取状态。
 
 Example: ``pin0.get_pull()``
 
@@ -153,7 +153,7 @@ when a pin mode requires it."""
         ...
 
     def get_mode(self) -> str:
-        """返回引脚模式。 (get mode)
+        """返回引脚模式。
 
 Example: ``pin0.get_mode()``
 
@@ -165,43 +165,43 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """在引脚上输出 PWM 信号，占空比为 ``value``。 (write analog)
+        """在引脚上输出 PWM 信号，占空比为 ``value``。
 
 Example: ``pin0.write_analog(254)``
 
-:param value: (value) 介于 0（0% 占空比）和 1023（100% 占空比）之间的整数或浮点数。"""
+:param value: 介于 0（0% 占空比）和 1023（100% 占空比）之间的整数或浮点数。"""
 
     def set_analog_period(self, period: int) -> None:
-        """将输出的 PWM 信号的周期设置为 ``period``（单位：毫秒）。 (set analog period)
+        """将输出的 PWM 信号的周期设置为 ``period``（单位：毫秒）。
 
 Example: ``pin0.set_analog_period(10)``
 
-:param period: (period) 以毫秒为单位的周期，最小有效值为 1 毫秒。"""
+:param period: 以毫秒为单位的周期，最小有效值为 1 毫秒。"""
 
     def set_analog_period_microseconds(self, period: int) -> None:
-        """将输出的 PWM 信号的周期设置为 ``period``（单位：微秒）。 (set analog period microseconds)
+        """将输出的 PWM 信号的周期设置为 ``period``（单位：微秒）。
 
 Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: (period) 以微秒为单位的周期，最小有效值为 256 毫秒。"""
+:param period: 以微秒为单位的周期，最小有效值为 256 毫秒。"""
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """带有模拟和数字功能的引脚。 (microbitanalogdigitalpin)"""
+    """带有模拟和数字功能的引脚。"""
 
     def read_analog(self) -> int:
-        """读取应用于引脚的电压。 (read analog)
+        """读取应用于引脚的电压。
 
 Example: ``pin0.read_analog()``
 
 :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """带有模拟、数字和触摸功能的引脚。 (microbittouchpin)"""
+    """带有模拟、数字和触摸功能的引脚。"""
     CAPACITIVE: int
     RESISTIVE: int
 
     def is_touched(self) -> bool:
-        """检查引脚是否被触摸。 (is touched)
+        """检查引脚是否被触摸。
 
 Example: ``pin0.is_touched()``
 
@@ -224,14 +224,14 @@ does not require you to make a ground connection as part of a circuit.
         ...
 
     def set_touch_mode(self, value: int) -> None:
-        """设置引脚的触摸模式。 (set touch mode)
+        """设置引脚的触摸模式。
 
 Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
 The default touch mode for the pins on the edge connector is
 ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-:param value: (value)  来自相关引脚的 ``CAPACITIVE`` 或 ``RESISTIVE``。"""
+:param value: 来自相关引脚的 ``CAPACITIVE`` 或 ``RESISTIVE``。"""
         ...
 pin0: MicroBitTouchPin
 """具有数字、模拟和触摸功能的引脚。 (引脚0)"""
@@ -272,8 +272,7 @@ pin19: MicroBitDigitalPin
 pin20: MicroBitDigitalPin
 """具有数字功能的引脚。 (引脚20)"""
 pin_logo: MicroBitTouchPin
-"""micro:bit 正面的触摸感应标志引脚，默认设置为电容式触摸模式。 (引脚标志
-)"""
+"""micro:bit 正面的触摸感应标志引脚，默认设置为电容式触摸模式。 (引脚标志)"""
 pin_speaker: MicroBitAnalogDigitalPin
 """用于对 micro:bit 扬声器寻址的引脚。 (扬声器引脚)
 
@@ -291,19 +290,19 @@ Given an image object it's possible to display it via the ``display`` API::
     HEART_SMALL: Image
     """小的心形图像。 (小的心形)"""
     HAPPY: Image
-    """快乐的脸部图像。 (happy)"""
+    """快乐的脸部图像。"""
     SMILE: Image
-    """微笑的脸部图像。 (smile)"""
+    """微笑的脸部图像。"""
     SAD: Image
-    """难过的脸部图像。 (sad)"""
+    """难过的脸部图像。"""
     CONFUSED: Image
-    """困惑的面部图像。 (confused)"""
+    """困惑的面部图像。"""
     ANGRY: Image
-    """愤怒的脸部图像。 (angry)"""
+    """愤怒的脸部图像。"""
     ASLEEP: Image
-    """睡着的脸部图像。 (asleep)"""
+    """睡着的脸部图像。"""
     SURPRISED: Image
-    """惊讶的脸部图像。 (surprised)"""
+    """惊讶的脸部图像。"""
     SILLY: Image
     """傻傻的脸部图像。 (傻的)"""
     FABULOUS: Image
@@ -357,8 +356,7 @@ Given an image object it's possible to display it via the ``display`` API::
     TRIANGLE: Image
     """向上的三角形图像。 (三角)"""
     TRIANGLE_LEFT: Image
-    """左角的三角形图像。 (
-triangle left)"""
+    """左角的三角形图像。"""
     CHESSBOARD: Image
     """按棋盘式交替点亮 LED。 (国际象棋棋盘)"""
     DIAMOND: Image
@@ -368,29 +366,29 @@ triangle left)"""
     SQUARE: Image
     """方形图像。 (正方形)"""
     SQUARE_SMALL: Image
-    """小的方形图像。 (square small)"""
+    """小的方形图像。"""
     RABBIT: Image
     """兔子图像。 (兔子)"""
     COW: Image
     """奶牛图像。 (牛)"""
     MUSIC_CROTCHET: Image
-    """音乐音符图像 (music crotchet)"""
+    """音乐音符图像"""
     MUSIC_QUAVER: Image
-    """八分音符图像。 (music quaver)"""
+    """八分音符图像。"""
     MUSIC_QUAVERS: Image
-    """一对八分音符图像。 (music quavers)"""
+    """一对八分音符图像。"""
     PITCHFORK: Image
     """干草叉图像。 (干草叉)"""
     XMAS: Image
-    """圣诞树图像。 (xmas)"""
+    """圣诞树图像。"""
     PACMAN: Image
-    """吃豆人游戏角色图像。 (pacman)"""
+    """吃豆人游戏角色图像。"""
     TARGET: Image
-    """目标图像 (target)"""
+    """目标图像"""
     TSHIRT: Image
     """T 恤图像。 (T恤)"""
     ROLLERSKATE: Image
-    """轮滑图像。 (rollerskate)"""
+    """轮滑图像。"""
     DUCK: Image
     """鸭子图像。 (鸭子)"""
     HOUSE: Image
@@ -400,8 +398,7 @@ triangle left)"""
     BUTTERFLY: Image
     """蝴蝶图像 (蝴蝶)"""
     STICKFIGURE: Image
-    """
-火柴人图像。 (简笔人物画)"""
+    """火柴人图像。 (简笔人物画)"""
     GHOST: Image
     """幽灵图像。 (幽灵)"""
     SWORD: Image
@@ -415,13 +412,13 @@ triangle left)"""
     SNAKE: Image
     """蛇图像。 (蛇)"""
     ALL_CLOCKS: List[Image]
-    """按顺序包含所有 CLOCK_ 图像的列表（时钟）。 (all clocks)"""
+    """按顺序包含所有 CLOCK_ 图像的列表（时钟）。"""
     ALL_ARROWS: List[Image]
-    """按顺序包含所有 ARROW_ 图像的列表（箭头）。 (all arrows)"""
+    """按顺序包含所有 ARROW_ 图像的列表（箭头）。"""
 
     @overload
     def __init__(self, string: str) -> None:
-        """根据描述点亮 LED 的字符串来创建一幅图像。 (init)
+        """根据描述点亮 LED 的字符串来创建一幅图像。
 
 ``string`` has to consist of digits 0-9 arranged into lines,
 describing the image, for example::
@@ -435,12 +432,12 @@ describing the image, for example::
 will create a 5×5 image of an X. The end of a line is indicated by a
 colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: (string) 描述图像的字符串。"""
+:param string: 描述图像的字符串。"""
         ...
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """创建一幅具有 ``width`` 列和 ``height`` 行的空白图像。 (init)
+        """创建一幅具有 ``width`` 列和 ``height`` 行的空白图像。
 
 :param width: (宽度) 可选的图像宽度
 :param height: (高度) 可选的图像高度
@@ -467,61 +464,61 @@ These create 2 x 2 pixel images at full brightness."""
         ...
 
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """设置像素亮度。 (set pixel)
+        """设置像素亮度。
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: (x) 列号
-:param y: (y) 行号
-:param value: (value) 用 0（暗）和 9（亮）之间的整数来代表亮度
+:param x: 列号
+:param y: 行号
+:param value: 用 0（暗）和 9（亮）之间的整数来代表亮度
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def get_pixel(self, x: int, y: int) -> int:
-        """获取一个像素的亮度。 (get pixel)
+        """获取一个像素的亮度。
 
 Example: ``my_image.get_pixel(0, 0)``
 
-:param x: (x) 列号
-:param y: (y) 行号
+:param x: 列号
+:param y: 行号
 :return: The brightness as an integer between 0 and 9."""
         ...
 
     def shift_left(self, n: int) -> Image:
-        """通过向左移动图片来创建新图像。 (shift left)
+        """通过向左移动图片来创建新图像。
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: (n) 要移动的列数
+:param n: 要移动的列数
 :return: The shifted image"""
         ...
 
     def shift_right(self, n: int) -> Image:
-        """通过向右移动图片来创建新图像。 (shift right)
+        """通过向右移动图片来创建新图像。
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: (n) 要移动的列数
+:param n: 要移动的列数
 :return: The shifted image"""
         ...
 
     def shift_up(self, n: int) -> Image:
-        """通过向上移动图片来创建新图像。 (shift up)
+        """通过向上移动图片来创建新图像。
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: (n) 要移动的行数
+:param n: 要移动的行数
 :return: The shifted image"""
         ...
 
     def shift_down(self, n: int) -> Image:
-        """通过向下移动图片来创建新图像。 (shift down)
+        """通过向下移动图片来创建新图像。
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: (n) 要移动的行数
+:param n: 要移动的行数
 :return: The shifted image"""
         ...
 
@@ -530,10 +527,10 @@ Example: ``Image.HEART_SMALL.shift_down(1)``
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: (x) 裁剪偏移列
-:param y: (y) 裁剪偏移行
-:param w: (w) 裁剪宽度
-:param h: (h) 裁剪高度
+:param x: 裁剪偏移列
+:param y: 裁剪偏移行
+:param w: 裁剪宽度
+:param h: 裁剪高度
 :return: The new image"""
         ...
 
@@ -558,22 +555,22 @@ Example: ``Image.SMALL_HEART.invert()``
 
 Example: ``my_image.fill(5)``
 
-:param value: (value) 新亮度为 0 (暗) 和 9 (明) 之间的数字。
+:param value: 新亮度为 0 (暗) 和 9 (明) 之间的数字。
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """复制另一幅图像的一部分区域到这幅图像。 (blit)
+        """复制另一幅图像的一部分区域到这幅图像。
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
 :param src: (来源) 源图像
-:param x: (x) 源图像的起始列偏移量
-:param y: (y) 源图像的起始行偏移量
-:param w: (w) 要复制的列数
-:param h: (h) 要复制的行数
+:param x: 源图像的起始列偏移量
+:param y: 源图像的起始行偏移量
+:param w: 要复制的列数
+:param h: 要复制的行数
 :param xdest: (x偏离量) 此图像中要修改的列偏移量
 :param ydest: (y偏离量) 此图像中要修改的行偏移量
 
@@ -599,7 +596,7 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __add__(self, other: Image) -> Image:
-        """通过将两幅图像每个像素的亮度值相加来创建一幅新图像。 (add)
+        """通过将两幅图像每个像素的亮度值相加来创建一幅新图像。
 
 Example: ``Image.HEART + Image.HAPPY``
 
@@ -619,7 +616,7 @@ Example: ``Image.HEART - Image.HEART_SMALL``
 
 Example: ``Image.HEART * 0.5``
 
-:param n: (n) 要相乘的数值。"""
+:param n: 要相乘的数值。"""
         ...
 
     def __truediv__(self, n: float) -> Image:
@@ -627,7 +624,7 @@ Example: ``Image.HEART * 0.5``
 
 Example: ``Image.HEART / 2``
 
-:param n: (n) 要除以的数值。"""
+:param n: 要除以的数值。"""
         ...
 
 class SoundEvent:
@@ -641,14 +638,13 @@ class Sound:
     GIGGLE: Sound
     """咯咯的声音。 (咯咯笑)"""
     HAPPY: Sound
-    """快乐的声音。 (happy)"""
+    """快乐的声音。"""
     HELLO: Sound
     """问候声。 (你好)"""
     MYSTERIOUS: Sound
     """神秘的声音 (神秘的)"""
     SAD: Sound
-    """
-悲伤的声音。 (sad)"""
+    """悲伤的声音。"""
     SLIDE: Sound
     """滑动声。 (滑动)"""
     SOARING: Sound

@@ -42,7 +42,7 @@ class uname_result(Tuple[str, str, str, str, str]):
     version: str
     """操作系统版本。 (版本)"""
     machine: str
-    """硬件标识符。 (machine)"""
+    """硬件标识符。"""
 
 def uname() -> uname_result:
     """返回标识当前操作系统的信息。 (当前系统名称)

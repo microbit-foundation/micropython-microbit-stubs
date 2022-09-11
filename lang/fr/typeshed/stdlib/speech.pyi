@@ -1,13 +1,13 @@
-"""Faites parler ou chanter le micro:bit, ainsi que d'autres sons liés à la parole. (speech)"""
+"""Faites parler ou chanter le micro:bit, ainsi que d'autres sons liés à la parole."""
 from typing import Optional
 from .microbit import MicroBitDigitalPin, pin0
 
 def translate(words: str) -> str:
-    """Traduire les mots anglais en phonèmes. (translate)
+    """Traduire les mots anglais en phonèmes.
 
 Example: ``speech.translate('hello world')``
 
-:param words: (words) Une chaîne de caractères de mots anglais.
+:param words: Une chaîne de caractères de mots anglais.
 :return: A string containing a best guess at the appropriate phonemes to pronounce.
 The output is generated from this `text to phoneme translation table <https://github.com/s-macke/SAM/wiki/Text-to-phoneme-translation-table>`_.
 
@@ -19,15 +19,15 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def pronounce(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: Optional[MicroBitDigitalPin]=pin0) -> None:
-    """Prononcer les phonèmes. (pronounce)
+    """Prononcer les phonèmes.
 
 Example: ``speech.pronounce(' /HEHLOW WERLD')``
 
-:param phonemes: (phonemes) La chaîne de phonèmes à prononcer
+:param phonemes: La chaîne de phonèmes à prononcer
 :param pitch: (tangage) Un nombre représentant le ton de la voix
-:param speed: (speed) Un nombre représentant la vitesse de la voix
-:param mouth: (mouth) Un nombre représentant la bouche de la voix
-:param throat: (throat) Un nombre représentant la gorge de la voix
+:param speed: Un nombre représentant la vitesse de la voix
+:param mouth: Un nombre représentant la bouche de la voix
+:param throat: Un nombre représentant la gorge de la voix
 :param pin: (broche) Argument optionnel pour spécifier la broche de sortie. Peut être utilisé pour remplacer la valeur par défaut de ``pin0``.
 Pour empêcher l'émission d'un son via les broches, il est possible d'utiliser ``pin=None``. micro:bit V2 seulement.
 
@@ -38,15 +38,15 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: MicroBitDigitalPin=pin0) -> None:
-    """Dire des mots anglais. (say)
+    """Dire des mots anglais.
 
 Example: ``speech.say('hello world')``
 
-:param words: (words) La chaîne de mots à dire.
+:param words: La chaîne de mots à dire.
 :param pitch: (tangage) Un nombre représentant le ton de la voix
-:param speed: (speed) Un nombre représentant la vitesse de la voix
-:param mouth: (mouth) Un nombre représentant la bouche de la voix
-:param throat: (throat) Un nombre représentant la gorge de la voix
+:param speed: Un nombre représentant la vitesse de la voix
+:param mouth: Un nombre représentant la bouche de la voix
+:param throat: Un nombre représentant la gorge de la voix
 :param pin: (broche) Argument optionnel pour spécifier la broche de sortie. Peut être utilisé pour remplacer la valeur par défaut de ``pin0``.
 Pour empêcher l'émission d'un son via les broches, il est possible d'utiliser ``pin=None``. micro:bit V2 seulement.
 
@@ -60,15 +60,15 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: MicroBitDigitalPin=pin0) -> None:
-    """Chanter des phonèmes. (sing)
+    """Chanter des phonèmes.
 
 Example: ``speech.sing(' /HEHLOW WERLD')``
 
-:param phonemes: (phonemes) La chaîne de mots à chanter.
+:param phonemes: La chaîne de mots à chanter.
 :param pitch: (tangage) Un nombre représentant le ton de la voix
-:param speed: (speed) Un nombre représentant la vitesse de la voix
-:param mouth: (mouth) Un nombre représentant la bouche de la voix
-:param throat: (throat) Un nombre représentant la gorge de la voix
+:param speed: Un nombre représentant la vitesse de la voix
+:param mouth: Un nombre représentant la bouche de la voix
+:param throat: Un nombre représentant la gorge de la voix
 :param pin: (broche) Argument optionnel pour spécifier la broche de sortie. Peut être utilisé pour remplacer la valeur par défaut de ``pin0``.
 Pour empêcher l'émission d'un son via les broches, il est possible d'utiliser ``pin=None``. micro:bit V2 seulement.
 

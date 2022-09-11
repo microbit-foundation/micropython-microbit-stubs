@@ -1,4 +1,4 @@
-"""Broches, images, sons, température et volume (microbit)"""
+"""Broches, images, sons, température et volume"""
 from _typeshed import ReadableBuffer
 from typing import Any, Callable, List, Optional, overload
 from . import accelerometer as accelerometer
@@ -12,7 +12,7 @@ from . import uart as uart
 from . import audio as audio
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Planifie une fonction à appeler à un intervalle donné **V2 uniquement**. (run every)
+    """Planifie une fonction à appeler à un intervalle donné **V2 uniquement**.
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -28,31 +28,31 @@ or used as a decorator::
 
 Arguments with different time units are additive.
 
-:param callback: (callback) Le callback à appeler. A omettre dans le cas de l'utilisation via décorateur
-:param days: (days) L'intervalle en jours.
-:param h: (h) L'intervalle en heures.
-:param min: (min) L'intervalle en minutes.
-:param s: (s) L'intervalle en secondes.
-:param ms: (ms) L'intervalle en millisecondes."""
+:param callback: Le callback à appeler. A omettre dans le cas de l'utilisation via décorateur
+:param days: L'intervalle en jours.
+:param h: L'intervalle en heures.
+:param min: L'intervalle en minutes.
+:param s: L'intervalle en secondes.
+:param ms: L'intervalle en millisecondes."""
 
 def panic(n: int) -> None:
-    """Passer en mode panique. (panic)
+    """Passer en mode panique.
 
 Example: ``panic(127)``
 
-:param n: (n) Un nombre entier arbitraire <= 255 pour indiquer un état.
+:param n: Un nombre entier arbitraire <= 255 pour indiquer un état.
 
 Requires restart."""
 
 def reset() -> None:
-    """Redémarrer la carte. (reset)"""
+    """Redémarrer la carte."""
 
 def sleep(n: float) -> None:
-    """Attendre ``n`` millisecondes. (sleep)
+    """Attendre ``n`` millisecondes.
 
 Example: ``sleep(1000)``
 
-:param n: (n) Le nombre de millisecondes à attendre
+:param n: Le nombre de millisecondes à attendre
 
 One second is 1000 milliseconds, so::
 
@@ -61,19 +61,19 @@ One second is 1000 milliseconds, so::
 will pause the execution for one second."""
 
 def running_time() -> int:
-    """Obtenir le temps de fonctionnement de la carte. (running time)
+    """Obtenir le temps de fonctionnement de la carte.
 
 :return: The number of milliseconds since the board was switched on or restarted."""
 
 def temperature() -> int:
-    """Obtenir la température du micro:bit en degrés Celcius. (temperature)"""
+    """Obtenir la température du micro:bit en degrés Celcius."""
 
 def set_volume(v: int) -> None:
-    """Définit le volume. (set volume)
+    """Définit le volume.
 
 Example: ``set_volume(127)``
 
-:param v: (v) Une valeur entre 0 (bas) et 255 (haut).
+:param v: Une valeur entre 0 (bas) et 255 (haut).
 
 Out of range values will be clamped to 0 or 255.
 
@@ -81,16 +81,16 @@ Out of range values will be clamped to 0 or 255.
     ...
 
 class Button:
-    """La classe pour les boutons ``button_a`` et ``button_b``. (button)"""
+    """La classe pour les boutons ``button_a`` et ``button_b``."""
 
     def is_pressed(self) -> bool:
-        """Vérifier si le bouton est appuyé. (is pressed)
+        """Vérifier si le bouton est appuyé.
 
 :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
         ...
 
     def was_pressed(self) -> bool:
-        """Vérifie si le bouton a été pressé depuis que l'appareil a été démarré ou depuis la dernière fois où cette méthode a été appelée. (was pressed)
+        """Vérifie si le bouton a été pressé depuis que l'appareil a été démarré ou depuis la dernière fois où cette méthode a été appelée.
 
 Calling this method will clear the press state so
 that the button must be pressed again before this method will return
@@ -100,17 +100,17 @@ that the button must be pressed again before this method will return
         ...
 
     def get_presses(self) -> int:
-        """Obtenir le nombre total d'occurrences où le bouton a été appuyé, et réinitialise ce total avant de retourner. (get presses)
+        """Obtenir le nombre total d'occurrences où le bouton a été appuyé, et réinitialise ce total avant de retourner.
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""L'objet bouton ``Button`` gauche. (button a)"""
+"""L'objet bouton ``Button`` gauche."""
 button_b: Button
-"""L'objet bouton ``Button`` droit. (button b)"""
+"""L'objet bouton ``Button`` droit."""
 
 class MicroBitDigitalPin:
-    """Une broche numérique. (microbitdigitalpin)
+    """Une broche numérique.
 
 Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
     NO_PULL: int
@@ -118,7 +118,7 @@ Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin
     PULL_DOWN: int
 
     def read_digital(self) -> int:
-        """Récupère la valeur numérique de la broche (read digital)
+        """Récupère la valeur numérique de la broche
 
 Example: ``value = pin0.read_digital()``
 
@@ -126,23 +126,23 @@ Example: ``value = pin0.read_digital()``
         ...
 
     def write_digital(self, value: int) -> None:
-        """Définit la valeur numérique de la broche (write digital)
+        """Définit la valeur numérique de la broche
 
 Example: ``pin0.write_digital(1)``
 
-:param value: (value) 1 pour définir la broche à un niveau haut ou 0 pour définir la broche à un niveau bas"""
+:param value: 1 pour définir la broche à un niveau haut ou 0 pour définir la broche à un niveau bas"""
         ...
 
     def set_pull(self, value: int) -> None:
-        """Définissez l'état de tirage sur l'une des trois valeurs possibles\xa0: ``PULL_UP``, ``PULL_DOWN`` ou ``NO_PULL``. (set pull)
+        """Définissez l'état de tirage sur l'une des trois valeurs possibles\xa0: ``PULL_UP``, ``PULL_DOWN`` ou ``NO_PULL``.
 
 Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: (value) L'état de tirage sur la broche correspondante, par exemple ``pin0.PULL_UP``."""
+:param value: L'état de tirage sur la broche correspondante, par exemple ``pin0.PULL_UP``."""
         ...
 
     def get_pull(self) -> int:
-        """Obtenir l'état de tirage sur une broche. (get pull)
+        """Obtenir l'état de tirage sur une broche.
 
 Example: ``pin0.get_pull()``
 
@@ -153,7 +153,7 @@ when a pin mode requires it."""
         ...
 
     def get_mode(self) -> str:
-        """Renvoie le mode de la broche (get mode)
+        """Renvoie le mode de la broche
 
 Example: ``pin0.get_mode()``
 
@@ -165,43 +165,43 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """Sortie d'un signal PWM sur la broche, avec un rapport cyclique proportionnel à ``value``. (write analog)
+        """Sortie d'un signal PWM sur la broche, avec un rapport cyclique proportionnel à ``value``.
 
 Example: ``pin0.write_analog(254)``
 
-:param value: (value) Un entier ou un nombre à virgule flottante entre 0 (rapport cyclique à 0%) et 1023 (rapport cyclique à 100%)."""
+:param value: Un entier ou un nombre à virgule flottante entre 0 (rapport cyclique à 0%) et 1023 (rapport cyclique à 100%)."""
 
     def set_analog_period(self, period: int) -> None:
-        """Définit la période de sortie du signal PWM à ``period`` en millisecondes. (set analog period)
+        """Définit la période de sortie du signal PWM à ``period`` en millisecondes.
 
 Example: ``pin0.set_analog_period(10)``
 
-:param period: (period) La période en millisecondes avec une valeur minimale valide de 1 ms."""
+:param period: La période en millisecondes avec une valeur minimale valide de 1 ms."""
 
     def set_analog_period_microseconds(self, period: int) -> None:
-        """Définit la période de sortie du signal PWM à ``period`` en millisecondes. (set analog period microseconds)
+        """Définit la période de sortie du signal PWM à ``period`` en millisecondes.
 
 Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: (period) La période en microsecondes avec une valeur minimale valide de 256µs."""
+:param period: La période en microsecondes avec une valeur minimale valide de 256µs."""
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """Une broche avec des fonctions analogiques et numériques. (microbitanalogdigitalpin)"""
+    """Une broche avec des fonctions analogiques et numériques."""
 
     def read_analog(self) -> int:
-        """Lit la tension appliquée à la broche. (read analog)
+        """Lit la tension appliquée à la broche.
 
 Example: ``pin0.read_analog()``
 
 :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """Une broche avec des fonctions analogiques, numériques et tactiles. (microbittouchpin)"""
+    """Une broche avec des fonctions analogiques, numériques et tactiles."""
     CAPACITIVE: int
     RESISTIVE: int
 
     def is_touched(self) -> bool:
-        """Vérifie si la broche est touchée. (is touched)
+        """Vérifie si la broche est touchée.
 
 Example: ``pin0.is_touched()``
 
@@ -224,201 +224,201 @@ does not require you to make a ground connection as part of a circuit.
         ...
 
     def set_touch_mode(self, value: int) -> None:
-        """Définit le mode tactile pour la broche. (set touch mode)
+        """Définit le mode tactile pour la broche.
 
 Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
 The default touch mode for the pins on the edge connector is
 ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-:param value: (value) ``CAPACITIVE`` ou ``RESISTIVE`` pour la broche correspondante."""
+:param value: ``CAPACITIVE`` ou ``RESISTIVE`` pour la broche correspondante."""
         ...
 pin0: MicroBitTouchPin
-"""Broche avec des fonctionnalités numériques, analogiques, et tactiles. (pin0)"""
+"""Broche avec des fonctionnalités numériques, analogiques, et tactiles."""
 pin1: MicroBitTouchPin
-"""Broche avec des fonctionnalités numériques, analogiques, et tactiles. (pin1)"""
+"""Broche avec des fonctionnalités numériques, analogiques, et tactiles."""
 pin2: MicroBitTouchPin
-"""Broche avec des fonctionnalités numériques, analogiques, et tactiles. (pin2)"""
+"""Broche avec des fonctionnalités numériques, analogiques, et tactiles."""
 pin3: MicroBitAnalogDigitalPin
-"""Broche avec des fonctionnalités numériques et analogiques. (pin3)"""
+"""Broche avec des fonctionnalités numériques et analogiques."""
 pin4: MicroBitAnalogDigitalPin
-"""Broche avec des fonctionnalités numériques et analogiques. (pin4)"""
+"""Broche avec des fonctionnalités numériques et analogiques."""
 pin5: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin5)"""
+"""Broche avec des fonctionnalités numériques"""
 pin6: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin6)"""
+"""Broche avec des fonctionnalités numériques"""
 pin7: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin7)"""
+"""Broche avec des fonctionnalités numériques"""
 pin8: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin8)"""
+"""Broche avec des fonctionnalités numériques"""
 pin9: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin9)"""
+"""Broche avec des fonctionnalités numériques"""
 pin10: MicroBitAnalogDigitalPin
-"""Broche avec des fonctionnalités numériques et analogiques. (pin10)"""
+"""Broche avec des fonctionnalités numériques et analogiques."""
 pin11: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin11)"""
+"""Broche avec des fonctionnalités numériques"""
 pin12: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin12)"""
+"""Broche avec des fonctionnalités numériques"""
 pin13: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin13)"""
+"""Broche avec des fonctionnalités numériques"""
 pin14: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin14)"""
+"""Broche avec des fonctionnalités numériques"""
 pin15: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin15)"""
+"""Broche avec des fonctionnalités numériques"""
 pin16: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin16)"""
+"""Broche avec des fonctionnalités numériques"""
 pin19: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin19)"""
+"""Broche avec des fonctionnalités numériques"""
 pin20: MicroBitDigitalPin
-"""Broche avec des fonctionnalités numériques (pin20)"""
+"""Broche avec des fonctionnalités numériques"""
 pin_logo: MicroBitTouchPin
-"""Une broche logo sensible au toucher sur l'avant du micro:bit, qui est définie par défaut en mode tactile capacitif. (pin logo)"""
+"""Une broche logo sensible au toucher sur l'avant du micro:bit, qui est définie par défaut en mode tactile capacitif."""
 pin_speaker: MicroBitAnalogDigitalPin
-"""Une broche pour adresser le haut-parleur micro:bit. (pin speaker)
+"""Une broche pour adresser le haut-parleur micro:bit.
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """Une image à afficher sur l'écran LED du micro:bit. (image)
+    """Une image à afficher sur l'écran LED du micro:bit.
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """Image d'un cœur. (heart)"""
+    """Image d'un cœur."""
     HEART_SMALL: Image
-    """Petite image d'un cœur (heart small)"""
+    """Petite image d'un cœur"""
     HAPPY: Image
-    """Image de visage heureux. (happy)"""
+    """Image de visage heureux."""
     SMILE: Image
-    """Image de visage souriant. (smile)"""
+    """Image de visage souriant."""
     SAD: Image
-    """Image de visage triste. (sad)"""
+    """Image de visage triste."""
     CONFUSED: Image
-    """Image d'un visage perplexe. (confused)"""
+    """Image d'un visage perplexe."""
     ANGRY: Image
-    """Image de visage en colère. (angry)"""
+    """Image de visage en colère."""
     ASLEEP: Image
-    """Image de visage endormi (asleep)"""
+    """Image de visage endormi"""
     SURPRISED: Image
-    """Image de visage surpris. (surprised)"""
+    """Image de visage surpris."""
     SILLY: Image
-    """Image de visage absurde. (silly)"""
+    """Image de visage absurde."""
     FABULOUS: Image
-    """Image de visage avec lunettes de soleil. (fabulous)"""
+    """Image de visage avec lunettes de soleil."""
     MEH: Image
-    """Image de visage pas impressionné (meh)"""
+    """Image de visage pas impressionné"""
     YES: Image
-    """Image d'une coche. (yes)"""
+    """Image d'une coche."""
     NO: Image
-    """Image d'une croix. (no)"""
+    """Image d'une croix."""
     CLOCK12: Image
-    """Image avec une ligne indiquant vers 12 heures. (clock12)"""
+    """Image avec une ligne indiquant vers 12 heures."""
     CLOCK11: Image
-    """Image avec une ligne indiquant vers 11 heures. (clock11)"""
+    """Image avec une ligne indiquant vers 11 heures."""
     CLOCK10: Image
-    """Image avec une ligne indiquant vers 10 heures. (clock10)"""
+    """Image avec une ligne indiquant vers 10 heures."""
     CLOCK9: Image
-    """Image avec une ligne indiquant vers 9 heures. (clock9)"""
+    """Image avec une ligne indiquant vers 9 heures."""
     CLOCK8: Image
-    """Image avec une ligne indiquant vers 8 heures. (clock8)"""
+    """Image avec une ligne indiquant vers 8 heures."""
     CLOCK7: Image
-    """Image avec une ligne indiquant vers 7 heures. (clock7)"""
+    """Image avec une ligne indiquant vers 7 heures."""
     CLOCK6: Image
-    """Image avec une ligne indiquant vers 6 heures. (clock6)"""
+    """Image avec une ligne indiquant vers 6 heures."""
     CLOCK5: Image
-    """Image avec une ligne indiquant vers 5 heures. (clock5)"""
+    """Image avec une ligne indiquant vers 5 heures."""
     CLOCK4: Image
-    """Image avec une ligne indiquant vers 4 heures. (clock4)"""
+    """Image avec une ligne indiquant vers 4 heures."""
     CLOCK3: Image
-    """Image avec une ligne indiquant vers 3 heures. (clock3)"""
+    """Image avec une ligne indiquant vers 3 heures."""
     CLOCK2: Image
-    """Image avec une ligne indiquant vers 2 heures. (clock2)"""
+    """Image avec une ligne indiquant vers 2 heures."""
     CLOCK1: Image
-    """Image avec une ligne indiquant vers 1 heure. (clock1)"""
+    """Image avec une ligne indiquant vers 1 heure."""
     ARROW_N: Image
-    """Image de flèche pointant vers le nord. (arrow n)"""
+    """Image de flèche pointant vers le nord."""
     ARROW_NE: Image
-    """Image de flèche pointant vers le nord est. (arrow ne)"""
+    """Image de flèche pointant vers le nord est."""
     ARROW_E: Image
-    """Image de flèche pointant vers l'est. (arrow e)"""
+    """Image de flèche pointant vers l'est."""
     ARROW_SE: Image
-    """Image de flèche pointant vers le sud-est. (arrow se)"""
+    """Image de flèche pointant vers le sud-est."""
     ARROW_S: Image
-    """Image de flèche pointant vers le sud. (arrow s)"""
+    """Image de flèche pointant vers le sud."""
     ARROW_SW: Image
-    """Image de flèche pointant vers le sud-ouest. (arrow sw)"""
+    """Image de flèche pointant vers le sud-ouest."""
     ARROW_W: Image
-    """Image de flèche pointant vers l'ouest. (arrow w)"""
+    """Image de flèche pointant vers l'ouest."""
     ARROW_NW: Image
-    """Image de flèche pointant vers le nord ouest. (arrow nw)"""
+    """Image de flèche pointant vers le nord ouest."""
     TRIANGLE: Image
-    """Image d'un triangle pointant vers le haut. (triangle)"""
+    """Image d'un triangle pointant vers le haut."""
     TRIANGLE_LEFT: Image
-    """Image d'un triangle dans le coin gauche. (triangle left)"""
+    """Image d'un triangle dans le coin gauche."""
     CHESSBOARD: Image
-    """Éclairage alternatif des LEDs dans un motif d'échiquier. (chessboard)"""
+    """Éclairage alternatif des LEDs dans un motif d'échiquier."""
     DIAMOND: Image
-    """Image de diamant. (diamond)"""
+    """Image de diamant."""
     DIAMOND_SMALL: Image
-    """Petite image de diamant. (diamond small)"""
+    """Petite image de diamant."""
     SQUARE: Image
-    """Image de carré. (square)"""
+    """Image de carré."""
     SQUARE_SMALL: Image
-    """Petite image de carré. (square small)"""
+    """Petite image de carré."""
     RABBIT: Image
-    """Image de lapin. (rabbit)"""
+    """Image de lapin."""
     COW: Image
-    """Image de vache. (cow)"""
+    """Image de vache."""
     MUSIC_CROTCHET: Image
-    """Image d'une note. (music crotchet)"""
+    """Image d'une note."""
     MUSIC_QUAVER: Image
-    """Image d'une croche. (music quaver)"""
+    """Image d'une croche."""
     MUSIC_QUAVERS: Image
-    """Image d'une paire de croche. (music quavers)"""
+    """Image d'une paire de croche."""
     PITCHFORK: Image
-    """Image d'une fourche. (pitchfork)"""
+    """Image d'une fourche."""
     XMAS: Image
-    """Image d'un arbre de Noël. (xmas)"""
+    """Image d'un arbre de Noël."""
     PACMAN: Image
-    """Image du personnage d'arcade Pac-Man. (pacman)"""
+    """Image du personnage d'arcade Pac-Man."""
     TARGET: Image
-    """Image d'une cible. (target)"""
+    """Image d'une cible."""
     TSHIRT: Image
-    """Image de t-shirt. (tshirt)"""
+    """Image de t-shirt."""
     ROLLERSKATE: Image
-    """Image de patin à roulette. (rollerskate)"""
+    """Image de patin à roulette."""
     DUCK: Image
-    """Image de canard. (duck)"""
+    """Image de canard."""
     HOUSE: Image
-    """Image d'une maison. (house)"""
+    """Image d'une maison."""
     TORTOISE: Image
-    """Image d'une tortue. (tortoise)"""
+    """Image d'une tortue."""
     BUTTERFLY: Image
-    """Image d'un papillon. (butterfly)"""
+    """Image d'un papillon."""
     STICKFIGURE: Image
-    """Image d'un personnage. (stickfigure)"""
+    """Image d'un personnage."""
     GHOST: Image
-    """Image de fantôme. (ghost)"""
+    """Image de fantôme."""
     SWORD: Image
-    """Image d'une épée. (sword)"""
+    """Image d'une épée."""
     GIRAFFE: Image
-    """Image d'une girafe. (giraffe)"""
+    """Image d'une girafe."""
     SKULL: Image
-    """Image d'un crâne. (skull)"""
+    """Image d'un crâne."""
     UMBRELLA: Image
-    """Image d'un parapluie. (umbrella)"""
+    """Image d'un parapluie."""
     SNAKE: Image
-    """Image de serpent. (snake)"""
+    """Image de serpent."""
     ALL_CLOCKS: List[Image]
-    """Une liste contenant toutes les images CLOCK_ en séquence. (all clocks)"""
+    """Une liste contenant toutes les images CLOCK_ en séquence."""
     ALL_ARROWS: List[Image]
-    """Une liste contenant toutes les images ARROW_ en séquence. (all arrows)"""
+    """Une liste contenant toutes les images ARROW_ en séquence."""
 
     @overload
     def __init__(self, string: str) -> None:
-        """Créer une image à partir d'une chaîne de caractères décrivant quelles LED sont allumées. (init)
+        """Créer une image à partir d'une chaîne de caractères décrivant quelles LED sont allumées.
 
 ``string`` has to consist of digits 0-9 arranged into lines,
 describing the image, for example::
@@ -432,16 +432,16 @@ describing the image, for example::
 will create a 5×5 image of an X. The end of a line is indicated by a
 colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: (string) La chaîne de caractères décrivant l'image."""
+:param string: La chaîne de caractères décrivant l'image."""
         ...
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """Créer une image vide avec ``width`` colonnes et ``height`` lignes. (init)
+        """Créer une image vide avec ``width`` colonnes et ``height`` lignes.
 
-:param width: (width) Largeur optionnelle de l'image
-:param height: (height) Hauteur optionnelle de l'image
-:param buffer: (buffer) Tableau optionnel ou octets de ``width``×``height`` entiers dans la plage 0-9 pour initialiser l'image
+:param width: Largeur optionnelle de l'image
+:param height: Hauteur optionnelle de l'image
+:param buffer: Tableau optionnel ou octets de ``width``×``height`` entiers dans la plage 0-9 pour initialiser l'image
 
 Examples::
 
@@ -452,90 +452,90 @@ These create 2 x 2 pixel images at full brightness."""
         ...
 
     def width(self) -> int:
-        """Récupère le nombre de colonnes. (width)
+        """Récupère le nombre de colonnes.
 
 :return: The number of columns in the image"""
         ...
 
     def height(self) -> int:
-        """Récupère le nombre de lignes. (height)
+        """Récupère le nombre de lignes.
 
 :return: The number of rows in the image"""
         ...
 
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """Définit la luminosité d'un pixel. (set pixel)
+        """Définit la luminosité d'un pixel.
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: (x) Le numéro de colonne
-:param y: (y) Le numéro de ligne
-:param value: (value) La luminosité sous la forme d'un entier compris entre 0 (sombre) et 9 (lumineux)
+:param x: Le numéro de colonne
+:param y: Le numéro de ligne
+:param value: La luminosité sous la forme d'un entier compris entre 0 (sombre) et 9 (lumineux)
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def get_pixel(self, x: int, y: int) -> int:
-        """Récupère la luminosité d'un pixel. (get pixel)
+        """Récupère la luminosité d'un pixel.
 
 Example: ``my_image.get_pixel(0, 0)``
 
-:param x: (x) Le numéro de colonne
-:param y: (y) Le numéro de ligne
+:param x: Le numéro de colonne
+:param y: Le numéro de ligne
 :return: The brightness as an integer between 0 and 9."""
         ...
 
     def shift_left(self, n: int) -> Image:
-        """Créer une nouvelle image en déplaçant l'image à gauche. (shift left)
+        """Créer une nouvelle image en déplaçant l'image à gauche.
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: (n) Le nombre de colonnes par lequel déplacer
+:param n: Le nombre de colonnes par lequel déplacer
 :return: The shifted image"""
         ...
 
     def shift_right(self, n: int) -> Image:
-        """Créer une nouvelle image en déplaçant l'image à droite. (shift right)
+        """Créer une nouvelle image en déplaçant l'image à droite.
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: (n) Le nombre de colonnes par lequel déplacer
+:param n: Le nombre de colonnes par lequel déplacer
 :return: The shifted image"""
         ...
 
     def shift_up(self, n: int) -> Image:
-        """Créer une nouvelle image en déplaçant l'image vers le haut. (shift up)
+        """Créer une nouvelle image en déplaçant l'image vers le haut.
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: (n) Le nombre de lignes par lequel déplacer
+:param n: Le nombre de lignes par lequel déplacer
 :return: The shifted image"""
         ...
 
     def shift_down(self, n: int) -> Image:
-        """Créer une nouvelle image en déplaçant l'image vers le bas. (shift down)
+        """Créer une nouvelle image en déplaçant l'image vers le bas.
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: (n) Le nombre de lignes par lequel déplacer
+:param n: Le nombre de lignes par lequel déplacer
 :return: The shifted image"""
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Créer une nouvelle image en recadrant l'image. (crop)
+        """Créer une nouvelle image en recadrant l'image.
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: (x) Le nombre de colonnes duquel décaler le recadrage
-:param y: (y) Le nombre de lignes duquel décaler le recadrage
-:param w: (w) La largeur du recadrage
-:param h: (h) La hauteur du recadrage
+:param x: Le nombre de colonnes duquel décaler le recadrage
+:param y: Le nombre de lignes duquel décaler le recadrage
+:param w: La largeur du recadrage
+:param h: La hauteur du recadrage
 :return: The new image"""
         ...
 
     def copy(self) -> Image:
-        """Créer une copie exacte de l'image. (copy)
+        """Créer une copie exacte de l'image.
 
 Example: ``Image.HEART.copy()``
 
@@ -543,7 +543,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """Créer une nouvelle image en inversant la luminosité des pixels de l'image source. (invert)
+        """Créer une nouvelle image en inversant la luminosité des pixels de l'image source.
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -551,28 +551,28 @@ Example: ``Image.SMALL_HEART.invert()``
         ...
 
     def fill(self, value: int) -> None:
-        """Définit la luminosité de tous les pixels de l'image. (fill)
+        """Définit la luminosité de tous les pixels de l'image.
 
 Example: ``my_image.fill(5)``
 
-:param value: (value) La nouvelle luminosité sous la forme d'un nombre compris entre 0 (sombre) et 9 (lumineux).
+:param value: La nouvelle luminosité sous la forme d'un nombre compris entre 0 (sombre) et 9 (lumineux).
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """Copier la zone d'une autre image vers cette image. (blit)
+        """Copier la zone d'une autre image vers cette image.
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-:param src: (src) L'image source
-:param x: (x) Le décalage de la colonne de départ dans l'image source
-:param y: (y) Décalage de la ligne de départ dans l'image source
-:param w: (w) Le nombre de colonnes à copier
-:param h: (h) Le nombre de lignes à copier
-:param xdest: (xdest) Le décalage de la colonne à modifier dans cette image
-:param ydest: (ydest) Le décalage de la ligne à modifier dans cette image
+:param src: L'image source
+:param x: Le décalage de la colonne de départ dans l'image source
+:param y: Décalage de la ligne de départ dans l'image source
+:param w: Le nombre de colonnes à copier
+:param h: Le nombre de lignes à copier
+:param xdest: Le décalage de la colonne à modifier dans cette image
+:param ydest: Le décalage de la ligne à modifier dans cette image
 
 Pixels outside the source image are treated as having a brightness of 0.
 
@@ -588,74 +588,74 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """Récupère une représentation de l'image sous forme de texte compact. (repr)"""
+        """Récupère une représentation de l'image sous forme de texte compact."""
         ...
 
     def __str__(self) -> str:
-        """Récupère une chaîne de caractères lisible de l'image. (str)"""
+        """Récupère une chaîne de caractères lisible de l'image."""
         ...
 
     def __add__(self, other: Image) -> Image:
         """Crée une nouvelle image en additionnant les valeurs de luminosité des deux images
-pour chaque pixel. (add)
+pour chaque pixel.
 
 Example: ``Image.HEART + Image.HAPPY``
 
-:param other: (other) L'image à ajouter."""
+:param other: L'image à ajouter."""
         ...
 
     def __sub__(self, other: Image) -> Image:
         """Crée une nouvelle image en soustrayant de cette image les valeurs de luminosité de
-l'autre image. (sub)
+l'autre image.
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: (other) L'image à soustraire."""
+:param other: L'image à soustraire."""
         ...
 
     def __mul__(self, n: float) -> Image:
         """Crée une nouvelle image en multipliant la luminosité de chaque pixel par
-``n``. (mul)
+``n``.
 
 Example: ``Image.HEART * 0.5``
 
-:param n: (n) La valeur par laquelle multiplier."""
+:param n: La valeur par laquelle multiplier."""
         ...
 
     def __truediv__(self, n: float) -> Image:
         """Crée une nouvelle image en divisant la luminosité de chaque pixel par
-``n``. (truediv)
+``n``.
 
 Example: ``Image.HEART / 2``
 
-:param n: (n) La valeur par laquelle diviser."""
+:param n: La valeur par laquelle diviser."""
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Représente la transition d'événements sonores, de ``quiet`` à ``loud`` comme un clap dans les mains ou un cri. (loud)"""
+    """Représente la transition d'événements sonores, de ``quiet`` à ``loud`` comme un clap dans les mains ou un cri."""
     QUIET: SoundEvent
-    """Représente la transition d'événements sonores de ``loud`` à ``quiet`` comme parler ou écouter de la musique de fond. (quiet)"""
+    """Représente la transition d'événements sonores de ``loud`` à ``quiet`` comme parler ou écouter de la musique de fond."""
 
 class Sound:
-    """Les sons intégrés peuvent être appelés en utilisant ``audio.play(Sound.NAME)``. (sound)"""
+    """Les sons intégrés peuvent être appelés en utilisant ``audio.play(Sound.NAME)``."""
     GIGGLE: Sound
-    """Bruit de gloussement. (giggle)"""
+    """Bruit de gloussement."""
     HAPPY: Sound
-    """Son joyeux. (happy)"""
+    """Son joyeux."""
     HELLO: Sound
-    """Son de salutation. (hello)"""
+    """Son de salutation."""
     MYSTERIOUS: Sound
-    """Son mystérieux. (mysterious)"""
+    """Son mystérieux."""
     SAD: Sound
-    """Son triste. (sad)"""
+    """Son triste."""
     SLIDE: Sound
-    """Bruit de glissade. (slide)"""
+    """Bruit de glissade."""
     SOARING: Sound
-    """Bruit d'envolée. (soaring)"""
+    """Bruit d'envolée."""
     SPRING: Sound
-    """Son d'un ressort. (spring)"""
+    """Son d'un ressort."""
     TWINKLE: Sound
-    """Son de scintillement. (twinkle)"""
+    """Son de scintillement."""
     YAWN: Sound
-    """Son de bâillement. (yawn)"""
+    """Son de bâillement."""

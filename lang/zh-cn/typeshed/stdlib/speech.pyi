@@ -44,8 +44,7 @@ Example: ``speech.say('hello world')``
 
 :param words: (单词) 要说的词串。
 :param pitch: (音高) 代表声音音高的数字
-:param speed: (速度) 
-代表声音速度的数字
+:param speed: (速度) 代表声音速度的数字
 :param mouth: (嘴部) 表示声音口型的数字
 :param throat: (喉部) 表示声音喉型的数字
 :param pin: (引脚) 可选参数，可用于指定输出引脚来覆盖 ``pin0`` 默认值。
@@ -66,8 +65,7 @@ def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: in
 Example: ``speech.sing(' /HEHLOW WERLD')``
 
 :param phonemes: (音素) 要唱的词串。
-:param pitch: (音高) 
-代表声音音高的数字
+:param pitch: (音高) 代表声音音高的数字
 :param speed: (速度) 代表声音速度的数字
 :param mouth: (嘴部) 表示声音口型的数字
 :param throat: (喉部) 表示声音喉型的数字

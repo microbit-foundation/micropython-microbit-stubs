@@ -1,9 +1,9 @@
-"""低等實用工具程序。 (machine)"""
+"""低等實用工具程序。"""
 from typing import Any
 from .microbit import MicroBitDigitalPin
 
 def unique_id() -> bytes:
-    """取得具有板的唯一識別碼之位元組字串。 (unique id)
+    """取得具有板的唯一識別碼之位元組字串。
 
 Example: ``machine.unique_id()``
 
@@ -11,7 +11,7 @@ Example: ``machine.unique_id()``
     ...
 
 def reset() -> None:
-    """以類似於按下外部 RESET 按鍵的方式重置裝置。 (reset)
+    """以類似於按下外部 RESET 按鍵的方式重置裝置。
 
 Example: ``machine.reset()``"""
     ...
@@ -40,11 +40,11 @@ def enable_irq(state: Any) -> None:
 
 Example: ``machine.enable_irq(interrupt_state)``
 
-:param state: (state) 從最近一次叫用 ``disable_irq`` 函式傳回的值。"""
+:param state: 從最近一次叫用 ``disable_irq`` 函式傳回的值。"""
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
-    """計時引腳上的脈衝。 (time pulse us)
+    """計時引腳上的脈衝。
 
 Example: ``time_pulse_us(pin0, 1)``
 
@@ -54,32 +54,31 @@ function first waits until the pin input becomes equal to
 ``pulse_level``. If the pin is already equal to ``pulse_level`` then timing
 starts straight away.
 
-:param pin: (引腳
-) 要使用的引腳
-:param pulse_level: (pulse level) 0 到計時低脈衝或 1 到計時高脈衝
-:param timeout_us: (timeout us) 微秒超時
+:param pin: (引腳) 要使用的引腳
+:param pulse_level: 0 到計時低脈衝或 1 到計時高脈衝
+:param timeout_us: 微秒超時
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
 
 class mem:
-    """``mem8``、``mem16`` 和 ``mem32`` 記憶體檢視的類別。 (mem)"""
+    """``mem8``、``mem16`` 和 ``mem32`` 記憶體檢視的類別。"""
 
     def __getitem__(self, address: int) -> int:
-        """從記憶體中存取一個值。 (getitem)
+        """從記憶體中存取一個值。
 
-:param address: (address) 記憶體位址。
+:param address: 記憶體位址。
 :return: The value at that address as an integer."""
         ...
 
     def __setitem__(self, address: int, value: int) -> None:
-        """在指定位址設定一個值。 (setitem)
+        """在指定位址設定一個值。
 
-:param address: (address) 記憶體位址。
-:param value: (value) 要設定的整數值。"""
+:param address: 記憶體位址。
+:param value: 要設定的整數值。"""
         ...
 mem8: mem
-"""8 位元 (位元組) 的記憶體檢視。 (mem8)"""
+"""8 位元 (位元組) 的記憶體檢視。"""
 mem16: mem
-"""16 位元的記憶體檢視。 (mem16)"""
+"""16 位元的記憶體檢視。"""
 mem32: mem
-"""32 位元的記憶體檢視。 (mem32)"""
+"""32 位元的記憶體檢視。"""

@@ -1,23 +1,23 @@
-"""シリアルインタフェースを使ってデバイスと通信します。 (uart)"""
+"""シリアルインタフェースを使ってデバイスと通信します。"""
 from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
 ODD: int
-"""奇数パリティ (odd)"""
+"""奇数パリティ"""
 EVEN: int
-"""偶数パリティ (even)"""
+"""偶数パリティ"""
 
 def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
-    """シリアル通信を初期化します。 (init)
+    """シリアル通信を初期化します。
 
 Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
-:param baudrate: (baudrate) 通信速度。
-:param bits: (bits) 送信するビット幅。micro:bitは8だけをサポートしています。
-:param parity: (parity) パリティのチェック方法。``None``、``uart.ODD``、``uart.EVEN`` のいずれかを指定できます。
-:param stop: (stop) ストップビットの数はmicro:bitでは1にする必要があります。
-:param tx: (tx) 送信端子。
-:param rx: (rx) 受信端子。
+:param baudrate: 通信速度。
+:param bits: 送信するビット幅。micro:bitは8だけをサポートしています。
+:param parity: パリティのチェック方法。``None``、``uart.ODD``、``uart.EVEN`` のいずれかを指定できます。
+:param stop: ストップビットの数はmicro:bitでは1にする必要があります。
+:param tx: 送信端子。
+:param rx: 受信端子。
 
 Initializing the UART on external pins will cause the Python console on
 USB to become unaccessible, as it uses the same hardware. To bring the
@@ -29,7 +29,7 @@ For more details see `the online documentation <https://microbit-micropython.rea
     ...
 
 def any() -> bool:
-    """受信待ちのデータがあるかを確認します。 (any)
+    """受信待ちのデータがあるかを確認します。
 
 Example: ``uart.any()``
 
@@ -37,26 +37,26 @@ Example: ``uart.any()``
     ...
 
 def read(nbytes: Optional[int]=None) -> Optional[bytes]:
-    """バイト列を読み取ります。 (read)
+    """バイト列を読み取ります。
 
 Example: ``uart.read()``
 
-:param nbytes: (nbytes) ``nbytes`` が指定されていれば、そのバイト数まで読み込みます。指定されていなければ、できるだけ多く読み取ります
+:param nbytes: ``nbytes`` が指定されていれば、そのバイト数まで読み込みます。指定されていなければ、できるだけ多く読み取ります
 :return: A bytes object or ``None`` on timeout"""
     ...
 
 def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
-    """``buf`` にバイト列を読み取ります。 (readinto)
+    """``buf`` にバイト列を読み取ります。
 
 Example: ``uart.readinto(input_buffer)``
 
-:param buf: (buf) 書き込みバッファ。
-:param nbytes: (nbytes) ``nbytes`` が指定されていれば、そのバイト数まで読み込みます。指定されていなければ、``len(buf)`` を読み取ります。
+:param buf: 書き込みバッファ。
+:param nbytes: ``nbytes`` が指定されていれば、そのバイト数まで読み込みます。指定されていなければ、``len(buf)`` を読み取ります。
 :return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
     ...
 
 def readline() -> Optional[bytes]:
-    """改行文字で終わる行を読みます。 (readline)
+    """改行文字で終わる行を読みます。
 
 Example: ``uart.readline()``
 
@@ -64,11 +64,11 @@ Example: ``uart.readline()``
     ...
 
 def write(buf: Union[bytes, str]) -> Optional[int]:
-    """バスにバッファを書き込みます。 (write)
+    """バスにバッファを書き込みます。
 
 Example: ``uart.write('hello world')``
 
-:param buf: (buf) バイト列オブジェクトまたは文字列。
+:param buf: バイト列オブジェクトまたは文字列。
 :return: The number of bytes written, or ``None`` on timeout.
 
 Examples::

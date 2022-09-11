@@ -1,4 +1,4 @@
-"""使用内置罗盘。 (compass)"""
+"""使用内置罗盘。"""
 
 def calibrate() -> None:
     """开始校准过程。 (校准)
@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """检查罗盘是否已校准。 (is calibrated)
+    """检查罗盘是否已校准。
 
 Example: ``compass.is_calibrated()``
 
@@ -18,13 +18,13 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """取消校准，将罗盘恢复到未校准状态。 (clear calibration)
+    """取消校准，将罗盘恢复到未校准状态。
 
 Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """获取 ``x`` 轴上的磁场强度。 (get x)
+    """获取 ``x`` 轴上的磁场强度。
 
 Example: ``compass.get_x()``
 
@@ -34,7 +34,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_y() -> int:
-    """获取 ``y`` 轴上的磁场强度。 (get y)
+    """获取 ``y`` 轴上的磁场强度。
 
 Example: ``compass.get_y()``
 
@@ -44,7 +44,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_z() -> int:
-    """获取 ``z`` 轴上的磁场强度。 (get z)
+    """获取 ``z`` 轴上的磁场强度。
 
 Example: ``compass.get_z()``
 
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """获取罗盘指向。 (heading)
+    """获取罗盘指向。
 
 Example: ``compass.heading()``
 

@@ -1,29 +1,29 @@
-"""測量時間並為程式增加延遲。 (time)"""
+"""測量時間並為程式增加延遲。"""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
-    """延遲秒數。 (sleep)
+    """延遲秒數。
 
 Example: ``time.sleep(1)``
 
-:param seconds: (seconds) 睡眠的秒數。
+:param seconds: 睡眠的秒數。
 使用浮點數代替分數來計算秒數。"""
     ...
 
 def sleep_ms(ms: int) -> None:
-    """延遲指定的毫秒數。 (sleep ms)
+    """延遲指定的毫秒數。
 
 Example: ``time.sleep_ms(1_000_000)``
 
-:param ms: (ms) 延遲的毫秒數 (>= 0)。"""
+:param ms: 延遲的毫秒數 (>= 0)。"""
     ...
 
 def sleep_us(us: int) -> None:
-    """延遲指定的微秒數。 (sleep us)
+    """延遲指定的微秒數。
 
 Example: ``time.sleep_us(1000)``
 
-:param us: (us) 延遲的微秒數 (>= 0)。"""
+:param us: 延遲的微秒數 (>= 0)。"""
     ...
 
 def ticks_ms() -> int:
@@ -43,7 +43,7 @@ Example: ``time.ticks_us()``
     ...
 
 def ticks_add(ticks: int, delta: int) -> int:
-    """特定數字的偏移 tick 值，可以是正數或負數。 (ticks add)
+    """特定數字的偏移 tick 值，可以是正數或負數。
 
 Example: ``time.ticks_add(time.ticks_ms(), 200)``
 
@@ -51,8 +51,8 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: (ticks) tick 值
-:param delta: (delta) 整數偏移量
+:param ticks: tick 值
+:param delta: 整數偏移量
 
 Example::
 

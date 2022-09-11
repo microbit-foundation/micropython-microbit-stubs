@@ -3,7 +3,7 @@ from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
-    """Lista los archivos. (listdir)
+    """Lista los archivos.
 
 Example: ``os.listdir()``
 

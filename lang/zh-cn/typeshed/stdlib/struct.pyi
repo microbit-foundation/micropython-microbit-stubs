@@ -17,21 +17,21 @@ def pack(fmt: str, v1: Any, *vn: Any) -> bytes:
 Example: ``struct.pack('hf', 1, 3.1415)``
 
 :param fmt: (格式字符串) 格式字符串。
-:param v1: (v1) 第一个值。
-:param *vn: (*vn) 剩余值。
+:param v1: 第一个值。
+:param *vn: 剩余值。
 :return A bytes object encoding the values."""
     ...
 
 def pack_into(fmt: str, buffer: WriteableBuffer, offset: int, v1: Any, *vn: Any) -> None:
-    """根据格式字符串打包值。 (pack into)
+    """根据格式字符串打包值。
 
 Example: ``struct.pack_info('hf', buffer, 1, 3.1415)``
 
 :param fmt: (格式字符串) 格式字符串。
 :param buffer: (缓冲区) 待写入的目标缓冲区。
 :param offset: (偏移量) 缓冲区内的偏移量。如果从缓冲区末端开始算起，该偏移量可能是负数。
-:param v1: (v1) 第一个值。
-:param *vn: (*vn) 剩余值。"""
+:param v1: 第一个值。
+:param *vn: 剩余值。"""
     ...
 
 def unpack(fmt: str, data: ReadableBuffer) -> Tuple[Any, ...]:
@@ -45,12 +45,12 @@ Example: ``v1, v2 = struct.unpack('hf', buffer)``
     ...
 
 def unpack_from(fmt: str, buffer: ReadableBuffer, offset: int=0) -> Tuple:
-    """根据格式字符串从缓冲区解压数据。 (unpack from)
+    """根据格式字符串从缓冲区解压数据。
 
 Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
 
 :param fmt: (格式字符串) 格式字符串。
-:param buffer: (buffer) 待读取的源缓冲区。
+:param buffer: 待读取的源缓冲区。
 :param offset: (偏移量) 缓冲区内的偏移量。如果从缓冲区末端开始算起，该偏移量可能是负数。
 :return: A tuple of the unpacked values."""
     ...

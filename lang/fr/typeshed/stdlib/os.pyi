@@ -1,9 +1,9 @@
-"""Accéder au système de fichiers. (os)"""
+"""Accéder au système de fichiers."""
 from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
-    """Lister les fichiers. (listdir)
+    """Lister les fichiers.
 
 Example: ``os.listdir()``
 
@@ -12,40 +12,40 @@ persistent on-device file system."""
     ...
 
 def remove(filename: str) -> None:
-    """Supprimer (effacer) un fichier. (remove)
+    """Supprimer (effacer) un fichier.
 
 Example: ``os.remove('data.txt')``
 
-:param filename: (filename) Le fichier à effacer.
+:param filename: Le fichier à effacer.
 
 If the file does not exist an ``OSError`` exception will occur."""
     ...
 
 def size(filename: str) -> int:
-    """Retourne la taille d'un fichier. (size)
+    """Retourne la taille d'un fichier.
 
 Example: ``os.size('data.txt')``
 
-:param filename: (filename) Le fichier
+:param filename: Le fichier
 :return: The size in bytes.
 
 If the file does not exist an ``OSError`` exception will occur."""
 
 class uname_result(Tuple[str, str, str, str, str]):
-    """Résultat de ``os.uname()`` (uname result)"""
+    """Résultat de ``os.uname()``"""
     sysname: str
-    """Nom du système d'exploitation. (sysname)"""
+    """Nom du système d'exploitation."""
     nodename: str
-    """Nom de la machine sur le réseau (selon implémentation). (nodename)"""
+    """Nom de la machine sur le réseau (selon implémentation)."""
     release: str
-    """La release du système d'exploitation (release)"""
+    """La release du système d'exploitation"""
     version: str
-    """Version du système d'exploitation (version)"""
+    """Version du système d'exploitation"""
     machine: str
-    """Identifiant matériel. (machine)"""
+    """Identifiant matériel."""
 
 def uname() -> uname_result:
-    """Retourne les informations identifiant le système d'exploitation actuel. (uname)
+    """Retourne les informations identifiant le système d'exploitation actuel.
 
 Example: ``os.uname()``
 

@@ -1,32 +1,32 @@
-"""時間を測定とプログラムの遅延。 (time)"""
+"""時間を測定とプログラムの遅延。"""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
-    """指定した秒数だけ遅延します。 (sleep)
+    """指定した秒数だけ遅延します。
 
 Example: ``time.sleep(1)``
 
-:param seconds: (seconds) 遅延する秒数。秒より細かい精度で指定したい場合は浮動小数点数を使ってください。"""
+:param seconds: 遅延する秒数。秒より細かい精度で指定したい場合は浮動小数点数を使ってください。"""
     ...
 
 def sleep_ms(ms: int) -> None:
-    """指定したミリ秒だけ遅延します。 (sleep ms)
+    """指定したミリ秒だけ遅延します。
 
 Example: ``time.sleep_ms(1_000_000)``
 
-:param ms: (ms) 遅延するミリ秒数（>= 0）。"""
+:param ms: 遅延するミリ秒数（>= 0）。"""
     ...
 
 def sleep_us(us: int) -> None:
-    """指定したマイクロ秒だけ遅延します。 (sleep us)
+    """指定したマイクロ秒だけ遅延します。
 
 Example: ``time.sleep_us(1000)``
 
-:param us: (us) 遅延するマイクロ秒数（>= 0）。"""
+:param us: 遅延するマイクロ秒数（>= 0）。"""
     ...
 
 def ticks_ms() -> int:
-    """呼出し時点での稼働時間をミリ秒単位で返します。稼働時間は最大値に達するとラップアラウンドします(一周して最小値に戻ります)。 (ticks ms)
+    """呼出し時点での稼働時間をミリ秒単位で返します。稼働時間は最大値に達するとラップアラウンドします(一周して最小値に戻ります)。
 
 Example: ``time.ticks_ms()``
 
@@ -34,7 +34,7 @@ Example: ``time.ticks_ms()``
     ...
 
 def ticks_us() -> int:
-    """呼出し時点での稼働時間をマイクロ秒単位で返します。稼働時間は最大値に達するとラップアラウンドします(一周して最小値に戻ります)。 (ticks us)
+    """呼出し時点での稼働時間をマイクロ秒単位で返します。稼働時間は最大値に達するとラップアラウンドします(一周して最小値に戻ります)。
 
 Example: ``time.ticks_us()``
 
@@ -42,7 +42,7 @@ Example: ``time.ticks_us()``
     ...
 
 def ticks_add(ticks: int, delta: int) -> int:
-    """与えた数をティック値からのオフセットとして加算した値を返します。引数の値は正でも負でもかまいません。 (ticks add)
+    """与えた数をティック値からのオフセットとして加算した値を返します。引数の値は正でも負でもかまいません。
 
 Example: ``time.ticks_add(time.ticks_ms(), 200)``
 
@@ -50,8 +50,8 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: (ticks) ティック値
-:param delta: (delta) 整数オフセット
+:param ticks: ティック値
+:param delta: 整数オフセット
 
 Example::
 
@@ -68,12 +68,12 @@ Example::
     ...
 
 def ticks_diff(ticks1: int, ticks2: int) -> int:
-    """``time.ticks_ms()`` や ``ticks_us()`` 関数の戻り値（ラップアラウンドする可能性のある符号付きの値）の間のティック値の差を計算します。 (ticks diff)
+    """``time.ticks_ms()`` や ``ticks_us()`` 関数の戻り値（ラップアラウンドする可能性のある符号付きの値）の間のティック値の差を計算します。
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: (ticks1) 引かられる方の値
-:param ticks2: (ticks2) 引く方の値
+:param ticks1: 引かられる方の値
+:param ticks2: 引く方の値
 
 The argument order is the same as for subtraction operator,
 ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.

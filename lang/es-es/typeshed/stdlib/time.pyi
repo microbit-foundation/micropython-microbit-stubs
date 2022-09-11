@@ -15,7 +15,7 @@ def sleep_ms(ms: int) -> None:
 
 Example: ``time.sleep_ms(1_000_000)``
 
-:param ms: (ms) El número de milisegundos de retardo (>= 0)."""
+:param ms: El número de milisegundos de retardo (>= 0)."""
     ...
 
 def sleep_us(us: int) -> None:
@@ -23,7 +23,7 @@ def sleep_us(us: int) -> None:
 
 Example: ``time.sleep_us(1000)``
 
-:param us: (us) El número de microsegundos de retardo (>= 0)."""
+:param us: El número de microsegundos de retardo (>= 0)."""
     ...
 
 def ticks_ms() -> int:
@@ -53,7 +53,7 @@ value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
 :param ticks: (tics) Un valor de tics
-:param delta: (delta) Un desplazamiento entero
+:param delta: Un desplazamiento entero
 
 Example::
 

@@ -1,4 +1,4 @@
-"""使用 micro:bit 播放声音（导入 ``audio`` 以兼容 V1）。 (audio)"""
+"""使用 micro:bit 播放声音（导入 ``audio`` 以兼容 V1）。"""
 from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import Iterable, Union
 
@@ -10,10 +10,10 @@ Example: ``audio.play(Sound.GIGGLE)``
 :param source: (来源) 内置的音频 ``Sound``， 例如 ``Sound.GIGGLE``，  或作为可迭代的 ``AudioFrame`` 对象的样本数据。
 :param wait: (等待) 如果 ``wait`` 为 ``True``, 此函数将会阻塞直到声音完成。
 :param pin: (引脚) 可选参数， 用于指定可覆盖默认 ``pin0`` 的输出引脚。 如果不想播放任何声音，可以使用 ``pin=None``。
-:param return_pin: (return pin) 指定一个差分边缘连接器引脚以连接到外部扬声器而不是接地。对于 **V2** 修订版，这将被忽略。"""
+:param return_pin: 指定一个差分边缘连接器引脚以连接到外部扬声器而不是接地。对于 **V2** 修订版，这将被忽略。"""
 
 def is_playing() -> bool:
-    """检查是否在播放声音。 (is playing)
+    """检查是否在播放声音。
 
 Example: ``audio.is_playing()``
 

@@ -6,7 +6,7 @@ def sleep(seconds: Union[int, float]) -> None:
 
 Example: ``time.sleep(1)``
 
-:param seconds: (seconds) 休眠的秒数。
+:param seconds: 休眠的秒数。
 使用浮点数休眠小数秒数。"""
     ...
 
@@ -52,7 +52,7 @@ value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
 :param ticks: (刻度) 一个刻度值
-:param delta: (delta) 整数偏移量
+:param delta: 整数偏移量
 
 Example::
 

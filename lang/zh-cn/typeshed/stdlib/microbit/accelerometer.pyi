@@ -2,7 +2,7 @@
 from typing import Tuple
 
 def get_x() -> int:
-    """获取 ``x`` 轴上的加速度测量值（以 milli-g 为单位）。 (get x)
+    """获取 ``x`` 轴上的加速度测量值（以 milli-g 为单位）。
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """获取 ``y`` 轴上的加速度测量值（以 milli-g 为单位）。 (get y)
+    """获取 ``y`` 轴上的加速度测量值（以 milli-g 为单位）。
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """获取 ``z`` 轴上的加速度测量值（以 milli-g 为单位）。 (get z)
+    """获取 ``z`` 轴上的加速度测量值（以 milli-g 为单位）。
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """一次获取所有轴上的加速度测量值作为元组。 (get values)
+    """一次获取所有轴上的加速度测量值作为元组。
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def current_gesture() -> str:
-    """获取当前手势的名称。 (current gesture)
+    """获取当前手势的名称。
 
 Example: ``accelerometer.current_gesture()``
 
@@ -47,7 +47,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """检查命名手势当前是否处于活动状态。 (is gesture)
+    """检查命名手势当前是否处于活动状态。
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -56,12 +56,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) 手势名称。
+:param name: 手势名称。
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """检查命名手势自上次调用后是否处于活动状态。 (was gesture)
+    """检查命名手势自上次调用后是否处于活动状态。
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,11 +70,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (name) 手势名称。
+:param name: 手势名称。
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """返回手势历史的元组。 (get gestures)
+    """返回手势历史的元组。
 
 Example: ``accelerometer.get_gestures()``
 
