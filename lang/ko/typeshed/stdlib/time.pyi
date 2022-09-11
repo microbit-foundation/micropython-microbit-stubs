@@ -1,29 +1,29 @@
-"""시간을 측정하고 프로그램에 지연을 추가합니다."""
+"""시간을 측정하고 프로그램에 지연을 부여합니다."""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
-    """초 단위로 지연을 추가합니다.
+    """초 단위로 지연을 부여합니다.
 
 Example: ``time.sleep(1)``
 
-:param seconds: 초 단위만큼 슬립에 들어갑니다.
-부동 소수점 수를 사용해 초 단위 미만만큼 슬립에 들어갑니다."""
+:param seconds: 절전 상태를 설정할 초 단위입니다.
+초 단위 미만으로 절전 상태를 설정하려면 부동 소수점 수를 사용하세요."""
     ...
 
 def sleep_ms(ms: int) -> None:
-    """밀리초 단위로 딜레이를 부여합니다.
+    """밀리초 단위로 지연을 부여합니다.
 
 Example: ``time.sleep_ms(1_000_000)``
 
-:param ms: 밀리초 단위의 지연(>= 0)."""
+:param ms: 밀리초 단위의 지연 시간입니다(>= 0)."""
     ...
 
 def sleep_us(us: int) -> None:
-    """마이크로초 단위로 지연을 추가합니다.
+    """마이크로초 단위로 지연을 부여합니다.
 
 Example: ``time.sleep_us(1000)``
 
-:param us: 마이크로초 단위의 지연(>= 0)."""
+:param us: 마이크로초 단위의 지연 시간입니다(>= 0)."""
     ...
 
 def ticks_ms() -> int:
@@ -73,7 +73,7 @@ def ticks_diff(ticks1: int, ticks2: int) -> int:
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: 빼기 전의 값
+:param ticks1: 뺄 값
 :param ticks2: 뺄 값
 
 The argument order is the same as for subtraction operator,

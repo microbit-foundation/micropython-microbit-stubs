@@ -113,10 +113,10 @@ def stop(pin: MicroBitDigitalPin=pin0) -> None:
 
 Example: ``music.stop()``
 
-:param pin: (引腳) 可以提供一個可選引數來指定一個引腳，例如``music.stop(pin1)``。"""
+:param pin: (引腳) 可以提供一個可選引數來指定一個引腳，例如 ``music.stop(pin1)``。"""
 
 def reset() -> None:
-    """將 tick、bpm、持續時間和八度音程重置為其預設值。
+    """將 tick、bpm、duration 和 octave 重設為其預設值。
 
 Example: ``music.reset()``
 

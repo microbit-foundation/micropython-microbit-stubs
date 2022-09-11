@@ -162,7 +162,7 @@ Example: ``math.ldexp(0.5, 2)``
     ...
 
 def log(x: float, base: float=e) -> float:
-    """``x``의 로그를 주어진 베이스에 따라 계산합니다(자연로그가 기본값).
+    """``x``의 로그를 주어진 베이스에 따라 계산합니다(기본값은 자연로그).
 
 Example: ``math.log(math.e)``
 

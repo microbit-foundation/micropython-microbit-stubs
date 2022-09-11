@@ -46,7 +46,7 @@ bare minimum is implemented in MicroPython.
 """
 maxsize: int
 """
-現在のプラットフォームでネイティブ整数型が保持できる最大値、またはプラットフォームの最大値より小さい場合は MicroPython 整数型で表現可能な最大値(MicroPython ポートで 長整数をサポートしないとした場合)。
+現在のプラットフォームでネイティブ整数型が保持できる最大値、またはプラットフォームの最大値より小さい場合は MicroPython 整数型で表現可能な最大値（MicroPython ポートで 長整数をサポートしないとした場合）。
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some

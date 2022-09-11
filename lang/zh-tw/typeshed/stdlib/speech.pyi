@@ -28,7 +28,7 @@ Example: ``speech.pronounce(' /HEHLOW WERLD')``
 :param speed: 代表聲音速度的數字
 :param mouth: 一個代表聲音的嘴巴的數字
 :param throat: 代表聲音的喉嚨的數字
-:param pin: (引腳) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
+:param pin: (引腳) 指定輸出引腳的可選引數，可用於覆寫預設值 ``pin0``。
 如果我們不想從引腳上播放任何聲音，可以使用 ``pin=None``。僅限 micro:bit。
 
 Override the optional pitch, speed, mouth and throat settings to change the
@@ -48,7 +48,7 @@ Example: ``speech.say('hello world')``
 :param mouth: 一個代表聲音的嘴巴的數字
 :param throat: 代表聲音的喉嚨的數字
 :param pin: (引腳) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
-如果我們不想從引腳上播放任何聲音，可以使用 ``pin=None``。 僅限 micro:bit。
+如果我們無意從引腳上播放任何聲音，可以使用 ``pin=None``。僅限 micro:bit。
 
 The result is semi-accurate for English. Override the optional pitch, speed,
 mouth and throat settings to change the timbre (quality) of the voice.
@@ -69,7 +69,7 @@ Example: ``speech.sing(' /HEHLOW WERLD')``
 :param speed: 代表聲音速度的數字
 :param mouth: 一個代表聲音的嘴巴的數字
 :param throat: 代表聲音的喉嚨的數字
-:param pin: (引腳) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
+:param pin: (引腳) 指定輸出引腳的可選引數，可用於覆寫預設值 ``pin0``。
 如果我們不想從引腳上播放任何聲音，可以使用 ``pin=None``。僅限 micro:bit。
 
 Override the optional pitch, speed, mouth and throat settings to change

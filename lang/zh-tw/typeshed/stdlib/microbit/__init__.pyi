@@ -28,7 +28,7 @@ or used as a decorator::
 
 Arguments with different time units are additive.
 
-:param callback: 要叫用的回呼。 做為裝飾項目時省略。
+:param callback: 要叫用的回呼。做為裝飾項目時省略。
 :param days: 以天數為單位的間隔。
 :param h: 以小時為單位的間隔。
 :param min: 以分鐘為單位的間隔。
@@ -272,7 +272,7 @@ pin19: MicroBitDigitalPin
 pin20: MicroBitDigitalPin
 """具有數位功能的引腳。"""
 pin_logo: MicroBitTouchPin
-"""micro:bit 正面的觸控感應標誌引腳，預設為電容觸控模式。"""
+"""micro:bit 正面的觸控感應標誌引腳，預設為電容式觸控模式。"""
 pin_speaker: MicroBitAnalogDigitalPin
 """用於定址 micro:bit 揚聲器的引腳。
 
@@ -505,7 +505,7 @@ Example: ``Image.HEART_SMALL.shift_right(1)``
         ...
 
     def shift_up(self, n: int) -> Image:
-        """向上移動圖片來建立新影像。
+        """透過向上移動圖片，以建立一個新影像。
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
@@ -514,7 +514,7 @@ Example: ``Image.HEART_SMALL.shift_up(1)``
         ...
 
     def shift_down(self, n: int) -> Image:
-        """向下移動圖片來建立新影像。
+        """透過向下移動圖片，以建立一個新影像。
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
@@ -523,7 +523,7 @@ Example: ``Image.HEART_SMALL.shift_down(1)``
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """裁剪圖片來建立新影像。
+        """透過裁剪圖片，以建立一個新影像。
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
@@ -543,7 +543,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """透過反轉來源影像中像素亮度，以建立一個新影像。
+        """透過反轉來源影像的像素亮度，以建立一個新影像。
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -612,7 +612,7 @@ Example: ``Image.HEART - Image.HEART_SMALL``
         ...
 
     def __mul__(self, n: float) -> Image:
-        """將各像素的亮度乘以 ``n`` 建立一個新影像。
+        """透過將各像素的亮度乘以 ``n``，以建立一個新影像。
 
 Example: ``Image.HEART * 0.5``
 
@@ -620,7 +620,7 @@ Example: ``Image.HEART * 0.5``
         ...
 
     def __truediv__(self, n: float) -> Image:
-        """將各像素的亮度除以 ``n`` 來創建新影像。
+        """透過將各像素的亮度除以 ``n``，以建立一個新影像。
 
 Example: ``Image.HEART / 2``
 

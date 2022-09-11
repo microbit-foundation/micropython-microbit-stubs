@@ -1,4 +1,4 @@
-"""拆包和解包原始資料類型。"""
+"""壓縮和解壓縮原始資料類型。"""
 from _typeshed import ReadableBuffer, WriteableBuffer
 from typing import Any, Tuple, Union
 
@@ -29,7 +29,7 @@ Example: ``struct.pack_info('hf', buffer, 1, 3.1415)``
 
 :param fmt: 格式字串
 :param buffer: 要寫入的緩衝區。
-:param offset: 緩衝區的偏移量。 從緩衝區末尾開始計數可能為負數。
+:param offset: 緩衝區的偏移量。從緩衝區末尾開始計數可能為負數。
 :param v1: 首位數值
 :param *vn: 剩餘數值"""
     ...
@@ -51,6 +51,6 @@ Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
 
 :param fmt: 格式字串
 :param buffer: 要讀取的來源緩衝區。
-:param offset: 緩衝區的偏移量。 從緩衝區末尾開始計數可能為負數。
+:param offset: 緩衝區的偏移量。從緩衝區末尾開始計數可能為負數。
 :return: A tuple of the unpacked values."""
     ...

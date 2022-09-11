@@ -1,4 +1,4 @@
-"""時間を測定とプログラムの遅延。"""
+"""時間の測定とプログラムの遅延。"""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
@@ -6,7 +6,8 @@ def sleep(seconds: Union[int, float]) -> None:
 
 Example: ``time.sleep(1)``
 
-:param seconds: 遅延する秒数。秒より細かい精度で指定したい場合は浮動小数点数を使ってください。"""
+:param seconds: スリープする秒数。
+秒より細かい精度で指定したい場合は浮動小数点数を使ってください。"""
     ...
 
 def sleep_ms(ms: int) -> None:
@@ -26,7 +27,7 @@ Example: ``time.sleep_us(1000)``
     ...
 
 def ticks_ms() -> int:
-    """呼出し時点での稼働時間をミリ秒単位で返します。稼働時間は最大値に達するとラップアラウンドします(一周して最小値に戻ります)。
+    """呼出し時点での稼働時間をミリ秒単位で取得します。稼働時間は最大値に達するとラップアラウンドします。
 
 Example: ``time.ticks_ms()``
 
@@ -34,7 +35,7 @@ Example: ``time.ticks_ms()``
     ...
 
 def ticks_us() -> int:
-    """呼出し時点での稼働時間をマイクロ秒単位で返します。稼働時間は最大値に達するとラップアラウンドします(一周して最小値に戻ります)。
+    """呼出し時点での稼働時間をマイクロ秒単位で取得します。稼働時間は最大値に達するとラップアラウンドします。
 
 Example: ``time.ticks_us()``
 

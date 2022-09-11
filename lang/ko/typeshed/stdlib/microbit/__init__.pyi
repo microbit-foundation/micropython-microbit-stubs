@@ -105,9 +105,9 @@ that the button must be pressed again before this method will return
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""좌측 버튼 ``Button`` 개체입니다."""
+"""왼쪽 버튼 ``Button`` 개체입니다."""
 button_b: Button
-"""우측 버튼 ``Button`` 개체입니다."""
+"""오른쪽 버튼 ``Button`` 개체입니다."""
 
 class MicroBitDigitalPin:
     """디지털 핀입니다.
@@ -356,7 +356,7 @@ Given an image object it's possible to display it via the ``display`` API::
     TRIANGLE: Image
     """위쪽을 가리키는 삼각형 이미지입니다."""
     TRIANGLE_LEFT: Image
-    """좌측 구석의 삼각형 이미지입니다."""
+    """왼쪽 구석의 삼각형 이미지입니다."""
     CHESSBOARD: Image
     """체스판 패턴으로 깜빡이는 LED 불빛입니다."""
     DIAMOND: Image
@@ -487,7 +487,7 @@ Example: ``my_image.get_pixel(0, 0)``
         ...
 
     def shift_left(self, n: int) -> Image:
-        """사진을 좌측으로 옮겨 새로운 이미지를 생성합니다.
+        """사진을 왼쪽으로 옮겨 새로운 이미지를 생성합니다.
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
@@ -496,7 +496,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
         ...
 
     def shift_right(self, n: int) -> Image:
-        """사진을 우측으로 옮겨 새로운 이미지를 생성합니다.
+        """사진을 오른쪽으로 옮겨 새로운 이미지를 생성합니다.
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
@@ -505,7 +505,7 @@ Example: ``Image.HEART_SMALL.shift_right(1)``
         ...
 
     def shift_up(self, n: int) -> Image:
-        """사진을 상단으로 옮겨 새로운 이미지를 생성합니다.
+        """사진을 위로 옮겨 새로운 이미지를 생성합니다.
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
@@ -514,7 +514,7 @@ Example: ``Image.HEART_SMALL.shift_up(1)``
         ...
 
     def shift_down(self, n: int) -> Image:
-        """사진을 하단으로 옮겨 새로운 이미지를 생성합니다.
+        """사진을 아래로 옮겨 새로운 이미지를 생성합니다.
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 

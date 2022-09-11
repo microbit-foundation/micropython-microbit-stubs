@@ -34,7 +34,7 @@ Example: ``i2c.read(0x50, 64)``
 
 :param addr: 裝置的 7 位元地址
 :param n: 要讀取的位元組數
-:param repeat: 如果 ``True``，則不會發送停止位元
+:param repeat: 如果 ``True``，則不會傳送停止位元
 :return: The bytes read"""
     ...
 
@@ -45,5 +45,5 @@ Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
 :param addr: 裝置的 7 位元地址
 :param buf: 包含要寫入位元組的緩衝區
-:param repeat: 如果 ``True``，則不會發送停止位元"""
+:param repeat: 如果 ``True``，則不會傳送停止位元"""
     ...
