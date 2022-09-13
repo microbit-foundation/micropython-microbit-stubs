@@ -2,9 +2,9 @@
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 RATE_1MBIT: int
-"""常數用於指示每秒 1 MBit 的傳輸量。"""
+"""常數用於指示每秒 1 MBit 的輸送量。"""
 RATE_2MBIT: int
-"""常數用於指示每秒 2 MBit 的傳輸量。"""
+"""常數用於指示每秒 2 MBit 的輸送量。"""
 
 def on() -> None:
     """開啟無線電。
@@ -16,7 +16,7 @@ up memory that you may otherwise need."""
     ...
 
 def off() -> None:
-    """關閉收音機，節省電量和記憶體。
+    """關閉無線電，節省電量和記憶體。
 
 Example: ``radio.off()``"""
     ...
@@ -36,11 +36,11 @@ The default configuration is suitable for most use.
 訊息將透過此頻道傳送。只有透過此頻道接收的訊息，才會放入傳入訊息佇列。每一步都是 1MHz 寬，以 2400MHz 為基礎。
 :param power: (default=6) 是一個從 0 到 7 (包含) 的整數值，表示無線電訊息時使用的訊號功率。
 數值越高，訊號越強，但裝置消耗的功率越多。編號轉換為下列 dBm (分貝毫瓦) 數值列表中的位置：-30、-20、-16、-12、-8、-4、0、4。
-:param address: (default=0x75626974) 任意名稱，表示為 32 位元地址，用於在硬體級別篩選傳入的資料套件，僅保留與您設定的地址相符的那些。
+:param address: (default=0x75626974) 任意名稱，表示為 32 位元位址，用於在硬體等級篩選傳入的資料套件，僅保留與您設定的位址相符的那些。
 其他 micro:bit 相關平台使用的預設設定，則是此處使用的預設設定。
 :param group: (default=0) 篩選訊息時與 ``address`` 一起使用的 8 位元值 (0-255)。
 從概念上講，"address" 就像一個家庭/辦公室地址，而 "group" 就像您要向該地址傳送訊息的人。
-:param data_rate: (default=``radio.RATE_1MBIT``) 表示資料傳輸量發生的速度。
+:param data_rate: (default=``radio.RATE_1MBIT``) 表示資料輸送量發生的速度。
 可以是 ``radio`` 模組中定義的下列常數之一：``RATE_250KBIT``、``RATE_1MBIT`` 或 ``RATE_2MBIT``。
 
 If ``config`` is not called then the defaults described above are assumed."""
@@ -71,11 +71,11 @@ Example: ``radio.receive_bytes()``
     ...
 
 def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
-    """將訊息佇列中的下一則傳入訊息複製到緩衝區中。
+    """將訊息佇列中的下一則傳入訊息複製到緩衝區。
 
 Example: ``radio.receive_bytes_info(buffer)``
 
-:param buffer: 將訊息佇列中的下一則傳入訊息複製到緩衝區中。
+:param buffer: 目標緩衝區。如果訊息大小大於緩衝區，則訊息會被截斷。
 :return: ``None`` if there are no pending messages, otherwise it returns the length of the message (which might be more than the length of the buffer)."""
     ...
 

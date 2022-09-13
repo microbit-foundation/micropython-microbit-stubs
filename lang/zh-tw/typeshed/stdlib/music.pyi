@@ -19,9 +19,9 @@ RINGTONE: Tuple[str, ...]
 To be used to indicate an incoming message.
 """
 FUNK: Tuple[str, ...]
-"""旋律：為秘密特工和犯罪策劃者準備的放克低音。"""
+"""旋律：為特務和犯罪首腦準備的放克貝斯。"""
 BLUES: Tuple[str, ...]
-"""旋律：布基烏基 12 小節藍調走路低音。"""
+"""旋律：布基烏基 12 小節藍調走路貝斯。"""
 BIRTHDAY: Tuple[str, ...]
 """旋律：「祝你生日快樂…」
 
@@ -36,11 +36,11 @@ PUNCHLINE: Tuple[str, ...]
 PYTHON: Tuple[str, ...]
 """旋律：約翰菲利普蘇薩的進行曲《自由鐘》，又名《蒙提派森的飛行馬戲團》的主題曲 (Python 程式語言以此命名)。"""
 BADDY: Tuple[str, ...]
-"""旋律：無聲電影時代的壞人登場。"""
+"""旋律：無聲電影時代的惡人登場。"""
 CHASE: Tuple[str, ...]
 """旋律：無聲電影時代的追逐場景。"""
 BA_DING: Tuple[str, ...]
-"""旋律：表示某事發生的簡短訊號。"""
+"""旋律：表示某事發生的短訊號。"""
 WAWAWAWAA: Tuple[str, ...]
 """旋律：非常悲傷的長號。"""
 JUMP_UP: Tuple[str, ...]
@@ -53,11 +53,11 @@ POWER_DOWN: Tuple[str, ...]
 """旋律：表示失去成就的悲傷號角聲。"""
 
 def set_tempo(ticks: int=4, bpm: int=120) -> None:
-    """設定播放的大致速度。
+    """設定播放的大致節奏。
 
 Example: ``music.set_tempo(bpm=120)``
 
-:param ticks: 構成節拍的 tick 數。
+:param ticks: 構成節拍的滴答聲數。
 :param bpm: 一個整數，決定每分鐘有多少次節拍。
 
 Suggested default values allow the following useful behaviour:
@@ -72,7 +72,7 @@ To work out the length of a tick in milliseconds is very simple arithmetic:
     ...
 
 def get_tempo() -> Tuple[int, int]:
-    """以整數元組的形式獲取當前速度：``(ticks, bpm)``。
+    """以整數元組的形式取得當前節奏：``(ticks, bpm)``。
 
 Example: ``ticks, beats = music.get_tempo()``
 
@@ -87,7 +87,7 @@ Example: ``music.play(music.NYAN)``
 :param music: 特殊音符中指定的音樂 <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
 :param pin: (引腳) 用於外接揚聲器的輸出引腳 (預設為 ``pin0``)，``None`` 表示無聲音。
 :param wait: 如果 ``wait`` 設定為 ``True``，則此函式會封鎖。
-:param loop: 如果 ``loop`` 設定為 ``True``，曲調會重複直到呼叫 ``stop`` 或封鎖呼叫被中斷。
+:param loop: 如果 ``loop`` 設定為 ``True``，樂曲會重複直到呼叫 ``stop`` 或封鎖呼叫被中斷。
 
 Many built-in melodies are defined in this module."""
     ...
@@ -116,7 +116,7 @@ Example: ``music.stop()``
 :param pin: (引腳) 可以提供一個可選引數來指定一個引腳，例如 ``music.stop(pin1)``。"""
 
 def reset() -> None:
-    """將 tick、bpm、duration 和 octave 重設為其預設值。
+    """將 ticks、bpm、duration 和 octave 重設為其預設值。
 
 Example: ``music.reset()``
 

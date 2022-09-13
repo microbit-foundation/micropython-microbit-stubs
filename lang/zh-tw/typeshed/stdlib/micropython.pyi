@@ -43,7 +43,7 @@ The optimisation level controls the following compilation features:
 
 @overload
 def opt_level(level: int) -> None:
-    """設定指令碼後續編譯的最佳化級別。
+    """設定指令碼後續編譯的最佳化等級。
 
 Example: ``micropython.opt_level(1)``
 
@@ -62,7 +62,7 @@ The optimisation level controls the following compilation features:
 
 The default optimisation level is usually level 0.
 
-:param level: 整數最佳化級別。"""
+:param level: 整數最佳化等級。"""
     ...
 
 def mem_info(verbose: Any=None) -> None:

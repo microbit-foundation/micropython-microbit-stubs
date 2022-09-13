@@ -7,7 +7,7 @@ def sleep(seconds: Union[int, float]) -> None:
 Example: ``time.sleep(1)``
 
 :param seconds: 睡眠的秒數。
-使用浮點數代替分數來計算秒數。"""
+使用浮點數代表睡眠秒數的小數。"""
     ...
 
 def sleep_ms(ms: int) -> None:
@@ -27,7 +27,7 @@ Example: ``time.sleep_us(1000)``
     ...
 
 def ticks_ms() -> int:
-    """取得具有任意參考點的遞增毫秒計數器，該計數器會在某個值之後繞回。 (tick ms)
+    """取得具有任意參考點的遞增毫秒計數器，該計數器會在某個值之後繞回。
 
 Example: ``time.ticks_ms()``
 
@@ -35,7 +35,7 @@ Example: ``time.ticks_ms()``
     ...
 
 def ticks_us() -> int:
-    """取得具有任意參考點的遞增微秒計數器，該計數器會在某個值之後繞回。 (tick us)
+    """取得具有任意參考點的遞增微秒計數器，該計數器會在某個值之後繞回。
 
 Example: ``time.ticks_us()``
 
@@ -43,7 +43,7 @@ Example: ``time.ticks_us()``
     ...
 
 def ticks_add(ticks: int, delta: int) -> int:
-    """特定數字的偏移 tick 值，可以是正數或負數。
+    """特定數字的位移滴答聲值，可以是正數或負數。
 
 Example: ``time.ticks_add(time.ticks_ms(), 200)``
 
@@ -51,8 +51,8 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: tick 值
-:param delta: 整數偏移量
+:param ticks: 滴答聲值
+:param delta: 整數位移
 
 Example::
 
@@ -69,8 +69,8 @@ Example::
     ...
 
 def ticks_diff(ticks1: int, ticks2: int) -> int:
-    """測量從 ``time.ticks_ms()`` 或 ``ticks_us()`` 返回值之間的 tick 差異，有符號值
-可能會繞回。 (tick diff)
+    """測量從
+``time.ticks_ms()`` 或 ``ticks_us()`` 傳回值之間的滴答聲差異。此參數是一個可能會繞回的帶符號值。 (tick diff)
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 

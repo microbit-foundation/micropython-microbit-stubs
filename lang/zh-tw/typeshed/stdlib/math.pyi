@@ -11,7 +11,7 @@ Example: ``math.acos(1)``
     ...
 
 def asin(x: float) -> float:
-    """計算反正弦值。
+    """計算反正弦。
 
 Example: ``math.asin(0)``
 
@@ -39,7 +39,7 @@ Example: ``math.atan2(0, -1)``
     ...
 
 def ceil(x: float) -> float:
-    """將數字向正無限大捨入。
+    """將數字向正無限大四捨五入。
 
 Example: ``math.ceil(0.1)``
 
@@ -94,7 +94,7 @@ Example: ``math.fabs(-0.1)``
     ...
 
 def floor(x: float) -> int:
-    """將數字向負無限大捨入。
+    """將數字向負無限大四捨五入。
 
 Example: ``math.floor(0.9)``
 
@@ -125,7 +125,7 @@ the relation ``0.5 <= abs(m) < 1`` holds.
     ...
 
 def isfinite(x: float) -> bool:
-    """檢查值是否是有限的。
+    """檢查值是否為有限。
 
 Example: ``math.isfinite(float('inf'))``
 
@@ -134,7 +134,7 @@ Example: ``math.isfinite(float('inf'))``
     ...
 
 def isinf(x: float) -> bool:
-    """檢查值是否是無限的。
+    """檢查值是否為無限。
 
 Example: ``math.isinf(float('-inf'))``
 
@@ -143,7 +143,7 @@ Example: ``math.isinf(float('-inf'))``
     ...
 
 def isnan(x: float) -> bool:
-    """檢查值是否不是數字 (NaN)。
+    """檢查值是否為非數字 (NaN)。
 
 Example: ``math.isnan(float('nan'))``
 
@@ -233,7 +233,7 @@ Example: ``math.tan(0)``
     ...
 
 def trunc(x: float) -> int:
-    """將數字向 0 舍入。
+    """將數字向 0 四捨五入。
 
 Example: ``math.trunc(-0.9)``
 

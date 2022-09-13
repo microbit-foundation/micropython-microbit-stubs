@@ -16,7 +16,7 @@ def remove(filename: str) -> None:
 
 Example: ``os.remove('data.txt')``
 
-:param filename: 要刪除的文件。
+:param filename: 要刪除的檔案。
 
 If the file does not exist an ``OSError`` exception will occur."""
     ...

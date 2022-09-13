@@ -19,15 +19,15 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def pronounce(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: Optional[MicroBitDigitalPin]=pin0) -> None:
-    """發音音素。
+    """發出音素的聲音。
 
 Example: ``speech.pronounce(' /HEHLOW WERLD')``
 
 :param phonemes: 發音的音素字串
-:param pitch: (間距) 代表聲音音高的數字
-:param speed: 代表聲音速度的數字
-:param mouth: 一個代表聲音的嘴巴的數字
-:param throat: 代表聲音的喉嚨的數字
+:param pitch: (間距) 一個代表聲音音高的數字
+:param speed: 一個代表聲音速度的數字
+:param mouth: 一個代表聲音口型的數字
+:param throat: 一個代表聲音喉型的數字
 :param pin: (引腳) 指定輸出引腳的可選引數，可用於覆寫預設值 ``pin0``。
 如果我們不想從引腳上播放任何聲音，可以使用 ``pin=None``。僅限 micro:bit。
 
@@ -43,10 +43,10 @@ def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=12
 Example: ``speech.say('hello world')``
 
 :param words: 要說的一串詞。
-:param pitch: (間距) 代表聲音音高的數字
-:param speed: 代表聲音速度的數字
-:param mouth: 一個代表聲音的嘴巴的數字
-:param throat: 代表聲音的喉嚨的數字
+:param pitch: (間距) 一個代表聲音音高的數字
+:param speed: 一個代表聲音速度的數字
+:param mouth: 一個代表聲音口型的數字
+:param throat: 一個代表聲音喉型的數字
 :param pin: (引腳) 指定輸出引腳的可選引數可用於覆寫預設值 ``pin0``。
 如果我們無意從引腳上播放任何聲音，可以使用 ``pin=None``。僅限 micro:bit。
 
@@ -65,10 +65,10 @@ def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: in
 Example: ``speech.sing(' /HEHLOW WERLD')``
 
 :param phonemes: 要唱的一串詞。
-:param pitch: (間距) 代表聲音音高的數字
-:param speed: 代表聲音速度的數字
-:param mouth: 一個代表聲音的嘴巴的數字
-:param throat: 代表聲音的喉嚨的數字
+:param pitch: (間距) 一個代表聲音音高的數字
+:param speed: 一個代表聲音速度的數字
+:param mouth: 一個代表聲音口型的數字
+:param throat: 一個代表聲音喉型的數字
 :param pin: (引腳) 指定輸出引腳的可選引數，可用於覆寫預設值 ``pin0``。
 如果我們不想從引腳上播放任何聲音，可以使用 ``pin=None``。僅限 micro:bit。
 

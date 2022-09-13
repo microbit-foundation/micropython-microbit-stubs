@@ -16,7 +16,7 @@ def collect() -> None:
     ...
 
 def mem_alloc() -> int:
-    """獲取分配的堆積 RAM 的位元組。 (記憶體分配)
+    """取得分配的堆積 RAM 的位元組。 (記憶體分配)
 
 :return: The number of bytes allocated.
 
@@ -24,7 +24,7 @@ This function is MicroPython extension."""
     ...
 
 def mem_free() -> int:
-    """獲取可用堆積 RAM 的位元組，如果此數量未知，則為 -1。
+    """取得可用堆積 RAM 的位元組，如果此數量未知，則為 -1。
 
 :return: The number of bytes free.
 
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """查詢額外的GC分配閾值。
+    """查詢其他 GC 分配閾值。
 
 :return: The GC allocation threshold.
 
