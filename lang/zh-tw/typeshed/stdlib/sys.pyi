@@ -22,7 +22,7 @@ Example: ``sys.print_exception(e)``
 This is simplified version of a function which appears in the
 ``traceback`` module in CPython."""
 argv: List[str]
-"""當前程式啟動時使用的可變引數列表。"""
+"""目前程式啟動時，所使用的可變引數列表。"""
 byteorder: str
 """系統的位元組順序 (``"little"`` 或 ``"big"``)。"""
 
@@ -67,13 +67,13 @@ value directly, but instead count number of bits in it::
         # "> 32", "> 64" style of comparisons.
 """
 modules: Dict[str, Any]
-"""載入模組的字典。 
+"""已載入模組的字典。 
 
 On some ports, it may not include builtin modules."""
 path: List[str]
 """用於搜尋匯入模組的可變字典列表。"""
 platform: str
-"""MicroPython 執行的平台。 
+"""正在執行 MicroPython 的平台。 
 
 For OS/RTOS ports, this is usually an identifier of the OS, e.g. ``"linux"``.
 For baremetal ports it is an identifier of a board, e.g. ``"pyboard"`` for 

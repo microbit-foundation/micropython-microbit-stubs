@@ -3,7 +3,7 @@ from typing import Any
 from .microbit import MicroBitDigitalPin
 
 def unique_id() -> bytes:
-    """取得具有板的唯一識別碼之位元組字串。
+    """取得具有開發板的唯一識別碼之位元組字串。
 
 Example: ``machine.unique_id()``
 
@@ -40,7 +40,7 @@ def enable_irq(state: Any) -> None:
 
 Example: ``machine.enable_irq(interrupt_state)``
 
-:param state: 從最近一次叫用 ``disable_irq`` 函式傳回的值。"""
+:param state: 從最近一次呼叫 ``disable_irq`` 函式傳回的值。"""
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
@@ -56,7 +56,7 @@ starts straight away.
 
 :param pin: (引腳) 要使用的引腳
 :param pulse_level: 0 到計時低脈衝或 1 到計時高脈衝
-:param timeout_us: 微秒超時
+:param timeout_us: 微秒逾時
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
 

@@ -1,4 +1,4 @@
-"""使用 I²C 匯流排協定與裝置通訊。"""
+"""使用 I²C 匯流排通訊協定與裝置通訊。"""
 from _typeshed import ReadableBuffer
 from ..microbit import MicroBitDigitalPin, pin19, pin20
 from typing import List

@@ -9,7 +9,7 @@ This does not disable sound output to an edge connector pin."""
     ...
 
 def on() -> None:
-    """打開揚聲器。
+    """開啟揚聲器。
 
 Example: ``speaker.on()``"""
     ...

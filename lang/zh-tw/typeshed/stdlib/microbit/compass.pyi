@@ -18,7 +18,7 @@ Example: ``compass.is_calibrated()``
     ...
 
 def clear_calibration() -> None:
-    """撤消校準，使指南針再次未校準。
+    """復原校準，使指南針再次未校準。
 
 Example: ``compass.clear_calibration()``"""
     ...
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """獲取裝置周圍磁場的大小。
+    """取得裝置周圍磁場的強度。
 
 Example: ``compass.get_field_strength()``
 

@@ -57,7 +57,7 @@ def choice(seq: Sequence[_T]) -> _T:
 
 Example: ``random.choice([Image.HAPPY, Image.SAD])``
 
-:param seq: 序列
+:param seq: 序列。
 
 If ``seq`` is  empty, raises ``IndexError``."""
     ...

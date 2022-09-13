@@ -1,4 +1,4 @@
-"""引腳、影像、聲音、溫度和音量。"""
+"""引腳、圖像、聲音、溫度和音量。"""
 from _typeshed import ReadableBuffer
 from typing import Any, Callable, List, Optional, overload
 from . import accelerometer as accelerometer
@@ -12,7 +12,7 @@ from . import uart as uart
 from . import audio as audio
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """安排一個函式以指定的時間間隔叫用 **僅限 V2**。
+    """安排一個函式，以指定的時間間隔呼叫 **僅限 V2**。
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -40,12 +40,12 @@ def panic(n: int) -> None:
 
 Example: ``panic(127)``
 
-:param n: 任意整數 <= 255 表示狀態。
+:param n: 任意整數 <= 255 以表示狀態。
 
 Requires restart."""
 
 def reset() -> None:
-    """重啟板子。"""
+    """重啟開發板。"""
 
 def sleep(n: float) -> None:
     """等待 ``n`` 毫秒。
@@ -61,7 +61,7 @@ One second is 1000 milliseconds, so::
 will pause the execution for one second."""
 
 def running_time() -> int:
-    """取得板子的執行時間。
+    """取得開發板的執行時間。
 
 :return: The number of milliseconds since the board was switched on or restarted."""
 
@@ -84,13 +84,13 @@ class Button:
     """按鈕 ``button_a`` 和 ``button_b`` 的類別。"""
 
     def is_pressed(self) -> bool:
-        """檢查按鈕是否按下。
+        """檢查按鈕是否有按下。
 
 :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
         ...
 
     def was_pressed(self) -> bool:
-        """檢查自裝置啟動或上次呼叫此方法以來是否按下該按鈕。
+        """檢查自裝置啟動或上次呼叫此方法以來，是否有按下該按鈕。
 
 Calling this method will clear the press state so
 that the button must be pressed again before this method will return
@@ -105,9 +105,9 @@ that the button must be pressed again before this method will return
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""左鍵 ``Button`` 物件。"""
+"""左側按鈕 ``Button`` 物件。"""
 button_b: Button
-"""右鍵 ``Button`` 物件。"""
+"""右側按鈕 ``Button`` 物件。"""
 
 class MicroBitDigitalPin:
     """數位引腳。
@@ -280,145 +280,145 @@ This API is intended only for use in Pulse-Width Modulation pin operations e.g. 
 """
 
 class Image:
-    """要在 micro:bit LED 顯示器上顯示的圖片。
+    """要在 micro:bit LED 顯示器上顯示的圖像。
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """愛心圖片。"""
+    """愛心圖像。"""
     HEART_SMALL: Image
-    """小愛心影像。"""
+    """小愛心圖像。"""
     HAPPY: Image
-    """開心的臉圖片。"""
+    """開心的臉圖像。"""
     SMILE: Image
-    """微笑的臉圖片。"""
+    """笑臉圖像。"""
     SAD: Image
-    """傷心的臉圖片。"""
+    """傷心的臉圖像。"""
     CONFUSED: Image
-    """困惑的臉圖片。"""
+    """困惑的臉圖像。"""
     ANGRY: Image
-    """生氣的臉圖片。"""
+    """生氣的臉圖像。"""
     ASLEEP: Image
-    """瞌睡的臉圖片。"""
+    """睡臉圖像。"""
     SURPRISED: Image
-    """驚訝的臉圖片。"""
+    """驚訝的臉圖像。"""
     SILLY: Image
-    """鬼臉圖片。"""
+    """鬼臉圖像。"""
     FABULOUS: Image
-    """戴太陽眼鏡的臉圖片。"""
+    """戴太陽眼鏡的臉圖像。"""
     MEH: Image
-    """冷漠的臉圖片。"""
+    """冷漠的臉圖像。"""
     YES: Image
-    """勾號圖片。"""
+    """勾號圖像。"""
     NO: Image
-    """叉號圖片。"""
+    """叉號圖像。"""
     CLOCK12: Image
-    """指針指向 12 點鐘的圖片。"""
+    """指針指向 12 點鐘的圖像。"""
     CLOCK11: Image
-    """指針指向 11 點鐘的圖片。"""
+    """指針指向 11 點鐘的圖像。"""
     CLOCK10: Image
-    """指針指向 10 點鐘的圖片。"""
+    """指針指向 10 點鐘的圖像。"""
     CLOCK9: Image
-    """指針指向 9 點鐘的圖片。"""
+    """指針指向 9 點鐘的圖像。"""
     CLOCK8: Image
-    """指針指向 8 點鐘的圖片。"""
+    """指針指向 8 點鐘的圖像。"""
     CLOCK7: Image
-    """指針指向 7 點鐘的圖片。"""
+    """指針指向 7 點鐘的圖像。"""
     CLOCK6: Image
-    """指針指向 6 點鐘的圖片。"""
+    """指針指向 6 點鐘的圖像。"""
     CLOCK5: Image
-    """指針指向 5 點鐘的圖片。"""
+    """指針指向 5 點鐘的圖像。"""
     CLOCK4: Image
-    """指針指向 4 點鐘的圖片。"""
+    """指針指向 4 點鐘的圖像。"""
     CLOCK3: Image
-    """指針指向 3 點鐘的圖片。"""
+    """指針指向 3 點鐘的圖像。"""
     CLOCK2: Image
-    """指針指向 2 點鐘的圖片。"""
+    """指針指向 2 點鐘的圖像。"""
     CLOCK1: Image
-    """指針指向 1 點鐘的圖片。"""
+    """指針指向 1 點鐘的圖像。"""
     ARROW_N: Image
-    """指向北方箭頭的圖片。"""
+    """指向北方箭頭的圖像。"""
     ARROW_NE: Image
-    """指向東北箭頭的圖片。"""
+    """指向東北箭頭的圖像。"""
     ARROW_E: Image
-    """指向東方箭頭的圖片。"""
+    """指向東方箭頭的圖像。"""
     ARROW_SE: Image
-    """指向東南箭頭的圖片。"""
+    """指向東南箭頭的圖像。"""
     ARROW_S: Image
-    """指向南方箭頭的圖片。"""
+    """指向南方箭頭的圖像。"""
     ARROW_SW: Image
-    """指向西南箭頭的圖片。"""
+    """指向西南箭頭的圖像。"""
     ARROW_W: Image
-    """指向西方箭頭的圖片。"""
+    """指向西方箭頭的圖像。"""
     ARROW_NW: Image
-    """指向西北箭頭的圖片。"""
+    """指向西北箭頭的圖像。"""
     TRIANGLE: Image
-    """朝上三角形的圖片。"""
+    """朝上三角形的圖像。"""
     TRIANGLE_LEFT: Image
-    """左角三角形的圖片。"""
+    """左角三角形的圖像。"""
     CHESSBOARD: Image
     """以棋盤圖案交錯發亮的 LED 燈。"""
     DIAMOND: Image
-    """鑽石圖片。"""
+    """鑽石圖像。"""
     DIAMOND_SMALL: Image
-    """小鑽石圖片。"""
+    """小鑽石圖像。"""
     SQUARE: Image
-    """正方形圖片。"""
+    """正方形圖像。"""
     SQUARE_SMALL: Image
-    """小正方形圖片。"""
+    """小正方形圖像。"""
     RABBIT: Image
-    """兔子圖片。"""
+    """兔子圖像。"""
     COW: Image
-    """乳牛圖片。"""
+    """乳牛圖像。"""
     MUSIC_CROTCHET: Image
-    """四分音符圖片。"""
+    """四分音符圖像。"""
     MUSIC_QUAVER: Image
-    """八分音符圖片。"""
+    """八分音符圖像。"""
     MUSIC_QUAVERS: Image
-    """一組八分音符圖片。"""
+    """一組八分音符圖像。"""
     PITCHFORK: Image
-    """乾草叉圖片。"""
+    """乾草叉圖像。"""
     XMAS: Image
-    """聖誕樹圖片。"""
+    """聖誕樹圖像。"""
     PACMAN: Image
-    """吃豆人街機角色圖片。"""
+    """小精靈街機角色圖像。"""
     TARGET: Image
-    """靶子圖片。"""
+    """靶子圖像。"""
     TSHIRT: Image
-    """T 恤圖片。"""
+    """T 恤圖像。"""
     ROLLERSKATE: Image
-    """輪式溜冰鞋圖片。"""
+    """輪式溜冰鞋圖像。"""
     DUCK: Image
-    """鴨子圖片。"""
+    """鴨子圖像。"""
     HOUSE: Image
-    """房子圖片。"""
+    """房子圖像。"""
     TORTOISE: Image
-    """陸龜圖片。"""
+    """陸龜圖像。"""
     BUTTERFLY: Image
-    """蝴蝶圖片。"""
+    """蝴蝶圖像。"""
     STICKFIGURE: Image
-    """簡筆人物畫圖片。"""
+    """簡筆畫圖像。"""
     GHOST: Image
-    """幽靈圖片。"""
+    """幽靈圖像。"""
     SWORD: Image
-    """劍圖片。"""
+    """劍圖像。"""
     GIRAFFE: Image
-    """長頸鹿圖片。"""
+    """長頸鹿圖像。"""
     SKULL: Image
-    """骷髏頭圖片。"""
+    """骷髏頭圖像"""
     UMBRELLA: Image
-    """雨傘圖片。"""
+    """雨傘圖像。"""
     SNAKE: Image
-    """蛇圖片。"""
+    """蛇圖像。"""
     ALL_CLOCKS: List[Image]
-    """按順序包含所有時鐘圖片的清單。"""
+    """按順序包含所有 CLOCK_圖像的列表。"""
     ALL_ARROWS: List[Image]
-    """按順序包含所有箭頭圖片的清單。"""
+    """按順序包含所有 ARROW_圖像的列表。"""
 
     @overload
     def __init__(self, string: str) -> None:
-        """從描述點亮哪些 LED 的字串建立圖片。
+        """從描述點亮哪些 LED 的字串建立圖像。
 
 ``string`` has to consist of digits 0-9 arranged into lines,
 describing the image, for example::
@@ -432,16 +432,16 @@ describing the image, for example::
 will create a 5×5 image of an X. The end of a line is indicated by a
 colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: 描述圖片的字串。"""
+:param string: 描述圖像的字串。"""
         ...
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """建立一個 ``width`` 行 ``height`` 列的空白圖片。
+        """建立一個 ``width`` 行 ``height`` 列的空白圖像。
 
-:param width: 可選的圖片寬度
-:param height: 可選的圖片高度
-:param buffer: 用可選陣列或在 0-9 範圍內的 ``width``×``height`` 整數位元組，來初始化圖片
+:param width: 可選的圖像寬度
+:param height: 可選的圖像高度
+:param buffer: 用可選陣列或在 0-9 範圍內的 ``width``×``height`` 整數位元組，來初始化圖像
 
 Examples::
 
@@ -487,7 +487,7 @@ Example: ``my_image.get_pixel(0, 0)``
         ...
 
     def shift_left(self, n: int) -> Image:
-        """透過向左移動圖片，以建立一個新影像。
+        """透過向左移動圖像，以建立一個新圖像。
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
@@ -496,7 +496,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
         ...
 
     def shift_right(self, n: int) -> Image:
-        """透過向右移動圖片，以建立一個新影像。
+        """透過向右移動圖像，以建立一個新圖像。
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
@@ -505,7 +505,7 @@ Example: ``Image.HEART_SMALL.shift_right(1)``
         ...
 
     def shift_up(self, n: int) -> Image:
-        """透過向上移動圖片，以建立一個新影像。
+        """透過向上移動圖像，以建立一個新圖像。
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
@@ -514,7 +514,7 @@ Example: ``Image.HEART_SMALL.shift_up(1)``
         ...
 
     def shift_down(self, n: int) -> Image:
-        """透過向下移動圖片，以建立一個新影像。
+        """透過向下移動圖像，以建立一個新圖像。
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
@@ -523,7 +523,7 @@ Example: ``Image.HEART_SMALL.shift_down(1)``
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """透過裁剪圖片，以建立一個新影像。
+        """透過裁剪圖像，以建立一個新圖像。
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
@@ -535,7 +535,7 @@ Example: ``Image.HEART.crop(1, 1, 3, 3)``
         ...
 
     def copy(self) -> Image:
-        """建立影像的精確副本。
+        """建立圖像的精確副本。
 
 Example: ``Image.HEART.copy()``
 
@@ -543,7 +543,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """透過反轉來源影像的像素亮度，以建立一個新影像。
+        """透過反轉來源圖像的像素亮度，以建立一個新圖像。
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -551,7 +551,7 @@ Example: ``Image.SMALL_HEART.invert()``
         ...
 
     def fill(self, value: int) -> None:
-        """設定影像中所有像素的亮度。
+        """設定圖像中所有像素的亮度。
 
 Example: ``my_image.fill(5)``
 
@@ -562,17 +562,17 @@ read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """將另一個影像中的一個區域複製到該影像中。
+        """將另一個圖像中的一個區域複製到該圖像中。
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-:param src: 來源影像
-:param x: 來源影像中的起始資料行偏移量
-:param y: 來源影像中的起始資料列偏移量
-:param w: 要複製的資料行
-:param h: 要複製的資料列
-:param xdest: 此影像中要修改的資料列偏移量
-:param ydest: 此影像中要修改的資料列偏移量
+:param src: 來源圖像
+:param x: 來源圖像中的起始行位移
+:param y: 來源圖像中的起始列位移
+:param w: 要複製的行數
+:param h: 要複製的列數
+:param xdest: 此圖像中要修改的行位移
+:param ydest: 此圖像中要修改的列位移
 
 Pixels outside the source image are treated as having a brightness of 0.
 
@@ -588,31 +588,31 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """取得影像的緊湊字串顯示。"""
+        """取得圖像的緊湊字串顯示。"""
         ...
 
     def __str__(self) -> str:
-        """取得影像的可讀字串顯示。"""
+        """取得圖像的可讀字串顯示。"""
         ...
 
     def __add__(self, other: Image) -> Image:
-        """透過將兩個影像的像素亮度值相加，以建立一個新影像。
+        """透過將兩個圖像的像素亮度值相加，以建立一個新圖像。
 
 Example: ``Image.HEART + Image.HAPPY``
 
-:param other: 要新增的影像。"""
+:param other: 要新增的圖像。"""
         ...
 
     def __sub__(self, other: Image) -> Image:
-        """透過從該影像中減去另一個影像的亮度值，以建立一個新影像。
+        """透過從該圖像中減去另一個圖像的亮度值，以建立一個新圖像。
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: 要減去的影像。"""
+:param other: 要減去的圖像。"""
         ...
 
     def __mul__(self, n: float) -> Image:
-        """透過將各像素的亮度乘以 ``n``，以建立一個新影像。
+        """透過將各像素的亮度乘以 ``n``，以建立一個新圖像。
 
 Example: ``Image.HEART * 0.5``
 
@@ -620,7 +620,7 @@ Example: ``Image.HEART * 0.5``
         ...
 
     def __truediv__(self, n: float) -> Image:
-        """透過將各像素的亮度除以 ``n``，以建立一個新影像。
+        """透過將各像素的亮度除以 ``n``，以建立一個新圖像。
 
 Example: ``Image.HEART / 2``
 
@@ -631,7 +631,7 @@ class SoundEvent:
     LOUD: SoundEvent
     """表示聲音事件的轉換，從 ``quiet`` 到 ``loud``，如鼓掌或喊叫。"""
     QUIET: SoundEvent
-    """表示聲音事件的轉換，從 ``loud`` 到 ``quiet``，例如說話或背景音樂。"""
+    """表示聲音事件的轉換，從 ``loud`` 到 ``quiet``。例如，說話或背景音樂。"""
 
 class Sound:
     """可以使用 ``audio.play(Sound.NAME)`` 調用內建聲音。"""

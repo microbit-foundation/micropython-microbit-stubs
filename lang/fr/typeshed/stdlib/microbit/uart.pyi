@@ -29,7 +29,7 @@ For more details see `the online documentation <https://microbit-micropython.rea
     ...
 
 def any() -> bool:
-    """Check if any data is waiting.
+    """Vérifie si une donnée est en attente.
 
 Example: ``uart.any()``
 

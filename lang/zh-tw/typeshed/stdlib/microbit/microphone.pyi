@@ -3,7 +3,7 @@ from typing import Optional, Tuple
 from ..microbit import SoundEvent
 
 def current_event() -> Optional[SoundEvent]:
-    """獲取最後錄製的聲音事件
+    """取得最後錄製的聲音事件
 
 Example: ``microphone.current_event()``
 
@@ -11,7 +11,7 @@ Example: ``microphone.current_event()``
     ...
 
 def was_event(event: SoundEvent) -> bool:
-    """檢查自上次通話後是否至少聽到一次聲音。
+    """檢查自上次呼叫後，是否至少有聽到一次聲音。
 
 Example: ``microphone.was_event(SoundEvent.LOUD)``
 
@@ -22,7 +22,7 @@ This call clears the sound history before returning.
     ...
 
 def is_event(event: SoundEvent) -> bool:
-    """檢查檢測到的最新聲音事件。
+    """檢查偵測到的最新聲音事件。
 
 Example: ``microphone.is_event(SoundEvent.LOUD)``
 
@@ -33,7 +33,7 @@ This call does not clear the sound event history.
     ...
 
 def get_events() -> Tuple[SoundEvent, ...]:
-    """以元組的形式獲取聲音事件歷史。
+    """以元組的形式取得聲音事件歷史。
 
 Example: ``microphone.get_events()``
 
@@ -50,11 +50,11 @@ Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 A high threshold means the event will only trigger if the sound is very loud (>= 250 in the example).
 
 :param event: 聲音事件，例如 ``SoundEvent.LOUD`` 或 ``SoundEvent.QUIET``。
-:param value: 0-255 範圍內的閾值級別。"""
+:param value: 0-255 範圍內的閾值等級。"""
     ...
 
 def sound_level() -> int:
-    """獲取聲壓等級。
+    """取得聲壓位準。
 
 Example: ``microphone.sound_level()``
 

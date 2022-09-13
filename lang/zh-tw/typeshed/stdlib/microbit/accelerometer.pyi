@@ -56,12 +56,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: 手勢名稱
+:param name: 手勢名稱。
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """檢查命名手勢自上次通話後是否處於活動狀態。
+    """檢查命名手勢自上次呼叫後是否處於活動狀態。
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -70,7 +70,7 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: 手勢名稱
+:param name: 手勢名稱。
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
