@@ -25,7 +25,7 @@ def deep_sleep(
     wake_on: Optional[
         Union[MicroBitDigitalPin, Button] | Tuple[MicroBitDigitalPin | Button, ...]
     ] = None,
-    run_every: bool = False,
+    run_every: bool = True,
 ) -> None:
     """Set the micro:bit into a low power mode where it can wake up and continue operation.
 
@@ -39,8 +39,10 @@ def deep_sleep(
 
     If no wake up sources have been configured it will sleep until the reset button is pressed (which resets the Target MCU) or, in battery power, when the USB cable is inserted.
 
+    When the ``run_every`` parameter is set to ``True`` (the default), any function scheduled with ``microbit.run_every`` will still run while the board sleeps. When the scheduled time is reached the micro:bit will momentarily wake up to run the scheduled function and then automatically go back to sleep.
+
     :param ms: A time in milliseconds to wait before it wakes up.
     :param wake_on: A single instance or a tuple of pins and/or buttons to wake up the board, e.g. ``deep_sleep(wake_on=button_a)`` or ``deep_sleep(wake_on=(pin0, pin2, button_b))``.
-    :param run_every: Set to ``True`` to wake up with each ``microbit.run_every`` scheduled run.
+    :param run_every: A boolean to configure if the functions scheduled with ``microbit.run_every`` will continue to run while it sleeps.
     """
     ...
