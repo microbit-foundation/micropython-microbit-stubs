@@ -38,20 +38,20 @@ def stop() -> None:
 class SoundEffect:
     """A sound effect, composed by a set of parameters configured via the constructor or attributes."""
 
-    WAVE_SINE: ClassVar[int]
-    """Sine wave option used for the ``wave`` parameter."""
+    WAVEFORM_SINE: ClassVar[int]
+    """Sine wave option used for the ``waveform`` parameter."""
 
-    WAVE_SAWTOOTH: ClassVar[int]
-    """Sawtooth wave option used for the ``wave`` parameter."""
+    WAVEFORM_SAWTOOTH: ClassVar[int]
+    """Sawtooth wave option used for the ``waveform`` parameter."""
 
-    WAVE_TRIANGLE: ClassVar[int]
-    """Triangle wave option used for the ``wave`` parameter."""
+    WAVEFORM_TRIANGLE: ClassVar[int]
+    """Triangle wave option used for the ``waveform`` parameter."""
 
-    WAVE_SQUARE: ClassVar[int]
-    """Square wave option used for the ``wave`` parameter."""
+    WAVEFORM_SQUARE: ClassVar[int]
+    """Square wave option used for the ``waveform`` parameter."""
 
-    WAVE_NOISE: ClassVar[int]
-    """Noise option used for the ``wave`` parameter."""
+    WAVEFORM_NOISE: ClassVar[int]
+    """Noise option used for the ``waveform`` parameter."""
 
     SHAPE_LINEAR: ClassVar[int]
     """Linear interpolation option used for the ``shape`` parameter."""
@@ -89,8 +89,8 @@ class SoundEffect:
     vol_end: int
     """End volume value, a number between ``0`` and ``255``"""
 
-    wave: int
-    """Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise)"""
+    waveform: int
+    """Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"""
 
     fx: int
     """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"""
@@ -105,7 +105,7 @@ class SoundEffect:
         duration: int = 500,
         vol_start: int = 255,
         vol_end: int = 0,
-        wave: int = WAVE_SQUARE,
+        waveform: int = WAVEFORM_SQUARE,
         fx: int = FX_NONE,
         shape: int = SHAPE_LOG,
     ):
@@ -123,7 +123,7 @@ class SoundEffect:
         :param duration: Duration of the sound in milliseconds, a number between ``0`` and ``9999``.
         :param vol_start: Start volume value, a number between ``0`` and ``255``.
         :param vol_end: End volume value, a number between ``0`` and ``255``.
-        :param wave: Type of wave shape, one of these values: ``WAVE_SINE``, ``WAVE_SAWTOOTH``, ``WAVE_TRIANGLE``, ``WAVE_SQUARE``, ``WAVE_NOISE`` (randomly generated noise).
+        :param waveform: Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise).
         :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``.
         :param shape: The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``.
         """
