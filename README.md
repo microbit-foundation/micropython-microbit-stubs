@@ -28,7 +28,7 @@ MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The Mi
 
 ## Scripts
 
-`browser-package.py` packages the typeshed and a Pyright config file in a JSON format that can be consumed by the [alpha Python editor project](https://github.com/microbit-foundation/python-editor-v3). A file is created per language.
+`browser-package.py` packages the typeshed and a Pyright config file in a JSON format that can be consumed by the [Python Editor V3 project](https://github.com/microbit-foundation/python-editor-v3). A file is created per language.
 
 ## Testing
 
