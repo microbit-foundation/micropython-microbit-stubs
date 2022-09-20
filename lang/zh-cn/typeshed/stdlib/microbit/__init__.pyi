@@ -29,7 +29,7 @@ or used as a decorator::
 Arguments with different time units are additive.
 
 :param callback: 要调用的回调。当用作装饰器时省略。
-:param days: 以天为单位的间隔。
+:param days: (天) 以天为单位的间隔。
 :param h: 以小时为单位的间隔。
 :param min: (分钟) 以分钟为单位的间隔。
 :param s: (秒) 以秒为单位的间隔。
@@ -105,9 +105,9 @@ that the button must be pressed again before this method will return
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""左键 ``Button`` 对象。"""
+"""左键 ``Button`` 对象。 (按钮 a)"""
 button_b: Button
-"""右键 ``Button`` 对象。"""
+"""右键 ``Button`` 对象。 (按钮 b)"""
 
 class MicroBitDigitalPin:
     """数字引脚。 (Microbit 数字引脚)
@@ -290,19 +290,19 @@ Given an image object it's possible to display it via the ``display`` API::
     HEART_SMALL: Image
     """小的心形图像。 (小的心形)"""
     HAPPY: Image
-    """快乐的脸部图像。"""
+    """快乐的脸部图像。 (快乐)"""
     SMILE: Image
-    """微笑的脸部图像。"""
+    """微笑的脸部图像。 (微笑)"""
     SAD: Image
-    """难过的脸部图像。"""
+    """难过的脸部图像。 (难过)"""
     CONFUSED: Image
-    """困惑的面部图像。"""
+    """困惑的面部图像。 (困惑)"""
     ANGRY: Image
-    """愤怒的脸部图像。"""
+    """愤怒的脸部图像。 (愤怒)"""
     ASLEEP: Image
-    """睡着的脸部图像。"""
+    """睡着的脸部图像。 (睡着)"""
     SURPRISED: Image
-    """惊讶的脸部图像。"""
+    """惊讶的脸部图像。 (惊讶)"""
     SILLY: Image
     """傻傻的脸部图像。 (傻的)"""
     FABULOUS: Image
@@ -356,7 +356,7 @@ Given an image object it's possible to display it via the ``display`` API::
     TRIANGLE: Image
     """向上的三角形图像。 (三角)"""
     TRIANGLE_LEFT: Image
-    """左角的三角形图像。"""
+    """左角的三角形图像。 (左三角)"""
     CHESSBOARD: Image
     """按棋盘式交替点亮 LED。 (国际象棋棋盘)"""
     DIAMOND: Image
@@ -366,29 +366,29 @@ Given an image object it's possible to display it via the ``display`` API::
     SQUARE: Image
     """方形图像。 (正方形)"""
     SQUARE_SMALL: Image
-    """小的方形图像。"""
+    """小的方形图像。 (小方形)"""
     RABBIT: Image
     """兔子图像。 (兔子)"""
     COW: Image
     """奶牛图像。 (牛)"""
     MUSIC_CROTCHET: Image
-    """音乐音符图像"""
+    """音乐音符图像 (音乐音符)"""
     MUSIC_QUAVER: Image
-    """八分音符图像。"""
+    """八分音符图像。 (八分音符)"""
     MUSIC_QUAVERS: Image
-    """一对八分音符图像。"""
+    """一对八分音符图像。 (一对八分音符)"""
     PITCHFORK: Image
     """干草叉图像。 (干草叉)"""
     XMAS: Image
-    """圣诞树图像。"""
+    """圣诞树图像。 (圣诞节)"""
     PACMAN: Image
-    """吃豆人游戏角色图像。"""
+    """吃豆人游戏角色图像。 (吃豆人)"""
     TARGET: Image
-    """目标图像"""
+    """目标图像 (目标)"""
     TSHIRT: Image
     """T 恤图像。 (T恤)"""
     ROLLERSKATE: Image
-    """轮滑图像。"""
+    """轮滑图像。 (轮滑)"""
     DUCK: Image
     """鸭子图像。 (鸭子)"""
     HOUSE: Image
@@ -412,9 +412,9 @@ Given an image object it's possible to display it via the ``display`` API::
     SNAKE: Image
     """蛇图像。 (蛇)"""
     ALL_CLOCKS: List[Image]
-    """按顺序包含所有 CLOCK_ 图像的列表（时钟）。"""
+    """按顺序包含所有 CLOCK_ 图像的列表（时钟）。 (所有时钟)"""
     ALL_ARROWS: List[Image]
-    """按顺序包含所有 ARROW_ 图像的列表（箭头）。"""
+    """按顺序包含所有 ARROW_ 图像的列表（箭头）。 (所有箭头)"""
 
     @overload
     def __init__(self, string: str) -> None:
@@ -638,13 +638,13 @@ class Sound:
     GIGGLE: Sound
     """咯咯的声音。 (咯咯笑)"""
     HAPPY: Sound
-    """快乐的声音。"""
+    """快乐的声音。 (快乐)"""
     HELLO: Sound
     """问候声。 (你好)"""
     MYSTERIOUS: Sound
     """神秘的声音 (神秘的)"""
     SAD: Sound
-    """悲伤的声音。"""
+    """悲伤的声音。 (难过)"""
     SLIDE: Sound
     """滑动声。 (滑动)"""
     SOARING: Sound

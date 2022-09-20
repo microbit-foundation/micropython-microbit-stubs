@@ -30,7 +30,7 @@ class _implementation:
     name: str
     version: Tuple[int, int, int]
 implementation: _implementation
-"""包含有关当前 Python 实现的信息的对象。
+"""包含有关当前 Python 实现的信息的对象。 (实现)
 
 For MicroPython, it has following attributes:
 
