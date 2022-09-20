@@ -11,40 +11,42 @@ HOURS = 36000
 DAYS = 864000
 """日期时间戳格式。 (天)"""
 
-def set_labels(*args: str, timestamp: Optional[Literal[1, 10, 36000, 864000]]=SECONDS) -> None:
+def set_labels(*labels: str, timestamp: Optional[Literal[1, 10, 36000, 864000]]=SECONDS) -> None:
     """设置日志文件头。
 
-Example: ``log.set_labels('x', 'y', 'z', timestamp=log.MINUTES)``
+Example: ``log.set_labels('X', 'Y', 'Z', timestamp=log.MINUTES)``
 
-Each call to this function with positional arguments will generate a new
-header entry into the log file.
+Ideally this function should be called a single time, before any data is
+logged, to configure the data table header once.
 
-If the program starts and a log file already exists it will compare the
-labels set up by this function call to the last headers declared in the
-file. If the headers are different it will add a new header entry at the
-end of the file.
+If a log file already exists when the program starts, or if this function
+is called multiple times, it will check the labels already defined in the
+log file. If this function call contains any new labels not already
+present, it will generate a new header row with the additional columns.
 
-:param *args: 每个日志头的位置参数。
-:param timestamp: 将自动添加为每行第一列的时间戳单位。
-将此参数设置为 ``None`` 来禁用时间戳。传递此模块定义的 ``log.MILLISECONDS``、 ``log.SECONDS``、 ``log.MINUTES``、 ``log.HOURS`` 或 ``log.DAYS`` 值。 无效的值会抛出异常。"""
+By default the first column contains a timestamp for each row. The time
+unit can be selected via the timestamp argument.
+
+:param *labels: Any number of positional arguments, each corresponding to an entry in the log header.
+:param timestamp: Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."""
     ...
 
 @overload
-def add(log_data: Optional[dict[str, Union[str, int, float]]]) -> None:
+def add(data_dictionary: Optional[dict[str, Union[str, int, float]]]) -> None:
     """通过传递包含标题和值的字典将数据行添加到日志中。
 
 Example: ``log.add({ 'temp': temperature() })``
 
 Each call to this function adds a row to the log.
 
-Dictionary keys not already specified via the ``set_labels`` function,
-or by a previous call to this function, will trigger a new header
-entry to be added to the log with the extra label.
+New labels not previously specified via the set_labels function, or by a
+previous call to this function, will trigger a new header entry to be added
+to the log with the extra labels.
 
-Labels previously specified and not present in this function call will be
-skipped with an empty value in the log row.
+Labels previously specified and not present in a call to this function will
+be skipped with an empty value in the log row.
 
-:param log_data: 要记录为字典的数据，每个标题都有一个键。"""
+:param data_dictionary: The data to log as a dictionary with a key for each header."""
     ...
 
 @overload
@@ -55,12 +57,12 @@ Example: ``log.add(temp=temperature())``
 
 Each call to this function adds a row to the log.
 
-Keyword arguments not already specified via the ``set_labels`` function,
-or by a previous call to this function, will trigger a new header entry
-to be added to the log with the extra label.
+New labels not previously specified via the set_labels function, or by a
+previous call to this function, will trigger a new header entry to be added
+to the log with the extra labels.
 
-Labels previously specified and not present in this function call will be
-skipped with an empty value in the log row."""
+Labels previously specified and not present in a call to this function will
+be skipped with an empty value in the log row."""
     ...
 
 def delete(full=False):
@@ -68,19 +70,20 @@ def delete(full=False):
 
 Example: ``log.delete()``
 
-To add the log headers the ``set_labels`` function has to be called again
-after this.
+To add the log headers again the ``set_labels`` function should to be called after this function.
 
-:param full: 选择“完全”擦除模式，将数据从闪存中删除。
-如果设置为 ``False`` ，它将使用“快速”方法，该方法会使得数据无效，而不是执行较慢的完全擦除。"""
+There are two erase modes; “full” completely removes the data from the physical storage,
+and “fast” invalidates the data without removing it.
+
+:param full: ``True`` selects a “full” erase and ``False`` selects the “fast” erase method."""
     ...
 
 def set_mirroring(serial: bool):
-    """把数据记录活动镜像到串行输出。
+    """Configure mirroring of the data logging activity to the serial output.
 
 Example: ``log.set_mirroring(True)``
 
-Mirroring is disabled by default.
+Serial mirroring is disabled by default. When enabled, it will print to serial each row logged into the log file.
 
-:param serial: ``True`` 则把数据记录活动镜像到串行输出，``False`` 则禁用镜像。"""
+:param serial: ``True`` enables mirroring data to the serial output."""
     ...

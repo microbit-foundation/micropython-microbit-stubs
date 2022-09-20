@@ -33,6 +33,14 @@ Example: ``x, y, z = accelerometer.get_values()``
 :return: a three-element tuple of integers ordered as X, Y, Z, each value a positive or negative integer depending on direction in the range +/- 2000mg"""
     ...
 
+def get_strength() -> int:
+    """Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes.
+
+Example: ``accelerometer.get_strength()``
+
+:return: The combined acceleration strength of all the axes, in milli-g."""
+    ...
+
 def current_gesture() -> str:
     """現在のジェスチャーの名前を取得します。
 
@@ -86,3 +94,10 @@ gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
 
 :return: The history as a tuple, most recent last."""
     ...
+
+def set_range(value: int) -> None:
+    """Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g.
+
+Example: ``accelerometer.set_range(8)``
+
+:param value: New range for the accelerometer, an integer in ``g``."""
