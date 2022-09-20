@@ -44,9 +44,9 @@ BA_DING: Tuple[str, ...]
 WAWAWAWAA: Tuple[str, ...]
 """旋律：非常悲伤的长号。"""
 JUMP_UP: Tuple[str, ...]
-"""旋律：用于游戏中，表示向上运动。"""
+"""旋律：用于游戏中，表示向上运动。 (向上跳)"""
 JUMP_DOWN: Tuple[str, ...]
-"""旋律：用于游戏中，表示向下运动。"""
+"""旋律：用于游戏中，表示向下运动。 (向下跳)"""
 POWER_UP: Tuple[str, ...]
 """旋律：表示解锁成就的号角。 (能力增强)"""
 POWER_DOWN: Tuple[str, ...]

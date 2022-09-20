@@ -1,4 +1,4 @@
-"""使用 micro:bit 播放声音（导入 ``audio`` 以兼容 V1）。"""
+"""使用 micro:bit 播放声音（导入 ``audio`` 以兼容 V1）。 (音频)"""
 from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import Iterable, Union
 

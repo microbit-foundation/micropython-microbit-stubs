@@ -1,4 +1,4 @@
-"""使用内置麦克风响应声音（仅限 V2）。"""
+"""使用内置麦克风响应声音（仅限 V2）。 (麦克风)"""
 from typing import Optional, Tuple
 from ..microbit import SoundEvent
 

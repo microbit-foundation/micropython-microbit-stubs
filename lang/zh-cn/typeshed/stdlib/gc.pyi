@@ -1,4 +1,4 @@
-"""控制垃圾回收器"""
+"""控制垃圾回收器 (垃圾回收(gc))"""
 from typing import overload
 
 def enable() -> None:

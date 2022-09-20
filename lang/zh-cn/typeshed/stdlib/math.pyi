@@ -1,4 +1,4 @@
-"""数学函数。"""
+"""数学函数。 (数学)"""
 from typing import Tuple
 
 def acos(x: float) -> float:
@@ -94,7 +94,7 @@ Example: ``math.fabs(-0.1)``
     ...
 
 def floor(x: float) -> int:
-    """将数字向负无穷大取整(向下取整)。
+    """将数字向负无穷大取整(向下取整)。 (向下取整)
 
 Example: ``math.floor(0.9)``
 
@@ -162,7 +162,7 @@ Example: ``math.ldexp(0.5, 2)``
     ...
 
 def log(x: float, base: float=e) -> float:
-    """计算给定底数 ``x`` 的对数（默认为自然对数）。
+    """计算给定底数 ``x`` 的对数（默认为自然对数）。 (日志)
 
 Example: ``math.log(math.e)``
 

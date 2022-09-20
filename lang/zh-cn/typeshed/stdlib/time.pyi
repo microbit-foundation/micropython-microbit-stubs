@@ -6,7 +6,7 @@ def sleep(seconds: Union[int, float]) -> None:
 
 Example: ``time.sleep(1)``
 
-:param seconds: 休眠的秒数。
+:param seconds: (秒) 休眠的秒数。
 使用浮点数休眠小数秒数。"""
     ...
 

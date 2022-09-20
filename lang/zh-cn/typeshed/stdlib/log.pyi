@@ -1,15 +1,15 @@
-"""将数据记录到您的 micro:bit V2。"""
+"""将数据记录到您的 micro:bit V2。 (日志)"""
 from typing import Literal, Optional, Union, overload
 MILLISECONDS = 1
-"""毫秒时间戳格式。"""
+"""毫秒时间戳格式。 (毫秒)"""
 SECONDS = 10
-"""秒时间戳格式。"""
+"""秒时间戳格式。 (秒)"""
 MINUTES = 600
-"""分钟时间戳格式。"""
+"""分钟时间戳格式。 (分钟)"""
 HOURS = 36000
-"""小时时间戳格式。"""
+"""小时时间戳格式。 (小时)"""
 DAYS = 864000
-"""日期时间戳格式。"""
+"""日期时间戳格式。 (天)"""
 
 def set_labels(*args: str, timestamp: Optional[Literal[1, 10, 36000, 864000]]=SECONDS) -> None:
     """设置日志文件头。
