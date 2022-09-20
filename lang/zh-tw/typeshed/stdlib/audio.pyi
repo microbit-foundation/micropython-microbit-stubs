@@ -7,4 +7,5 @@ from .microbit.audio import (
     play as play,
     stop as stop,
     AudioFrame as AudioFrame,
+    SoundEffect as SoundEffect,
 )

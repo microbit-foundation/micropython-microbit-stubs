@@ -1,7 +1,8 @@
 """引腳、圖像、聲音、溫度和音量。"""
+from typing import Any, Callable, List, Optional, Tuple, overload
 from _typeshed import ReadableBuffer
-from typing import Any, Callable, List, Optional, overload
 from . import accelerometer as accelerometer
+from . import audio as audio
 from . import compass as compass
 from . import display as display
 from . import i2c as i2c
@@ -9,31 +10,38 @@ from . import microphone as microphone
 from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
-from . import audio as audio
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """安排一個函式，以指定的時間間隔呼叫 **僅限 V2**。
+    """Schedule to run a function at the interval specified by the time arguments **V2 only**.
 
 Example: ``run_every(my_logging, min=5)``
 
-This function can be passed a callback::
+``run_every`` can be used in two ways:
 
-    run_every(your_function, h=1, min=20, s=30, ms=50)
-
-or used as a decorator::
+As a Decorator - placed on top of the function to schedule. For example::
 
     @run_every(h=1, min=20, s=30, ms=50)
-    def your_function():
-        pass
+    def my_function():
+        # Do something here
 
-Arguments with different time units are additive.
+As a Function - passing the callback as a positional argument. For example::
 
-:param callback: 要叫用的回呼。做為裝飾項目時省略。
-:param days: 以天數為單位的間隔。
-:param h: 以小時為單位的間隔。
-:param min: 以分鐘為單位的間隔。
-:param s: 以秒為單位的間隔。
-:param ms: 以毫秒為單位的間隔。"""
+    def my_function():
+        # Do something here
+    run_every(my_function, s=30)
+
+Each argument corresponds to a different time unit and they are additive.
+So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
+
+When an exception is thrown inside the callback function it deschedules the
+function. To avoid this you can catch exceptions with ``try/except``.
+
+:param callback: Function to call at the provided interval. Omit when using as a decorator.
+:param days: Sets the day mark for the scheduling.
+:param h: Sets the hour mark for the scheduling.
+:param min: Sets the minute mark for the scheduling.
+:param s: Sets the second mark for the scheduling.
+:param ms: Sets the millisecond mark for the scheduling."""
 
 def panic(n: int) -> None:
     """進入緊急模式。
@@ -46,6 +54,20 @@ Requires restart."""
 
 def reset() -> None:
     """重啟開發板。"""
+
+def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
+    """Converts a value from a range to another range.
+
+Example: ``temp_fahrenheit = scale(30, from_=(0, 100), to=(32, 212))``
+
+This can be useful to convert values between inputs and outputs, for example an accelerometer X value to a speaker volume.
+
+Negative scaling is also supported, for example ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
+
+:param value: A number to convert.
+:param from_: A tuple to define the range to convert from.
+:param to: A tuple to define the range to convert to.
+:return: The ``value`` converted to the ``to`` range."""
 
 def sleep(n: float) -> None:
     """等待 ``n`` 毫秒。
@@ -411,6 +433,8 @@ Given an image object it's possible to display it via the ``display`` API::
     """雨傘圖像。"""
     SNAKE: Image
     """蛇圖像。"""
+    SCISSORS: Image
+    """Scissors image."""
     ALL_CLOCKS: List[Image]
     """按順序包含所有 CLOCK_圖像的列表。"""
     ALL_ARROWS: List[Image]
