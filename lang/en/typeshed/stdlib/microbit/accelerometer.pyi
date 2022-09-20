@@ -39,6 +39,15 @@ def get_values() -> Tuple[int, int, int]:
     """
     ...
 
+def get_strength() -> int:
+    """Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes.
+
+    Example: ``accelerometer.get_strength()``
+
+    :return: The combined acceleration strength of all the axes, in milli-g.
+    """
+    ...
+
 def current_gesture() -> str:
     """Get the name of the current gesture.
 
@@ -96,3 +105,11 @@ def get_gestures() -> Tuple[str, ...]:
     :return: The history as a tuple, most recent last.
     """
     ...
+
+def set_range(value: int) -> None:
+    """Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g.
+
+    Example: ``accelerometer.set_range(8)``
+
+    :param value: New range for the accelerometer, an integer in ``g``.
+    """

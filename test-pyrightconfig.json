@@ -1,5 +1,4 @@
 {
-  "include": ["./examples"],
   "pythonVersion": "3.6",
   "pythonPlatform": "Linux",
   "typeCheckingMode": "basic",
@@ -8,6 +7,5 @@
   "reportInvalidStubStatement": true,
   "reportIncompleteStub": true,
   "reportMissingTypeStubs": true,
-
   "verboseOutput": true
 }

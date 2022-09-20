@@ -18,29 +18,31 @@ DAYS = 864000
 """Days timestamp format."""
 
 def set_labels(
-    *args: str, timestamp: Optional[Literal[1, 10, 36000, 864000]] = SECONDS
+    *labels: str, timestamp: Optional[Literal[1, 10, 36000, 864000]] = SECONDS
 ) -> None:
     """Set up the log file header.
 
-    Example: ``log.set_labels('x', 'y', 'z', timestamp=log.MINUTES)``
+    Example: ``log.set_labels('X', 'Y', 'Z', timestamp=log.MINUTES)``
 
-    Each call to this function with positional arguments will generate a new
-    header entry into the log file.
+    Ideally this function should be called a single time, before any data is
+    logged, to configure the data table header once.
 
-    If the program starts and a log file already exists it will compare the
-    labels set up by this function call to the last headers declared in the
-    file. If the headers are different it will add a new header entry at the
-    end of the file.
+    If a log file already exists when the program starts, or if this function
+    is called multiple times, it will check the labels already defined in the
+    log file. If this function call contains any new labels not already
+    present, it will generate a new header row with the additional columns.
 
-    :param *args: A positional argument for each log header.
-    :param timestamp: The timestamp unit that will be automatically added as the first column in every row.
-    Setting this argument to ``None`` disables the timestamp. Pass the ``log.MILLISECONDS``, ``log.SECONDS``, , ``log.MINUTES``, ``log.HOURS`` or ``log.DAYS`` values defined by this module. An invalid value will throw an exception.
+    By default the first column contains a timestamp for each row. The time
+    unit can be selected via the timestamp argument.
+
+    :param *labels: Any number of positional arguments, each corresponding to an entry in the log header.
+    :param timestamp: Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``.
     """
     ...
 
 @overload
 def add(
-    log_data: Optional[dict[str, Union[str, int, float]]],
+    data_dictionary: Optional[dict[str, Union[str, int, float]]],
 ) -> None:
     """Add a data row to the log by passing a dictionary of headers and values.
 
@@ -48,14 +50,14 @@ def add(
 
     Each call to this function adds a row to the log.
 
-    Dictionary keys not already specified via the ``set_labels`` function,
-    or by a previous call to this function, will trigger a new header
-    entry to be added to the log with the extra label.
+    New labels not previously specified via the set_labels function, or by a
+    previous call to this function, will trigger a new header entry to be added
+    to the log with the extra labels.
 
-    Labels previously specified and not present in this function call will be
-    skipped with an empty value in the log row.
+    Labels previously specified and not present in a call to this function will
+    be skipped with an empty value in the log row.
 
-    :param log_data: The data to log as a dictionary with a key for each header.
+    :param data_dictionary: The data to log as a dictionary with a key for each header.
     """
     ...
 
@@ -67,12 +69,12 @@ def add(**kwargs: Union[str, int, float]) -> None:
 
     Each call to this function adds a row to the log.
 
-    Keyword arguments not already specified via the ``set_labels`` function,
-    or by a previous call to this function, will trigger a new header entry
-    to be added to the log with the extra label.
+    New labels not previously specified via the set_labels function, or by a
+    previous call to this function, will trigger a new header entry to be added
+    to the log with the extra labels.
 
-    Labels previously specified and not present in this function call will be
-    skipped with an empty value in the log row.
+    Labels previously specified and not present in a call to this function will
+    be skipped with an empty value in the log row.
     """
     ...
 
@@ -81,21 +83,22 @@ def delete(full=False):
 
     Example: ``log.delete()``
 
-    To add the log headers the ``set_labels`` function has to be called again
-    after this.
+    To add the log headers again the ``set_labels`` function should to be called after this function.
 
-    :param full: Selects a "full" erase format that removes the data from the flash storage.
-    If set to ``False`` it uses a "fast" method, which invalidates the data instead of performing a slower full erase.
+    There are two erase modes; “full” completely removes the data from the physical storage,
+    and “fast” invalidates the data without removing it.
+
+    :param full: ``True`` selects a “full” erase and ``False`` selects the “fast” erase method.
     """
     ...
 
 def set_mirroring(serial: bool):
-    """Mirrors the data logging activity to the serial output.
+    """Configure mirroring of the data logging activity to the serial output.
 
     Example: ``log.set_mirroring(True)``
 
-    Mirroring is disabled by default.
+    Serial mirroring is disabled by default. When enabled, it will print to serial each row logged into the log file.
 
-    :param serial: Pass ``True`` to mirror the data logging activity to the serial output, ``False`` to disable mirroring.
+    :param serial: ``True`` enables mirroring data to the serial output.
     """
     ...
