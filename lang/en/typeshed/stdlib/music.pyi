@@ -1,6 +1,6 @@
 """Create and play melodies.
 """
-from typing import Tuple, Union, List
+from typing import Optional, Tuple, Union, List
 
 from .microbit import MicroBitDigitalPin, pin0
 
@@ -106,7 +106,7 @@ def get_tempo() -> Tuple[int, int]:
 
 def play(
     music: Union[str, List[str], Tuple[str, ...]],
-    pin: Union[MicroBitDigitalPin, None] = pin0,
+    pin: Optional[MicroBitDigitalPin] = pin0,
     wait: bool = True,
     loop: bool = False,
 ) -> None:
@@ -126,7 +126,7 @@ def play(
 def pitch(
     frequency: int,
     duration: int = -1,
-    pin: MicroBitDigitalPin = pin0,
+    pin: Optional[MicroBitDigitalPin] = pin0,
     wait: bool = True,
 ) -> None:
     """Play a note.
@@ -145,7 +145,7 @@ def pitch(
     """
     ...
 
-def stop(pin: MicroBitDigitalPin = pin0) -> None:
+def stop(pin: Optional[MicroBitDigitalPin] = pin0) -> None:
     """Stops all music playback on the built-in speaker and any pin outputting sound.
 
     Example: ``music.stop()``
