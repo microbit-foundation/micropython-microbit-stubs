@@ -74,7 +74,7 @@ def reset() -> None:
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
     """Converts a value from a range to an integer range.
 
-    Example: ``volume = scale(accelerometer.get_x(), from_=(0, 2000), to=(0, 255))``
+    Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
     For example, to convert an accelerometer X value to a speaker volume.
 
@@ -103,7 +103,7 @@ def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> 
     floating point number.
     If they are both integers (i.e ``10``), it will return an integer::
 
-        returns_int = scale(accelerometer.get_x(), from_=(0, 2000), to=(0, 255))
+        returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
     :param value: A number to convert.
     :param from_: A tuple to define the range to convert from.
