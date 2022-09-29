@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def get_strength() -> int:
-    """Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes.
+    """以正整数形式获取所有轴组合的加速度测量值。这是 X、Y 和 Z 轴的毕达哥拉斯（Pythagorean）和。 (获取强度)
 
 Example: ``accelerometer.get_strength()``
 
@@ -96,8 +96,8 @@ gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
     ...
 
 def set_range(value: int) -> None:
-    """Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g.
+    """将加速度计灵敏度范围（以 g（标准重力）为单位）设置为硬件支持的最接近的值，因此它会取近似值为 ``2``、``4`` 或 ``8`` g。 (设置范围)
 
 Example: ``accelerometer.set_range(8)``
 
-:param value: New range for the accelerometer, an integer in ``g``."""
+:param value: 加速度计的新范围，``g`` 中的整数。"""

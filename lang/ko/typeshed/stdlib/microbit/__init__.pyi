@@ -1,5 +1,5 @@
 """핀, 이미지, 소리, 온도 및 음량입니다."""
-from typing import Any, Callable, List, Optional, Tuple, overload
+from typing import Any, Callable, List, Optional, Tuple, Union, overload
 from _typeshed import ReadableBuffer
 from . import accelerometer as accelerometer
 from . import audio as audio
@@ -55,14 +55,39 @@ Requires restart."""
 def reset() -> None:
     """보드를 재시작합니다."""
 
+@overload
+def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
+    """Converts a value from a range to an integer range.
+
+Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
+
+For example, to convert an accelerometer X value to a speaker volume.
+
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+
+    temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
+
+:param value: A number to convert.
+:param from_: A tuple to define the range to convert from.
+:param to: A tuple to define the range to convert to.
+:return: The ``value`` converted to the ``to`` range."""
+
+@overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Converts a value from a range to another range.
+    """Converts a value from a range to a floating point range.
 
-Example: ``temp_fahrenheit = scale(30, from_=(0, 100), to=(32, 212))``
+Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
-This can be useful to convert values between inputs and outputs, for example an accelerometer X value to a speaker volume.
+For example, to convert temperature from a Celsius scale to Fahrenheit.
 
-Negative scaling is also supported, for example ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+If they are both integers (i.e ``10``), it will return an integer::
+
+    returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
 :param value: A number to convert.
 :param from_: A tuple to define the range to convert from.

@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def get_strength() -> int:
-    """Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes.
+    """すべての軸を合成した加速度測定値を正の整数値で得ます。これは X軸、Y軸、Z軸のピタゴラス和になります。
 
 Example: ``accelerometer.get_strength()``
 
@@ -96,8 +96,8 @@ gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
     ...
 
 def set_range(value: int) -> None:
-    """Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g.
+    """加速度センサーの感度範囲を g (標準重力)で設定します。設定値は、ハードウェアがサポートする最も近い値、すなわち ``2``、``4``、``8`` g のいずれかに丸められます。
 
 Example: ``accelerometer.set_range(8)``
 
-:param value: New range for the accelerometer, an integer in ``g``."""
+:param value: 加速度センサーの新しい感度範囲。``g`` 単位の整数値で指定します。"""

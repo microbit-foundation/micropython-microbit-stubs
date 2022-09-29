@@ -1,5 +1,5 @@
 """引脚、图像、声音、温度和音量。 (Microbit)"""
-from typing import Any, Callable, List, Optional, Tuple, overload
+from typing import Any, Callable, List, Optional, Tuple, Union, overload
 from _typeshed import ReadableBuffer
 from . import accelerometer as accelerometer
 from . import audio as audio
@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Schedule to run a function at the interval specified by the time arguments **V2 only**. (周期性运行)
+    """计划以时间参数指定的时间间隔运行函数**仅限V2** 。 (周期性运行)
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -36,12 +36,12 @@ So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: Function to call at the provided interval. Omit when using as a decorator.
-:param days: (天) Sets the day mark for the scheduling.
-:param h: Sets the hour mark for the scheduling.
-:param min: (分钟) Sets the minute mark for the scheduling.
-:param s: (秒) Sets the second mark for the scheduling.
-:param ms: (毫秒) Sets the millisecond mark for the scheduling."""
+:param callback: 在提供的时间间隔内调用的函数。用作装饰器时省略。
+:param days: (天) 设置定时计划的日期标记。
+:param h: 设置定时计划的小时标记。
+:param min: (分钟) 设置定时计划的分钟标记。
+:param s: (秒) 设置定时计划的秒标记。
+:param ms: (毫秒) 设置定时计划的毫秒标记。"""
 
 def panic(n: int) -> None:
     """进入 panic （恐慌）模式。 (恐慌)
@@ -55,14 +55,39 @@ Requires restart."""
 def reset() -> None:
     """重启主板。"""
 
+@overload
+def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
+    """Converts a value from a range to an integer range.
+
+Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
+
+For example, to convert an accelerometer X value to a speaker volume.
+
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+
+    temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
+
+:param value: A number to convert.
+:param from_: A tuple to define the range to convert from.
+:param to: A tuple to define the range to convert to.
+:return: The ``value`` converted to the ``to`` range."""
+
+@overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Converts a value from a range to another range.
+    """Converts a value from a range to a floating point range.
 
-Example: ``temp_fahrenheit = scale(30, from_=(0, 100), to=(32, 212))``
+Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
-This can be useful to convert values between inputs and outputs, for example an accelerometer X value to a speaker volume.
+For example, to convert temperature from a Celsius scale to Fahrenheit.
 
-Negative scaling is also supported, for example ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+If they are both integers (i.e ``10``), it will return an integer::
+
+    returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
 :param value: A number to convert.
 :param from_: A tuple to define the range to convert from.
@@ -434,7 +459,7 @@ Given an image object it's possible to display it via the ``display`` API::
     SNAKE: Image
     """蛇图像。 (蛇)"""
     SCISSORS: Image
-    """Scissors image."""
+    """剪刀图像。 (剪刀)"""
     ALL_CLOCKS: List[Image]
     """按顺序包含所有 CLOCK_ 图像的列表（时钟）。 (所有时钟)"""
     ALL_ARROWS: List[Image]

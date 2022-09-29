@@ -1,5 +1,5 @@
 """引腳、圖像、聲音、溫度和音量。"""
-from typing import Any, Callable, List, Optional, Tuple, overload
+from typing import Any, Callable, List, Optional, Tuple, Union, overload
 from _typeshed import ReadableBuffer
 from . import accelerometer as accelerometer
 from . import audio as audio
@@ -55,14 +55,39 @@ Requires restart."""
 def reset() -> None:
     """重啟開發板。"""
 
+@overload
+def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
+    """Converts a value from a range to an integer range.
+
+Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
+
+For example, to convert an accelerometer X value to a speaker volume.
+
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+
+    temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
+
+:param value: A number to convert.
+:param from_: A tuple to define the range to convert from.
+:param to: A tuple to define the range to convert to.
+:return: The ``value`` converted to the ``to`` range."""
+
+@overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Converts a value from a range to another range.
+    """Converts a value from a range to a floating point range.
 
-Example: ``temp_fahrenheit = scale(30, from_=(0, 100), to=(32, 212))``
+Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
-This can be useful to convert values between inputs and outputs, for example an accelerometer X value to a speaker volume.
+For example, to convert temperature from a Celsius scale to Fahrenheit.
 
-Negative scaling is also supported, for example ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+If they are both integers (i.e ``10``), it will return an integer::
+
+    returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
 :param value: A number to convert.
 :param from_: A tuple to define the range to convert from.
@@ -256,65 +281,65 @@ The default touch mode for the pins on the edge connector is
 :param value: 相關引腳的 ``CAPACITIVE`` 或 ``RESISTIVE``。"""
         ...
 pin0: MicroBitTouchPin
-"""具有數位、類比和觸控功能的引腳。"""
+"""具有數位、類比和觸控功能的引腳。 (引腳 0)"""
 pin1: MicroBitTouchPin
-"""具有數位、類比和觸控功能的引腳。"""
+"""具有數位、類比和觸控功能的引腳。 (引腳 1)"""
 pin2: MicroBitTouchPin
-"""具有數位、類比和觸控功能的引腳。"""
+"""具有數位、類比和觸控功能的引腳。 (引腳 2)"""
 pin3: MicroBitAnalogDigitalPin
-"""具有數位和類比功能的引腳。"""
+"""具有數位和類比功能的引腳。 (引腳 3)"""
 pin4: MicroBitAnalogDigitalPin
-"""具有數位和類比功能的引腳。"""
+"""具有數位和類比功能的引腳。 (引腳 4)"""
 pin5: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 5)"""
 pin6: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 6)"""
 pin7: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 7)"""
 pin8: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 8)"""
 pin9: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 9)"""
 pin10: MicroBitAnalogDigitalPin
-"""具有數位和類比功能的引腳。"""
+"""具有數位和類比功能的引腳。 (引腳 10)"""
 pin11: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 11)"""
 pin12: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 12)"""
 pin13: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 13)"""
 pin14: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 14)"""
 pin15: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 15)"""
 pin16: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 16)"""
 pin19: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 19)"""
 pin20: MicroBitDigitalPin
-"""具有數位功能的引腳。"""
+"""具有數位功能的引腳。 (引腳 20)"""
 pin_logo: MicroBitTouchPin
-"""micro:bit 正面的觸控感應標誌引腳，預設為電容式觸控模式。"""
+"""micro:bit 正面的觸控感應標誌引腳，預設為電容式觸控模式。 (引腳標誌)"""
 pin_speaker: MicroBitAnalogDigitalPin
-"""用於定址 micro:bit 揚聲器的引腳。
+"""用於定址 micro:bit 揚聲器的引腳。 (引腳揚聲器)
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """要在 micro:bit LED 顯示器上顯示的圖像。
+    """要在 micro:bit LED 顯示器上顯示的圖像。 (圖片)
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """愛心圖像。"""
+    """愛心圖像。 (愛心)"""
     HEART_SMALL: Image
-    """小愛心圖像。"""
+    """小愛心圖像。 (小愛心)"""
     HAPPY: Image
-    """開心的臉圖像。"""
+    """開心的臉圖像。 (開心)"""
     SMILE: Image
-    """笑臉圖像。"""
+    """笑臉圖像。 (微笑)"""
     SAD: Image
     """傷心的臉圖像。"""
     CONFUSED: Image
@@ -336,7 +361,7 @@ Given an image object it's possible to display it via the ``display`` API::
     NO: Image
     """叉號圖像。"""
     CLOCK12: Image
-    """指針指向 12 點鐘的圖像。"""
+    """指針指向 12 點鐘的圖像。 (時鐘 12)"""
     CLOCK11: Image
     """指針指向 11 點鐘的圖像。"""
     CLOCK10: Image
@@ -660,21 +685,21 @@ class SoundEvent:
 class Sound:
     """可以使用 ``audio.play(Sound.NAME)`` 調用內建聲音。"""
     GIGGLE: Sound
-    """咯咯笑的聲音。"""
+    """咯咯笑的聲音。 (咯咯笑)"""
     HAPPY: Sound
-    """開心的聲音。"""
+    """開心的聲音。 (開心)"""
     HELLO: Sound
-    """歡迎的聲音。"""
+    """歡迎的聲音。 (哈囉)"""
     MYSTERIOUS: Sound
-    """神祕的聲音。"""
+    """神祕的聲音。 (神秘)"""
     SAD: Sound
-    """難過的聲音。"""
+    """難過的聲音。 (難過)"""
     SLIDE: Sound
     """滑動的聲音。"""
     SOARING: Sound
-    """高昂的聲音。"""
+    """高昂的聲音。 (高昂)"""
     SPRING: Sound
-    """彈跳的聲音。"""
+    """彈跳的聲音。 (彈跳)"""
     TWINKLE: Sound
     """閃亮的聲音。"""
     YAWN: Sound

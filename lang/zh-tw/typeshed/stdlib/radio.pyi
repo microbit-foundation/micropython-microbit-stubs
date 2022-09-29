@@ -1,4 +1,4 @@
-"""使用內建無線電在 micro:bits 之間進行通訊。"""
+"""使用內建無線電在 micro:bits 之間進行通訊。 (無線電)"""
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 RATE_1MBIT: int

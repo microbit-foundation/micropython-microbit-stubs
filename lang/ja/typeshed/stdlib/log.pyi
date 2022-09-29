@@ -27,8 +27,8 @@ present, it will generate a new header row with the additional columns.
 By default the first column contains a timestamp for each row. The time
 unit can be selected via the timestamp argument.
 
-:param *labels: Any number of positional arguments, each corresponding to an entry in the log header.
-:param timestamp: Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."""
+:param *labels: 任意の数の位置引数で。それぞれがログヘッダの見出しになります。
+:param timestamp: すべての行の最初の列として自動的に追加されるタイムスタンプの単位を選択します。タイムスタンプの値は ``log.MILLISECONDS``、 ``log.SECONDS``、``log.MINUTES``、``log.HOURS``、``log.DAYS`` またはタイムスタンプを無効にする ``None`` のうちのいずれかである必要があります。デフォルト値は ``log.SECONDS`` です。"""
     ...
 
 @overload
@@ -46,7 +46,7 @@ to the log with the extra labels.
 Labels previously specified and not present in a call to this function will
 be skipped with an empty value in the log row.
 
-:param data_dictionary: The data to log as a dictionary with a key for each header."""
+:param data_dictionary: (data dictionary とはデータ辞書の意味です) 記録するデータを辞書で指定します。辞書の各キーが見出しを表します。"""
     ...
 
 @overload
@@ -75,15 +75,15 @@ To add the log headers again the ``set_labels`` function should to be called aft
 There are two erase modes; “full” completely removes the data from the physical storage,
 and “fast” invalidates the data without removing it.
 
-:param full: ``True`` selects a “full” erase and ``False`` selects the “fast” erase method."""
+:param full: ``True`` を指定すると「完全」消去になり、``False`` を指定すると「高速」消去になります。"""
     ...
 
 def set_mirroring(serial: bool):
-    """Configure mirroring of the data logging activity to the serial output.
+    """ログのデータ記録をシリアル出力にミラーリングするかを設定します。
 
 Example: ``log.set_mirroring(True)``
 
 Serial mirroring is disabled by default. When enabled, it will print to serial each row logged into the log file.
 
-:param serial: ``True`` enables mirroring data to the serial output."""
+:param serial: ``True`` を指定するとシリアル出力にデータをミラーリングします。"""
     ...

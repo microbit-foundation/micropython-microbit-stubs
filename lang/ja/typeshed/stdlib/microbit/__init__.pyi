@@ -1,5 +1,5 @@
 """端子、イメージ、サウンド、温度と音量。"""
-from typing import Any, Callable, List, Optional, Tuple, overload
+from typing import Any, Callable, List, Optional, Tuple, Union, overload
 from _typeshed import ReadableBuffer
 from . import accelerometer as accelerometer
 from . import audio as audio
@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Schedule to run a function at the interval specified by the time arguments **V2 only**.
+    """time 引数で指定した間隔で関数を実行するようスケジュールします。 **V2** のみで使えます。
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -36,12 +36,12 @@ So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: Function to call at the provided interval. Omit when using as a decorator.
-:param days: Sets the day mark for the scheduling.
-:param h: Sets the hour mark for the scheduling.
-:param min: Sets the minute mark for the scheduling.
-:param s: Sets the second mark for the scheduling.
-:param ms: Sets the millisecond mark for the scheduling."""
+:param callback: 指定した間隔で呼び出す関数。デコレータとして使う場合は省略してください。
+:param days: スケジューリングのための日数を設定します。
+:param h: スケジューリングのための時間を設定します。
+:param min: スケジューリングのための分を設定します。
+:param s: スケジューリングのためのミリ秒を設定します。
+:param ms: スケジューリングのための秒を設定します。"""
 
 def panic(n: int) -> None:
     """パニックモードに入ります。
@@ -55,14 +55,39 @@ Requires restart."""
 def reset() -> None:
     """ボードを再起動します。"""
 
+@overload
+def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
+    """Converts a value from a range to an integer range.
+
+Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
+
+For example, to convert an accelerometer X value to a speaker volume.
+
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+
+    temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
+
+:param value: A number to convert.
+:param from_: A tuple to define the range to convert from.
+:param to: A tuple to define the range to convert to.
+:return: The ``value`` converted to the ``to`` range."""
+
+@overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Converts a value from a range to another range.
+    """Converts a value from a range to a floating point range.
 
-Example: ``temp_fahrenheit = scale(30, from_=(0, 100), to=(32, 212))``
+Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
-This can be useful to convert values between inputs and outputs, for example an accelerometer X value to a speaker volume.
+For example, to convert temperature from a Celsius scale to Fahrenheit.
 
-Negative scaling is also supported, for example ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+If they are both integers (i.e ``10``), it will return an integer::
+
+    returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
 :param value: A number to convert.
 :param from_: A tuple to define the range to convert from.
@@ -434,7 +459,7 @@ Given an image object it's possible to display it via the ``display`` API::
     SNAKE: Image
     """「へび」イメージ。"""
     SCISSORS: Image
-    """Scissors image."""
+    """「はさみ」イメージ。"""
     ALL_CLOCKS: List[Image]
     """すべての CLOCK_ イメージを順番に並べたリスト。"""
     ALL_ARROWS: List[Image]
