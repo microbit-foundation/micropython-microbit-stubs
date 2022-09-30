@@ -1,5 +1,5 @@
 """멜로디를 생성하고 재생합니다."""
-from typing import Tuple, Union, List
+from typing import Optional, Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]
 """멜로디: 베토벤의 교향곡 제5번 다 단조 도입부입니다."""
@@ -79,7 +79,7 @@ Example: ``ticks, beats = music.get_tempo()``
 :return: The temp as a tuple with two integer values, the ticks then the beats per minute."""
     ...
 
-def play(music: Union[str, List[str], Tuple[str, ...]], pin: Union[MicroBitDigitalPin, None]=pin0, wait: bool=True, loop: bool=False) -> None:
+def play(music: Union[str, List[str], Tuple[str, ...]], pin: Optional[MicroBitDigitalPin]=pin0, wait: bool=True, loop: bool=False) -> None:
     """음악을 재생합니다.
 
 Example: ``music.play(music.NYAN)``
@@ -92,7 +92,7 @@ Example: ``music.play(music.NYAN)``
 Many built-in melodies are defined in this module."""
     ...
 
-def pitch(frequency: int, duration: int=-1, pin: MicroBitDigitalPin=pin0, wait: bool=True) -> None:
+def pitch(frequency: int, duration: int=-1, pin: Optional[MicroBitDigitalPin]=pin0, wait: bool=True) -> None:
     """음을 재생합니다. (앞-뒤 기울기)
 
 Example: ``music.pitch(185, 1000)``
@@ -108,7 +108,7 @@ For example, if the frequency is set to 440 and the length to
 You can only play one pitch on one pin at any one time."""
     ...
 
-def stop(pin: MicroBitDigitalPin=pin0) -> None:
+def stop(pin: Optional[MicroBitDigitalPin]=pin0) -> None:
     """내장 스피커와 핀으로 출력되는 모든 음악 플레이백을 멈춥니다.
 
 Example: ``music.stop()``

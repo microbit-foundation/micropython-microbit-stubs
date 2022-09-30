@@ -43,7 +43,7 @@ def write(addr: int, buf: ReadableBuffer, repeat: bool=False) -> None:
 
 Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
-:param addr: 裝置的 7 位元地址
+:param addr: 裝置的 7 位元位址
 :param buf: 包含要寫入位元組的緩衝區
 :param repeat: 如果 ``True``，則不會傳送停止位元"""
     ...

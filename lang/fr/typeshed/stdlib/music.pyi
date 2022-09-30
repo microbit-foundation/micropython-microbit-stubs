@@ -1,5 +1,5 @@
 """Créer et jouer des mélodies."""
-from typing import Tuple, Union, List
+from typing import Optional, Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]
 """Mélodie : l'ouverture de la 5e symphonie en do mineur de Beethoven."""
@@ -79,7 +79,7 @@ Example: ``ticks, beats = music.get_tempo()``
 :return: The temp as a tuple with two integer values, the ticks then the beats per minute."""
     ...
 
-def play(music: Union[str, List[str], Tuple[str, ...]], pin: Union[MicroBitDigitalPin, None]=pin0, wait: bool=True, loop: bool=False) -> None:
+def play(music: Union[str, List[str], Tuple[str, ...]], pin: Optional[MicroBitDigitalPin]=pin0, wait: bool=True, loop: bool=False) -> None:
     """Jouer de la musique.
 
 Example: ``music.play(music.NYAN)``
@@ -92,7 +92,7 @@ Example: ``music.play(music.NYAN)``
 Many built-in melodies are defined in this module."""
     ...
 
-def pitch(frequency: int, duration: int=-1, pin: MicroBitDigitalPin=pin0, wait: bool=True) -> None:
+def pitch(frequency: int, duration: int=-1, pin: Optional[MicroBitDigitalPin]=pin0, wait: bool=True) -> None:
     """Jouer une note. (tangage)
 
 Example: ``music.pitch(185, 1000)``
@@ -108,7 +108,7 @@ For example, if the frequency is set to 440 and the length to
 You can only play one pitch on one pin at any one time."""
     ...
 
-def stop(pin: MicroBitDigitalPin=pin0) -> None:
+def stop(pin: Optional[MicroBitDigitalPin]=pin0) -> None:
     """Met fin à toute lecture de musique sur le haut-parleur intégré et à tout son en sortie sur la broche.
 
 Example: ``music.stop()``
