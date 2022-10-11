@@ -1,6 +1,6 @@
 """Log data to your micro:bit V2."""
 
-from typing import Literal, Optional, Union, overload
+from typing import Literal, Mapping, Optional, Union, overload
 
 MILLISECONDS = 1
 """Milliseconds timestamp format."""
@@ -42,7 +42,7 @@ def set_labels(
 
 @overload
 def add(
-    data_dictionary: Optional[dict[str, Union[str, int, float]]],
+    data_dictionary: Optional[Mapping[str, Union[str, int, float]]],
 ) -> None:
     """Add a data row to the log by passing a dictionary of headers and values.
 

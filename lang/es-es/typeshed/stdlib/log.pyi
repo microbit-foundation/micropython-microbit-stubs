@@ -1,5 +1,5 @@
 """Registra datos en el micro:bit V2. (registrar)"""
-from typing import Literal, Optional, Union, overload
+from typing import Literal, Mapping, Optional, Union, overload
 MILLISECONDS = 1
 """Formato de marca temporal en milisegundos. (milisegundos)"""
 SECONDS = 10
@@ -32,7 +32,7 @@ unit can be selected via the timestamp argument.
     ...
 
 @overload
-def add(data_dictionary: Optional[dict[str, Union[str, int, float]]]) -> None:
+def add(data_dictionary: Optional[Mapping[str, Union[str, int, float]]]) -> None:
     """Añade una fila de datos al registro pasando un diccionario de cabeceras y valores. (añadir)
 
 Example: ``log.add({ 'temp': temperature() })``

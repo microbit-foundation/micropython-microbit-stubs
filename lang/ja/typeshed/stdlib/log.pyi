@@ -1,5 +1,5 @@
 """micro:bit V2のログにデータを記録します。"""
-from typing import Literal, Optional, Union, overload
+from typing import Literal, Mapping, Optional, Union, overload
 MILLISECONDS = 1
 """ミリ秒単位の日時フォーマット。"""
 SECONDS = 10
@@ -32,7 +32,7 @@ unit can be selected via the timestamp argument.
     ...
 
 @overload
-def add(data_dictionary: Optional[dict[str, Union[str, int, float]]]) -> None:
+def add(data_dictionary: Optional[Mapping[str, Union[str, int, float]]]) -> None:
     """ヘッダーと値の辞書を渡すことにより、ログにデータ行を追加します。
 
 Example: ``log.add({ 'temp': temperature() })``
