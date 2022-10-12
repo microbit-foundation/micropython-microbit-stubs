@@ -39,7 +39,7 @@ Example: ``math.atan2(0, -1)``
     ...
 
 def ceil(x: float) -> float:
-    """將數字向正無限大四捨五入。
+    """將數字向正無限大捨入。
 
 Example: ``math.ceil(0.1)``
 
@@ -94,7 +94,7 @@ Example: ``math.fabs(-0.1)``
     ...
 
 def floor(x: float) -> int:
-    """將數字向負無限大四捨五入。
+    """將數字向負無限大捨入。
 
 Example: ``math.floor(0.9)``
 
@@ -233,7 +233,7 @@ Example: ``math.tan(0)``
     ...
 
 def trunc(x: float) -> int:
-    """將數字向 0 四捨五入。
+    """將數字向 0 捨入。
 
 Example: ``math.trunc(-0.9)``
 

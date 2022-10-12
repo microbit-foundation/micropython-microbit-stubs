@@ -23,7 +23,7 @@ FUNK: Tuple[str, ...]
 BLUES: Tuple[str, ...]
 """旋律：布基烏基 12 小節藍調走路貝斯。"""
 BIRTHDAY: Tuple[str, ...]
-"""旋律：「祝你生日快樂…」
+"""旋律：「祝你生日快樂……」
 
 For copyright status see: http://www.bbc.co.uk/news/world-us-canada-34332853
 """

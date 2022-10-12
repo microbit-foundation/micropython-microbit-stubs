@@ -57,7 +57,7 @@ def reset() -> None:
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
-    """Converts a value from a range to an integer range.
+    """将一个数值从一个范围转换为整数范围。 (范围)
 
 Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
@@ -69,14 +69,14 @@ floating point number.
 
     temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-:param value: A number to convert.
-:param from_: A tuple to define the range to convert from.
-:param to: A tuple to define the range to convert to.
+:param value: 要转换的数字。
+:param from_: (从) 一个元组，用于定义要转换的范围。
+:param to: (至) 一个元组，用于定义要转换到的范围。
 :return: The ``value`` converted to the ``to`` range."""
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Converts a value from a range to a floating point range.
+    """将一个数值从一个范围转换为浮点数范围。 (范围)
 
 Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
@@ -89,9 +89,9 @@ If they are both integers (i.e ``10``), it will return an integer::
 
     returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-:param value: A number to convert.
-:param from_: A tuple to define the range to convert from.
-:param to: A tuple to define the range to convert to.
+:param value: 要转换的数字。
+:param from_: (从) 一个元组，用于定义要转换的范围。
+:param to: (至) 一个元组，用于定义要转换到的范围。
 :return: The ``value`` converted to the ``to`` range."""
 
 def sleep(n: float) -> None:

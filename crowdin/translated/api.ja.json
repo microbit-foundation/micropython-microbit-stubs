@@ -1,0 +1,5258 @@
+{
+  "gc": {
+    "message": "gc",
+    "description": "(module name) Control the garbage collector"
+  },
+  "gc.summary": {
+    "message": "ガベージコレクターを制御します。",
+    "description": "Control the garbage collector"
+  },
+  "gc.enable": {
+    "message": "enable",
+    "description": "(function name) Enable automatic garbage collection."
+  },
+  "gc.enable.summary": {
+    "message": "自動ガベージコレクションを有効にします。",
+    "description": "Enable automatic garbage collection."
+  },
+  "gc.disable": {
+    "message": "disable",
+    "description": "(function name) Disable automatic garbage collection."
+  },
+  "gc.disable.summary": {
+    "message": "自動ガベージコレクションを無効にします。",
+    "description": "Disable automatic garbage collection."
+  },
+  "gc.collect": {
+    "message": "collect",
+    "description": "(function name) Run a garbage collection."
+  },
+  "gc.collect.summary": {
+    "message": "ガベージコレクションを実行します。",
+    "description": "Run a garbage collection."
+  },
+  "gc.mem_alloc": {
+    "message": "mem alloc",
+    "description": "(function name) Get the number of bytes of heap RAM that are allocated."
+  },
+  "gc.mem_alloc.summary": {
+    "message": "割り当てられているヒープRAMのバイト数を取得します。",
+    "description": "Get the number of bytes of heap RAM that are allocated."
+  },
+  "gc.mem_free": {
+    "message": "mem free",
+    "description": "(function name) Get the number of bytes of available heap RAM, or -1 if this amount is not known."
+  },
+  "gc.mem_free.summary": {
+    "message": "使用可能なヒープRAMのバイト数を取得します。この量が不明の場合は -1が返されます。",
+    "description": "Get the number of bytes of available heap RAM, or -1 if this amount is not known."
+  },
+  "gc.threshold-1": {
+    "message": "threshold",
+    "description": "(function name) Query the additional GC allocation threshold."
+  },
+  "gc.threshold-1.summary": {
+    "message": "追加のGC 割り当てしきい値を照会します。",
+    "description": "Query the additional GC allocation threshold."
+  },
+  "gc.threshold-2": {
+    "message": "threshold",
+    "description": "(function name) Set the additional GC allocation threshold."
+  },
+  "gc.threshold-2.summary": {
+    "message": "追加の GC 割り当てしきい値を設定します。",
+    "description": "Set the additional GC allocation threshold."
+  },
+  "gc.threshold-2.param-name.amount": {
+    "message": "amount",
+    "description": "(parameter name) The number of bytes after which a garbage collection should be triggered."
+  },
+  "gc.threshold-2.param-doc.amount": {
+    "message": "ガベージコレクションを起こすバイト数。",
+    "description": "Parameter docs"
+  },
+  "log": {
+    "message": "log",
+    "description": "(module name) Log data to your micro:bit V2."
+  },
+  "log.summary": {
+    "message": "micro:bit V2のログにデータを記録します。",
+    "description": "Log data to your micro:bit V2."
+  },
+  "log.MILLISECONDS": {
+    "message": "milliseconds",
+    "description": "(field name) Milliseconds timestamp format."
+  },
+  "log.MILLISECONDS.summary": {
+    "message": "ミリ秒単位の日時フォーマット。",
+    "description": "Milliseconds timestamp format."
+  },
+  "log.SECONDS": {
+    "message": "seconds",
+    "description": "(field name) Seconds timestamp format."
+  },
+  "log.SECONDS.summary": {
+    "message": "秒単位の日時フォーマット。",
+    "description": "Seconds timestamp format."
+  },
+  "log.MINUTES": {
+    "message": "minutes",
+    "description": "(field name) Minutes timestamp format."
+  },
+  "log.MINUTES.summary": {
+    "message": "分単位の日時フォーマット。",
+    "description": "Minutes timestamp format."
+  },
+  "log.HOURS": {
+    "message": "hours",
+    "description": "(field name) Hours timestamp format."
+  },
+  "log.HOURS.summary": {
+    "message": "時間単位の日時フォーマット。",
+    "description": "Hours timestamp format."
+  },
+  "log.DAYS": {
+    "message": "days",
+    "description": "(field name) Days timestamp format."
+  },
+  "log.DAYS.summary": {
+    "message": "日単位の日時フォーマット。",
+    "description": "Days timestamp format."
+  },
+  "log.set_labels": {
+    "message": "set labels",
+    "description": "(function name) Set up the log file header."
+  },
+  "log.set_labels.summary": {
+    "message": "ログファイルのヘッダーを設定します。",
+    "description": "Set up the log file header."
+  },
+  "log.set_labels.param-name.*labels": {
+    "message": "*labels",
+    "description": "(parameter name) Any number of positional arguments, each corresponding to an entry in the log header."
+  },
+  "log.set_labels.param-doc.*labels": {
+    "message": "任意の数の位置引数で。それぞれがログヘッダの見出しになります。",
+    "description": "Parameter docs"
+  },
+  "log.set_labels.param-name.timestamp": {
+    "message": "timestamp",
+    "description": "(parameter name) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."
+  },
+  "log.set_labels.param-doc.timestamp": {
+    "message": "すべての行の最初の列として自動的に追加されるタイムスタンプの単位を選択します。タイムスタンプの値は {{log.MILLISECONDS}}、 {{log.SECONDS}}、{{log.MINUTES}}、{{log.HOURS}}、{{log.DAYS}} またはタイムスタンプを無効にする {{None}} のうちのいずれかである必要があります。デフォルト値は {{log.SECONDS}} です。",
+    "description": "Parameter docs"
+  },
+  "log.add-1": {
+    "message": "add",
+    "description": "(function name) Add a data row to the log by passing a dictionary of headers and values."
+  },
+  "log.add-1.summary": {
+    "message": "ヘッダーと値の辞書を渡すことにより、ログにデータ行を追加します。",
+    "description": "Add a data row to the log by passing a dictionary of headers and values."
+  },
+  "log.add-1.param-name.data_dictionary": {
+    "message": "data dictionary とはデータ辞書の意味です",
+    "description": "(parameter name) The data to log as a dictionary with a key for each header."
+  },
+  "log.add-1.param-doc.data_dictionary": {
+    "message": "記録するデータを辞書で指定します。辞書の各キーが見出しを表します。",
+    "description": "Parameter docs"
+  },
+  "log.add-2": {
+    "message": "add",
+    "description": "(function name) Add a data row to the log using keyword arguments."
+  },
+  "log.add-2.summary": {
+    "message": "キーワード引数でログにデータ行を追加します。",
+    "description": "Add a data row to the log using keyword arguments."
+  },
+  "log.delete": {
+    "message": "delete",
+    "description": "(function name) Deletes the contents of the log, including headers."
+  },
+  "log.delete.summary": {
+    "message": "ログの内容を、ヘッダーもあわせて削除します。",
+    "description": "Deletes the contents of the log, including headers."
+  },
+  "log.delete.param-name.full": {
+    "message": "full",
+    "description": "(parameter name) ``True`` selects a “full” erase and ``False`` selects the “fast” erase method."
+  },
+  "log.delete.param-doc.full": {
+    "message": "{{True}} を指定すると「完全」消去になり、{{False}} を指定すると「高速」消去になります。",
+    "description": "Parameter docs"
+  },
+  "log.set_mirroring": {
+    "message": "set mirroring",
+    "description": "(function name) Configure mirroring of the data logging activity to the serial output."
+  },
+  "log.set_mirroring.summary": {
+    "message": "ログのデータ記録をシリアル出力にミラーリングするかを設定します。",
+    "description": "Configure mirroring of the data logging activity to the serial output."
+  },
+  "log.set_mirroring.param-name.serial": {
+    "message": "serial",
+    "description": "(parameter name) ``True`` enables mirroring data to the serial output."
+  },
+  "log.set_mirroring.param-doc.serial": {
+    "message": "{{True}} を指定するとシリアル出力にデータをミラーリングします。",
+    "description": "Parameter docs"
+  },
+  "machine": {
+    "message": "machine",
+    "description": "(module name) Low-level utilities."
+  },
+  "machine.summary": {
+    "message": "低レベルユーティリティ",
+    "description": "Low-level utilities."
+  },
+  "machine.unique_id": {
+    "message": "unique id",
+    "description": "(function name) Get a byte string with a unique identifier of a board."
+  },
+  "machine.unique_id.summary": {
+    "message": "ボードの一意の識別子を持つバイト列を取得します。",
+    "description": "Get a byte string with a unique identifier of a board."
+  },
+  "machine.reset": {
+    "message": "reset",
+    "description": "(function name) Reset the device in a manner similar to pushing the external RESET button."
+  },
+  "machine.reset.summary": {
+    "message": "外部のRESETボタンを押したと同様にデバイスをリセットします。",
+    "description": "Reset the device in a manner similar to pushing the external RESET button."
+  },
+  "machine.freq": {
+    "message": "freq",
+    "description": "(function name) Get the CPU frequency in hertz."
+  },
+  "machine.freq.summary": {
+    "message": "CPU周波数をヘルツ単位で取得します。",
+    "description": "Get the CPU frequency in hertz."
+  },
+  "machine.disable_irq": {
+    "message": "disable irq",
+    "description": "(function name) Disable interrupt requests."
+  },
+  "machine.disable_irq.summary": {
+    "message": "割り込み要求を無効にします。",
+    "description": "Disable interrupt requests."
+  },
+  "machine.enable_irq": {
+    "message": "enable irq",
+    "description": "(function name) Re-enable interrupt requests."
+  },
+  "machine.enable_irq.summary": {
+    "message": "割り込み要求を再度有効にします。 ",
+    "description": "Re-enable interrupt requests."
+  },
+  "machine.enable_irq.param-name.state": {
+    "message": "state",
+    "description": "(parameter name) The value that was returned from the most recent call to the ``disable_irq`` function."
+  },
+  "machine.enable_irq.param-doc.state": {
+    "message": " {{disable_irq}} 関数の最も最近の呼び出しから返された値。",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us": {
+    "message": "time pulse us",
+    "description": "(function name) Time a pulse on a pin."
+  },
+  "machine.time_pulse_us.summary": {
+    "message": "端子のパルス時間を計測します。",
+    "description": "Time a pulse on a pin."
+  },
+  "machine.time_pulse_us.param-name.pin": {
+    "message": "ピン",
+    "description": "(parameter name) The pin to use"
+  },
+  "machine.time_pulse_us.param-doc.pin": {
+    "message": "計測対象の端子",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us.param-name.pulse_level": {
+    "message": "pulse level",
+    "description": "(parameter name) 0 to time a low pulse or 1 to time a high pulse"
+  },
+  "machine.time_pulse_us.param-doc.pulse_level": {
+    "message": "低パルスの時間計測で 0、高パルスの時間計測で 1 を指定",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us.param-name.timeout_us": {
+    "message": "timeout us",
+    "description": "(parameter name) A microsecond timeout"
+  },
+  "machine.time_pulse_us.param-doc.timeout_us": {
+    "message": "マイクロ秒単位のタイムアウト時間",
+    "description": "Parameter docs"
+  },
+  "machine.mem": {
+    "message": "mem",
+    "description": "(class name) The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."
+  },
+  "machine.mem.summary": {
+    "message": "{{mem8}}、{{mem16}}、{{mem32}} メモリビューのクラス。",
+    "description": "The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."
+  },
+  "machine.mem.__getitem__": {
+    "message": "getitem",
+    "description": "(function name) Access a value from memory."
+  },
+  "machine.mem.__getitem__.summary": {
+    "message": "メモリにある値を参照します。",
+    "description": "Access a value from memory."
+  },
+  "machine.mem.__getitem__.param-name.address": {
+    "message": "address",
+    "description": "(parameter name) The memory address."
+  },
+  "machine.mem.__getitem__.param-doc.address": {
+    "message": "メモリのアドレス。",
+    "description": "Parameter docs"
+  },
+  "machine.mem.__setitem__": {
+    "message": "setitem",
+    "description": "(function name) Set a value at the given address."
+  },
+  "machine.mem.__setitem__.summary": {
+    "message": "指定アドレスに値を設定します。",
+    "description": "Set a value at the given address."
+  },
+  "machine.mem.__setitem__.param-name.address": {
+    "message": "address",
+    "description": "(parameter name) The memory address."
+  },
+  "machine.mem.__setitem__.param-doc.address": {
+    "message": "メモリのアドレス。",
+    "description": "Parameter docs"
+  },
+  "machine.mem.__setitem__.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The integer value to set."
+  },
+  "machine.mem.__setitem__.param-doc.value": {
+    "message": "設定する整数値。",
+    "description": "Parameter docs"
+  },
+  "machine.mem8": {
+    "message": "mem8",
+    "description": "(field name) 8-bit (byte) view of memory."
+  },
+  "machine.mem8.summary": {
+    "message": "メモリの8ビット（バイト）ビュー。",
+    "description": "8-bit (byte) view of memory."
+  },
+  "machine.mem16": {
+    "message": "mem16",
+    "description": "(field name) 16-bit view of memory."
+  },
+  "machine.mem16.summary": {
+    "message": "メモリの16ビットビュー。",
+    "description": "16-bit view of memory."
+  },
+  "machine.mem32": {
+    "message": "mem32",
+    "description": "(field name) 32-bit view of memory."
+  },
+  "machine.mem32.summary": {
+    "message": "メモリの32ビットビュー。",
+    "description": "32-bit view of memory."
+  },
+  "math": {
+    "message": "math",
+    "description": "(module name) Mathematical functions."
+  },
+  "math.summary": {
+    "message": "数学関数。",
+    "description": "Mathematical functions."
+  },
+  "math.acos": {
+    "message": "acos",
+    "description": "(function name) Calculate the inverse cosine."
+  },
+  "math.acos.summary": {
+    "message": "逆余弦を算出します。",
+    "description": "Calculate the inverse cosine."
+  },
+  "math.acos.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.acos.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.asin": {
+    "message": "asin",
+    "description": "(function name) Calculate the inverse sine."
+  },
+  "math.asin.summary": {
+    "message": "逆正弦を算出します。",
+    "description": "Calculate the inverse sine."
+  },
+  "math.asin.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.asin.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.atan": {
+    "message": "atan",
+    "description": "(function name) Calculate the inverse tangent."
+  },
+  "math.atan.summary": {
+    "message": "逆正接を算出します。",
+    "description": "Calculate the inverse tangent."
+  },
+  "math.atan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.atan.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.atan2": {
+    "message": "atan2",
+    "description": "(function name) Calculate the principal value of the inverse tangent of ``y/x``."
+  },
+  "math.atan2.summary": {
+    "message": "{{y/x}} の逆正接の主値を算出します。",
+    "description": "Calculate the principal value of the inverse tangent of ``y/x``."
+  },
+  "math.atan2.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.atan2.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.atan2.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) A number"
+  },
+  "math.atan2.param-doc.y": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.ceil": {
+    "message": "ceil",
+    "description": "(function name) Round a number towards positive infinity."
+  },
+  "math.ceil.summary": {
+    "message": "正の無限大方向に数値を丸めます。",
+    "description": "Round a number towards positive infinity."
+  },
+  "math.ceil.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.ceil.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.copysign": {
+    "message": "copysign",
+    "description": "(function name) Calculate ``x`` with the sign of ``y``."
+  },
+  "math.copysign.summary": {
+    "message": "{{y}} の符号で {{x}} を算出します。",
+    "description": "Calculate ``x`` with the sign of ``y``."
+  },
+  "math.copysign.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.copysign.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.copysign.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The source of the sign for the return value"
+  },
+  "math.copysign.param-doc.y": {
+    "message": "戻り値の符号の元になる値",
+    "description": "Parameter docs"
+  },
+  "math.cos": {
+    "message": "cos",
+    "description": "(function name) Calculate the cosine of ``x``."
+  },
+  "math.cos.summary": {
+    "message": "{{x}} の余弦を算出します。",
+    "description": "Calculate the cosine of ``x``."
+  },
+  "math.cos.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.cos.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.degrees": {
+    "message": "゜(度)",
+    "description": "(function name) Convert radians to degrees."
+  },
+  "math.degrees.summary": {
+    "message": "ラジアンを度に変換します。",
+    "description": "Convert radians to degrees."
+  },
+  "math.degrees.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A value in radians"
+  },
+  "math.degrees.param-doc.x": {
+    "message": "ラジアン単位の値",
+    "description": "Parameter docs"
+  },
+  "math.exp": {
+    "message": "exp",
+    "description": "(function name) Calculate the exponential of ``x``."
+  },
+  "math.exp.summary": {
+    "message": "{{x}} の指数を算出します。",
+    "description": "Calculate the exponential of ``x``."
+  },
+  "math.exp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.exp.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.fabs": {
+    "message": "fabs",
+    "description": "(function name) Return the absolute value of ``x``."
+  },
+  "math.fabs.summary": {
+    "message": "{{x}} の絶対値を返します。",
+    "description": "Return the absolute value of ``x``."
+  },
+  "math.fabs.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.fabs.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.floor": {
+    "message": "floor",
+    "description": "(function name) Round a number towards negative infinity."
+  },
+  "math.floor.summary": {
+    "message": "負の無限大方向に数値を丸めます。",
+    "description": "Round a number towards negative infinity."
+  },
+  "math.floor.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.floor.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.fmod": {
+    "message": "fmod",
+    "description": "(function name) Calculate the remainder of ``x/y``."
+  },
+  "math.fmod.summary": {
+    "message": "{{x/y}} の剰余を算出します。",
+    "description": "Calculate the remainder of ``x/y``."
+  },
+  "math.fmod.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The numerator"
+  },
+  "math.fmod.param-doc.x": {
+    "message": "分子の値",
+    "description": "Parameter docs"
+  },
+  "math.fmod.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The denominator"
+  },
+  "math.fmod.param-doc.y": {
+    "message": "分母の値",
+    "description": "Parameter docs"
+  },
+  "math.frexp": {
+    "message": "frexp",
+    "description": "(function name) Decomposes a floating-point number into its mantissa and exponent."
+  },
+  "math.frexp.summary": {
+    "message": "浮動小数点数を仮数部と指数部に分解します。",
+    "description": "Decomposes a floating-point number into its mantissa and exponent."
+  },
+  "math.frexp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A floating-point number"
+  },
+  "math.frexp.param-doc.x": {
+    "message": "浮動小数点数",
+    "description": "Parameter docs"
+  },
+  "math.isfinite": {
+    "message": "isfinite",
+    "description": "(function name) Check if a value is finite."
+  },
+  "math.isfinite.summary": {
+    "message": "有限数かどうかを確認します。",
+    "description": "Check if a value is finite."
+  },
+  "math.isfinite.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number."
+  },
+  "math.isfinite.param-doc.x": {
+    "message": "数値。",
+    "description": "Parameter docs"
+  },
+  "math.isinf": {
+    "message": "isinf",
+    "description": "(function name) Check if a value is infinite."
+  },
+  "math.isinf.summary": {
+    "message": "無限数かどうかを確認します。",
+    "description": "Check if a value is infinite."
+  },
+  "math.isinf.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number."
+  },
+  "math.isinf.param-doc.x": {
+    "message": "数値。",
+    "description": "Parameter docs"
+  },
+  "math.isnan": {
+    "message": "isnan",
+    "description": "(function name) Check is a value is not-a-number (NaN)."
+  },
+  "math.isnan.summary": {
+    "message": "非数（NaN: Not-a-Number）かどうかを確認します。",
+    "description": "Check is a value is not-a-number (NaN)."
+  },
+  "math.isnan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.isnan.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.ldexp": {
+    "message": "ldexp",
+    "description": "(function name) Calculate ``x * (2**exp)``."
+  },
+  "math.ldexp.summary": {
+    "message": "{{x * (2**exp)}} を算出します。",
+    "description": "Calculate ``x * (2**exp)``."
+  },
+  "math.ldexp.param-name.exp": {
+    "message": "exp",
+    "description": "(parameter name) Integer exponent"
+  },
+  "math.ldexp.param-doc.exp": {
+    "message": "整数の指数",
+    "description": "Parameter docs"
+  },
+  "math.ldexp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.ldexp.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.log": {
+    "message": "log",
+    "description": "(function name) Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
+  },
+  "math.log.summary": {
+    "message": "{{x}} の対数を指定された底（デフォルトは自然対数）で算出します。",
+    "description": "Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
+  },
+  "math.log.param-name.base": {
+    "message": "base",
+    "description": "(parameter name) The base to use"
+  },
+  "math.log.param-doc.base": {
+    "message": "使用する底",
+    "description": "Parameter docs"
+  },
+  "math.log.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.log.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.modf": {
+    "message": "modf",
+    "description": "(function name) Calculate the fractional and integral parts of ``x``."
+  },
+  "math.modf.summary": {
+    "message": "{{x}} の整数部分と小数部分を返します。",
+    "description": "Calculate the fractional and integral parts of ``x``."
+  },
+  "math.modf.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.modf.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.pow": {
+    "message": "pow",
+    "description": "(function name) Returns ``x`` to the power of ``y``."
+  },
+  "math.pow.summary": {
+    "message": "{{x}} の {{y}} 乗を返します。",
+    "description": "Returns ``x`` to the power of ``y``."
+  },
+  "math.pow.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.pow.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.pow.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The exponent"
+  },
+  "math.pow.param-doc.y": {
+    "message": "指数",
+    "description": "Parameter docs"
+  },
+  "math.radians": {
+    "message": "radians",
+    "description": "(function name) Convert a degrees to radians."
+  },
+  "math.radians.summary": {
+    "message": "度をラジアンに変換します。",
+    "description": "Convert a degrees to radians."
+  },
+  "math.radians.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A value in degrees"
+  },
+  "math.radians.param-doc.x": {
+    "message": "度単位の角度",
+    "description": "Parameter docs"
+  },
+  "math.sin": {
+    "message": "sin",
+    "description": "(function name) Calculate the sine of ``x``."
+  },
+  "math.sin.summary": {
+    "message": "{{x}} の正弦を算出します。",
+    "description": "Calculate the sine of ``x``."
+  },
+  "math.sin.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.sin.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.sqrt": {
+    "message": "sqrt",
+    "description": "(function name) Calculate the square root of ``x``."
+  },
+  "math.sqrt.summary": {
+    "message": "{{x}} の平方根を算出します。",
+    "description": "Calculate the square root of ``x``."
+  },
+  "math.sqrt.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.sqrt.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.tan": {
+    "message": "tan",
+    "description": "(function name) Calculate the tangent of ``x``."
+  },
+  "math.tan.summary": {
+    "message": "{{x}} の正接を算出します。",
+    "description": "Calculate the tangent of ``x``."
+  },
+  "math.tan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.tan.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.trunc": {
+    "message": "trunc",
+    "description": "(function name) Round a number towards 0."
+  },
+  "math.trunc.summary": {
+    "message": "0 方向に数値を丸めます。",
+    "description": "Round a number towards 0."
+  },
+  "math.trunc.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.trunc.param-doc.x": {
+    "message": "数値",
+    "description": "Parameter docs"
+  },
+  "math.e": {
+    "message": "e",
+    "description": "(field name) Base of the natural logarithm"
+  },
+  "math.e.summary": {
+    "message": "自然対数の底",
+    "description": "Base of the natural logarithm"
+  },
+  "math.pi": {
+    "message": "pi",
+    "description": "(field name) The ratio of a circle's circumference to its diameter"
+  },
+  "math.pi.summary": {
+    "message": "円の円周と直径の比",
+    "description": "The ratio of a circle's circumference to its diameter"
+  },
+  "microbit": {
+    "message": "microbit",
+    "description": "(module name) Pins, images, sounds, temperature and volume."
+  },
+  "microbit.summary": {
+    "message": "端子、イメージ、サウンド、温度と音量。",
+    "description": "Pins, images, sounds, temperature and volume."
+  },
+  "microbit.run_every": {
+    "message": "run every",
+    "description": "(function name) Schedule to run a function at the interval specified by the time arguments **V2 only**."
+  },
+  "microbit.run_every.summary": {
+    "message": "time 引数で指定した間隔で関数を実行するようスケジュールします。 **V2** のみで使えます。",
+    "description": "Schedule to run a function at the interval specified by the time arguments **V2 only**."
+  },
+  "microbit.run_every.param-name.callback": {
+    "message": "callback",
+    "description": "(parameter name) Function to call at the provided interval. Omit when using as a decorator."
+  },
+  "microbit.run_every.param-doc.callback": {
+    "message": "指定した間隔で呼び出す関数。デコレータとして使う場合は省略してください。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.days": {
+    "message": "days",
+    "description": "(parameter name) Sets the day mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.days": {
+    "message": "スケジューリングのための日数を設定します。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) Sets the hour mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.h": {
+    "message": "スケジューリングのための時間を設定します。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.min": {
+    "message": "min",
+    "description": "(parameter name) Sets the minute mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.min": {
+    "message": "スケジューリングのための分を設定します。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.ms": {
+    "message": "ms",
+    "description": "(parameter name) Sets the millisecond mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.ms": {
+    "message": "スケジューリングのための秒を設定します。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.s": {
+    "message": "s",
+    "description": "(parameter name) Sets the second mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.s": {
+    "message": "スケジューリングのためのミリ秒を設定します。",
+    "description": "Parameter docs"
+  },
+  "microbit.panic": {
+    "message": "panic",
+    "description": "(function name) Enter a panic mode."
+  },
+  "microbit.panic.summary": {
+    "message": "パニックモードに入ります。",
+    "description": "Enter a panic mode."
+  },
+  "microbit.panic.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) An arbitrary integer <= 255 to indicate a status."
+  },
+  "microbit.panic.param-doc.n": {
+    "message": "状態を示す 255 以下の任意の整数。",
+    "description": "Parameter docs"
+  },
+  "microbit.reset": {
+    "message": "reset",
+    "description": "(function name) Restart the board."
+  },
+  "microbit.reset.summary": {
+    "message": "ボードを再起動します。",
+    "description": "Restart the board."
+  },
+  "microbit.scale-1": {
+    "message": "scale",
+    "description": "(function name) Converts a value from a range to an integer range."
+  },
+  "microbit.scale-1.summary": {
+    "message": "ある整数区間から別の整数区間に値を変換します。",
+    "description": "Converts a value from a range to an integer range."
+  },
+  "microbit.scale-1.param-name.from_": {
+    "message": "from",
+    "description": "(parameter name) A tuple to define the range to convert from."
+  },
+  "microbit.scale-1.param-doc.from_": {
+    "message": "変換元の区間を定義するためのタプル。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-1.param-name.to": {
+    "message": "to",
+    "description": "(parameter name) A tuple to define the range to convert to."
+  },
+  "microbit.scale-1.param-doc.to": {
+    "message": "変換先の区間を定義するためのタプル。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-1.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) A number to convert."
+  },
+  "microbit.scale-1.param-doc.value": {
+    "message": "変換する数値。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-2": {
+    "message": "scale",
+    "description": "(function name) Converts a value from a range to a floating point range."
+  },
+  "microbit.scale-2.summary": {
+    "message": "ある浮動小数点数区間から別の浮動小数点数区間に値を変換します。",
+    "description": "Converts a value from a range to a floating point range."
+  },
+  "microbit.scale-2.param-name.from_": {
+    "message": "from",
+    "description": "(parameter name) A tuple to define the range to convert from."
+  },
+  "microbit.scale-2.param-doc.from_": {
+    "message": "変換元の区間を定義するためのタプル。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-2.param-name.to": {
+    "message": "to",
+    "description": "(parameter name) A tuple to define the range to convert to."
+  },
+  "microbit.scale-2.param-doc.to": {
+    "message": "変換先の区間を定義するためのタプル。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-2.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) A number to convert."
+  },
+  "microbit.scale-2.param-doc.value": {
+    "message": "変換する数値。",
+    "description": "Parameter docs"
+  },
+  "microbit.sleep": {
+    "message": "sleep",
+    "description": "(function name) Wait for ``n`` milliseconds."
+  },
+  "microbit.sleep.summary": {
+    "message": "{{n}} ミリ秒待機します。",
+    "description": "Wait for ``n`` milliseconds."
+  },
+  "microbit.sleep.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of milliseconds to wait"
+  },
+  "microbit.sleep.param-doc.n": {
+    "message": "ミリ秒単位の待機時間",
+    "description": "Parameter docs"
+  },
+  "microbit.running_time": {
+    "message": "running time",
+    "description": "(function name) Get the running time of the board."
+  },
+  "microbit.running_time.summary": {
+    "message": "ボードの実行時間を取得します。",
+    "description": "Get the running time of the board."
+  },
+  "microbit.temperature": {
+    "message": "温度",
+    "description": "(function name) Get the temperature of the micro:bit in degrees Celcius."
+  },
+  "microbit.temperature.summary": {
+    "message": "micro:bitの温度を摂氏で取得します。",
+    "description": "Get the temperature of the micro:bit in degrees Celcius."
+  },
+  "microbit.set_volume": {
+    "message": "set volume",
+    "description": "(function name) Sets the volume."
+  },
+  "microbit.set_volume.summary": {
+    "message": "音量を設定します。",
+    "description": "Sets the volume."
+  },
+  "microbit.set_volume.param-name.v": {
+    "message": "v",
+    "description": "(parameter name) a value between 0 (low) and 255 (high)."
+  },
+  "microbit.set_volume.param-doc.v": {
+    "message": "0（下限）から 255（上限）までの間の値。",
+    "description": "Parameter docs"
+  },
+  "microbit.Button": {
+    "message": "button",
+    "description": "(class name) The class for the buttons ``button_a`` and ``button_b``."
+  },
+  "microbit.Button.summary": {
+    "message": "ボタン {{button_a}} と {{button_b}} のクラス。",
+    "description": "The class for the buttons ``button_a`` and ``button_b``."
+  },
+  "microbit.Button.is_pressed": {
+    "message": "is pressed",
+    "description": "(function name) Check if the button is pressed."
+  },
+  "microbit.Button.is_pressed.summary": {
+    "message": "ボタンが押されているかどうかを確認します。",
+    "description": "Check if the button is pressed."
+  },
+  "microbit.Button.was_pressed": {
+    "message": "was pressed",
+    "description": "(function name) Check if the button was pressed since the device started or the last time this method was called."
+  },
+  "microbit.Button.was_pressed.summary": {
+    "message": "デバイスが起動されてから、もしくは前回このメソッドが呼び出されてからボタンが押されたかどうかを確認します。",
+    "description": "Check if the button was pressed since the device started or the last time this method was called."
+  },
+  "microbit.Button.get_presses": {
+    "message": "get presses",
+    "description": "(function name) Get the running total of button presses, and resets this total\nto zero before returning."
+  },
+  "microbit.Button.get_presses.summary": {
+    "message": "ボタンを押した回数の合計を取得し、返す前に回数をゼロにリセットします。",
+    "description": "Get the running total of button presses, and resets this total\nto zero before returning."
+  },
+  "microbit.button_a": {
+    "message": "button a",
+    "description": "(field name) The left button ``Button`` object."
+  },
+  "microbit.button_a.summary": {
+    "message": "左のボタン {{Button}} オブジェクト。",
+    "description": "The left button ``Button`` object."
+  },
+  "microbit.button_b": {
+    "message": "button b",
+    "description": "(field name) The right button ``Button`` object."
+  },
+  "microbit.button_b.summary": {
+    "message": "右のボタン {{Button}} オブジェクト。",
+    "description": "The right button ``Button`` object."
+  },
+  "microbit.MicroBitDigitalPin": {
+    "message": "microbitdigitalpin",
+    "description": "(class name) A digital pin."
+  },
+  "microbit.MicroBitDigitalPin.summary": {
+    "message": "デジタル端子。",
+    "description": "A digital pin."
+  },
+  "microbit.MicroBitDigitalPin.read_digital": {
+    "message": "read digital",
+    "description": "(function name) Get the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.read_digital.summary": {
+    "message": "端子のデジタル値を取得します。",
+    "description": "Get the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital": {
+    "message": "write digital",
+    "description": "(function name) Set the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital.summary": {
+    "message": "端子のデジタル値を設定します。",
+    "description": "Set the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) 1 to set the pin high or 0 to set the pin low"
+  },
+  "microbit.MicroBitDigitalPin.write_digital.param-doc.value": {
+    "message": "端子をハイにするには 1 、ローにするには 0 を指定",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_pull": {
+    "message": "set pull",
+    "description": "(function name) Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.summary": {
+    "message": "プル状態を {{PULL_UP}}、{{PULL_DOWN}}、{{NO_PULL}} の３つの値のいずれかに設定します。",
+    "description": "Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The pull state from the relevant pin, e.g. ``pin0.PULL_UP``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.param-doc.value": {
+    "message": "{{pin0.PULL_UP}} などの関連する端子のプル状態。",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.get_pull": {
+    "message": "get pull",
+    "description": "(function name) Get the pull state on a pin."
+  },
+  "microbit.MicroBitDigitalPin.get_pull.summary": {
+    "message": "端子のプル状態を取得します。",
+    "description": "Get the pull state on a pin."
+  },
+  "microbit.MicroBitDigitalPin.get_mode": {
+    "message": "get mode",
+    "description": "(function name) Returns the pin mode."
+  },
+  "microbit.MicroBitDigitalPin.get_mode.summary": {
+    "message": "端子のモードを返します。",
+    "description": "Returns the pin mode."
+  },
+  "microbit.MicroBitDigitalPin.write_analog": {
+    "message": "write analog",
+    "description": "(function name) Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.summary": {
+    "message": "PWM 信号を端子に出力します。時間幅周期は {{value}} に比例します。",
+    "description": "Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty)."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.param-doc.value": {
+    "message": "0（時間幅周期 0%）から 1023（時間幅周期 100%）までの整数または浮動小数点数。",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period": {
+    "message": "set analog period",
+    "description": "(function name) Set the period of the PWM signal being output to ``period`` in milliseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.summary": {
+    "message": "出力されるPWM信号の周期を {{period}} にミリ秒単位で設定します。",
+    "description": "Set the period of the PWM signal being output to ``period`` in milliseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.param-name.period": {
+    "message": "period",
+    "description": "(parameter name) The period in milliseconds with a minimum valid value of 1ms."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.param-doc.period": {
+    "message": "周期をミリ秒単位で指定。有効な最小値は1ms。",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds": {
+    "message": "set analog period microseconds",
+    "description": "(function name) Set the period of the PWM signal being output to ``period`` in microseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.summary": {
+    "message": "出力されるPWM信号の周期を {{period}} にマイクロ秒単位で設定します。",
+    "description": "Set the period of the PWM signal being output to ``period`` in microseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-name.period": {
+    "message": "period",
+    "description": "(parameter name) The period in microseconds with a minimum valid value of 256µs."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-doc.period": {
+    "message": "周期をマイクロ秒単位で指定。有効な最小値は256µs。",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitAnalogDigitalPin": {
+    "message": "microbitanalogdigitalpin",
+    "description": "(class name) A pin with analog and digital features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.summary": {
+    "message": "アナログとデジタル機能を備えた端子。",
+    "description": "A pin with analog and digital features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.read_analog": {
+    "message": "read analog",
+    "description": "(function name) Read the voltage applied to the pin."
+  },
+  "microbit.MicroBitAnalogDigitalPin.read_analog.summary": {
+    "message": "端子にかかっている電圧を読み取ります。",
+    "description": "Read the voltage applied to the pin."
+  },
+  "microbit.MicroBitTouchPin": {
+    "message": "microbittouchpin",
+    "description": "(class name) A pin with analog, digital and touch features."
+  },
+  "microbit.MicroBitTouchPin.summary": {
+    "message": "アナログ、デジタル、タッチ機能を備えた端子。",
+    "description": "A pin with analog, digital and touch features."
+  },
+  "microbit.MicroBitTouchPin.is_touched": {
+    "message": "is touched",
+    "description": "(function name) Check if the pin is being touched."
+  },
+  "microbit.MicroBitTouchPin.is_touched.summary": {
+    "message": "端子にタッチしているかどうかを確認します。",
+    "description": "Check if the pin is being touched."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode": {
+    "message": "set touch mode",
+    "description": "(function name) Set the touch mode for the pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.summary": {
+    "message": "端子のタッチモードを設定します。",
+    "description": "Set the touch mode for the pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.param-doc.value": {
+    "message": "関連する端子の {{CAPACITIVE}} または {{RESISTIVE}}。",
+    "description": "Parameter docs"
+  },
+  "microbit.pin0": {
+    "message": "pin0",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.pin0.summary": {
+    "message": "デジタル、アナログ、タッチ機能を備えた端子。",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.pin1": {
+    "message": "pin1",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.pin1.summary": {
+    "message": "デジタル、アナログ、タッチ機能を備えた端子。",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.pin2": {
+    "message": "pin2",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.pin2.summary": {
+    "message": "デジタル、アナログ、タッチ機能を備えた端子。",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.pin3": {
+    "message": "pin3",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.pin3.summary": {
+    "message": "デジタルとアナログ機能を備えた端子。",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.pin4": {
+    "message": "pin4",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.pin4.summary": {
+    "message": "デジタルとアナログ機能を備えた端子。",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.pin5": {
+    "message": "pin5",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin5.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin6": {
+    "message": "pin6",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin6.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin7": {
+    "message": "pin7",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin7.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin8": {
+    "message": "pin8",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin8.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin9": {
+    "message": "pin9",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin9.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin10": {
+    "message": "pin10",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.pin10.summary": {
+    "message": "デジタルとアナログ機能を備えた端子。",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.pin11": {
+    "message": "pin11",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin11.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin12": {
+    "message": "pin12",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin12.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin13": {
+    "message": "pin13",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin13.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin14": {
+    "message": "pin14",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin14.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin15": {
+    "message": "pin15",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin15.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin16": {
+    "message": "pin16",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin16.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin19": {
+    "message": "pin19",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin19.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin20": {
+    "message": "pin20",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin20.summary": {
+    "message": "デジタル機能を備えた端子。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin_logo": {
+    "message": "pin logo",
+    "description": "(field name) A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
+  },
+  "microbit.pin_logo.summary": {
+    "message": "micro:bitの前面にあるタッチセンサー機能のあるロゴの端子です。デフォルトでは静電容量方式タッチモードになっています。",
+    "description": "A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
+  },
+  "microbit.pin_speaker": {
+    "message": "pin speaker",
+    "description": "(field name) A pin to address the micro:bit speaker."
+  },
+  "microbit.pin_speaker.summary": {
+    "message": "micro:bitスピーカーをアドレスするための端子。",
+    "description": "A pin to address the micro:bit speaker."
+  },
+  "microbit.Image": {
+    "message": "image",
+    "description": "(class name) An image to show on the micro:bit LED display."
+  },
+  "microbit.Image.summary": {
+    "message": "micro:bitのLEDディスプレイに表示するイメージ。",
+    "description": "An image to show on the micro:bit LED display."
+  },
+  "microbit.Image.HEART": {
+    "message": "heart",
+    "description": "(field name) Heart image."
+  },
+  "microbit.Image.HEART.summary": {
+    "message": "「ハート」イメージ。",
+    "description": "Heart image."
+  },
+  "microbit.Image.HEART_SMALL": {
+    "message": "heart small",
+    "description": "(field name) Small heart image."
+  },
+  "microbit.Image.HEART_SMALL.summary": {
+    "message": "「小さいハート」イメージ。",
+    "description": "Small heart image."
+  },
+  "microbit.Image.HAPPY": {
+    "message": "happy",
+    "description": "(field name) Happy face image."
+  },
+  "microbit.Image.HAPPY.summary": {
+    "message": "「うれしい顔」イメージ。",
+    "description": "Happy face image."
+  },
+  "microbit.Image.SMILE": {
+    "message": "smile",
+    "description": "(field name) Smiling face image."
+  },
+  "microbit.Image.SMILE.summary": {
+    "message": "「笑顔」イメージ。",
+    "description": "Smiling face image."
+  },
+  "microbit.Image.SAD": {
+    "message": "sad",
+    "description": "(field name) Sad face image."
+  },
+  "microbit.Image.SAD.summary": {
+    "message": "「かなしい顔」イメージ。",
+    "description": "Sad face image."
+  },
+  "microbit.Image.CONFUSED": {
+    "message": "confused",
+    "description": "(field name) Confused face image."
+  },
+  "microbit.Image.CONFUSED.summary": {
+    "message": "「こまり顔」イメージ。",
+    "description": "Confused face image."
+  },
+  "microbit.Image.ANGRY": {
+    "message": "angry",
+    "description": "(field name) Angry face image."
+  },
+  "microbit.Image.ANGRY.summary": {
+    "message": "「おこり顔」イメージ。",
+    "description": "Angry face image."
+  },
+  "microbit.Image.ASLEEP": {
+    "message": "asleep",
+    "description": "(field name) Sleeping face image."
+  },
+  "microbit.Image.ASLEEP.summary": {
+    "message": "「ねてる顔」イメージ。",
+    "description": "Sleeping face image."
+  },
+  "microbit.Image.SURPRISED": {
+    "message": "surprised",
+    "description": "(field name) Surprised face image."
+  },
+  "microbit.Image.SURPRISED.summary": {
+    "message": "「びっくり顔」イメージ。",
+    "description": "Surprised face image."
+  },
+  "microbit.Image.SILLY": {
+    "message": "silly",
+    "description": "(field name) Silly face image."
+  },
+  "microbit.Image.SILLY.summary": {
+    "message": "「へん顔」イメージ。",
+    "description": "Silly face image."
+  },
+  "microbit.Image.FABULOUS": {
+    "message": "fabulous",
+    "description": "(field name) Sunglasses face image."
+  },
+  "microbit.Image.FABULOUS.summary": {
+    "message": "「サングラスの笑顔」イメージ。",
+    "description": "Sunglasses face image."
+  },
+  "microbit.Image.MEH": {
+    "message": "meh",
+    "description": "(field name) Unimpressed face image."
+  },
+  "microbit.Image.MEH.summary": {
+    "message": "「ふーん」イメージ",
+    "description": "Unimpressed face image."
+  },
+  "microbit.Image.YES": {
+    "message": "yes",
+    "description": "(field name) Tick image."
+  },
+  "microbit.Image.YES.summary": {
+    "message": "「チェック」イメージ。",
+    "description": "Tick image."
+  },
+  "microbit.Image.NO": {
+    "message": "no",
+    "description": "(field name) Cross image."
+  },
+  "microbit.Image.NO.summary": {
+    "message": "「バツ」イメージ。",
+    "description": "Cross image."
+  },
+  "microbit.Image.CLOCK12": {
+    "message": "clock12",
+    "description": "(field name) Image with line pointing to 12 o'clock."
+  },
+  "microbit.Image.CLOCK12.summary": {
+    "message": "「12時を指す線」イメージ。",
+    "description": "Image with line pointing to 12 o'clock."
+  },
+  "microbit.Image.CLOCK11": {
+    "message": "clock11",
+    "description": "(field name) Image with line pointing to 11 o'clock."
+  },
+  "microbit.Image.CLOCK11.summary": {
+    "message": "「11時を指す線」イメージ。",
+    "description": "Image with line pointing to 11 o'clock."
+  },
+  "microbit.Image.CLOCK10": {
+    "message": "clock10",
+    "description": "(field name) Image with line pointing to 10 o'clock."
+  },
+  "microbit.Image.CLOCK10.summary": {
+    "message": "「10時を指す線」イメージ。",
+    "description": "Image with line pointing to 10 o'clock."
+  },
+  "microbit.Image.CLOCK9": {
+    "message": "clock9",
+    "description": "(field name) Image with line pointing to 9 o'clock."
+  },
+  "microbit.Image.CLOCK9.summary": {
+    "message": "「9時を指す線」イメージ。",
+    "description": "Image with line pointing to 9 o'clock."
+  },
+  "microbit.Image.CLOCK8": {
+    "message": "clock8",
+    "description": "(field name) Image with line pointing to 8 o'clock."
+  },
+  "microbit.Image.CLOCK8.summary": {
+    "message": "「8時を指す線」イメージ。",
+    "description": "Image with line pointing to 8 o'clock."
+  },
+  "microbit.Image.CLOCK7": {
+    "message": "clock7",
+    "description": "(field name) Image with line pointing to 7 o'clock."
+  },
+  "microbit.Image.CLOCK7.summary": {
+    "message": "「7時を指す線」イメージ。",
+    "description": "Image with line pointing to 7 o'clock."
+  },
+  "microbit.Image.CLOCK6": {
+    "message": "clock6",
+    "description": "(field name) Image with line pointing to 6 o'clock."
+  },
+  "microbit.Image.CLOCK6.summary": {
+    "message": "「6時を指す線」イメージ。",
+    "description": "Image with line pointing to 6 o'clock."
+  },
+  "microbit.Image.CLOCK5": {
+    "message": "clock5",
+    "description": "(field name) Image with line pointing to 5 o'clock."
+  },
+  "microbit.Image.CLOCK5.summary": {
+    "message": "「5時を指す線」イメージ。",
+    "description": "Image with line pointing to 5 o'clock."
+  },
+  "microbit.Image.CLOCK4": {
+    "message": "clock4",
+    "description": "(field name) Image with line pointing to 4 o'clock."
+  },
+  "microbit.Image.CLOCK4.summary": {
+    "message": "「4時を指す線」イメージ。",
+    "description": "Image with line pointing to 4 o'clock."
+  },
+  "microbit.Image.CLOCK3": {
+    "message": "clock3",
+    "description": "(field name) Image with line pointing to 3 o'clock."
+  },
+  "microbit.Image.CLOCK3.summary": {
+    "message": "「3時を指す線」イメージ。",
+    "description": "Image with line pointing to 3 o'clock."
+  },
+  "microbit.Image.CLOCK2": {
+    "message": "clock2",
+    "description": "(field name) Image with line pointing to 2 o'clock."
+  },
+  "microbit.Image.CLOCK2.summary": {
+    "message": "「2時を指す線」イメージ。",
+    "description": "Image with line pointing to 2 o'clock."
+  },
+  "microbit.Image.CLOCK1": {
+    "message": "clock1",
+    "description": "(field name) Image with line pointing to 1 o'clock."
+  },
+  "microbit.Image.CLOCK1.summary": {
+    "message": "「1時を指す線」イメージ。",
+    "description": "Image with line pointing to 1 o'clock."
+  },
+  "microbit.Image.ARROW_N": {
+    "message": "arrow n",
+    "description": "(field name) Image of arrow pointing north."
+  },
+  "microbit.Image.ARROW_N.summary": {
+    "message": "「北を指す矢印」イメージ。",
+    "description": "Image of arrow pointing north."
+  },
+  "microbit.Image.ARROW_NE": {
+    "message": "arrow ne",
+    "description": "(field name) Image of arrow pointing north east."
+  },
+  "microbit.Image.ARROW_NE.summary": {
+    "message": "「北東を指す矢印」イメージ。",
+    "description": "Image of arrow pointing north east."
+  },
+  "microbit.Image.ARROW_E": {
+    "message": "arrow e",
+    "description": "(field name) Image of arrow pointing east."
+  },
+  "microbit.Image.ARROW_E.summary": {
+    "message": "「西を指す矢印」イメージ。",
+    "description": "Image of arrow pointing east."
+  },
+  "microbit.Image.ARROW_SE": {
+    "message": "arrow se",
+    "description": "(field name) Image of arrow pointing south east."
+  },
+  "microbit.Image.ARROW_SE.summary": {
+    "message": "「南東を指す矢印」イメージ。",
+    "description": "Image of arrow pointing south east."
+  },
+  "microbit.Image.ARROW_S": {
+    "message": "arrow s",
+    "description": "(field name) Image of arrow pointing south."
+  },
+  "microbit.Image.ARROW_S.summary": {
+    "message": "「南を指す矢印」イメージ。",
+    "description": "Image of arrow pointing south."
+  },
+  "microbit.Image.ARROW_SW": {
+    "message": "arrow sw",
+    "description": "(field name) Image of arrow pointing south west."
+  },
+  "microbit.Image.ARROW_SW.summary": {
+    "message": "「南西を指す矢印」イメージ。",
+    "description": "Image of arrow pointing south west."
+  },
+  "microbit.Image.ARROW_W": {
+    "message": "arrow w",
+    "description": "(field name) Image of arrow pointing west."
+  },
+  "microbit.Image.ARROW_W.summary": {
+    "message": "「西を指す矢印」イメージ。",
+    "description": "Image of arrow pointing west."
+  },
+  "microbit.Image.ARROW_NW": {
+    "message": "arrow nw",
+    "description": "(field name) Image of arrow pointing north west."
+  },
+  "microbit.Image.ARROW_NW.summary": {
+    "message": "「北西を指す矢印」イメージ。",
+    "description": "Image of arrow pointing north west."
+  },
+  "microbit.Image.TRIANGLE": {
+    "message": "triangle",
+    "description": "(field name) Image of a triangle pointing up."
+  },
+  "microbit.Image.TRIANGLE.summary": {
+    "message": "「上向きの三角形」イメージ",
+    "description": "Image of a triangle pointing up."
+  },
+  "microbit.Image.TRIANGLE_LEFT": {
+    "message": "triangle left",
+    "description": "(field name) Image of a triangle in the left corner."
+  },
+  "microbit.Image.TRIANGLE_LEFT.summary": {
+    "message": "「左向き三角」イメージ。",
+    "description": "Image of a triangle in the left corner."
+  },
+  "microbit.Image.CHESSBOARD": {
+    "message": "chessboard",
+    "description": "(field name) Alternate LEDs lit in a chessboard pattern."
+  },
+  "microbit.Image.CHESSBOARD.summary": {
+    "message": "チェス盤パターンで交互に点灯するLED。",
+    "description": "Alternate LEDs lit in a chessboard pattern."
+  },
+  "microbit.Image.DIAMOND": {
+    "message": "diamond",
+    "description": "(field name) Diamond image."
+  },
+  "microbit.Image.DIAMOND.summary": {
+    "message": "「ダイヤモンド」イメージ。",
+    "description": "Diamond image."
+  },
+  "microbit.Image.DIAMOND_SMALL": {
+    "message": "diamond small",
+    "description": "(field name) Small diamond image."
+  },
+  "microbit.Image.DIAMOND_SMALL.summary": {
+    "message": "「小さいダイヤモンド」イメージ。",
+    "description": "Small diamond image."
+  },
+  "microbit.Image.SQUARE": {
+    "message": "square",
+    "description": "(field name) Square image."
+  },
+  "microbit.Image.SQUARE.summary": {
+    "message": "「四角」イメージ。",
+    "description": "Square image."
+  },
+  "microbit.Image.SQUARE_SMALL": {
+    "message": "square small",
+    "description": "(field name) Small square image."
+  },
+  "microbit.Image.SQUARE_SMALL.summary": {
+    "message": "「小さい四角」イメージ。",
+    "description": "Small square image."
+  },
+  "microbit.Image.RABBIT": {
+    "message": "rabbit",
+    "description": "(field name) Rabbit image."
+  },
+  "microbit.Image.RABBIT.summary": {
+    "message": "「うさぎ」イメージ。",
+    "description": "Rabbit image."
+  },
+  "microbit.Image.COW": {
+    "message": "cow",
+    "description": "(field name) Cow image."
+  },
+  "microbit.Image.COW.summary": {
+    "message": "「うし」イメージ。",
+    "description": "Cow image."
+  },
+  "microbit.Image.MUSIC_CROTCHET": {
+    "message": "music crotchet",
+    "description": "(field name) Crotchet note image."
+  },
+  "microbit.Image.MUSIC_CROTCHET.summary": {
+    "message": "「４分音符」イメージ。",
+    "description": "Crotchet note image."
+  },
+  "microbit.Image.MUSIC_QUAVER": {
+    "message": "music quaver",
+    "description": "(field name) Quaver note image."
+  },
+  "microbit.Image.MUSIC_QUAVER.summary": {
+    "message": "「８分音符」イメージ。",
+    "description": "Quaver note image."
+  },
+  "microbit.Image.MUSIC_QUAVERS": {
+    "message": "music quavers",
+    "description": "(field name) Pair of quavers note image."
+  },
+  "microbit.Image.MUSIC_QUAVERS.summary": {
+    "message": "「連結した８分音符」イメージ。",
+    "description": "Pair of quavers note image."
+  },
+  "microbit.Image.PITCHFORK": {
+    "message": "pitchfork",
+    "description": "(field name) Pitchfork image."
+  },
+  "microbit.Image.PITCHFORK.summary": {
+    "message": "「くまで」イメージ。",
+    "description": "Pitchfork image."
+  },
+  "microbit.Image.XMAS": {
+    "message": "xmas",
+    "description": "(field name) Christmas tree image."
+  },
+  "microbit.Image.XMAS.summary": {
+    "message": "「クリスマスツリー」イメージ。",
+    "description": "Christmas tree image."
+  },
+  "microbit.Image.PACMAN": {
+    "message": "pacman",
+    "description": "(field name) Pac-Man arcade character image."
+  },
+  "microbit.Image.PACMAN.summary": {
+    "message": "「パックマン」イメージ。",
+    "description": "Pac-Man arcade character image."
+  },
+  "microbit.Image.TARGET": {
+    "message": "target",
+    "description": "(field name) Target image."
+  },
+  "microbit.Image.TARGET.summary": {
+    "message": "「まと」イメージ。",
+    "description": "Target image."
+  },
+  "microbit.Image.TSHIRT": {
+    "message": "tshirt",
+    "description": "(field name) T-shirt image."
+  },
+  "microbit.Image.TSHIRT.summary": {
+    "message": "「Tシャツ」イメージ。",
+    "description": "T-shirt image."
+  },
+  "microbit.Image.ROLLERSKATE": {
+    "message": "rollerskate",
+    "description": "(field name) Rollerskate image."
+  },
+  "microbit.Image.ROLLERSKATE.summary": {
+    "message": "「ローラースケート」イメージ。",
+    "description": "Rollerskate image."
+  },
+  "microbit.Image.DUCK": {
+    "message": "duck",
+    "description": "(field name) Duck image."
+  },
+  "microbit.Image.DUCK.summary": {
+    "message": "「あひる」イメージ。",
+    "description": "Duck image."
+  },
+  "microbit.Image.HOUSE": {
+    "message": "house",
+    "description": "(field name) House image."
+  },
+  "microbit.Image.HOUSE.summary": {
+    "message": "「家」イメージ。",
+    "description": "House image."
+  },
+  "microbit.Image.TORTOISE": {
+    "message": "tortoise",
+    "description": "(field name) Tortoise image."
+  },
+  "microbit.Image.TORTOISE.summary": {
+    "message": "「かめ」イメージ。",
+    "description": "Tortoise image."
+  },
+  "microbit.Image.BUTTERFLY": {
+    "message": "butterfly",
+    "description": "(field name) Butterfly image."
+  },
+  "microbit.Image.BUTTERFLY.summary": {
+    "message": "「ちょうちょ」イメージ。",
+    "description": "Butterfly image."
+  },
+  "microbit.Image.STICKFIGURE": {
+    "message": "stickfigure",
+    "description": "(field name) Stick figure image."
+  },
+  "microbit.Image.STICKFIGURE.summary": {
+    "message": "「棒人間」イメージ。",
+    "description": "Stick figure image."
+  },
+  "microbit.Image.GHOST": {
+    "message": "ghost",
+    "description": "(field name) Ghost image."
+  },
+  "microbit.Image.GHOST.summary": {
+    "message": "「おばけ」イメージ。",
+    "description": "Ghost image."
+  },
+  "microbit.Image.SWORD": {
+    "message": "sword",
+    "description": "(field name) Sword image."
+  },
+  "microbit.Image.SWORD.summary": {
+    "message": "「剣」イメージ。",
+    "description": "Sword image."
+  },
+  "microbit.Image.GIRAFFE": {
+    "message": "giraffe",
+    "description": "(field name) Giraffe image."
+  },
+  "microbit.Image.GIRAFFE.summary": {
+    "message": "「きりん」イメージ。",
+    "description": "Giraffe image."
+  },
+  "microbit.Image.SKULL": {
+    "message": "skull",
+    "description": "(field name) Skull image."
+  },
+  "microbit.Image.SKULL.summary": {
+    "message": "「がいこつ」イメージ。",
+    "description": "Skull image."
+  },
+  "microbit.Image.UMBRELLA": {
+    "message": "umbrella",
+    "description": "(field name) Umbrella image."
+  },
+  "microbit.Image.UMBRELLA.summary": {
+    "message": "「かさ」イメージ。",
+    "description": "Umbrella image."
+  },
+  "microbit.Image.SNAKE": {
+    "message": "snake",
+    "description": "(field name) Snake image."
+  },
+  "microbit.Image.SNAKE.summary": {
+    "message": "「へび」イメージ。",
+    "description": "Snake image."
+  },
+  "microbit.Image.SCISSORS": {
+    "message": "scissors",
+    "description": "(field name) Scissors image."
+  },
+  "microbit.Image.SCISSORS.summary": {
+    "message": "「はさみ」イメージ。",
+    "description": "Scissors image."
+  },
+  "microbit.Image.ALL_CLOCKS": {
+    "message": "all clocks",
+    "description": "(field name) A list containing all the CLOCK_ images in sequence."
+  },
+  "microbit.Image.ALL_CLOCKS.summary": {
+    "message": "すべての CLOCK_ イメージを順番に並べたリスト。",
+    "description": "A list containing all the CLOCK_ images in sequence."
+  },
+  "microbit.Image.ALL_ARROWS": {
+    "message": "all arrows",
+    "description": "(field name) A list containing all the ARROW_ images in sequence."
+  },
+  "microbit.Image.ALL_ARROWS.summary": {
+    "message": "すべての ARROW_ イメージを順番に並べたリスト。",
+    "description": "A list containing all the ARROW_ images in sequence."
+  },
+  "microbit.Image.__init__-1": {
+    "message": "init",
+    "description": "(function name) Create an image from a string describing which LEDs are lit."
+  },
+  "microbit.Image.__init__-1.summary": {
+    "message": "LEDの点灯パターンを示す文字列からイメージを作成します。",
+    "description": "Create an image from a string describing which LEDs are lit."
+  },
+  "microbit.Image.__init__-1.param-name.string": {
+    "message": "string",
+    "description": "(parameter name) The string describing the image."
+  },
+  "microbit.Image.__init__-1.param-doc.string": {
+    "message": "イメージについて記述する文字列。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__-2": {
+    "message": "init",
+    "description": "(function name) Create an empty image with ``width`` columns and ``height`` rows."
+  },
+  "microbit.Image.__init__-2.summary": {
+    "message": "{{width}} 列と {{height}} 行からなる空のイメージを作成します。",
+    "description": "Create an empty image with ``width`` columns and ``height`` rows."
+  },
+  "microbit.Image.__init__-2.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image"
+  },
+  "microbit.Image.__init__-2.param-doc.buffer": {
+    "message": "イメージを初期化するために、整数値（0～9）を {{width}}×{{height}} 個並べた配列またはバイト列を指定します",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__-2.param-name.height": {
+    "message": "height",
+    "description": "(parameter name) Optional height of the image"
+  },
+  "microbit.Image.__init__-2.param-doc.height": {
+    "message": "イメージの高さを指定するオプション",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__-2.param-name.width": {
+    "message": "width",
+    "description": "(parameter name) Optional width of the image"
+  },
+  "microbit.Image.__init__-2.param-doc.width": {
+    "message": "イメージの幅を指定するオプション",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.width": {
+    "message": "width",
+    "description": "(function name) Get the number of columns."
+  },
+  "microbit.Image.width.summary": {
+    "message": "列数を取得します。",
+    "description": "Get the number of columns."
+  },
+  "microbit.Image.height": {
+    "message": "height",
+    "description": "(function name) Get the number of rows."
+  },
+  "microbit.Image.height.summary": {
+    "message": "行数を取得します。",
+    "description": "Get the number of rows."
+  },
+  "microbit.Image.set_pixel": {
+    "message": "set pixel",
+    "description": "(function name) Set the brightness of a pixel."
+  },
+  "microbit.Image.set_pixel.summary": {
+    "message": "1ピクセルの明るさを設定します。",
+    "description": "Set the brightness of a pixel."
+  },
+  "microbit.Image.set_pixel.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The brightness as an integer between 0 (dark) and 9 (bright)"
+  },
+  "microbit.Image.set_pixel.param-doc.value": {
+    "message": "明るさを 0（暗い）から 9（明るい）までの整数値で指定します",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.set_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The column number"
+  },
+  "microbit.Image.set_pixel.param-doc.x": {
+    "message": "列数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.set_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The row number"
+  },
+  "microbit.Image.set_pixel.param-doc.y": {
+    "message": "行数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.get_pixel": {
+    "message": "get pixel",
+    "description": "(function name) Get the brightness of a pixel."
+  },
+  "microbit.Image.get_pixel.summary": {
+    "message": "1ピクセルの明るさを取得します。",
+    "description": "Get the brightness of a pixel."
+  },
+  "microbit.Image.get_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The column number"
+  },
+  "microbit.Image.get_pixel.param-doc.x": {
+    "message": "列数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.get_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The row number"
+  },
+  "microbit.Image.get_pixel.param-doc.y": {
+    "message": "行数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_left": {
+    "message": "shift left",
+    "description": "(function name) Create a new image by shifting the picture left."
+  },
+  "microbit.Image.shift_left.summary": {
+    "message": "画像を左にシフトした新しいイメージを作成します。",
+    "description": "Create a new image by shifting the picture left."
+  },
+  "microbit.Image.shift_left.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of columns to shift by"
+  },
+  "microbit.Image.shift_left.param-doc.n": {
+    "message": "シフトする列数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_right": {
+    "message": "shift right",
+    "description": "(function name) Create a new image by shifting the picture right."
+  },
+  "microbit.Image.shift_right.summary": {
+    "message": "画像を右にシフトした新しいイメージを作成します。",
+    "description": "Create a new image by shifting the picture right."
+  },
+  "microbit.Image.shift_right.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of columns to shift by"
+  },
+  "microbit.Image.shift_right.param-doc.n": {
+    "message": "シフトする列数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_up": {
+    "message": "shift up",
+    "description": "(function name) Create a new image by shifting the picture up."
+  },
+  "microbit.Image.shift_up.summary": {
+    "message": "画像を上にシフトした新しいイメージを作成します。",
+    "description": "Create a new image by shifting the picture up."
+  },
+  "microbit.Image.shift_up.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of rows to shift by"
+  },
+  "microbit.Image.shift_up.param-doc.n": {
+    "message": "シフトする行数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_down": {
+    "message": "shift down",
+    "description": "(function name) Create a new image by shifting the picture down."
+  },
+  "microbit.Image.shift_down.summary": {
+    "message": "画像を下にシフトした新しいイメージを作成します。",
+    "description": "Create a new image by shifting the picture down."
+  },
+  "microbit.Image.shift_down.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of rows to shift by"
+  },
+  "microbit.Image.shift_down.param-doc.n": {
+    "message": "シフトする行数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop": {
+    "message": "crop",
+    "description": "(function name) Create a new image by cropping the picture."
+  },
+  "microbit.Image.crop.summary": {
+    "message": "画像をトリミングした新しいイメージを作成します。",
+    "description": "Create a new image by cropping the picture."
+  },
+  "microbit.Image.crop.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The crop height"
+  },
+  "microbit.Image.crop.param-doc.h": {
+    "message": "トリミングする高さ",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.w": {
+    "message": "w",
+    "description": "(parameter name) The crop width"
+  },
+  "microbit.Image.crop.param-doc.w": {
+    "message": "トリミングする幅",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The crop offset column"
+  },
+  "microbit.Image.crop.param-doc.x": {
+    "message": "トリミングするオフセット列",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The crop offset row"
+  },
+  "microbit.Image.crop.param-doc.y": {
+    "message": "トリミングするオフセット行",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.copy": {
+    "message": "copy",
+    "description": "(function name) Create an exact copy of the image."
+  },
+  "microbit.Image.copy.summary": {
+    "message": "イメージ全体のコピーを作成します。",
+    "description": "Create an exact copy of the image."
+  },
+  "microbit.Image.invert": {
+    "message": "invert",
+    "description": "(function name) Create a new image by inverting the brightness of the pixels in the\nsource image."
+  },
+  "microbit.Image.invert.summary": {
+    "message": "元イメージのピクセルの明るさを反転した新しいイメージ作成します。",
+    "description": "Create a new image by inverting the brightness of the pixels in the\nsource image."
+  },
+  "microbit.Image.fill": {
+    "message": "fill",
+    "description": "(function name) Set the brightness of all the pixels in the image."
+  },
+  "microbit.Image.fill.summary": {
+    "message": "イメージのすべてのピクセルの明るさを設定します。",
+    "description": "Set the brightness of all the pixels in the image."
+  },
+  "microbit.Image.fill.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The new brightness as a number between 0 (dark) and 9 (bright)."
+  },
+  "microbit.Image.fill.param-doc.value": {
+    "message": "0（暗い）から 9（明るい）までの数値で新しい明るさを指定します。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit": {
+    "message": "blit",
+    "description": "(function name) Copy an area from another image into this image."
+  },
+  "microbit.Image.blit.summary": {
+    "message": "このイメージに別のイメージから領域をコピーします。",
+    "description": "Copy an area from another image into this image."
+  },
+  "microbit.Image.blit.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The number of rows to copy"
+  },
+  "microbit.Image.blit.param-doc.h": {
+    "message": "コピーする行数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.src": {
+    "message": "src",
+    "description": "(parameter name) The source image"
+  },
+  "microbit.Image.blit.param-doc.src": {
+    "message": "元イメージ",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.w": {
+    "message": "w",
+    "description": "(parameter name) The number of columns to copy"
+  },
+  "microbit.Image.blit.param-doc.w": {
+    "message": "コピーする列数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The starting column offset in the source image"
+  },
+  "microbit.Image.blit.param-doc.x": {
+    "message": "元イメージの開始列オフセット",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.xdest": {
+    "message": "xdest",
+    "description": "(parameter name) The column offset to modify in this image"
+  },
+  "microbit.Image.blit.param-doc.xdest": {
+    "message": "このイメージで変更する列オフセット",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The starting row offset in the source image"
+  },
+  "microbit.Image.blit.param-doc.y": {
+    "message": "元イメージの開始行オフセット",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.ydest": {
+    "message": "ydest",
+    "description": "(parameter name) The row offset to modify in this image"
+  },
+  "microbit.Image.blit.param-doc.ydest": {
+    "message": "このイメージで変更する行オフセット",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__repr__": {
+    "message": "repr",
+    "description": "(function name) Get a compact string representation of the image."
+  },
+  "microbit.Image.__repr__.summary": {
+    "message": "イメージのコンパクトな文字列表現を取得します。",
+    "description": "Get a compact string representation of the image."
+  },
+  "microbit.Image.__str__": {
+    "message": "str",
+    "description": "(function name) Get a readable string representation of the image."
+  },
+  "microbit.Image.__str__.summary": {
+    "message": "イメージの判読可能な文字列表現を取得します。",
+    "description": "Get a readable string representation of the image."
+  },
+  "microbit.Image.__add__": {
+    "message": "add",
+    "description": "(function name) Create a new image by adding the brightness values from the two\nimages for each pixel."
+  },
+  "microbit.Image.__add__.summary": {
+    "message": "２つのイメージの各ピクセルの明るさを足した新しいイメージを作成します。",
+    "description": "Create a new image by adding the brightness values from the two\nimages for each pixel."
+  },
+  "microbit.Image.__add__.param-name.other": {
+    "message": "other",
+    "description": "(parameter name) The image to add."
+  },
+  "microbit.Image.__add__.param-doc.other": {
+    "message": "加算するイメージ。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__sub__": {
+    "message": "sub",
+    "description": "(function name) Create a new image by subtracting the brightness values of the\nother image from this image."
+  },
+  "microbit.Image.__sub__.summary": {
+    "message": "このイメージから他のイメージの明るさの値を引いた新しいイメージを作成します。",
+    "description": "Create a new image by subtracting the brightness values of the\nother image from this image."
+  },
+  "microbit.Image.__sub__.param-name.other": {
+    "message": "other",
+    "description": "(parameter name) The image to subtract."
+  },
+  "microbit.Image.__sub__.param-doc.other": {
+    "message": "減算するイメージ。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__mul__": {
+    "message": "mul",
+    "description": "(function name) Create a new image by multiplying the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__mul__.summary": {
+    "message": "各ピクセルの明るさを {{n}} 倍した新しいイメージを作成します。",
+    "description": "Create a new image by multiplying the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__mul__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The value to multiply by."
+  },
+  "microbit.Image.__mul__.param-doc.n": {
+    "message": "乗算する値。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__truediv__": {
+    "message": "truediv",
+    "description": "(function name) Create a new image by dividing the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__truediv__.summary": {
+    "message": "各ピクセルの明るさを {{n}} で割った新しいイメージを作成します。",
+    "description": "Create a new image by dividing the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__truediv__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The value to divide by."
+  },
+  "microbit.Image.__truediv__.param-doc.n": {
+    "message": "除算する値。",
+    "description": "Parameter docs"
+  },
+  "microbit.SoundEvent.LOUD": {
+    "message": "loud",
+    "description": "(field name) Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
+  },
+  "microbit.SoundEvent.LOUD.summary": {
+    "message": "拍手や叫び声などで {{quiet}} から {{loud}} へのサウンドイベントの変化を表します。",
+    "description": "Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
+  },
+  "microbit.SoundEvent.QUIET": {
+    "message": "quiet",
+    "description": "(field name) Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
+  },
+  "microbit.SoundEvent.QUIET.summary": {
+    "message": "発話やBGMなどで {{loud}} から {{quiet}} へのサウンドイベントの変化を表します。",
+    "description": "Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
+  },
+  "microbit.Sound": {
+    "message": "sound",
+    "description": "(class name) The built-in sounds can be called using ``audio.play(Sound.NAME)``."
+  },
+  "microbit.Sound.summary": {
+    "message": "内蔵のサウンドは {{audio.play(Sound.NAME)}} で呼び出すことができます。",
+    "description": "The built-in sounds can be called using ``audio.play(Sound.NAME)``."
+  },
+  "microbit.Sound.GIGGLE": {
+    "message": "giggle",
+    "description": "(field name) Giggling sound."
+  },
+  "microbit.Sound.GIGGLE.summary": {
+    "message": "「くすくす笑う」サウンド。",
+    "description": "Giggling sound."
+  },
+  "microbit.Sound.HAPPY": {
+    "message": "happy",
+    "description": "(field name) Happy sound."
+  },
+  "microbit.Sound.HAPPY.summary": {
+    "message": "「ハッピー」サウンド。",
+    "description": "Happy sound."
+  },
+  "microbit.Sound.HELLO": {
+    "message": "hello",
+    "description": "(field name) Greeting sound."
+  },
+  "microbit.Sound.HELLO.summary": {
+    "message": "「ハロー」サウンド",
+    "description": "Greeting sound."
+  },
+  "microbit.Sound.MYSTERIOUS": {
+    "message": "mysterious",
+    "description": "(field name) Mysterious sound."
+  },
+  "microbit.Sound.MYSTERIOUS.summary": {
+    "message": "「ミステリアス」サウンド。",
+    "description": "Mysterious sound."
+  },
+  "microbit.Sound.SAD": {
+    "message": "sad",
+    "description": "(field name) Sad sound."
+  },
+  "microbit.Sound.SAD.summary": {
+    "message": "「悲しい」サウンド。",
+    "description": "Sad sound."
+  },
+  "microbit.Sound.SLIDE": {
+    "message": "slide",
+    "description": "(field name) Sliding sound."
+  },
+  "microbit.Sound.SLIDE.summary": {
+    "message": "「するする動く」サウンド。",
+    "description": "Sliding sound."
+  },
+  "microbit.Sound.SOARING": {
+    "message": "soaring",
+    "description": "(field name) Soaring sound."
+  },
+  "microbit.Sound.SOARING.summary": {
+    "message": "「舞い上がる」サウンド。",
+    "description": "Soaring sound."
+  },
+  "microbit.Sound.SPRING": {
+    "message": "spring",
+    "description": "(field name) Spring sound."
+  },
+  "microbit.Sound.SPRING.summary": {
+    "message": "「バネ」サウンド。",
+    "description": "Spring sound."
+  },
+  "microbit.Sound.TWINKLE": {
+    "message": "twinkle",
+    "description": "(field name) Twinkling sound."
+  },
+  "microbit.Sound.TWINKLE.summary": {
+    "message": "「キラキラ」サウンド。",
+    "description": "Twinkling sound."
+  },
+  "microbit.Sound.YAWN": {
+    "message": "yawn",
+    "description": "(field name) Yawning sound."
+  },
+  "microbit.Sound.YAWN.summary": {
+    "message": "「あくび」サウンド。",
+    "description": "Yawning sound."
+  },
+  "microbit.accelerometer": {
+    "message": "accelerometer",
+    "description": "(module name) Measure the acceleration of the micro:bit and recognise gestures."
+  },
+  "microbit.accelerometer.summary": {
+    "message": "micro:bitの加速度測定とジェスチャー認識をします。",
+    "description": "Measure the acceleration of the micro:bit and recognise gestures."
+  },
+  "microbit.accelerometer.get_x": {
+    "message": "get x",
+    "description": "(function name) Get the acceleration measurement in the ``x`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_x.summary": {
+    "message": "{{x}} 軸の加速度測定値をミリg単位で取得します。",
+    "description": "Get the acceleration measurement in the ``x`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_y": {
+    "message": "get y",
+    "description": "(function name) Get the acceleration measurement in the ``y`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_y.summary": {
+    "message": "{{y}} 軸の加速度測定値をミリg単位で取得します。",
+    "description": "Get the acceleration measurement in the ``y`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_z": {
+    "message": "get z",
+    "description": "(function name) Get the acceleration measurement in the ``z`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_z.summary": {
+    "message": "{{z}} 軸の加速度測定値をミリg単位で取得します。",
+    "description": "Get the acceleration measurement in the ``z`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_values": {
+    "message": "get values",
+    "description": "(function name) Get the acceleration measurements in all axes at once as a tuple."
+  },
+  "microbit.accelerometer.get_values.summary": {
+    "message": "すべての軸の加速度測定値をタプルとして一度に取得します。",
+    "description": "Get the acceleration measurements in all axes at once as a tuple."
+  },
+  "microbit.accelerometer.get_strength": {
+    "message": "get strength",
+    "description": "(function name) Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
+  },
+  "microbit.accelerometer.get_strength.summary": {
+    "message": "すべての軸を合成した加速度測定値を正の整数値で得ます。これは X軸、Y軸、Z軸のピタゴラス和になります。",
+    "description": "Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
+  },
+  "microbit.accelerometer.current_gesture": {
+    "message": "current gesture",
+    "description": "(function name) Get the name of the current gesture."
+  },
+  "microbit.accelerometer.current_gesture.summary": {
+    "message": "現在のジェスチャーの名前を取得します。",
+    "description": "Get the name of the current gesture."
+  },
+  "microbit.accelerometer.is_gesture": {
+    "message": "is gesture",
+    "description": "(function name) Check if the named gesture is currently active."
+  },
+  "microbit.accelerometer.is_gesture.summary": {
+    "message": "指定した名前のジェスチャーが現在アクティブであるかどうかを確認します。",
+    "description": "Check if the named gesture is currently active."
+  },
+  "microbit.accelerometer.is_gesture.param-name.name": {
+    "message": "name",
+    "description": "(parameter name) The gesture name."
+  },
+  "microbit.accelerometer.is_gesture.param-doc.name": {
+    "message": "ジェスチャー名。",
+    "description": "Parameter docs"
+  },
+  "microbit.accelerometer.was_gesture": {
+    "message": "was gesture",
+    "description": "(function name) Check if the named gesture was active since the last call."
+  },
+  "microbit.accelerometer.was_gesture.summary": {
+    "message": "直前の呼び出し以降に、指定した名前のジェスチャーがアクティブになったかどうかを確認します。",
+    "description": "Check if the named gesture was active since the last call."
+  },
+  "microbit.accelerometer.was_gesture.param-name.name": {
+    "message": "name",
+    "description": "(parameter name) The gesture name."
+  },
+  "microbit.accelerometer.was_gesture.param-doc.name": {
+    "message": "ジェスチャー名。",
+    "description": "Parameter docs"
+  },
+  "microbit.accelerometer.get_gestures": {
+    "message": "get gestures",
+    "description": "(function name) Return a tuple of the gesture history."
+  },
+  "microbit.accelerometer.get_gestures.summary": {
+    "message": "ジェスチャー履歴のタプルを返します。",
+    "description": "Return a tuple of the gesture history."
+  },
+  "microbit.accelerometer.set_range": {
+    "message": "set range",
+    "description": "(function name) Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
+  },
+  "microbit.accelerometer.set_range.summary": {
+    "message": "加速度センサーの感度範囲を g (標準重力)で設定します。設定値は、ハードウェアがサポートする最も近い値、すなわち {{2}}、{{4}}、{{8}} g のいずれかに丸められます。",
+    "description": "Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
+  },
+  "microbit.accelerometer.set_range.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) New range for the accelerometer, an integer in ``g``."
+  },
+  "microbit.accelerometer.set_range.param-doc.value": {
+    "message": "加速度センサーの新しい感度範囲。{{g}} 単位の整数値で指定します。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio": {
+    "message": "audio",
+    "description": "(module name) Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
+  },
+  "microbit.audio.summary": {
+    "message": "micro:bitでサウンドを再生します（V1との互換のために {{audio}} をインポートしてください）。",
+    "description": "Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
+  },
+  "microbit.audio.play": {
+    "message": "play",
+    "description": "(function name) Play a built-in sound, sound effect or custom audio frames."
+  },
+  "microbit.audio.play.summary": {
+    "message": "内蔵サウンド、サウンド効果、カスタム化したオーディオフレームのいずれかを再生します。",
+    "description": "Play a built-in sound, sound effect or custom audio frames."
+  },
+  "microbit.audio.play.param-name.pin": {
+    "message": "ピン",
+    "description": "(parameter name) An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``."
+  },
+  "microbit.audio.play.param-doc.pin": {
+    "message": "出力端子をデフォルトの {{pin0}} から変えるためのオプション引数です。音を鳴らしたくない場合は {{pin=None}} を指定します。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.return_pin": {
+    "message": "return pin",
+    "description": "(parameter name) Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision."
+  },
+  "microbit.audio.play.param-doc.return_pin": {
+    "message": "グランドではなく外部スピーカーに接続する差動エッジコネクタの端子\nを指定します。**V2** ではこの指定を無視します。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.source": {
+    "message": "source",
+    "description": "(parameter name) A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects."
+  },
+  "microbit.audio.play.param-doc.source": {
+    "message": "{{Sound.GIGGLE}} などの内蔵の{{Sound}}、{{SoundEffect}}、{{AudioFrame}} オブジェクトのイテラブルであるサンプルデータのいずれか。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the sound is complete."
+  },
+  "microbit.audio.play.param-doc.wait": {
+    "message": "{{wait}} が {{True}} の場合、サウンドの再生が終わるまでこの関数がブロックします。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.is_playing": {
+    "message": "is playing",
+    "description": "(function name) Check whether a sound is playing."
+  },
+  "microbit.audio.is_playing.summary": {
+    "message": "オーディオが再生中であるかどうかを確認します。",
+    "description": "Check whether a sound is playing."
+  },
+  "microbit.audio.stop": {
+    "message": "stop",
+    "description": "(function name) Stop all audio playback."
+  },
+  "microbit.audio.stop.summary": {
+    "message": "すべてのオーディオ再生を停止します。",
+    "description": "Stop all audio playback."
+  },
+  "microbit.audio.SoundEffect": {
+    "message": "soundeffect",
+    "description": "(class name) A sound effect, composed by a set of parameters configured via the constructor or attributes."
+  },
+  "microbit.audio.SoundEffect.summary": {
+    "message": "コンストラクタや属性で設定したパラメータのセットで構成されるサウンド効果。",
+    "description": "A sound effect, composed by a set of parameters configured via the constructor or attributes."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SINE": {
+    "message": "waveform sine",
+    "description": "(field name) Sine wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SINE.summary": {
+    "message": "{{waveform}} パラメータに指定できる「サイン波」オプション。",
+    "description": "Sine wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SAWTOOTH": {
+    "message": "waveform sawtooth",
+    "description": "(field name) Sawtooth wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SAWTOOTH.summary": {
+    "message": "{{waveform}} パラメータに指定できる「のこぎり波」オプション。",
+    "description": "Sawtooth wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_TRIANGLE": {
+    "message": "waveform triangle",
+    "description": "(field name) Triangle wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_TRIANGLE.summary": {
+    "message": "{{waveform}} パラメータに指定できる「三角波」オプション。",
+    "description": "Triangle wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SQUARE": {
+    "message": "waveform square",
+    "description": "(field name) Square wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SQUARE.summary": {
+    "message": "{{waveform}} パラメータに指定できる「方形波」オプション。",
+    "description": "Square wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_NOISE": {
+    "message": "waveform noise",
+    "description": "(field name) Noise option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_NOISE.summary": {
+    "message": "{{waveform}} パラメータに指定できる「ノイズ」オプション。",
+    "description": "Noise option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_LINEAR": {
+    "message": "shape linear",
+    "description": "(field name) Linear interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_LINEAR.summary": {
+    "message": "{{shape}} パラメータに指定できる「リニア補間」オプション。",
+    "description": "Linear interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_CURVE": {
+    "message": "shape curve",
+    "description": "(field name) Curve interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_CURVE.summary": {
+    "message": "{{shape}} パラメータに指定できる「カーブ補間」オプション。",
+    "description": "Curve interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_LOG": {
+    "message": "shape log",
+    "description": "(field name) Logarithmic interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_LOG.summary": {
+    "message": "{{shape}} パラメータに指定できる「対数補間」オプション。",
+    "description": "Logarithmic interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_NONE": {
+    "message": "fx none",
+    "description": "(field name) No effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_NONE.summary": {
+    "message": "{{fx}} パラメータに指定できる「効果なし」オプション。",
+    "description": "No effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_TREMOLO": {
+    "message": "fx tremolo",
+    "description": "(field name) Tremelo effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_TREMOLO.summary": {
+    "message": "{{fx}} パラメータに指定できる「トレモロ効果」オプション。",
+    "description": "Tremelo effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_VIBRATO": {
+    "message": "fx vibrato",
+    "description": "(field name) Vibrato effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_VIBRATO.summary": {
+    "message": "{{fx}} パラメータに指定できる「ビブラート効果」オプション。",
+    "description": "Vibrato effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_WARBLE": {
+    "message": "fx warble",
+    "description": "(field name) Warble effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_WARBLE.summary": {
+    "message": "{{fx}} パラメータに指定できる「さえずり効果」オプション。",
+    "description": "Warble effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.freq_start": {
+    "message": "freq start",
+    "description": "(field name) Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.freq_start.summary": {
+    "message": "開始周波数。単位はヘルツ(Hz)で、{{0}}から{{9999}}の範囲の数値です。",
+    "description": "Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.freq_end": {
+    "message": "freq end",
+    "description": "(field name) End frequency in Hertz (Hz), a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.freq_end.summary": {
+    "message": "終了周波数。単位はヘルツ(Hz)で、{{0}}から{{9999}}の範囲の数値です。",
+    "description": "End frequency in Hertz (Hz), a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.duration": {
+    "message": "duration",
+    "description": "(field name) Duration of the sound in milliseconds, a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.duration.summary": {
+    "message": "サウンドの長さ。{{0}} から{{9999}}の範囲の数値です。",
+    "description": "Duration of the sound in milliseconds, a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.vol_start": {
+    "message": "vol start",
+    "description": "(field name) Start volume value, a number between ``0`` and ``255``"
+  },
+  "microbit.audio.SoundEffect.vol_start.summary": {
+    "message": "開始音量。{{0}}から{{255}}の範囲の数値です。",
+    "description": "Start volume value, a number between ``0`` and ``255``"
+  },
+  "microbit.audio.SoundEffect.vol_end": {
+    "message": "vol end",
+    "description": "(field name) End volume value, a number between ``0`` and ``255``"
+  },
+  "microbit.audio.SoundEffect.vol_end.summary": {
+    "message": "終了音量。{{0}}から{{255}}の範囲の数値です。",
+    "description": "End volume value, a number between ``0`` and ``255``"
+  },
+  "microbit.audio.SoundEffect.waveform": {
+    "message": "waveform",
+    "description": "(field name) Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"
+  },
+  "microbit.audio.SoundEffect.waveform.summary": {
+    "message": "波形の種類。次の値のいずれか: {{WAVEFORM_SINE}}、 {{WAVEFORM_SAWTOOTH}}、{{WAVEFORM_TRIANGLE}}、 {{WAVEFORM_SQUARE}}、{{WAVEFORM_NOISE}} (ランダムに生成したノイズ)",
+    "description": "Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"
+  },
+  "microbit.audio.SoundEffect.fx": {
+    "message": "fx",
+    "description": "(field name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
+  },
+  "microbit.audio.SoundEffect.fx.summary": {
+    "message": "サウンドに追加する効果。次の値のいずれか: {{FX_TREMOLO}}、{{FX_VIBRATO}}、{{FX_WARBLE}}、{{FX_NONE}}",
+    "description": "Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
+  },
+  "microbit.audio.SoundEffect.shape": {
+    "message": "shape",
+    "description": "(field name) The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"
+  },
+  "microbit.audio.SoundEffect.shape.summary": {
+    "message": "開始周波数と終了周波数の補間曲線の種類で、波形の違いにより周波数の変化率が異なります。次の値のうちのいずれか: {{SHAPE_LINEAR}}、{{SHAPE_CURVE}}、{{SHAPE_LOG}}",
+    "description": "The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"
+  },
+  "microbit.audio.SoundEffect.__init__": {
+    "message": "init",
+    "description": "(function name) Create a new sound effect."
+  },
+  "microbit.audio.SoundEffect.__init__.summary": {
+    "message": "新しいサウンド効果を作成します。",
+    "description": "Create a new sound effect."
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.duration": {
+    "message": "duration",
+    "description": "(parameter name) Duration of the sound in milliseconds, a number between ``0`` and ``9999``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.duration": {
+    "message": "サウンドの長さ。単位はミリ秒で、{{0}} から{{9999}}の範囲の数値です。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.freq_end": {
+    "message": "freq end",
+    "description": "(parameter name) End frequency in Hertz (Hz), a number between ``0`` and ``9999``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.freq_end": {
+    "message": "終了周波数。単位はヘルツ(Hz)で、{{0}}から{{9999}}の範囲の数値です。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.freq_start": {
+    "message": "freq start",
+    "description": "(parameter name) Start frequency in Hertz (Hz), a number between ``0`` and ``9999``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.freq_start": {
+    "message": "開始周波数。単位はヘルツ(Hz)で、{{0}}から{{9999}}の範囲の数値です。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.fx": {
+    "message": "fx",
+    "description": "(parameter name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.fx": {
+    "message": "サウンドに追加する効果。次の値のいずれか: {{FX_TREMOLO}}、{{FX_VIBRATO}}、{{FX_WARBLE}}、{{FX_NONE}}",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.shape": {
+    "message": "shape",
+    "description": "(parameter name) The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.shape": {
+    "message": "開始周波数と終了周波数の補間曲線の種類で、波形の違いにより周波数の変化率が異なります。次の値のうちのいずれか: {{SHAPE_LINEAR}}、{{SHAPE_CURVE}}、{{SHAPE_LOG}}",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.vol_end": {
+    "message": "vol end",
+    "description": "(parameter name) End volume value, a number between ``0`` and ``255``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.vol_end": {
+    "message": "終了音量。{{0}}から{{255}}の範囲の数値です。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.vol_start": {
+    "message": "vol start",
+    "description": "(parameter name) Start volume value, a number between ``0`` and ``255``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.vol_start": {
+    "message": "開始音量。{{0}}から{{255}}の範囲の数値です。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.waveform": {
+    "message": "waveform",
+    "description": "(parameter name) Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.waveform": {
+    "message": "波形の種類。次の値のいずれか: {{WAVEFORM_SINE}}、 {{WAVEFORM_SAWTOOTH}}、{{WAVEFORM_TRIANGLE}}、 {{WAVEFORM_SQUARE}}、{{WAVEFORM_NOISE}} (ランダムに生成したノイズ)。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.copy": {
+    "message": "copy",
+    "description": "(function name) Create a copy of this ``SoundEffect``."
+  },
+  "microbit.audio.SoundEffect.copy.summary": {
+    "message": "この {{SoundEffect}} のコピーを作成します。",
+    "description": "Create a copy of this ``SoundEffect``."
+  },
+  "microbit.audio.AudioFrame": {
+    "message": "audioframe",
+    "description": "(class name) An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
+  },
+  "microbit.audio.AudioFrame.summary": {
+    "message": "{{AudioFrame}} オブジェクトは32個のサンプルからなるリストです。それぞのサンプルは符号なしバイト（0〜255の整数）です。",
+    "description": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
+  },
+  "microbit.audio.AudioFrame.copyfrom": {
+    "message": "copyfrom",
+    "description": "(function name) Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
+  },
+  "microbit.audio.AudioFrame.copyfrom.summary": {
+    "message": "この {{AudioFrame}} のデータを、別の {{AudioFrame}} インスタンスのデータで上書きします。",
+    "description": "Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
+  },
+  "microbit.audio.AudioFrame.copyfrom.param-name.other": {
+    "message": "other",
+    "description": "(parameter name) ``AudioFrame`` instance from which to copy the data."
+  },
+  "microbit.audio.AudioFrame.copyfrom.param-doc.other": {
+    "message": "コピーするデータを持つ {{AudioFrame}} インスタンス。",
+    "description": "Parameter docs"
+  },
+  "microbit.compass": {
+    "message": "方位磁針（コンパス）",
+    "description": "(module name) Use the built-in compass."
+  },
+  "microbit.compass.summary": {
+    "message": "内蔵のコンパスを使います。",
+    "description": "Use the built-in compass."
+  },
+  "microbit.compass.calibrate": {
+    "message": "calibrate",
+    "description": "(function name) Starts the calibration process."
+  },
+  "microbit.compass.calibrate.summary": {
+    "message": "調整処理を開始します。",
+    "description": "Starts the calibration process."
+  },
+  "microbit.compass.is_calibrated": {
+    "message": "is calibrated",
+    "description": "(function name) Check is the compass is calibrated."
+  },
+  "microbit.compass.is_calibrated.summary": {
+    "message": "コンパスが調整されているかどうかを確認します。",
+    "description": "Check is the compass is calibrated."
+  },
+  "microbit.compass.clear_calibration": {
+    "message": "clear calibration",
+    "description": "(function name) Undoes the calibration, making the compass uncalibrated again."
+  },
+  "microbit.compass.clear_calibration.summary": {
+    "message": "調整を取り消し、コンパスを未調整状態にします。",
+    "description": "Undoes the calibration, making the compass uncalibrated again."
+  },
+  "microbit.compass.get_x": {
+    "message": "get x",
+    "description": "(function name) Get the magnetic field strength on the ``x`` axis."
+  },
+  "microbit.compass.get_x.summary": {
+    "message": "{{x}} 軸の磁場強度を取得します。",
+    "description": "Get the magnetic field strength on the ``x`` axis."
+  },
+  "microbit.compass.get_y": {
+    "message": "get y",
+    "description": "(function name) Get the magnetic field strength on the ``y`` axis."
+  },
+  "microbit.compass.get_y.summary": {
+    "message": "{{y}} 軸の磁場強度を取得します。",
+    "description": "Get the magnetic field strength on the ``y`` axis."
+  },
+  "microbit.compass.get_z": {
+    "message": "get z",
+    "description": "(function name) Get the magnetic field strength on the ``z`` axis."
+  },
+  "microbit.compass.get_z.summary": {
+    "message": "{{z}} 軸の磁場強度を取得します。",
+    "description": "Get the magnetic field strength on the ``z`` axis."
+  },
+  "microbit.compass.heading": {
+    "message": "heading",
+    "description": "(function name) Get the compass heading."
+  },
+  "microbit.compass.heading.summary": {
+    "message": "コンパスの方位を取得します。",
+    "description": "Get the compass heading."
+  },
+  "microbit.compass.get_field_strength": {
+    "message": "get field strength",
+    "description": "(function name) Get the magnitude of the magnetic field around the device."
+  },
+  "microbit.compass.get_field_strength.summary": {
+    "message": "デバイスのまわりの磁場の強さを取得します。",
+    "description": "Get the magnitude of the magnetic field around the device."
+  },
+  "microbit.display": {
+    "message": "display",
+    "description": "(module name) Show text, images and animations on the 5×5 LED display."
+  },
+  "microbit.display.summary": {
+    "message": "5×5 LED ディスプレイ上にテキスト、イメージ、アニメーションを表示します。",
+    "description": "Show text, images and animations on the 5×5 LED display."
+  },
+  "microbit.display.get_pixel": {
+    "message": "get pixel",
+    "description": "(function name) Get the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.get_pixel.summary": {
+    "message": "{{x}} 列 {{y}} 行の LEDの明るさを取得します。",
+    "description": "Get the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.get_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The display column (0..4)"
+  },
+  "microbit.display.get_pixel.param-doc.x": {
+    "message": "ディスプレイの列 (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.get_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The display row (0..4)"
+  },
+  "microbit.display.get_pixel.param-doc.y": {
+    "message": "ディスプレイの行 (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel": {
+    "message": "set pixel",
+    "description": "(function name) Set the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.set_pixel.summary": {
+    "message": "{{x}} 列 {{y}} 行の LEDの明るさを設定します。 ",
+    "description": "Set the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.set_pixel.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The brightness between 0 (off) and 9 (bright)"
+  },
+  "microbit.display.set_pixel.param-doc.value": {
+    "message": "0（オフ）から 9（明るい）までの明るさ",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The display column (0..4)"
+  },
+  "microbit.display.set_pixel.param-doc.x": {
+    "message": "ディスプレイの列 (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The display row (0..4)"
+  },
+  "microbit.display.set_pixel.param-doc.y": {
+    "message": "ディスプレイの行 (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.clear": {
+    "message": "clear",
+    "description": "(function name) Set the brightness of all LEDs to 0 (off)."
+  },
+  "microbit.display.clear.summary": {
+    "message": "すべての LED の明るさを 0（オフ）に設定します。",
+    "description": "Set the brightness of all LEDs to 0 (off)."
+  },
+  "microbit.display.show": {
+    "message": "show",
+    "description": "(function name) Shows images, letters or digits on the LED display."
+  },
+  "microbit.display.show.summary": {
+    "message": "イメージ、文字、数字をLEDディスプレイに表示します。",
+    "description": "Shows images, letters or digits on the LED display."
+  },
+  "microbit.display.show.param-name.clear": {
+    "message": "clear",
+    "description": "(parameter name) If ``clear`` is ``True``, the display will be cleared after the sequence has finished."
+  },
+  "microbit.display.show.param-doc.clear": {
+    "message": "{{clear}} が {{True}} である場合、シーケンスの終了後にディスプレイをクリアします。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.delay": {
+    "message": "delay",
+    "description": "(parameter name) Each letter, digit or image is shown with ``delay`` milliseconds between them."
+  },
+  "microbit.display.show.param-doc.delay": {
+    "message": "それぞれの文字、数字、イメージは {{delay}} ミリ秒間隔で表示されます。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.image": {
+    "message": "image",
+    "description": "(parameter name) A string, number, image or list of images to show."
+  },
+  "microbit.display.show.param-doc.image": {
+    "message": "表示する文字列、数値、イメージ、イメージのリスト。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
+  },
+  "microbit.display.show.param-doc.loop": {
+    "message": "{{loop}} が {{True}} である場合、アニメーションを永遠に繰り返します。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
+  },
+  "microbit.display.show.param-doc.wait": {
+    "message": "{{wait}} が {{True}} である場合、アニメーションが終了するまで関数がブロックし、 そうでない場合にはバックグラウンドで実行されます。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll": {
+    "message": "scroll",
+    "description": "(function name) Scrolls a number or text on the LED display."
+  },
+  "microbit.display.scroll.summary": {
+    "message": "LEDディスプレィ上に数値やテキストをスクロール表示します。",
+    "description": "Scrolls a number or text on the LED display."
+  },
+  "microbit.display.scroll.param-name.delay": {
+    "message": "delay",
+    "description": "(parameter name) The ``delay`` parameter controls how fast the text is scrolling."
+  },
+  "microbit.display.scroll.param-doc.delay": {
+    "message": "{{delay}} パラメータはテキストのスクロール速度を制御します。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
+  },
+  "microbit.display.scroll.param-doc.loop": {
+    "message": "{{loop}} が {{True}} である場合、アニメーションを永遠に繰り返します。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.monospace": {
+    "message": "monospace",
+    "description": "(parameter name) If ``monospace`` is ``True``, the characters will all take up 5 pixel-columns in width, otherwise there will be exactly 1 blank pixel-column between each character as they scroll."
+  },
+  "microbit.display.scroll.param-doc.monospace": {
+    "message": "{{monospace}} が {{True}} である場合、文字の幅が 5 ピクセルになり、そうでない場合にはスクロール時の文字間の幅が 1 ピクセルになります。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.text": {
+    "message": "text",
+    "description": "(parameter name) The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``."
+  },
+  "microbit.display.scroll.param-doc.text": {
+    "message": "スクロールする文字列。{{text}} が整数か浮動小数点数であれば、まず {{str()}} を使って文字列に変換します。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
+  },
+  "microbit.display.scroll.param-doc.wait": {
+    "message": "{{wait}} が {{True}} である場合、アニメーションが終了するまで関数がブロックし、 そうでない場合にはバックグラウンドで実行されます。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.on": {
+    "message": "on",
+    "description": "(function name) Turn on the LED display."
+  },
+  "microbit.display.on.summary": {
+    "message": "ディスプレイをオンにします。",
+    "description": "Turn on the LED display."
+  },
+  "microbit.display.off": {
+    "message": "off",
+    "description": "(function name) Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
+  },
+  "microbit.display.off.summary": {
+    "message": "LEDディスプレイをオフにします（ディスプレイを無効にすることにより、GPIO端子を他の目的に再利用できるようになります）。",
+    "description": "Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
+  },
+  "microbit.display.is_on": {
+    "message": "is on",
+    "description": "(function name) Check whether the LED display is enabled."
+  },
+  "microbit.display.is_on.summary": {
+    "message": "LEDディスプレイが有効であるかどうかを確認します。",
+    "description": "Check whether the LED display is enabled."
+  },
+  "microbit.display.read_light_level": {
+    "message": "read light level",
+    "description": "(function name) Read the light level."
+  },
+  "microbit.display.read_light_level.summary": {
+    "message": "ディスプレイのまわりの光量を読み取ります。",
+    "description": "Read the light level."
+  },
+  "microbit.i2c": {
+    "message": "i2c",
+    "description": "(module name) Communicate with devices using the I²C bus protocol."
+  },
+  "microbit.i2c.summary": {
+    "message": "I²C バスプロトコルでデバイスと通信します。",
+    "description": "Communicate with devices using the I²C bus protocol."
+  },
+  "microbit.i2c.init": {
+    "message": "init",
+    "description": "(function name) Re-initialize a peripheral."
+  },
+  "microbit.i2c.init.summary": {
+    "message": "ペリフェラルを再初期化します。",
+    "description": "Re-initialize a peripheral."
+  },
+  "microbit.i2c.init.param-name.freq": {
+    "message": "freq",
+    "description": "(parameter name) clock frequency"
+  },
+  "microbit.i2c.init.param-doc.freq": {
+    "message": "クロック周波数",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.init.param-name.scl": {
+    "message": "scl",
+    "description": "(parameter name) ``scl`` pin (default 19)"
+  },
+  "microbit.i2c.init.param-doc.scl": {
+    "message": "{{scl}} 端子（デフォルトは 19）",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.init.param-name.sda": {
+    "message": "sda",
+    "description": "(parameter name) ``sda`` pin (default 20)"
+  },
+  "microbit.i2c.init.param-doc.sda": {
+    "message": "{{sda}} 端子（デフォルトは 20）",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.scan": {
+    "message": "scan",
+    "description": "(function name) Scan the bus for devices."
+  },
+  "microbit.i2c.scan.summary": {
+    "message": "バスをスキャンしてデバイスを探します。",
+    "description": "Scan the bus for devices."
+  },
+  "microbit.i2c.read": {
+    "message": "read",
+    "description": "(function name) Read bytes from a device.."
+  },
+  "microbit.i2c.read.summary": {
+    "message": "デバイスからバイト列を読み取ります。",
+    "description": "Read bytes from a device.."
+  },
+  "microbit.i2c.read.param-name.addr": {
+    "message": "addr",
+    "description": "(parameter name) The 7-bit address of the device"
+  },
+  "microbit.i2c.read.param-doc.addr": {
+    "message": "デバイスの7ビットアドレス",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.read.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of bytes to read"
+  },
+  "microbit.i2c.read.param-doc.n": {
+    "message": "読み取るバイト数",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.read.param-name.repeat": {
+    "message": "repeat",
+    "description": "(parameter name) If ``True``, no stop bit will be sent"
+  },
+  "microbit.i2c.read.param-doc.repeat": {
+    "message": "{{True}} にすると、ストップビットが送られません。",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write": {
+    "message": "write",
+    "description": "(function name) Write bytes to a device."
+  },
+  "microbit.i2c.write.summary": {
+    "message": "デバイスにバイト列を書き込みます。",
+    "description": "Write bytes to a device."
+  },
+  "microbit.i2c.write.param-name.addr": {
+    "message": "addr",
+    "description": "(parameter name) The 7-bit address of the device"
+  },
+  "microbit.i2c.write.param-doc.addr": {
+    "message": "デバイスの7ビットアドレス",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write.param-name.buf": {
+    "message": "buf",
+    "description": "(parameter name) A buffer containing the bytes to write"
+  },
+  "microbit.i2c.write.param-doc.buf": {
+    "message": "書き込むバイトを含むバッファ",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write.param-name.repeat": {
+    "message": "repeat",
+    "description": "(parameter name) If ``True``, no stop bit will be sent"
+  },
+  "microbit.i2c.write.param-doc.repeat": {
+    "message": "{{True}} にすると、ストップビットが送られません。",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone": {
+    "message": "microphone",
+    "description": "(module name) Respond to sound using the built-in microphone (V2 only)."
+  },
+  "microbit.microphone.summary": {
+    "message": "内蔵マイクを使って音に応答します（V2 のみ）。",
+    "description": "Respond to sound using the built-in microphone (V2 only)."
+  },
+  "microbit.microphone.current_event": {
+    "message": "current event",
+    "description": "(function name) Get the last recorded sound event"
+  },
+  "microbit.microphone.current_event.summary": {
+    "message": "記録されている最新のサウンドイベントを取得します。",
+    "description": "Get the last recorded sound event"
+  },
+  "microbit.microphone.was_event": {
+    "message": "was event",
+    "description": "(function name) Check if a sound was heard at least once since the last call."
+  },
+  "microbit.microphone.was_event.summary": {
+    "message": "直前の呼び出しから少なくとも一度はサウンドイベントが発生したかどうかを確認します。",
+    "description": "Check if a sound was heard at least once since the last call."
+  },
+  "microbit.microphone.was_event.param-name.event": {
+    "message": "event",
+    "description": "(parameter name) The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``"
+  },
+  "microbit.microphone.was_event.param-doc.event": {
+    "message": "{{SoundEvent.LOUD}} や {{SoundEvent.QUIET}} などのイベント",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.is_event": {
+    "message": "is event",
+    "description": "(function name) Check the most recent sound event detected."
+  },
+  "microbit.microphone.is_event.summary": {
+    "message": "直近に検出されたサウンドイベントを確認します。",
+    "description": "Check the most recent sound event detected."
+  },
+  "microbit.microphone.is_event.param-name.event": {
+    "message": "event",
+    "description": "(parameter name) The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``"
+  },
+  "microbit.microphone.is_event.param-doc.event": {
+    "message": "{{SoundEvent.LOUD}} や {{SoundEvent.QUIET}} など、確認するサウンドイベント",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.get_events": {
+    "message": "get events",
+    "description": "(function name) Get the sound event history as a tuple."
+  },
+  "microbit.microphone.get_events.summary": {
+    "message": "サウンドイベント履歴をタプルとして取得します。",
+    "description": "Get the sound event history as a tuple."
+  },
+  "microbit.microphone.set_threshold": {
+    "message": "set threshold",
+    "description": "(function name) Set the threshold for a sound event."
+  },
+  "microbit.microphone.set_threshold.summary": {
+    "message": "サウンドイベントのしきい値を設定します。",
+    "description": "Set the threshold for a sound event."
+  },
+  "microbit.microphone.set_threshold.param-name.event": {
+    "message": "event",
+    "description": "(parameter name) A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``."
+  },
+  "microbit.microphone.set_threshold.param-doc.event": {
+    "message": "{{SoundEvent.LOUD}} や {{SoundEvent.QUIET}} などのサウンドイベント。",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.set_threshold.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The threshold level in the range 0-255."
+  },
+  "microbit.microphone.set_threshold.param-doc.value": {
+    "message": "0～255の範囲で指定するしきい値レベル。",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.sound_level": {
+    "message": "sound level",
+    "description": "(function name) Get the sound pressure level."
+  },
+  "microbit.microphone.sound_level.summary": {
+    "message": "音圧レベルを取得します。",
+    "description": "Get the sound pressure level."
+  },
+  "microbit.speaker": {
+    "message": "speaker",
+    "description": "(module name) Control the built-in speaker (V2 only)."
+  },
+  "microbit.speaker.summary": {
+    "message": "内蔵スピーカーを制御します（V2のみ）。",
+    "description": "Control the built-in speaker (V2 only)."
+  },
+  "microbit.speaker.off": {
+    "message": "off",
+    "description": "(function name) Turn the speaker off."
+  },
+  "microbit.speaker.off.summary": {
+    "message": "スピーカーをオフにします。",
+    "description": "Turn the speaker off."
+  },
+  "microbit.speaker.on": {
+    "message": "on",
+    "description": "(function name) Turn the speaker on."
+  },
+  "microbit.speaker.on.summary": {
+    "message": "スピーカーをオンにします。",
+    "description": "Turn the speaker on."
+  },
+  "microbit.spi": {
+    "message": "spi",
+    "description": "(module name) Communicate with devices using the serial peripheral interface (SPI) bus."
+  },
+  "microbit.spi.summary": {
+    "message": "シリアルペリフェラルインターフェイス（SPI）バスを使ってデバイスと通信します。",
+    "description": "Communicate with devices using the serial peripheral interface (SPI) bus."
+  },
+  "microbit.spi.init": {
+    "message": "init",
+    "description": "(function name) Initialize SPI communication."
+  },
+  "microbit.spi.init.summary": {
+    "message": "SPI通信を初期化します。",
+    "description": "Initialize SPI communication."
+  },
+  "microbit.spi.init.param-name.baudrate": {
+    "message": "baudrate",
+    "description": "(parameter name) The speed of communication."
+  },
+  "microbit.spi.init.param-doc.baudrate": {
+    "message": "通信速度。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.bits": {
+    "message": "bits",
+    "description": "(parameter name) The width in bits of each transfer. Currently only ``bits=8`` is supported. However, this may change in the future."
+  },
+  "microbit.spi.init.param-doc.bits": {
+    "message": "送信時のビット幅。現在のところは {{bits=8}} だけをサポート。しかし、これは将来的に変更するかもしれません。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.miso": {
+    "message": "miso",
+    "description": "(parameter name) miso pin (default 14)"
+  },
+  "microbit.spi.init.param-doc.miso": {
+    "message": "miso 端子（デフォルトは 14）",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.mode": {
+    "message": "mode",
+    "description": "(parameter name) Determines the combination of clock polarity and phase - `see online table <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_."
+  },
+  "microbit.spi.init.param-doc.mode": {
+    "message": "クロックの極性と位相の組み合わせを決定します - `オンラインの表を参照 <https://microbit-micropython.readthedocs.io/ja/v2-docs/spi.html#microbit.spi.init>`_ 。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.mosi": {
+    "message": "mosi",
+    "description": "(parameter name) mosi pin (default 15)"
+  },
+  "microbit.spi.init.param-doc.mosi": {
+    "message": "mosi 端子（デフォルトは 15）",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.sclk": {
+    "message": "sclk",
+    "description": "(parameter name) sclk pin (default 13)"
+  },
+  "microbit.spi.init.param-doc.sclk": {
+    "message": "sclk 端子（デフォルトは 13）",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read": {
+    "message": "read",
+    "description": "(function name) Read bytes."
+  },
+  "microbit.spi.read.summary": {
+    "message": "バイト列を読み取ります。",
+    "description": "Read bytes."
+  },
+  "microbit.spi.read.param-name.nbytes": {
+    "message": "nbytes",
+    "description": "(parameter name) Maximum number of bytes to read."
+  },
+  "microbit.spi.read.param-doc.nbytes": {
+    "message": "読み取る最大バイト数。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write": {
+    "message": "write",
+    "description": "(function name) Write bytes to the bus."
+  },
+  "microbit.spi.write.summary": {
+    "message": "デバイスにバイト列を書き込みます。",
+    "description": "Write bytes to the bus."
+  },
+  "microbit.spi.write.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) A buffer to read data from."
+  },
+  "microbit.spi.write.param-doc.buffer": {
+    "message": "データの読み取り元のバッファ。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write_readinto": {
+    "message": "write readinto",
+    "description": "(function name) Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
+  },
+  "microbit.spi.write_readinto.summary": {
+    "message": "{{out}} バッファをバスに書き込み、任意のレスポンスを {{in_}} バッファに読み取ります。",
+    "description": "Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
+  },
+  "microbit.spi.write_readinto.param-name.in_": {
+    "message": "in",
+    "description": "(parameter name) The buffer to read data from."
+  },
+  "microbit.spi.write_readinto.param-doc.in_": {
+    "message": "データの読み取り元のバッファ。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write_readinto.param-name.out": {
+    "message": "out",
+    "description": "(parameter name) The buffer to write any response to."
+  },
+  "microbit.spi.write_readinto.param-doc.out": {
+    "message": "レスポンスの書き込みバッファ。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart": {
+    "message": "uart",
+    "description": "(module name) Communicate with a device using a serial interface."
+  },
+  "microbit.uart.summary": {
+    "message": "シリアルインタフェースを使ってデバイスと通信します。",
+    "description": "Communicate with a device using a serial interface."
+  },
+  "microbit.uart.ODD": {
+    "message": "odd",
+    "description": "(field name) Odd parity"
+  },
+  "microbit.uart.ODD.summary": {
+    "message": "奇数パリティ",
+    "description": "Odd parity"
+  },
+  "microbit.uart.EVEN": {
+    "message": "even",
+    "description": "(field name) Even parity"
+  },
+  "microbit.uart.EVEN.summary": {
+    "message": "偶数パリティ",
+    "description": "Even parity"
+  },
+  "microbit.uart.init": {
+    "message": "init",
+    "description": "(function name) Initialize serial communication."
+  },
+  "microbit.uart.init.summary": {
+    "message": "シリアル通信を初期化します。",
+    "description": "Initialize serial communication."
+  },
+  "microbit.uart.init.param-name.baudrate": {
+    "message": "baudrate",
+    "description": "(parameter name) The speed of communication."
+  },
+  "microbit.uart.init.param-doc.baudrate": {
+    "message": "通信速度。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.bits": {
+    "message": "bits",
+    "description": "(parameter name) The size of bytes being transmitted. micro:bit only supports 8."
+  },
+  "microbit.uart.init.param-doc.bits": {
+    "message": "送信するビット幅。micro:bitは8だけをサポートしています。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.parity": {
+    "message": "parity",
+    "description": "(parameter name) How parity is checked, ``None``, ``uart.ODD`` or ``uart.EVEN``."
+  },
+  "microbit.uart.init.param-doc.parity": {
+    "message": "パリティのチェック方法。{{None}}、{{uart.ODD}}、{{uart.EVEN}} のいずれかを指定できます。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.rx": {
+    "message": "rx",
+    "description": "(parameter name) Receiving pin."
+  },
+  "microbit.uart.init.param-doc.rx": {
+    "message": "受信端子。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.stop": {
+    "message": "stop",
+    "description": "(parameter name) The number of stop bits, has to be 1 for micro:bit."
+  },
+  "microbit.uart.init.param-doc.stop": {
+    "message": "ストップビットの数はmicro:bitでは1にする必要があります。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.tx": {
+    "message": "tx",
+    "description": "(parameter name) Transmitting pin."
+  },
+  "microbit.uart.init.param-doc.tx": {
+    "message": "送信端子。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.any": {
+    "message": "any",
+    "description": "(function name) Check if any data is waiting."
+  },
+  "microbit.uart.any.summary": {
+    "message": "受信待ちのデータがあるかを確認します。",
+    "description": "Check if any data is waiting."
+  },
+  "microbit.uart.read": {
+    "message": "read",
+    "description": "(function name) Read bytes."
+  },
+  "microbit.uart.read.summary": {
+    "message": "バイト列を読み取ります。",
+    "description": "Read bytes."
+  },
+  "microbit.uart.read.param-name.nbytes": {
+    "message": "nbytes",
+    "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible"
+  },
+  "microbit.uart.read.param-doc.nbytes": {
+    "message": "{{nbytes}} が指定されていれば、そのバイト数まで読み込みます。指定されていなければ、できるだけ多く読み取ります",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readinto": {
+    "message": "readinto",
+    "description": "(function name) Read bytes into the ``buf``."
+  },
+  "microbit.uart.readinto.summary": {
+    "message": "{{buf}} にバイト列を読み取ります。",
+    "description": "Read bytes into the ``buf``."
+  },
+  "microbit.uart.readinto.param-name.buf": {
+    "message": "buf",
+    "description": "(parameter name) The buffer to write to."
+  },
+  "microbit.uart.readinto.param-doc.buf": {
+    "message": "書き込みバッファ。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readinto.param-name.nbytes": {
+    "message": "nbytes",
+    "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes."
+  },
+  "microbit.uart.readinto.param-doc.nbytes": {
+    "message": "{{nbytes}} が指定されていれば、そのバイト数まで読み込みます。指定されていなければ、{{len(buf)}} を読み取ります。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readline": {
+    "message": "readline",
+    "description": "(function name) Read a line, ending in a newline character."
+  },
+  "microbit.uart.readline.summary": {
+    "message": "改行文字で終わる行を読みます。",
+    "description": "Read a line, ending in a newline character."
+  },
+  "microbit.uart.write": {
+    "message": "write",
+    "description": "(function name) Write a buffer to the bus."
+  },
+  "microbit.uart.write.summary": {
+    "message": "バスにバッファを書き込みます。",
+    "description": "Write a buffer to the bus."
+  },
+  "microbit.uart.write.param-name.buf": {
+    "message": "buf",
+    "description": "(parameter name) A bytes object or a string."
+  },
+  "microbit.uart.write.param-doc.buf": {
+    "message": "バイト列オブジェクトまたは文字列。",
+    "description": "Parameter docs"
+  },
+  "micropython": {
+    "message": "micropython",
+    "description": "(module name) MicroPython internals."
+  },
+  "micropython.summary": {
+    "message": "MicroPythonの内部。",
+    "description": "MicroPython internals."
+  },
+  "micropython.const": {
+    "message": "const",
+    "description": "(function name) Used to declare that the expression is a constant so that the compiler can\noptimise it."
+  },
+  "micropython.const.summary": {
+    "message": "コンパイルが最適化できるように、式が定数であることを宣言するために使います。",
+    "description": "Used to declare that the expression is a constant so that the compiler can\noptimise it."
+  },
+  "micropython.const.param-name.expr": {
+    "message": "expr",
+    "description": "(parameter name) A constant expression."
+  },
+  "micropython.const.param-doc.expr": {
+    "message": "定数式。",
+    "description": "Parameter docs"
+  },
+  "micropython.opt_level-1": {
+    "message": "opt level",
+    "description": "(function name) Get the current optimisation level for the compilation of scripts."
+  },
+  "micropython.opt_level-1.summary": {
+    "message": "スクリプトの現在のコンパイル最適化レベルを取得します。",
+    "description": "Get the current optimisation level for the compilation of scripts."
+  },
+  "micropython.opt_level-2": {
+    "message": "opt level",
+    "description": "(function name) Sets the optimisation level for subsequent compilation of scripts."
+  },
+  "micropython.opt_level-2.summary": {
+    "message": "スクリプトの後続のコンパイル最適化レベルを設定します。",
+    "description": "Sets the optimisation level for subsequent compilation of scripts."
+  },
+  "micropython.opt_level-2.param-name.level": {
+    "message": "level",
+    "description": "(parameter name) An integer optimisation level."
+  },
+  "micropython.opt_level-2.param-doc.level": {
+    "message": "最適化レベルを示す整数値。",
+    "description": "Parameter docs"
+  },
+  "micropython.mem_info": {
+    "message": "mem info",
+    "description": "(function name) Print information about currently used memory."
+  },
+  "micropython.mem_info.summary": {
+    "message": "現在使っているメモリに関する情報を表示します。 ",
+    "description": "Print information about currently used memory."
+  },
+  "micropython.mem_info.param-name.verbose": {
+    "message": "verbose",
+    "description": "(parameter name) If the ``verbose`` argument is given then extra information is printed."
+  },
+  "micropython.mem_info.param-doc.verbose": {
+    "message": "{{verbose}} 引数を指定すると、詳しい情報を表示します。",
+    "description": "Parameter docs"
+  },
+  "micropython.qstr_info": {
+    "message": "qstr info",
+    "description": "(function name) Print information about currently interned strings."
+  },
+  "micropython.qstr_info.summary": {
+    "message": "現在インターンされている文字列に関する情報を表示します。 ",
+    "description": "Print information about currently interned strings."
+  },
+  "micropython.qstr_info.param-name.verbose": {
+    "message": "verbose",
+    "description": "(parameter name) If the ``verbose`` argument is given then extra information is printed."
+  },
+  "micropython.qstr_info.param-doc.verbose": {
+    "message": "{{verbose}} 引数を指定すると、詳しい情報を表示します。",
+    "description": "Parameter docs"
+  },
+  "micropython.stack_use": {
+    "message": "stack use",
+    "description": "(function name) Return an integer representing the current amount of stack that is being\nused."
+  },
+  "micropython.stack_use.summary": {
+    "message": "現在使われているスタックのサイズを表す整数を返します。",
+    "description": "Return an integer representing the current amount of stack that is being\nused."
+  },
+  "micropython.heap_lock": {
+    "message": "heap lock",
+    "description": "(function name) Lock the heap."
+  },
+  "micropython.heap_lock.summary": {
+    "message": "ヒープをロックします。",
+    "description": "Lock the heap."
+  },
+  "micropython.heap_unlock": {
+    "message": "heap unlock",
+    "description": "(function name) Unlock the heap."
+  },
+  "micropython.heap_unlock.summary": {
+    "message": "ヒープのロックを解除します。",
+    "description": "Unlock the heap."
+  },
+  "micropython.kbd_intr": {
+    "message": "kbd intr",
+    "description": "(function name) Set the character that will raise a ``KeyboardInterrupt`` exception."
+  },
+  "micropython.kbd_intr.summary": {
+    "message": "{{KeyboardInterrupt}} 例外を発生させる文字を設定します。",
+    "description": "Set the character that will raise a ``KeyboardInterrupt`` exception."
+  },
+  "micropython.kbd_intr.param-name.chr": {
+    "message": "chr",
+    "description": "(parameter name) Character code to raise the interrupt or -1 to disable capture of Ctrl-C."
+  },
+  "micropython.kbd_intr.param-doc.chr": {
+    "message": "割り込みを発生させる文字コード。あるいは、Ctrl-Cのキャプチャを無効にするには-1を指定します。",
+    "description": "Parameter docs"
+  },
+  "music": {
+    "message": "music",
+    "description": "(module name) Create and play melodies."
+  },
+  "music.summary": {
+    "message": "メロディーの作成と再生。",
+    "description": "Create and play melodies."
+  },
+  "music.DADADADUM": {
+    "message": "dadadadum",
+    "description": "(field name) Melody: the opening to Beethoven’s 5th Symphony in C minor."
+  },
+  "music.DADADADUM.summary": {
+    "message": "メロディ: ベートーヴェンの交響曲第5番ハ短調の冒頭。",
+    "description": "Melody: the opening to Beethoven’s 5th Symphony in C minor."
+  },
+  "music.ENTERTAINER": {
+    "message": "entertainer",
+    "description": "(field name) Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."
+  },
+  "music.ENTERTAINER.summary": {
+    "message": "メロディ: スコット・ジョプリンのラグタイム・クラシック『ジ・エンターテイナー 』の冒頭。",
+    "description": "Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."
+  },
+  "music.PRELUDE": {
+    "message": "prelude",
+    "description": "(field name) Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues."
+  },
+  "music.PRELUDE.summary": {
+    "message": "メロディ: J・S・バッハの前奏曲とフーガ計48曲の前奏曲第1番ハ長調の冒頭。",
+    "description": "Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues."
+  },
+  "music.ODE": {
+    "message": "ode",
+    "description": "(field name) Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor."
+  },
+  "music.ODE.summary": {
+    "message": "メロディ: ベートーヴェンの交響曲第9番ニ短調より『歓喜の歌』のテーマ。",
+    "description": "Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor."
+  },
+  "music.NYAN": {
+    "message": "nyan",
+    "description": "(field name) Melody: the Nyan Cat theme (http://www.nyan.cat/)."
+  },
+  "music.NYAN.summary": {
+    "message": "メロディ: Nyan Cat テーマ (http://www.nyan.cat/)。",
+    "description": "Melody: the Nyan Cat theme (http://www.nyan.cat/)."
+  },
+  "music.RINGTONE": {
+    "message": "ringtone",
+    "description": "(field name) Melody: something that sounds like a mobile phone ringtone."
+  },
+  "music.RINGTONE.summary": {
+    "message": "メロディ: 携帯電話の着信音のようなもの。",
+    "description": "Melody: something that sounds like a mobile phone ringtone."
+  },
+  "music.FUNK": {
+    "message": "funk",
+    "description": "(field name) Melody: a funky bass line for secret agents and criminal masterminds."
+  },
+  "music.FUNK.summary": {
+    "message": "メロディ: スパイと犯罪の黒幕用のファンキーなベースライン。",
+    "description": "Melody: a funky bass line for secret agents and criminal masterminds."
+  },
+  "music.BLUES": {
+    "message": "blues",
+    "description": "(field name) Melody: a boogie-woogie 12-bar blues walking bass."
+  },
+  "music.BLUES.summary": {
+    "message": "メロディ: ブギー・ウーギーの 12 小節のブルース・ウォーキング・ベース。",
+    "description": "Melody: a boogie-woogie 12-bar blues walking bass."
+  },
+  "music.BIRTHDAY": {
+    "message": "birthday",
+    "description": "(field name) Melody: “Happy Birthday to You…”"
+  },
+  "music.BIRTHDAY.summary": {
+    "message": "メロディ:『ハッピーバースディトゥユー ...』",
+    "description": "Melody: “Happy Birthday to You…”"
+  },
+  "music.WEDDING": {
+    "message": "wedding",
+    "description": "(field name) Melody: the bridal chorus from Wagner’s opera “Lohengrin”."
+  },
+  "music.WEDDING.summary": {
+    "message": "メロディ: ワグナーのオペラ『ローエングリン』より婚礼の合唱。",
+    "description": "Melody: the bridal chorus from Wagner’s opera “Lohengrin”."
+  },
+  "music.FUNERAL": {
+    "message": "funeral",
+    "description": "(field name) Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."
+  },
+  "music.FUNERAL.summary": {
+    "message": "メロディ: フレデリック・ショパンのピアノソナタ第2番変ロ短調 作品35（別名『葬送』）。",
+    "description": "Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."
+  },
+  "music.PUNCHLINE": {
+    "message": "punchline",
+    "description": "(field name) Melody: a fun fragment that signifies a joke has been made."
+  },
+  "music.PUNCHLINE.summary": {
+    "message": "メロディ: ジョークが言われたことを意味する楽しい音楽。",
+    "description": "Melody: a fun fragment that signifies a joke has been made."
+  },
+  "music.PYTHON": {
+    "message": "python",
+    "description": "(field name) Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."
+  },
+  "music.PYTHON.summary": {
+    "message": "メロディ: ジョン・フィリップ・スーザの『自由の鐘』（『空飛ぶモンティ・パイソン』のテーマともいう）（プログラミング言語Pythonの名前の由来となった）。",
+    "description": "Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."
+  },
+  "music.BADDY": {
+    "message": "baddy",
+    "description": "(field name) Melody: silent movie era entrance of a baddy."
+  },
+  "music.BADDY.summary": {
+    "message": "メロディ: 無声映画時代の悪役の登場。",
+    "description": "Melody: silent movie era entrance of a baddy."
+  },
+  "music.CHASE": {
+    "message": "chase",
+    "description": "(field name) Melody: silent movie era chase scene."
+  },
+  "music.CHASE.summary": {
+    "message": "メロディ: 無声映画時代のチェイスシーン。",
+    "description": "Melody: silent movie era chase scene."
+  },
+  "music.BA_DING": {
+    "message": "ba ding",
+    "description": "(field name) Melody: a short signal to indicate something has happened."
+  },
+  "music.BA_DING.summary": {
+    "message": "メロディ: 何かが起こったことを示す短い信号。",
+    "description": "Melody: a short signal to indicate something has happened."
+  },
+  "music.WAWAWAWAA": {
+    "message": "wawawawaa",
+    "description": "(field name) Melody: a very sad trombone."
+  },
+  "music.WAWAWAWAA.summary": {
+    "message": "メロディ: 非常に悲しいトロンボーン。",
+    "description": "Melody: a very sad trombone."
+  },
+  "music.JUMP_UP": {
+    "message": "jump up",
+    "description": "(field name) Melody: for use in a game, indicating upward movement."
+  },
+  "music.JUMP_UP.summary": {
+    "message": "メロディ: ゲームでの使用で、上方向の動きを示します。",
+    "description": "Melody: for use in a game, indicating upward movement."
+  },
+  "music.JUMP_DOWN": {
+    "message": "jump down",
+    "description": "(field name) Melody: for use in a game, indicating downward movement."
+  },
+  "music.JUMP_DOWN.summary": {
+    "message": "メロディ: ゲームでの使用で、下向きの動きを示します。",
+    "description": "Melody: for use in a game, indicating downward movement."
+  },
+  "music.POWER_UP": {
+    "message": "power up",
+    "description": "(field name) Melody: a fanfare to indicate an achievement unlocked."
+  },
+  "music.POWER_UP.summary": {
+    "message": "メロディ: アチーブメントを達成したことを示すファンファーレ。",
+    "description": "Melody: a fanfare to indicate an achievement unlocked."
+  },
+  "music.POWER_DOWN": {
+    "message": "power down",
+    "description": "(field name) Melody: a sad fanfare to indicate an achievement lost."
+  },
+  "music.POWER_DOWN.summary": {
+    "message": "メロディ: アチーブメントを達成しなかったことを示すファンファーレ。",
+    "description": "Melody: a sad fanfare to indicate an achievement lost."
+  },
+  "music.set_tempo": {
+    "message": "set tempo",
+    "description": "(function name) Sets the approximate tempo for playback."
+  },
+  "music.set_tempo.summary": {
+    "message": "再生するためのおおよそのテンポを設定します。",
+    "description": "Sets the approximate tempo for playback."
+  },
+  "music.set_tempo.param-name.bpm": {
+    "message": "bpm",
+    "description": "(parameter name) An integer determining how many beats per minute."
+  },
+  "music.set_tempo.param-doc.bpm": {
+    "message": "毎分のビート数を決定する整数。",
+    "description": "Parameter docs"
+  },
+  "music.set_tempo.param-name.ticks": {
+    "message": "ticks",
+    "description": "(parameter name) The number of ticks constituting a beat."
+  },
+  "music.set_tempo.param-doc.ticks": {
+    "message": "1ビートを構成するティック数。",
+    "description": "Parameter docs"
+  },
+  "music.get_tempo": {
+    "message": "get tempo",
+    "description": "(function name) Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
+  },
+  "music.get_tempo.summary": {
+    "message": "現在のテンポを整数のタプル {{(ticks, bpm)}} として取得します。",
+    "description": "Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
+  },
+  "music.play": {
+    "message": "play",
+    "description": "(function name) Plays music."
+  },
+  "music.play.summary": {
+    "message": "ミュージックを再生します。",
+    "description": "Plays music."
+  },
+  "music.play.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted."
+  },
+  "music.play.param-doc.loop": {
+    "message": "{{loop}} が {{True}} の場合、曲は {{stop}} が呼び出されるか、ブロックコールが中断されるまで繰り返し再生されます。",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.music": {
+    "message": "music",
+    "description": "(parameter name) music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_"
+  },
+  "music.play.param-doc.music": {
+    "message": "`特別な表記 <https://microbit-micropython.readthedocs.io/ja/v2-docs/music.html#musical-notation>`_ で指定されたミュージック",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.pin": {
+    "message": "ピン",
+    "description": "(parameter name) the output pin for use with an external speaker (default ``pin0``), ``None`` for no sound."
+  },
+  "music.play.param-doc.pin": {
+    "message": "外部スピーカー用出力端子（デフォルトは {{pin0}}）。音を鳴らしたくない場合は {{None}} を指定します。",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is set to ``True``, this function is blocking."
+  },
+  "music.play.param-doc.wait": {
+    "message": "{{wait}} を {{True}} に設定した場合、この関数がブロックします。",
+    "description": "Parameter docs"
+  },
+  "music.pitch": {
+    "message": "pitch",
+    "description": "(function name) Play a note."
+  },
+  "music.pitch.summary": {
+    "message": "音符を再生します。",
+    "description": "Play a note."
+  },
+  "music.pitch.param-name.duration": {
+    "message": "duration",
+    "description": "(parameter name) A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``."
+  },
+  "music.pitch.param-doc.duration": {
+    "message": "持続時間をミリ秒単位で指定します。負の場合、次の呼び出しか {{stop}} の呼び出しまで再生が続きます。",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.frequency": {
+    "message": "frequency",
+    "description": "(parameter name) An integer frequency"
+  },
+  "music.pitch.param-doc.frequency": {
+    "message": "周波数を示す整数値",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) Optional output pin (default ``pin0``)."
+  },
+  "music.pitch.param-doc.pin": {
+    "message": "オプションの出力端子（デフォルトは {{pin0}}）。",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.wait": {
+    "message": "wait",
+    "description": "(parameter name) If ``wait`` is set to ``True``, this function is blocking."
+  },
+  "music.pitch.param-doc.wait": {
+    "message": "{{wait}} を {{True}} に設定した場合、この関数がブロックします。",
+    "description": "Parameter docs"
+  },
+  "music.stop": {
+    "message": "stop",
+    "description": "(function name) Stops all music playback on the built-in speaker and any pin outputting sound."
+  },
+  "music.stop.summary": {
+    "message": "内蔵スピーカーやサウンドを出力する端子から鳴らしているすべてのミュージック再生を停止します。",
+    "description": "Stops all music playback on the built-in speaker and any pin outputting sound."
+  },
+  "music.stop.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``."
+  },
+  "music.stop.param-doc.pin": {
+    "message": "オプションの引数には、たとえば {{music.stop(pin1)}} などの端子を指定できます。",
+    "description": "Parameter docs"
+  },
+  "music.reset": {
+    "message": "reset",
+    "description": "(function name) Resets ticks, bpm, duration and octave to their default values."
+  },
+  "music.reset.summary": {
+    "message": "ティック、bpm、持続時間、オクターブをデフォルト値にリセットします。",
+    "description": "Resets ticks, bpm, duration and octave to their default values."
+  },
+  "neopixel": {
+    "message": "neopixel",
+    "description": "(module name) Individually addressable RGB and RGBW LED strips."
+  },
+  "neopixel.summary": {
+    "message": "個別にアドレス可能な RGB/RGBW LED ストリップ。",
+    "description": "Individually addressable RGB and RGBW LED strips."
+  },
+  "neopixel.NeoPixel.__init__": {
+    "message": "init",
+    "description": "(function name) Initialise a new strip of neopixel LEDs controlled via a pin."
+  },
+  "neopixel.NeoPixel.__init__.summary": {
+    "message": "端子を介して制御するネオピクセルLEDの新しいストリップを初期化します。",
+    "description": "Initialise a new strip of neopixel LEDs controlled via a pin."
+  },
+  "neopixel.NeoPixel.__init__.param-name.bpp": {
+    "message": "bpp",
+    "description": "(parameter name) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.bpp": {
+    "message": "ピクセルあたりのバイト数。micro:bit V2 の RGBW ネオピクセルに対応するには、RGBやGRBのデフォルト値の3ではなく、4 を指定します。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__init__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of neopixels in the strip."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.n": {
+    "message": "ストリップ内のネオピクセルの数。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__init__.param-name.pin": {
+    "message": "pin",
+    "description": "(parameter name) The pin controlling the neopixel strip."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.pin": {
+    "message": "ネオピクセルストリップを制御する端子。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.clear": {
+    "message": "clear",
+    "description": "(function name) Clear all the pixels."
+  },
+  "neopixel.NeoPixel.clear.summary": {
+    "message": "すべてのピクセルをクリアします。",
+    "description": "Clear all the pixels."
+  },
+  "neopixel.NeoPixel.show": {
+    "message": "show",
+    "description": "(function name) Show the pixels."
+  },
+  "neopixel.NeoPixel.show.summary": {
+    "message": "ピクセルを表示します。",
+    "description": "Show the pixels."
+  },
+  "neopixel.NeoPixel.write": {
+    "message": "write",
+    "description": "(function name) Show the pixels (micro:bit V2 only)."
+  },
+  "neopixel.NeoPixel.write.summary": {
+    "message": "ピクセルを表示します（micro:bit V2 のみ）。",
+    "description": "Show the pixels (micro:bit V2 only)."
+  },
+  "neopixel.NeoPixel.fill": {
+    "message": "fill",
+    "description": "(function name) Colour all pixels a given RGB/RGBW value."
+  },
+  "neopixel.NeoPixel.fill.summary": {
+    "message": "指定した RGB/RGBW 値をすべてのピクセルに設定します。",
+    "description": "Colour all pixels a given RGB/RGBW value."
+  },
+  "neopixel.NeoPixel.fill.param-name.colour": {
+    "message": "colour",
+    "description": "(parameter name) A tuple of the same length as the number of bytes per pixel (bpp)."
+  },
+  "neopixel.NeoPixel.fill.param-doc.colour": {
+    "message": "ピクセルあたりのバイト数（bpp）と同じ長さのタプル。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__setitem__": {
+    "message": "setitem",
+    "description": "(function name) Set a pixel colour."
+  },
+  "neopixel.NeoPixel.__setitem__.summary": {
+    "message": "ピクセルの色を設定します。",
+    "description": "Set a pixel colour."
+  },
+  "neopixel.NeoPixel.__setitem__.param-name.key": {
+    "message": "key",
+    "description": "(parameter name) The pixel number."
+  },
+  "neopixel.NeoPixel.__setitem__.param-doc.key": {
+    "message": "ピクセル番号。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__setitem__.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The colour."
+  },
+  "neopixel.NeoPixel.__setitem__.param-doc.value": {
+    "message": "色。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__getitem__": {
+    "message": "getitem",
+    "description": "(function name) Get a pixel colour."
+  },
+  "neopixel.NeoPixel.__getitem__.summary": {
+    "message": "ピクセルの色を取得します。",
+    "description": "Get a pixel colour."
+  },
+  "neopixel.NeoPixel.__getitem__.param-name.key": {
+    "message": "key",
+    "description": "(parameter name) The pixel number."
+  },
+  "neopixel.NeoPixel.__getitem__.param-doc.key": {
+    "message": "ピクセル番号。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__len__": {
+    "message": "len",
+    "description": "(function name) Get length of this pixel strip."
+  },
+  "neopixel.NeoPixel.__len__.summary": {
+    "message": "このピクセルストリップの長さを取得します。",
+    "description": "Get length of this pixel strip."
+  },
+  "os": {
+    "message": "os",
+    "description": "(module name) Access the file system."
+  },
+  "os.summary": {
+    "message": "ファイルシステムにアクセスします。",
+    "description": "Access the file system."
+  },
+  "os.listdir": {
+    "message": "listdir",
+    "description": "(function name) List files."
+  },
+  "os.listdir.summary": {
+    "message": "ファイルすべての名前のリストを取得します。\n\n",
+    "description": "List files."
+  },
+  "os.remove": {
+    "message": "remove",
+    "description": "(function name) Remove (delete) a file."
+  },
+  "os.remove.summary": {
+    "message": "ファイルを削除します。",
+    "description": "Remove (delete) a file."
+  },
+  "os.remove.param-name.filename": {
+    "message": "filename",
+    "description": "(parameter name) The file to delete."
+  },
+  "os.remove.param-doc.filename": {
+    "message": "削除するファイルの名前。",
+    "description": "Parameter docs"
+  },
+  "os.size": {
+    "message": "size",
+    "description": "(function name) Returns the size of a file."
+  },
+  "os.size.summary": {
+    "message": "ファイルのサイズを返します。",
+    "description": "Returns the size of a file."
+  },
+  "os.size.param-name.filename": {
+    "message": "filename",
+    "description": "(parameter name) The file"
+  },
+  "os.size.param-doc.filename": {
+    "message": "ファイル",
+    "description": "Parameter docs"
+  },
+  "os.uname_result": {
+    "message": "uname result",
+    "description": "(class name) Result of ``os.uname()``"
+  },
+  "os.uname_result.summary": {
+    "message": "{{os.uname()}} の結果",
+    "description": "Result of ``os.uname()``"
+  },
+  "os.uname_result.sysname": {
+    "message": "sysname",
+    "description": "(field name) Operating system name."
+  },
+  "os.uname_result.sysname.summary": {
+    "message": "オペレーティングシステム名。",
+    "description": "Operating system name."
+  },
+  "os.uname_result.nodename": {
+    "message": "nodename",
+    "description": "(field name) Name of machine on network (implementation-defined)."
+  },
+  "os.uname_result.nodename.summary": {
+    "message": "ネットワーク上のマシンの名前（実装定義）。",
+    "description": "Name of machine on network (implementation-defined)."
+  },
+  "os.uname_result.release": {
+    "message": "release",
+    "description": "(field name) Operating system release."
+  },
+  "os.uname_result.release.summary": {
+    "message": "オペレーティングシステムのリリース。",
+    "description": "Operating system release."
+  },
+  "os.uname_result.version": {
+    "message": "version",
+    "description": "(field name) Operating system version."
+  },
+  "os.uname_result.version.summary": {
+    "message": "オペレーティングシステムのバージョン。",
+    "description": "Operating system version."
+  },
+  "os.uname_result.machine": {
+    "message": "machine",
+    "description": "(field name) Hardware identifier."
+  },
+  "os.uname_result.machine.summary": {
+    "message": "ハードウェア識別子。",
+    "description": "Hardware identifier."
+  },
+  "os.uname": {
+    "message": "uname",
+    "description": "(function name) Returns information identifying the current operating system."
+  },
+  "os.uname.summary": {
+    "message": "現在のオペレーティングシステムを識別する情報を返します。",
+    "description": "Returns information identifying the current operating system."
+  },
+  "radio": {
+    "message": "radio",
+    "description": "(module name) Communicate between micro:bits with the built-in radio."
+  },
+  "radio.summary": {
+    "message": "内蔵の無線通信を使ったmicro:bit間の通信。",
+    "description": "Communicate between micro:bits with the built-in radio."
+  },
+  "radio.RATE_1MBIT": {
+    "message": "rate 1mbit",
+    "description": "(field name) Constant used to indicate a throughput of 1 MBit a second."
+  },
+  "radio.RATE_1MBIT.summary": {
+    "message": "1 MBit/秒のスループットを示すために使われる定数。",
+    "description": "Constant used to indicate a throughput of 1 MBit a second."
+  },
+  "radio.RATE_2MBIT": {
+    "message": "rate 2mbit",
+    "description": "(field name) Constant used to indicate a throughput of 2 MBit a second."
+  },
+  "radio.RATE_2MBIT.summary": {
+    "message": "2 MBit/秒のスループットを示すために使われる定数。",
+    "description": "Constant used to indicate a throughput of 2 MBit a second."
+  },
+  "radio.on": {
+    "message": "on",
+    "description": "(function name) Turns the radio on."
+  },
+  "radio.on.summary": {
+    "message": "無線通信をオンにします。",
+    "description": "Turns the radio on."
+  },
+  "radio.off": {
+    "message": "off",
+    "description": "(function name) Turns off the radio, saving power and memory."
+  },
+  "radio.off.summary": {
+    "message": "無線通信をオフにして、電力とメモリを節約します。",
+    "description": "Turns off the radio, saving power and memory."
+  },
+  "radio.config": {
+    "message": "config",
+    "description": "(function name) Configures the radio."
+  },
+  "radio.config.summary": {
+    "message": "無線通信を設定します。",
+    "description": "Configures the radio."
+  },
+  "radio.config.param-name.address": {
+    "message": "address",
+    "description": "(parameter name) (default=0x75626974) an arbitrary name, expressed as a 32-bit address, that's used to filter incoming packets at the hardware level, keeping only those that match the address you set.\nThe default used by other micro:bit related platforms is the default setting used here."
+  },
+  "radio.config.param-doc.address": {
+    "message": "(デフォルト=0x75626974)　32 ビットのアドレスとして表される任意の名前であり、ハードウェアレベルで着信パケットをフィルタリングするために使用されます。フィルタリングはユーザーが設定したアドレスと一致するもののみを維持します。\n他のmicro:bit関連のプラットフォームで使われるデフォルトは、ここで使われるデフォルト設定となっています。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.channel": {
+    "message": "channel",
+    "description": "(parameter name) (default=7) an integer value from 0 to 83 (inclusive) that defines an arbitrary \"channel\" to which the radio is tuned.\nMessages will be sent via this channel and only messages received via this channel will be put onto the incoming message queue. Each step is 1MHz wide, based at 2400MHz."
+  },
+  "radio.config.param-doc.channel": {
+    "message": "(デフォルト=7)　無線が同調されている任意の「チャネル」を定義するもので、0 から 83 までの整数値を設定できます。メッセージはこのチャネル経由で送信され、このチャネル経由で受信したメッセージだけが受信メッセージキューに入れられます。各ステップは 1MHz 幅で、2400MHz を基準にしています。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.data_rate": {
+    "message": "data rate",
+    "description": "(parameter name) (default=``radio.RATE_1MBIT``) indicates the speed at which data throughput takes place.\nCan be one of the following constants defined in the ``radio`` module: ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``."
+  },
+  "radio.config.param-doc.data_rate": {
+    "message": "(デフォルト={{radio.RATE_1MBIT}})　データスループットが起こる速度を示しています。\n{{radio}} モジュールに定義されている定数 {{RATE_250KBIT}}、{{RATE_1MBIT}}、{{RATE_2MBIT}} のいずれかを指定します。\n",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.group": {
+    "message": "group",
+    "description": "(parameter name) (default=0) an 8-bit value (0-255) used with the ``address`` when filtering messages.\nConceptually, \"address\" is like a house/office address and \"group\" is like the person at that address to which you want to send your message."
+  },
+  "radio.config.param-doc.group": {
+    "message": "(デフォルト=0)　8ビットの値（0〜255）であり、 {{address}} フィルタしたメッセージで使います。\n概念的に「address」は自宅/事務所の住所のようなものであり、「group」はその住所のメッセージを受け取人のようなものです。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.length": {
+    "message": "length",
+    "description": "(parameter name) (default=32) defines the maximum length, in bytes, of a message sent via the radio.\nIt can be up to 251 bytes long (254 - 3 bytes for S0, LENGTH and S1 preamble)."
+  },
+  "radio.config.param-doc.length": {
+    "message": "(デフォルト=32)　無線を介して送信されるメッセージのバイト単位の最大長を設定します。\n最大で 251 バイト（S0、長さ、S1 プリアンブルは254 から 3 を引いたバイト数）に設定できます。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.power": {
+    "message": "power",
+    "description": "(parameter name) (default=6) is an integer value from 0 to 7 (inclusive) to indicate the strength of signal used when broadcasting a message.\nThe higher the value the stronger the signal, but the more power is consumed by the device. The numbering translates to positions in the following list of dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4."
+  },
+  "radio.config.param-doc.power": {
+    "message": "(デフォルト=6)　メッセージをブロードキャストするときに使用される信号の強度を示すもので、0 から 7 までの整数値（指定の値を含む。）を設定できです。\n値が高いほど信号は強くなりますが、デバイスが消費する電力が大きくなります。指定の番号は次のリストの dBm（デシベルミリワット）値の位置に変換されます: -30, -20, -16, -12, -8, -4, 0, 4 。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.queue": {
+    "message": "queue",
+    "description": "(parameter name) (default=3) specifies the number of messages that can be stored on the incoming message queue.\nIf there are no spaces left on the queue for incoming messages, then the incoming message is dropped."
+  },
+  "radio.config.param-doc.queue": {
+    "message": "(デフォルト=3)　受信メッセージキューに格納できるメッセージの数を指定します。\n着信メッセージのキューに空きがない場合、着信メッセージは捨てられます。",
+    "description": "Parameter docs"
+  },
+  "radio.reset": {
+    "message": "reset",
+    "description": "(function name) Reset the settings to their default values."
+  },
+  "radio.reset.summary": {
+    "message": "設定をデフォルト値にリセットします。",
+    "description": "Reset the settings to their default values."
+  },
+  "radio.send_bytes": {
+    "message": "send bytes",
+    "description": "(function name) Sends a message containing bytes."
+  },
+  "radio.send_bytes.summary": {
+    "message": "バイト列を含んだメッセージを送信します。",
+    "description": "Sends a message containing bytes."
+  },
+  "radio.send_bytes.param-name.message": {
+    "message": "message",
+    "description": "(parameter name) The bytes to send."
+  },
+  "radio.send_bytes.param-doc.message": {
+    "message": "送信するバイト列。",
+    "description": "Parameter docs"
+  },
+  "radio.receive_bytes": {
+    "message": "receive bytes",
+    "description": "(function name) Receive the next incoming message on the message queue."
+  },
+  "radio.receive_bytes.summary": {
+    "message": "メッセージキューにある次の着信メッセージを受信します。",
+    "description": "Receive the next incoming message on the message queue."
+  },
+  "radio.receive_bytes_into": {
+    "message": "receive bytes into",
+    "description": "(function name) Copy the next incoming message on the message queue into a buffer."
+  },
+  "radio.receive_bytes_into.summary": {
+    "message": "メッセージキューにある次の着信メッセージをバッファにコピーします。",
+    "description": "Copy the next incoming message on the message queue into a buffer."
+  },
+  "radio.receive_bytes_into.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) The target buffer. The message is truncated if larger than the buffer."
+  },
+  "radio.receive_bytes_into.param-doc.buffer": {
+    "message": "メッセージを格納するバッファ。メッセージがバッファより大きい場合、メッセージの収まらない部分が切り捨てられます。",
+    "description": "Parameter docs"
+  },
+  "radio.send": {
+    "message": "send",
+    "description": "(function name) Sends a message string."
+  },
+  "radio.send.summary": {
+    "message": "メッセージ文字列を送信します。",
+    "description": "Sends a message string."
+  },
+  "radio.send.param-name.message": {
+    "message": "message",
+    "description": "(parameter name) The string to send."
+  },
+  "radio.send.param-doc.message": {
+    "message": "送信する文字列。",
+    "description": "Parameter docs"
+  },
+  "radio.receive": {
+    "message": "receive",
+    "description": "(function name) Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
+  },
+  "radio.receive.summary": {
+    "message": "{{receive_bytes}} と同じように動作しますが、送信されてきたものはすべて返します。",
+    "description": "Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
+  },
+  "radio.receive_full": {
+    "message": "receive full",
+    "description": "(function name) Returns a tuple containing three values representing the next incoming message on the message queue."
+  },
+  "radio.receive_full.summary": {
+    "message": "メッセージキューにある次の受信メッセージを表す3つの値をタプルで返します。",
+    "description": "Returns a tuple containing three values representing the next incoming message on the message queue."
+  },
+  "random": {
+    "message": "random",
+    "description": "(module name) Generate random numbers."
+  },
+  "random.summary": {
+    "message": "乱数を生成します。",
+    "description": "Generate random numbers."
+  },
+  "random.getrandbits": {
+    "message": "getrandbits",
+    "description": "(function name) Generate an integer with ``n`` random bits."
+  },
+  "random.getrandbits.summary": {
+    "message": "{{n}} 乱数ビット数を持つ整数を生成します。",
+    "description": "Generate an integer with ``n`` random bits."
+  },
+  "random.getrandbits.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) A value between 1-30 (inclusive)."
+  },
+  "random.getrandbits.param-doc.n": {
+    "message": "1～30の値（指定の値を含みます）。",
+    "description": "Parameter docs"
+  },
+  "random.seed": {
+    "message": "seed",
+    "description": "(function name) Initialize the random number generator."
+  },
+  "random.seed.summary": {
+    "message": "乱数ジェネレータを初期化します。",
+    "description": "Initialize the random number generator."
+  },
+  "random.seed.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The integer seed"
+  },
+  "random.seed.param-doc.n": {
+    "message": "整数シード",
+    "description": "Parameter docs"
+  },
+  "random.randint": {
+    "message": "randint",
+    "description": "(function name) Choose a random integer between ``a`` and ``b`` inclusive."
+  },
+  "random.randint.summary": {
+    "message": "{{a}}  から {{b}} の区間内のランダムな整数値を返します（指定の値を含みます）。",
+    "description": "Choose a random integer between ``a`` and ``b`` inclusive."
+  },
+  "random.randint.param-name.a": {
+    "message": "A",
+    "description": "(parameter name) Start value for the range (inclusive)"
+  },
+  "random.randint.param-doc.a": {
+    "message": "乱数区間の開始値（指定の値を含みます）",
+    "description": "Parameter docs"
+  },
+  "random.randint.param-name.b": {
+    "message": "b",
+    "description": "(parameter name) End value for the range (inclusive)"
+  },
+  "random.randint.param-doc.b": {
+    "message": "乱数区間の終了値（指定の値を含みます）",
+    "description": "Parameter docs"
+  },
+  "random.randrange-1": {
+    "message": "randrange",
+    "description": "(function name) Choose a randomly selected integer between zero and up to (but not\nincluding) ``stop``."
+  },
+  "random.randrange-1.summary": {
+    "message": "0 から {{stop}} 未満までの間で無作為に選択された整数を返します。",
+    "description": "Choose a randomly selected integer between zero and up to (but not\nincluding) ``stop``."
+  },
+  "random.randrange-1.param-name.stop": {
+    "message": "stop",
+    "description": "(parameter name) End value for the range (exclusive)"
+  },
+  "random.randrange-1.param-doc.stop": {
+    "message": "乱数区間の終了値（指定の値を含みません）",
+    "description": "Parameter docs"
+  },
+  "random.randrange-2": {
+    "message": "randrange",
+    "description": "(function name) Choose a randomly selected element from ``range(start, stop, step)``."
+  },
+  "random.randrange-2.summary": {
+    "message": "{{range(start, stop, step)}} から無作為に選択された整数を返します。",
+    "description": "Choose a randomly selected element from ``range(start, stop, step)``."
+  },
+  "random.randrange-2.param-name.start": {
+    "message": "start",
+    "description": "(parameter name) The start of the range (inclusive)"
+  },
+  "random.randrange-2.param-doc.start": {
+    "message": "乱数区間の開始値（指定の値を含みます）",
+    "description": "Parameter docs"
+  },
+  "random.randrange-2.param-name.step": {
+    "message": "step",
+    "description": "(parameter name) The step."
+  },
+  "random.randrange-2.param-doc.step": {
+    "message": "ステップ値。",
+    "description": "Parameter docs"
+  },
+  "random.randrange-2.param-name.stop": {
+    "message": "stop",
+    "description": "(parameter name) The end of the range (exclusive)"
+  },
+  "random.randrange-2.param-doc.stop": {
+    "message": "乱数区間の終了値（指定の値を含みません）",
+    "description": "Parameter docs"
+  },
+  "random.choice": {
+    "message": "choice",
+    "description": "(function name) Choose a random element from the non-empty sequence ``seq``."
+  },
+  "random.choice.summary": {
+    "message": "空でないシーケンス {{seq}} からランダムな要素を返します。",
+    "description": "Choose a random element from the non-empty sequence ``seq``."
+  },
+  "random.choice.param-name.seq": {
+    "message": "seq",
+    "description": "(parameter name) A sequence."
+  },
+  "random.choice.param-doc.seq": {
+    "message": "シーケンス。",
+    "description": "Parameter docs"
+  },
+  "random.random": {
+    "message": "random",
+    "description": "(function name) Generate a random floating point number in the range [0.0, 1.0)."
+  },
+  "random.random.summary": {
+    "message": "0.0 以上、1.0 未満の区間から無作為に選択された浮動小数点数を生成します。",
+    "description": "Generate a random floating point number in the range [0.0, 1.0)."
+  },
+  "random.uniform": {
+    "message": "uniform",
+    "description": "(function name) Return a random floating point number between ``a`` and ``b`` inclusive."
+  },
+  "random.uniform.summary": {
+    "message": "{{a}} から {{b}} の区間内のランダムな浮動小数点数を返します（指定の値を含みます）。",
+    "description": "Return a random floating point number between ``a`` and ``b`` inclusive."
+  },
+  "random.uniform.param-name.a": {
+    "message": "A",
+    "description": "(parameter name) Start value for the range (inclusive)"
+  },
+  "random.uniform.param-doc.a": {
+    "message": "乱数区間の開始値（指定の値を含みます）",
+    "description": "Parameter docs"
+  },
+  "random.uniform.param-name.b": {
+    "message": "b",
+    "description": "(parameter name) End value for the range (inclusive)"
+  },
+  "random.uniform.param-doc.b": {
+    "message": "乱数区間の終了値（指定の値を含みます）",
+    "description": "Parameter docs"
+  },
+  "speech": {
+    "message": "speech",
+    "description": "(module name) Make the micro:bit talk, sing and make other speech like sounds."
+  },
+  "speech.summary": {
+    "message": "micro:bit に話させたり、歌わせたり、その他の音声のようなサウンドを作らせたりします。",
+    "description": "Make the micro:bit talk, sing and make other speech like sounds."
+  },
+  "speech.translate": {
+    "message": "translate",
+    "description": "(function name) Translate English words to phonemes."
+  },
+  "speech.translate.summary": {
+    "message": "英単語の並びを音素に変換します。",
+    "description": "Translate English words to phonemes."
+  },
+  "speech.translate.param-name.words": {
+    "message": "words",
+    "description": "(parameter name) A string of English words."
+  },
+  "speech.translate.param-doc.words": {
+    "message": "英単語の並びの文字列。",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce": {
+    "message": "pronounce",
+    "description": "(function name) Pronounce phonemes."
+  },
+  "speech.pronounce.summary": {
+    "message": "音素を発声します。",
+    "description": "Pronounce phonemes."
+  },
+  "speech.pronounce.param-name.mouth": {
+    "message": "mouth",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.pronounce.param-doc.mouth": {
+    "message": "音声の口の動きを表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.phonemes": {
+    "message": "phonemes",
+    "description": "(parameter name) The string of phonemes to pronounce"
+  },
+  "speech.pronounce.param-doc.phonemes": {
+    "message": "発音する音素の文字列",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.pin": {
+    "message": "ピン",
+    "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
+  },
+  "speech.pronounce.param-doc.pin": {
+    "message": "出力端子をデフォルトの {{pin0}} から変えるためのオプション引数。\n音を鳴らしたくない場合は {{pin=None}} を指定します。micro:bit V2 のみで使えます。",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.pitch": {
+    "message": "pitch",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.pronounce.param-doc.pitch": {
+    "message": "音声の音高を表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.speed": {
+    "message": "speed",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.pronounce.param-doc.speed": {
+    "message": "音声の速度を表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.pronounce.param-doc.throat": {
+    "message": "音声の喉の動きを表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.say": {
+    "message": "say",
+    "description": "(function name) Say English words."
+  },
+  "speech.say.summary": {
+    "message": "英単語の並びを発声します。",
+    "description": "Say English words."
+  },
+  "speech.say.param-name.mouth": {
+    "message": "mouth",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.say.param-doc.mouth": {
+    "message": "音声の口の動きを表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.pin": {
+    "message": "ピン",
+    "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
+  },
+  "speech.say.param-doc.pin": {
+    "message": "出力端子をデフォルトの {{pin0}} から変えるためのオプション引数。\n音を鳴らしたくない場合は {{pin=None}} を指定します。micro:bit V2 のみで使えます。",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.pitch": {
+    "message": "pitch",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.say.param-doc.pitch": {
+    "message": "音声の音高を表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.speed": {
+    "message": "speed",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.say.param-doc.speed": {
+    "message": "音声の速度を表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.say.param-doc.throat": {
+    "message": "音声の喉の動きを表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.words": {
+    "message": "words",
+    "description": "(parameter name) The string of words to say."
+  },
+  "speech.say.param-doc.words": {
+    "message": "発声する言葉の文字列。",
+    "description": "Parameter docs"
+  },
+  "speech.sing": {
+    "message": "sing",
+    "description": "(function name) Sing phonemes."
+  },
+  "speech.sing.summary": {
+    "message": "音素を歌います。",
+    "description": "Sing phonemes."
+  },
+  "speech.sing.param-name.mouth": {
+    "message": "mouth",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.sing.param-doc.mouth": {
+    "message": "音声の口の動きを表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.phonemes": {
+    "message": "phonemes",
+    "description": "(parameter name) The string of words to sing."
+  },
+  "speech.sing.param-doc.phonemes": {
+    "message": "歌う言葉の文字列。",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.pin": {
+    "message": "ピン",
+    "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
+  },
+  "speech.sing.param-doc.pin": {
+    "message": "出力端子をデフォルトの {{pin0}} から変えるためのオプション引数。\n音を鳴らしたくない場合は {{pin=None}} を指定します。micro:bit V2 のみで使えます。",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.pitch": {
+    "message": "pitch",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.sing.param-doc.pitch": {
+    "message": "音声の音高を表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.speed": {
+    "message": "speed",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.sing.param-doc.speed": {
+    "message": "音声の速度を表す数値",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.throat": {
+    "message": "throat",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.sing.param-doc.throat": {
+    "message": "音声の喉の動きを表す数値",
+    "description": "Parameter docs"
+  },
+  "struct": {
+    "message": "struct",
+    "description": "(module name) Pack and unpack primitive data types."
+  },
+  "struct.summary": {
+    "message": "プリミティブデータ型のパックとアンパック。",
+    "description": "Pack and unpack primitive data types."
+  },
+  "struct.calcsize": {
+    "message": "calcsize",
+    "description": "(function name) Get the number of bytes needed to store the given ``fmt``."
+  },
+  "struct.calcsize.summary": {
+    "message": "指定した {{fmt}} で格納するために必要なバイト数を取得します。",
+    "description": "Get the number of bytes needed to store the given ``fmt``."
+  },
+  "struct.calcsize.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) A format string."
+  },
+  "struct.calcsize.param-doc.fmt": {
+    "message": "フォーマット文字列。",
+    "description": "Parameter docs"
+  },
+  "struct.pack": {
+    "message": "pack",
+    "description": "(function name) Pack values according to a format string."
+  },
+  "struct.pack.summary": {
+    "message": "フォーマット文字列にしたがって複数の値をパックします。",
+    "description": "Pack values according to a format string."
+  },
+  "struct.pack.param-name.*vn": {
+    "message": "*vn",
+    "description": "(parameter name) The remaining values."
+  },
+  "struct.pack.param-doc.*vn": {
+    "message": "残りの値。",
+    "description": "Parameter docs"
+  },
+  "struct.pack.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
+  },
+  "struct.pack.param-doc.fmt": {
+    "message": "フォーマット文字列。",
+    "description": "Parameter docs"
+  },
+  "struct.pack.param-name.v1": {
+    "message": "v1",
+    "description": "(parameter name) The first value."
+  },
+  "struct.pack.param-doc.v1": {
+    "message": "先頭の値。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into": {
+    "message": "pack into",
+    "description": "(function name) Pack values according to a format string."
+  },
+  "struct.pack_into.summary": {
+    "message": "フォーマット文字列にしたがって複数の値をパックします。",
+    "description": "Pack values according to a format string."
+  },
+  "struct.pack_into.param-name.*vn": {
+    "message": "*vn",
+    "description": "(parameter name) The remaining values."
+  },
+  "struct.pack_into.param-doc.*vn": {
+    "message": "残りの値。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) The target buffer to write into."
+  },
+  "struct.pack_into.param-doc.buffer": {
+    "message": "書き込み先のバッファ。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
+  },
+  "struct.pack_into.param-doc.fmt": {
+    "message": "フォーマット文字列。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into.param-name.offset": {
+    "message": "offset",
+    "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
+  },
+  "struct.pack_into.param-doc.offset": {
+    "message": "バッファのオフセット。負の場合はバッファの最後からのオフセットになります。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into.param-name.v1": {
+    "message": "v1",
+    "description": "(parameter name) The first value."
+  },
+  "struct.pack_into.param-doc.v1": {
+    "message": "先頭の値。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack": {
+    "message": "unpack",
+    "description": "(function name) Unpack data according to a format string."
+  },
+  "struct.unpack.summary": {
+    "message": "フォーマット文字列にしたがってデータをアンパックします。",
+    "description": "Unpack data according to a format string."
+  },
+  "struct.unpack.param-name.data": {
+    "message": "data",
+    "description": "(parameter name) The data."
+  },
+  "struct.unpack.param-doc.data": {
+    "message": "データ。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
+  },
+  "struct.unpack.param-doc.fmt": {
+    "message": "フォーマット文字列。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack_from": {
+    "message": "unpack from",
+    "description": "(function name) Unpack data from a buffer according to a format string."
+  },
+  "struct.unpack_from.summary": {
+    "message": "フォーマット文字列にしたがってバッファからデータをアンパックします。",
+    "description": "Unpack data from a buffer according to a format string."
+  },
+  "struct.unpack_from.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) The source buffer to read from."
+  },
+  "struct.unpack_from.param-doc.buffer": {
+    "message": "読み込み元のバッファ。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack_from.param-name.fmt": {
+    "message": "fmt",
+    "description": "(parameter name) The format string."
+  },
+  "struct.unpack_from.param-doc.fmt": {
+    "message": "フォーマット文字列。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack_from.param-name.offset": {
+    "message": "offset",
+    "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
+  },
+  "struct.unpack_from.param-doc.offset": {
+    "message": "バッファのオフセット。負の場合はバッファの最後からのオフセットになります。",
+    "description": "Parameter docs"
+  },
+  "sys": {
+    "message": "sys",
+    "description": "(module name) System specific functions"
+  },
+  "sys.summary": {
+    "message": "システム固有関数。",
+    "description": "System specific functions"
+  },
+  "sys.exit": {
+    "message": "exit",
+    "description": "(function name) Terminate current program with a given exit code."
+  },
+  "sys.exit.summary": {
+    "message": "与えた終了コードで現在のプログラムを終了します。",
+    "description": "Terminate current program with a given exit code."
+  },
+  "sys.exit.param-name.retval": {
+    "message": "retval",
+    "description": "(parameter name) The exit code or message."
+  },
+  "sys.exit.param-doc.retval": {
+    "message": "終了コードまたはメッセージ。",
+    "description": "Parameter docs"
+  },
+  "sys.print_exception": {
+    "message": "print exception",
+    "description": "(function name) Print an exception with a traceback."
+  },
+  "sys.print_exception.summary": {
+    "message": "例外をトレースバック付きで出力します。",
+    "description": "Print an exception with a traceback."
+  },
+  "sys.print_exception.param-name.exc": {
+    "message": "exc",
+    "description": "(parameter name) The exception to print"
+  },
+  "sys.print_exception.param-doc.exc": {
+    "message": "表示する例外",
+    "description": "Parameter docs"
+  },
+  "sys.argv": {
+    "message": "argv",
+    "description": "(field name) A mutable list of arguments the current program was started with."
+  },
+  "sys.argv.summary": {
+    "message": "現在のプログラム開始時の引数の変更可能なリスト。",
+    "description": "A mutable list of arguments the current program was started with."
+  },
+  "sys.byteorder": {
+    "message": "byteorder",
+    "description": "(field name) The byte order of the system (``\"little\"`` or ``\"big\"``)."
+  },
+  "sys.byteorder.summary": {
+    "message": "システムのバイト順（{{\"little\"}} または {{\"big\"}}）。",
+    "description": "The byte order of the system (``\"little\"`` or ``\"big\"``)."
+  },
+  "sys.implementation": {
+    "message": "implementation",
+    "description": "(field name) Object with information about the current Python implementation."
+  },
+  "sys.implementation.summary": {
+    "message": "現在の Python 処理系に関する情報を持つオブジェクト。",
+    "description": "Object with information about the current Python implementation."
+  },
+  "sys.maxsize": {
+    "message": "maxsize",
+    "description": "(field name) \nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support)."
+  },
+  "sys.maxsize.summary": {
+    "message": "現在のプラットフォームでネイティブ整数型が保持できる最大値、またはプラットフォームの最大値より小さい場合は MicroPython 整数型で表現可能な最大値（MicroPython ポートで 長整数をサポートしないとした場合）。",
+    "description": "\nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support)."
+  },
+  "sys.modules": {
+    "message": "modules",
+    "description": "(field name) Dictionary of loaded modules. "
+  },
+  "sys.modules.summary": {
+    "message": "読み込まれたモジュールの辞書。",
+    "description": "Dictionary of loaded modules. "
+  },
+  "sys.path": {
+    "message": "path",
+    "description": "(field name) A mutable list of directories to search for imported modules."
+  },
+  "sys.path.summary": {
+    "message": "インポートするモジュールを検索するディレクトリの変更可能なリスト。",
+    "description": "A mutable list of directories to search for imported modules."
+  },
+  "sys.platform": {
+    "message": "platform",
+    "description": "(field name) The platform that MicroPython is running on. "
+  },
+  "sys.platform.summary": {
+    "message": "MicroPython が実行されているプラ​​ットフォーム。",
+    "description": "The platform that MicroPython is running on. "
+  },
+  "sys.version": {
+    "message": "version",
+    "description": "(field name) Python language version that this implementation conforms to, as a string."
+  },
+  "sys.version.summary": {
+    "message": "この処理系が準拠するPython言語バージョンを表す文字列。",
+    "description": "Python language version that this implementation conforms to, as a string."
+  },
+  "sys.version_info": {
+    "message": "version info",
+    "description": "(field name) Python language version that this implementation conforms to, as a tuple of ints."
+  },
+  "sys.version_info.summary": {
+    "message": "この実装が準拠しているPython言語バージョンを表すintのタプル。",
+    "description": "Python language version that this implementation conforms to, as a tuple of ints."
+  },
+  "time": {
+    "message": "time",
+    "description": "(module name) Measure time and add delays to programs."
+  },
+  "time.summary": {
+    "message": "時間の測定とプログラムの遅延。",
+    "description": "Measure time and add delays to programs."
+  },
+  "time.sleep": {
+    "message": "sleep",
+    "description": "(function name) Delay a number of seconds."
+  },
+  "time.sleep.summary": {
+    "message": "指定した秒数だけ遅延します。",
+    "description": "Delay a number of seconds."
+  },
+  "time.sleep.param-name.seconds": {
+    "message": "seconds",
+    "description": "(parameter name) The number of seconds to sleep for.\nUse a floating-point number to sleep for a fractional number of seconds."
+  },
+  "time.sleep.param-doc.seconds": {
+    "message": "スリープする秒数。\n秒より細かい精度で指定したい場合は浮動小数点数を使ってください。",
+    "description": "Parameter docs"
+  },
+  "time.sleep_ms": {
+    "message": "sleep ms",
+    "description": "(function name) Delay for given number of milliseconds."
+  },
+  "time.sleep_ms.summary": {
+    "message": "指定したミリ秒だけ遅延します。",
+    "description": "Delay for given number of milliseconds."
+  },
+  "time.sleep_ms.param-name.ms": {
+    "message": "ms",
+    "description": "(parameter name) The number of milliseconds delay (>= 0)."
+  },
+  "time.sleep_ms.param-doc.ms": {
+    "message": "遅延するミリ秒数（>= 0）。",
+    "description": "Parameter docs"
+  },
+  "time.sleep_us": {
+    "message": "sleep us",
+    "description": "(function name) Delay for given number of microseconds."
+  },
+  "time.sleep_us.summary": {
+    "message": "指定したマイクロ秒だけ遅延します。",
+    "description": "Delay for given number of microseconds."
+  },
+  "time.sleep_us.param-name.us": {
+    "message": "us",
+    "description": "(parameter name) The number of microseconds delay (>= 0)."
+  },
+  "time.sleep_us.param-doc.us": {
+    "message": "遅延するマイクロ秒数（>= 0）。",
+    "description": "Parameter docs"
+  },
+  "time.ticks_ms": {
+    "message": "ticks ms",
+    "description": "(function name) Get an increasing, millisecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "time.ticks_ms.summary": {
+    "message": "呼出し時点での稼働時間をミリ秒単位で取得します。稼働時間は最大値に達するとラップアラウンドします。",
+    "description": "Get an increasing, millisecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "time.ticks_us": {
+    "message": "ticks us",
+    "description": "(function name) Get an increasing, microsecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "time.ticks_us.summary": {
+    "message": "呼出し時点での稼働時間をマイクロ秒単位で取得します。稼働時間は最大値に達するとラップアラウンドします。",
+    "description": "Get an increasing, microsecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "time.ticks_add": {
+    "message": "ticks add",
+    "description": "(function name) Offset ticks value by a given number, which can be either positive or\nnegative."
+  },
+  "time.ticks_add.summary": {
+    "message": "与えた数をティック値からのオフセットとして加算した値を返します。引数の値は正でも負でもかまいません。",
+    "description": "Offset ticks value by a given number, which can be either positive or\nnegative."
+  },
+  "time.ticks_add.param-name.delta": {
+    "message": "delta",
+    "description": "(parameter name) An integer offset"
+  },
+  "time.ticks_add.param-doc.delta": {
+    "message": "整数オフセット",
+    "description": "Parameter docs"
+  },
+  "time.ticks_add.param-name.ticks": {
+    "message": "ticks",
+    "description": "(parameter name) A ticks value"
+  },
+  "time.ticks_add.param-doc.ticks": {
+    "message": "ティック値",
+    "description": "Parameter docs"
+  },
+  "time.ticks_diff": {
+    "message": "ticks diff",
+    "description": "(function name) Measure ticks difference between values returned from\n``time.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
+  },
+  "time.ticks_diff.summary": {
+    "message": "{{time.ticks_ms()}} や {{ticks_us()}} 関数の戻り値（ラップアラウンドする可能性のある符号付きの値）の間のティック値の差を計算します。",
+    "description": "Measure ticks difference between values returned from\n``time.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
+  },
+  "time.ticks_diff.param-name.ticks1": {
+    "message": "ticks1",
+    "description": "(parameter name) The value to subtract from"
+  },
+  "time.ticks_diff.param-doc.ticks1": {
+    "message": "引かられる方の値",
+    "description": "Parameter docs"
+  },
+  "time.ticks_diff.param-name.ticks2": {
+    "message": "ticks2",
+    "description": "(parameter name) The value to subtract"
+  },
+  "time.ticks_diff.param-doc.ticks2": {
+    "message": "引く方の値",
+    "description": "Parameter docs"
+  }
+}

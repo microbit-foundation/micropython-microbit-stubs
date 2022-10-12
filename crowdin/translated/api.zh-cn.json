@@ -1,0 +1,5258 @@
+{
+  "gc": {
+    "message": "垃圾回收(gc)",
+    "description": "(module name) Control the garbage collector"
+  },
+  "gc.summary": {
+    "message": "控制垃圾回收器",
+    "description": "Control the garbage collector"
+  },
+  "gc.enable": {
+    "message": "enable",
+    "description": "(function name) Enable automatic garbage collection."
+  },
+  "gc.enable.summary": {
+    "message": "启用自动垃圾回收机制。",
+    "description": "Enable automatic garbage collection."
+  },
+  "gc.disable": {
+    "message": "disable",
+    "description": "(function name) Disable automatic garbage collection."
+  },
+  "gc.disable.summary": {
+    "message": "禁用自动垃圾回收机制。",
+    "description": "Disable automatic garbage collection."
+  },
+  "gc.collect": {
+    "message": "collect",
+    "description": "(function name) Run a garbage collection."
+  },
+  "gc.collect.summary": {
+    "message": "执行一次垃圾回收。",
+    "description": "Run a garbage collection."
+  },
+  "gc.mem_alloc": {
+    "message": "mem alloc",
+    "description": "(function name) Get the number of bytes of heap RAM that are allocated."
+  },
+  "gc.mem_alloc.summary": {
+    "message": "获取分配的堆内存的字节数。",
+    "description": "Get the number of bytes of heap RAM that are allocated."
+  },
+  "gc.mem_free": {
+    "message": "mem free",
+    "description": "(function name) Get the number of bytes of available heap RAM, or -1 if this amount is not known."
+  },
+  "gc.mem_free.summary": {
+    "message": "获取可用堆内存的字节数，如果此数量未知，则返回值为 -1。",
+    "description": "Get the number of bytes of available heap RAM, or -1 if this amount is not known."
+  },
+  "gc.threshold-1": {
+    "message": "threshold",
+    "description": "(function name) Query the additional GC allocation threshold."
+  },
+  "gc.threshold-1.summary": {
+    "message": "查询额外的垃圾回收分配阈值。",
+    "description": "Query the additional GC allocation threshold."
+  },
+  "gc.threshold-2": {
+    "message": "threshold",
+    "description": "(function name) Set the additional GC allocation threshold."
+  },
+  "gc.threshold-2.summary": {
+    "message": "设置额外的垃圾回收分配阈值。",
+    "description": "Set the additional GC allocation threshold."
+  },
+  "gc.threshold-2.param-name.amount": {
+    "message": "amount",
+    "description": "(parameter name) The number of bytes after which a garbage collection should be triggered."
+  },
+  "gc.threshold-2.param-doc.amount": {
+    "message": "触发进行垃圾回收的字节数。",
+    "description": "Parameter docs"
+  },
+  "log": {
+    "message": "日志",
+    "description": "(module name) Log data to your micro:bit V2."
+  },
+  "log.summary": {
+    "message": "将数据记录到您的 micro:bit V2。",
+    "description": "Log data to your micro:bit V2."
+  },
+  "log.MILLISECONDS": {
+    "message": "毫秒",
+    "description": "(field name) Milliseconds timestamp format."
+  },
+  "log.MILLISECONDS.summary": {
+    "message": "毫秒时间戳格式。",
+    "description": "Milliseconds timestamp format."
+  },
+  "log.SECONDS": {
+    "message": "秒",
+    "description": "(field name) Seconds timestamp format."
+  },
+  "log.SECONDS.summary": {
+    "message": "秒时间戳格式。",
+    "description": "Seconds timestamp format."
+  },
+  "log.MINUTES": {
+    "message": "分钟",
+    "description": "(field name) Minutes timestamp format."
+  },
+  "log.MINUTES.summary": {
+    "message": "分钟时间戳格式。",
+    "description": "Minutes timestamp format."
+  },
+  "log.HOURS": {
+    "message": "小时",
+    "description": "(field name) Hours timestamp format."
+  },
+  "log.HOURS.summary": {
+    "message": "小时时间戳格式。",
+    "description": "Hours timestamp format."
+  },
+  "log.DAYS": {
+    "message": "天",
+    "description": "(field name) Days timestamp format."
+  },
+  "log.DAYS.summary": {
+    "message": "日期时间戳格式。",
+    "description": "Days timestamp format."
+  },
+  "log.set_labels": {
+    "message": "set labels",
+    "description": "(function name) Set up the log file header."
+  },
+  "log.set_labels.summary": {
+    "message": "设置日志文件头。",
+    "description": "Set up the log file header."
+  },
+  "log.set_labels.param-name.*labels": {
+    "message": "*标签",
+    "description": "(parameter name) Any number of positional arguments, each corresponding to an entry in the log header."
+  },
+  "log.set_labels.param-doc.*labels": {
+    "message": "任何数量的位置参数，每个对应于日志头中的一个标题。",
+    "description": "Parameter docs"
+  },
+  "log.set_labels.param-name.timestamp": {
+    "message": "timestamp",
+    "description": "(parameter name) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."
+  },
+  "log.set_labels.param-doc.timestamp": {
+    "message": "选择将自动添加为每行第一列的时间戳单位。 时间戳值可以是 {{log.MILLISECONDS}}, {{log.SECONDS}}, {{log.MINUTES}}, {{log.HOURS}}, {{log.DAYS}} ，或者 {{None}} 来禁用时间戳。 默认值是 {{log.SECONDS}}。",
+    "description": "Parameter docs"
+  },
+  "log.add-1": {
+    "message": "add",
+    "description": "(function name) Add a data row to the log by passing a dictionary of headers and values."
+  },
+  "log.add-1.summary": {
+    "message": "通过传递包含标题和值的字典将数据行添加到日志中。",
+    "description": "Add a data row to the log by passing a dictionary of headers and values."
+  },
+  "log.add-1.param-name.data_dictionary": {
+    "message": "数据词典",
+    "description": "(parameter name) The data to log as a dictionary with a key for each header."
+  },
+  "log.add-1.param-doc.data_dictionary": {
+    "message": "要记录为词典的数据，每个标题都有一个键。",
+    "description": "Parameter docs"
+  },
+  "log.add-2": {
+    "message": "add",
+    "description": "(function name) Add a data row to the log using keyword arguments."
+  },
+  "log.add-2.summary": {
+    "message": "使用关键字参数将数据行添加到日志中。",
+    "description": "Add a data row to the log using keyword arguments."
+  },
+  "log.delete": {
+    "message": "delete",
+    "description": "(function name) Deletes the contents of the log, including headers."
+  },
+  "log.delete.summary": {
+    "message": "删除日志的内容，包括标题。",
+    "description": "Deletes the contents of the log, including headers."
+  },
+  "log.delete.param-name.full": {
+    "message": "full",
+    "description": "(parameter name) ``True`` selects a “full” erase and ``False`` selects the “fast” erase method."
+  },
+  "log.delete.param-doc.full": {
+    "message": "{{True}} 选择“完全”擦除， {{False}} 选择“快速”擦除方法。",
+    "description": "Parameter docs"
+  },
+  "log.set_mirroring": {
+    "message": "set mirroring",
+    "description": "(function name) Configure mirroring of the data logging activity to the serial output."
+  },
+  "log.set_mirroring.summary": {
+    "message": "配置将数据日志活动镜像到串行输出。",
+    "description": "Configure mirroring of the data logging activity to the serial output."
+  },
+  "log.set_mirroring.param-name.serial": {
+    "message": "serial",
+    "description": "(parameter name) ``True`` enables mirroring data to the serial output."
+  },
+  "log.set_mirroring.param-doc.serial": {
+    "message": "{{True}} 启用了将数据镜像到串行输出。",
+    "description": "Parameter docs"
+  },
+  "machine": {
+    "message": "机器",
+    "description": "(module name) Low-level utilities."
+  },
+  "machine.summary": {
+    "message": "低级实用程序。",
+    "description": "Low-level utilities."
+  },
+  "machine.unique_id": {
+    "message": "unique id",
+    "description": "(function name) Get a byte string with a unique identifier of a board."
+  },
+  "machine.unique_id.summary": {
+    "message": "获取具有板的唯一标识符的字节字符串。",
+    "description": "Get a byte string with a unique identifier of a board."
+  },
+  "machine.reset": {
+    "message": "reset",
+    "description": "(function name) Reset the device in a manner similar to pushing the external RESET button."
+  },
+  "machine.reset.summary": {
+    "message": "以类似于按下外部 RESET （重置）按钮的方式重置设备。",
+    "description": "Reset the device in a manner similar to pushing the external RESET button."
+  },
+  "machine.freq": {
+    "message": "freq",
+    "description": "(function name) Get the CPU frequency in hertz."
+  },
+  "machine.freq.summary": {
+    "message": "以赫兹为单位获取 CPU 频率。",
+    "description": "Get the CPU frequency in hertz."
+  },
+  "machine.disable_irq": {
+    "message": "disable irq",
+    "description": "(function name) Disable interrupt requests."
+  },
+  "machine.disable_irq.summary": {
+    "message": "禁止中断请求。",
+    "description": "Disable interrupt requests."
+  },
+  "machine.enable_irq": {
+    "message": "enable irq",
+    "description": "(function name) Re-enable interrupt requests."
+  },
+  "machine.enable_irq.summary": {
+    "message": "重新启用中断请求。",
+    "description": "Re-enable interrupt requests."
+  },
+  "machine.enable_irq.param-name.state": {
+    "message": "state",
+    "description": "(parameter name) The value that was returned from the most recent call to the ``disable_irq`` function."
+  },
+  "machine.enable_irq.param-doc.state": {
+    "message": "最近一次调用 {{disable_irq}} 函数得到的返回值。",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us": {
+    "message": "time pulse us",
+    "description": "(function name) Time a pulse on a pin."
+  },
+  "machine.time_pulse_us.summary": {
+    "message": "对引脚上的脉冲计时。",
+    "description": "Time a pulse on a pin."
+  },
+  "machine.time_pulse_us.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) The pin to use"
+  },
+  "machine.time_pulse_us.param-doc.pin": {
+    "message": "要使用的引脚",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us.param-name.pulse_level": {
+    "message": "pulse level",
+    "description": "(parameter name) 0 to time a low pulse or 1 to time a high pulse"
+  },
+  "machine.time_pulse_us.param-doc.pulse_level": {
+    "message": "0 来计时低脉冲或 1 来计时高脉冲。",
+    "description": "Parameter docs"
+  },
+  "machine.time_pulse_us.param-name.timeout_us": {
+    "message": "timeout us",
+    "description": "(parameter name) A microsecond timeout"
+  },
+  "machine.time_pulse_us.param-doc.timeout_us": {
+    "message": "微秒超时",
+    "description": "Parameter docs"
+  },
+  "machine.mem": {
+    "message": "mem",
+    "description": "(class name) The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."
+  },
+  "machine.mem.summary": {
+    "message": "{{mem8}}、 {{mem16}} 和 {{mem32}} 内存视图的类。",
+    "description": "The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."
+  },
+  "machine.mem.__getitem__": {
+    "message": "getitem",
+    "description": "(function name) Access a value from memory."
+  },
+  "machine.mem.__getitem__.summary": {
+    "message": "从内存中获取一个值。",
+    "description": "Access a value from memory."
+  },
+  "machine.mem.__getitem__.param-name.address": {
+    "message": "地址",
+    "description": "(parameter name) The memory address."
+  },
+  "machine.mem.__getitem__.param-doc.address": {
+    "message": "内存地址。",
+    "description": "Parameter docs"
+  },
+  "machine.mem.__setitem__": {
+    "message": "setitem",
+    "description": "(function name) Set a value at the given address."
+  },
+  "machine.mem.__setitem__.summary": {
+    "message": "在给定地址处设置一个值。",
+    "description": "Set a value at the given address."
+  },
+  "machine.mem.__setitem__.param-name.address": {
+    "message": "地址",
+    "description": "(parameter name) The memory address."
+  },
+  "machine.mem.__setitem__.param-doc.address": {
+    "message": "内存地址。",
+    "description": "Parameter docs"
+  },
+  "machine.mem.__setitem__.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The integer value to set."
+  },
+  "machine.mem.__setitem__.param-doc.value": {
+    "message": "要设置的整数值。",
+    "description": "Parameter docs"
+  },
+  "machine.mem8": {
+    "message": "mem8",
+    "description": "(field name) 8-bit (byte) view of memory."
+  },
+  "machine.mem8.summary": {
+    "message": "8 位(字节) 内存视图。",
+    "description": "8-bit (byte) view of memory."
+  },
+  "machine.mem16": {
+    "message": "mem16",
+    "description": "(field name) 16-bit view of memory."
+  },
+  "machine.mem16.summary": {
+    "message": "16 位内存视图。",
+    "description": "16-bit view of memory."
+  },
+  "machine.mem32": {
+    "message": "mem32",
+    "description": "(field name) 32-bit view of memory."
+  },
+  "machine.mem32.summary": {
+    "message": "32 位内存视图。",
+    "description": "32-bit view of memory."
+  },
+  "math": {
+    "message": "数学",
+    "description": "(module name) Mathematical functions."
+  },
+  "math.summary": {
+    "message": "数学函数。",
+    "description": "Mathematical functions."
+  },
+  "math.acos": {
+    "message": "acos",
+    "description": "(function name) Calculate the inverse cosine."
+  },
+  "math.acos.summary": {
+    "message": "计算反余弦。",
+    "description": "Calculate the inverse cosine."
+  },
+  "math.acos.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.acos.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.asin": {
+    "message": "asin",
+    "description": "(function name) Calculate the inverse sine."
+  },
+  "math.asin.summary": {
+    "message": "计算反正弦值。",
+    "description": "Calculate the inverse sine."
+  },
+  "math.asin.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.asin.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.atan": {
+    "message": "atan",
+    "description": "(function name) Calculate the inverse tangent."
+  },
+  "math.atan.summary": {
+    "message": "计算反正切。",
+    "description": "Calculate the inverse tangent."
+  },
+  "math.atan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.atan.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.atan2": {
+    "message": "atan2",
+    "description": "(function name) Calculate the principal value of the inverse tangent of ``y/x``."
+  },
+  "math.atan2.summary": {
+    "message": "计算 {{y/x}} 的反正切的主值。",
+    "description": "Calculate the principal value of the inverse tangent of ``y/x``."
+  },
+  "math.atan2.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.atan2.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.atan2.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) A number"
+  },
+  "math.atan2.param-doc.y": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.ceil": {
+    "message": "ceil",
+    "description": "(function name) Round a number towards positive infinity."
+  },
+  "math.ceil.summary": {
+    "message": "\n将数字向正无穷大取整(向上取整)",
+    "description": "Round a number towards positive infinity."
+  },
+  "math.ceil.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.ceil.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.copysign": {
+    "message": "copysign",
+    "description": "(function name) Calculate ``x`` with the sign of ``y``."
+  },
+  "math.copysign.summary": {
+    "message": "获取 {{y}} 的符号和 {{x}} 的绝对值。",
+    "description": "Calculate ``x`` with the sign of ``y``."
+  },
+  "math.copysign.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.copysign.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.copysign.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The source of the sign for the return value"
+  },
+  "math.copysign.param-doc.y": {
+    "message": "返回值的符号来源",
+    "description": "Parameter docs"
+  },
+  "math.cos": {
+    "message": "cos",
+    "description": "(function name) Calculate the cosine of ``x``."
+  },
+  "math.cos.summary": {
+    "message": "计算 {{x}} 的余弦。",
+    "description": "Calculate the cosine of ``x``."
+  },
+  "math.cos.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.cos.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.degrees": {
+    "message": "degrees",
+    "description": "(function name) Convert radians to degrees."
+  },
+  "math.degrees.summary": {
+    "message": "将弧度转换为度。",
+    "description": "Convert radians to degrees."
+  },
+  "math.degrees.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A value in radians"
+  },
+  "math.degrees.param-doc.x": {
+    "message": "一个以弧度为单位的值",
+    "description": "Parameter docs"
+  },
+  "math.exp": {
+    "message": "exp",
+    "description": "(function name) Calculate the exponential of ``x``."
+  },
+  "math.exp.summary": {
+    "message": "计算 E 的 {{x}} 指数。",
+    "description": "Calculate the exponential of ``x``."
+  },
+  "math.exp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.exp.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.fabs": {
+    "message": "fabs",
+    "description": "(function name) Return the absolute value of ``x``."
+  },
+  "math.fabs.summary": {
+    "message": "返回 {{x}} 的绝对值。",
+    "description": "Return the absolute value of ``x``."
+  },
+  "math.fabs.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.fabs.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.floor": {
+    "message": "向下取整",
+    "description": "(function name) Round a number towards negative infinity."
+  },
+  "math.floor.summary": {
+    "message": "将数字向负无穷大取整(向下取整)。",
+    "description": "Round a number towards negative infinity."
+  },
+  "math.floor.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.floor.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.fmod": {
+    "message": "浮点余数",
+    "description": "(function name) Calculate the remainder of ``x/y``."
+  },
+  "math.fmod.summary": {
+    "message": "计算 {{x/y}} 的余数。",
+    "description": "Calculate the remainder of ``x/y``."
+  },
+  "math.fmod.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The numerator"
+  },
+  "math.fmod.param-doc.x": {
+    "message": "分子",
+    "description": "Parameter docs"
+  },
+  "math.fmod.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The denominator"
+  },
+  "math.fmod.param-doc.y": {
+    "message": "分母",
+    "description": "Parameter docs"
+  },
+  "math.frexp": {
+    "message": "浮点指数",
+    "description": "(function name) Decomposes a floating-point number into its mantissa and exponent."
+  },
+  "math.frexp.summary": {
+    "message": "将一个浮点数分解为其尾数和指数。",
+    "description": "Decomposes a floating-point number into its mantissa and exponent."
+  },
+  "math.frexp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A floating-point number"
+  },
+  "math.frexp.param-doc.x": {
+    "message": "一个浮点数",
+    "description": "Parameter docs"
+  },
+  "math.isfinite": {
+    "message": "是有限的",
+    "description": "(function name) Check if a value is finite."
+  },
+  "math.isfinite.summary": {
+    "message": "检查值是否有限。",
+    "description": "Check if a value is finite."
+  },
+  "math.isfinite.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number."
+  },
+  "math.isfinite.param-doc.x": {
+    "message": "一个数字。",
+    "description": "Parameter docs"
+  },
+  "math.isinf": {
+    "message": "是无限的",
+    "description": "(function name) Check if a value is infinite."
+  },
+  "math.isinf.summary": {
+    "message": "检查值是否无限。",
+    "description": "Check if a value is infinite."
+  },
+  "math.isinf.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number."
+  },
+  "math.isinf.param-doc.x": {
+    "message": "一个数字。",
+    "description": "Parameter docs"
+  },
+  "math.isnan": {
+    "message": "不是数字",
+    "description": "(function name) Check is a value is not-a-number (NaN)."
+  },
+  "math.isnan.summary": {
+    "message": "检查一个值是否不是一个数字 (NaN)。",
+    "description": "Check is a value is not-a-number (NaN)."
+  },
+  "math.isnan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.isnan.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.ldexp": {
+    "message": "加载指数",
+    "description": "(function name) Calculate ``x * (2**exp)``."
+  },
+  "math.ldexp.summary": {
+    "message": "计算 {{x * (2**exp)}} 。",
+    "description": "Calculate ``x * (2**exp)``."
+  },
+  "math.ldexp.param-name.exp": {
+    "message": "exp",
+    "description": "(parameter name) Integer exponent"
+  },
+  "math.ldexp.param-doc.exp": {
+    "message": "整数指数",
+    "description": "Parameter docs"
+  },
+  "math.ldexp.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.ldexp.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.log": {
+    "message": "日志",
+    "description": "(function name) Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
+  },
+  "math.log.summary": {
+    "message": "计算给定底数 {{x}} 的对数（默认为自然对数）。",
+    "description": "Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
+  },
+  "math.log.param-name.base": {
+    "message": "base",
+    "description": "(parameter name) The base to use"
+  },
+  "math.log.param-doc.base": {
+    "message": "要使用的底数",
+    "description": "Parameter docs"
+  },
+  "math.log.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.log.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.modf": {
+    "message": "浮点取模",
+    "description": "(function name) Calculate the fractional and integral parts of ``x``."
+  },
+  "math.modf.summary": {
+    "message": "计算 {{x}} 的小数和整数部分。",
+    "description": "Calculate the fractional and integral parts of ``x``."
+  },
+  "math.modf.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.modf.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.pow": {
+    "message": "幂数",
+    "description": "(function name) Returns ``x`` to the power of ``y``."
+  },
+  "math.pow.summary": {
+    "message": "返回 {{x}} 的 {{y}}次幂。",
+    "description": "Returns ``x`` to the power of ``y``."
+  },
+  "math.pow.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.pow.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.pow.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The exponent"
+  },
+  "math.pow.param-doc.y": {
+    "message": "指数值",
+    "description": "Parameter docs"
+  },
+  "math.radians": {
+    "message": "radians",
+    "description": "(function name) Convert a degrees to radians."
+  },
+  "math.radians.summary": {
+    "message": "将度数转换为弧度。",
+    "description": "Convert a degrees to radians."
+  },
+  "math.radians.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A value in degrees"
+  },
+  "math.radians.param-doc.x": {
+    "message": "以度为单位的值",
+    "description": "Parameter docs"
+  },
+  "math.sin": {
+    "message": "正弦",
+    "description": "(function name) Calculate the sine of ``x``."
+  },
+  "math.sin.summary": {
+    "message": "\n计算 {{x}} 的正弦值。",
+    "description": "Calculate the sine of ``x``."
+  },
+  "math.sin.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.sin.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.sqrt": {
+    "message": "平方根",
+    "description": "(function name) Calculate the square root of ``x``."
+  },
+  "math.sqrt.summary": {
+    "message": "计算 {{x}} 的平方根。",
+    "description": "Calculate the square root of ``x``."
+  },
+  "math.sqrt.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.sqrt.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.tan": {
+    "message": "正切",
+    "description": "(function name) Calculate the tangent of ``x``."
+  },
+  "math.tan.summary": {
+    "message": "计算 {{x}} 的正切。",
+    "description": "Calculate the tangent of ``x``."
+  },
+  "math.tan.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.tan.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.trunc": {
+    "message": "截断",
+    "description": "(function name) Round a number towards 0."
+  },
+  "math.trunc.summary": {
+    "message": "将数字向 0 舍入。",
+    "description": "Round a number towards 0."
+  },
+  "math.trunc.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) A number"
+  },
+  "math.trunc.param-doc.x": {
+    "message": "一个数字",
+    "description": "Parameter docs"
+  },
+  "math.e": {
+    "message": "e",
+    "description": "(field name) Base of the natural logarithm"
+  },
+  "math.e.summary": {
+    "message": "自然对数的底数",
+    "description": "Base of the natural logarithm"
+  },
+  "math.pi": {
+    "message": "pi",
+    "description": "(field name) The ratio of a circle's circumference to its diameter"
+  },
+  "math.pi.summary": {
+    "message": "圆的周长与其直径的比值",
+    "description": "The ratio of a circle's circumference to its diameter"
+  },
+  "microbit": {
+    "message": "Microbit",
+    "description": "(module name) Pins, images, sounds, temperature and volume."
+  },
+  "microbit.summary": {
+    "message": "引脚、图像、声音、温度和音量。",
+    "description": "Pins, images, sounds, temperature and volume."
+  },
+  "microbit.run_every": {
+    "message": "周期性运行",
+    "description": "(function name) Schedule to run a function at the interval specified by the time arguments **V2 only**."
+  },
+  "microbit.run_every.summary": {
+    "message": "计划以时间参数指定的时间间隔运行函数**仅限V2** 。",
+    "description": "Schedule to run a function at the interval specified by the time arguments **V2 only**."
+  },
+  "microbit.run_every.param-name.callback": {
+    "message": "callback",
+    "description": "(parameter name) Function to call at the provided interval. Omit when using as a decorator."
+  },
+  "microbit.run_every.param-doc.callback": {
+    "message": "在提供的时间间隔内调用的函数。用作装饰器时省略。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.days": {
+    "message": "天",
+    "description": "(parameter name) Sets the day mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.days": {
+    "message": "设置定时计划的日期标记。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) Sets the hour mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.h": {
+    "message": "设置定时计划的小时标记。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.min": {
+    "message": "分钟",
+    "description": "(parameter name) Sets the minute mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.min": {
+    "message": "设置定时计划的分钟标记。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.ms": {
+    "message": "毫秒",
+    "description": "(parameter name) Sets the millisecond mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.ms": {
+    "message": "设置定时计划的毫秒标记。",
+    "description": "Parameter docs"
+  },
+  "microbit.run_every.param-name.s": {
+    "message": "秒",
+    "description": "(parameter name) Sets the second mark for the scheduling."
+  },
+  "microbit.run_every.param-doc.s": {
+    "message": "设置定时计划的秒标记。",
+    "description": "Parameter docs"
+  },
+  "microbit.panic": {
+    "message": "恐慌",
+    "description": "(function name) Enter a panic mode."
+  },
+  "microbit.panic.summary": {
+    "message": "进入 panic （恐慌）模式。",
+    "description": "Enter a panic mode."
+  },
+  "microbit.panic.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) An arbitrary integer <= 255 to indicate a status."
+  },
+  "microbit.panic.param-doc.n": {
+    "message": "一个 <= 255 的任意整数，以表示一个状态。",
+    "description": "Parameter docs"
+  },
+  "microbit.reset": {
+    "message": "reset",
+    "description": "(function name) Restart the board."
+  },
+  "microbit.reset.summary": {
+    "message": "重启主板。",
+    "description": "Restart the board."
+  },
+  "microbit.scale-1": {
+    "message": "范围",
+    "description": "(function name) Converts a value from a range to an integer range."
+  },
+  "microbit.scale-1.summary": {
+    "message": "将一个数值从一个范围转换为整数范围。",
+    "description": "Converts a value from a range to an integer range."
+  },
+  "microbit.scale-1.param-name.from_": {
+    "message": "从",
+    "description": "(parameter name) A tuple to define the range to convert from."
+  },
+  "microbit.scale-1.param-doc.from_": {
+    "message": "一个元组，用于定义要转换的范围。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-1.param-name.to": {
+    "message": "至",
+    "description": "(parameter name) A tuple to define the range to convert to."
+  },
+  "microbit.scale-1.param-doc.to": {
+    "message": "一个元组，用于定义要转换到的范围。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-1.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) A number to convert."
+  },
+  "microbit.scale-1.param-doc.value": {
+    "message": "要转换的数字。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-2": {
+    "message": "范围",
+    "description": "(function name) Converts a value from a range to a floating point range."
+  },
+  "microbit.scale-2.summary": {
+    "message": "将一个数值从一个范围转换为浮点数范围。",
+    "description": "Converts a value from a range to a floating point range."
+  },
+  "microbit.scale-2.param-name.from_": {
+    "message": "从",
+    "description": "(parameter name) A tuple to define the range to convert from."
+  },
+  "microbit.scale-2.param-doc.from_": {
+    "message": "一个元组，用于定义要转换的范围。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-2.param-name.to": {
+    "message": "至",
+    "description": "(parameter name) A tuple to define the range to convert to."
+  },
+  "microbit.scale-2.param-doc.to": {
+    "message": "一个元组，用于定义要转换到的范围。",
+    "description": "Parameter docs"
+  },
+  "microbit.scale-2.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) A number to convert."
+  },
+  "microbit.scale-2.param-doc.value": {
+    "message": "要转换的数字。",
+    "description": "Parameter docs"
+  },
+  "microbit.sleep": {
+    "message": "休眠",
+    "description": "(function name) Wait for ``n`` milliseconds."
+  },
+  "microbit.sleep.summary": {
+    "message": "等待 {{n}} 毫秒。",
+    "description": "Wait for ``n`` milliseconds."
+  },
+  "microbit.sleep.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of milliseconds to wait"
+  },
+  "microbit.sleep.param-doc.n": {
+    "message": "要等待的毫秒数",
+    "description": "Parameter docs"
+  },
+  "microbit.running_time": {
+    "message": "running time",
+    "description": "(function name) Get the running time of the board."
+  },
+  "microbit.running_time.summary": {
+    "message": "获取主板的运行时间。",
+    "description": "Get the running time of the board."
+  },
+  "microbit.temperature": {
+    "message": "temperature",
+    "description": "(function name) Get the temperature of the micro:bit in degrees Celcius."
+  },
+  "microbit.temperature.summary": {
+    "message": "以摄氏度为单位获取 micro:bit 的温度。",
+    "description": "Get the temperature of the micro:bit in degrees Celcius."
+  },
+  "microbit.set_volume": {
+    "message": "set volume",
+    "description": "(function name) Sets the volume."
+  },
+  "microbit.set_volume.summary": {
+    "message": "设置音量。",
+    "description": "Sets the volume."
+  },
+  "microbit.set_volume.param-name.v": {
+    "message": "v",
+    "description": "(parameter name) a value between 0 (low) and 255 (high)."
+  },
+  "microbit.set_volume.param-doc.v": {
+    "message": "一个介于 0 (低) 和 255 (高) 之间的值。",
+    "description": "Parameter docs"
+  },
+  "microbit.Button": {
+    "message": "button",
+    "description": "(class name) The class for the buttons ``button_a`` and ``button_b``."
+  },
+  "microbit.Button.summary": {
+    "message": "按钮 {{button_a}} 和 {{button_b}} 的类。",
+    "description": "The class for the buttons ``button_a`` and ``button_b``."
+  },
+  "microbit.Button.is_pressed": {
+    "message": "is pressed",
+    "description": "(function name) Check if the button is pressed."
+  },
+  "microbit.Button.is_pressed.summary": {
+    "message": "检查按钮是否被按下。",
+    "description": "Check if the button is pressed."
+  },
+  "microbit.Button.was_pressed": {
+    "message": "was pressed",
+    "description": "(function name) Check if the button was pressed since the device started or the last time this method was called."
+  },
+  "microbit.Button.was_pressed.summary": {
+    "message": "检查按钮自设备启动以来或者上次调用此方法之后是否被按下。",
+    "description": "Check if the button was pressed since the device started or the last time this method was called."
+  },
+  "microbit.Button.get_presses": {
+    "message": "get presses",
+    "description": "(function name) Get the running total of button presses, and resets this total\nto zero before returning."
+  },
+  "microbit.Button.get_presses.summary": {
+    "message": "获得按钮被按下的总计次数，并在返回之前将该总计次数重置为 0。",
+    "description": "Get the running total of button presses, and resets this total\nto zero before returning."
+  },
+  "microbit.button_a": {
+    "message": "按钮 a",
+    "description": "(field name) The left button ``Button`` object."
+  },
+  "microbit.button_a.summary": {
+    "message": "左键 {{Button}} 对象。",
+    "description": "The left button ``Button`` object."
+  },
+  "microbit.button_b": {
+    "message": "按钮 b",
+    "description": "(field name) The right button ``Button`` object."
+  },
+  "microbit.button_b.summary": {
+    "message": "右键 {{Button}} 对象。",
+    "description": "The right button ``Button`` object."
+  },
+  "microbit.MicroBitDigitalPin": {
+    "message": "Microbit 数字引脚",
+    "description": "(class name) A digital pin."
+  },
+  "microbit.MicroBitDigitalPin.summary": {
+    "message": "数字引脚。",
+    "description": "A digital pin."
+  },
+  "microbit.MicroBitDigitalPin.read_digital": {
+    "message": "read digital",
+    "description": "(function name) Get the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.read_digital.summary": {
+    "message": "获取引脚的数字值。",
+    "description": "Get the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital": {
+    "message": "write digital",
+    "description": "(function name) Set the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital.summary": {
+    "message": "设置引脚的数字值。",
+    "description": "Set the digital value of the pin."
+  },
+  "microbit.MicroBitDigitalPin.write_digital.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) 1 to set the pin high or 0 to set the pin low"
+  },
+  "microbit.MicroBitDigitalPin.write_digital.param-doc.value": {
+    "message": "1 将引脚设置为高电平，或 0 将引脚设置为低电平",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_pull": {
+    "message": "set pull",
+    "description": "(function name) Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.summary": {
+    "message": "将拉取状态设置为以下三个可能的值之一：{{PULL_UP}}、{{PULL_DOWN}} 或 N{{NO_PULL}}。",
+    "description": "Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The pull state from the relevant pin, e.g. ``pin0.PULL_UP``."
+  },
+  "microbit.MicroBitDigitalPin.set_pull.param-doc.value": {
+    "message": "相关引脚的拉取状态，例如： {{pin0.PULL_UP}}。",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.get_pull": {
+    "message": "get pull",
+    "description": "(function name) Get the pull state on a pin."
+  },
+  "microbit.MicroBitDigitalPin.get_pull.summary": {
+    "message": "获取引脚上的拉取状态。",
+    "description": "Get the pull state on a pin."
+  },
+  "microbit.MicroBitDigitalPin.get_mode": {
+    "message": "get mode",
+    "description": "(function name) Returns the pin mode."
+  },
+  "microbit.MicroBitDigitalPin.get_mode.summary": {
+    "message": "返回引脚模式。",
+    "description": "Returns the pin mode."
+  },
+  "microbit.MicroBitDigitalPin.write_analog": {
+    "message": "write analog",
+    "description": "(function name) Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.summary": {
+    "message": "在引脚上输出 PWM 信号，占空比为 {{value}}。",
+    "description": "Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty)."
+  },
+  "microbit.MicroBitDigitalPin.write_analog.param-doc.value": {
+    "message": "介于 0（0% 占空比）和 1023（100% 占空比）之间的整数或浮点数。",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period": {
+    "message": "set analog period",
+    "description": "(function name) Set the period of the PWM signal being output to ``period`` in milliseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.summary": {
+    "message": "将输出的 PWM 信号的周期设置为 {{period}}（单位：毫秒）。",
+    "description": "Set the period of the PWM signal being output to ``period`` in milliseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.param-name.period": {
+    "message": "period",
+    "description": "(parameter name) The period in milliseconds with a minimum valid value of 1ms."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period.param-doc.period": {
+    "message": "以毫秒为单位的周期，最小有效值为 1 毫秒。",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds": {
+    "message": "set analog period microseconds",
+    "description": "(function name) Set the period of the PWM signal being output to ``period`` in microseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.summary": {
+    "message": "将输出的 PWM 信号的周期设置为 {{period}}（单位：微秒）。",
+    "description": "Set the period of the PWM signal being output to ``period`` in microseconds."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-name.period": {
+    "message": "period",
+    "description": "(parameter name) The period in microseconds with a minimum valid value of 256µs."
+  },
+  "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-doc.period": {
+    "message": "以微秒为单位的周期，最小有效值为 256 毫秒。",
+    "description": "Parameter docs"
+  },
+  "microbit.MicroBitAnalogDigitalPin": {
+    "message": "microbitanalogdigitalpin",
+    "description": "(class name) A pin with analog and digital features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.summary": {
+    "message": "带有模拟和数字功能的引脚。",
+    "description": "A pin with analog and digital features."
+  },
+  "microbit.MicroBitAnalogDigitalPin.read_analog": {
+    "message": "read analog",
+    "description": "(function name) Read the voltage applied to the pin."
+  },
+  "microbit.MicroBitAnalogDigitalPin.read_analog.summary": {
+    "message": "读取应用于引脚的电压。",
+    "description": "Read the voltage applied to the pin."
+  },
+  "microbit.MicroBitTouchPin": {
+    "message": "microbittouchpin",
+    "description": "(class name) A pin with analog, digital and touch features."
+  },
+  "microbit.MicroBitTouchPin.summary": {
+    "message": "带有模拟、数字和触摸功能的引脚。",
+    "description": "A pin with analog, digital and touch features."
+  },
+  "microbit.MicroBitTouchPin.is_touched": {
+    "message": "is touched",
+    "description": "(function name) Check if the pin is being touched."
+  },
+  "microbit.MicroBitTouchPin.is_touched.summary": {
+    "message": "检查引脚是否被触摸。",
+    "description": "Check if the pin is being touched."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode": {
+    "message": "set touch mode",
+    "description": "(function name) Set the touch mode for the pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.summary": {
+    "message": "设置引脚的触摸模式。",
+    "description": "Set the touch mode for the pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin."
+  },
+  "microbit.MicroBitTouchPin.set_touch_mode.param-doc.value": {
+    "message": " 来自相关引脚的 {{CAPACITIVE}} 或 {{RESISTIVE}}。",
+    "description": "Parameter docs"
+  },
+  "microbit.pin0": {
+    "message": "引脚0",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.pin0.summary": {
+    "message": "具有数字、模拟和触摸功能的引脚。",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.pin1": {
+    "message": "引脚1",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.pin1.summary": {
+    "message": "具有数字、模拟和触摸功能的引脚。",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.pin2": {
+    "message": "引脚2",
+    "description": "(field name) Pin with digital, analog and touch features."
+  },
+  "microbit.pin2.summary": {
+    "message": "具有数字、模拟和触摸功能的引脚。",
+    "description": "Pin with digital, analog and touch features."
+  },
+  "microbit.pin3": {
+    "message": "引脚3",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.pin3.summary": {
+    "message": "具有数字和模拟功能的引脚。",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.pin4": {
+    "message": "引脚4",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.pin4.summary": {
+    "message": "具有数字和模拟功能的引脚。",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.pin5": {
+    "message": "引脚5",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin5.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin6": {
+    "message": "引脚6",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin6.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin7": {
+    "message": "引脚7",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin7.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin8": {
+    "message": "引脚8",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin8.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin9": {
+    "message": "引脚9",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin9.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin10": {
+    "message": "引脚10",
+    "description": "(field name) Pin with digital and analog features."
+  },
+  "microbit.pin10.summary": {
+    "message": "具有数字和模拟功能的引脚。",
+    "description": "Pin with digital and analog features."
+  },
+  "microbit.pin11": {
+    "message": "引脚11",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin11.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin12": {
+    "message": "引脚12",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin12.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin13": {
+    "message": "引脚13",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin13.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin14": {
+    "message": "引脚14",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin14.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin15": {
+    "message": "引脚15",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin15.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin16": {
+    "message": "引脚16",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin16.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin19": {
+    "message": "引脚19",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin19.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin20": {
+    "message": "引脚20",
+    "description": "(field name) Pin with digital features."
+  },
+  "microbit.pin20.summary": {
+    "message": "具有数字功能的引脚。",
+    "description": "Pin with digital features."
+  },
+  "microbit.pin_logo": {
+    "message": "引脚标志\n",
+    "description": "(field name) A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
+  },
+  "microbit.pin_logo.summary": {
+    "message": "micro:bit 正面的触摸感应标志引脚，默认设置为电容式触摸模式。",
+    "description": "A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
+  },
+  "microbit.pin_speaker": {
+    "message": "扬声器引脚",
+    "description": "(field name) A pin to address the micro:bit speaker."
+  },
+  "microbit.pin_speaker.summary": {
+    "message": "用于对 micro:bit 扬声器寻址的引脚。",
+    "description": "A pin to address the micro:bit speaker."
+  },
+  "microbit.Image": {
+    "message": "图像",
+    "description": "(class name) An image to show on the micro:bit LED display."
+  },
+  "microbit.Image.summary": {
+    "message": "在 micro:bit LED 显示屏上显示的图像。",
+    "description": "An image to show on the micro:bit LED display."
+  },
+  "microbit.Image.HEART": {
+    "message": "心形",
+    "description": "(field name) Heart image."
+  },
+  "microbit.Image.HEART.summary": {
+    "message": "心形图像",
+    "description": "Heart image."
+  },
+  "microbit.Image.HEART_SMALL": {
+    "message": "小的心形",
+    "description": "(field name) Small heart image."
+  },
+  "microbit.Image.HEART_SMALL.summary": {
+    "message": "小的心形图像。",
+    "description": "Small heart image."
+  },
+  "microbit.Image.HAPPY": {
+    "message": "快乐",
+    "description": "(field name) Happy face image."
+  },
+  "microbit.Image.HAPPY.summary": {
+    "message": "快乐的脸部图像。",
+    "description": "Happy face image."
+  },
+  "microbit.Image.SMILE": {
+    "message": "微笑",
+    "description": "(field name) Smiling face image."
+  },
+  "microbit.Image.SMILE.summary": {
+    "message": "微笑的脸部图像。",
+    "description": "Smiling face image."
+  },
+  "microbit.Image.SAD": {
+    "message": "难过",
+    "description": "(field name) Sad face image."
+  },
+  "microbit.Image.SAD.summary": {
+    "message": "难过的脸部图像。",
+    "description": "Sad face image."
+  },
+  "microbit.Image.CONFUSED": {
+    "message": "困惑",
+    "description": "(field name) Confused face image."
+  },
+  "microbit.Image.CONFUSED.summary": {
+    "message": "困惑的面部图像。",
+    "description": "Confused face image."
+  },
+  "microbit.Image.ANGRY": {
+    "message": "愤怒",
+    "description": "(field name) Angry face image."
+  },
+  "microbit.Image.ANGRY.summary": {
+    "message": "愤怒的脸部图像。",
+    "description": "Angry face image."
+  },
+  "microbit.Image.ASLEEP": {
+    "message": "睡着",
+    "description": "(field name) Sleeping face image."
+  },
+  "microbit.Image.ASLEEP.summary": {
+    "message": "睡着的脸部图像。",
+    "description": "Sleeping face image."
+  },
+  "microbit.Image.SURPRISED": {
+    "message": "惊讶",
+    "description": "(field name) Surprised face image."
+  },
+  "microbit.Image.SURPRISED.summary": {
+    "message": "惊讶的脸部图像。",
+    "description": "Surprised face image."
+  },
+  "microbit.Image.SILLY": {
+    "message": "傻的",
+    "description": "(field name) Silly face image."
+  },
+  "microbit.Image.SILLY.summary": {
+    "message": "傻傻的脸部图像。",
+    "description": "Silly face image."
+  },
+  "microbit.Image.FABULOUS": {
+    "message": "极好的",
+    "description": "(field name) Sunglasses face image."
+  },
+  "microbit.Image.FABULOUS.summary": {
+    "message": "戴墨镜的脸部图像。",
+    "description": "Sunglasses face image."
+  },
+  "microbit.Image.MEH": {
+    "message": "不感兴趣的",
+    "description": "(field name) Unimpressed face image."
+  },
+  "microbit.Image.MEH.summary": {
+    "message": "印象平平的脸部图像",
+    "description": "Unimpressed face image."
+  },
+  "microbit.Image.YES": {
+    "message": "是的",
+    "description": "(field name) Tick image."
+  },
+  "microbit.Image.YES.summary": {
+    "message": "对勾图像。",
+    "description": "Tick image."
+  },
+  "microbit.Image.NO": {
+    "message": "不是",
+    "description": "(field name) Cross image."
+  },
+  "microbit.Image.NO.summary": {
+    "message": "打叉图像。",
+    "description": "Cross image."
+  },
+  "microbit.Image.CLOCK12": {
+    "message": "时钟12点",
+    "description": "(field name) Image with line pointing to 12 o'clock."
+  },
+  "microbit.Image.CLOCK12.summary": {
+    "message": "指针指向 12 点钟位置的图像。",
+    "description": "Image with line pointing to 12 o'clock."
+  },
+  "microbit.Image.CLOCK11": {
+    "message": "时钟11点",
+    "description": "(field name) Image with line pointing to 11 o'clock."
+  },
+  "microbit.Image.CLOCK11.summary": {
+    "message": "指针指向 11 点钟位置的图像。",
+    "description": "Image with line pointing to 11 o'clock."
+  },
+  "microbit.Image.CLOCK10": {
+    "message": "时钟10点",
+    "description": "(field name) Image with line pointing to 10 o'clock."
+  },
+  "microbit.Image.CLOCK10.summary": {
+    "message": "指针指向 10 点钟位置的图像。",
+    "description": "Image with line pointing to 10 o'clock."
+  },
+  "microbit.Image.CLOCK9": {
+    "message": "时钟9点",
+    "description": "(field name) Image with line pointing to 9 o'clock."
+  },
+  "microbit.Image.CLOCK9.summary": {
+    "message": "指针指向 9 点钟位置的图像。",
+    "description": "Image with line pointing to 9 o'clock."
+  },
+  "microbit.Image.CLOCK8": {
+    "message": "时钟8点",
+    "description": "(field name) Image with line pointing to 8 o'clock."
+  },
+  "microbit.Image.CLOCK8.summary": {
+    "message": "指针指向 8 点钟位置的图像。",
+    "description": "Image with line pointing to 8 o'clock."
+  },
+  "microbit.Image.CLOCK7": {
+    "message": "时钟7点",
+    "description": "(field name) Image with line pointing to 7 o'clock."
+  },
+  "microbit.Image.CLOCK7.summary": {
+    "message": "指针指向 7 点钟位置的图像。",
+    "description": "Image with line pointing to 7 o'clock."
+  },
+  "microbit.Image.CLOCK6": {
+    "message": "时钟6点",
+    "description": "(field name) Image with line pointing to 6 o'clock."
+  },
+  "microbit.Image.CLOCK6.summary": {
+    "message": "指针指向 6 点钟位置的图像。",
+    "description": "Image with line pointing to 6 o'clock."
+  },
+  "microbit.Image.CLOCK5": {
+    "message": "时钟5点",
+    "description": "(field name) Image with line pointing to 5 o'clock."
+  },
+  "microbit.Image.CLOCK5.summary": {
+    "message": "指针指向 5 点钟位置的图像。",
+    "description": "Image with line pointing to 5 o'clock."
+  },
+  "microbit.Image.CLOCK4": {
+    "message": "时钟4点",
+    "description": "(field name) Image with line pointing to 4 o'clock."
+  },
+  "microbit.Image.CLOCK4.summary": {
+    "message": "指针指向 4 点钟位置的图像。",
+    "description": "Image with line pointing to 4 o'clock."
+  },
+  "microbit.Image.CLOCK3": {
+    "message": "时钟3点",
+    "description": "(field name) Image with line pointing to 3 o'clock."
+  },
+  "microbit.Image.CLOCK3.summary": {
+    "message": "指针指向 3 点钟位置的图像。",
+    "description": "Image with line pointing to 3 o'clock."
+  },
+  "microbit.Image.CLOCK2": {
+    "message": "时钟2点",
+    "description": "(field name) Image with line pointing to 2 o'clock."
+  },
+  "microbit.Image.CLOCK2.summary": {
+    "message": "指针指向 2 点钟位置的图像。",
+    "description": "Image with line pointing to 2 o'clock."
+  },
+  "microbit.Image.CLOCK1": {
+    "message": "时钟1点",
+    "description": "(field name) Image with line pointing to 1 o'clock."
+  },
+  "microbit.Image.CLOCK1.summary": {
+    "message": "指针指向 1 点钟位置的图像。",
+    "description": "Image with line pointing to 1 o'clock."
+  },
+  "microbit.Image.ARROW_N": {
+    "message": "箭头（指向北）",
+    "description": "(field name) Image of arrow pointing north."
+  },
+  "microbit.Image.ARROW_N.summary": {
+    "message": "指向北方的箭头的图像。",
+    "description": "Image of arrow pointing north."
+  },
+  "microbit.Image.ARROW_NE": {
+    "message": "箭头（指向东北）",
+    "description": "(field name) Image of arrow pointing north east."
+  },
+  "microbit.Image.ARROW_NE.summary": {
+    "message": "指向东北方的箭头的图像。",
+    "description": "Image of arrow pointing north east."
+  },
+  "microbit.Image.ARROW_E": {
+    "message": "箭头（指向东）",
+    "description": "(field name) Image of arrow pointing east."
+  },
+  "microbit.Image.ARROW_E.summary": {
+    "message": "指向东方的箭头的图像。",
+    "description": "Image of arrow pointing east."
+  },
+  "microbit.Image.ARROW_SE": {
+    "message": "箭头（指向东南）",
+    "description": "(field name) Image of arrow pointing south east."
+  },
+  "microbit.Image.ARROW_SE.summary": {
+    "message": "指向东南方的箭头的图像。",
+    "description": "Image of arrow pointing south east."
+  },
+  "microbit.Image.ARROW_S": {
+    "message": "箭头（指向南）",
+    "description": "(field name) Image of arrow pointing south."
+  },
+  "microbit.Image.ARROW_S.summary": {
+    "message": "指向南方的箭头图像。",
+    "description": "Image of arrow pointing south."
+  },
+  "microbit.Image.ARROW_SW": {
+    "message": "箭头（指向西南）",
+    "description": "(field name) Image of arrow pointing south west."
+  },
+  "microbit.Image.ARROW_SW.summary": {
+    "message": "指向西南方的箭头的图像。",
+    "description": "Image of arrow pointing south west."
+  },
+  "microbit.Image.ARROW_W": {
+    "message": "箭头（指向西）",
+    "description": "(field name) Image of arrow pointing west."
+  },
+  "microbit.Image.ARROW_W.summary": {
+    "message": "指向西方的箭头的图像。",
+    "description": "Image of arrow pointing west."
+  },
+  "microbit.Image.ARROW_NW": {
+    "message": "箭头（指向西北）",
+    "description": "(field name) Image of arrow pointing north west."
+  },
+  "microbit.Image.ARROW_NW.summary": {
+    "message": "指向西北方的箭头的图像。",
+    "description": "Image of arrow pointing north west."
+  },
+  "microbit.Image.TRIANGLE": {
+    "message": "三角",
+    "description": "(field name) Image of a triangle pointing up."
+  },
+  "microbit.Image.TRIANGLE.summary": {
+    "message": "向上的三角形图像。",
+    "description": "Image of a triangle pointing up."
+  },
+  "microbit.Image.TRIANGLE_LEFT": {
+    "message": "\n左三角",
+    "description": "(field name) Image of a triangle in the left corner."
+  },
+  "microbit.Image.TRIANGLE_LEFT.summary": {
+    "message": "左角的三角形图像。",
+    "description": "Image of a triangle in the left corner."
+  },
+  "microbit.Image.CHESSBOARD": {
+    "message": "国际象棋棋盘",
+    "description": "(field name) Alternate LEDs lit in a chessboard pattern."
+  },
+  "microbit.Image.CHESSBOARD.summary": {
+    "message": "按棋盘式交替点亮 LED。",
+    "description": "Alternate LEDs lit in a chessboard pattern."
+  },
+  "microbit.Image.DIAMOND": {
+    "message": "菱形",
+    "description": "(field name) Diamond image."
+  },
+  "microbit.Image.DIAMOND.summary": {
+    "message": "钻石图像。",
+    "description": "Diamond image."
+  },
+  "microbit.Image.DIAMOND_SMALL": {
+    "message": "小的菱形",
+    "description": "(field name) Small diamond image."
+  },
+  "microbit.Image.DIAMOND_SMALL.summary": {
+    "message": "小钻石图像。",
+    "description": "Small diamond image."
+  },
+  "microbit.Image.SQUARE": {
+    "message": "正方形",
+    "description": "(field name) Square image."
+  },
+  "microbit.Image.SQUARE.summary": {
+    "message": "方形图像。",
+    "description": "Square image."
+  },
+  "microbit.Image.SQUARE_SMALL": {
+    "message": "小方形",
+    "description": "(field name) Small square image."
+  },
+  "microbit.Image.SQUARE_SMALL.summary": {
+    "message": "小的方形图像。",
+    "description": "Small square image."
+  },
+  "microbit.Image.RABBIT": {
+    "message": "兔子",
+    "description": "(field name) Rabbit image."
+  },
+  "microbit.Image.RABBIT.summary": {
+    "message": "兔子图像。",
+    "description": "Rabbit image."
+  },
+  "microbit.Image.COW": {
+    "message": "牛",
+    "description": "(field name) Cow image."
+  },
+  "microbit.Image.COW.summary": {
+    "message": "奶牛图像。",
+    "description": "Cow image."
+  },
+  "microbit.Image.MUSIC_CROTCHET": {
+    "message": "音乐音符",
+    "description": "(field name) Crotchet note image."
+  },
+  "microbit.Image.MUSIC_CROTCHET.summary": {
+    "message": "音乐音符图像",
+    "description": "Crotchet note image."
+  },
+  "microbit.Image.MUSIC_QUAVER": {
+    "message": "八分音符",
+    "description": "(field name) Quaver note image."
+  },
+  "microbit.Image.MUSIC_QUAVER.summary": {
+    "message": "八分音符图像。",
+    "description": "Quaver note image."
+  },
+  "microbit.Image.MUSIC_QUAVERS": {
+    "message": "一对八分音符",
+    "description": "(field name) Pair of quavers note image."
+  },
+  "microbit.Image.MUSIC_QUAVERS.summary": {
+    "message": "一对八分音符图像。",
+    "description": "Pair of quavers note image."
+  },
+  "microbit.Image.PITCHFORK": {
+    "message": "干草叉",
+    "description": "(field name) Pitchfork image."
+  },
+  "microbit.Image.PITCHFORK.summary": {
+    "message": "干草叉图像。",
+    "description": "Pitchfork image."
+  },
+  "microbit.Image.XMAS": {
+    "message": "圣诞节",
+    "description": "(field name) Christmas tree image."
+  },
+  "microbit.Image.XMAS.summary": {
+    "message": "圣诞树图像。",
+    "description": "Christmas tree image."
+  },
+  "microbit.Image.PACMAN": {
+    "message": "吃豆人",
+    "description": "(field name) Pac-Man arcade character image."
+  },
+  "microbit.Image.PACMAN.summary": {
+    "message": "吃豆人游戏角色图像。",
+    "description": "Pac-Man arcade character image."
+  },
+  "microbit.Image.TARGET": {
+    "message": "目标",
+    "description": "(field name) Target image."
+  },
+  "microbit.Image.TARGET.summary": {
+    "message": "目标图像",
+    "description": "Target image."
+  },
+  "microbit.Image.TSHIRT": {
+    "message": "T恤",
+    "description": "(field name) T-shirt image."
+  },
+  "microbit.Image.TSHIRT.summary": {
+    "message": "T 恤图像。",
+    "description": "T-shirt image."
+  },
+  "microbit.Image.ROLLERSKATE": {
+    "message": "轮滑",
+    "description": "(field name) Rollerskate image."
+  },
+  "microbit.Image.ROLLERSKATE.summary": {
+    "message": "轮滑图像。",
+    "description": "Rollerskate image."
+  },
+  "microbit.Image.DUCK": {
+    "message": "鸭子",
+    "description": "(field name) Duck image."
+  },
+  "microbit.Image.DUCK.summary": {
+    "message": "鸭子图像。",
+    "description": "Duck image."
+  },
+  "microbit.Image.HOUSE": {
+    "message": "房子",
+    "description": "(field name) House image."
+  },
+  "microbit.Image.HOUSE.summary": {
+    "message": "房子图像。",
+    "description": "House image."
+  },
+  "microbit.Image.TORTOISE": {
+    "message": "乌龟",
+    "description": "(field name) Tortoise image."
+  },
+  "microbit.Image.TORTOISE.summary": {
+    "message": "乌龟图像。",
+    "description": "Tortoise image."
+  },
+  "microbit.Image.BUTTERFLY": {
+    "message": "蝴蝶",
+    "description": "(field name) Butterfly image."
+  },
+  "microbit.Image.BUTTERFLY.summary": {
+    "message": "蝴蝶图像",
+    "description": "Butterfly image."
+  },
+  "microbit.Image.STICKFIGURE": {
+    "message": "简笔人物画",
+    "description": "(field name) Stick figure image."
+  },
+  "microbit.Image.STICKFIGURE.summary": {
+    "message": "\n火柴人图像。",
+    "description": "Stick figure image."
+  },
+  "microbit.Image.GHOST": {
+    "message": "幽灵",
+    "description": "(field name) Ghost image."
+  },
+  "microbit.Image.GHOST.summary": {
+    "message": "幽灵图像。",
+    "description": "Ghost image."
+  },
+  "microbit.Image.SWORD": {
+    "message": "剑",
+    "description": "(field name) Sword image."
+  },
+  "microbit.Image.SWORD.summary": {
+    "message": "利剑图像。",
+    "description": "Sword image."
+  },
+  "microbit.Image.GIRAFFE": {
+    "message": "长颈鹿",
+    "description": "(field name) Giraffe image."
+  },
+  "microbit.Image.GIRAFFE.summary": {
+    "message": "长颈鹿图像。",
+    "description": "Giraffe image."
+  },
+  "microbit.Image.SKULL": {
+    "message": "骷髅",
+    "description": "(field name) Skull image."
+  },
+  "microbit.Image.SKULL.summary": {
+    "message": "骷髅图像。",
+    "description": "Skull image."
+  },
+  "microbit.Image.UMBRELLA": {
+    "message": "雨伞",
+    "description": "(field name) Umbrella image."
+  },
+  "microbit.Image.UMBRELLA.summary": {
+    "message": "雨伞图像。",
+    "description": "Umbrella image."
+  },
+  "microbit.Image.SNAKE": {
+    "message": "蛇",
+    "description": "(field name) Snake image."
+  },
+  "microbit.Image.SNAKE.summary": {
+    "message": "蛇图像。",
+    "description": "Snake image."
+  },
+  "microbit.Image.SCISSORS": {
+    "message": "剪刀",
+    "description": "(field name) Scissors image."
+  },
+  "microbit.Image.SCISSORS.summary": {
+    "message": "剪刀图像。",
+    "description": "Scissors image."
+  },
+  "microbit.Image.ALL_CLOCKS": {
+    "message": "所有时钟",
+    "description": "(field name) A list containing all the CLOCK_ images in sequence."
+  },
+  "microbit.Image.ALL_CLOCKS.summary": {
+    "message": "按顺序包含所有 CLOCK_ 图像的列表（时钟）。",
+    "description": "A list containing all the CLOCK_ images in sequence."
+  },
+  "microbit.Image.ALL_ARROWS": {
+    "message": "所有箭头",
+    "description": "(field name) A list containing all the ARROW_ images in sequence."
+  },
+  "microbit.Image.ALL_ARROWS.summary": {
+    "message": "按顺序包含所有 ARROW_ 图像的列表（箭头）。",
+    "description": "A list containing all the ARROW_ images in sequence."
+  },
+  "microbit.Image.__init__-1": {
+    "message": "init",
+    "description": "(function name) Create an image from a string describing which LEDs are lit."
+  },
+  "microbit.Image.__init__-1.summary": {
+    "message": "根据描述点亮 LED 的字符串来创建一幅图像。",
+    "description": "Create an image from a string describing which LEDs are lit."
+  },
+  "microbit.Image.__init__-1.param-name.string": {
+    "message": "string",
+    "description": "(parameter name) The string describing the image."
+  },
+  "microbit.Image.__init__-1.param-doc.string": {
+    "message": "描述图像的字符串。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__-2": {
+    "message": "init",
+    "description": "(function name) Create an empty image with ``width`` columns and ``height`` rows."
+  },
+  "microbit.Image.__init__-2.summary": {
+    "message": "创建一幅具有 {{width}} 列和 {{height}} 行的空白图像。",
+    "description": "Create an empty image with ``width`` columns and ``height`` rows."
+  },
+  "microbit.Image.__init__-2.param-name.buffer": {
+    "message": "缓冲区",
+    "description": "(parameter name) Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image"
+  },
+  "microbit.Image.__init__-2.param-doc.buffer": {
+    "message": "用可选数组或在 0-9 范围内的 {{width}} × {{height}} 整数字节来初始化图像",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__-2.param-name.height": {
+    "message": "高度",
+    "description": "(parameter name) Optional height of the image"
+  },
+  "microbit.Image.__init__-2.param-doc.height": {
+    "message": "可选的图像高度",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__init__-2.param-name.width": {
+    "message": "宽度",
+    "description": "(parameter name) Optional width of the image"
+  },
+  "microbit.Image.__init__-2.param-doc.width": {
+    "message": "可选的图像宽度",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.width": {
+    "message": "宽度",
+    "description": "(function name) Get the number of columns."
+  },
+  "microbit.Image.width.summary": {
+    "message": "获取列数。",
+    "description": "Get the number of columns."
+  },
+  "microbit.Image.height": {
+    "message": "高度",
+    "description": "(function name) Get the number of rows."
+  },
+  "microbit.Image.height.summary": {
+    "message": "获取行数。",
+    "description": "Get the number of rows."
+  },
+  "microbit.Image.set_pixel": {
+    "message": "set pixel",
+    "description": "(function name) Set the brightness of a pixel."
+  },
+  "microbit.Image.set_pixel.summary": {
+    "message": "设置像素亮度。",
+    "description": "Set the brightness of a pixel."
+  },
+  "microbit.Image.set_pixel.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The brightness as an integer between 0 (dark) and 9 (bright)"
+  },
+  "microbit.Image.set_pixel.param-doc.value": {
+    "message": "用 0（暗）和 9（亮）之间的整数来代表亮度",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.set_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The column number"
+  },
+  "microbit.Image.set_pixel.param-doc.x": {
+    "message": "列号",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.set_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The row number"
+  },
+  "microbit.Image.set_pixel.param-doc.y": {
+    "message": "行号",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.get_pixel": {
+    "message": "get pixel",
+    "description": "(function name) Get the brightness of a pixel."
+  },
+  "microbit.Image.get_pixel.summary": {
+    "message": "获取一个像素的亮度。",
+    "description": "Get the brightness of a pixel."
+  },
+  "microbit.Image.get_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The column number"
+  },
+  "microbit.Image.get_pixel.param-doc.x": {
+    "message": "列号",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.get_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The row number"
+  },
+  "microbit.Image.get_pixel.param-doc.y": {
+    "message": "行号",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_left": {
+    "message": "shift left",
+    "description": "(function name) Create a new image by shifting the picture left."
+  },
+  "microbit.Image.shift_left.summary": {
+    "message": "通过向左移动图片来创建新图像。",
+    "description": "Create a new image by shifting the picture left."
+  },
+  "microbit.Image.shift_left.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of columns to shift by"
+  },
+  "microbit.Image.shift_left.param-doc.n": {
+    "message": "要移动的列数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_right": {
+    "message": "shift right",
+    "description": "(function name) Create a new image by shifting the picture right."
+  },
+  "microbit.Image.shift_right.summary": {
+    "message": "通过向右移动图片来创建新图像。",
+    "description": "Create a new image by shifting the picture right."
+  },
+  "microbit.Image.shift_right.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of columns to shift by"
+  },
+  "microbit.Image.shift_right.param-doc.n": {
+    "message": "要移动的列数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_up": {
+    "message": "shift up",
+    "description": "(function name) Create a new image by shifting the picture up."
+  },
+  "microbit.Image.shift_up.summary": {
+    "message": "通过向上移动图片来创建新图像。",
+    "description": "Create a new image by shifting the picture up."
+  },
+  "microbit.Image.shift_up.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of rows to shift by"
+  },
+  "microbit.Image.shift_up.param-doc.n": {
+    "message": "要移动的行数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.shift_down": {
+    "message": "shift down",
+    "description": "(function name) Create a new image by shifting the picture down."
+  },
+  "microbit.Image.shift_down.summary": {
+    "message": "通过向下移动图片来创建新图像。",
+    "description": "Create a new image by shifting the picture down."
+  },
+  "microbit.Image.shift_down.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of rows to shift by"
+  },
+  "microbit.Image.shift_down.param-doc.n": {
+    "message": "要移动的行数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop": {
+    "message": "裁剪",
+    "description": "(function name) Create a new image by cropping the picture."
+  },
+  "microbit.Image.crop.summary": {
+    "message": "通过裁剪图片来创建一幅新图像。",
+    "description": "Create a new image by cropping the picture."
+  },
+  "microbit.Image.crop.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The crop height"
+  },
+  "microbit.Image.crop.param-doc.h": {
+    "message": "裁剪高度",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.w": {
+    "message": "w",
+    "description": "(parameter name) The crop width"
+  },
+  "microbit.Image.crop.param-doc.w": {
+    "message": "裁剪宽度",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The crop offset column"
+  },
+  "microbit.Image.crop.param-doc.x": {
+    "message": "裁剪偏移列",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.crop.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The crop offset row"
+  },
+  "microbit.Image.crop.param-doc.y": {
+    "message": "裁剪偏移行",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.copy": {
+    "message": "复制",
+    "description": "(function name) Create an exact copy of the image."
+  },
+  "microbit.Image.copy.summary": {
+    "message": "创建图像的精确副本。",
+    "description": "Create an exact copy of the image."
+  },
+  "microbit.Image.invert": {
+    "message": "反转",
+    "description": "(function name) Create a new image by inverting the brightness of the pixels in the\nsource image."
+  },
+  "microbit.Image.invert.summary": {
+    "message": "通过反转源图像中像素的亮度来创建一幅新图像。",
+    "description": "Create a new image by inverting the brightness of the pixels in the\nsource image."
+  },
+  "microbit.Image.fill": {
+    "message": "填充",
+    "description": "(function name) Set the brightness of all the pixels in the image."
+  },
+  "microbit.Image.fill.summary": {
+    "message": "设置图像中所有像素的亮度。",
+    "description": "Set the brightness of all the pixels in the image."
+  },
+  "microbit.Image.fill.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The new brightness as a number between 0 (dark) and 9 (bright)."
+  },
+  "microbit.Image.fill.param-doc.value": {
+    "message": "新亮度为 0 (暗) 和 9 (明) 之间的数字。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit": {
+    "message": "blit",
+    "description": "(function name) Copy an area from another image into this image."
+  },
+  "microbit.Image.blit.summary": {
+    "message": "复制另一幅图像的一部分区域到这幅图像。",
+    "description": "Copy an area from another image into this image."
+  },
+  "microbit.Image.blit.param-name.h": {
+    "message": "h",
+    "description": "(parameter name) The number of rows to copy"
+  },
+  "microbit.Image.blit.param-doc.h": {
+    "message": "要复制的行数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.src": {
+    "message": "来源",
+    "description": "(parameter name) The source image"
+  },
+  "microbit.Image.blit.param-doc.src": {
+    "message": "源图像",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.w": {
+    "message": "w",
+    "description": "(parameter name) The number of columns to copy"
+  },
+  "microbit.Image.blit.param-doc.w": {
+    "message": "要复制的列数",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The starting column offset in the source image"
+  },
+  "microbit.Image.blit.param-doc.x": {
+    "message": "源图像的起始列偏移量",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.xdest": {
+    "message": "x偏离量",
+    "description": "(parameter name) The column offset to modify in this image"
+  },
+  "microbit.Image.blit.param-doc.xdest": {
+    "message": "此图像中要修改的列偏移量",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The starting row offset in the source image"
+  },
+  "microbit.Image.blit.param-doc.y": {
+    "message": "源图像的起始行偏移量",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.blit.param-name.ydest": {
+    "message": "y偏离量",
+    "description": "(parameter name) The row offset to modify in this image"
+  },
+  "microbit.Image.blit.param-doc.ydest": {
+    "message": "此图像中要修改的行偏移量",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__repr__": {
+    "message": "表示",
+    "description": "(function name) Get a compact string representation of the image."
+  },
+  "microbit.Image.__repr__.summary": {
+    "message": "获取图像的缩小字符串表示。",
+    "description": "Get a compact string representation of the image."
+  },
+  "microbit.Image.__str__": {
+    "message": "字符串",
+    "description": "(function name) Get a readable string representation of the image."
+  },
+  "microbit.Image.__str__.summary": {
+    "message": "获取图像的可读字符串表示。",
+    "description": "Get a readable string representation of the image."
+  },
+  "microbit.Image.__add__": {
+    "message": "add",
+    "description": "(function name) Create a new image by adding the brightness values from the two\nimages for each pixel."
+  },
+  "microbit.Image.__add__.summary": {
+    "message": "通过将两幅图像每个像素的亮度值相加来创建一幅新图像。",
+    "description": "Create a new image by adding the brightness values from the two\nimages for each pixel."
+  },
+  "microbit.Image.__add__.param-name.other": {
+    "message": "其他",
+    "description": "(parameter name) The image to add."
+  },
+  "microbit.Image.__add__.param-doc.other": {
+    "message": "要添加的图像。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__sub__": {
+    "message": "减去",
+    "description": "(function name) Create a new image by subtracting the brightness values of the\nother image from this image."
+  },
+  "microbit.Image.__sub__.summary": {
+    "message": "通过从此图像中减去另一幅图像的亮度值来创建一幅新图像。",
+    "description": "Create a new image by subtracting the brightness values of the\nother image from this image."
+  },
+  "microbit.Image.__sub__.param-name.other": {
+    "message": "其他",
+    "description": "(parameter name) The image to subtract."
+  },
+  "microbit.Image.__sub__.param-doc.other": {
+    "message": "要减去的图像。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__mul__": {
+    "message": "相乘",
+    "description": "(function name) Create a new image by multiplying the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__mul__.summary": {
+    "message": "通过将每个像素的亮度乘以 {{n}} 来创建一幅新图像。",
+    "description": "Create a new image by multiplying the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__mul__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The value to multiply by."
+  },
+  "microbit.Image.__mul__.param-doc.n": {
+    "message": "要相乘的数值。",
+    "description": "Parameter docs"
+  },
+  "microbit.Image.__truediv__": {
+    "message": "除以",
+    "description": "(function name) Create a new image by dividing the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__truediv__.summary": {
+    "message": "通过将每个像素的亮度除以 {{n}} 来创建一幅新图像。",
+    "description": "Create a new image by dividing the brightness of each pixel by\n``n``."
+  },
+  "microbit.Image.__truediv__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The value to divide by."
+  },
+  "microbit.Image.__truediv__.param-doc.n": {
+    "message": "要除以的数值。",
+    "description": "Parameter docs"
+  },
+  "microbit.SoundEvent.LOUD": {
+    "message": "大声",
+    "description": "(field name) Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
+  },
+  "microbit.SoundEvent.LOUD.summary": {
+    "message": "表示声音事件从{{quiet}}到{{loud}}的过渡，如拍手或者喊叫。",
+    "description": "Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
+  },
+  "microbit.SoundEvent.QUIET": {
+    "message": "安静",
+    "description": "(field name) Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
+  },
+  "microbit.SoundEvent.QUIET.summary": {
+    "message": "表示声音事件从{{loud}}到{{quiet}}的过渡，如说话或者背景音乐。",
+    "description": "Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
+  },
+  "microbit.Sound": {
+    "message": "声音",
+    "description": "(class name) The built-in sounds can be called using ``audio.play(Sound.NAME)``."
+  },
+  "microbit.Sound.summary": {
+    "message": "可以使用 {{audio.play(Sound.NAME)}} 调用内置声音。",
+    "description": "The built-in sounds can be called using ``audio.play(Sound.NAME)``."
+  },
+  "microbit.Sound.GIGGLE": {
+    "message": "咯咯笑",
+    "description": "(field name) Giggling sound."
+  },
+  "microbit.Sound.GIGGLE.summary": {
+    "message": "咯咯的声音。",
+    "description": "Giggling sound."
+  },
+  "microbit.Sound.HAPPY": {
+    "message": "快乐",
+    "description": "(field name) Happy sound."
+  },
+  "microbit.Sound.HAPPY.summary": {
+    "message": "快乐的声音。",
+    "description": "Happy sound."
+  },
+  "microbit.Sound.HELLO": {
+    "message": "你好",
+    "description": "(field name) Greeting sound."
+  },
+  "microbit.Sound.HELLO.summary": {
+    "message": "问候声。",
+    "description": "Greeting sound."
+  },
+  "microbit.Sound.MYSTERIOUS": {
+    "message": "神秘的",
+    "description": "(field name) Mysterious sound."
+  },
+  "microbit.Sound.MYSTERIOUS.summary": {
+    "message": "神秘的声音",
+    "description": "Mysterious sound."
+  },
+  "microbit.Sound.SAD": {
+    "message": "难过",
+    "description": "(field name) Sad sound."
+  },
+  "microbit.Sound.SAD.summary": {
+    "message": "\n悲伤的声音。",
+    "description": "Sad sound."
+  },
+  "microbit.Sound.SLIDE": {
+    "message": "滑动",
+    "description": "(field name) Sliding sound."
+  },
+  "microbit.Sound.SLIDE.summary": {
+    "message": "滑动声。",
+    "description": "Sliding sound."
+  },
+  "microbit.Sound.SOARING": {
+    "message": "高昂",
+    "description": "(field name) Soaring sound."
+  },
+  "microbit.Sound.SOARING.summary": {
+    "message": "翱翔的声音。",
+    "description": "Soaring sound."
+  },
+  "microbit.Sound.SPRING": {
+    "message": "弹簧",
+    "description": "(field name) Spring sound."
+  },
+  "microbit.Sound.SPRING.summary": {
+    "message": "春天的声音。",
+    "description": "Spring sound."
+  },
+  "microbit.Sound.TWINKLE": {
+    "message": "闪烁",
+    "description": "(field name) Twinkling sound."
+  },
+  "microbit.Sound.TWINKLE.summary": {
+    "message": "闪烁的声音。",
+    "description": "Twinkling sound."
+  },
+  "microbit.Sound.YAWN": {
+    "message": "打哈欠",
+    "description": "(field name) Yawning sound."
+  },
+  "microbit.Sound.YAWN.summary": {
+    "message": "打哈欠的声音。",
+    "description": "Yawning sound."
+  },
+  "microbit.accelerometer": {
+    "message": "加速度传感器",
+    "description": "(module name) Measure the acceleration of the micro:bit and recognise gestures."
+  },
+  "microbit.accelerometer.summary": {
+    "message": "测量 micro:bit 的加速度并识别手势。",
+    "description": "Measure the acceleration of the micro:bit and recognise gestures."
+  },
+  "microbit.accelerometer.get_x": {
+    "message": "get x",
+    "description": "(function name) Get the acceleration measurement in the ``x`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_x.summary": {
+    "message": "获取 {{x}} 轴上的加速度测量值（以 milli-g 为单位）。",
+    "description": "Get the acceleration measurement in the ``x`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_y": {
+    "message": "get y",
+    "description": "(function name) Get the acceleration measurement in the ``y`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_y.summary": {
+    "message": "获取 {{y}} 轴上的加速度测量值（以 milli-g 为单位）。",
+    "description": "Get the acceleration measurement in the ``y`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_z": {
+    "message": "get z",
+    "description": "(function name) Get the acceleration measurement in the ``z`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_z.summary": {
+    "message": "获取 {{z}} 轴上的加速度测量值（以 milli-g 为单位）。",
+    "description": "Get the acceleration measurement in the ``z`` axis in milli-g."
+  },
+  "microbit.accelerometer.get_values": {
+    "message": "get values",
+    "description": "(function name) Get the acceleration measurements in all axes at once as a tuple."
+  },
+  "microbit.accelerometer.get_values.summary": {
+    "message": "一次获取所有轴上的加速度测量值作为元组。",
+    "description": "Get the acceleration measurements in all axes at once as a tuple."
+  },
+  "microbit.accelerometer.get_strength": {
+    "message": "获取强度",
+    "description": "(function name) Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
+  },
+  "microbit.accelerometer.get_strength.summary": {
+    "message": "以正整数形式获取所有轴组合的加速度测量值。这是 X、Y 和 Z 轴的毕达哥拉斯（Pythagorean）和。",
+    "description": "Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
+  },
+  "microbit.accelerometer.current_gesture": {
+    "message": "current gesture",
+    "description": "(function name) Get the name of the current gesture."
+  },
+  "microbit.accelerometer.current_gesture.summary": {
+    "message": "获取当前手势的名称。",
+    "description": "Get the name of the current gesture."
+  },
+  "microbit.accelerometer.is_gesture": {
+    "message": "is gesture",
+    "description": "(function name) Check if the named gesture is currently active."
+  },
+  "microbit.accelerometer.is_gesture.summary": {
+    "message": "检查命名手势当前是否处于活动状态。",
+    "description": "Check if the named gesture is currently active."
+  },
+  "microbit.accelerometer.is_gesture.param-name.name": {
+    "message": "name",
+    "description": "(parameter name) The gesture name."
+  },
+  "microbit.accelerometer.is_gesture.param-doc.name": {
+    "message": "手势名称。",
+    "description": "Parameter docs"
+  },
+  "microbit.accelerometer.was_gesture": {
+    "message": "was gesture",
+    "description": "(function name) Check if the named gesture was active since the last call."
+  },
+  "microbit.accelerometer.was_gesture.summary": {
+    "message": "检查命名手势自上次调用后是否处于活动状态。",
+    "description": "Check if the named gesture was active since the last call."
+  },
+  "microbit.accelerometer.was_gesture.param-name.name": {
+    "message": "name",
+    "description": "(parameter name) The gesture name."
+  },
+  "microbit.accelerometer.was_gesture.param-doc.name": {
+    "message": "手势名称。",
+    "description": "Parameter docs"
+  },
+  "microbit.accelerometer.get_gestures": {
+    "message": "get gestures",
+    "description": "(function name) Return a tuple of the gesture history."
+  },
+  "microbit.accelerometer.get_gestures.summary": {
+    "message": "返回手势历史的元组。",
+    "description": "Return a tuple of the gesture history."
+  },
+  "microbit.accelerometer.set_range": {
+    "message": "设置范围",
+    "description": "(function name) Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
+  },
+  "microbit.accelerometer.set_range.summary": {
+    "message": "将加速度计灵敏度范围（以 g（标准重力）为单位）设置为硬件支持的最接近的值，因此它会取近似值为 {{2}}、{{4}} 或 {{8}} g。",
+    "description": "Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
+  },
+  "microbit.accelerometer.set_range.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) New range for the accelerometer, an integer in ``g``."
+  },
+  "microbit.accelerometer.set_range.param-doc.value": {
+    "message": "加速度计的新范围，{{g}} 中的整数。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio": {
+    "message": "音频",
+    "description": "(module name) Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
+  },
+  "microbit.audio.summary": {
+    "message": "使用 micro:bit 播放声音（导入 {{audio}} 以兼容 V1）。",
+    "description": "Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
+  },
+  "microbit.audio.play": {
+    "message": "播放",
+    "description": "(function name) Play a built-in sound, sound effect or custom audio frames."
+  },
+  "microbit.audio.play.summary": {
+    "message": "播放内置声音、音效或自定义音频帧。",
+    "description": "Play a built-in sound, sound effect or custom audio frames."
+  },
+  "microbit.audio.play.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``."
+  },
+  "microbit.audio.play.param-doc.pin": {
+    "message": "可选参数， 用于指定可覆盖默认 {{pin0}} 的输出引脚。 如果不想播放任何声音，可以使用 {{pin=None}}。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.return_pin": {
+    "message": "return pin",
+    "description": "(parameter name) Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision."
+  },
+  "microbit.audio.play.param-doc.return_pin": {
+    "message": "指定一个差分边缘连接器引脚以连接到外部扬声器而不是接地。对于 **V2** 修订版，这将被忽略。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.source": {
+    "message": "来源",
+    "description": "(parameter name) A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects."
+  },
+  "microbit.audio.play.param-doc.source": {
+    "message": "\n内置的 {{Sound}}，例如 {{Sound.GIGGLE}}、{{SoundEffect}} 或作为 {{AudioFrame}} 的可迭代对象的样本数据。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.play.param-name.wait": {
+    "message": "等待",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the sound is complete."
+  },
+  "microbit.audio.play.param-doc.wait": {
+    "message": "如果 {{wait}} 为 {{True}}, 此函数将会阻塞直到声音完成。",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.is_playing": {
+    "message": "is playing",
+    "description": "(function name) Check whether a sound is playing."
+  },
+  "microbit.audio.is_playing.summary": {
+    "message": "检查是否在播放声音。",
+    "description": "Check whether a sound is playing."
+  },
+  "microbit.audio.stop": {
+    "message": "停止",
+    "description": "(function name) Stop all audio playback."
+  },
+  "microbit.audio.stop.summary": {
+    "message": "停止所有音频播放。",
+    "description": "Stop all audio playback."
+  },
+  "microbit.audio.SoundEffect": {
+    "message": "音效",
+    "description": "(class name) A sound effect, composed by a set of parameters configured via the constructor or attributes."
+  },
+  "microbit.audio.SoundEffect.summary": {
+    "message": "一种音效，由一组通过构造函数或属性配置的参数组成。",
+    "description": "A sound effect, composed by a set of parameters configured via the constructor or attributes."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SINE": {
+    "message": "波形正弦",
+    "description": "(field name) Sine wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SINE.summary": {
+    "message": "用于 {{waveform}} 参数的正弦波选项。",
+    "description": "Sine wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SAWTOOTH": {
+    "message": "波形锯齿",
+    "description": "(field name) Sawtooth wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SAWTOOTH.summary": {
+    "message": "用于 {{waveform}} 参数的锯齿波选项。",
+    "description": "Sawtooth wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_TRIANGLE": {
+    "message": "波形三角",
+    "description": "(field name) Triangle wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_TRIANGLE.summary": {
+    "message": "用于 {{waveform}} 参数的三角波选项。",
+    "description": "Triangle wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SQUARE": {
+    "message": "方波",
+    "description": "(field name) Square wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_SQUARE.summary": {
+    "message": "用于 {{waveform}} 参数的方波选项。",
+    "description": "Square wave option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_NOISE": {
+    "message": "波形噪声",
+    "description": "(field name) Noise option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.WAVEFORM_NOISE.summary": {
+    "message": "用于 {{waveform}} 参数的噪声选项。",
+    "description": "Noise option used for the ``waveform`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_LINEAR": {
+    "message": "形状线性",
+    "description": "(field name) Linear interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_LINEAR.summary": {
+    "message": "用于 {{shape}} 参数的线性插值选项。",
+    "description": "Linear interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_CURVE": {
+    "message": "形状曲线",
+    "description": "(field name) Curve interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_CURVE.summary": {
+    "message": "用于 {{shape}} 参数的曲线插值选项。",
+    "description": "Curve interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_LOG": {
+    "message": "形状日志",
+    "description": "(field name) Logarithmic interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.SHAPE_LOG.summary": {
+    "message": "用于 {{shape}} 参数的对数插值选项。",
+    "description": "Logarithmic interpolation option used for the ``shape`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_NONE": {
+    "message": "fx 无",
+    "description": "(field name) No effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_NONE.summary": {
+    "message": "没有用于 {{fx}} 参数的效果选项。",
+    "description": "No effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_TREMOLO": {
+    "message": "fx 音量颤音",
+    "description": "(field name) Tremelo effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_TREMOLO.summary": {
+    "message": "用于 {{fx}} 参数的音量颤音效果选项。",
+    "description": "Tremelo effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_VIBRATO": {
+    "message": "fx 音高颤音",
+    "description": "(field name) Vibrato effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_VIBRATO.summary": {
+    "message": "用于 {{fx}} 参数的音高颤音效果选项。",
+    "description": "Vibrato effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_WARBLE": {
+    "message": "fx 柔和颤音",
+    "description": "(field name) Warble effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.FX_WARBLE.summary": {
+    "message": "用于 {{fx}} 参数的柔和颤音效果选项。",
+    "description": "Warble effect option used for the ``fx`` parameter."
+  },
+  "microbit.audio.SoundEffect.freq_start": {
+    "message": "开始频率",
+    "description": "(field name) Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.freq_start.summary": {
+    "message": "开始频率用 Hertz (Hz) 表示, 是一个 {{0}} 和 {{9999}} 之间的数字",
+    "description": "Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.freq_end": {
+    "message": "结束频率",
+    "description": "(field name) End frequency in Hertz (Hz), a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.freq_end.summary": {
+    "message": "结束频率用 Hertz (Hz) 表示, 是一个 {{0}} 和 {{9999}} 之间的数字",
+    "description": "End frequency in Hertz (Hz), a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.duration": {
+    "message": "持续",
+    "description": "(field name) Duration of the sound in milliseconds, a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.duration.summary": {
+    "message": "声音持续时间，以毫秒计， 是一个 {{0}} 和 {{9999}} 之间的数字",
+    "description": "Duration of the sound in milliseconds, a number between ``0`` and ``9999``"
+  },
+  "microbit.audio.SoundEffect.vol_start": {
+    "message": "开始音量值",
+    "description": "(field name) Start volume value, a number between ``0`` and ``255``"
+  },
+  "microbit.audio.SoundEffect.vol_start.summary": {
+    "message": "开始音量值，是一个 {{0}} 和 {{255}} 之间的数字",
+    "description": "Start volume value, a number between ``0`` and ``255``"
+  },
+  "microbit.audio.SoundEffect.vol_end": {
+    "message": "结束音量值",
+    "description": "(field name) End volume value, a number between ``0`` and ``255``"
+  },
+  "microbit.audio.SoundEffect.vol_end.summary": {
+    "message": "结束音量值，是一个 {{0}} 和 {{255}} 之间的数字",
+    "description": "End volume value, a number between ``0`` and ``255``"
+  },
+  "microbit.audio.SoundEffect.waveform": {
+    "message": "波形",
+    "description": "(field name) Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"
+  },
+  "microbit.audio.SoundEffect.waveform.summary": {
+    "message": "波形类型，是下列值之一： {{WAVEFORM_SINE}}, {{WAVEFORM_SAWTOOTH}}, {{WAVEFORM_TRIANGLE}}, {{WAVEFORM_SQUARE}}, {{WAVEFORM_NOISE}} (随机生成噪音)",
+    "description": "Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"
+  },
+  "microbit.audio.SoundEffect.fx": {
+    "message": "fx",
+    "description": "(field name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
+  },
+  "microbit.audio.SoundEffect.fx.summary": {
+    "message": "对声音添加效果，下列值之一： {{FX_TREMOLO}}, {{FX_VIBRATO}}, {{FX_WARBLE}}, 或 {{FX_NONE}}",
+    "description": "Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
+  },
+  "microbit.audio.SoundEffect.shape": {
+    "message": "形状",
+    "description": "(field name) The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"
+  },
+  "microbit.audio.SoundEffect.shape.summary": {
+    "message": "开始频率和结束频率之间的内插曲线类型，不同波形的频率变化速率不同。 以下值之一: {{SHAPE_LINEAR}}, {{SHAPE_CURVE}}, {{SHAPE_LOG}}",
+    "description": "The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"
+  },
+  "microbit.audio.SoundEffect.__init__": {
+    "message": "init",
+    "description": "(function name) Create a new sound effect."
+  },
+  "microbit.audio.SoundEffect.__init__.summary": {
+    "message": "创建新的音效。",
+    "description": "Create a new sound effect."
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.duration": {
+    "message": "持续",
+    "description": "(parameter name) Duration of the sound in milliseconds, a number between ``0`` and ``9999``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.duration": {
+    "message": "声音持续时间，以毫秒计， 是一个 {{0}} 和 {{9999}} 之间的数字.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.freq_end": {
+    "message": "结束频率",
+    "description": "(parameter name) End frequency in Hertz (Hz), a number between ``0`` and ``9999``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.freq_end": {
+    "message": "结束频率用 Hertz (Hz) 表示, 是一个 {{0}} 和 {{9999}} 之间的数字.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.freq_start": {
+    "message": "开始频率",
+    "description": "(parameter name) Start frequency in Hertz (Hz), a number between ``0`` and ``9999``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.freq_start": {
+    "message": "开始频率用 Hertz (Hz) 表示, 是一个 {{0}} 和 {{9999}} 之间的数字.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.fx": {
+    "message": "fx",
+    "description": "(parameter name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.fx": {
+    "message": "对声音添加效果，下列值之一： {{FX_TREMOLO}}, {{FX_VIBRATO}}, {{FX_WARBLE}}, 或 {{FX_NONE}}.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.shape": {
+    "message": "形状",
+    "description": "(parameter name) The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.shape": {
+    "message": "开始频率和结束频率之间的内插曲线类型，不同波形的频率变化速度不同。 以下值之一: {{SHAPE_LINEAR}}, {{SHAPE_CURVE}}, {{SHAPE_LOG}}.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.vol_end": {
+    "message": "结束音量值",
+    "description": "(parameter name) End volume value, a number between ``0`` and ``255``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.vol_end": {
+    "message": "结束音量值，是一个 {{0}} 和 {{255}} 之间的数字.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.vol_start": {
+    "message": "开始音量值",
+    "description": "(parameter name) Start volume value, a number between ``0`` and ``255``."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.vol_start": {
+    "message": "开始音量值，是一个 {{0}} 和 {{255}} 之间的数字.",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.__init__.param-name.waveform": {
+    "message": "波形",
+    "description": "(parameter name) Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)."
+  },
+  "microbit.audio.SoundEffect.__init__.param-doc.waveform": {
+    "message": "波形类型，是下列值之一： {{WAVEFORM_SINE}}, {{WAVEFORM_SAWTOOTH}}, {{WAVEFORM_TRIANGLE}}, {{WAVEFORM_SQUARE}}, {{WAVEFORM_NOISE}} (随机生成噪音).",
+    "description": "Parameter docs"
+  },
+  "microbit.audio.SoundEffect.copy": {
+    "message": "复制",
+    "description": "(function name) Create a copy of this ``SoundEffect``."
+  },
+  "microbit.audio.SoundEffect.copy.summary": {
+    "message": "创建此 {{SoundEffect}} 的副本。",
+    "description": "Create a copy of this ``SoundEffect``."
+  },
+  "microbit.audio.AudioFrame": {
+    "message": "音频帧",
+    "description": "(class name) An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
+  },
+  "microbit.audio.AudioFrame.summary": {
+    "message": "{{AudioFrame}} 对象是 一个包含 32 个样本的列表，每个样本都是一个无符号字节\n（0 到 255 之间的整数）。",
+    "description": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
+  },
+  "microbit.audio.AudioFrame.copyfrom": {
+    "message": "复制",
+    "description": "(function name) Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
+  },
+  "microbit.audio.AudioFrame.copyfrom.summary": {
+    "message": "用其他 {{AudioFrame}} 实例中的数据覆盖此 {{AudioFrame}} 中的数据。",
+    "description": "Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
+  },
+  "microbit.audio.AudioFrame.copyfrom.param-name.other": {
+    "message": "其他",
+    "description": "(parameter name) ``AudioFrame`` instance from which to copy the data."
+  },
+  "microbit.audio.AudioFrame.copyfrom.param-doc.other": {
+    "message": "从 {{AudioFrame}} 实例中复制数据。",
+    "description": "Parameter docs"
+  },
+  "microbit.compass": {
+    "message": "罗盘",
+    "description": "(module name) Use the built-in compass."
+  },
+  "microbit.compass.summary": {
+    "message": "使用内置罗盘。",
+    "description": "Use the built-in compass."
+  },
+  "microbit.compass.calibrate": {
+    "message": "校准",
+    "description": "(function name) Starts the calibration process."
+  },
+  "microbit.compass.calibrate.summary": {
+    "message": "开始校准过程。",
+    "description": "Starts the calibration process."
+  },
+  "microbit.compass.is_calibrated": {
+    "message": "is calibrated",
+    "description": "(function name) Check is the compass is calibrated."
+  },
+  "microbit.compass.is_calibrated.summary": {
+    "message": "检查罗盘是否已校准。",
+    "description": "Check is the compass is calibrated."
+  },
+  "microbit.compass.clear_calibration": {
+    "message": "clear calibration",
+    "description": "(function name) Undoes the calibration, making the compass uncalibrated again."
+  },
+  "microbit.compass.clear_calibration.summary": {
+    "message": "取消校准，将罗盘恢复到未校准状态。",
+    "description": "Undoes the calibration, making the compass uncalibrated again."
+  },
+  "microbit.compass.get_x": {
+    "message": "get x",
+    "description": "(function name) Get the magnetic field strength on the ``x`` axis."
+  },
+  "microbit.compass.get_x.summary": {
+    "message": "获取 {{x}} 轴上的磁场强度。",
+    "description": "Get the magnetic field strength on the ``x`` axis."
+  },
+  "microbit.compass.get_y": {
+    "message": "get y",
+    "description": "(function name) Get the magnetic field strength on the ``y`` axis."
+  },
+  "microbit.compass.get_y.summary": {
+    "message": "获取 {{y}} 轴上的磁场强度。",
+    "description": "Get the magnetic field strength on the ``y`` axis."
+  },
+  "microbit.compass.get_z": {
+    "message": "get z",
+    "description": "(function name) Get the magnetic field strength on the ``z`` axis."
+  },
+  "microbit.compass.get_z.summary": {
+    "message": "获取 {{z}} 轴上的磁场强度。",
+    "description": "Get the magnetic field strength on the ``z`` axis."
+  },
+  "microbit.compass.heading": {
+    "message": "heading",
+    "description": "(function name) Get the compass heading."
+  },
+  "microbit.compass.heading.summary": {
+    "message": "获取罗盘指向。",
+    "description": "Get the compass heading."
+  },
+  "microbit.compass.get_field_strength": {
+    "message": "获取磁场强度",
+    "description": "(function name) Get the magnitude of the magnetic field around the device."
+  },
+  "microbit.compass.get_field_strength.summary": {
+    "message": "获取设备周围磁场的强度。",
+    "description": "Get the magnitude of the magnetic field around the device."
+  },
+  "microbit.display": {
+    "message": "显示",
+    "description": "(module name) Show text, images and animations on the 5×5 LED display."
+  },
+  "microbit.display.summary": {
+    "message": "在5×5的 LED 显示屏上显示文字、图像和动画。",
+    "description": "Show text, images and animations on the 5×5 LED display."
+  },
+  "microbit.display.get_pixel": {
+    "message": "get pixel",
+    "description": "(function name) Get the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.get_pixel.summary": {
+    "message": "获取第{{y}}行第{{x}}列的 LED 亮度。",
+    "description": "Get the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.get_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The display column (0..4)"
+  },
+  "microbit.display.get_pixel.param-doc.x": {
+    "message": "显示屏的列(0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.get_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The display row (0..4)"
+  },
+  "microbit.display.get_pixel.param-doc.y": {
+    "message": "显示行 (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel": {
+    "message": "set pixel",
+    "description": "(function name) Set the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.set_pixel.summary": {
+    "message": "设置在 {{x}} 列和 {{y}} 行的 LED 的亮度。",
+    "description": "Set the brightness of the LED at column ``x`` and row ``y``."
+  },
+  "microbit.display.set_pixel.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The brightness between 0 (off) and 9 (bright)"
+  },
+  "microbit.display.set_pixel.param-doc.value": {
+    "message": "在 0 (关闭) 和 9 (亮) 之间的亮度",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel.param-name.x": {
+    "message": "x",
+    "description": "(parameter name) The display column (0..4)"
+  },
+  "microbit.display.set_pixel.param-doc.x": {
+    "message": "显示屏的列(0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.set_pixel.param-name.y": {
+    "message": "y",
+    "description": "(parameter name) The display row (0..4)"
+  },
+  "microbit.display.set_pixel.param-doc.y": {
+    "message": "显示行 (0..4)",
+    "description": "Parameter docs"
+  },
+  "microbit.display.clear": {
+    "message": "清除",
+    "description": "(function name) Set the brightness of all LEDs to 0 (off)."
+  },
+  "microbit.display.clear.summary": {
+    "message": "将所有 LED 的亮度设置为 0（关闭）。",
+    "description": "Set the brightness of all LEDs to 0 (off)."
+  },
+  "microbit.display.show": {
+    "message": "显示",
+    "description": "(function name) Shows images, letters or digits on the LED display."
+  },
+  "microbit.display.show.summary": {
+    "message": "在 LED 显示屏上显示图像、字母或数字。",
+    "description": "Shows images, letters or digits on the LED display."
+  },
+  "microbit.display.show.param-name.clear": {
+    "message": "清除",
+    "description": "(parameter name) If ``clear`` is ``True``, the display will be cleared after the sequence has finished."
+  },
+  "microbit.display.show.param-doc.clear": {
+    "message": "如果 {{clear}} 是 {{True}}, 则显示将在序列完成后被清除。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.delay": {
+    "message": "延迟",
+    "description": "(parameter name) Each letter, digit or image is shown with ``delay`` milliseconds between them."
+  },
+  "microbit.display.show.param-doc.delay": {
+    "message": "每个字母、数字或图像之间显示的间隔时间为 {{delay}} 毫秒。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.image": {
+    "message": "图像",
+    "description": "(parameter name) A string, number, image or list of images to show."
+  },
+  "microbit.display.show.param-doc.image": {
+    "message": "要显示的一个字符串、数字、图像或图像列表。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
+  },
+  "microbit.display.show.param-doc.loop": {
+    "message": "如果 {{loop}} 为 {{True}}, 动画将永远重复。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.show.param-name.wait": {
+    "message": "等待",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
+  },
+  "microbit.display.show.param-doc.wait": {
+    "message": "如果 {{wait}} 为 {{True}}，此函数将阻塞直到动画完成，否则动画将在后台发生。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll": {
+    "message": "滚动",
+    "description": "(function name) Scrolls a number or text on the LED display."
+  },
+  "microbit.display.scroll.summary": {
+    "message": "在 LED 显示屏上滚动一个数字或文本。",
+    "description": "Scrolls a number or text on the LED display."
+  },
+  "microbit.display.scroll.param-name.delay": {
+    "message": "延迟",
+    "description": "(parameter name) The ``delay`` parameter controls how fast the text is scrolling."
+  },
+  "microbit.display.scroll.param-doc.delay": {
+    "message": "{{delay}} 参数控制文本滚动的速度。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
+  },
+  "microbit.display.scroll.param-doc.loop": {
+    "message": "如果 {{loop}} 为 {{True}}, 动画将永远重复。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.monospace": {
+    "message": "等宽",
+    "description": "(parameter name) If ``monospace`` is ``True``, the characters will all take up 5 pixel-columns in width, otherwise there will be exactly 1 blank pixel-column between each character as they scroll."
+  },
+  "microbit.display.scroll.param-doc.monospace": {
+    "message": "如果 {{monospace}} 为 {{True}}，则字符的宽度都将占用 5 个像素列，否则在滚动时每个字符之间将恰好有 1 个空白像素列。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.text": {
+    "message": "文本",
+    "description": "(parameter name) The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``."
+  },
+  "microbit.display.scroll.param-doc.text": {
+    "message": "要滚动的字符串。如果 {{text}} 是整数或浮点数，则首先使用 {{str()}} 将其转换为字符串。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.scroll.param-name.wait": {
+    "message": "等待",
+    "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
+  },
+  "microbit.display.scroll.param-doc.wait": {
+    "message": "如果 {{wait}} 为 {{True}}，此函数将阻塞直到动画完成，否则动画将发生在后台。",
+    "description": "Parameter docs"
+  },
+  "microbit.display.on": {
+    "message": "打开",
+    "description": "(function name) Turn on the LED display."
+  },
+  "microbit.display.on.summary": {
+    "message": "打开 LED 显示屏。",
+    "description": "Turn on the LED display."
+  },
+  "microbit.display.off": {
+    "message": "关闭",
+    "description": "(function name) Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
+  },
+  "microbit.display.off.summary": {
+    "message": "关闭 LED 显示屏（禁用显示屏可让您将 GPIO 引脚重新用于其他用途）。",
+    "description": "Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
+  },
+  "microbit.display.is_on": {
+    "message": "is on",
+    "description": "(function name) Check whether the LED display is enabled."
+  },
+  "microbit.display.is_on.summary": {
+    "message": "检查 LED 显示屏是否启用。",
+    "description": "Check whether the LED display is enabled."
+  },
+  "microbit.display.read_light_level": {
+    "message": "\nread light level",
+    "description": "(function name) Read the light level."
+  },
+  "microbit.display.read_light_level.summary": {
+    "message": "读取亮度。",
+    "description": "Read the light level."
+  },
+  "microbit.i2c": {
+    "message": "i2c总线协议",
+    "description": "(module name) Communicate with devices using the I²C bus protocol."
+  },
+  "microbit.i2c.summary": {
+    "message": "使用 I²C 总线协议与设备通信。",
+    "description": "Communicate with devices using the I²C bus protocol."
+  },
+  "microbit.i2c.init": {
+    "message": "init",
+    "description": "(function name) Re-initialize a peripheral."
+  },
+  "microbit.i2c.init.summary": {
+    "message": "重新初始化外设。",
+    "description": "Re-initialize a peripheral."
+  },
+  "microbit.i2c.init.param-name.freq": {
+    "message": "freq",
+    "description": "(parameter name) clock frequency"
+  },
+  "microbit.i2c.init.param-doc.freq": {
+    "message": "时钟频率",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.init.param-name.scl": {
+    "message": "SCL引脚",
+    "description": "(parameter name) ``scl`` pin (default 19)"
+  },
+  "microbit.i2c.init.param-doc.scl": {
+    "message": "{{scl}} 引脚(默认 19)",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.init.param-name.sda": {
+    "message": "SDA引脚",
+    "description": "(parameter name) ``sda`` pin (default 20)"
+  },
+  "microbit.i2c.init.param-doc.sda": {
+    "message": "{{sda}} 引脚(默认 20)",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.scan": {
+    "message": "扫描",
+    "description": "(function name) Scan the bus for devices."
+  },
+  "microbit.i2c.scan.summary": {
+    "message": "扫描总线以查找设备。",
+    "description": "Scan the bus for devices."
+  },
+  "microbit.i2c.read": {
+    "message": "读取",
+    "description": "(function name) Read bytes from a device.."
+  },
+  "microbit.i2c.read.summary": {
+    "message": "从设备读取字节..",
+    "description": "Read bytes from a device.."
+  },
+  "microbit.i2c.read.param-name.addr": {
+    "message": "地址",
+    "description": "(parameter name) The 7-bit address of the device"
+  },
+  "microbit.i2c.read.param-doc.addr": {
+    "message": "设备的 7 位地址",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.read.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of bytes to read"
+  },
+  "microbit.i2c.read.param-doc.n": {
+    "message": "要读取的字节数",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.read.param-name.repeat": {
+    "message": "repeat",
+    "description": "(parameter name) If ``True``, no stop bit will be sent"
+  },
+  "microbit.i2c.read.param-doc.repeat": {
+    "message": "如果为 {{True}}，则不发送停止位",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write": {
+    "message": "写入",
+    "description": "(function name) Write bytes to a device."
+  },
+  "microbit.i2c.write.summary": {
+    "message": "将字节写入设备。",
+    "description": "Write bytes to a device."
+  },
+  "microbit.i2c.write.param-name.addr": {
+    "message": "地址",
+    "description": "(parameter name) The 7-bit address of the device"
+  },
+  "microbit.i2c.write.param-doc.addr": {
+    "message": "设备的 7 位地址",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write.param-name.buf": {
+    "message": "缓冲区",
+    "description": "(parameter name) A buffer containing the bytes to write"
+  },
+  "microbit.i2c.write.param-doc.buf": {
+    "message": "包含要写入的字节的缓冲区",
+    "description": "Parameter docs"
+  },
+  "microbit.i2c.write.param-name.repeat": {
+    "message": "repeat",
+    "description": "(parameter name) If ``True``, no stop bit will be sent"
+  },
+  "microbit.i2c.write.param-doc.repeat": {
+    "message": "如果为 {{True}}，则不发送停止位",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone": {
+    "message": "麦克风",
+    "description": "(module name) Respond to sound using the built-in microphone (V2 only)."
+  },
+  "microbit.microphone.summary": {
+    "message": "使用内置麦克风响应声音（仅限 V2）。",
+    "description": "Respond to sound using the built-in microphone (V2 only)."
+  },
+  "microbit.microphone.current_event": {
+    "message": "current event",
+    "description": "(function name) Get the last recorded sound event"
+  },
+  "microbit.microphone.current_event.summary": {
+    "message": "获取最后录制的声音事件",
+    "description": "Get the last recorded sound event"
+  },
+  "microbit.microphone.was_event": {
+    "message": "曾经是事件",
+    "description": "(function name) Check if a sound was heard at least once since the last call."
+  },
+  "microbit.microphone.was_event.summary": {
+    "message": "检查自上次通话后是否至少听到一次声音。",
+    "description": "Check if a sound was heard at least once since the last call."
+  },
+  "microbit.microphone.was_event.param-name.event": {
+    "message": "事件",
+    "description": "(parameter name) The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``"
+  },
+  "microbit.microphone.was_event.param-doc.event": {
+    "message": "要检查的事件，例如 {{SoundEvent.LOUD}} 或 {{SoundEvent.QUIET}}",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.is_event": {
+    "message": "是事件",
+    "description": "(function name) Check the most recent sound event detected."
+  },
+  "microbit.microphone.is_event.summary": {
+    "message": "检查最近检测到的声音事件。",
+    "description": "Check the most recent sound event detected."
+  },
+  "microbit.microphone.is_event.param-name.event": {
+    "message": "事件",
+    "description": "(parameter name) The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``"
+  },
+  "microbit.microphone.is_event.param-doc.event": {
+    "message": "要检查的事件，例如 {{SoundEvent.LOUD}} 或 {{SoundEvent.QUIET}}",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.get_events": {
+    "message": "get events",
+    "description": "(function name) Get the sound event history as a tuple."
+  },
+  "microbit.microphone.get_events.summary": {
+    "message": "以元组的形式获取声音事件历史。",
+    "description": "Get the sound event history as a tuple."
+  },
+  "microbit.microphone.set_threshold": {
+    "message": "set threshold",
+    "description": "(function name) Set the threshold for a sound event."
+  },
+  "microbit.microphone.set_threshold.summary": {
+    "message": "设置声音事件的阈值。",
+    "description": "Set the threshold for a sound event."
+  },
+  "microbit.microphone.set_threshold.param-name.event": {
+    "message": "事件",
+    "description": "(parameter name) A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``."
+  },
+  "microbit.microphone.set_threshold.param-doc.event": {
+    "message": "声音事件，如{{SoundEvent.LOUD}}或{{SoundEvent.QUIET}}。",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.set_threshold.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The threshold level in the range 0-255."
+  },
+  "microbit.microphone.set_threshold.param-doc.value": {
+    "message": "范围为0到255的阈值水平。",
+    "description": "Parameter docs"
+  },
+  "microbit.microphone.sound_level": {
+    "message": "音量 ",
+    "description": "(function name) Get the sound pressure level."
+  },
+  "microbit.microphone.sound_level.summary": {
+    "message": "获取声压级。",
+    "description": "Get the sound pressure level."
+  },
+  "microbit.speaker": {
+    "message": "扬声器​​​​",
+    "description": "(module name) Control the built-in speaker (V2 only)."
+  },
+  "microbit.speaker.summary": {
+    "message": "控制内置扬声器（仅限 V2）。",
+    "description": "Control the built-in speaker (V2 only)."
+  },
+  "microbit.speaker.off": {
+    "message": "关闭",
+    "description": "(function name) Turn the speaker off."
+  },
+  "microbit.speaker.off.summary": {
+    "message": "关闭扬声器​​​​。",
+    "description": "Turn the speaker off."
+  },
+  "microbit.speaker.on": {
+    "message": "打开",
+    "description": "(function name) Turn the speaker on."
+  },
+  "microbit.speaker.on.summary": {
+    "message": "打开扬声器​​​​。",
+    "description": "Turn the speaker on."
+  },
+  "microbit.spi": {
+    "message": "串行外围接口（SPI）",
+    "description": "(module name) Communicate with devices using the serial peripheral interface (SPI) bus."
+  },
+  "microbit.spi.summary": {
+    "message": "通过串行外设接口（SPI）总线与设备通信。",
+    "description": "Communicate with devices using the serial peripheral interface (SPI) bus."
+  },
+  "microbit.spi.init": {
+    "message": "init",
+    "description": "(function name) Initialize SPI communication."
+  },
+  "microbit.spi.init.summary": {
+    "message": "初始化串行外设接口（SPI ）通信。",
+    "description": "Initialize SPI communication."
+  },
+  "microbit.spi.init.param-name.baudrate": {
+    "message": "波特率",
+    "description": "(parameter name) The speed of communication."
+  },
+  "microbit.spi.init.param-doc.baudrate": {
+    "message": "通信速度。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.bits": {
+    "message": "位",
+    "description": "(parameter name) The width in bits of each transfer. Currently only ``bits=8`` is supported. However, this may change in the future."
+  },
+  "microbit.spi.init.param-doc.bits": {
+    "message": "每次传输的宽度（单位：bit）。目前只支持 {{bits=8}}，但是未来可能支持其他宽度。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.miso": {
+    "message": "MISO",
+    "description": "(parameter name) miso pin (default 14)"
+  },
+  "microbit.spi.init.param-doc.miso": {
+    "message": "MISO引脚（默认值14）",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.mode": {
+    "message": "模式",
+    "description": "(parameter name) Determines the combination of clock polarity and phase - `see online table <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_."
+  },
+  "microbit.spi.init.param-doc.mode": {
+    "message": "决定时钟极性和相位的组合——“参见在线表格<https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>”。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.mosi": {
+    "message": "MOSI",
+    "description": "(parameter name) mosi pin (default 15)"
+  },
+  "microbit.spi.init.param-doc.mosi": {
+    "message": "mosi 引脚(默认 15)",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.init.param-name.sclk": {
+    "message": "SCLK",
+    "description": "(parameter name) sclk pin (default 13)"
+  },
+  "microbit.spi.init.param-doc.sclk": {
+    "message": "sclk 引脚(默认 13)",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read": {
+    "message": "读取",
+    "description": "(function name) Read bytes."
+  },
+  "microbit.spi.read.summary": {
+    "message": "读取字节。",
+    "description": "Read bytes."
+  },
+  "microbit.spi.read.param-name.nbytes": {
+    "message": "字节数",
+    "description": "(parameter name) Maximum number of bytes to read."
+  },
+  "microbit.spi.read.param-doc.nbytes": {
+    "message": "要读取的最大字节数。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write": {
+    "message": "写入",
+    "description": "(function name) Write bytes to the bus."
+  },
+  "microbit.spi.write.summary": {
+    "message": "将字节写入总线。",
+    "description": "Write bytes to the bus."
+  },
+  "microbit.spi.write.param-name.buffer": {
+    "message": "缓冲区",
+    "description": "(parameter name) A buffer to read data from."
+  },
+  "microbit.spi.write.param-doc.buffer": {
+    "message": "读取数据的缓冲区。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write_readinto": {
+    "message": "写并读入",
+    "description": "(function name) Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
+  },
+  "microbit.spi.write_readinto.summary": {
+    "message": "将 {{out}} 缓冲区写入总线，并将任何响应读入 {{in_}} 缓冲区。",
+    "description": "Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
+  },
+  "microbit.spi.write_readinto.param-name.in_": {
+    "message": "读入",
+    "description": "(parameter name) The buffer to read data from."
+  },
+  "microbit.spi.write_readinto.param-doc.in_": {
+    "message": "读取数据的缓冲区。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.write_readinto.param-name.out": {
+    "message": "写出",
+    "description": "(parameter name) The buffer to write any response to."
+  },
+  "microbit.spi.write_readinto.param-doc.out": {
+    "message": "写入任何响应的缓冲区。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart": {
+    "message": "通用异步收发器（UART）",
+    "description": "(module name) Communicate with a device using a serial interface."
+  },
+  "microbit.uart.summary": {
+    "message": "使用串行接口与设备通信。",
+    "description": "Communicate with a device using a serial interface."
+  },
+  "microbit.uart.ODD": {
+    "message": "奇数",
+    "description": "(field name) Odd parity"
+  },
+  "microbit.uart.ODD.summary": {
+    "message": "奇校验",
+    "description": "Odd parity"
+  },
+  "microbit.uart.EVEN": {
+    "message": "偶数",
+    "description": "(field name) Even parity"
+  },
+  "microbit.uart.EVEN.summary": {
+    "message": "\n偶校验",
+    "description": "Even parity"
+  },
+  "microbit.uart.init": {
+    "message": "init",
+    "description": "(function name) Initialize serial communication."
+  },
+  "microbit.uart.init.summary": {
+    "message": "初始化串行通信。",
+    "description": "Initialize serial communication."
+  },
+  "microbit.uart.init.param-name.baudrate": {
+    "message": "波特率",
+    "description": "(parameter name) The speed of communication."
+  },
+  "microbit.uart.init.param-doc.baudrate": {
+    "message": "通信速度。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.bits": {
+    "message": "位数",
+    "description": "(parameter name) The size of bytes being transmitted. micro:bit only supports 8."
+  },
+  "microbit.uart.init.param-doc.bits": {
+    "message": "正在传输的字节大小。micro:bit 仅支持 8 字节。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.parity": {
+    "message": "奇偶校验",
+    "description": "(parameter name) How parity is checked, ``None``, ``uart.ODD`` or ``uart.EVEN``."
+  },
+  "microbit.uart.init.param-doc.parity": {
+    "message": "如何检查奇偶性，{{None}}、{{uart.ODD}} 或 {{uart.EVEN}}。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.rx": {
+    "message": "接收引脚",
+    "description": "(parameter name) Receiving pin."
+  },
+  "microbit.uart.init.param-doc.rx": {
+    "message": "接收引脚。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.stop": {
+    "message": "停止",
+    "description": "(parameter name) The number of stop bits, has to be 1 for micro:bit."
+  },
+  "microbit.uart.init.param-doc.stop": {
+    "message": "停止位的数量，对于 micro:bit，必须为 1。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.init.param-name.tx": {
+    "message": "发送引脚",
+    "description": "(parameter name) Transmitting pin."
+  },
+  "microbit.uart.init.param-doc.tx": {
+    "message": "传输引脚。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.any": {
+    "message": "任何",
+    "description": "(function name) Check if any data is waiting."
+  },
+  "microbit.uart.any.summary": {
+    "message": "检查是否有任何数据正在等待。",
+    "description": "Check if any data is waiting."
+  },
+  "microbit.uart.read": {
+    "message": "读取",
+    "description": "(function name) Read bytes."
+  },
+  "microbit.uart.read.summary": {
+    "message": "读取字节。",
+    "description": "Read bytes."
+  },
+  "microbit.uart.read.param-name.nbytes": {
+    "message": "字节数",
+    "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible"
+  },
+  "microbit.uart.read.param-doc.nbytes": {
+    "message": "如果指定了 {{nbytes}}，则最多读取那么多字节，否则读取尽可能多的字节",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readinto": {
+    "message": "读入",
+    "description": "(function name) Read bytes into the ``buf``."
+  },
+  "microbit.uart.readinto.summary": {
+    "message": "读取字节到 {{buf}}。",
+    "description": "Read bytes into the ``buf``."
+  },
+  "microbit.uart.readinto.param-name.buf": {
+    "message": "缓冲区",
+    "description": "(parameter name) The buffer to write to."
+  },
+  "microbit.uart.readinto.param-doc.buf": {
+    "message": "要写入的缓存。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readinto.param-name.nbytes": {
+    "message": "字节数",
+    "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes."
+  },
+  "microbit.uart.readinto.param-doc.nbytes": {
+    "message": "如果指定了 {{nbytes}}，则最多读取那么多字节，否则读取 {{len(buf)}} 个字节。",
+    "description": "Parameter docs"
+  },
+  "microbit.uart.readline": {
+    "message": "读取一行",
+    "description": "(function name) Read a line, ending in a newline character."
+  },
+  "microbit.uart.readline.summary": {
+    "message": "读取一行，以换行符结尾。",
+    "description": "Read a line, ending in a newline character."
+  },
+  "microbit.uart.write": {
+    "message": "写入",
+    "description": "(function name) Write a buffer to the bus."
+  },
+  "microbit.uart.write.summary": {
+    "message": "将缓冲区写入总线。",
+    "description": "Write a buffer to the bus."
+  },
+  "microbit.uart.write.param-name.buf": {
+    "message": "缓冲区",
+    "description": "(parameter name) A bytes object or a string."
+  },
+  "microbit.uart.write.param-doc.buf": {
+    "message": "一个字节对象或一个字符串。",
+    "description": "Parameter docs"
+  },
+  "micropython": {
+    "message": "MicroPython",
+    "description": "(module name) MicroPython internals."
+  },
+  "micropython.summary": {
+    "message": "MicroPython 内设。",
+    "description": "MicroPython internals."
+  },
+  "micropython.const": {
+    "message": "常数",
+    "description": "(function name) Used to declare that the expression is a constant so that the compiler can\noptimise it."
+  },
+  "micropython.const.summary": {
+    "message": "用于声明表达式是一个常量，以便编译器可以优化它。",
+    "description": "Used to declare that the expression is a constant so that the compiler can\noptimise it."
+  },
+  "micropython.const.param-name.expr": {
+    "message": "表达式",
+    "description": "(parameter name) A constant expression."
+  },
+  "micropython.const.param-doc.expr": {
+    "message": "一个常量表达式。",
+    "description": "Parameter docs"
+  },
+  "micropython.opt_level-1": {
+    "message": "优化级别",
+    "description": "(function name) Get the current optimisation level for the compilation of scripts."
+  },
+  "micropython.opt_level-1.summary": {
+    "message": "获取脚本编译的当前优化级别。",
+    "description": "Get the current optimisation level for the compilation of scripts."
+  },
+  "micropython.opt_level-2": {
+    "message": "优化级别",
+    "description": "(function name) Sets the optimisation level for subsequent compilation of scripts."
+  },
+  "micropython.opt_level-2.summary": {
+    "message": "设置后续脚本编译的优化级别。",
+    "description": "Sets the optimisation level for subsequent compilation of scripts."
+  },
+  "micropython.opt_level-2.param-name.level": {
+    "message": "级别",
+    "description": "(parameter name) An integer optimisation level."
+  },
+  "micropython.opt_level-2.param-doc.level": {
+    "message": "整数优化级别。",
+    "description": "Parameter docs"
+  },
+  "micropython.mem_info": {
+    "message": "mem info",
+    "description": "(function name) Print information about currently used memory."
+  },
+  "micropython.mem_info.summary": {
+    "message": "打印与当前使用内存相关的信息。",
+    "description": "Print information about currently used memory."
+  },
+  "micropython.mem_info.param-name.verbose": {
+    "message": "详细",
+    "description": "(parameter name) If the ``verbose`` argument is given then extra information is printed."
+  },
+  "micropython.mem_info.param-doc.verbose": {
+    "message": "如果给出 {{verbose}} 参数，则打印额外信息。",
+    "description": "Parameter docs"
+  },
+  "micropython.qstr_info": {
+    "message": "字符串信息",
+    "description": "(function name) Print information about currently interned strings."
+  },
+  "micropython.qstr_info.summary": {
+    "message": "打印与当前驻留字符串相关的信息。",
+    "description": "Print information about currently interned strings."
+  },
+  "micropython.qstr_info.param-name.verbose": {
+    "message": "详细",
+    "description": "(parameter name) If the ``verbose`` argument is given then extra information is printed."
+  },
+  "micropython.qstr_info.param-doc.verbose": {
+    "message": "如果给出 {{verbose}} 参数，则打印额外信息。",
+    "description": "Parameter docs"
+  },
+  "micropython.stack_use": {
+    "message": "堆栈使用",
+    "description": "(function name) Return an integer representing the current amount of stack that is being\nused."
+  },
+  "micropython.stack_use.summary": {
+    "message": "返回一个整数，来表示当前正在使用的堆栈数量。",
+    "description": "Return an integer representing the current amount of stack that is being\nused."
+  },
+  "micropython.heap_lock": {
+    "message": "锁住堆",
+    "description": "(function name) Lock the heap."
+  },
+  "micropython.heap_lock.summary": {
+    "message": "锁定堆。",
+    "description": "Lock the heap."
+  },
+  "micropython.heap_unlock": {
+    "message": "解锁堆",
+    "description": "(function name) Unlock the heap."
+  },
+  "micropython.heap_unlock.summary": {
+    "message": "解锁堆。",
+    "description": "Unlock the heap."
+  },
+  "micropython.kbd_intr": {
+    "message": "键盘中断",
+    "description": "(function name) Set the character that will raise a ``KeyboardInterrupt`` exception."
+  },
+  "micropython.kbd_intr.summary": {
+    "message": "设置将引发{{KeyboardInterrupt}}异常的字符。",
+    "description": "Set the character that will raise a ``KeyboardInterrupt`` exception."
+  },
+  "micropython.kbd_intr.param-name.chr": {
+    "message": "字符",
+    "description": "(parameter name) Character code to raise the interrupt or -1 to disable capture of Ctrl-C."
+  },
+  "micropython.kbd_intr.param-doc.chr": {
+    "message": "用于提高中断的字符代码；或者-1，用于禁止捕获 Ctrl-C。",
+    "description": "Parameter docs"
+  },
+  "music": {
+    "message": "音乐",
+    "description": "(module name) Create and play melodies."
+  },
+  "music.summary": {
+    "message": "创建并播放旋律。",
+    "description": "Create and play melodies."
+  },
+  "music.DADADADUM": {
+    "message": "dadadadum",
+    "description": "(field name) Melody: the opening to Beethoven’s 5th Symphony in C minor."
+  },
+  "music.DADADADUM.summary": {
+    "message": "旋律：《贝多芬 C 小调第五交响曲》开场曲。",
+    "description": "Melody: the opening to Beethoven’s 5th Symphony in C minor."
+  },
+  "music.ENTERTAINER": {
+    "message": "演艺人",
+    "description": "(field name) Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."
+  },
+  "music.ENTERTAINER.summary": {
+    "message": "旋律：斯科特·乔普林的拉格泰姆经典“演艺人”的开场片段。",
+    "description": "Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."
+  },
+  "music.PRELUDE": {
+    "message": "序幕",
+    "description": "(field name) Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues."
+  },
+  "music.PRELUDE.summary": {
+    "message": "旋律：约翰·塞巴斯蒂安·巴赫48首前奏曲和赋格曲中 C 大调第一前奏曲的开场。",
+    "description": "Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues."
+  },
+  "music.ODE": {
+    "message": "欢乐颂",
+    "description": "(field name) Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor."
+  },
+  "music.ODE.summary": {
+    "message": "旋律：贝多芬 D 小调第九交响曲中的“欢乐颂”主题。",
+    "description": "Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor."
+  },
+  "music.NYAN": {
+    "message": "彩虹猫",
+    "description": "(field name) Melody: the Nyan Cat theme (http://www.nyan.cat/)."
+  },
+  "music.NYAN.summary": {
+    "message": "旋律：彩虹猫主题 (http://www.nyan.cat/)。",
+    "description": "Melody: the Nyan Cat theme (http://www.nyan.cat/)."
+  },
+  "music.RINGTONE": {
+    "message": "铃声",
+    "description": "(field name) Melody: something that sounds like a mobile phone ringtone."
+  },
+  "music.RINGTONE.summary": {
+    "message": "旋律：听起来像手机铃声的乐曲。",
+    "description": "Melody: something that sounds like a mobile phone ringtone."
+  },
+  "music.FUNK": {
+    "message": "朋克",
+    "description": "(field name) Melody: a funky bass line for secret agents and criminal masterminds."
+  },
+  "music.FUNK.summary": {
+    "message": "旋律：一曲为特工和犯罪主谋制作的 funky bass。",
+    "description": "Melody: a funky bass line for secret agents and criminal masterminds."
+  },
+  "music.BLUES": {
+    "message": "布鲁斯",
+    "description": "(field name) Melody: a boogie-woogie 12-bar blues walking bass."
+  },
+  "music.BLUES.summary": {
+    "message": "旋律：布吉伍吉 12 小节布鲁斯 walking bass。",
+    "description": "Melody: a boogie-woogie 12-bar blues walking bass."
+  },
+  "music.BIRTHDAY": {
+    "message": "生日",
+    "description": "(field name) Melody: “Happy Birthday to You…”"
+  },
+  "music.BIRTHDAY.summary": {
+    "message": "旋律：“祝你生日快乐……”",
+    "description": "Melody: “Happy Birthday to You…”"
+  },
+  "music.WEDDING": {
+    "message": "婚礼",
+    "description": "(field name) Melody: the bridal chorus from Wagner’s opera “Lohengrin”."
+  },
+  "music.WEDDING.summary": {
+    "message": "旋律：瓦格纳歌剧《罗恩格林》中的新娘合唱。",
+    "description": "Melody: the bridal chorus from Wagner’s opera “Lohengrin”."
+  },
+  "music.FUNERAL": {
+    "message": "哀乐",
+    "description": "(field name) Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."
+  },
+  "music.FUNERAL.summary": {
+    "message": "旋律：“葬礼进行曲”，也被称为弗雷德里克肖邦的 B♭ 小调第二钢琴奏鸣曲，Op. 35。",
+    "description": "Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."
+  },
+  "music.PUNCHLINE": {
+    "message": "笑点",
+    "description": "(field name) Melody: a fun fragment that signifies a joke has been made."
+  },
+  "music.PUNCHLINE.summary": {
+    "message": "旋律：一个有趣的片段，表示开了一个玩笑。",
+    "description": "Melody: a fun fragment that signifies a joke has been made."
+  },
+  "music.PYTHON": {
+    "message": "Python",
+    "description": "(field name) Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."
+  },
+  "music.PYTHON.summary": {
+    "message": "旋律：约翰·菲利普·苏萨的进行曲《自由钟》，即《巨蟒剧团之飞翔的马戏团》的主题曲（Python 编程语言以此命名）。",
+    "description": "Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."
+  },
+  "music.BADDY": {
+    "message": "反面角色",
+    "description": "(field name) Melody: silent movie era entrance of a baddy."
+  },
+  "music.BADDY.summary": {
+    "message": "旋律：默片时代反面角色的入场曲。",
+    "description": "Melody: silent movie era entrance of a baddy."
+  },
+  "music.CHASE": {
+    "message": "追逐",
+    "description": "(field name) Melody: silent movie era chase scene."
+  },
+  "music.CHASE.summary": {
+    "message": "旋律：无声电影时代的追逐场景。",
+    "description": "Melody: silent movie era chase scene."
+  },
+  "music.BA_DING": {
+    "message": "ba ding ",
+    "description": "(field name) Melody: a short signal to indicate something has happened."
+  },
+  "music.BA_DING.summary": {
+    "message": "旋律：表示某事发生的简短信号。",
+    "description": "Melody: a short signal to indicate something has happened."
+  },
+  "music.WAWAWAWAA": {
+    "message": "wawawawaa",
+    "description": "(field name) Melody: a very sad trombone."
+  },
+  "music.WAWAWAWAA.summary": {
+    "message": "旋律：非常悲伤的长号。",
+    "description": "Melody: a very sad trombone."
+  },
+  "music.JUMP_UP": {
+    "message": "向上跳",
+    "description": "(field name) Melody: for use in a game, indicating upward movement."
+  },
+  "music.JUMP_UP.summary": {
+    "message": "旋律：用于游戏中，表示向上运动。",
+    "description": "Melody: for use in a game, indicating upward movement."
+  },
+  "music.JUMP_DOWN": {
+    "message": "向下跳",
+    "description": "(field name) Melody: for use in a game, indicating downward movement."
+  },
+  "music.JUMP_DOWN.summary": {
+    "message": "旋律：用于游戏中，表示向下运动。",
+    "description": "Melody: for use in a game, indicating downward movement."
+  },
+  "music.POWER_UP": {
+    "message": "能力增强",
+    "description": "(field name) Melody: a fanfare to indicate an achievement unlocked."
+  },
+  "music.POWER_UP.summary": {
+    "message": "旋律：表示解锁成就的号角。",
+    "description": "Melody: a fanfare to indicate an achievement unlocked."
+  },
+  "music.POWER_DOWN": {
+    "message": "能力减弱",
+    "description": "(field name) Melody: a sad fanfare to indicate an achievement lost."
+  },
+  "music.POWER_DOWN.summary": {
+    "message": "旋律：表示失去成就的悲伤号角。",
+    "description": "Melody: a sad fanfare to indicate an achievement lost."
+  },
+  "music.set_tempo": {
+    "message": "设置节奏",
+    "description": "(function name) Sets the approximate tempo for playback."
+  },
+  "music.set_tempo.summary": {
+    "message": "\n设置播放的大致节奏。",
+    "description": "Sets the approximate tempo for playback."
+  },
+  "music.set_tempo.param-name.bpm": {
+    "message": "每分钟节拍数",
+    "description": "(parameter name) An integer determining how many beats per minute."
+  },
+  "music.set_tempo.param-doc.bpm": {
+    "message": "一个整数，确定每分钟有多少拍。",
+    "description": "Parameter docs"
+  },
+  "music.set_tempo.param-name.ticks": {
+    "message": "刻度",
+    "description": "(parameter name) The number of ticks constituting a beat."
+  },
+  "music.set_tempo.param-doc.ticks": {
+    "message": "构成一个节拍的刻度数。",
+    "description": "Parameter docs"
+  },
+  "music.get_tempo": {
+    "message": "获得节奏值",
+    "description": "(function name) Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
+  },
+  "music.get_tempo.summary": {
+    "message": "以整数元组的形式获取当前节奏：{{(ticks, bpm)}}。",
+    "description": "Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
+  },
+  "music.play": {
+    "message": "播放",
+    "description": "(function name) Plays music."
+  },
+  "music.play.summary": {
+    "message": "播放音乐。",
+    "description": "Plays music."
+  },
+  "music.play.param-name.loop": {
+    "message": "loop",
+    "description": "(parameter name) If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted."
+  },
+  "music.play.param-doc.loop": {
+    "message": "如果 {{loop}} 设置为 {{True}}，曲调会重复直到调用 {{stop}} 或阻塞调用被中断。",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.music": {
+    "message": "音乐",
+    "description": "(parameter name) music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_"
+  },
+  "music.play.param-doc.music": {
+    "message": "`a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_中指定的音乐",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) the output pin for use with an external speaker (default ``pin0``), ``None`` for no sound."
+  },
+  "music.play.param-doc.pin": {
+    "message": "用于外接扬声器的输出引脚（默认为 {{pin0}}），{{None}} 表示无声音。",
+    "description": "Parameter docs"
+  },
+  "music.play.param-name.wait": {
+    "message": "等待",
+    "description": "(parameter name) If ``wait`` is set to ``True``, this function is blocking."
+  },
+  "music.play.param-doc.wait": {
+    "message": "如果 {{wait}} 设置为 {{True}}，则此函数阻塞。",
+    "description": "Parameter docs"
+  },
+  "music.pitch": {
+    "message": "音高",
+    "description": "(function name) Play a note."
+  },
+  "music.pitch.summary": {
+    "message": "播放一个音符。",
+    "description": "Play a note."
+  },
+  "music.pitch.param-name.duration": {
+    "message": "持续",
+    "description": "(parameter name) A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``."
+  },
+  "music.pitch.param-doc.duration": {
+    "message": "一毫秒的持续时间。如果是负的，则声音将持续到下一次调用或对 {{stop}} 的调用。",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.frequency": {
+    "message": "频率",
+    "description": "(parameter name) An integer frequency"
+  },
+  "music.pitch.param-doc.frequency": {
+    "message": "整数频率",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) Optional output pin (default ``pin0``)."
+  },
+  "music.pitch.param-doc.pin": {
+    "message": "可选输出引脚（默认值{{pin0}}）。",
+    "description": "Parameter docs"
+  },
+  "music.pitch.param-name.wait": {
+    "message": "等待",
+    "description": "(parameter name) If ``wait`` is set to ``True``, this function is blocking."
+  },
+  "music.pitch.param-doc.wait": {
+    "message": "如果 {{wait}} 设置为 {{True}}，则此函数阻塞。",
+    "description": "Parameter docs"
+  },
+  "music.stop": {
+    "message": "停止",
+    "description": "(function name) Stops all music playback on the built-in speaker and any pin outputting sound."
+  },
+  "music.stop.summary": {
+    "message": "停止内置扬声器播放任何音乐，并停止发出任何引脚输出的声音。",
+    "description": "Stops all music playback on the built-in speaker and any pin outputting sound."
+  },
+  "music.stop.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``."
+  },
+  "music.stop.param-doc.pin": {
+    "message": "可以提供可选参数来指定一个引脚，如{{music.stop(pin1)}}。",
+    "description": "Parameter docs"
+  },
+  "music.reset": {
+    "message": "reset",
+    "description": "(function name) Resets ticks, bpm, duration and octave to their default values."
+  },
+  "music.reset.summary": {
+    "message": "将 ticks、bpm、duration 和 octave重置为默认值。",
+    "description": "Resets ticks, bpm, duration and octave to their default values."
+  },
+  "neopixel": {
+    "message": "Neopixel",
+    "description": "(module name) Individually addressable RGB and RGBW LED strips."
+  },
+  "neopixel.summary": {
+    "message": "可单独寻址的 RGB 和 RGBW LED 灯带。",
+    "description": "Individually addressable RGB and RGBW LED strips."
+  },
+  "neopixel.NeoPixel.__init__": {
+    "message": "init",
+    "description": "(function name) Initialise a new strip of neopixel LEDs controlled via a pin."
+  },
+  "neopixel.NeoPixel.__init__.summary": {
+    "message": "初始化一条通过一个引脚控制的新 neopixel LED 灯带。",
+    "description": "Initialise a new strip of neopixel LEDs controlled via a pin."
+  },
+  "neopixel.NeoPixel.__init__.param-name.bpp": {
+    "message": "每像素字节数",
+    "description": "(parameter name) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.bpp": {
+    "message": "每个像素的字节数。对于 RGB 和 GRB 而言，只有将该值设置为 4 而不是默认值 3，micro:bit V2 RGBW neopixel 才能支持。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__init__.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The number of neopixels in the strip."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.n": {
+    "message": "灯带中 neopixel 灯珠的数量。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__init__.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) The pin controlling the neopixel strip."
+  },
+  "neopixel.NeoPixel.__init__.param-doc.pin": {
+    "message": "控制 neopixel 灯带的引脚。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.clear": {
+    "message": "清除",
+    "description": "(function name) Clear all the pixels."
+  },
+  "neopixel.NeoPixel.clear.summary": {
+    "message": "清除所有像素。",
+    "description": "Clear all the pixels."
+  },
+  "neopixel.NeoPixel.show": {
+    "message": "显示",
+    "description": "(function name) Show the pixels."
+  },
+  "neopixel.NeoPixel.show.summary": {
+    "message": "显示像素。",
+    "description": "Show the pixels."
+  },
+  "neopixel.NeoPixel.write": {
+    "message": "写入",
+    "description": "(function name) Show the pixels (micro:bit V2 only)."
+  },
+  "neopixel.NeoPixel.write.summary": {
+    "message": "显示像素（仅限 micro:bit V2）。",
+    "description": "Show the pixels (micro:bit V2 only)."
+  },
+  "neopixel.NeoPixel.fill": {
+    "message": "填充",
+    "description": "(function name) Colour all pixels a given RGB/RGBW value."
+  },
+  "neopixel.NeoPixel.fill.summary": {
+    "message": "\n用给定的 RGB/RGBW 值为所有像素着色。",
+    "description": "Colour all pixels a given RGB/RGBW value."
+  },
+  "neopixel.NeoPixel.fill.param-name.colour": {
+    "message": "颜色",
+    "description": "(parameter name) A tuple of the same length as the number of bytes per pixel (bpp)."
+  },
+  "neopixel.NeoPixel.fill.param-doc.colour": {
+    "message": "长度与每像素字节数 (bpp) 相同的元组。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__setitem__": {
+    "message": "setitem",
+    "description": "(function name) Set a pixel colour."
+  },
+  "neopixel.NeoPixel.__setitem__.summary": {
+    "message": "设置像素颜色",
+    "description": "Set a pixel colour."
+  },
+  "neopixel.NeoPixel.__setitem__.param-name.key": {
+    "message": "键",
+    "description": "(parameter name) The pixel number."
+  },
+  "neopixel.NeoPixel.__setitem__.param-doc.key": {
+    "message": "像素数。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__setitem__.param-name.value": {
+    "message": "value",
+    "description": "(parameter name) The colour."
+  },
+  "neopixel.NeoPixel.__setitem__.param-doc.value": {
+    "message": "颜色。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__getitem__": {
+    "message": "getitem",
+    "description": "(function name) Get a pixel colour."
+  },
+  "neopixel.NeoPixel.__getitem__.summary": {
+    "message": "获取像素颜色。",
+    "description": "Get a pixel colour."
+  },
+  "neopixel.NeoPixel.__getitem__.param-name.key": {
+    "message": "键",
+    "description": "(parameter name) The pixel number."
+  },
+  "neopixel.NeoPixel.__getitem__.param-doc.key": {
+    "message": "像素数。",
+    "description": "Parameter docs"
+  },
+  "neopixel.NeoPixel.__len__": {
+    "message": "长度",
+    "description": "(function name) Get length of this pixel strip."
+  },
+  "neopixel.NeoPixel.__len__.summary": {
+    "message": "获取此像素条的长度。",
+    "description": "Get length of this pixel strip."
+  },
+  "os": {
+    "message": "操作系统",
+    "description": "(module name) Access the file system."
+  },
+  "os.summary": {
+    "message": "访问文件系统。",
+    "description": "Access the file system."
+  },
+  "os.listdir": {
+    "message": "列出目录",
+    "description": "(function name) List files."
+  },
+  "os.listdir.summary": {
+    "message": "列出文件。",
+    "description": "List files."
+  },
+  "os.remove": {
+    "message": "删除",
+    "description": "(function name) Remove (delete) a file."
+  },
+  "os.remove.summary": {
+    "message": "移除（删除）一份文件。",
+    "description": "Remove (delete) a file."
+  },
+  "os.remove.param-name.filename": {
+    "message": "文件名",
+    "description": "(parameter name) The file to delete."
+  },
+  "os.remove.param-doc.filename": {
+    "message": "要删除的文件。",
+    "description": "Parameter docs"
+  },
+  "os.size": {
+    "message": "大小",
+    "description": "(function name) Returns the size of a file."
+  },
+  "os.size.summary": {
+    "message": "返回文件的大小。",
+    "description": "Returns the size of a file."
+  },
+  "os.size.param-name.filename": {
+    "message": "文件名",
+    "description": "(parameter name) The file"
+  },
+  "os.size.param-doc.filename": {
+    "message": "此文件",
+    "description": "Parameter docs"
+  },
+  "os.uname_result": {
+    "message": "当前系统名称的返回结果",
+    "description": "(class name) Result of ``os.uname()``"
+  },
+  "os.uname_result.summary": {
+    "message": "{{os.uname()}} 的结果",
+    "description": "Result of ``os.uname()``"
+  },
+  "os.uname_result.sysname": {
+    "message": "系统名字",
+    "description": "(field name) Operating system name."
+  },
+  "os.uname_result.sysname.summary": {
+    "message": "操作系统名称。",
+    "description": "Operating system name."
+  },
+  "os.uname_result.nodename": {
+    "message": "节点名字",
+    "description": "(field name) Name of machine on network (implementation-defined)."
+  },
+  "os.uname_result.nodename.summary": {
+    "message": "网络上机器的名称（实现-定义）。",
+    "description": "Name of machine on network (implementation-defined)."
+  },
+  "os.uname_result.release": {
+    "message": "发布",
+    "description": "(field name) Operating system release."
+  },
+  "os.uname_result.release.summary": {
+    "message": "操作系统发布版本。",
+    "description": "Operating system release."
+  },
+  "os.uname_result.version": {
+    "message": "版本",
+    "description": "(field name) Operating system version."
+  },
+  "os.uname_result.version.summary": {
+    "message": "操作系统版本。",
+    "description": "Operating system version."
+  },
+  "os.uname_result.machine": {
+    "message": "机器",
+    "description": "(field name) Hardware identifier."
+  },
+  "os.uname_result.machine.summary": {
+    "message": "硬件标识符。",
+    "description": "Hardware identifier."
+  },
+  "os.uname": {
+    "message": "当前系统名称",
+    "description": "(function name) Returns information identifying the current operating system."
+  },
+  "os.uname.summary": {
+    "message": "返回标识当前操作系统的信息。",
+    "description": "Returns information identifying the current operating system."
+  },
+  "radio": {
+    "message": "无线电",
+    "description": "(module name) Communicate between micro:bits with the built-in radio."
+  },
+  "radio.summary": {
+    "message": "使用内置无线电在 micro:bit 之间进行通信。",
+    "description": "Communicate between micro:bits with the built-in radio."
+  },
+  "radio.RATE_1MBIT": {
+    "message": "速率 1Mbit",
+    "description": "(field name) Constant used to indicate a throughput of 1 MBit a second."
+  },
+  "radio.RATE_1MBIT.summary": {
+    "message": "用于表示每秒 1 兆字节吞吐量的常数。",
+    "description": "Constant used to indicate a throughput of 1 MBit a second."
+  },
+  "radio.RATE_2MBIT": {
+    "message": "速率 2Mbit",
+    "description": "(field name) Constant used to indicate a throughput of 2 MBit a second."
+  },
+  "radio.RATE_2MBIT.summary": {
+    "message": "用于表示每秒 2 兆字节吞吐量的常数。",
+    "description": "Constant used to indicate a throughput of 2 MBit a second."
+  },
+  "radio.on": {
+    "message": "打开",
+    "description": "(function name) Turns the radio on."
+  },
+  "radio.on.summary": {
+    "message": "打开无线电。",
+    "description": "Turns the radio on."
+  },
+  "radio.off": {
+    "message": "关闭",
+    "description": "(function name) Turns off the radio, saving power and memory."
+  },
+  "radio.off.summary": {
+    "message": "关闭无线电以节省电量和内存。",
+    "description": "Turns off the radio, saving power and memory."
+  },
+  "radio.config": {
+    "message": "配置",
+    "description": "(function name) Configures the radio."
+  },
+  "radio.config.summary": {
+    "message": "配置无线电。",
+    "description": "Configures the radio."
+  },
+  "radio.config.param-name.address": {
+    "message": "地址",
+    "description": "(parameter name) (default=0x75626974) an arbitrary name, expressed as a 32-bit address, that's used to filter incoming packets at the hardware level, keeping only those that match the address you set.\nThe default used by other micro:bit related platforms is the default setting used here."
+  },
+  "radio.config.param-doc.address": {
+    "message": "(default=0x75626974) 任意名称，表示为 32 位地址，用于在硬件级别过滤传入的数据包，仅保留与您设置的地址匹配的数据包。\n其他 micro:bit 相关平台使用的默认设置与此处的默认设置相同。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.channel": {
+    "message": "信道",
+    "description": "(parameter name) (default=7) an integer value from 0 to 83 (inclusive) that defines an arbitrary \"channel\" to which the radio is tuned.\nMessages will be sent via this channel and only messages received via this channel will be put onto the incoming message queue. Each step is 1MHz wide, based at 2400MHz."
+  },
+  "radio.config.param-doc.channel": {
+    "message": "（缺省值7）范围为从0到83（含83）的整数，用于定义一任意“信道”，以便将无线电调到该信道。信息通过该信道发送，并且只有通过该信道接收到的消息才被放到传入消息队列中。每一步的宽度为 1 MHz，基于 2400 MHz。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.data_rate": {
+    "message": "数据传输速率",
+    "description": "(parameter name) (default=``radio.RATE_1MBIT``) indicates the speed at which data throughput takes place.\nCan be one of the following constants defined in the ``radio`` module: ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``."
+  },
+  "radio.config.param-doc.data_rate": {
+    "message": "（默认值{{radio.RATE_1MBIT}}）表示数据吞吐速度。\n可以是{{radio}}模块中定义的以下常数之一：{{RATE_250KBIT}}、{{RATE_1MBIT}} 或 {{RATE_2MBIT}}。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.group": {
+    "message": "群组",
+    "description": "(parameter name) (default=0) an 8-bit value (0-255) used with the ``address`` when filtering messages.\nConceptually, \"address\" is like a house/office address and \"group\" is like the person at that address to which you want to send your message."
+  },
+  "radio.config.param-doc.group": {
+    "message": "（默认值0）过滤消息时与 {{address}} 一起使用的 8 位的数值（0-255）。\n从概念上讲，\"address”就像房屋或办公室的地址，而“group”就像住在该地址，并且你想给他或她发消息的那个人。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.length": {
+    "message": "长度",
+    "description": "(parameter name) (default=32) defines the maximum length, in bytes, of a message sent via the radio.\nIt can be up to 251 bytes long (254 - 3 bytes for S0, LENGTH and S1 preamble)."
+  },
+  "radio.config.param-doc.length": {
+    "message": "（默认值32）以字节为单位，定义了通过无线电传输消息的最大长度。\n其长度可达 251 字节（S0、LENGTH 和 S1 前导码：254-3 字节）。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.power": {
+    "message": "幂数",
+    "description": "(parameter name) (default=6) is an integer value from 0 to 7 (inclusive) to indicate the strength of signal used when broadcasting a message.\nThe higher the value the stronger the signal, but the more power is consumed by the device. The numbering translates to positions in the following list of dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4."
+  },
+  "radio.config.param-doc.power": {
+    "message": "（默认值6）用于表示广播消息时所使用信号强度的整数值，其范围为从0到7（包含7）。\n该值越大，信号越强，但设备消耗的功率也越大。其编码转换为以下 dBm（分贝毫瓦）值列表中的不同值：-30, -20, -16, -12, -8, -4, 0, 4。",
+    "description": "Parameter docs"
+  },
+  "radio.config.param-name.queue": {
+    "message": "队列",
+    "description": "(parameter name) (default=3) specifies the number of messages that can be stored on the incoming message queue.\nIf there are no spaces left on the queue for incoming messages, then the incoming message is dropped."
+  },
+  "radio.config.param-doc.queue": {
+    "message": "（默认值3）规定了传入消息队列中可以存储的消息数量。\n如果队列中没有多余的空间留给传入的消息，那么传入的消息就会被丢弃。",
+    "description": "Parameter docs"
+  },
+  "radio.reset": {
+    "message": "reset",
+    "description": "(function name) Reset the settings to their default values."
+  },
+  "radio.reset.summary": {
+    "message": "将设置重设为默认值。",
+    "description": "Reset the settings to their default values."
+  },
+  "radio.send_bytes": {
+    "message": "发送字节",
+    "description": "(function name) Sends a message containing bytes."
+  },
+  "radio.send_bytes.summary": {
+    "message": "发送一条包含字节的消息。",
+    "description": "Sends a message containing bytes."
+  },
+  "radio.send_bytes.param-name.message": {
+    "message": "消息",
+    "description": "(parameter name) The bytes to send."
+  },
+  "radio.send_bytes.param-doc.message": {
+    "message": "待发送的字节。",
+    "description": "Parameter docs"
+  },
+  "radio.receive_bytes": {
+    "message": "接收字节",
+    "description": "(function name) Receive the next incoming message on the message queue."
+  },
+  "radio.receive_bytes.summary": {
+    "message": "接收消息队列中的下一条传入消息。",
+    "description": "Receive the next incoming message on the message queue."
+  },
+  "radio.receive_bytes_into": {
+    "message": "接收传入的字节",
+    "description": "(function name) Copy the next incoming message on the message queue into a buffer."
+  },
+  "radio.receive_bytes_into.summary": {
+    "message": "将消息队列中的下一条传入消息复制到缓冲区。",
+    "description": "Copy the next incoming message on the message queue into a buffer."
+  },
+  "radio.receive_bytes_into.param-name.buffer": {
+    "message": "缓冲区",
+    "description": "(parameter name) The target buffer. The message is truncated if larger than the buffer."
+  },
+  "radio.receive_bytes_into.param-doc.buffer": {
+    "message": "目标缓冲区。如果消息大小大于缓冲区，则消息会被截断。",
+    "description": "Parameter docs"
+  },
+  "radio.send": {
+    "message": "发送",
+    "description": "(function name) Sends a message string."
+  },
+  "radio.send.summary": {
+    "message": "发送消息字符串。",
+    "description": "Sends a message string."
+  },
+  "radio.send.param-name.message": {
+    "message": "消息",
+    "description": "(parameter name) The string to send."
+  },
+  "radio.send.param-doc.message": {
+    "message": "待发送的字符串。",
+    "description": "Parameter docs"
+  },
+  "radio.receive": {
+    "message": "接收",
+    "description": "(function name) Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
+  },
+  "radio.receive.summary": {
+    "message": "按照与{{receive_bytes}}完全相同的工作方式，但是返回所发送的内容。",
+    "description": "Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
+  },
+  "radio.receive_full": {
+    "message": "接受完整消息",
+    "description": "(function name) Returns a tuple containing three values representing the next incoming message on the message queue."
+  },
+  "radio.receive_full.summary": {
+    "message": "返回一个包含三个数值的元组，用来代表消息队列中的下一条传入消息。",
+    "description": "Returns a tuple containing three values representing the next incoming message on the message queue."
+  },
+  "random": {
+    "message": "随机数",
+    "description": "(module name) Generate random numbers."
+  },
+  "random.summary": {
+    "message": "生成随机数。",
+    "description": "Generate random numbers."
+  },
+  "random.getrandbits": {
+    "message": "生成随机位",
+    "description": "(function name) Generate an integer with ``n`` random bits."
+  },
+  "random.getrandbits.summary": {
+    "message": "生成一个具有{{n}}个随机位的整数。",
+    "description": "Generate an integer with ``n`` random bits."
+  },
+  "random.getrandbits.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) A value between 1-30 (inclusive)."
+  },
+  "random.getrandbits.param-doc.n": {
+    "message": "一个在1到30之间（包含30）的数值。",
+    "description": "Parameter docs"
+  },
+  "random.seed": {
+    "message": "种子",
+    "description": "(function name) Initialize the random number generator."
+  },
+  "random.seed.summary": {
+    "message": "初始化随机数生成器。",
+    "description": "Initialize the random number generator."
+  },
+  "random.seed.param-name.n": {
+    "message": "n",
+    "description": "(parameter name) The integer seed"
+  },
+  "random.seed.param-doc.n": {
+    "message": "整数种子",
+    "description": "Parameter docs"
+  },
+  "random.randint": {
+    "message": "随机整数",
+    "description": "(function name) Choose a random integer between ``a`` and ``b`` inclusive."
+  },
+  "random.randint.summary": {
+    "message": "在{{a}}到{{b}}（包含{{b}}）之间随机选择一个整数。",
+    "description": "Choose a random integer between ``a`` and ``b`` inclusive."
+  },
+  "random.randint.param-name.a": {
+    "message": "a",
+    "description": "(parameter name) Start value for the range (inclusive)"
+  },
+  "random.randint.param-doc.a": {
+    "message": "区间起始值（包含）",
+    "description": "Parameter docs"
+  },
+  "random.randint.param-name.b": {
+    "message": "b",
+    "description": "(parameter name) End value for the range (inclusive)"
+  },
+  "random.randint.param-doc.b": {
+    "message": "区间结束值（包含）",
+    "description": "Parameter docs"
+  },
+  "random.randrange-1": {
+    "message": "随机区间",
+    "description": "(function name) Choose a randomly selected integer between zero and up to (but not\nincluding) ``stop``."
+  },
+  "random.randrange-1.summary": {
+    "message": "在零到{{stop}}（不含{{stop}}）之间随机选择一个整数。",
+    "description": "Choose a randomly selected integer between zero and up to (but not\nincluding) ``stop``."
+  },
+  "random.randrange-1.param-name.stop": {
+    "message": "结束值",
+    "description": "(parameter name) End value for the range (exclusive)"
+  },
+  "random.randrange-1.param-doc.stop": {
+    "message": "区间结束值（不含）",
+    "description": "Parameter docs"
+  },
+  "random.randrange-2": {
+    "message": "随机区间",
+    "description": "(function name) Choose a randomly selected element from ``range(start, stop, step)``."
+  },
+  "random.randrange-2.summary": {
+    "message": "从区间{{range(start, stop, step)}}中随机选择一个元素。",
+    "description": "Choose a randomly selected element from ``range(start, stop, step)``."
+  },
+  "random.randrange-2.param-name.start": {
+    "message": "起始值",
+    "description": "(parameter name) The start of the range (inclusive)"
+  },
+  "random.randrange-2.param-doc.start": {
+    "message": "区间起始值（包含）",
+    "description": "Parameter docs"
+  },
+  "random.randrange-2.param-name.step": {
+    "message": "步长",
+    "description": "(parameter name) The step."
+  },
+  "random.randrange-2.param-doc.step": {
+    "message": "步长。",
+    "description": "Parameter docs"
+  },
+  "random.randrange-2.param-name.stop": {
+    "message": "结束值",
+    "description": "(parameter name) The end of the range (exclusive)"
+  },
+  "random.randrange-2.param-doc.stop": {
+    "message": "区间结束值（不含）",
+    "description": "Parameter docs"
+  },
+  "random.choice": {
+    "message": "选择",
+    "description": "(function name) Choose a random element from the non-empty sequence ``seq``."
+  },
+  "random.choice.summary": {
+    "message": "从非空序列{{seq}}中选择一个随机元素。",
+    "description": "Choose a random element from the non-empty sequence ``seq``."
+  },
+  "random.choice.param-name.seq": {
+    "message": "序列",
+    "description": "(parameter name) A sequence."
+  },
+  "random.choice.param-doc.seq": {
+    "message": "序列。",
+    "description": "Parameter docs"
+  },
+  "random.random": {
+    "message": "随机",
+    "description": "(function name) Generate a random floating point number in the range [0.0, 1.0)."
+  },
+  "random.random.summary": {
+    "message": "在区间[0.0, 1.0)内生成一个随机浮点数。",
+    "description": "Generate a random floating point number in the range [0.0, 1.0)."
+  },
+  "random.uniform": {
+    "message": "均匀分布随机数",
+    "description": "(function name) Return a random floating point number between ``a`` and ``b`` inclusive."
+  },
+  "random.uniform.summary": {
+    "message": "返回一个介于{{a}}和{{b}}（包含{{b}}）之间的随机浮点数。",
+    "description": "Return a random floating point number between ``a`` and ``b`` inclusive."
+  },
+  "random.uniform.param-name.a": {
+    "message": "a",
+    "description": "(parameter name) Start value for the range (inclusive)"
+  },
+  "random.uniform.param-doc.a": {
+    "message": "区间起始值（包含）",
+    "description": "Parameter docs"
+  },
+  "random.uniform.param-name.b": {
+    "message": "b",
+    "description": "(parameter name) End value for the range (inclusive)"
+  },
+  "random.uniform.param-doc.b": {
+    "message": "区间结束值（包含）",
+    "description": "Parameter docs"
+  },
+  "speech": {
+    "message": "语音",
+    "description": "(module name) Make the micro:bit talk, sing and make other speech like sounds."
+  },
+  "speech.summary": {
+    "message": "使 micro:bit 说话、唱歌和发出其他类似语音的声音。",
+    "description": "Make the micro:bit talk, sing and make other speech like sounds."
+  },
+  "speech.translate": {
+    "message": "翻译",
+    "description": "(function name) Translate English words to phonemes."
+  },
+  "speech.translate.summary": {
+    "message": "把英语单词翻译成音素。",
+    "description": "Translate English words to phonemes."
+  },
+  "speech.translate.param-name.words": {
+    "message": "单词",
+    "description": "(parameter name) A string of English words."
+  },
+  "speech.translate.param-doc.words": {
+    "message": "一连串英语单词。",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce": {
+    "message": "发音",
+    "description": "(function name) Pronounce phonemes."
+  },
+  "speech.pronounce.summary": {
+    "message": "发出音素的声音。",
+    "description": "Pronounce phonemes."
+  },
+  "speech.pronounce.param-name.mouth": {
+    "message": "嘴巴",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.pronounce.param-doc.mouth": {
+    "message": "表示声音口型的数字",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.phonemes": {
+    "message": "音素",
+    "description": "(parameter name) The string of phonemes to pronounce"
+  },
+  "speech.pronounce.param-doc.phonemes": {
+    "message": "要发音的音素串",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
+  },
+  "speech.pronounce.param-doc.pin": {
+    "message": "可选参数，可用于指定输出引脚来覆盖 {{pin0}} 默认值。\n如果不想从引脚上播放任何声音，可以使用 {{pin=None}}。仅限micro:bit V2。",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.pitch": {
+    "message": "音高",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.pronounce.param-doc.pitch": {
+    "message": "代表声音音高的数字",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.speed": {
+    "message": "速度：",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.pronounce.param-doc.speed": {
+    "message": "代表声音速度的数字",
+    "description": "Parameter docs"
+  },
+  "speech.pronounce.param-name.throat": {
+    "message": "喉部",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.pronounce.param-doc.throat": {
+    "message": "表示声音喉型的数字",
+    "description": "Parameter docs"
+  },
+  "speech.say": {
+    "message": "说",
+    "description": "(function name) Say English words."
+  },
+  "speech.say.summary": {
+    "message": "说英语单词。",
+    "description": "Say English words."
+  },
+  "speech.say.param-name.mouth": {
+    "message": "嘴部",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.say.param-doc.mouth": {
+    "message": "表示声音口型的数字",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
+  },
+  "speech.say.param-doc.pin": {
+    "message": "可选参数，可用于指定输出引脚来覆盖 {{pin0}} 默认值。\n如果不想从引脚上播放任何声音，可以使用 {{pin=None}}。仅限micro:bit V2。",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.pitch": {
+    "message": "音高",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.say.param-doc.pitch": {
+    "message": "代表声音音高的数字",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.speed": {
+    "message": "速度",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.say.param-doc.speed": {
+    "message": "\n代表声音速度的数字",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.throat": {
+    "message": "喉部",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.say.param-doc.throat": {
+    "message": "表示声音喉型的数字",
+    "description": "Parameter docs"
+  },
+  "speech.say.param-name.words": {
+    "message": "单词",
+    "description": "(parameter name) The string of words to say."
+  },
+  "speech.say.param-doc.words": {
+    "message": "要说的词串。",
+    "description": "Parameter docs"
+  },
+  "speech.sing": {
+    "message": "唱歌",
+    "description": "(function name) Sing phonemes."
+  },
+  "speech.sing.summary": {
+    "message": "唱音素。",
+    "description": "Sing phonemes."
+  },
+  "speech.sing.param-name.mouth": {
+    "message": "嘴部",
+    "description": "(parameter name) A number representing the mouth of the voice"
+  },
+  "speech.sing.param-doc.mouth": {
+    "message": "表示声音口型的数字",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.phonemes": {
+    "message": "音素",
+    "description": "(parameter name) The string of words to sing."
+  },
+  "speech.sing.param-doc.phonemes": {
+    "message": "要唱的词串。",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.pin": {
+    "message": "引脚",
+    "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
+  },
+  "speech.sing.param-doc.pin": {
+    "message": "可选参数，可用于指定输出引脚来覆盖 {{pin0}} 默认值。\n如果不想从引脚上播放任何声音，可以使用 {{pin=None}}。仅限micro:bit V2。",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.pitch": {
+    "message": "音高",
+    "description": "(parameter name) A number representing the pitch of the voice"
+  },
+  "speech.sing.param-doc.pitch": {
+    "message": "\n代表声音音高的数字",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.speed": {
+    "message": "速度",
+    "description": "(parameter name) A number representing the speed of the voice"
+  },
+  "speech.sing.param-doc.speed": {
+    "message": "代表声音速度的数字",
+    "description": "Parameter docs"
+  },
+  "speech.sing.param-name.throat": {
+    "message": "喉部",
+    "description": "(parameter name) A number representing the throat of the voice"
+  },
+  "speech.sing.param-doc.throat": {
+    "message": "表示声音喉型的数字",
+    "description": "Parameter docs"
+  },
+  "struct": {
+    "message": "结构",
+    "description": "(module name) Pack and unpack primitive data types."
+  },
+  "struct.summary": {
+    "message": "打包和解包原始数据类型。",
+    "description": "Pack and unpack primitive data types."
+  },
+  "struct.calcsize": {
+    "message": "计算大小",
+    "description": "(function name) Get the number of bytes needed to store the given ``fmt``."
+  },
+  "struct.calcsize.summary": {
+    "message": "获取存储给定 {{fmt}} 所需的字节数。",
+    "description": "Get the number of bytes needed to store the given ``fmt``."
+  },
+  "struct.calcsize.param-name.fmt": {
+    "message": "格式字符串",
+    "description": "(parameter name) A format string."
+  },
+  "struct.calcsize.param-doc.fmt": {
+    "message": "格式字符串。",
+    "description": "Parameter docs"
+  },
+  "struct.pack": {
+    "message": "打包",
+    "description": "(function name) Pack values according to a format string."
+  },
+  "struct.pack.summary": {
+    "message": "根据格式字符串打包值。",
+    "description": "Pack values according to a format string."
+  },
+  "struct.pack.param-name.*vn": {
+    "message": "*vn",
+    "description": "(parameter name) The remaining values."
+  },
+  "struct.pack.param-doc.*vn": {
+    "message": "剩余值。",
+    "description": "Parameter docs"
+  },
+  "struct.pack.param-name.fmt": {
+    "message": "格式字符串",
+    "description": "(parameter name) The format string."
+  },
+  "struct.pack.param-doc.fmt": {
+    "message": "格式字符串。",
+    "description": "Parameter docs"
+  },
+  "struct.pack.param-name.v1": {
+    "message": "v1",
+    "description": "(parameter name) The first value."
+  },
+  "struct.pack.param-doc.v1": {
+    "message": "第一个值。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into": {
+    "message": "pack into",
+    "description": "(function name) Pack values according to a format string."
+  },
+  "struct.pack_into.summary": {
+    "message": "根据格式字符串打包值。",
+    "description": "Pack values according to a format string."
+  },
+  "struct.pack_into.param-name.*vn": {
+    "message": "*vn",
+    "description": "(parameter name) The remaining values."
+  },
+  "struct.pack_into.param-doc.*vn": {
+    "message": "剩余值。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into.param-name.buffer": {
+    "message": "缓冲区",
+    "description": "(parameter name) The target buffer to write into."
+  },
+  "struct.pack_into.param-doc.buffer": {
+    "message": "待写入的目标缓冲区。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into.param-name.fmt": {
+    "message": "格式字符串",
+    "description": "(parameter name) The format string."
+  },
+  "struct.pack_into.param-doc.fmt": {
+    "message": "格式字符串。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into.param-name.offset": {
+    "message": "偏移量",
+    "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
+  },
+  "struct.pack_into.param-doc.offset": {
+    "message": "缓冲区内的偏移量。如果从缓冲区末端开始算起，该偏移量可能是负数。",
+    "description": "Parameter docs"
+  },
+  "struct.pack_into.param-name.v1": {
+    "message": "v1",
+    "description": "(parameter name) The first value."
+  },
+  "struct.pack_into.param-doc.v1": {
+    "message": "第一个值。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack": {
+    "message": "解包",
+    "description": "(function name) Unpack data according to a format string."
+  },
+  "struct.unpack.summary": {
+    "message": "根据格式字符串解压数据。",
+    "description": "Unpack data according to a format string."
+  },
+  "struct.unpack.param-name.data": {
+    "message": "数据",
+    "description": "(parameter name) The data."
+  },
+  "struct.unpack.param-doc.data": {
+    "message": "数据。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack.param-name.fmt": {
+    "message": "格式字符串",
+    "description": "(parameter name) The format string."
+  },
+  "struct.unpack.param-doc.fmt": {
+    "message": "格式字符串。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack_from": {
+    "message": "unpack from",
+    "description": "(function name) Unpack data from a buffer according to a format string."
+  },
+  "struct.unpack_from.summary": {
+    "message": "根据格式字符串从缓冲区解压数据。",
+    "description": "Unpack data from a buffer according to a format string."
+  },
+  "struct.unpack_from.param-name.buffer": {
+    "message": "buffer",
+    "description": "(parameter name) The source buffer to read from."
+  },
+  "struct.unpack_from.param-doc.buffer": {
+    "message": "待读取的源缓冲区。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack_from.param-name.fmt": {
+    "message": "格式字符串",
+    "description": "(parameter name) The format string."
+  },
+  "struct.unpack_from.param-doc.fmt": {
+    "message": "格式字符串。",
+    "description": "Parameter docs"
+  },
+  "struct.unpack_from.param-name.offset": {
+    "message": "偏移量",
+    "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
+  },
+  "struct.unpack_from.param-doc.offset": {
+    "message": "缓冲区内的偏移量。如果从缓冲区末端开始算起，该偏移量可能是负数。",
+    "description": "Parameter docs"
+  },
+  "sys": {
+    "message": "系统",
+    "description": "(module name) System specific functions"
+  },
+  "sys.summary": {
+    "message": "系统特定功能",
+    "description": "System specific functions"
+  },
+  "sys.exit": {
+    "message": "退出",
+    "description": "(function name) Terminate current program with a given exit code."
+  },
+  "sys.exit.summary": {
+    "message": "根据给定退出代码终止当前程序。",
+    "description": "Terminate current program with a given exit code."
+  },
+  "sys.exit.param-name.retval": {
+    "message": "返回值",
+    "description": "(parameter name) The exit code or message."
+  },
+  "sys.exit.param-doc.retval": {
+    "message": "退出代码或者消息。",
+    "description": "Parameter docs"
+  },
+  "sys.print_exception": {
+    "message": "打印异常",
+    "description": "(function name) Print an exception with a traceback."
+  },
+  "sys.print_exception.summary": {
+    "message": "\n打印带有回溯的异常。",
+    "description": "Print an exception with a traceback."
+  },
+  "sys.print_exception.param-name.exc": {
+    "message": "异常",
+    "description": "(parameter name) The exception to print"
+  },
+  "sys.print_exception.param-doc.exc": {
+    "message": "需打印的异常",
+    "description": "Parameter docs"
+  },
+  "sys.argv": {
+    "message": "参数",
+    "description": "(field name) A mutable list of arguments the current program was started with."
+  },
+  "sys.argv.summary": {
+    "message": "当前程序启动时使用的参数的可变列表。",
+    "description": "A mutable list of arguments the current program was started with."
+  },
+  "sys.byteorder": {
+    "message": "字节序",
+    "description": "(field name) The byte order of the system (``\"little\"`` or ``\"big\"``)."
+  },
+  "sys.byteorder.summary": {
+    "message": "系统的字节顺序 ({{\"little\"}} 或 {{\"big\"}})。",
+    "description": "The byte order of the system (``\"little\"`` or ``\"big\"``)."
+  },
+  "sys.implementation": {
+    "message": "实现",
+    "description": "(field name) Object with information about the current Python implementation."
+  },
+  "sys.implementation.summary": {
+    "message": "包含有关当前 Python 实现的信息的对象。",
+    "description": "Object with information about the current Python implementation."
+  },
+  "sys.maxsize": {
+    "message": "最大值",
+    "description": "(field name) \nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support)."
+  },
+  "sys.maxsize.summary": {
+    "message": "在当前平台上可以容纳的整数类型的最大值，\n或 MicroPython 整数类型可表示的最大值，如果它小于\n平台的最大值（这见于 MicroPython 端口不支持长整数的情况）。",
+    "description": "\nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support)."
+  },
+  "sys.modules": {
+    "message": "模块",
+    "description": "(field name) Dictionary of loaded modules. "
+  },
+  "sys.modules.summary": {
+    "message": "已加载模块的字典。 ",
+    "description": "Dictionary of loaded modules. "
+  },
+  "sys.path": {
+    "message": "路径",
+    "description": "(field name) A mutable list of directories to search for imported modules."
+  },
+  "sys.path.summary": {
+    "message": "用于搜索导入模块的目录的可变列表。",
+    "description": "A mutable list of directories to search for imported modules."
+  },
+  "sys.platform": {
+    "message": "平台",
+    "description": "(field name) The platform that MicroPython is running on. "
+  },
+  "sys.platform.summary": {
+    "message": "正在运行 MicroPython 的平台。",
+    "description": "The platform that MicroPython is running on. "
+  },
+  "sys.version": {
+    "message": "版本",
+    "description": "(field name) Python language version that this implementation conforms to, as a string."
+  },
+  "sys.version.summary": {
+    "message": "此实现符合的 Python 语言版本，为字符串。",
+    "description": "Python language version that this implementation conforms to, as a string."
+  },
+  "sys.version_info": {
+    "message": "版本信息",
+    "description": "(field name) Python language version that this implementation conforms to, as a tuple of ints."
+  },
+  "sys.version_info.summary": {
+    "message": "此实现符合的 Python 语言版本，为整数元组。",
+    "description": "Python language version that this implementation conforms to, as a tuple of ints."
+  },
+  "time": {
+    "message": "时间",
+    "description": "(module name) Measure time and add delays to programs."
+  },
+  "time.summary": {
+    "message": "测量时间并给程序添加延迟。",
+    "description": "Measure time and add delays to programs."
+  },
+  "time.sleep": {
+    "message": "休眠",
+    "description": "(function name) Delay a number of seconds."
+  },
+  "time.sleep.summary": {
+    "message": "延迟几秒钟。",
+    "description": "Delay a number of seconds."
+  },
+  "time.sleep.param-name.seconds": {
+    "message": "秒",
+    "description": "(parameter name) The number of seconds to sleep for.\nUse a floating-point number to sleep for a fractional number of seconds."
+  },
+  "time.sleep.param-doc.seconds": {
+    "message": "休眠的秒数。\n使用浮点数休眠小数秒数。",
+    "description": "Parameter docs"
+  },
+  "time.sleep_ms": {
+    "message": "休眠延迟以毫秒计算",
+    "description": "(function name) Delay for given number of milliseconds."
+  },
+  "time.sleep_ms.summary": {
+    "message": "延迟给定的毫秒数。",
+    "description": "Delay for given number of milliseconds."
+  },
+  "time.sleep_ms.param-name.ms": {
+    "message": "毫秒",
+    "description": "(parameter name) The number of milliseconds delay (>= 0)."
+  },
+  "time.sleep_ms.param-doc.ms": {
+    "message": "延迟的毫秒数 (>= 0)。",
+    "description": "Parameter docs"
+  },
+  "time.sleep_us": {
+    "message": "休眠延迟以微秒计算",
+    "description": "(function name) Delay for given number of microseconds."
+  },
+  "time.sleep_us.summary": {
+    "message": "延迟给定的微秒数。",
+    "description": "Delay for given number of microseconds."
+  },
+  "time.sleep_us.param-name.us": {
+    "message": "微秒",
+    "description": "(parameter name) The number of microseconds delay (>= 0)."
+  },
+  "time.sleep_us.param-doc.us": {
+    "message": "延迟的微秒数 (>= 0)。",
+    "description": "Parameter docs"
+  },
+  "time.ticks_ms": {
+    "message": "毫秒级刻度",
+    "description": "(function name) Get an increasing, millisecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "time.ticks_ms.summary": {
+    "message": "获取一个具有任意参考点、递增的毫秒级计数器，该计数器在某个值之后能够绕回。",
+    "description": "Get an increasing, millisecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "time.ticks_us": {
+    "message": "微秒级刻度",
+    "description": "(function name) Get an increasing, microsecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "time.ticks_us.summary": {
+    "message": "获取一个具有任意参考点、递增的微秒级计数器，该计数器在某个值之后能够绕回。",
+    "description": "Get an increasing, microsecond counter with an arbitrary reference point,\nthat wraps around after some value."
+  },
+  "time.ticks_add": {
+    "message": "增加刻度",
+    "description": "(function name) Offset ticks value by a given number, which can be either positive or\nnegative."
+  },
+  "time.ticks_add.summary": {
+    "message": "给定数字的偏移刻度值，可以是正数或负数。",
+    "description": "Offset ticks value by a given number, which can be either positive or\nnegative."
+  },
+  "time.ticks_add.param-name.delta": {
+    "message": "delta",
+    "description": "(parameter name) An integer offset"
+  },
+  "time.ticks_add.param-doc.delta": {
+    "message": "整数偏移量",
+    "description": "Parameter docs"
+  },
+  "time.ticks_add.param-name.ticks": {
+    "message": "刻度",
+    "description": "(parameter name) A ticks value"
+  },
+  "time.ticks_add.param-doc.ticks": {
+    "message": "一个刻度值",
+    "description": "Parameter docs"
+  },
+  "time.ticks_diff": {
+    "message": "刻度差",
+    "description": "(function name) Measure ticks difference between values returned from\n``time.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
+  },
+  "time.ticks_diff.summary": {
+    "message": "测量函数{{time.ticks_ms()}}或者函数{{ticks_us()}}返回值之间的刻度差。本参数为一个有可能绕回的带符号数值。",
+    "description": "Measure ticks difference between values returned from\n``time.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
+  },
+  "time.ticks_diff.param-name.ticks1": {
+    "message": "刻度1",
+    "description": "(parameter name) The value to subtract from"
+  },
+  "time.ticks_diff.param-doc.ticks1": {
+    "message": "要被减的值",
+    "description": "Parameter docs"
+  },
+  "time.ticks_diff.param-name.ticks2": {
+    "message": "刻度2",
+    "description": "(parameter name) The value to subtract"
+  },
+  "time.ticks_diff.param-doc.ticks2": {
+    "message": "要减去的值",
+    "description": "Parameter docs"
+  }
+}
