@@ -1,4 +1,4 @@
-"""引腳、圖像、聲音、溫度和音量。"""
+"""引腳、影像、聲音、溫度和音量。"""
 from typing import Any, Callable, List, Optional, Tuple, Union, overload
 from _typeshed import ReadableBuffer
 from . import accelerometer as accelerometer
@@ -147,7 +147,7 @@ that the button must be pressed again before this method will return
         ...
 
     def get_presses(self) -> int:
-        """取得按下按鈕的執行總數，並在傳回前，將此總數重設為零。
+        """取得按下按鈕的執行總數，並在傳回前將此總數重設為零。
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
@@ -319,23 +319,23 @@ pin19: MicroBitDigitalPin
 pin20: MicroBitDigitalPin
 """具有數位功能的引腳。 (引腳 20)"""
 pin_logo: MicroBitTouchPin
-"""micro:bit 正面的觸控感應標誌引腳，預設為電容式觸控模式。 (引腳標誌)"""
+"""micro:bit 正面的觸控感應標誌引腳，預設為電容式觸控模式。"""
 pin_speaker: MicroBitAnalogDigitalPin
-"""用於定址 micro:bit 揚聲器的引腳。 (引腳揚聲器)
+"""用於定址 micro:bit 揚聲器的引腳。
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """要在 micro:bit LED 顯示器上顯示的圖像。 (圖片)
+    """要在 micro:bit LED 顯示器上顯示的圖像。 (圖像)
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """愛心圖像。 (愛心)"""
+    """愛心圖像。"""
     HEART_SMALL: Image
-    """小愛心圖像。 (小愛心)"""
+    """小愛心圖像。"""
     HAPPY: Image
     """開心的臉圖像。 (開心)"""
     SMILE: Image
@@ -361,7 +361,7 @@ Given an image object it's possible to display it via the ``display`` API::
     NO: Image
     """叉號圖像。"""
     CLOCK12: Image
-    """指針指向 12 點鐘的圖像。 (時鐘 12)"""
+    """指針指向 12 點鐘的圖像。"""
     CLOCK11: Image
     """指針指向 11 點鐘的圖像。"""
     CLOCK10: Image
@@ -401,9 +401,9 @@ Given an image object it's possible to display it via the ``display`` API::
     ARROW_NW: Image
     """指向西北箭頭的圖像。"""
     TRIANGLE: Image
-    """朝上三角形的圖像。"""
+    """三角形朝上的圖像。"""
     TRIANGLE_LEFT: Image
-    """左角三角形的圖像。"""
+    """三角形朝左的圖像。"""
     CHESSBOARD: Image
     """以棋盤圖案交錯發亮的 LED 燈。"""
     DIAMOND: Image
@@ -536,7 +536,7 @@ Example: ``my_image.get_pixel(0, 0)``
         ...
 
     def shift_left(self, n: int) -> Image:
-        """透過向左移動圖像，以建立一個新圖像。
+        """向左移動圖像，以建立新圖像。
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
@@ -545,7 +545,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
         ...
 
     def shift_right(self, n: int) -> Image:
-        """透過向右移動圖像，以建立一個新圖像。
+        """向右移動圖像，以建立新圖像。
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
@@ -554,7 +554,7 @@ Example: ``Image.HEART_SMALL.shift_right(1)``
         ...
 
     def shift_up(self, n: int) -> Image:
-        """透過向上移動圖像，以建立一個新圖像。
+        """向上移動圖像，以建立新圖像。
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
@@ -661,7 +661,7 @@ Example: ``Image.HEART - Image.HEART_SMALL``
         ...
 
     def __mul__(self, n: float) -> Image:
-        """透過將各像素的亮度乘以 ``n``，以建立一個新圖像。
+        """將各像素的亮度乘以 ``n``，以建立新圖像。
 
 Example: ``Image.HEART * 0.5``
 
@@ -701,6 +701,6 @@ class Sound:
     SPRING: Sound
     """彈跳的聲音。 (彈跳)"""
     TWINKLE: Sound
-    """閃亮的聲音。"""
+    """發亮的聲音。 (發亮)"""
     YAWN: Sound
     """呵欠的聲音。"""

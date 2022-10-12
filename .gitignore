@@ -3,5 +3,5 @@
 /api-ids.json
 /node_modules/
 *.rst
-/crowdin/
+/crowdin/*.json
 __pycache__

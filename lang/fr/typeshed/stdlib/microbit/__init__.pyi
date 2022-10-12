@@ -57,7 +57,7 @@ def reset() -> None:
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
-    """Converts a value from a range to an integer range.
+    """Convertit une valeur dans intervalle donné vers son équivalent dans un autre intervalle d'entiers. (Mise à l'échelle)
 
 Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
@@ -69,14 +69,14 @@ floating point number.
 
     temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-:param value: A number to convert.
-:param from_: A tuple to define the range to convert from.
-:param to: A tuple to define the range to convert to.
+:param value: Un nombre à convertir.
+:param from_: (de) Un tuple qui définit l'intervalle de départ.
+:param to: (vers) Un tuple qui définit l'intervalle d'arrivée.
 :return: The ``value`` converted to the ``to`` range."""
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Converts a value from a range to a floating point range.
+    """Convertit une valeur dans intervalle donné vers son équivalent dans un autre intervalle de nombres à virgule flottante. (Mise à l'échelle)
 
 Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
@@ -89,9 +89,9 @@ If they are both integers (i.e ``10``), it will return an integer::
 
     returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-:param value: A number to convert.
-:param from_: A tuple to define the range to convert from.
-:param to: A tuple to define the range to convert to.
+:param value: Un nombre à convertir.
+:param from_: (de) Un tuple qui définit l'intervalle de départ.
+:param to: (vers) Un tuple qui définit l'intervalle d'arrivée.
 :return: The ``value`` converted to the ``to`` range."""
 
 def sleep(n: float) -> None:
