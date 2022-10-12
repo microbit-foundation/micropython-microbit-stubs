@@ -1,5 +1,5 @@
 """micro:bit V2에 데이터를 기록합니다."""
-from typing import Literal, Optional, Union, overload
+from typing import Literal, Mapping, Optional, Union, overload
 MILLISECONDS = 1
 """밀리초 타임스탬프 형식입니다."""
 SECONDS = 10
@@ -32,7 +32,7 @@ unit can be selected via the timestamp argument.
     ...
 
 @overload
-def add(data_dictionary: Optional[dict[str, Union[str, int, float]]]) -> None:
+def add(data_dictionary: Optional[Mapping[str, Union[str, int, float]]]) -> None:
     """헤더 및 값의 딕셔너리를 패스해 로그에 데이터 행을 추가합니다.
 
 Example: ``log.add({ 'temp': temperature() })``

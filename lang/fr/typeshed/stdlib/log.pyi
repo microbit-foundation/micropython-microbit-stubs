@@ -1,5 +1,5 @@
 """Journalisez des données sur votre micro:bit V2."""
-from typing import Literal, Optional, Union, overload
+from typing import Literal, Mapping, Optional, Union, overload
 MILLISECONDS = 1
 """Format d'horodatage en millisecondes."""
 SECONDS = 10
@@ -32,7 +32,7 @@ unit can be selected via the timestamp argument.
     ...
 
 @overload
-def add(data_dictionary: Optional[dict[str, Union[str, int, float]]]) -> None:
+def add(data_dictionary: Optional[Mapping[str, Union[str, int, float]]]) -> None:
     """Ajoute une ligne de données au journal en passant un dictionnaire d'en-têtes et de valeurs.
 
 Example: ``log.add({ 'temp': temperature() })``
