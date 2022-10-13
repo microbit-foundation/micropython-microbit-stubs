@@ -5,7 +5,7 @@ MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The Mi
 
 Both licenses are reproduced in full below.
 
-= = = = =
+---
 
 Apache License
 Version 2.0, January 2004
@@ -209,7 +209,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-= = = = =
+---
 
 The MIT License
 
@@ -232,5 +232,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
-
-= = = = =
