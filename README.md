@@ -17,16 +17,10 @@ We translate:
 - The API name, e.g. function name, with underscores replaced with spaces to make clear it's a hint not the actual name. This is displayed alongside the English API name.
 - Parameter names (again with underscores replaced). These are displayed alongside the English parameter name.
 
-## Credit and licensing
+## Licensing
 
-builtins and utility definitions are derived from [typeshed](https://github.com/python/typeshed). These stubs don't provide documentation, though we'd love to add it in future.
-
-MicroPython and micro:bit stubs are based on the restructured text documentation for [micro:bit](https://github.com/bbcmicrobit/micropython/tree/v2-docs) and, where not otherwise covered in micro:bit-specific docs, [MicroPython](https://github.com/micropython/micropython/tree/master/docs/library). These stubs provide documentation.
-
-Typeshed is Apache 2.0 licensed.
-
-MicroPython is MIT Licensed and Copyright (c) 2013-2021 Damien P. George.
-MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The MicroPython-on-micro:bit Developers (see [the authors file](https://github.com/bbcmicrobit/micropython/blob/v2-docs/AUTHORS)).
+These stubs are MIT or Apache 2.0 licensed depending on their origin (typeshed or MicroPython).
+See [LICENSING.md](./LICENSING.md) for details.
 
 ## Scripts
 
@@ -35,3 +29,16 @@ MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The Mi
 ## Testing
 
 The stubs are tested against the code in the `examples/` folder using Pyright. To run the tests locally run `npm install` to install Pyright and then `npm test`.
+
+## Code of Conduct
+
+Trust, partnership, simplicity and passion are our core values we live and
+breathe in our daily work life and within our projects. Our open-source
+projects are no exception. We have an active community which spans the globe
+and we welcome and encourage participation and contributions to our projects
+by everyone. We work to foster a positive, open, inclusive and supportive
+environment and trust that our community respects the micro:bit code of
+conduct. Please see our [code of conduct](https://microbit.org/safeguarding/)
+which outlines our expectations for all those that participate in our
+community and details on how to report any concerns and what would happen
+should breaches occur.
