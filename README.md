@@ -1,6 +1,8 @@
 # micro:bit MicroPython stubs for editor support
 
-The easiest way to try these type stubs is to use the online [micro:bit Python Editor](https://python.microbit.org) which bundles them.
+This project contains Python stub files for [MicroPython for micro:bit V2](https://github.com/microbit-foundation/micropython-microbit-v2).
+
+The easiest way to try these type stubs is to use the online [micro:bit Python Editor](https://python.microbit.org) which uses them for its code intelligence features and the API documentation.
 
 ## Translations
 
