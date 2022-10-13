@@ -4,6 +4,11 @@ This project contains Python stub files for [MicroPython for micro:bit V2](https
 
 The easiest way to try these type stubs is to use the online [micro:bit Python Editor](https://python.microbit.org) which uses them for its code intelligence features and the API documentation.
 
+## Licensing
+
+These stubs are MIT or Apache 2.0 licensed depending on their origin (typeshed or MicroPython).
+See [LICENSE.md](./LICENSE.md) for details.
+
 ## Translations
 
 We maintain translations of these files in the [micro:bit Crowdin project](https://crowdin.com/project/microbitorg) in [this file](https://crowdin.com/translate/microbitorg/6422). Only changes to the English source should be made in this repository.
@@ -18,11 +23,6 @@ We translate:
 - First lines of parameter documentation in `:param name:`-style
 - The API name, e.g. function name, with underscores replaced with spaces to make clear it's a hint not the actual name. This is displayed alongside the English API name.
 - Parameter names (again with underscores replaced). These are displayed alongside the English parameter name.
-
-## Licensing
-
-These stubs are MIT or Apache 2.0 licensed depending on their origin (typeshed or MicroPython).
-See [LICENSING.md](./LICENSING.md) for details.
 
 ## Scripts
 
