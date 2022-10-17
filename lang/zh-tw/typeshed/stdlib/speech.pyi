@@ -38,7 +38,7 @@ See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2
     ...
 
 def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: MicroBitDigitalPin=pin0) -> None:
-    """說英語單詞。
+    """說英語單字。
 
 Example: ``speech.say('hello world')``
 

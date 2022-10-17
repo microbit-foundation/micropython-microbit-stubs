@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Schedule to run a function at the interval specified by the time arguments **V2 only**.
+    """Planifie l'exécution d'une fonction à l'intervalle spécifié par les arguments temporels **V2 uniquement**.
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -36,12 +36,12 @@ So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: Function to call at the provided interval. Omit when using as a decorator.
-:param days: Sets the day mark for the scheduling.
-:param h: Sets the hour mark for the scheduling.
-:param min: Sets the minute mark for the scheduling.
-:param s: Sets the second mark for the scheduling.
-:param ms: Sets the millisecond mark for the scheduling."""
+:param callback: Fonction à appeler à l'intervalle fourni. À omettre en cas d'utilisation comme décorateur.
+:param days: Définit la marque du jour pour la programmation.
+:param h: Définit la marque d'heure pour la programmation.
+:param min: Définit la marque de minute pour la programmation.
+:param s: Définit la marque de seconde pour la programmation.
+:param ms: Définit la marque de milliseconde pour la programmation."""
 
 def panic(n: int) -> None:
     """Passer en mode panique.
@@ -459,7 +459,7 @@ Given an image object it's possible to display it via the ``display`` API::
     SNAKE: Image
     """Image de serpent."""
     SCISSORS: Image
-    """Scissors image."""
+    """Image de ciseaux. (ciseaux)"""
     ALL_CLOCKS: List[Image]
     """Une liste contenant toutes les images CLOCK_ en séquence."""
     ALL_ARROWS: List[Image]

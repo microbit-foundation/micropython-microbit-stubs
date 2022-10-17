@@ -128,11 +128,11 @@
     "description": "Set up the log file header."
   },
   "log.set_labels.param-name.*labels": {
-    "message": "*labels",
+    "message": "*etiquettes",
     "description": "(parameter name) Any number of positional arguments, each corresponding to an entry in the log header."
   },
   "log.set_labels.param-doc.*labels": {
-    "message": "Any number of positional arguments, each corresponding to an entry in the log header.",
+    "message": "Un nombre quelconque d'arguments positionnels, chacun correspondant à une entrée dans l'en-tête du journal.",
     "description": "Parameter docs"
   },
   "log.set_labels.param-name.timestamp": {
@@ -140,7 +140,7 @@
     "description": "(parameter name) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."
   },
   "log.set_labels.param-doc.timestamp": {
-    "message": "Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of {{log.MILLISECONDS}}, {{log.SECONDS}}, {{log.MINUTES}}, {{log.HOURS}}, {{log.DAYS}} or {{None}} to disable the timestamp. The default value is {{log.SECONDS}}.",
+    "message": "Sélectionnez l'unité d'horodatage qui sera automatiquement ajoutée comme première colonne de chaque ligne. Les valeurs d'horodatage peuvent être l'une des suivantes {{log.MILLISECONDS}}, {{log.SECONDS}}, {{log.MINUTES}}, {{log.HOURS}}, {{log.DAYS}} ou {{None}} pour désactiver l'horodatage. La valeur par défaut est {{log.SECONDS}}.",
     "description": "Parameter docs"
   },
   "log.add-1": {
@@ -152,11 +152,11 @@
     "description": "Add a data row to the log by passing a dictionary of headers and values."
   },
   "log.add-1.param-name.data_dictionary": {
-    "message": "data dictionary",
+    "message": "dictionnaire de données",
     "description": "(parameter name) The data to log as a dictionary with a key for each header."
   },
   "log.add-1.param-doc.data_dictionary": {
-    "message": "The data to log as a dictionary with a key for each header.",
+    "message": "Les données à enregistrer sous forme de dictionnaire avec une clé pour chaque en-tête.",
     "description": "Parameter docs"
   },
   "log.add-2": {
@@ -180,7 +180,7 @@
     "description": "(parameter name) ``True`` selects a “full” erase and ``False`` selects the “fast” erase method."
   },
   "log.delete.param-doc.full": {
-    "message": "{{True}} selects a “full” erase and {{False}} selects the “fast” erase method.",
+    "message": "{{True}} sélectionne un effacement \"complet\" et {{False}} sélectionne la méthode d'effacement \"rapide\".",
     "description": "Parameter docs"
   },
   "log.set_mirroring": {
@@ -188,7 +188,7 @@
     "description": "(function name) Configure mirroring of the data logging activity to the serial output."
   },
   "log.set_mirroring.summary": {
-    "message": "Configure mirroring of the data logging activity to the serial output.",
+    "message": "Configurez la mise en miroir de l'activité d'enregistrement des données sur la sortie série.",
     "description": "Configure mirroring of the data logging activity to the serial output."
   },
   "log.set_mirroring.param-name.serial": {
@@ -196,7 +196,7 @@
     "description": "(parameter name) ``True`` enables mirroring data to the serial output."
   },
   "log.set_mirroring.param-doc.serial": {
-    "message": "{{True}} enables mirroring data to the serial output.",
+    "message": "{{True}} active la mise en miroir des données sur la sortie série.",
     "description": "Parameter docs"
   },
   "machine": {
@@ -844,7 +844,7 @@
     "description": "(function name) Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.summary": {
-    "message": "Schedule to run a function at the interval specified by the time arguments **V2 only**.",
+    "message": "Planifie l'exécution d'une fonction à l'intervalle spécifié par les arguments temporels **V2 uniquement**.",
     "description": "Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.param-name.callback": {
@@ -852,7 +852,7 @@
     "description": "(parameter name) Function to call at the provided interval. Omit when using as a decorator."
   },
   "microbit.run_every.param-doc.callback": {
-    "message": "Function to call at the provided interval. Omit when using as a decorator.",
+    "message": "Fonction à appeler à l'intervalle fourni. À omettre en cas d'utilisation comme décorateur.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.days": {
@@ -860,7 +860,7 @@
     "description": "(parameter name) Sets the day mark for the scheduling."
   },
   "microbit.run_every.param-doc.days": {
-    "message": "Sets the day mark for the scheduling.",
+    "message": "Définit la marque du jour pour la programmation.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.h": {
@@ -868,7 +868,7 @@
     "description": "(parameter name) Sets the hour mark for the scheduling."
   },
   "microbit.run_every.param-doc.h": {
-    "message": "Sets the hour mark for the scheduling.",
+    "message": "Définit la marque d'heure pour la programmation.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.min": {
@@ -876,7 +876,7 @@
     "description": "(parameter name) Sets the minute mark for the scheduling."
   },
   "microbit.run_every.param-doc.min": {
-    "message": "Sets the minute mark for the scheduling.",
+    "message": "Définit la marque de minute pour la programmation.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.ms": {
@@ -884,7 +884,7 @@
     "description": "(parameter name) Sets the millisecond mark for the scheduling."
   },
   "microbit.run_every.param-doc.ms": {
-    "message": "Sets the millisecond mark for the scheduling.",
+    "message": "Définit la marque de milliseconde pour la programmation.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.s": {
@@ -892,7 +892,7 @@
     "description": "(parameter name) Sets the second mark for the scheduling."
   },
   "microbit.run_every.param-doc.s": {
-    "message": "Sets the second mark for the scheduling.",
+    "message": "Définit la marque de seconde pour la programmation.",
     "description": "Parameter docs"
   },
   "microbit.panic": {
@@ -1920,11 +1920,11 @@
     "description": "Snake image."
   },
   "microbit.Image.SCISSORS": {
-    "message": "scissors",
+    "message": "ciseaux",
     "description": "(field name) Scissors image."
   },
   "microbit.Image.SCISSORS.summary": {
-    "message": "Scissors image.",
+    "message": "Image de ciseaux.",
     "description": "Scissors image."
   },
   "microbit.Image.ALL_CLOCKS": {
@@ -2488,11 +2488,11 @@
     "description": "Get the acceleration measurements in all axes at once as a tuple."
   },
   "microbit.accelerometer.get_strength": {
-    "message": "get strength",
+    "message": "obtenir la force",
     "description": "(function name) Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
   },
   "microbit.accelerometer.get_strength.summary": {
-    "message": "Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes.",
+    "message": "Obtenir la mesure de l'accélération de tous les axes combinés, sous la forme d'un nombre entier positif. C'est la somme pythagoricienne des axes X, Y et Z.",
     "description": "Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
   },
   "microbit.accelerometer.current_gesture": {
