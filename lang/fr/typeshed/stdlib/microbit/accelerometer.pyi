@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def get_strength() -> int:
-    """Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes.
+    """Obtenir la mesure de l'accélération de tous les axes combinés, sous la forme d'un nombre entier positif. C'est la somme pythagoricienne des axes X, Y et Z. (obtenir la force)
 
 Example: ``accelerometer.get_strength()``
 

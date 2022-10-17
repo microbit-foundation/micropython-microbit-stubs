@@ -4756,7 +4756,7 @@
     "description": "(function name) Say English words."
   },
   "speech.say.summary": {
-    "message": "說英語單詞。",
+    "message": "說英語單字。",
     "description": "Say English words."
   },
   "speech.say.param-name.mouth": {
