@@ -3,7 +3,66 @@ The builtins module and utility definitions are derived from [typeshed](https://
 MicroPython and micro:bit stubs are derived from the restructured text documentation for [micro:bit](https://github.com/bbcmicrobit/micropython/tree/v2-docs) and, where not otherwise covered in micro:bit-specific docs, [MicroPython](https://github.com/micropython/micropython/tree/master/docs/library). MicroPython is MIT Licensed and Copyright (c) 2013-2021 Damien P. George.
 MicroPython for the micro:bit is MIT licensed and Copyright (c) 2013-2016 The MicroPython-on-micro:bit Developers (see [the authors file](https://github.com/bbcmicrobit/micropython/blob/v2-docs/AUTHORS)). These stub files are available under the same MIT license.
 
-Both licenses are reproduced in full below.
+Both licenses are reproduced in full below below the listing that shows which files are covered by each licence. The listing applies to all of the translations in the lang/ folder.
+
+Originally from typeshed so Apache 2.0 licensed:
+
+- stdlib/array.pyi
+- stdlib/\_typeshed/\_\_init\_\_.pyi
+- stdlib/abc.pyi
+- stdlib/builtins.pyi
+- stdlib/collections
+- stdlib/collections/\_\_init\_\_.pyi
+- stdlib/errno.pyi
+- stdlib/typing_extensions.pyi
+- stdlib/typing.pyi
+- stdlib/types.pyi
+- stdlib/VERSIONS
+
+Originally from MicroPython so MIT licensed:
+
+- stdlib/antigravity.pyi
+- stdlib/audio.pyi
+- stdlib/gc.pyi
+- stdlib/log.pyi
+- stdlib/love.pyi
+- stdlib/machine.pyi
+- stdlib/math.pyi
+- stdlib/microbit
+- stdlib/microbit/\_\_init\_\_.pyi
+- stdlib/microbit/accelerometer.pyi
+- stdlib/microbit/audio.pyi
+- stdlib/microbit/compass.pyi
+- stdlib/microbit/display.pyi
+- stdlib/microbit/i2c.pyi
+- stdlib/microbit/microphone.pyi
+- stdlib/microbit/speaker.pyi
+- stdlib/microbit/spi.pyi
+- stdlib/microbit/uart.pyi
+- stdlib/micropython.pyi
+- stdlib/music.pyi
+- stdlib/neopixel.pyi
+- stdlib/os.pyi
+- stdlib/power.pyi
+- stdlib/radio.pyi
+- stdlib/random.pyi
+- stdlib/speech.pyi
+- stdlib/struct.pyi
+- stdlib/sys.pyi
+- stdlib/this.pyi
+- stdlib/time.pyi
+- stdlib/ucollections.pyi
+
+Trivial wrappers for MicroPython API compatibility (MIT licensed):
+
+- stdlib/uarray.pyi
+- stdlib/uerrno.pyi
+- stdlib/urandom.pyi
+- stdlib/ustruct.pyi
+- stdlib/usys.pyi
+- stdlib/utime.pyi
+
+The remaining files (e.g. supporting scripts) are MIT licensed.
 
 ---
 
