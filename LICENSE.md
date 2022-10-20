@@ -62,7 +62,9 @@ Trivial wrappers for MicroPython API compatibility (MIT licensed):
 - stdlib/usys.pyi
 - stdlib/utime.pyi
 
-The remaining files (e.g. supporting scripts) are MIT licensed.
+The stubs are tested against example Python source files in examples/. The folders in examples/ are licensed on a per folder basis based on the project they are drawn from. Their license can be found in the relevant folder.
+
+The remaining files (e.g. supporting scripts, examples written specifically for this project) are MIT licensed.
 
 ---
 
