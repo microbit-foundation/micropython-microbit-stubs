@@ -9,13 +9,20 @@ class NeoPixel:
 
         Example: ``np = neopixel.NeoPixel(pin0, 8)``
 
-        RGBW neopixels are only supported by micro:bit V2.
+        To support RGBW neopixels, a third argument can be passed to
+        ``NeoPixel`` to indicate the number of bytes per pixel (``bpp``).
+        For RGBW, this is is 4 rather than the default of 3 for RGB and GRB.
+
+        Each pixel is addressed by a position (starting from 0). Neopixels are
+        given RGB (red, green, blue) / RGBW (red, green, blue, white) values
+        between 0-255 as a tuple. For example, in RGB, ``(255,255,255)`` is
+        white. In RGBW, ``(255,255,255,0)`` or ``(0,0,0,255)`` is white.
 
         See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`_ for warnings and other advice.
 
         :param pin: The pin controlling the neopixel strip.
         :param n: The number of neopixels in the strip.
-        :param bpp: Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB.
+        :param bpp: Bytes per pixel. For RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB.
         """
         ...
     def clear(self) -> None:
