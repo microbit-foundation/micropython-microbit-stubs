@@ -1,8 +1,8 @@
-"""Meet de versnelling van de micro:bit en herken gebaren. (versnellingsmeter)"""
+"""Meet de versnelling van de micro:bit en herken gebaren. (acceleratiemeter)"""
 from typing import Tuple
 
 def get_x() -> int:
-    """Krijg de versnellingsmeting in de ``x`` as in milli-g. (krijg x)
+    """Krijg de acceleratiemeting in de ``x`` as in milli-g. (krijg x)
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """Krijg de versnellingsmeting in de ``y`` as in milli-g. (krijg y)
+    """Krijg de acceleratiemeting in de ``y`` as in milli-g. (krijg y)
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """Krijg de versnellingsmeting in de ``z`` as in milli-g. (krijg z)
+    """Krijg de acceleratiemeter meting in de ``z`` as in milli-g. (krijg z)
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Verkrijg de versnellingsmetingen in alle assen tegelijk als een tuple. (krijg waarden)
+    """Verkrijg de acceleratiemeter metingen in alle assen tegelijk als een tupel. (krijg waarden)
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -96,8 +96,8 @@ gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
     ...
 
 def set_range(value: int) -> None:
-    """Stel het gevoeligheidsbereik van de versnellingsmeter, in g (standaard zwaartekracht), in op de dichtstbijzijnde waarden die door de hardware worden ondersteund, zodat het wordt afgerond op ``2``, ``4`` of ``8`` g. (kies bereik)
+    """Stel het gevoeligheidsbereik van de acceleratiemeter, in g (standaard zwaartekracht), in op de dichtstbijzijnde waarden die door de hardware worden ondersteund, zodat het wordt afgerond op ``2``, ``4`` of ``8`` g. (kies bereik)
 
 Example: ``accelerometer.set_range(8)``
 
-:param value: (waarde) Nieuwe bereik voor de versnellingsmeter, een geheel getal in ``g``."""
+:param value: (waarde) Nieuwe bereik voor de acceleratiemeter, een geheel getal in ``g``."""
