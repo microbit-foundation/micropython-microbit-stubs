@@ -2448,7 +2448,7 @@
     "description": "Yawning sound."
   },
   "microbit.accelerometer": {
-    "message": "versnellingsmeter",
+    "message": "acceleratiemeter",
     "description": "(module name) Measure the acceleration of the micro:bit and recognise gestures."
   },
   "microbit.accelerometer.summary": {
@@ -2460,7 +2460,7 @@
     "description": "(function name) Get the acceleration measurement in the ``x`` axis in milli-g."
   },
   "microbit.accelerometer.get_x.summary": {
-    "message": "Krijg de versnellingsmeting in de {{x}} as in milli-g.",
+    "message": "Krijg de acceleratiemeting in de {{x}} as in milli-g.",
     "description": "Get the acceleration measurement in the ``x`` axis in milli-g."
   },
   "microbit.accelerometer.get_y": {
@@ -2468,7 +2468,7 @@
     "description": "(function name) Get the acceleration measurement in the ``y`` axis in milli-g."
   },
   "microbit.accelerometer.get_y.summary": {
-    "message": "Krijg de versnellingsmeting in de {{y}} as in milli-g.",
+    "message": "Krijg de acceleratiemeting in de {{y}} as in milli-g.",
     "description": "Get the acceleration measurement in the ``y`` axis in milli-g."
   },
   "microbit.accelerometer.get_z": {
@@ -2476,7 +2476,7 @@
     "description": "(function name) Get the acceleration measurement in the ``z`` axis in milli-g."
   },
   "microbit.accelerometer.get_z.summary": {
-    "message": "Krijg de versnellingsmeting in de {{z}} as in milli-g.",
+    "message": "Krijg de acceleratiemeter meting in de {{z}} as in milli-g.",
     "description": "Get the acceleration measurement in the ``z`` axis in milli-g."
   },
   "microbit.accelerometer.get_values": {
@@ -2484,7 +2484,7 @@
     "description": "(function name) Get the acceleration measurements in all axes at once as a tuple."
   },
   "microbit.accelerometer.get_values.summary": {
-    "message": "Verkrijg de versnellingsmetingen in alle assen tegelijk als een tuple.",
+    "message": "Verkrijg de acceleratiemeter metingen in alle assen tegelijk als een tupel.",
     "description": "Get the acceleration measurements in all axes at once as a tuple."
   },
   "microbit.accelerometer.get_strength": {
@@ -2548,7 +2548,7 @@
     "description": "(function name) Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.summary": {
-    "message": "Stel het gevoeligheidsbereik van de versnellingsmeter, in g (standaard zwaartekracht), in op de dichtstbijzijnde waarden die door de hardware worden ondersteund, zodat het wordt afgerond op {{2}}, {{4}} of {{8}} g.",
+    "message": "Stel het gevoeligheidsbereik van de acceleratiemeter, in g (standaard zwaartekracht), in op de dichtstbijzijnde waarden die door de hardware worden ondersteund, zodat het wordt afgerond op {{2}}, {{4}} of {{8}} g.",
     "description": "Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.param-name.value": {
@@ -2556,7 +2556,7 @@
     "description": "(parameter name) New range for the accelerometer, an integer in ``g``."
   },
   "microbit.accelerometer.set_range.param-doc.value": {
-    "message": "Nieuwe bereik voor de versnellingsmeter, een geheel getal in {{g}}.",
+    "message": "Nieuwe bereik voor de acceleratiemeter, een geheel getal in {{g}}.",
     "description": "Parameter docs"
   },
   "microbit.audio": {
