@@ -6,7 +6,7 @@ _FuncT = TypeVar("_FuncT", bound=Callable[..., Any])
 
 # These definitions have special processing in mypy
 class ABCMeta(type):
-    __abstractmethods__: set[str]
+    __abstractmethods__: frozenset[str]
     def __init__(
         self, name: str, bases: Tuple[type, ...], namespace: dict[str, Any]
     ) -> None: ...
