@@ -21,7 +21,7 @@ To be used to indicate an incoming message.
 FUNK: Tuple[str, ...]
 """Melodie: een grappige bas lijn voor geheime agenten en criminele meesterbreinen."""
 BLUES: Tuple[str, ...]
-"""Melodie: een boogie-woogie 12-bar wandelbas. (Blues)"""
+"""Melodie: een boogie-woogie 12-bar blues wandel bas. (Blues)"""
 BIRTHDAY: Tuple[str, ...]
 """Melodie: “Happy Birthday to You…” (verjaardag)
 

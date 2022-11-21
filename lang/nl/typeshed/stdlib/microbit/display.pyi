@@ -1,4 +1,4 @@
-"""Tekst, afbeeldingen en animaties weergeven op het 5×5 LED-weergave. (scherm)"""
+"""Tekst, afbeeldingen en animaties weergeven op het 5×5 LED-weergave."""
 from ..microbit import Image
 from typing import Union, overload, Iterable
 
@@ -46,7 +46,7 @@ The ``wait``, ``loop`` and ``clear`` arguments must be specified using their key
     ...
 
 def scroll(text: Union[str, float, int], delay: int=150, wait: bool=True, loop: bool=False, monospace: bool=False) -> None:
-    """Scrolt een nummer of tekst op het LED-scherm. (scrollen)
+    """Scrolt een nummer of tekst op het LED display (scrollen)
 
 Example: ``display.scroll('micro:bit')``
 
@@ -61,13 +61,13 @@ using their keyword."""
     ...
 
 def on() -> None:
-    """Schakel het LED-scherm in. (aan)
+    """Schakel het LED display in. (aan)
 
 Example: ``display.on()``"""
     ...
 
 def off() -> None:
-    """Het uitschakelen van het LED-scherm (uitschakelen van het scherm geeft u de mogelijkheid om de GPIO-pinnen opnieuw te gebruiken voor andere doeleinden). (uit)
+    """Het uitschakelen van het LED display (uitschakelen van het scherm geeft je de mogelijkheid om de GPIO-pinnen opnieuw te gebruiken voor andere doeleinden). (uit)
 
 Example: ``display.off()``"""
     ...
@@ -81,7 +81,7 @@ Example: ``display.is_on()``
     ...
 
 def read_light_level() -> int:
-    """Lees het lichtniveau. (Toon licht niveau)
+    """Lees het licht niveau. (lees licht niveau)
 
 Example: ``display.read_light_level()``
 

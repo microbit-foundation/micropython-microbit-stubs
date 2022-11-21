@@ -3,17 +3,17 @@ from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
 def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
-    """Een ingebouwde geluid, geluidseffect of aangepaste audioframes afspelen. (afspelen)
+    """Een ingebouwde geluid, geluids effect of aangepaste audio frames afspelen. (afspelen)
 
 Example: ``audio.play(Sound.GIGGLE)``
 
-:param source: (oorsprong) Een ingebouwde ``Sound`` zoals ``Sound.GIGGLE``, een ``SoundEffect`` of voorbeeldgegevens als een iteratie van ``AudioFrame`` objecten.
+:param source: (bron) Een ingebouwde ``Sound`` zoals ``Sound.GIGGLE``, een ``SoundEffect`` of voorbeeldgegevens als een iteratie van ``AudioFrame`` objecten.
 :param wait: (wacht) Als ``wait`` ``True``is, wordt deze functie geblokkeerd totdat het geluid is voltooid.
 :param pin: Een optioneel argument om de uitvoerpin op te geven kan worden gebruikt om de standaard van ``pin0``te overschrijven. Als we geen geluid willen afspelen, kunnen we ``pin=None`` gebruiken.
 :param return_pin: (retourneer pin) Specificeert een differentiële rand connector pin om verbinding te maken met een externe luidspreker in plaats van de grond. Dit wordt genegeerd voor de **V2** herziening."""
 
 def is_playing() -> bool:
-    """Controleer of een geluid wordt gespeeld. (speelt)
+    """Controleer of een geluid wordt gespeeld. (speelt af)
 
 Example: ``audio.is_playing()``
 
@@ -43,7 +43,7 @@ class SoundEffect:
     SHAPE_CURVE: ClassVar[int]
     """Curve interpolatie optie gebruikt voor de ``shape`` parameter. (vorm curve)"""
     SHAPE_LOG: ClassVar[int]
-    """Logaritmische interpolatie optie gebruikt voor de ``shape`` parameter. (Vorm log)"""
+    """Logaritmische interpolatie optie gebruikt voor de ``shape`` parameter. (vorm log)"""
     FX_NONE: ClassVar[int]
     """Geen effectoptie gebruikt voor de  ``fx`` parameter. (geen fx)"""
     FX_TREMOLO: ClassVar[int]
@@ -81,7 +81,7 @@ and then change its attributes ``my_effect.duration = 500``.
 
 :param freq_start: (frequentie start) Start frequentie in Hertz (Hz), een getal tussen ``0`` en ``9999``.
 :param freq_end: (frequentie einde) Eind frequentie in Hertz (Hz), een getal tussen ``0`` en ``9999``.
-:param duration: (Duur) Duur van het geluid in milliseconden, een getal tussen ``0`` en ``9999``.
+:param duration: (duur) Duur van het geluid in milliseconden, een getal tussen ``0`` en ``9999``.
 :param vol_start: Startvolumewaarde, een getal tussen ``0`` en ``255``.
 :param vol_end: (vol einde) Eindvolumewaarde, een getal tussen ``0`` en ``255``.
 :param waveform: (golfvorm) Type golfvorm, één van deze waarden: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (willekeurig gegenereerde geluid).
@@ -108,11 +108,11 @@ Example::
         frame[i] = 252 - i * 8"""
 
     def copyfrom(self, other: AudioFrame) -> None:
-        """Overschrijf de gegevens in deze ``AudioFrame`` met de gegevens van een andere ``AudioFrame`` instantie. (kopieervan)
+        """Overschrijf de gegevens in deze ``AudioFrame`` met de gegevens van een andere ``AudioFrame`` instantie. (kopieer van)
 
 Example: ``my_frame.copyfrom(source_frame)``
 
-:param other: (Overige) ``AudioFrame`` exemplaar van waar de gegevens worden gekopieerd."""
+:param other: (overige) ``AudioFrame`` exemplaar van waar de gegevens worden gekopieerd."""
 
     def __len__(self) -> int:
         ...

@@ -34,7 +34,7 @@ Example: ``i2c.read(0x50, 64)``
 
 :param addr: Het 7-bit adres van het apparaat
 :param n: Het aantal te lezen bytes
-:param repeat: (Herhaal) Als ``True``, zal er geen stop bit worden verzonden
+:param repeat: (herhaal) Als ``True``, zal er geen stop bit worden verzonden
 :return: The bytes read"""
     ...
 
@@ -45,5 +45,5 @@ Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
 :param addr: Het 7-bit adres van het apparaat
 :param buf: Een buffer met de te schrijven bytes
-:param repeat: (Herhaal) Als ``True``, zal er geen stop bit worden verzonden"""
+:param repeat: (herhaal) Als ``True``, zal er geen stop bit worden verzonden"""
     ...

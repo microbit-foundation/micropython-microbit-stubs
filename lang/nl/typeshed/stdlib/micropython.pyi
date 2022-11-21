@@ -1,4 +1,4 @@
-"""MicroPython internalen. (microPython)"""
+"""MicroPython intern."""
 from typing import Any, TypeVar, overload
 _T = TypeVar('_T')
 
@@ -44,7 +44,7 @@ The optimisation level controls the following compilation features:
 
 @overload
 def opt_level(level: int) -> None:
-    """Stelt het optimalisatieniveau in voor de latere compilatie van scripts. (Kies niveau)
+    """Stelt het optimalisatie niveau in voor de latere compilatie van scripts. (opt niveau)
 
 Example: ``micropython.opt_level(1)``
 
@@ -63,7 +63,7 @@ The optimisation level controls the following compilation features:
 
 The default optimisation level is usually level 0.
 
-:param level: (niveau) Een integer optimaliseringsniveau."""
+:param level: (niveau) Een integer optimaliserings niveau."""
     ...
 
 def mem_info(verbose: Any=None) -> None:
@@ -87,7 +87,7 @@ verbose mode it prints out the names of all RAM-interned strings."""
     ...
 
 def stack_use() -> int:
-    """Retourneert een integer getal dat huidige hoeveelheid stack vertegenwoordigt die wordt gebruikt. (Stapel gebruik)
+    """Retourneert een integer getal dat huidige hoeveelheid stack vertegenwoordigt die wordt gebruikt. (stapel gebruik)
 
 Example: ``micropython.stack_use()``
 

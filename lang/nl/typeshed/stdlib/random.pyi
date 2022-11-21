@@ -10,7 +10,7 @@ Example: ``random.getrandbits(1)``
     ...
 
 def seed(n: int) -> None:
-    """Initialiseer de willekeurige getalgenerator. (zaad)
+    """Initialiseer de willekeurige getalgenerator.
 
 Example: ``random.seed(0)``
 

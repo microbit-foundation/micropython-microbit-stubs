@@ -44,7 +44,7 @@ Example: ``machine.enable_irq(interrupt_state)``
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
-    """Time een puls op een pin. (tijd pulse ons)
+    """Time een puls op een pin. (tijd pulse us)
 
 Example: ``time_pulse_us(pin0, 1)``
 
@@ -56,7 +56,7 @@ starts straight away.
 
 :param pin: De pin om te gebruiken
 :param pulse_level: (puls niveau) 0 om een lage puls te tikken of 1 om een hoge puls te tikken
-:param timeout_us: (time-out us) Een microseconde time-out
+:param timeout_us: Een microseconde time-out
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
 
@@ -66,14 +66,14 @@ class mem:
     def __getitem__(self, address: int) -> int:
         """Toegang tot een waarde uit het geheugen.
 
-:param address: (Adres) Het geheugenadres.
+:param address: (adres) Het geheugenadres.
 :return: The value at that address as an integer."""
         ...
 
     def __setitem__(self, address: int, value: int) -> None:
         """Stel een waarde in op het opgegeven adres.
 
-:param address: (Adres) Het geheugenadres.
+:param address: (adres) Het geheugen adres.
 :param value: (waarde) De integerwaarde die moet worden ingesteld."""
         ...
 mem8: mem

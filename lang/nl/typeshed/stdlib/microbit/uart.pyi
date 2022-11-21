@@ -56,7 +56,7 @@ Example: ``uart.readinto(input_buffer)``
     ...
 
 def readline() -> Optional[bytes]:
-    """Lees een regel, eindigend in een nieuwregel. (leesregel)
+    """Lees een regel, eindigend in een nieuw karakter regel. (leesregel)
 
 Example: ``uart.readline()``
 

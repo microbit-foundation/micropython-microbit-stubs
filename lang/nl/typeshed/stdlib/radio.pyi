@@ -36,11 +36,11 @@ Als er geen ruimte meer is in de wachtrij voor binnenkomende berichten, dan valt
 Berichten worden via dit kanaal verzonden en alleen via dit kanaal worden berichten in de wachtrij van het inkomende berichten geplaatst. Elke stap is 1 MHz breed, gebaseerd op 2400MHz.
 :param power: (vermogen) (default=6) is een integer waarde van 0 tot 7 (inclusief) om de sterkte van het signaal aan te geven dat wordt gebruikt bij het uitzenden van een bericht.
 Hoe hoger de waarde, des te sterker het signaal, maar hoe meer stroom het apparaat verbruikt. De nummering vertaalt naar posities in de volgende lijst van dBm (decibel milliwatt) waarden: -30, -20, -16, -12, -8, -4, 0, 4.
-:param address: (Adres) (default=0x75626974) een willekeurige naam, uitgedrukt als een 32-bits adres, wordt gebruikt om inkomende pakketten op hardware-niveau te filteren, waarbij alleen de pakketten worden bewaard die overeenkomen met het adres dat je zelf instelt.
+:param address: (adres) (default=0x75626974) een willekeurige naam, uitgedrukt als een 32-bits adres, wordt gebruikt om inkomende pakketten op hardware-niveau te filteren, waarbij alleen de pakketten worden bewaard die overeenkomen met het adres dat je zelf instelt.
 De standaard gebruiker door andere micro:bit gerelateerde platforms is de standaard instelling die hier wordt gebruikt.
 :param group: (groep) (standaard=0) een 8-bit waarde (0-255) gebruikt met de ``address`` bij het filteren van berichten.
 Conceptueel, "adres" is als een huis/kantooradres en "groep" is als de persoon op dat adres waarnaar je je bericht wilt sturen.
-:param data_rate: (Gegevenssnelheid) (default=``radio.RATE_1MBIT``) geeft aan hoe snel de doorvoer van gegevens plaatsvindt.
+:param data_rate: (Gegevens snelheid) (default=``radio.RATE_1MBIT``) geeft aan hoe snel de doorvoer van gegevens plaatsvindt.
 Kan een van de volgende constanten zijn gedefinieerd in de ``radio`` module: ``RATE_250KBIT``, ``RATE_1MBIT`` of ``RATE_2MBIT``.
 
 If ``config`` is not called then the defaults described above are assumed."""
@@ -75,7 +75,7 @@ def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
 
 Example: ``radio.receive_bytes_info(buffer)``
 
-:param buffer: (Buffer) De doel buffer. Het bericht wordt ingekort als het groter is dan de buffer.
+:param buffer: De doel buffer. Het bericht wordt ingekort als het groter is dan de buffer.
 :return: ``None`` if there are no pending messages, otherwise it returns the length of the message (which might be more than the length of the buffer)."""
     ...
 
