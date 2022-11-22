@@ -1,4 +1,4 @@
-"""Meet tijd en voeg vertragingen toe aan programma's. (Tijd)"""
+"""Meet tijd en voeg vertragingen toe aan programma's. (tijd)"""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:
@@ -11,7 +11,7 @@ Gebruik een floating-point nummer om te slapen voor een fractioneel aantal secon
     ...
 
 def sleep_ms(ms: int) -> None:
-    """Vertraging voor een bepaald aantal milliseconden. (Slaap ms)
+    """Vertraging voor een bepaald aantal milliseconden. (slaap ms)
 
 Example: ``time.sleep_ms(1_000_000)``
 
@@ -19,7 +19,7 @@ Example: ``time.sleep_ms(1_000_000)``
     ...
 
 def sleep_us(us: int) -> None:
-    """Vertraging voor een bepaald aantal microseconden. (Slaap us)
+    """Vertraging voor een bepaald aantal microseconden. (slaap us)
 
 Example: ``time.sleep_us(1000)``
 

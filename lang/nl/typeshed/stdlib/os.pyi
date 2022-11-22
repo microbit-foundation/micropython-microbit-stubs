@@ -12,11 +12,11 @@ persistent on-device file system."""
     ...
 
 def remove(filename: str) -> None:
-    """Verwijder (verwijder) een bestand. (Verwijder)
+    """Verwijder (verwijder) een bestand. (verwijder)
 
 Example: ``os.remove('data.txt')``
 
-:param filename: (bestandsnaam) Het bestand is verwijderd
+:param filename: (bestands naam) Het bestand is verwijderd
 
 If the file does not exist an ``OSError`` exception will occur."""
     ...
@@ -26,7 +26,7 @@ def size(filename: str) -> int:
 
 Example: ``os.size('data.txt')``
 
-:param filename: (bestandsnaam) Het bestand
+:param filename: (bestands naam) Het bestand
 :return: The size in bytes.
 
 If the file does not exist an ``OSError`` exception will occur."""

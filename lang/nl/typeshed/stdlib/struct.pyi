@@ -12,11 +12,11 @@ Example: ``struct.calcsize('hf')``
     ...
 
 def pack(fmt: str, v1: Any, *vn: Any) -> bytes:
-    """Verpak de waarden op basis van een string formaat. (pakket)
+    """Verpak de waarden op basis van een string formaat. (inpakken)
 
 Example: ``struct.pack('hf', 1, 3.1415)``
 
-:param fmt: De formaattekenreeks.
+:param fmt: De formaat tekenreeks.
 :param v1: De eerste waarde.
 :param *vn: De resterende waarden.
 :return A bytes object encoding the values."""
@@ -27,8 +27,8 @@ def pack_into(fmt: str, buffer: WriteableBuffer, offset: int, v1: Any, *vn: Any)
 
 Example: ``struct.pack_info('hf', buffer, 1, 3.1415)``
 
-:param fmt: De formaattekenreeks.
-:param buffer: (Buffer) De doelbuffer om in te schrijven.
+:param fmt: De formaat tekenreeks.
+:param buffer: De doelbuffer om in te schrijven.
 :param offset: (Offset) De compensatie in de buffer. Kan negatief zijn om te tellen aan het einde van de buffer.
 :param v1: De eerste waarde.
 :param *vn: De resterende waarden."""
@@ -39,7 +39,7 @@ def unpack(fmt: str, data: ReadableBuffer) -> Tuple[Any, ...]:
 
 Example: ``v1, v2 = struct.unpack('hf', buffer)``
 
-:param fmt: De formaattekenreeks.
+:param fmt: De formaat tekenreeks.
 :param data: (gegevens) De gegevens.
 :return: A tuple of the unpacked values."""
     ...
@@ -49,8 +49,8 @@ def unpack_from(fmt: str, buffer: ReadableBuffer, offset: int=0) -> Tuple:
 
 Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
 
-:param fmt: De formaattekenreeks.
-:param buffer: (Buffer) De bronbuffer om uit te lezen.
+:param fmt: De formaat tekenreeks.
+:param buffer: De bronbuffer om uit te lezen.
 :param offset: (Offset) De compensatie in de buffer. Kan negatief zijn om te tellen aan het einde van de buffer.
 :return: A tuple of the unpacked values."""
     ...

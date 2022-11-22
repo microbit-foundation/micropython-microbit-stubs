@@ -85,7 +85,7 @@ Example: ``math.exp(1)``
     ...
 
 def fabs(x: float) -> float:
-    """Geeft de absolute waarde van ``x``. (prachtig)
+    """Geeft de absolute waarde van ``x``.
 
 Example: ``math.fabs(-0.1)``
 
@@ -94,7 +94,7 @@ Example: ``math.fabs(-0.1)``
     ...
 
 def floor(x: float) -> int:
-    """Rond een getal af op een negatief oneindig. (Vloer)
+    """Rond een getal af op een negatief oneindig.
 
 Example: ``math.floor(0.9)``
 
@@ -125,7 +125,7 @@ the relation ``0.5 <= abs(m) < 1`` holds.
     ...
 
 def isfinite(x: float) -> bool:
-    """Controleer of een waarde eindig is. (iseindig)
+    """Controleer of een waarde eindig is. (is eindig)
 
 Example: ``math.isfinite(float('inf'))``
 
@@ -162,7 +162,7 @@ Example: ``math.ldexp(0.5, 2)``
     ...
 
 def log(x: float, base: float=e) -> float:
-    """Bereken het logaritme van ``x`` naar de opgegeven basis (standaard is het natuurlijke logalgoritme). (logboek)
+    """Bereken het logaritme van ``x`` naar de opgegeven basis (standaard is het natuurlijke logalgoritme).
 
 Example: ``math.log(math.e)``
 

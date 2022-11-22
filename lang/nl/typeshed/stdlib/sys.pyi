@@ -2,7 +2,7 @@
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
-    """Beëindig het huidige programma met een bepaalde exit code. (Afsluiten)
+    """Beëindig het huidige programma met een bepaalde exit code. (afsluiten)
 
 Example: ``sys.exit(1)``
 
@@ -24,13 +24,13 @@ This is simplified version of a function which appears in the
 argv: List[str]
 """Een veranderlijke lijst met argumenten waarmee het huidige programma is gestart."""
 byteorder: str
-"""De byte volgorde van het systeem (``"little"`` of ``"big"``). (byte-volgorde)"""
+"""De byte volgorde van het systeem (``"little"`` of ``"big"``). (byte volgorde)"""
 
 class _implementation:
     name: str
     version: Tuple[int, int, int]
 implementation: _implementation
-"""Object met informatie over de huidige Python-implementatie. (implementatie)
+"""Object met informatie over de huidige Python implementatie. (implementatie)
 
 For MicroPython, it has following attributes:
 
@@ -68,7 +68,7 @@ value directly, but instead count number of bits in it::
         # "> 32", "> 64" style of comparisons.
 """
 modules: Dict[str, Any]
-"""Woordenboek van geladen modules. (Modules) 
+"""Woordenboek van geladen modules. 
 
 On some ports, it may not include builtin modules."""
 path: List[str]
@@ -87,7 +87,7 @@ Python implementation), use ``sys.implementation`` instead.
 version: str
 """Python taalversie waar deze implementatie mee overeenstemt als tekenreeks. (versie)"""
 version_info: Tuple[int, int, int]
-"""Python taalversie waaraan deze implementatie voldoet, als een tupel van ints. (Versie-informatie)
+"""Python taalversie waaraan deze implementatie voldoet, als een tupel van ints. (versie informatie)
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.

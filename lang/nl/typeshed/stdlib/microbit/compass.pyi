@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """Haal de kompaskop op. (Kop)
+    """Haal de kompaskop op. (kop)
 
 Example: ``compass.heading()``
 

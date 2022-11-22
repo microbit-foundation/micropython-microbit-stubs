@@ -2,7 +2,7 @@
 from typing import overload
 
 def enable() -> None:
-    """Automatische afvalcollectie inschakelen. (ingeschakeld)"""
+    """Automatische afvalcollectie inschakelen. (inschakelen)"""
     ...
 
 def disable() -> None:
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """Vraag de extra GC-toewijzingsdrempel op. (drempelwaarde)
+    """Vraag de extra GC toewijzingsdrempel op. (drempelwaarde)
 
 :return: The GC allocation threshold.
 
@@ -44,7 +44,7 @@ implementations, its signature and semantics are different."""
 
 @overload
 def threshold(amount: int) -> None:
-    """Stel de extra GC-toewijzingsdrempel in. (drempelwaarde)
+    """Stel de extra GC toewijzingsdrempel in. (drempelwaarde)
 
 Normally, a collection is triggered only when a new allocation
 cannot be satisfied, i.e. on an  out-of-memory (OOM) condition.
@@ -64,5 +64,5 @@ This function is a MicroPython extension. CPython has a similar
 function - ``set_threshold()``, but due to different GC
 implementations, its signature and semantics are different.
 
-:param amount: (bedrag) Het aantal bytes waarna een garbagecollection moet worden geactiveerd."""
+:param amount: (bedrag) Het aantal bytes waarna een garbage collectie moet worden geactiveerd."""
     ...

@@ -39,8 +39,8 @@ function. To avoid this you can catch exceptions with ``try/except``.
 :param callback: Functie om op te roepen bij de meegeleverde interval. Weglaten wanneer je als decorator gebruikt.
 :param days: (dagen) Stelt de dag markering in voor de planning.
 :param h: (uur) Stelt de urenmarkering in voor de planning.
-:param min: (min.) Stelt de minuutmarkering in voor de planning.
-:param s: (sec) Stelt de seconde markering in voor de planning.
+:param min: Stelt de minuut markering in voor de planning.
+:param s: Stelt de seconde markering in voor de planning.
 :param ms: Stelt de milliseconde markering in voor de planning."""
 
 def panic(n: int) -> None:
@@ -108,7 +108,7 @@ One second is 1000 milliseconds, so::
 will pause the execution for one second."""
 
 def running_time() -> int:
-    """Bekijk de looptijd van het bord. (Looptijd)
+    """Bekijk de looptijd van het bord. (looptijd)
 
 :return: The number of milliseconds since the board was switched on or restarted."""
 
@@ -224,14 +224,14 @@ Example: ``pin0.write_analog(254)``
 
 Example: ``pin0.set_analog_period(10)``
 
-:param period: (Periode) De periode in milliseconden met een minimale geldige waarde van 1 ms."""
+:param period: (periode) De periode in milliseconden met een minimale geldige waarde van 1 ms."""
 
     def set_analog_period_microseconds(self, period: int) -> None:
         """Stel de periode in van het PWM-signaal dat uitgevoerd wordt naar ``period`` in milliseconden. (microseconden analoge periode instellen)
 
 Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: (Periode) De periode in microseconden met een minimumwaarde van 256 mres."""
+:param period: (periode) De periode in microseconden met een minimumwaarde van 256 mres."""
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
     """Een pin met analoge en digitale functies."""
@@ -284,33 +284,33 @@ The default touch mode for the pins on the edge connector is
 pin0: MicroBitTouchPin
 """Pin met digitale, analoge en touch functies."""
 pin1: MicroBitTouchPin
-"""Pin met digitale, analoge en touch functies."""
+"""Pin met digitale, analoge en aanraak functies."""
 pin2: MicroBitTouchPin
-"""Pin met digitale, analoge en touch functies."""
+"""Pin met digitale, analoge en aanraak functies."""
 pin3: MicroBitAnalogDigitalPin
-"""Pin met digitale, analoge en touch functies."""
+"""Pin met digitale, analoge en aanraak functies."""
 pin4: MicroBitAnalogDigitalPin
-"""Pin met digitale, analoge en touch functies."""
+"""Pin met digitale, analoge en aanraak functies."""
 pin5: MicroBitDigitalPin
 """Pin met digitale, analoge en aanraak functies."""
 pin6: MicroBitDigitalPin
 """Pin met digitale functies."""
 pin7: MicroBitDigitalPin
-"""Vastmaken met digitale functies."""
+"""Pin met digitale functies."""
 pin8: MicroBitDigitalPin
-"""Vastmaken met digitale functies."""
+"""Pin met digitale functies."""
 pin9: MicroBitDigitalPin
 """Pin met digitale functies."""
 pin10: MicroBitAnalogDigitalPin
-"""Pin met digitale, analoge en touch functies."""
+"""Pin met digitale, analoge en aanraak functies."""
 pin11: MicroBitDigitalPin
 """Pin met digitale, analoge en aanraak functies."""
 pin12: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies. (spelden12)"""
+"""Pin met digitale, analoge en aanraak functies."""
 pin13: MicroBitDigitalPin
 """Pin met digitale, analoge en aanraak functies."""
 pin14: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies. (spin14)"""
+"""Pin met digitale, analoge en aanraak functies."""
 pin15: MicroBitDigitalPin
 """Pin met digitale, analoge en aanraak functies."""
 pin16: MicroBitDigitalPin
@@ -318,9 +318,9 @@ pin16: MicroBitDigitalPin
 pin19: MicroBitDigitalPin
 """Pin met digitale, analoge en aanraak functies."""
 pin20: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies. (spin20)"""
+"""Pin met digitale, analoge en aanraak functies."""
 pin_logo: MicroBitTouchPin
-"""Een aanraakgevoelige logospeld op de voorkant van de micro:bit, die standaard is ingesteld op capacitieve aanraking modus."""
+"""Een aanraak gevoelige logo pin op de voorkant van de micro:bit, die standaard is ingesteld op capacitieve aanraking modus."""
 pin_speaker: MicroBitAnalogDigitalPin
 """Een pin om de micro:bit luidspreker aan te spreken. (pin luidspreker)
 
@@ -336,7 +336,7 @@ Given an image object it's possible to display it via the ``display`` API::
     HEART: Image
     """Hart afbeelding (hart)"""
     HEART_SMALL: Image
-    """Kleine hartbeeld. (hart klein)"""
+    """Klein hart afbeelding. (hart klein)"""
     HAPPY: Image
     """Blije gezichtsafbeelding. (blij)"""
     SMILE: Image
@@ -352,7 +352,7 @@ Given an image object it's possible to display it via the ``display`` API::
     SURPRISED: Image
     """Verraste gezichtsafbeelding. (verrast)"""
     SILLY: Image
-    """Gek gezicht afbeelding. (gek)"""
+    """Gek gezichtsafbeelding. (gek)"""
     FABULOUS: Image
     """Zonnebril gezichtsafbeelding. (fantastisch)"""
     MEH: Image
@@ -374,7 +374,7 @@ Given an image object it's possible to display it via the ``display`` API::
     CLOCK7: Image
     """Afbeelding met lijn die naar 7.00 uur wijst. (klok 7)"""
     CLOCK6: Image
-    """Afbeelding met lijn die naar 6.00 uur wijst. (klok6)"""
+    """Afbeelding met lijn die naar 6.00 uur wijst. (klok 6)"""
     CLOCK5: Image
     """Afbeelding met lijn die naar 5.00 uur wijst. (klok 5)"""
     CLOCK4: Image
@@ -382,31 +382,31 @@ Given an image object it's possible to display it via the ``display`` API::
     CLOCK3: Image
     """Afbeelding met lijn die naar 3.00 uur wijst. (klok 3)"""
     CLOCK2: Image
-    """Afbeelding met lijn die naar 2.00 uur wijst. (klok2)"""
+    """Afbeelding met lijn die naar 2 uur wijst. (klok2)"""
     CLOCK1: Image
-    """Afbeelding met lijn die naar 1.00 uur wijst. (klok1)"""
+    """Afbeelding met lijn die naar 1 uur wijst. (klok1)"""
     ARROW_N: Image
-    """Afbeelding van pijltje richting het noorden. (pijl n)"""
+    """Afbeelding van pijl richting het noorden. (pijl n)"""
     ARROW_NE: Image
-    """Afbeelding van pijl richting het noord-oosten. (pijl NO)"""
+    """Afbeelding van pijl richting het noord oosten. (pijl NO)"""
     ARROW_E: Image
     """Afbeelding van pijl richting het oosten. (pijl e)"""
     ARROW_SE: Image
-    """Afbeelding van pijl richting het zuid-oosten. (Pijl ZO)"""
+    """Afbeelding van pijl richting het zuid-oosten. (pijl ZO)"""
     ARROW_S: Image
-    """Afbeelding van pijltje richting het zuiden. (Pijl s)"""
+    """Afbeelding van pijltje richting het zuiden. (pijl z)"""
     ARROW_SW: Image
-    """Afbeelding van pijl richting het zuid-westen. (Pijl ZW)"""
+    """Afbeelding van pijl richting het zuid-westen. (pijl ZW)"""
     ARROW_W: Image
-    """Afbeelding van pijl richting het westen. (Pijl w)"""
+    """Afbeelding van pijl richting het westen. (pijl w)"""
     ARROW_NW: Image
-    """Afbeelding van pijl richting het noord-westen. (Pijl NW)"""
+    """Afbeelding van pijl richting het noord-westen. (pijl NW)"""
     TRIANGLE: Image
     """Afbeelding van een driehoek die naar boven wijst. (driehoek)"""
     TRIANGLE_LEFT: Image
     """Afbeelding van een driehoek in de linker hoek. (Driehoek links)"""
     CHESSBOARD: Image
-    """Alternatieve LED's verlichten in een schaakbord-patroon. (schaakbord)"""
+    """Alternatieve LED's verlichten in een schaakbord patroon. (schaakbord)"""
     DIAMOND: Image
     """Diamanten afbeelding. (diamant)"""
     DIAMOND_SMALL: Image
@@ -426,17 +426,17 @@ Given an image object it's possible to display it via the ``display`` API::
     MUSIC_QUAVERS: Image
     """Koppel van kwartnoten afbeelding. (muziek kwartnoten)"""
     PITCHFORK: Image
-    """Stemvork afbeelding. (hooivork)"""
+    """Stemvork afbeelding. (stemvork)"""
     XMAS: Image
-    """Kerstboom afbeelding. (Kerstmis)"""
+    """Kerstboom afbeelding. (kerstmis)"""
     PACMAN: Image
     """Pac-Man arcade karakterafbeelding. (Pacman)"""
     TARGET: Image
-    """Target image. (doel)"""
+    """Doel afbeelding. (doel)"""
     TSHIRT: Image
-    """T-shirt afbeelding. (T-shirt)"""
+    """T-shirt afbeelding."""
     ROLLERSKATE: Image
-    """Rollerskate afbeelding. (rolschaatsen)"""
+    """Rolschaats afbeelding. (rolschaatsen)"""
     DUCK: Image
     """Eend afbeelding. (eend)"""
     HOUSE: Image
@@ -446,7 +446,7 @@ Given an image object it's possible to display it via the ``display`` API::
     BUTTERFLY: Image
     """Vlinder afbeelding. (vlinder)"""
     STICKFIGURE: Image
-    """Stok figuur afbeelding."""
+    """Stok figuur afbeelding. (stok figuur)"""
     GHOST: Image
     """Spook afbeelding. (spook)"""
     SWORD: Image
@@ -491,7 +491,7 @@ colon. It's also possible to use newlines (\\n) insead of the colons.
 
 :param width: (breedte) Optionele breedte van de afbeelding
 :param height: (hoogte) Optionele hoogte van de afbeelding
-:param buffer: (Buffer) Optionele array of bytes van ``width``×``height`` integers in bereik 0-9 om de afbeelding te initialiseren
+:param buffer: Optionele array of bytes van ``width``×``height`` integers in bereik 0-9 om de afbeelding te initialiseren
 
 Examples::
 
@@ -518,8 +518,8 @@ These create 2 x 2 pixel images at full brightness."""
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: (х) Het kolomnummer
-:param y: Het rijnummer
+:param x: (х) Het kolom nummer
+:param y: Het rij nummer
 :param value: (waarde) De helderheid als een geheel getal tussen 0 (donker) en 9 (helder)
 
 This method will raise an exception when called on any of the built-in
@@ -531,8 +531,8 @@ read-only images, like ``Image.HEART``."""
 
 Example: ``my_image.get_pixel(0, 0)``
 
-:param x: (х) Het kolomnummer
-:param y: Het rijnummer
+:param x: (х) Het kolom nummer
+:param y: Het rij nummer
 :return: The brightness as an integer between 0 and 9."""
         ...
 
@@ -546,7 +546,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
         ...
 
     def shift_right(self, n: int) -> Image:
-        """Maak een nieuwe afbeelding door de afbeelding rechts te verschuiven. (Verschuif Rechts)
+        """Maak een nieuwe afbeelding door de afbeelding rechts te verschuiven. (verschuif Rechts)
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
@@ -564,7 +564,7 @@ Example: ``Image.HEART_SMALL.shift_up(1)``
         ...
 
     def shift_down(self, n: int) -> Image:
-        """Maak een nieuwe afbeelding door de afbeelding omlaag te verschuiven. (verschuiving omlaag)
+        """Maak een nieuwe afbeelding door de afbeelding omlaag te verschuiven. (verschuif omlaag)
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
@@ -573,13 +573,13 @@ Example: ``Image.HEART_SMALL.shift_down(1)``
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Maak een nieuwe afbeelding door de afbeelding bij te snijden. (bijsnijden)
+        """Maak een nieuwe afbeelding door de afbeelding bij te snijden. (bij snijden)
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: (х) De crop offset kolom
-:param y: De crop offset kolom
-:param w: De bijsnijdbreedte
+:param x: (х) De kolom verschuiving
+:param y: De rij verschuiving
+:param w: De bij snij breedte
 :param h: (uur) Hoogte bijsnijden
 :return: The new image"""
         ...
@@ -617,8 +617,8 @@ read-only images, like ``Image.HEART``."""
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-:param src: De bronafbeelding
-:param x: (х) De beginkolom offset in de bronafbeelding
+:param src: De bron afbeelding
+:param x: (х) De begin kolom offset in de bron afbeelding
 :param y: De beginkolom offset in de bronafbeelding
 :param w: Het aantal te kopiëren kolommen
 :param h: (uur) Het aantal te kopiëren rijen
@@ -652,16 +652,15 @@ afbeeldingen voor elke pixel toe te voegen. (toevoegen)
 
 Example: ``Image.HEART + Image.HAPPY``
 
-:param other: (Overige) De afbeelding om toe te voegen."""
+:param other: (overige) De afbeelding om toe te voegen."""
         ...
 
     def __sub__(self, other: Image) -> Image:
-        """Maak een nieuw beeld door de helderheidswaarden van de
-andere afbeelding van deze afbeelding af te trekken.
+        """Maak een nieuw beeld door de helderheidswaarden van de andere afbeelding van deze afbeelding af te trekken.
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: (Overige) De afbeelding om af te trekken."""
+:param other: (overige) De afbeelding om af te trekken."""
         ...
 
     def __mul__(self, n: float) -> Image:

@@ -1,4 +1,4 @@
-"""Log gegevens in op je micro:bit V2. (logboek)"""
+"""Log gegevens in op je micro:bit V2."""
 from typing import Literal, Mapping, Optional, Union, overload
 MILLISECONDS = 1
 """Milliseconden tijdstempel formaat. (milliseconden)"""
@@ -79,11 +79,11 @@ and “fast” invalidates the data without removing it.
     ...
 
 def set_mirroring(serial: bool):
-    """Configureer het spiegelen van de data logging activiteit naar de seriële uitgang. (kies mirroring)
+    """Configureer het spiegelen van de data logging activiteit naar de seriële uitgang. (stel spiegelen in)
 
 Example: ``log.set_mirroring(True)``
 
 Serial mirroring is disabled by default. When enabled, it will print to serial each row logged into the log file.
 
-:param serial: (serieel) ``True`` maakt het spiegelen van gegevens naar de seriële uitgang mogelijk."""
+:param serial: (serieel) ``True`` maakt het spiegelen van gegevens naar de seriële uitvoer mogelijk."""
     ...

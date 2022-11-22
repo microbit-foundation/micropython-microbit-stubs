@@ -43,7 +43,7 @@ This call clears the sound history before returning.
     ...
 
 def set_threshold(event: SoundEvent, value: int) -> None:
-    """Stel de drempel in voor een geluidsgebeurtenis. (Stel drempelwaarde in)
+    """Stel de drempel in voor een geluidsgebeurtenis. (stel drempelwaarde in)
 
 Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 

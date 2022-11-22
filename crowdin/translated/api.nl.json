@@ -8,7 +8,7 @@
     "description": "Control the garbage collector"
   },
   "gc.enable": {
-    "message": "ingeschakeld",
+    "message": "inschakelen",
     "description": "(function name) Enable automatic garbage collection."
   },
   "gc.enable.summary": {
@@ -52,7 +52,7 @@
     "description": "(function name) Query the additional GC allocation threshold."
   },
   "gc.threshold-1.summary": {
-    "message": "Vraag de extra GC-toewijzingsdrempel op.",
+    "message": "Vraag de extra GC toewijzingsdrempel op.",
     "description": "Query the additional GC allocation threshold."
   },
   "gc.threshold-2": {
@@ -60,7 +60,7 @@
     "description": "(function name) Set the additional GC allocation threshold."
   },
   "gc.threshold-2.summary": {
-    "message": "Stel de extra GC-toewijzingsdrempel in.",
+    "message": "Stel de extra GC toewijzingsdrempel in.",
     "description": "Set the additional GC allocation threshold."
   },
   "gc.threshold-2.param-name.amount": {
@@ -68,11 +68,11 @@
     "description": "(parameter name) The number of bytes after which a garbage collection should be triggered."
   },
   "gc.threshold-2.param-doc.amount": {
-    "message": "Het aantal bytes waarna een garbagecollection moet worden geactiveerd.",
+    "message": "Het aantal bytes waarna een garbage collectie moet worden geactiveerd.",
     "description": "Parameter docs"
   },
   "log": {
-    "message": "logboek",
+    "message": "log",
     "description": "(module name) Log data to your micro:bit V2."
   },
   "log.summary": {
@@ -184,7 +184,7 @@
     "description": "Parameter docs"
   },
   "log.set_mirroring": {
-    "message": "kies mirroring",
+    "message": "stel spiegelen in",
     "description": "(function name) Configure mirroring of the data logging activity to the serial output."
   },
   "log.set_mirroring.summary": {
@@ -196,7 +196,7 @@
     "description": "(parameter name) ``True`` enables mirroring data to the serial output."
   },
   "log.set_mirroring.param-doc.serial": {
-    "message": " {{True}} maakt het spiegelen van gegevens naar de seriële uitgang mogelijk.",
+    "message": " {{True}} maakt het spiegelen van gegevens naar de seriële uitvoer mogelijk.",
     "description": "Parameter docs"
   },
   "machine": {
@@ -256,7 +256,7 @@
     "description": "Parameter docs"
   },
   "machine.time_pulse_us": {
-    "message": "tijd pulse ons",
+    "message": "tijd pulse us",
     "description": "(function name) Time a pulse on a pin."
   },
   "machine.time_pulse_us.summary": {
@@ -280,7 +280,7 @@
     "description": "Parameter docs"
   },
   "machine.time_pulse_us.param-name.timeout_us": {
-    "message": "time-out us",
+    "message": "timeout us",
     "description": "(parameter name) A microsecond timeout"
   },
   "machine.time_pulse_us.param-doc.timeout_us": {
@@ -304,7 +304,7 @@
     "description": "Access a value from memory."
   },
   "machine.mem.__getitem__.param-name.address": {
-    "message": "Adres",
+    "message": "adres",
     "description": "(parameter name) The memory address."
   },
   "machine.mem.__getitem__.param-doc.address": {
@@ -320,11 +320,11 @@
     "description": "Set a value at the given address."
   },
   "machine.mem.__setitem__.param-name.address": {
-    "message": "Adres",
+    "message": "adres",
     "description": "(parameter name) The memory address."
   },
   "machine.mem.__setitem__.param-doc.address": {
-    "message": "Het geheugenadres.",
+    "message": "Het geheugen adres.",
     "description": "Parameter docs"
   },
   "machine.mem.__setitem__.param-name.value": {
@@ -528,7 +528,7 @@
     "description": "Parameter docs"
   },
   "math.fabs": {
-    "message": "prachtig",
+    "message": "fabs",
     "description": "(function name) Return the absolute value of ``x``."
   },
   "math.fabs.summary": {
@@ -544,7 +544,7 @@
     "description": "Parameter docs"
   },
   "math.floor": {
-    "message": "Vloer",
+    "message": "floor",
     "description": "(function name) Round a number towards negative infinity."
   },
   "math.floor.summary": {
@@ -600,7 +600,7 @@
     "description": "Parameter docs"
   },
   "math.isfinite": {
-    "message": "iseindig",
+    "message": "is eindig",
     "description": "(function name) Check if a value is finite."
   },
   "math.isfinite.summary": {
@@ -672,7 +672,7 @@
     "description": "Parameter docs"
   },
   "math.log": {
-    "message": "logboek",
+    "message": "log",
     "description": "(function name) Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm)."
   },
   "math.log.summary": {
@@ -872,11 +872,11 @@
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.min": {
-    "message": "min.",
+    "message": "min",
     "description": "(parameter name) Sets the minute mark for the scheduling."
   },
   "microbit.run_every.param-doc.min": {
-    "message": "Stelt de minuutmarkering in voor de planning.",
+    "message": "Stelt de minuut markering in voor de planning.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.ms": {
@@ -888,7 +888,7 @@
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.s": {
-    "message": "sec",
+    "message": "s",
     "description": "(parameter name) Sets the second mark for the scheduling."
   },
   "microbit.run_every.param-doc.s": {
@@ -1000,7 +1000,7 @@
     "description": "Parameter docs"
   },
   "microbit.running_time": {
-    "message": "Looptijd",
+    "message": "looptijd",
     "description": "(function name) Get the running time of the board."
   },
   "microbit.running_time.summary": {
@@ -1168,7 +1168,7 @@
     "description": "Set the period of the PWM signal being output to ``period`` in milliseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period.param-name.period": {
-    "message": "Periode",
+    "message": "periode",
     "description": "(parameter name) The period in milliseconds with a minimum valid value of 1ms."
   },
   "microbit.MicroBitDigitalPin.set_analog_period.param-doc.period": {
@@ -1184,7 +1184,7 @@
     "description": "Set the period of the PWM signal being output to ``period`` in microseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-name.period": {
-    "message": "Periode",
+    "message": "periode",
     "description": "(parameter name) The period in microseconds with a minimum valid value of 256µs."
   },
   "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-doc.period": {
@@ -1252,7 +1252,7 @@
     "description": "(field name) Pin with digital, analog and touch features."
   },
   "microbit.pin1.summary": {
-    "message": "Pin met digitale, analoge en touch functies.",
+    "message": "Pin met digitale, analoge en aanraak functies.",
     "description": "Pin with digital, analog and touch features."
   },
   "microbit.pin2": {
@@ -1260,7 +1260,7 @@
     "description": "(field name) Pin with digital, analog and touch features."
   },
   "microbit.pin2.summary": {
-    "message": "Pin met digitale, analoge en touch functies.",
+    "message": "Pin met digitale, analoge en aanraak functies.",
     "description": "Pin with digital, analog and touch features."
   },
   "microbit.pin3": {
@@ -1268,7 +1268,7 @@
     "description": "(field name) Pin with digital and analog features."
   },
   "microbit.pin3.summary": {
-    "message": "Pin met digitale, analoge en touch functies.",
+    "message": "Pin met digitale, analoge en aanraak functies.",
     "description": "Pin with digital and analog features."
   },
   "microbit.pin4": {
@@ -1276,7 +1276,7 @@
     "description": "(field name) Pin with digital and analog features."
   },
   "microbit.pin4.summary": {
-    "message": "Pin met digitale, analoge en touch functies.",
+    "message": "Pin met digitale, analoge en aanraak functies.",
     "description": "Pin with digital and analog features."
   },
   "microbit.pin5": {
@@ -1300,7 +1300,7 @@
     "description": "(field name) Pin with digital features."
   },
   "microbit.pin7.summary": {
-    "message": "Vastmaken met digitale functies.",
+    "message": "Pin met digitale functies.",
     "description": "Pin with digital features."
   },
   "microbit.pin8": {
@@ -1308,7 +1308,7 @@
     "description": "(field name) Pin with digital features."
   },
   "microbit.pin8.summary": {
-    "message": "Vastmaken met digitale functies.",
+    "message": "Pin met digitale functies.",
     "description": "Pin with digital features."
   },
   "microbit.pin9": {
@@ -1324,7 +1324,7 @@
     "description": "(field name) Pin with digital and analog features."
   },
   "microbit.pin10.summary": {
-    "message": "Pin met digitale, analoge en touch functies.",
+    "message": "Pin met digitale, analoge en aanraak functies.",
     "description": "Pin with digital and analog features."
   },
   "microbit.pin11": {
@@ -1336,7 +1336,7 @@
     "description": "Pin with digital features."
   },
   "microbit.pin12": {
-    "message": "spelden12",
+    "message": "pin12",
     "description": "(field name) Pin with digital features."
   },
   "microbit.pin12.summary": {
@@ -1352,7 +1352,7 @@
     "description": "Pin with digital features."
   },
   "microbit.pin14": {
-    "message": "spin14",
+    "message": "pin14",
     "description": "(field name) Pin with digital features."
   },
   "microbit.pin14.summary": {
@@ -1384,7 +1384,7 @@
     "description": "Pin with digital features."
   },
   "microbit.pin20": {
-    "message": "spin20",
+    "message": "pin20",
     "description": "(field name) Pin with digital features."
   },
   "microbit.pin20.summary": {
@@ -1396,7 +1396,7 @@
     "description": "(field name) A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
   },
   "microbit.pin_logo.summary": {
-    "message": "Een aanraakgevoelige logospeld op de voorkant van de micro:bit, die standaard is ingesteld op capacitieve aanraking modus.",
+    "message": "Een aanraak gevoelige logo pin op de voorkant van de micro:bit, die standaard is ingesteld op capacitieve aanraking modus.",
     "description": "A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
   },
   "microbit.pin_speaker": {
@@ -1428,7 +1428,7 @@
     "description": "(field name) Small heart image."
   },
   "microbit.Image.HEART_SMALL.summary": {
-    "message": "Kleine hartbeeld.",
+    "message": "Klein hart afbeelding.",
     "description": "Small heart image."
   },
   "microbit.Image.HAPPY": {
@@ -1492,7 +1492,7 @@
     "description": "(field name) Silly face image."
   },
   "microbit.Image.SILLY.summary": {
-    "message": "Gek gezicht afbeelding.",
+    "message": "Gek gezichtsafbeelding.",
     "description": "Silly face image."
   },
   "microbit.Image.FABULOUS": {
@@ -1576,7 +1576,7 @@
     "description": "Image with line pointing to 7 o'clock."
   },
   "microbit.Image.CLOCK6": {
-    "message": "klok6",
+    "message": "klok 6",
     "description": "(field name) Image with line pointing to 6 o'clock."
   },
   "microbit.Image.CLOCK6.summary": {
@@ -1612,7 +1612,7 @@
     "description": "(field name) Image with line pointing to 2 o'clock."
   },
   "microbit.Image.CLOCK2.summary": {
-    "message": "Afbeelding met lijn die naar 2.00 uur wijst.",
+    "message": "Afbeelding met lijn die naar 2 uur wijst.",
     "description": "Image with line pointing to 2 o'clock."
   },
   "microbit.Image.CLOCK1": {
@@ -1620,7 +1620,7 @@
     "description": "(field name) Image with line pointing to 1 o'clock."
   },
   "microbit.Image.CLOCK1.summary": {
-    "message": "Afbeelding met lijn die naar 1.00 uur wijst.",
+    "message": "Afbeelding met lijn die naar 1 uur wijst.",
     "description": "Image with line pointing to 1 o'clock."
   },
   "microbit.Image.ARROW_N": {
@@ -1628,7 +1628,7 @@
     "description": "(field name) Image of arrow pointing north."
   },
   "microbit.Image.ARROW_N.summary": {
-    "message": "Afbeelding van pijltje richting het noorden.",
+    "message": "Afbeelding van pijl richting het noorden.",
     "description": "Image of arrow pointing north."
   },
   "microbit.Image.ARROW_NE": {
@@ -1636,7 +1636,7 @@
     "description": "(field name) Image of arrow pointing north east."
   },
   "microbit.Image.ARROW_NE.summary": {
-    "message": "Afbeelding van pijl richting het noord-oosten.",
+    "message": "Afbeelding van pijl richting het noord oosten.",
     "description": "Image of arrow pointing north east."
   },
   "microbit.Image.ARROW_E": {
@@ -1648,7 +1648,7 @@
     "description": "Image of arrow pointing east."
   },
   "microbit.Image.ARROW_SE": {
-    "message": "Pijl ZO",
+    "message": "pijl ZO",
     "description": "(field name) Image of arrow pointing south east."
   },
   "microbit.Image.ARROW_SE.summary": {
@@ -1656,7 +1656,7 @@
     "description": "Image of arrow pointing south east."
   },
   "microbit.Image.ARROW_S": {
-    "message": "Pijl s",
+    "message": "pijl z",
     "description": "(field name) Image of arrow pointing south."
   },
   "microbit.Image.ARROW_S.summary": {
@@ -1664,7 +1664,7 @@
     "description": "Image of arrow pointing south."
   },
   "microbit.Image.ARROW_SW": {
-    "message": "Pijl ZW",
+    "message": "pijl ZW",
     "description": "(field name) Image of arrow pointing south west."
   },
   "microbit.Image.ARROW_SW.summary": {
@@ -1672,7 +1672,7 @@
     "description": "Image of arrow pointing south west."
   },
   "microbit.Image.ARROW_W": {
-    "message": "Pijl w",
+    "message": "pijl w",
     "description": "(field name) Image of arrow pointing west."
   },
   "microbit.Image.ARROW_W.summary": {
@@ -1680,7 +1680,7 @@
     "description": "Image of arrow pointing west."
   },
   "microbit.Image.ARROW_NW": {
-    "message": "Pijl NW",
+    "message": "pijl NW",
     "description": "(field name) Image of arrow pointing north west."
   },
   "microbit.Image.ARROW_NW.summary": {
@@ -1708,7 +1708,7 @@
     "description": "(field name) Alternate LEDs lit in a chessboard pattern."
   },
   "microbit.Image.CHESSBOARD.summary": {
-    "message": "Alternatieve LED's verlichten in een schaakbord-patroon.",
+    "message": "Alternatieve LED's verlichten in een schaakbord patroon.",
     "description": "Alternate LEDs lit in a chessboard pattern."
   },
   "microbit.Image.DIAMOND": {
@@ -1784,7 +1784,7 @@
     "description": "Pair of quavers note image."
   },
   "microbit.Image.PITCHFORK": {
-    "message": "hooivork",
+    "message": "stemvork",
     "description": "(field name) Pitchfork image."
   },
   "microbit.Image.PITCHFORK.summary": {
@@ -1792,7 +1792,7 @@
     "description": "Pitchfork image."
   },
   "microbit.Image.XMAS": {
-    "message": "Kerstmis",
+    "message": "kerstmis",
     "description": "(field name) Christmas tree image."
   },
   "microbit.Image.XMAS.summary": {
@@ -1812,11 +1812,11 @@
     "description": "(field name) Target image."
   },
   "microbit.Image.TARGET.summary": {
-    "message": "Target image.",
+    "message": "Doel afbeelding.",
     "description": "Target image."
   },
   "microbit.Image.TSHIRT": {
-    "message": "T-shirt",
+    "message": "tshirt",
     "description": "(field name) T-shirt image."
   },
   "microbit.Image.TSHIRT.summary": {
@@ -1828,7 +1828,7 @@
     "description": "(field name) Rollerskate image."
   },
   "microbit.Image.ROLLERSKATE.summary": {
-    "message": "Rollerskate afbeelding.",
+    "message": "Rolschaats afbeelding.",
     "description": "Rollerskate image."
   },
   "microbit.Image.DUCK": {
@@ -1864,7 +1864,7 @@
     "description": "Butterfly image."
   },
   "microbit.Image.STICKFIGURE": {
-    "message": "stickfigure",
+    "message": "stok figuur",
     "description": "(field name) Stick figure image."
   },
   "microbit.Image.STICKFIGURE.summary": {
@@ -1968,7 +1968,7 @@
     "description": "Create an empty image with ``width`` columns and ``height`` rows."
   },
   "microbit.Image.__init__-2.param-name.buffer": {
-    "message": "Buffer",
+    "message": "buffer",
     "description": "(parameter name) Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image"
   },
   "microbit.Image.__init__-2.param-doc.buffer": {
@@ -2028,7 +2028,7 @@
     "description": "(parameter name) The column number"
   },
   "microbit.Image.set_pixel.param-doc.x": {
-    "message": "Het kolomnummer",
+    "message": "Het kolom nummer",
     "description": "Parameter docs"
   },
   "microbit.Image.set_pixel.param-name.y": {
@@ -2036,7 +2036,7 @@
     "description": "(parameter name) The row number"
   },
   "microbit.Image.set_pixel.param-doc.y": {
-    "message": "Het rijnummer",
+    "message": "Het rij nummer",
     "description": "Parameter docs"
   },
   "microbit.Image.get_pixel": {
@@ -2052,7 +2052,7 @@
     "description": "(parameter name) The column number"
   },
   "microbit.Image.get_pixel.param-doc.x": {
-    "message": "Het kolomnummer",
+    "message": "Het kolom nummer",
     "description": "Parameter docs"
   },
   "microbit.Image.get_pixel.param-name.y": {
@@ -2060,7 +2060,7 @@
     "description": "(parameter name) The row number"
   },
   "microbit.Image.get_pixel.param-doc.y": {
-    "message": "Het rijnummer",
+    "message": "Het rij nummer",
     "description": "Parameter docs"
   },
   "microbit.Image.shift_left": {
@@ -2080,7 +2080,7 @@
     "description": "Parameter docs"
   },
   "microbit.Image.shift_right": {
-    "message": "Verschuif Rechts",
+    "message": "verschuif Rechts",
     "description": "(function name) Create a new image by shifting the picture right."
   },
   "microbit.Image.shift_right.summary": {
@@ -2112,7 +2112,7 @@
     "description": "Parameter docs"
   },
   "microbit.Image.shift_down": {
-    "message": "verschuiving omlaag",
+    "message": "verschuif omlaag",
     "description": "(function name) Create a new image by shifting the picture down."
   },
   "microbit.Image.shift_down.summary": {
@@ -2128,7 +2128,7 @@
     "description": "Parameter docs"
   },
   "microbit.Image.crop": {
-    "message": "bijsnijden",
+    "message": "bij snijden",
     "description": "(function name) Create a new image by cropping the picture."
   },
   "microbit.Image.crop.summary": {
@@ -2148,7 +2148,7 @@
     "description": "(parameter name) The crop width"
   },
   "microbit.Image.crop.param-doc.w": {
-    "message": "De bijsnijdbreedte",
+    "message": "De bij snij breedte",
     "description": "Parameter docs"
   },
   "microbit.Image.crop.param-name.x": {
@@ -2156,7 +2156,7 @@
     "description": "(parameter name) The crop offset column"
   },
   "microbit.Image.crop.param-doc.x": {
-    "message": "De crop offset kolom",
+    "message": "De kolom verschuiving",
     "description": "Parameter docs"
   },
   "microbit.Image.crop.param-name.y": {
@@ -2164,7 +2164,7 @@
     "description": "(parameter name) The crop offset row"
   },
   "microbit.Image.crop.param-doc.y": {
-    "message": "De crop offset kolom",
+    "message": "De rij verschuiving",
     "description": "Parameter docs"
   },
   "microbit.Image.copy": {
@@ -2220,7 +2220,7 @@
     "description": "(parameter name) The source image"
   },
   "microbit.Image.blit.param-doc.src": {
-    "message": "De bronafbeelding",
+    "message": "De bron afbeelding",
     "description": "Parameter docs"
   },
   "microbit.Image.blit.param-name.w": {
@@ -2236,7 +2236,7 @@
     "description": "(parameter name) The starting column offset in the source image"
   },
   "microbit.Image.blit.param-doc.x": {
-    "message": "De beginkolom offset in de bronafbeelding",
+    "message": "De begin kolom offset in de bron afbeelding",
     "description": "Parameter docs"
   },
   "microbit.Image.blit.param-name.xdest": {
@@ -2288,7 +2288,7 @@
     "description": "Create a new image by adding the brightness values from the two\nimages for each pixel."
   },
   "microbit.Image.__add__.param-name.other": {
-    "message": "Overige",
+    "message": "overige",
     "description": "(parameter name) The image to add."
   },
   "microbit.Image.__add__.param-doc.other": {
@@ -2300,11 +2300,11 @@
     "description": "(function name) Create a new image by subtracting the brightness values of the\nother image from this image."
   },
   "microbit.Image.__sub__.summary": {
-    "message": "Maak een nieuw beeld door de helderheidswaarden van de\nandere afbeelding van deze afbeelding af te trekken.",
+    "message": "Maak een nieuw beeld door de helderheidswaarden van de andere afbeelding van deze afbeelding af te trekken.",
     "description": "Create a new image by subtracting the brightness values of the\nother image from this image."
   },
   "microbit.Image.__sub__.param-name.other": {
-    "message": "Overige",
+    "message": "overige",
     "description": "(parameter name) The image to subtract."
   },
   "microbit.Image.__sub__.param-doc.other": {
@@ -2572,7 +2572,7 @@
     "description": "(function name) Play a built-in sound, sound effect or custom audio frames."
   },
   "microbit.audio.play.summary": {
-    "message": "Een ingebouwde geluid, geluidseffect of aangepaste audioframes afspelen.",
+    "message": "Een ingebouwde geluid, geluids effect of aangepaste audio frames afspelen.",
     "description": "Play a built-in sound, sound effect or custom audio frames."
   },
   "microbit.audio.play.param-name.pin": {
@@ -2592,7 +2592,7 @@
     "description": "Parameter docs"
   },
   "microbit.audio.play.param-name.source": {
-    "message": "oorsprong",
+    "message": "bron",
     "description": "(parameter name) A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects."
   },
   "microbit.audio.play.param-doc.source": {
@@ -2608,7 +2608,7 @@
     "description": "Parameter docs"
   },
   "microbit.audio.is_playing": {
-    "message": "speelt",
+    "message": "speelt af",
     "description": "(function name) Check whether a sound is playing."
   },
   "microbit.audio.is_playing.summary": {
@@ -2688,7 +2688,7 @@
     "description": "Curve interpolation option used for the ``shape`` parameter."
   },
   "microbit.audio.SoundEffect.SHAPE_LOG": {
-    "message": "Vorm log",
+    "message": "vorm log",
     "description": "(field name) Logarithmic interpolation option used for the ``shape`` parameter."
   },
   "microbit.audio.SoundEffect.SHAPE_LOG.summary": {
@@ -2800,7 +2800,7 @@
     "description": "Create a new sound effect."
   },
   "microbit.audio.SoundEffect.__init__.param-name.duration": {
-    "message": "Duur",
+    "message": "duur",
     "description": "(parameter name) Duration of the sound in milliseconds, a number between ``0`` and ``9999``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.duration": {
@@ -2880,7 +2880,7 @@
     "description": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
   },
   "microbit.audio.AudioFrame.copyfrom": {
-    "message": "kopieervan",
+    "message": "kopieer van",
     "description": "(function name) Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
   },
   "microbit.audio.AudioFrame.copyfrom.summary": {
@@ -2888,7 +2888,7 @@
     "description": "Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
   },
   "microbit.audio.AudioFrame.copyfrom.param-name.other": {
-    "message": "Overige",
+    "message": "overige",
     "description": "(parameter name) ``AudioFrame`` instance from which to copy the data."
   },
   "microbit.audio.AudioFrame.copyfrom.param-doc.other": {
@@ -2952,7 +2952,7 @@
     "description": "Get the magnetic field strength on the ``z`` axis."
   },
   "microbit.compass.heading": {
-    "message": "Kop",
+    "message": "kop",
     "description": "(function name) Get the compass heading."
   },
   "microbit.compass.heading.summary": {
@@ -2968,7 +2968,7 @@
     "description": "Get the magnitude of the magnetic field around the device."
   },
   "microbit.display": {
-    "message": "scherm",
+    "message": "display",
     "description": "(module name) Show text, images and animations on the 5×5 LED display."
   },
   "microbit.display.summary": {
@@ -3092,7 +3092,7 @@
     "description": "(function name) Scrolls a number or text on the LED display."
   },
   "microbit.display.scroll.summary": {
-    "message": "Scrolt een nummer of tekst op het LED-scherm.",
+    "message": "Scrolt een nummer of tekst op het LED display",
     "description": "Scrolls a number or text on the LED display."
   },
   "microbit.display.scroll.param-name.delay": {
@@ -3140,7 +3140,7 @@
     "description": "(function name) Turn on the LED display."
   },
   "microbit.display.on.summary": {
-    "message": "Schakel het LED-scherm in.",
+    "message": "Schakel het LED display in.",
     "description": "Turn on the LED display."
   },
   "microbit.display.off": {
@@ -3148,7 +3148,7 @@
     "description": "(function name) Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
   },
   "microbit.display.off.summary": {
-    "message": "Het uitschakelen van het LED-scherm (uitschakelen van het scherm geeft u de mogelijkheid om de GPIO-pinnen opnieuw te gebruiken voor andere doeleinden).",
+    "message": "Het uitschakelen van het LED display (uitschakelen van het scherm geeft je de mogelijkheid om de GPIO-pinnen opnieuw te gebruiken voor andere doeleinden).",
     "description": "Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
   },
   "microbit.display.is_on": {
@@ -3160,11 +3160,11 @@
     "description": "Check whether the LED display is enabled."
   },
   "microbit.display.read_light_level": {
-    "message": "Toon licht niveau",
+    "message": "lees licht niveau",
     "description": "(function name) Read the light level."
   },
   "microbit.display.read_light_level.summary": {
-    "message": "Lees het lichtniveau.",
+    "message": "Lees het licht niveau.",
     "description": "Read the light level."
   },
   "microbit.i2c": {
@@ -3240,7 +3240,7 @@
     "description": "Parameter docs"
   },
   "microbit.i2c.read.param-name.repeat": {
-    "message": "Herhaal",
+    "message": "herhaal",
     "description": "(parameter name) If ``True``, no stop bit will be sent"
   },
   "microbit.i2c.read.param-doc.repeat": {
@@ -3272,7 +3272,7 @@
     "description": "Parameter docs"
   },
   "microbit.i2c.write.param-name.repeat": {
-    "message": "Herhaal",
+    "message": "herhaal",
     "description": "(parameter name) If ``True``, no stop bit will be sent"
   },
   "microbit.i2c.write.param-doc.repeat": {
@@ -3336,7 +3336,7 @@
     "description": "Get the sound event history as a tuple."
   },
   "microbit.microphone.set_threshold": {
-    "message": "Stel drempelwaarde in",
+    "message": "stel drempelwaarde in",
     "description": "(function name) Set the threshold for a sound event."
   },
   "microbit.microphone.set_threshold.summary": {
@@ -3420,7 +3420,7 @@
     "description": "(parameter name) The width in bits of each transfer. Currently only ``bits=8`` is supported. However, this may change in the future."
   },
   "microbit.spi.init.param-doc.bits": {
-    "message": "De breedte in stukjes van elke overdracht. Momenteel wordt alleen {{bits=8}} ondersteund. Dit kan echter veranderen in de toekomst.",
+    "message": "De breedte in bits van elke overdracht. Momenteel wordt alleen {{bits=8}} ondersteund. Dit kan echter veranderen in de toekomst.",
     "description": "Parameter docs"
   },
   "microbit.spi.init.param-name.miso": {
@@ -3444,7 +3444,7 @@
     "description": "(parameter name) mosi pin (default 15)"
   },
   "microbit.spi.init.param-doc.mosi": {
-    "message": "{} pin (standaard 15)",
+    "message": "mosi pin (standaard 15)",
     "description": "Parameter docs"
   },
   "microbit.spi.init.param-name.sclk": {
@@ -3480,7 +3480,7 @@
     "description": "Write bytes to the bus."
   },
   "microbit.spi.write.param-name.buffer": {
-    "message": "Buffer",
+    "message": "buffer",
     "description": "(parameter name) A buffer to read data from."
   },
   "microbit.spi.write.param-doc.buffer": {
@@ -3644,7 +3644,7 @@
     "description": "(function name) Read a line, ending in a newline character."
   },
   "microbit.uart.readline.summary": {
-    "message": "Lees een regel, eindigend in een nieuwregel.",
+    "message": "Lees een regel, eindigend in een nieuw karakter regel.",
     "description": "Read a line, ending in a newline character."
   },
   "microbit.uart.write": {
@@ -3664,11 +3664,11 @@
     "description": "Parameter docs"
   },
   "micropython": {
-    "message": "microPython",
+    "message": "micropython",
     "description": "(module name) MicroPython internals."
   },
   "micropython.summary": {
-    "message": "MicroPython internalen.",
+    "message": "MicroPython intern.",
     "description": "MicroPython internals."
   },
   "micropython.const": {
@@ -3696,11 +3696,11 @@
     "description": "Get the current optimisation level for the compilation of scripts."
   },
   "micropython.opt_level-2": {
-    "message": "Kies niveau",
+    "message": "opt niveau",
     "description": "(function name) Sets the optimisation level for subsequent compilation of scripts."
   },
   "micropython.opt_level-2.summary": {
-    "message": "Stelt het optimalisatieniveau in voor de latere compilatie van scripts.",
+    "message": "Stelt het optimalisatie niveau in voor de latere compilatie van scripts.",
     "description": "Sets the optimisation level for subsequent compilation of scripts."
   },
   "micropython.opt_level-2.param-name.level": {
@@ -3708,7 +3708,7 @@
     "description": "(parameter name) An integer optimisation level."
   },
   "micropython.opt_level-2.param-doc.level": {
-    "message": "Een integer optimaliseringsniveau.",
+    "message": "Een integer optimaliserings niveau.",
     "description": "Parameter docs"
   },
   "micropython.mem_info": {
@@ -3744,7 +3744,7 @@
     "description": "Parameter docs"
   },
   "micropython.stack_use": {
-    "message": "Stapel gebruik",
+    "message": "stapel gebruik",
     "description": "(function name) Return an integer representing the current amount of stack that is being\nused."
   },
   "micropython.stack_use.summary": {
@@ -3852,7 +3852,7 @@
     "description": "(field name) Melody: a boogie-woogie 12-bar blues walking bass."
   },
   "music.BLUES.summary": {
-    "message": "Melodie: een boogie-woogie 12-bar wandelbas.",
+    "message": "Melodie: een boogie-woogie 12-bar blues wandel bas.",
     "description": "Melody: a boogie-woogie 12-bar blues walking bass."
   },
   "music.BIRTHDAY": {
@@ -4240,7 +4240,7 @@
     "description": "List files."
   },
   "os.remove": {
-    "message": "Verwijder",
+    "message": "verwijder",
     "description": "(function name) Remove (delete) a file."
   },
   "os.remove.summary": {
@@ -4248,7 +4248,7 @@
     "description": "Remove (delete) a file."
   },
   "os.remove.param-name.filename": {
-    "message": "bestandsnaam",
+    "message": "bestands naam",
     "description": "(parameter name) The file to delete."
   },
   "os.remove.param-doc.filename": {
@@ -4264,7 +4264,7 @@
     "description": "Returns the size of a file."
   },
   "os.size.param-name.filename": {
-    "message": "bestandsnaam",
+    "message": "bestands naam",
     "description": "(parameter name) The file"
   },
   "os.size.param-doc.filename": {
@@ -4376,7 +4376,7 @@
     "description": "Configures the radio."
   },
   "radio.config.param-name.address": {
-    "message": "Adres",
+    "message": "adres",
     "description": "(parameter name) (default=0x75626974) an arbitrary name, expressed as a 32-bit address, that's used to filter incoming packets at the hardware level, keeping only those that match the address you set.\nThe default used by other micro:bit related platforms is the default setting used here."
   },
   "radio.config.param-doc.address": {
@@ -4392,7 +4392,7 @@
     "description": "Parameter docs"
   },
   "radio.config.param-name.data_rate": {
-    "message": "Gegevenssnelheid",
+    "message": "Gegevens snelheid",
     "description": "(parameter name) (default=``radio.RATE_1MBIT``) indicates the speed at which data throughput takes place.\nCan be one of the following constants defined in the ``radio`` module: ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``."
   },
   "radio.config.param-doc.data_rate": {
@@ -4472,7 +4472,7 @@
     "description": "Copy the next incoming message on the message queue into a buffer."
   },
   "radio.receive_bytes_into.param-name.buffer": {
-    "message": "Buffer",
+    "message": "buffer",
     "description": "(parameter name) The target buffer. The message is truncated if larger than the buffer."
   },
   "radio.receive_bytes_into.param-doc.buffer": {
@@ -4536,7 +4536,7 @@
     "description": "Parameter docs"
   },
   "random.seed": {
-    "message": "zaad",
+    "message": "seed",
     "description": "(function name) Initialize the random number generator."
   },
   "random.seed.summary": {
@@ -4688,7 +4688,7 @@
     "description": "Translate English words to phonemes."
   },
   "speech.translate.param-name.words": {
-    "message": "Woorden",
+    "message": "woorden",
     "description": "(parameter name) A string of English words."
   },
   "speech.translate.param-doc.words": {
@@ -4696,7 +4696,7 @@
     "description": "Parameter docs"
   },
   "speech.pronounce": {
-    "message": "Uitspreken",
+    "message": "uitspreken",
     "description": "(function name) Pronounce phonemes."
   },
   "speech.pronounce.summary": {
@@ -4800,7 +4800,7 @@
     "description": "Parameter docs"
   },
   "speech.say.param-name.words": {
-    "message": "Woorden",
+    "message": "woorden",
     "description": "(parameter name) The string of words to say."
   },
   "speech.say.param-doc.words": {
@@ -4888,7 +4888,7 @@
     "description": "Parameter docs"
   },
   "struct.pack": {
-    "message": "pakket",
+    "message": "inpakken",
     "description": "(function name) Pack values according to a format string."
   },
   "struct.pack.summary": {
@@ -4908,7 +4908,7 @@
     "description": "(parameter name) The format string."
   },
   "struct.pack.param-doc.fmt": {
-    "message": "De formaattekenreeks.",
+    "message": "De formaat tekenreeks.",
     "description": "Parameter docs"
   },
   "struct.pack.param-name.v1": {
@@ -4936,7 +4936,7 @@
     "description": "Parameter docs"
   },
   "struct.pack_into.param-name.buffer": {
-    "message": "Buffer",
+    "message": "buffer",
     "description": "(parameter name) The target buffer to write into."
   },
   "struct.pack_into.param-doc.buffer": {
@@ -4948,7 +4948,7 @@
     "description": "(parameter name) The format string."
   },
   "struct.pack_into.param-doc.fmt": {
-    "message": "De formaattekenreeks.",
+    "message": "De formaat tekenreeks.",
     "description": "Parameter docs"
   },
   "struct.pack_into.param-name.offset": {
@@ -4988,7 +4988,7 @@
     "description": "(parameter name) The format string."
   },
   "struct.unpack.param-doc.fmt": {
-    "message": "De formaattekenreeks.",
+    "message": "De formaat tekenreeks.",
     "description": "Parameter docs"
   },
   "struct.unpack_from": {
@@ -5000,7 +5000,7 @@
     "description": "Unpack data from a buffer according to a format string."
   },
   "struct.unpack_from.param-name.buffer": {
-    "message": "Buffer",
+    "message": "buffer",
     "description": "(parameter name) The source buffer to read from."
   },
   "struct.unpack_from.param-doc.buffer": {
@@ -5012,7 +5012,7 @@
     "description": "(parameter name) The format string."
   },
   "struct.unpack_from.param-doc.fmt": {
-    "message": "De formaattekenreeks.",
+    "message": "De formaat tekenreeks.",
     "description": "Parameter docs"
   },
   "struct.unpack_from.param-name.offset": {
@@ -5032,7 +5032,7 @@
     "description": "System specific functions"
   },
   "sys.exit": {
-    "message": "Afsluiten",
+    "message": "afsluiten",
     "description": "(function name) Terminate current program with a given exit code."
   },
   "sys.exit.summary": {
@@ -5072,7 +5072,7 @@
     "description": "A mutable list of arguments the current program was started with."
   },
   "sys.byteorder": {
-    "message": "byte-volgorde",
+    "message": "byte volgorde",
     "description": "(field name) The byte order of the system (``\"little\"`` or ``\"big\"``)."
   },
   "sys.byteorder.summary": {
@@ -5084,7 +5084,7 @@
     "description": "(field name) Object with information about the current Python implementation."
   },
   "sys.implementation.summary": {
-    "message": "Object met informatie over de huidige Python-implementatie.",
+    "message": "Object met informatie over de huidige Python implementatie.",
     "description": "Object with information about the current Python implementation."
   },
   "sys.maxsize": {
@@ -5096,7 +5096,7 @@
     "description": "\nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support)."
   },
   "sys.modules": {
-    "message": "Modules",
+    "message": "modules",
     "description": "(field name) Dictionary of loaded modules. "
   },
   "sys.modules.summary": {
@@ -5128,7 +5128,7 @@
     "description": "Python language version that this implementation conforms to, as a string."
   },
   "sys.version_info": {
-    "message": "Versie-informatie",
+    "message": "versie informatie",
     "description": "(field name) Python language version that this implementation conforms to, as a tuple of ints."
   },
   "sys.version_info.summary": {
@@ -5136,7 +5136,7 @@
     "description": "Python language version that this implementation conforms to, as a tuple of ints."
   },
   "time": {
-    "message": "Tijd",
+    "message": "tijd",
     "description": "(module name) Measure time and add delays to programs."
   },
   "time.summary": {
@@ -5160,7 +5160,7 @@
     "description": "Parameter docs"
   },
   "time.sleep_ms": {
-    "message": "Slaap ms",
+    "message": "slaap ms",
     "description": "(function name) Delay for given number of milliseconds."
   },
   "time.sleep_ms.summary": {
@@ -5176,7 +5176,7 @@
     "description": "Parameter docs"
   },
   "time.sleep_us": {
-    "message": "Slaap us",
+    "message": "slaap us",
     "description": "(function name) Delay for given number of microseconds."
   },
   "time.sleep_us.summary": {

@@ -10,10 +10,10 @@ Example: ``spi.init()``
 For correct communication, the parameters have to be the same on both communicating devices.
 
 :param baudrate: De snelheid van de communicatie.
-:param bits: De breedte in stukjes van elke overdracht. Momenteel wordt alleen ``bits=8`` ondersteund. Dit kan echter veranderen in de toekomst.
+:param bits: De breedte in bits van elke overdracht. Momenteel wordt alleen ``bits=8`` ondersteund. Dit kan echter veranderen in de toekomst.
 :param mode: (modus) Bepaalt de combinatie van klokpolariteit en fase - `zie online tabel <https://microbit-micropython.readthedocs.io/en/v2-docs/spi.html#microbit.spi.init>`_.
 :param sclk: sclk pin (standaard 13)
-:param mosi: {} pin (standaard 15)
+:param mosi: mosi pin (standaard 15)
 :param miso: miso pin (standaard 14)"""
     ...
 
@@ -31,7 +31,7 @@ def write(buffer: ReadableBuffer) -> None:
 
 Example: ``spi.write(bytes([1, 2, 3]))``
 
-:param buffer: (Buffer) Een buffer om gegevens van te lezen."""
+:param buffer: Een buffer om gegevens van te lezen."""
     ...
 
 def write_readinto(out: WriteableBuffer, in_: ReadableBuffer) -> None:
