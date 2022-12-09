@@ -128,7 +128,7 @@
     "description": "Set up the log file header."
   },
   "log.set_labels.param-name.*labels": {
-    "message": "*labels",
+    "message": "標籤",
     "description": "(parameter name) Any number of positional arguments, each corresponding to an entry in the log header."
   },
   "log.set_labels.param-doc.*labels": {
@@ -152,7 +152,7 @@
     "description": "Add a data row to the log by passing a dictionary of headers and values."
   },
   "log.add-1.param-name.data_dictionary": {
-    "message": "data dictionary",
+    "message": "資料字典",
     "description": "(parameter name) The data to log as a dictionary with a key for each header."
   },
   "log.add-1.param-doc.data_dictionary": {

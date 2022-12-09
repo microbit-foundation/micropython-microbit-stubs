@@ -27,7 +27,7 @@ present, it will generate a new header row with the additional columns.
 By default the first column contains a timestamp for each row. The time
 unit can be selected via the timestamp argument.
 
-:param *labels: Any number of positional arguments, each corresponding to an entry in the log header.
+:param *labels: (標籤) Any number of positional arguments, each corresponding to an entry in the log header.
 :param timestamp: (時間戳記) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."""
     ...
 
@@ -46,7 +46,7 @@ to the log with the extra labels.
 Labels previously specified and not present in a call to this function will
 be skipped with an empty value in the log row.
 
-:param data_dictionary: The data to log as a dictionary with a key for each header."""
+:param data_dictionary: (資料字典) The data to log as a dictionary with a key for each header."""
     ...
 
 @overload
