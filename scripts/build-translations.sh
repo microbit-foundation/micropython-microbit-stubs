@@ -5,7 +5,7 @@
 
 set -euxo pipefail
 
-languages="fr es-ES ja ko nl zh-CN zh-TW"
+languages="ca fr es-ES ja ko nl zh-CN zh-TW"
 
 for language in $languages; do
     lower="${language,,}"
