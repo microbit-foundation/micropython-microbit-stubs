@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Programa l'execució d'una funció a cada interval especificat pels arguments de temps  **només V2**. (run every (executa cada))
+    """Programa l'execució d'una funció a cada interval especificat pels arguments de temps  **només V2**.
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -36,7 +36,7 @@ So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: (callback (Crida a l'interval previst)) Funció a cridar a l'interval previst. Omet quan el fas servir com decorador.
+:param callback: Funció a cridar a l'interval previst. Omet quan el fas servir com decorador.
 :param days: (dies) Estableix la marca del dia per la programació
 :param h: Estableix la marca de l'hora per la programació
 :param min: Estableix la marca del minut per la programació
@@ -166,7 +166,7 @@ Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin
     PULL_DOWN: int
 
     def read_digital(self) -> int:
-        """Obté el valor digital del punt de connexió (pin). (llegeix digital)
+        """Obté el valor digital del pin. (llegeix digital)
 
 Example: ``value = pin0.read_digital()``
 
@@ -174,7 +174,7 @@ Example: ``value = pin0.read_digital()``
         ...
 
     def write_digital(self, value: int) -> None:
-        """Assigna el valor digital del punt de connexió (pin). (escriu digital)
+        """Assigna el valor digital del pin. (escriu digital)
 
 Example: ``pin0.write_digital(1)``
 
@@ -190,7 +190,7 @@ Example: ``pin0.set_pull(pin0.PULL_UP)``
         ...
 
     def get_pull(self) -> int:
-        """Obté l'estat de pull-up/pull-down d'un pin. (get pull (obté l'estat d'un Pin))
+        """Obté l'estat de pull-up/pull-down d'un pin.
 
 Example: ``pin0.get_pull()``
 
@@ -358,47 +358,47 @@ Given an image object it's possible to display it via the ``display`` API::
     MEH: Image
     """Imatge d'una cara inexpressiva. (BAH avorrit)"""
     YES: Image
-    """Imatge d'una marca (tic). (sí)"""
+    """Imatge d'una marca tic. (sí)"""
     NO: Image
     """Imatge d'una creu."""
     CLOCK12: Image
-    """Imatge d'una línia apuntant les dotze. (les dotze (clock12))"""
+    """Imatge d'una línia apuntant les dotze. (les dotze)"""
     CLOCK11: Image
-    """Imatge d'una línia apuntant les onze. (les onze (clock11))"""
+    """Imatge d'una línia apuntant les onze. (les onze)"""
     CLOCK10: Image
-    """Imatge d'una línia apuntant les deu. (les deu (clock10))"""
+    """Imatge d'una línia apuntant les deu. (les deu)"""
     CLOCK9: Image
-    """Imatge d'una línia apuntant les nou. (les 9 (clock9))"""
+    """Imatge d'una línia apuntant les nou. (les nou)"""
     CLOCK8: Image
-    """Imatge d'una línia apuntant les vuit. (les vuit (clock8))"""
+    """Imatge d'una línia apuntant les vuit. (les vuit)"""
     CLOCK7: Image
-    """Imatge d'una línia apuntant les set. (les set (clock7))"""
+    """Imatge d'una línia apuntant les set. (les set)"""
     CLOCK6: Image
-    """Imatge amb una línia apuntant a les 6 en punt. (les sis (clock6))"""
+    """Imatge amb una línia apuntant a les 6 en punt. (les sis)"""
     CLOCK5: Image
-    """Imatge amb una línia apuntant a les 5 en punt. (les cinc (clock5))"""
+    """Imatge amb una línia apuntant a les 5 en punt. (les cinc)"""
     CLOCK4: Image
-    """Imatge amb una línia apuntant a les 4 en punt. (les quatre (clock4))"""
+    """Imatge amb una línia apuntant a les 4 en punt. (les quatre)"""
     CLOCK3: Image
-    """Imatge amb una línia apuntant a les 3 en punt. (les tres (clock3))"""
+    """Imatge amb una línia apuntant a les 3 en punt. (les tres)"""
     CLOCK2: Image
-    """Imatge amb una línia apuntant a les 2 en punt. (les dues (clock2))"""
+    """Imatge amb una línia apuntant a les 2 en punt. (les dues)"""
     CLOCK1: Image
-    """Imatge amb una línia apuntant a la 1 en punt. (la una (clock1))"""
+    """Imatge amb una línia apuntant a la 1 en punt. (la una)"""
     ARROW_N: Image
-    """Imatge de fletxa apuntant al nord. (fletxa n (nord))"""
+    """Imatge de fletxa apuntant al nord. (fletxa n)"""
     ARROW_NE: Image
-    """Imatge de fletxa apuntant al nord-est. (fletxa ne (nord-est))"""
+    """Imatge de fletxa apuntant al nord-est. (fletxa ne)"""
     ARROW_E: Image
-    """Imatge de fletxa apuntant a l'est. (fletxa e (est))"""
+    """Imatge de fletxa apuntant a l'est. (fletxa e)"""
     ARROW_SE: Image
-    """Imatge de fletxa apuntant al sud-est. (fletxa se (sud-est))"""
+    """Imatge de fletxa apuntant al sud-est. (fletxa se)"""
     ARROW_S: Image
     """Imatge de fletxa apuntant al sud. (fletxa s)"""
     ARROW_SW: Image
-    """Imatge de fletxa apuntant al sud-oest. (fletxa so (sud-oest))"""
+    """Imatge de fletxa apuntant al sud-oest. (fletxa so)"""
     ARROW_W: Image
-    """Imatge de fletxa apuntant a l'oest. (fletxa o (oest))"""
+    """Imatge de fletxa apuntant a l'oest. (fletxa o)"""
     ARROW_NW: Image
     """Imatge de fletxa apuntant al nord-oest. (fletxa no)"""
     TRIANGLE: Image
@@ -428,7 +428,7 @@ Given an image object it's possible to display it via the ``display`` API::
     PITCHFORK: Image
     """Imatge d'una forca. (forca)"""
     XMAS: Image
-    """Imatge d'un arbre de Nadal (nadal (xmas))"""
+    """Imatge d'un arbre de Nadal (nadal)"""
     PACMAN: Image
     """Imatge del personatge de Pac-man a arcade"""
     TARGET: Image
@@ -446,7 +446,7 @@ Given an image object it's possible to display it via the ``display`` API::
     BUTTERFLY: Image
     """Imatge d'una papallona. (papallona)"""
     STICKFIGURE: Image
-    """Imatge de figura d'un pal. (imatge d'un pal (stickfigure))"""
+    """Imatge de figura d'un pal. (imatge d'un pal)"""
     GHOST: Image
     """Imatge d'un fantasma. (fantasma)"""
     SWORD: Image
@@ -464,7 +464,7 @@ Given an image object it's possible to display it via the ``display`` API::
     ALL_CLOCKS: List[Image]
     """Una llista que conté totes les imatges CLOCK_ en seqüència. (tots els rellotges)"""
     ALL_ARROWS: List[Image]
-    """Una llista que conté totes les ARROW_images  (Imatges de fletxes) en seqüència. (totes les fletxes)"""
+    """Una llista que conté totes les ARROW_images en seqüència. (totes les fletxes)"""
 
     @overload
     def __init__(self, string: str) -> None:
@@ -491,7 +491,7 @@ colon. It's also possible to use newlines (\\n) insead of the colons.
 
 :param width: (amplada) Amplada opcional de la imatge
 :param height: (alçària) Alçària opcional de la imatge
-:param buffer: (memòria intermèdia (buffer)) Llistes o bytes opcionals d'enters de ``width``×``height`` dins l'interval de 0 a 9 per inicialitzar la imatge
+:param buffer: (memòria intermèdia) Llistes o bytes opcionals d'enters de ``width``×``height`` dins l'interval de 0 a 9 per inicialitzar la imatge
 
 Examples::
 
@@ -613,11 +613,11 @@ read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """Copia una àrea d'una altra imatge a aquesta imatge. (blit (Copia una àrea d'una altra imatge a aquesta imatge))
+        """Copia una àrea d'una altra imatge a aquesta imatge.
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-:param src: (font (src)) La imatge font
+:param src: (font) La imatge font
 :param x: Desplaçament de la columna inicial a la imatge d'origen
 :param y: Desplaçament de la fila inicial a la imatge d'origen
 :param w: El nombre de columnes a copiar
@@ -643,7 +643,7 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __str__(self) -> str:
-        """Obté una representació de cadena llegible de la imatge. (str (cadena))"""
+        """Obté una representació de cadena llegible de la imatge."""
         ...
 
     def __add__(self, other: Image) -> Image:
@@ -656,7 +656,7 @@ Example: ``Image.HEART + Image.HAPPY``
         ...
 
     def __sub__(self, other: Image) -> Image:
-        """Crea una imatge nova restant els valors de brillantor d'una altra imatge d'aquesta imatge. (sub (resta))
+        """Crea una imatge nova restant els valors de brillantor d'una altra imatge d'aquesta imatge.
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
@@ -665,16 +665,16 @@ Example: ``Image.HEART - Image.HEART_SMALL``
 
     def __mul__(self, n: float) -> Image:
         """Crea una imatge nova multiplicant la brillantor de cada píxel per
-``n``. (mul (multiplica))
+``n``.
 
 Example: ``Image.HEART * 0.5``
 
-:param n: El valor a multiplicar per (mul)."""
+:param n: El valor per multiplicar."""
         ...
 
     def __truediv__(self, n: float) -> Image:
         """Crea una imatge nova dividint la brillantor de cada píxel per
-``n``. (truediv (dividir))
+``n``.
 
 Example: ``Image.HEART / 2``
 
@@ -683,29 +683,29 @@ Example: ``Image.HEART / 2``
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Representa la transició dels esdeveniments de so, des de ``quiet`` (fluix) a ``loud`` (fort) com picant de mans o cridant. (so fort)"""
+    """Representa la transició dels esdeveniments de so, des de ``quiet`` a ``loud`` com picant de mans o cridant. (so fort)"""
     QUIET: SoundEvent
-    """Representa la transició dels esdeveniments de so, des de ``loud`` (fort) a ``quiet`` (fluix) com parlant o música de fons. (so fluix)"""
+    """Representa la transició dels esdeveniments de so, des de ``loud`` a ``quiet`` com parlant o música de fons. (so fluix)"""
 
 class Sound:
     """Els sons integrats es poden reproduir mitjançant ``audio.play(Sound.NAME)``. (so)"""
     GIGGLE: Sound
     """So de riure (riure)"""
     HAPPY: Sound
-    """So feliç (Happy). (feliç)"""
+    """So feliç. (feliç)"""
     HELLO: Sound
-    """So de salutació (Greeting). (hola)"""
+    """So de salutació. (hola)"""
     MYSTERIOUS: Sound
-    """So misteriós (misterious) (misteriós)"""
+    """So misteriós. (misteriós)"""
     SAD: Sound
-    """So trist (Sad) (tristesa)"""
+    """So trist. (tristesa)"""
     SLIDE: Sound
-    """So lliscant (Sliding). (llisca (so lliscant))"""
+    """So lliscant (so lliscant)"""
     SOARING: Sound
-    """Soaring (So creixent) (creixent)"""
+    """So creixent. (creixent)"""
     SPRING: Sound
-    """So primaveral (Spring) (primaveral)"""
+    """So primaveral. (primaveral)"""
     TWINKLE: Sound
-    """So de centelleig (Twinkle). (centelleig (twinkel))"""
+    """So de centelleig. (centelleig)"""
     YAWN: Sound
-    """So de badall (Yawning). (baball (yawn))"""
+    """So de badall. (badall)"""

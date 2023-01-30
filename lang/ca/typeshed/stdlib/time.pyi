@@ -23,7 +23,7 @@ def sleep_us(us: int) -> None:
 
 Example: ``time.sleep_us(1000)``
 
-:param us: (microsegons (us)) El nombre de microsegons de retard (>= 0)."""
+:param us: El nombre de microsegons de retard (>= 0)."""
     ...
 
 def ticks_ms() -> int:
@@ -54,7 +54,7 @@ Given a ticks value, this function allows to calculate ticks
 value delta ticks before or after it, following modular-arithmetic
 definition of tick values.
 
-:param ticks: (tics (ticks)) Un valor de tics
+:param ticks: Un valor de tics
 :param delta: Un desplaçament enter
 
 Example::
@@ -74,12 +74,12 @@ Example::
 def ticks_diff(ticks1: int, ticks2: int) -> int:
     """Mesura la diferència dels tics entre els valors retornats
 ``time.ticks_ms()`` o ``ticks_us()``, com a valor amb signe
-que pot desbordar-se. (ticks diff (diferència de tics))
+que pot desbordar-se.
 
 Example: ``time.ticks_diff(scheduled_time, now)``
 
-:param ticks1: (ticks1 (tics 1)) El valor a restar de
-:param ticks2: (ticks2 (tics 2)) El valor a restar
+:param ticks1: El valor a restar de
+:param ticks2: El valor a restar
 
 The argument order is the same as for subtraction operator,
 ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.

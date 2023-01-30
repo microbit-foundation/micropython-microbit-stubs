@@ -85,7 +85,7 @@ Example: ``math.exp(1)``
     ...
 
 def fabs(x: float) -> float:
-    """Retorna el valor absolut de ``x``. (fabs (retorna el valor absolut d'x))
+    """Retorna el valor absolut de ``x``.
 
 Example: ``math.fabs(-0.1)``
 
@@ -125,7 +125,7 @@ the relation ``0.5 <= abs(m) < 1`` holds.
     ...
 
 def isfinite(x: float) -> bool:
-    """Verifica si un valor és finit. (és finit (isfinite))
+    """Verifica si un valor és finit.
 
 Example: ``math.isfinite(float('inf'))``
 
@@ -134,7 +134,7 @@ Example: ``math.isfinite(float('inf'))``
     ...
 
 def isinf(x: float) -> bool:
-    """Verifica si un valor és infinit. (és infinit (isinf))
+    """Verifica si un valor és infinit.
 
 Example: ``math.isinf(float('-inf'))``
 
@@ -143,7 +143,7 @@ Example: ``math.isinf(float('-inf'))``
     ...
 
 def isnan(x: float) -> bool:
-    """Verifica si un valor és un "no nombre" (NaN) (isnan (és un no nombre))
+    """Verifica si un valor és un "no nombre" (NaN)
 
 Example: ``math.isnan(float('nan'))``
 
@@ -176,7 +176,7 @@ With two arguments, return the logarithm of x to the given base, calculated as `
     ...
 
 def modf(x: float) -> Tuple[float, float]:
-    """Calcula les parts fraccionàries i integrals de ``x``. (modf (Calcula les parts fraccionàries i integrals de ``x``.))
+    """Calcula les parts fraccionàries i integrals de ``x``.
 
 Example: ``fractional, integral = math.modf(1.5)``
 
@@ -224,7 +224,7 @@ Example: ``math.sqrt(4)``
     ...
 
 def tan(x: float) -> float:
-    """Calcula la tangent de ``x``. (tangent (tan))
+    """Calcula la tangent de ``x``.
 
 Example: ``math.tan(0)``
 

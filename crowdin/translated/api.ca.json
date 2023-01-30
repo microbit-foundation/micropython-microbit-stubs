@@ -180,7 +180,7 @@
     "description": "(parameter name) ``True`` selects a “full” erase and ``False`` selects the “fast” erase method."
   },
   "log.delete.param-doc.full": {
-    "message": "{{True}} (Cert) selecciona un esborrat \"total\"  {{False}} (Fals) selecciona un mètode d'esborrat \"ràpid\".",
+    "message": "{{True}} selecciona un esborrat \"total\"  {{False}} selecciona un mètode d'esborrat \"ràpid\".",
     "description": "Parameter docs"
   },
   "log.set_mirroring": {
@@ -196,7 +196,7 @@
     "description": "(parameter name) ``True`` enables mirroring data to the serial output."
   },
   "log.set_mirroring.param-doc.serial": {
-    "message": "{{True}} (Cert) permet la duplicació de les dades a la sortida sèrie.",
+    "message": "{{True}} permet la duplicació de les dades a la sortida sèrie.",
     "description": "Parameter docs"
   },
   "machine": {
@@ -208,7 +208,7 @@
     "description": "Low-level utilities."
   },
   "machine.unique_id": {
-    "message": "id únic (unique id)",
+    "message": "unique id",
     "description": "(function name) Get a byte string with a unique identifier of a board."
   },
   "machine.unique_id.summary": {
@@ -220,11 +220,11 @@
     "description": "(function name) Reset the device in a manner similar to pushing the external RESET button."
   },
   "machine.reset.summary": {
-    "message": "Reinicia el dispositiu d'una manera semblant a la de prémer el botó extern REINICI (RESET).",
+    "message": "Reinicia el dispositiu d'una manera semblant a la de prémer el botó extern de REINICI.",
     "description": "Reset the device in a manner similar to pushing the external RESET button."
   },
   "machine.freq": {
-    "message": "freq (frequency)",
+    "message": "freq",
     "description": "(function name) Get the CPU frequency in hertz."
   },
   "machine.freq.summary": {
@@ -528,7 +528,7 @@
     "description": "Parameter docs"
   },
   "math.fabs": {
-    "message": "fabs (retorna el valor absolut d'x)",
+    "message": "fabs",
     "description": "(function name) Return the absolute value of ``x``."
   },
   "math.fabs.summary": {
@@ -600,7 +600,7 @@
     "description": "Parameter docs"
   },
   "math.isfinite": {
-    "message": "és finit (isfinite)",
+    "message": "isfinite",
     "description": "(function name) Check if a value is finite."
   },
   "math.isfinite.summary": {
@@ -616,7 +616,7 @@
     "description": "Parameter docs"
   },
   "math.isinf": {
-    "message": "és infinit (isinf)",
+    "message": "isinf",
     "description": "(function name) Check if a value is infinite."
   },
   "math.isinf.summary": {
@@ -632,7 +632,7 @@
     "description": "Parameter docs"
   },
   "math.isnan": {
-    "message": "isnan (és un no nombre)",
+    "message": "isnan",
     "description": "(function name) Check is a value is not-a-number (NaN)."
   },
   "math.isnan.summary": {
@@ -696,7 +696,7 @@
     "description": "Parameter docs"
   },
   "math.modf": {
-    "message": "modf (Calcula les parts fraccionàries i integrals de ``x``.)",
+    "message": "modf",
     "description": "(function name) Calculate the fractional and integral parts of ``x``."
   },
   "math.modf.summary": {
@@ -784,7 +784,7 @@
     "description": "Parameter docs"
   },
   "math.tan": {
-    "message": "tangent (tan)",
+    "message": "tan",
     "description": "(function name) Calculate the tangent of ``x``."
   },
   "math.tan.summary": {
@@ -840,7 +840,7 @@
     "description": "Pins, images, sounds, temperature and volume."
   },
   "microbit.run_every": {
-    "message": "run every (executa cada)",
+    "message": "run every",
     "description": "(function name) Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.summary": {
@@ -848,7 +848,7 @@
     "description": "Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.param-name.callback": {
-    "message": "callback (Crida a l'interval previst)",
+    "message": "callback",
     "description": "(parameter name) Function to call at the provided interval. Omit when using as a decorator."
   },
   "microbit.run_every.param-doc.callback": {
@@ -1092,7 +1092,7 @@
     "description": "(function name) Get the digital value of the pin."
   },
   "microbit.MicroBitDigitalPin.read_digital.summary": {
-    "message": "Obté el valor digital del punt de connexió (pin).",
+    "message": "Obté el valor digital del pin.",
     "description": "Get the digital value of the pin."
   },
   "microbit.MicroBitDigitalPin.write_digital": {
@@ -1100,7 +1100,7 @@
     "description": "(function name) Set the digital value of the pin."
   },
   "microbit.MicroBitDigitalPin.write_digital.summary": {
-    "message": "Assigna el valor digital del punt de connexió (pin).",
+    "message": "Assigna el valor digital del pin.",
     "description": "Set the digital value of the pin."
   },
   "microbit.MicroBitDigitalPin.write_digital.param-name.value": {
@@ -1128,7 +1128,7 @@
     "description": "Parameter docs"
   },
   "microbit.MicroBitDigitalPin.get_pull": {
-    "message": "get pull (obté l'estat d'un Pin)",
+    "message": "get pull",
     "description": "(function name) Get the pull state on a pin."
   },
   "microbit.MicroBitDigitalPin.get_pull.summary": {
@@ -1516,7 +1516,7 @@
     "description": "(field name) Tick image."
   },
   "microbit.Image.YES.summary": {
-    "message": "Imatge d'una marca (tic).",
+    "message": "Imatge d'una marca tic.",
     "description": "Tick image."
   },
   "microbit.Image.NO": {
@@ -1528,7 +1528,7 @@
     "description": "Cross image."
   },
   "microbit.Image.CLOCK12": {
-    "message": "les dotze (clock12)",
+    "message": "les dotze",
     "description": "(field name) Image with line pointing to 12 o'clock."
   },
   "microbit.Image.CLOCK12.summary": {
@@ -1536,7 +1536,7 @@
     "description": "Image with line pointing to 12 o'clock."
   },
   "microbit.Image.CLOCK11": {
-    "message": "les onze (clock11)",
+    "message": "les onze",
     "description": "(field name) Image with line pointing to 11 o'clock."
   },
   "microbit.Image.CLOCK11.summary": {
@@ -1544,7 +1544,7 @@
     "description": "Image with line pointing to 11 o'clock."
   },
   "microbit.Image.CLOCK10": {
-    "message": "les deu (clock10)",
+    "message": "les deu",
     "description": "(field name) Image with line pointing to 10 o'clock."
   },
   "microbit.Image.CLOCK10.summary": {
@@ -1552,7 +1552,7 @@
     "description": "Image with line pointing to 10 o'clock."
   },
   "microbit.Image.CLOCK9": {
-    "message": "les 9 (clock9)\n",
+    "message": "les nou\n",
     "description": "(field name) Image with line pointing to 9 o'clock."
   },
   "microbit.Image.CLOCK9.summary": {
@@ -1560,7 +1560,7 @@
     "description": "Image with line pointing to 9 o'clock."
   },
   "microbit.Image.CLOCK8": {
-    "message": "les vuit (clock8)",
+    "message": "les vuit ",
     "description": "(field name) Image with line pointing to 8 o'clock."
   },
   "microbit.Image.CLOCK8.summary": {
@@ -1568,7 +1568,7 @@
     "description": "Image with line pointing to 8 o'clock."
   },
   "microbit.Image.CLOCK7": {
-    "message": "les set (clock7)",
+    "message": "les set",
     "description": "(field name) Image with line pointing to 7 o'clock."
   },
   "microbit.Image.CLOCK7.summary": {
@@ -1576,7 +1576,7 @@
     "description": "Image with line pointing to 7 o'clock."
   },
   "microbit.Image.CLOCK6": {
-    "message": "les sis (clock6)",
+    "message": "les sis ",
     "description": "(field name) Image with line pointing to 6 o'clock."
   },
   "microbit.Image.CLOCK6.summary": {
@@ -1584,7 +1584,7 @@
     "description": "Image with line pointing to 6 o'clock."
   },
   "microbit.Image.CLOCK5": {
-    "message": "les cinc (clock5)",
+    "message": "les cinc",
     "description": "(field name) Image with line pointing to 5 o'clock."
   },
   "microbit.Image.CLOCK5.summary": {
@@ -1592,7 +1592,7 @@
     "description": "Image with line pointing to 5 o'clock."
   },
   "microbit.Image.CLOCK4": {
-    "message": "les quatre (clock4)",
+    "message": "les quatre",
     "description": "(field name) Image with line pointing to 4 o'clock."
   },
   "microbit.Image.CLOCK4.summary": {
@@ -1600,7 +1600,7 @@
     "description": "Image with line pointing to 4 o'clock."
   },
   "microbit.Image.CLOCK3": {
-    "message": "les tres (clock3)",
+    "message": "les tres",
     "description": "(field name) Image with line pointing to 3 o'clock."
   },
   "microbit.Image.CLOCK3.summary": {
@@ -1608,7 +1608,7 @@
     "description": "Image with line pointing to 3 o'clock."
   },
   "microbit.Image.CLOCK2": {
-    "message": "les dues (clock2)",
+    "message": "les dues",
     "description": "(field name) Image with line pointing to 2 o'clock."
   },
   "microbit.Image.CLOCK2.summary": {
@@ -1616,7 +1616,7 @@
     "description": "Image with line pointing to 2 o'clock."
   },
   "microbit.Image.CLOCK1": {
-    "message": "la una (clock1)",
+    "message": "la una",
     "description": "(field name) Image with line pointing to 1 o'clock."
   },
   "microbit.Image.CLOCK1.summary": {
@@ -1624,7 +1624,7 @@
     "description": "Image with line pointing to 1 o'clock."
   },
   "microbit.Image.ARROW_N": {
-    "message": "fletxa n (nord)",
+    "message": "fletxa n ",
     "description": "(field name) Image of arrow pointing north."
   },
   "microbit.Image.ARROW_N.summary": {
@@ -1632,7 +1632,7 @@
     "description": "Image of arrow pointing north."
   },
   "microbit.Image.ARROW_NE": {
-    "message": "fletxa ne (nord-est)",
+    "message": "fletxa ne",
     "description": "(field name) Image of arrow pointing north east."
   },
   "microbit.Image.ARROW_NE.summary": {
@@ -1640,7 +1640,7 @@
     "description": "Image of arrow pointing north east."
   },
   "microbit.Image.ARROW_E": {
-    "message": "fletxa e (est)",
+    "message": "fletxa e",
     "description": "(field name) Image of arrow pointing east."
   },
   "microbit.Image.ARROW_E.summary": {
@@ -1648,7 +1648,7 @@
     "description": "Image of arrow pointing east."
   },
   "microbit.Image.ARROW_SE": {
-    "message": "fletxa se (sud-est)",
+    "message": "fletxa se ",
     "description": "(field name) Image of arrow pointing south east."
   },
   "microbit.Image.ARROW_SE.summary": {
@@ -1664,7 +1664,7 @@
     "description": "Image of arrow pointing south."
   },
   "microbit.Image.ARROW_SW": {
-    "message": "fletxa so (sud-oest)",
+    "message": "fletxa so ",
     "description": "(field name) Image of arrow pointing south west."
   },
   "microbit.Image.ARROW_SW.summary": {
@@ -1672,7 +1672,7 @@
     "description": "Image of arrow pointing south west."
   },
   "microbit.Image.ARROW_W": {
-    "message": "fletxa o (oest)",
+    "message": "fletxa o ",
     "description": "(field name) Image of arrow pointing west."
   },
   "microbit.Image.ARROW_W.summary": {
@@ -1792,7 +1792,7 @@
     "description": "Pitchfork image."
   },
   "microbit.Image.XMAS": {
-    "message": "nadal (xmas)",
+    "message": "nadal ",
     "description": "(field name) Christmas tree image."
   },
   "microbit.Image.XMAS.summary": {
@@ -1864,7 +1864,7 @@
     "description": "Butterfly image."
   },
   "microbit.Image.STICKFIGURE": {
-    "message": "imatge d'un pal (stickfigure)",
+    "message": "imatge d'un pal ",
     "description": "(field name) Stick figure image."
   },
   "microbit.Image.STICKFIGURE.summary": {
@@ -1940,7 +1940,7 @@
     "description": "(field name) A list containing all the ARROW_ images in sequence."
   },
   "microbit.Image.ALL_ARROWS.summary": {
-    "message": "Una llista que conté totes les ARROW_images  (Imatges de fletxes) en seqüència.",
+    "message": "Una llista que conté totes les ARROW_images en seqüència.",
     "description": "A list containing all the ARROW_ images in sequence."
   },
   "microbit.Image.__init__-1": {
@@ -1968,7 +1968,7 @@
     "description": "Create an empty image with ``width`` columns and ``height`` rows."
   },
   "microbit.Image.__init__-2.param-name.buffer": {
-    "message": "memòria intermèdia (buffer)",
+    "message": "memòria intermèdia",
     "description": "(parameter name) Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image"
   },
   "microbit.Image.__init__-2.param-doc.buffer": {
@@ -2200,7 +2200,7 @@
     "description": "Parameter docs"
   },
   "microbit.Image.blit": {
-    "message": "blit (Copia una àrea d'una altra imatge a aquesta imatge)",
+    "message": "blit ",
     "description": "(function name) Copy an area from another image into this image."
   },
   "microbit.Image.blit.summary": {
@@ -2216,7 +2216,7 @@
     "description": "Parameter docs"
   },
   "microbit.Image.blit.param-name.src": {
-    "message": "font (src)",
+    "message": "font ",
     "description": "(parameter name) The source image"
   },
   "microbit.Image.blit.param-doc.src": {
@@ -2272,7 +2272,7 @@
     "description": "Get a compact string representation of the image."
   },
   "microbit.Image.__str__": {
-    "message": "str (cadena)",
+    "message": "str",
     "description": "(function name) Get a readable string representation of the image."
   },
   "microbit.Image.__str__.summary": {
@@ -2296,7 +2296,7 @@
     "description": "Parameter docs"
   },
   "microbit.Image.__sub__": {
-    "message": "sub (resta)",
+    "message": "sub",
     "description": "(function name) Create a new image by subtracting the brightness values of the\nother image from this image."
   },
   "microbit.Image.__sub__.summary": {
@@ -2312,7 +2312,7 @@
     "description": "Parameter docs"
   },
   "microbit.Image.__mul__": {
-    "message": "mul (multiplica)",
+    "message": "mul",
     "description": "(function name) Create a new image by multiplying the brightness of each pixel by\n``n``."
   },
   "microbit.Image.__mul__.summary": {
@@ -2324,11 +2324,11 @@
     "description": "(parameter name) The value to multiply by."
   },
   "microbit.Image.__mul__.param-doc.n": {
-    "message": "El valor a multiplicar per (mul).",
+    "message": "El valor per multiplicar.",
     "description": "Parameter docs"
   },
   "microbit.Image.__truediv__": {
-    "message": "truediv (dividir)",
+    "message": "truediv",
     "description": "(function name) Create a new image by dividing the brightness of each pixel by\n``n``."
   },
   "microbit.Image.__truediv__.summary": {
@@ -2348,7 +2348,7 @@
     "description": "(field name) Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
   },
   "microbit.SoundEvent.LOUD.summary": {
-    "message": "Representa la transició dels esdeveniments de so, des de {{quiet}} (fluix) a {{loud}} (fort) com picant de mans o cridant.",
+    "message": "Representa la transició dels esdeveniments de so, des de {{quiet}} a {{loud}} com picant de mans o cridant.",
     "description": "Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."
   },
   "microbit.SoundEvent.QUIET": {
@@ -2356,7 +2356,7 @@
     "description": "(field name) Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
   },
   "microbit.SoundEvent.QUIET.summary": {
-    "message": "Representa la transició dels esdeveniments de so, des de {{loud}} (fort) a {{quiet}} (fluix) com parlant o música de fons.",
+    "message": "Representa la transició dels esdeveniments de so, des de {{loud}} a {{quiet}} com parlant o música de fons.",
     "description": "Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."
   },
   "microbit.Sound": {
@@ -2380,7 +2380,7 @@
     "description": "(field name) Happy sound."
   },
   "microbit.Sound.HAPPY.summary": {
-    "message": "So feliç (Happy).",
+    "message": "So feliç.",
     "description": "Happy sound."
   },
   "microbit.Sound.HELLO": {
@@ -2388,7 +2388,7 @@
     "description": "(field name) Greeting sound."
   },
   "microbit.Sound.HELLO.summary": {
-    "message": "So de salutació (Greeting).",
+    "message": "So de salutació.",
     "description": "Greeting sound."
   },
   "microbit.Sound.MYSTERIOUS": {
@@ -2396,7 +2396,7 @@
     "description": "(field name) Mysterious sound."
   },
   "microbit.Sound.MYSTERIOUS.summary": {
-    "message": "So misteriós (misterious)",
+    "message": "So misteriós.",
     "description": "Mysterious sound."
   },
   "microbit.Sound.SAD": {
@@ -2404,15 +2404,15 @@
     "description": "(field name) Sad sound."
   },
   "microbit.Sound.SAD.summary": {
-    "message": "So trist (Sad)",
+    "message": "So trist.",
     "description": "Sad sound."
   },
   "microbit.Sound.SLIDE": {
-    "message": "llisca (so lliscant)",
+    "message": "so lliscant",
     "description": "(field name) Sliding sound."
   },
   "microbit.Sound.SLIDE.summary": {
-    "message": "So lliscant (Sliding).",
+    "message": "So lliscant",
     "description": "Sliding sound."
   },
   "microbit.Sound.SOARING": {
@@ -2420,7 +2420,7 @@
     "description": "(field name) Soaring sound."
   },
   "microbit.Sound.SOARING.summary": {
-    "message": "Soaring (So creixent)",
+    "message": "So creixent.",
     "description": "Soaring sound."
   },
   "microbit.Sound.SPRING": {
@@ -2428,23 +2428,23 @@
     "description": "(field name) Spring sound."
   },
   "microbit.Sound.SPRING.summary": {
-    "message": "So primaveral (Spring)",
+    "message": "So primaveral.",
     "description": "Spring sound."
   },
   "microbit.Sound.TWINKLE": {
-    "message": "centelleig (twinkel)",
+    "message": "centelleig",
     "description": "(field name) Twinkling sound."
   },
   "microbit.Sound.TWINKLE.summary": {
-    "message": "So de centelleig (Twinkle).",
+    "message": "So de centelleig.",
     "description": "Twinkling sound."
   },
   "microbit.Sound.YAWN": {
-    "message": "baball (yawn)",
+    "message": "badall",
     "description": "(field name) Yawning sound."
   },
   "microbit.Sound.YAWN.summary": {
-    "message": "So de badall (Yawning).",
+    "message": "So de badall.",
     "description": "Yawning sound."
   },
   "microbit.accelerometer": {
@@ -2504,7 +2504,7 @@
     "description": "Get the name of the current gesture."
   },
   "microbit.accelerometer.is_gesture": {
-    "message": "is gesture (és un gest)",
+    "message": "is gesture",
     "description": "(function name) Check if the named gesture is currently active."
   },
   "microbit.accelerometer.is_gesture.summary": {
@@ -2520,7 +2520,7 @@
     "description": "Parameter docs"
   },
   "microbit.accelerometer.was_gesture": {
-    "message": "was gesture (ha estat un gest)",
+    "message": "was gesture",
     "description": "(function name) Check if the named gesture was active since the last call."
   },
   "microbit.accelerometer.was_gesture.summary": {
@@ -2544,11 +2544,11 @@
     "description": "Return a tuple of the gesture history."
   },
   "microbit.accelerometer.set_range": {
-    "message": "set range (estableix l'interval)",
+    "message": "set range",
     "description": "(function name) Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.summary": {
-    "message": "Estableix l'interval de la sensibilitat de l'acceleròmetre, en g (gravetat estàndard), al valor més proper acceptat pel maquinari (hardware), arrodonit a {{2}}, {{4}}, o {{8}}",
+    "message": "Estableix l'interval de la sensibilitat de l'acceleròmetre, en g (gravetat estàndard), al valor més proper acceptat pel maquinari, arrodonit a {{2}}, {{4}}, o {{8}}",
     "description": "Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.param-name.value": {
@@ -2568,7 +2568,7 @@
     "description": "Play sounds using the micro:bit (import ``audio`` for V1 compatibility)."
   },
   "microbit.audio.play": {
-    "message": "tocar (play)",
+    "message": "play",
     "description": "(function name) Play a built-in sound, sound effect or custom audio frames."
   },
   "microbit.audio.play.summary": {
@@ -2576,7 +2576,7 @@
     "description": "Play a built-in sound, sound effect or custom audio frames."
   },
   "microbit.audio.play.param-name.pin": {
-    "message": "punt de connexió (pin)",
+    "message": "pin",
     "description": "(parameter name) An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``."
   },
   "microbit.audio.play.param-doc.pin": {
@@ -2604,7 +2604,7 @@
     "description": "(parameter name) If ``wait`` is ``True``, this function will block until the sound is complete."
   },
   "microbit.audio.play.param-doc.wait": {
-    "message": "Si {{wait}} (espera) és {{True}} (Cert), aquesta funció es bloquejarà fins que s'acabi el so.",
+    "message": "Si {{wait}} és {{True}}, aquesta funció es bloquejarà fins que s'acabi el so.",
     "description": "Parameter docs"
   },
   "microbit.audio.is_playing": {
@@ -2624,7 +2624,7 @@
     "description": "Stop all audio playback."
   },
   "microbit.audio.SoundEffect": {
-    "message": "efecte sonor (soundeffect)",
+    "message": "soundeffect",
     "description": "(class name) A sound effect, composed by a set of parameters configured via the constructor or attributes."
   },
   "microbit.audio.SoundEffect.summary": {
@@ -2720,7 +2720,7 @@
     "description": "Vibrato effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_WARBLE": {
-    "message": "fx (efecte) gorjeu",
+    "message": "Efecte gorjeu",
     "description": "(field name) Warble effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_WARBLE.summary": {
@@ -2752,7 +2752,7 @@
     "description": "Duration of the sound in milliseconds, a number between ``0`` and ``9999``"
   },
   "microbit.audio.SoundEffect.vol_start": {
-    "message": "volum inicial (vol start)",
+    "message": "volum inicial ",
     "description": "(field name) Start volume value, a number between ``0`` and ``255``"
   },
   "microbit.audio.SoundEffect.vol_start.summary": {
@@ -2760,7 +2760,7 @@
     "description": "Start volume value, a number between ``0`` and ``255``"
   },
   "microbit.audio.SoundEffect.vol_end": {
-    "message": "volumen final (vol.end)",
+    "message": "volum final ",
     "description": "(field name) End volume value, a number between ``0`` and ``255``"
   },
   "microbit.audio.SoundEffect.vol_end.summary": {
@@ -2776,7 +2776,7 @@
     "description": "Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"
   },
   "microbit.audio.SoundEffect.fx": {
-    "message": "fx (efecte)",
+    "message": "efecte",
     "description": "(field name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
   },
   "microbit.audio.SoundEffect.fx.summary": {
@@ -2824,7 +2824,7 @@
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.fx": {
-    "message": "fx (efecte)",
+    "message": "efecte",
     "description": "(parameter name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.fx": {
@@ -2840,7 +2840,7 @@
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.vol_end": {
-    "message": "volumen final (vol.end)",
+    "message": "volum final ",
     "description": "(parameter name) End volume value, a number between ``0`` and ``255``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.vol_end": {
@@ -2848,7 +2848,7 @@
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.vol_start": {
-    "message": "volum inicial (vol start)",
+    "message": "volum inicial ",
     "description": "(parameter name) Start volume value, a number between ``0`` and ``255``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.vol_start": {
@@ -2952,7 +2952,7 @@
     "description": "Get the magnetic field strength on the ``z`` axis."
   },
   "microbit.compass.heading": {
-    "message": "orientació (heading)",
+    "message": "heading",
     "description": "(function name) Get the compass heading."
   },
   "microbit.compass.heading.summary": {
@@ -3032,7 +3032,7 @@
     "description": "Parameter docs"
   },
   "microbit.display.clear": {
-    "message": "clear (esborra)",
+    "message": "clear",
     "description": "(function name) Set the brightness of all LEDs to 0 (off)."
   },
   "microbit.display.clear.summary": {
@@ -3048,7 +3048,7 @@
     "description": "Shows images, letters or digits on the LED display."
   },
   "microbit.display.show.param-name.clear": {
-    "message": "clear (esborra)",
+    "message": "clear",
     "description": "(parameter name) If ``clear`` is ``True``, the display will be cleared after the sequence has finished."
   },
   "microbit.display.show.param-doc.clear": {
@@ -3076,7 +3076,7 @@
     "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
   },
   "microbit.display.show.param-doc.loop": {
-    "message": "Si el {{loop}} (bucle) és {{True}} (Cert), l'animació es repetirà per sempre.",
+    "message": "Si el {{loop}} és {{True}}, l'animació es repetirà per sempre.",
     "description": "Parameter docs"
   },
   "microbit.display.show.param-name.wait": {
@@ -3084,11 +3084,11 @@
     "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
   },
   "microbit.display.show.param-doc.wait": {
-    "message": "Si {{wait}} (espera) és {{True}} (Cert), aquesta funció es bloquejarà fins que s'acabi l'animació, en cas contrari, l'animació passarà en segon pla.",
+    "message": "Si {{wait}} és {{True}}, aquesta funció es bloquejarà fins que s'acabi l'animació, en cas contrari, l'animació passarà en segon pla.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll": {
-    "message": "scroll (desplaça)",
+    "message": "scroll",
     "description": "(function name) Scrolls a number or text on the LED display."
   },
   "microbit.display.scroll.summary": {
@@ -3108,7 +3108,7 @@
     "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
   },
   "microbit.display.scroll.param-doc.loop": {
-    "message": "Si el {{loop}} (bucle) és {{True}} (Cert), l'animació es repetirà per sempre.",
+    "message": "Si el {{loop}} és {{True}}, l'animació es repetirà per sempre.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll.param-name.monospace": {
@@ -3132,11 +3132,11 @@
     "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
   },
   "microbit.display.scroll.param-doc.wait": {
-    "message": "Si {{wait}} (espera) és {{True}} (Cert), aquesta funció es bloquejarà fins que s'acabi l'animació, en cas contrari, l'animació passarà en segon pla.",
+    "message": "Si {{wait}} és {{True}}, aquesta funció es bloquejarà fins que s'acabi l'animació, en cas contrari, l'animació passarà en segon pla.",
     "description": "Parameter docs"
   },
   "microbit.display.on": {
-    "message": "encén (on)",
+    "message": "on",
     "description": "(function name) Turn on the LED display."
   },
   "microbit.display.on.summary": {
@@ -3144,7 +3144,7 @@
     "description": "Turn on the LED display."
   },
   "microbit.display.off": {
-    "message": "apagar (off)",
+    "message": "off",
     "description": "(function name) Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
   },
   "microbit.display.off.summary": {
@@ -3152,7 +3152,7 @@
     "description": "Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
   },
   "microbit.display.is_on": {
-    "message": "està activat (is on)",
+    "message": "is on",
     "description": "(function name) Check whether the LED display is enabled."
   },
   "microbit.display.is_on.summary": {
@@ -3184,7 +3184,7 @@
     "description": "Re-initialize a peripheral."
   },
   "microbit.i2c.init.param-name.freq": {
-    "message": "freq (frequency)",
+    "message": "freq",
     "description": "(parameter name) clock frequency"
   },
   "microbit.i2c.init.param-doc.freq": {
@@ -3208,7 +3208,7 @@
     "description": "Parameter docs"
   },
   "microbit.i2c.scan": {
-    "message": "scan (escaneja)",
+    "message": "scan",
     "description": "(function name) Scan the bus for devices."
   },
   "microbit.i2c.scan.summary": {
@@ -3224,7 +3224,7 @@
     "description": "Read bytes from a device.."
   },
   "microbit.i2c.read.param-name.addr": {
-    "message": "adreça (addr)",
+    "message": "addr",
     "description": "(parameter name) The 7-bit address of the device"
   },
   "microbit.i2c.read.param-doc.addr": {
@@ -3256,7 +3256,7 @@
     "description": "Write bytes to a device."
   },
   "microbit.i2c.write.param-name.addr": {
-    "message": "adreça (addr)",
+    "message": "addr",
     "description": "(parameter name) The 7-bit address of the device"
   },
   "microbit.i2c.write.param-doc.addr": {
@@ -3264,7 +3264,7 @@
     "description": "Parameter docs"
   },
   "microbit.i2c.write.param-name.buf": {
-    "message": "memòria intermèdia (buffer)",
+    "message": "buf",
     "description": "(parameter name) A buffer containing the bytes to write"
   },
   "microbit.i2c.write.param-doc.buf": {
@@ -3376,7 +3376,7 @@
     "description": "Control the built-in speaker (V2 only)."
   },
   "microbit.speaker.off": {
-    "message": "off (apagar)",
+    "message": "off",
     "description": "(function name) Turn the speaker off."
   },
   "microbit.speaker.off.summary": {
@@ -3384,7 +3384,7 @@
     "description": "Turn the speaker off."
   },
   "microbit.speaker.on": {
-    "message": "on (encendre)",
+    "message": "on",
     "description": "(function name) Turn the speaker on."
   },
   "microbit.speaker.on.summary": {
@@ -3392,7 +3392,7 @@
     "description": "Turn the speaker on."
   },
   "microbit.spi": {
-    "message": "spi (bus d'interfície perifèrica sèrie).",
+    "message": "spi",
     "description": "(module name) Communicate with devices using the serial peripheral interface (SPI) bus."
   },
   "microbit.spi.summary": {
@@ -3464,7 +3464,7 @@
     "description": "Read bytes."
   },
   "microbit.spi.read.param-name.nbytes": {
-    "message": "nombre de bytes (nbytes)",
+    "message": "nbytes",
     "description": "(parameter name) Maximum number of bytes to read."
   },
   "microbit.spi.read.param-doc.nbytes": {
@@ -3480,15 +3480,15 @@
     "description": "Write bytes to the bus."
   },
   "microbit.spi.write.param-name.buffer": {
-    "message": "memòria intermèdia (buffer)",
+    "message": "memòria intermèdia",
     "description": "(parameter name) A buffer to read data from."
   },
   "microbit.spi.write.param-doc.buffer": {
-    "message": "Una memòria intermèdia (buffer) per a llegir dades.",
+    "message": "Una memòria intermèdia per a llegir dades.",
     "description": "Parameter docs"
   },
   "microbit.spi.write_readinto": {
-    "message": "escriu i llegeix memòria intermèdia (write readinto)",
+    "message": "write readinto",
     "description": "(function name) Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
   },
   "microbit.spi.write_readinto.summary": {
@@ -3496,19 +3496,19 @@
     "description": "Write the ``out`` buffer to the bus and read any response into the ``in_`` buffer."
   },
   "microbit.spi.write_readinto.param-name.in_": {
-    "message": "in (en)",
+    "message": "in",
     "description": "(parameter name) The buffer to read data from."
   },
   "microbit.spi.write_readinto.param-doc.in_": {
-    "message": "La memòria intermèdia (buffer) per a llegir dades.",
+    "message": "La memòria intermèdia per a llegir dades.",
     "description": "Parameter docs"
   },
   "microbit.spi.write_readinto.param-name.out": {
-    "message": "out (fora)",
+    "message": "out",
     "description": "(parameter name) The buffer to write any response to."
   },
   "microbit.spi.write_readinto.param-doc.out": {
-    "message": "La memòria intermèdia (buffer) per a escriure qualsevol resposta.",
+    "message": "La memòria intermèdia per a escriure qualsevol resposta.",
     "description": "Parameter docs"
   },
   "microbit.uart": {
@@ -3520,7 +3520,7 @@
     "description": "Communicate with a device using a serial interface."
   },
   "microbit.uart.ODD": {
-    "message": "senar (odd)",
+    "message": "senar ",
     "description": "(field name) Odd parity"
   },
   "microbit.uart.ODD.summary": {
@@ -3528,7 +3528,7 @@
     "description": "Odd parity"
   },
   "microbit.uart.EVEN": {
-    "message": "parell (even)",
+    "message": "parell",
     "description": "(field name) Even parity"
   },
   "microbit.uart.EVEN.summary": {
@@ -3572,7 +3572,7 @@
     "description": "(parameter name) Receiving pin."
   },
   "microbit.uart.init.param-doc.rx": {
-    "message": "Receiving pin. (Pin receptor).",
+    "message": "Receiving pin.",
     "description": "Parameter docs"
   },
   "microbit.uart.init.param-name.stop": {
@@ -3592,7 +3592,7 @@
     "description": "Parameter docs"
   },
   "microbit.uart.any": {
-    "message": "qualsevol (any)",
+    "message": "any",
     "description": "(function name) Check if any data is waiting."
   },
   "microbit.uart.any.summary": {
@@ -3624,7 +3624,7 @@
     "description": "Read bytes into the ``buf``."
   },
   "microbit.uart.readinto.param-name.buf": {
-    "message": "memòria intermèdia (buffer)",
+    "message": "buf",
     "description": "(parameter name) The buffer to write to."
   },
   "microbit.uart.readinto.param-doc.buf": {
@@ -3632,7 +3632,7 @@
     "description": "Parameter docs"
   },
   "microbit.uart.readinto.param-name.nbytes": {
-    "message": "nbytes (nombre de bytes)",
+    "message": "nbytes",
     "description": "(parameter name) If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes."
   },
   "microbit.uart.readinto.param-doc.nbytes": {
@@ -3640,7 +3640,7 @@
     "description": "Parameter docs"
   },
   "microbit.uart.readline": {
-    "message": "readline (llegeix una línia)",
+    "message": "readline",
     "description": "(function name) Read a line, ending in a newline character."
   },
   "microbit.uart.readline.summary": {
@@ -3652,11 +3652,11 @@
     "description": "(function name) Write a buffer to the bus."
   },
   "microbit.uart.write.summary": {
-    "message": "Escriu una memòria intermèdia (buffer) al bus",
+    "message": "Escriu una memòria intermèdia al bus",
     "description": "Write a buffer to the bus."
   },
   "microbit.uart.write.param-name.buf": {
-    "message": "memòria intermèdia (buffer)",
+    "message": "buf",
     "description": "(parameter name) A bytes object or a string."
   },
   "microbit.uart.write.param-doc.buf": {
@@ -3672,7 +3672,7 @@
     "description": "MicroPython internals."
   },
   "micropython.const": {
-    "message": "constant (const)",
+    "message": "const",
     "description": "(function name) Used to declare that the expression is a constant so that the compiler can\noptimise it."
   },
   "micropython.const.summary": {
@@ -3680,7 +3680,7 @@
     "description": "Used to declare that the expression is a constant so that the compiler can\noptimise it."
   },
   "micropython.const.param-name.expr": {
-    "message": "expressió constant (expr)",
+    "message": "expr",
     "description": "(parameter name) A constant expression."
   },
   "micropython.const.param-doc.expr": {
@@ -3688,7 +3688,7 @@
     "description": "Parameter docs"
   },
   "micropython.opt_level-1": {
-    "message": "nivell d'optimització (opt level)",
+    "message": "opt level",
     "description": "(function name) Get the current optimisation level for the compilation of scripts."
   },
   "micropython.opt_level-1.summary": {
@@ -3696,7 +3696,7 @@
     "description": "Get the current optimisation level for the compilation of scripts."
   },
   "micropython.opt_level-2": {
-    "message": "nivell d'optimització (opt level)",
+    "message": "opt level",
     "description": "(function name) Sets the optimisation level for subsequent compilation of scripts."
   },
   "micropython.opt_level-2.summary": {
@@ -3704,7 +3704,7 @@
     "description": "Sets the optimisation level for subsequent compilation of scripts."
   },
   "micropython.opt_level-2.param-name.level": {
-    "message": "nivell (level)",
+    "message": "level",
     "description": "(parameter name) An integer optimisation level."
   },
   "micropython.opt_level-2.param-doc.level": {
@@ -3752,11 +3752,11 @@
     "description": "Return an integer representing the current amount of stack that is being\nused."
   },
   "micropython.heap_lock": {
-    "message": "heap lock (bloqueja el munt)",
+    "message": "heap lock",
     "description": "(function name) Lock the heap."
   },
   "micropython.heap_lock.summary": {
-    "message": "Bloqueja el munt (heap).",
+    "message": "Bloqueja el munt.",
     "description": "Lock the heap."
   },
   "micropython.heap_unlock": {
@@ -3764,7 +3764,7 @@
     "description": "(function name) Unlock the heap."
   },
   "micropython.heap_unlock.summary": {
-    "message": "Desbloqueja el munt (heap).",
+    "message": "Desbloqueja el munt.",
     "description": "Unlock the heap."
   },
   "micropython.kbd_intr": {
@@ -3776,7 +3776,7 @@
     "description": "Set the character that will raise a ``KeyboardInterrupt`` exception."
   },
   "micropython.kbd_intr.param-name.chr": {
-    "message": "caràcter (chr)",
+    "message": "chr",
     "description": "(parameter name) Character code to raise the interrupt or -1 to disable capture of Ctrl-C."
   },
   "micropython.kbd_intr.param-doc.chr": {
@@ -3796,7 +3796,7 @@
     "description": "(field name) Melody: the opening to Beethoven’s 5th Symphony in C minor."
   },
   "music.DADADADUM.summary": {
-    "message": "Melodia: l'obertura de la cinquena simfonia de Beethoven en Do menor (C minor).",
+    "message": "Melodia: l'obertura de la cinquena simfonia de Beethoven en Do menor.",
     "description": "Melody: the opening to Beethoven’s 5th Symphony in C minor."
   },
   "music.ENTERTAINER": {
@@ -3896,7 +3896,7 @@
     "description": "Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."
   },
   "music.BADDY": {
-    "message": "dolent (baddy)",
+    "message": "dolent",
     "description": "(field name) Melody: silent movie era entrance of a baddy."
   },
   "music.BADDY.summary": {
@@ -3904,7 +3904,7 @@
     "description": "Melody: silent movie era entrance of a baddy."
   },
   "music.CHASE": {
-    "message": "persecució (chase)",
+    "message": "persecució",
     "description": "(field name) Melody: silent movie era chase scene."
   },
   "music.CHASE.summary": {
@@ -3928,7 +3928,7 @@
     "description": "Melody: a very sad trombone."
   },
   "music.JUMP_UP": {
-    "message": "jump up (saltar cap amunt)\n",
+    "message": "saltar cap amunt\n",
     "description": "(field name) Melody: for use in a game, indicating upward movement."
   },
   "music.JUMP_UP.summary": {
@@ -3936,7 +3936,7 @@
     "description": "Melody: for use in a game, indicating upward movement."
   },
   "music.JUMP_DOWN": {
-    "message": "jump down (saltar cap avall)",
+    "message": "saltar cap avall",
     "description": "(field name) Melody: for use in a game, indicating downward movement."
   },
   "music.JUMP_DOWN.summary": {
@@ -3944,7 +3944,7 @@
     "description": "Melody: for use in a game, indicating downward movement."
   },
   "music.POWER_UP": {
-    "message": "engegar (power up)",
+    "message": "engegar",
     "description": "(field name) Melody: a fanfare to indicate an achievement unlocked."
   },
   "music.POWER_UP.summary": {
@@ -3952,7 +3952,7 @@
     "description": "Melody: a fanfare to indicate an achievement unlocked."
   },
   "music.POWER_DOWN": {
-    "message": "apagar (power down)",
+    "message": "apagar",
     "description": "(field name) Melody: a sad fanfare to indicate an achievement lost."
   },
   "music.POWER_DOWN.summary": {
@@ -3960,7 +3960,7 @@
     "description": "Melody: a sad fanfare to indicate an achievement lost."
   },
   "music.set_tempo": {
-    "message": "set tempo (estableix el tempo)",
+    "message": "set tempo",
     "description": "(function name) Sets the approximate tempo for playback."
   },
   "music.set_tempo.summary": {
@@ -3968,7 +3968,7 @@
     "description": "Sets the approximate tempo for playback."
   },
   "music.set_tempo.param-name.bpm": {
-    "message": "ppm pulsacions per minut (bpm en anglès)",
+    "message": "bpm",
     "description": "(parameter name) An integer determining how many beats per minute."
   },
   "music.set_tempo.param-doc.bpm": {
@@ -3976,7 +3976,7 @@
     "description": "Parameter docs"
   },
   "music.set_tempo.param-name.ticks": {
-    "message": "tics (ticks)",
+    "message": "ticks",
     "description": "(parameter name) The number of ticks constituting a beat."
   },
   "music.set_tempo.param-doc.ticks": {
@@ -3992,7 +3992,7 @@
     "description": "Gets the current tempo as a tuple of integers: ``(ticks, bpm)``."
   },
   "music.play": {
-    "message": "tocar (play)",
+    "message": "play",
     "description": "(function name) Plays music."
   },
   "music.play.summary": {
@@ -4004,7 +4004,7 @@
     "description": "(parameter name) If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted."
   },
   "music.play.param-doc.loop": {
-    "message": "Si el {{loop}} (bucle)s'estableix en {{True}} (Cert), la melodia es repeteix fins que es crida {{stop}} (atura) o s'interromp la trucada de bloqueig.",
+    "message": "Si el {{loop}} s'estableix en {{True}}, la melodia es repeteix fins que es crida {{stop}} o s'interromp la trucada de bloqueig.",
     "description": "Parameter docs"
   },
   "music.play.param-name.music": {
@@ -4056,7 +4056,7 @@
     "description": "Parameter docs"
   },
   "music.pitch.param-name.pin": {
-    "message": "pin (punt de connexió)",
+    "message": "pin",
     "description": "(parameter name) Optional output pin (default ``pin0``)."
   },
   "music.pitch.param-doc.pin": {
@@ -4080,7 +4080,7 @@
     "description": "Stops all music playback on the built-in speaker and any pin outputting sound."
   },
   "music.stop.param-name.pin": {
-    "message": "punt de connexió (pin)",
+    "message": "pin",
     "description": "(parameter name) An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``."
   },
   "music.stop.param-doc.pin": {
@@ -4112,7 +4112,7 @@
     "description": "Initialise a new strip of neopixel LEDs controlled via a pin."
   },
   "neopixel.NeoPixel.__init__.param-name.bpp": {
-    "message": "bytes per píxel (bpp)",
+    "message": "bpp",
     "description": "(parameter name) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
   },
   "neopixel.NeoPixel.__init__.param-doc.bpp": {
@@ -4136,7 +4136,7 @@
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.clear": {
-    "message": "clear (esborra)",
+    "message": "clear",
     "description": "(function name) Clear all the pixels."
   },
   "neopixel.NeoPixel.clear.summary": {
@@ -4144,7 +4144,7 @@
     "description": "Clear all the pixels."
   },
   "neopixel.NeoPixel.show": {
-    "message": "mostra (show)",
+    "message": "show",
     "description": "(function name) Show the pixels."
   },
   "neopixel.NeoPixel.show.summary": {
@@ -4184,7 +4184,7 @@
     "description": "Set a pixel colour."
   },
   "neopixel.NeoPixel.__setitem__.param-name.key": {
-    "message": "clau (key)",
+    "message": "key",
     "description": "(parameter name) The pixel number."
   },
   "neopixel.NeoPixel.__setitem__.param-doc.key": {
@@ -4208,7 +4208,7 @@
     "description": "Get a pixel colour."
   },
   "neopixel.NeoPixel.__getitem__.param-name.key": {
-    "message": "clau (key)",
+    "message": "key",
     "description": "(parameter name) The pixel number."
   },
   "neopixel.NeoPixel.__getitem__.param-doc.key": {
@@ -4216,7 +4216,7 @@
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.__len__": {
-    "message": "longitud (len)",
+    "message": "len",
     "description": "(function name) Get length of this pixel strip."
   },
   "neopixel.NeoPixel.__len__.summary": {
@@ -4224,7 +4224,7 @@
     "description": "Get length of this pixel strip."
   },
   "os": {
-    "message": " mòdul os (accés al sistema de fitxers)",
+    "message": "os",
     "description": "(module name) Access the file system."
   },
   "os.summary": {
@@ -4232,7 +4232,7 @@
     "description": "Access the file system."
   },
   "os.listdir": {
-    "message": "listdir (Llista fitxers)\n",
+    "message": "listdir",
     "description": "(function name) List files."
   },
   "os.listdir.summary": {
@@ -4272,7 +4272,7 @@
     "description": "Parameter docs"
   },
   "os.uname_result": {
-    "message": "uname result (resultat de uname, nom del OS)",
+    "message": "uname result",
     "description": "(class name) Result of ``os.uname()``"
   },
   "os.uname_result.summary": {
@@ -4280,7 +4280,7 @@
     "description": "Result of ``os.uname()``"
   },
   "os.uname_result.sysname": {
-    "message": "nom del sistema operatiu (sysname)",
+    "message": "sysname",
     "description": "(field name) Operating system name."
   },
   "os.uname_result.sysname.summary": {
@@ -4288,7 +4288,7 @@
     "description": "Operating system name."
   },
   "os.uname_result.nodename": {
-    "message": "nodename (nom del node)",
+    "message": "nodename",
     "description": "(field name) Name of machine on network (implementation-defined)."
   },
   "os.uname_result.nodename.summary": {
@@ -4296,7 +4296,7 @@
     "description": "Name of machine on network (implementation-defined)."
   },
   "os.uname_result.release": {
-    "message": "versió (release)",
+    "message": "versió",
     "description": "(field name) Operating system release."
   },
   "os.uname_result.release.summary": {
@@ -4316,11 +4316,11 @@
     "description": "(field name) Hardware identifier."
   },
   "os.uname_result.machine.summary": {
-    "message": "Identificador del maquinari (hardware).",
+    "message": "Identificador del maquinari.",
     "description": "Hardware identifier."
   },
   "os.uname": {
-    "message": "uname (retorna el nom de l'OS)",
+    "message": "uname",
     "description": "(function name) Returns information identifying the current operating system."
   },
   "os.uname.summary": {
@@ -4336,7 +4336,7 @@
     "description": "Communicate between micro:bits with the built-in radio."
   },
   "radio.RATE_1MBIT": {
-    "message": "velocitat de transmissió 1mbit (rate 1mbit)",
+    "message": "velocitat de transmissió 1mbit ",
     "description": "(field name) Constant used to indicate a throughput of 1 MBit a second."
   },
   "radio.RATE_1MBIT.summary": {
@@ -4344,7 +4344,7 @@
     "description": "Constant used to indicate a throughput of 1 MBit a second."
   },
   "radio.RATE_2MBIT": {
-    "message": "velocitat de transmissió 2mbit (rate 2mbit)",
+    "message": "velocitat de transmissió 2mbit",
     "description": "(field name) Constant used to indicate a throughput of 2 MBit a second."
   },
   "radio.RATE_2MBIT.summary": {
@@ -4352,7 +4352,7 @@
     "description": "Constant used to indicate a throughput of 2 MBit a second."
   },
   "radio.on": {
-    "message": "encén (on)",
+    "message": "on",
     "description": "(function name) Turns the radio on."
   },
   "radio.on.summary": {
@@ -4360,7 +4360,7 @@
     "description": "Turns the radio on."
   },
   "radio.off": {
-    "message": "apaga (off)",
+    "message": "off",
     "description": "(function name) Turns off the radio, saving power and memory."
   },
   "radio.off.summary": {
@@ -4368,7 +4368,7 @@
     "description": "Turns off the radio, saving power and memory."
   },
   "radio.config": {
-    "message": "configuració (config)",
+    "message": "config",
     "description": "(function name) Configures the radio."
   },
   "radio.config.summary": {
@@ -4416,7 +4416,7 @@
     "description": "Parameter docs"
   },
   "radio.config.param-name.power": {
-    "message": "alimentació (power)",
+    "message": "power",
     "description": "(parameter name) (default=6) is an integer value from 0 to 7 (inclusive) to indicate the strength of signal used when broadcasting a message.\nThe higher the value the stronger the signal, but the more power is consumed by the device. The numbering translates to positions in the following list of dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4."
   },
   "radio.config.param-doc.power": {
@@ -4472,11 +4472,11 @@
     "description": "Copy the next incoming message on the message queue into a buffer."
   },
   "radio.receive_bytes_into.param-name.buffer": {
-    "message": "memòria intermèdia (buffer)",
+    "message": "memòria intermèdia",
     "description": "(parameter name) The target buffer. The message is truncated if larger than the buffer."
   },
   "radio.receive_bytes_into.param-doc.buffer": {
-    "message": "La memòria intermèdia (buffer) objectiu. El missatge es trunca si és més gran que la memòria intermèdia.",
+    "message": "La memòria intermèdia objectiu. El missatge es trunca si és més gran que la memòria intermèdia.",
     "description": "Parameter docs"
   },
   "radio.send": {
@@ -4496,7 +4496,7 @@
     "description": "Parameter docs"
   },
   "radio.receive": {
-    "message": "receive (rebre)",
+    "message": "receive",
     "description": "(function name) Works in exactly the same way as ``receive_bytes`` but returns whatever was sent."
   },
   "radio.receive.summary": {
@@ -4548,11 +4548,11 @@
     "description": "(parameter name) The integer seed"
   },
   "random.seed.param-doc.n": {
-    "message": "La llavor entera (integer seed)",
+    "message": "The integer seed",
     "description": "Parameter docs"
   },
   "random.randint": {
-    "message": "randint (nombre enter aleatori)",
+    "message": "randint",
     "description": "(function name) Choose a random integer between ``a`` and ``b`` inclusive."
   },
   "random.randint.summary": {
@@ -4576,7 +4576,7 @@
     "description": "Parameter docs"
   },
   "random.randrange-1": {
-    "message": "interval aleatori (randrange)",
+    "message": "randrange",
     "description": "(function name) Choose a randomly selected integer between zero and up to (but not\nincluding) ``stop``."
   },
   "random.randrange-1.summary": {
@@ -4592,7 +4592,7 @@
     "description": "Parameter docs"
   },
   "random.randrange-2": {
-    "message": "interval aleatori (randrange)",
+    "message": "randrange",
     "description": "(function name) Choose a randomly selected element from ``range(start, stop, step)``."
   },
   "random.randrange-2.summary": {
@@ -4600,7 +4600,7 @@
     "description": "Choose a randomly selected element from ``range(start, stop, step)``."
   },
   "random.randrange-2.param-name.start": {
-    "message": "inici (start)",
+    "message": "start",
     "description": "(parameter name) The start of the range (inclusive)"
   },
   "random.randrange-2.param-doc.start": {
@@ -4608,7 +4608,7 @@
     "description": "Parameter docs"
   },
   "random.randrange-2.param-name.step": {
-    "message": "pas (step)",
+    "message": "step",
     "description": "(parameter name) The step."
   },
   "random.randrange-2.param-doc.step": {
@@ -4624,7 +4624,7 @@
     "description": "Parameter docs"
   },
   "random.choice": {
-    "message": "tria (choice)",
+    "message": "choice",
     "description": "(function name) Choose a random element from the non-empty sequence ``seq``."
   },
   "random.choice.summary": {
@@ -4632,7 +4632,7 @@
     "description": "Choose a random element from the non-empty sequence ``seq``."
   },
   "random.choice.param-name.seq": {
-    "message": "seqüència (seq)",
+    "message": "seq",
     "description": "(parameter name) A sequence."
   },
   "random.choice.param-doc.seq": {
@@ -4644,7 +4644,7 @@
     "description": "(function name) Generate a random floating point number in the range [0.0, 1.0)."
   },
   "random.random.summary": {
-    "message": "Genera un nombre aleatori de coma flotant en l'interval [0,0 , 1,0).",
+    "message": "Genera un nombre aleatori de coma flotant en l'interval [0.0, 1.0).",
     "description": "Generate a random floating point number in the range [0.0, 1.0)."
   },
   "random.uniform": {
@@ -4672,7 +4672,7 @@
     "description": "Parameter docs"
   },
   "speech": {
-    "message": "parla (speech)",
+    "message": "speech",
     "description": "(module name) Make the micro:bit talk, sing and make other speech like sounds."
   },
   "speech.summary": {
@@ -4720,7 +4720,7 @@
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.pin": {
-    "message": "punt de connexió (pin)",
+    "message": "pin",
     "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
   },
   "speech.pronounce.param-doc.pin": {
@@ -4732,7 +4732,7 @@
     "description": "(parameter name) A number representing the pitch of the voice"
   },
   "speech.pronounce.param-doc.pitch": {
-    "message": "Un nombre que representa el to (freqüència) de la veu",
+    "message": "Un nombre que representa la freqüència de la veu",
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.speed": {
@@ -4744,7 +4744,7 @@
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.throat": {
-    "message": "gola (throat)",
+    "message": "throat",
     "description": "(parameter name) A number representing the throat of the voice"
   },
   "speech.pronounce.param-doc.throat": {
@@ -4752,7 +4752,7 @@
     "description": "Parameter docs"
   },
   "speech.say": {
-    "message": "digues (say)",
+    "message": "say",
     "description": "(function name) Say English words."
   },
   "speech.say.summary": {
@@ -4768,7 +4768,7 @@
     "description": "Parameter docs"
   },
   "speech.say.param-name.pin": {
-    "message": "punt de connexió (pin)",
+    "message": "pin",
     "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
   },
   "speech.say.param-doc.pin": {
@@ -4780,7 +4780,7 @@
     "description": "(parameter name) A number representing the pitch of the voice"
   },
   "speech.say.param-doc.pitch": {
-    "message": "Un nombre que representa el to (freqüència) de la veu",
+    "message": "Un nombre que representa la freqüència de la veu",
     "description": "Parameter docs"
   },
   "speech.say.param-name.speed": {
@@ -4792,7 +4792,7 @@
     "description": "Parameter docs"
   },
   "speech.say.param-name.throat": {
-    "message": "gola (throat)",
+    "message": "throat",
     "description": "(parameter name) A number representing the throat of the voice"
   },
   "speech.say.param-doc.throat": {
@@ -4808,7 +4808,7 @@
     "description": "Parameter docs"
   },
   "speech.sing": {
-    "message": "cantar (sing)",
+    "message": "sing",
     "description": "(function name) Sing phonemes."
   },
   "speech.sing.summary": {
@@ -4832,7 +4832,7 @@
     "description": "Parameter docs"
   },
   "speech.sing.param-name.pin": {
-    "message": "punt de connexió (pin)",
+    "message": "pin",
     "description": "(parameter name) Optional argument to specify the output pin can be used to override the default of ``pin0``.\nIf we do not want any sound to play out of the pins can use ``pin=None``. micro:bit V2 only."
   },
   "speech.sing.param-doc.pin": {
@@ -4844,7 +4844,7 @@
     "description": "(parameter name) A number representing the pitch of the voice"
   },
   "speech.sing.param-doc.pitch": {
-    "message": "Un nombre que representa el to (freqüència) de la veu",
+    "message": "Un nombre que representa la freqüència de la veu",
     "description": "Parameter docs"
   },
   "speech.sing.param-name.speed": {
@@ -4856,7 +4856,7 @@
     "description": "Parameter docs"
   },
   "speech.sing.param-name.throat": {
-    "message": "gola (throat)",
+    "message": "throat",
     "description": "(parameter name) A number representing the throat of the voice"
   },
   "speech.sing.param-doc.throat": {
@@ -4864,7 +4864,7 @@
     "description": "Parameter docs"
   },
   "struct": {
-    "message": "struct (Empaqueta i desempaqueta tipus de dades primitius)",
+    "message": "struct",
     "description": "(module name) Pack and unpack primitive data types."
   },
   "struct.summary": {
@@ -4872,7 +4872,7 @@
     "description": "Pack and unpack primitive data types."
   },
   "struct.calcsize": {
-    "message": "calcsize (calcula la mida)",
+    "message": "calcsize",
     "description": "(function name) Get the number of bytes needed to store the given ``fmt``."
   },
   "struct.calcsize.summary": {
@@ -4880,7 +4880,7 @@
     "description": "Get the number of bytes needed to store the given ``fmt``."
   },
   "struct.calcsize.param-name.fmt": {
-    "message": "format (fmt)",
+    "message": "fmt",
     "description": "(parameter name) A format string."
   },
   "struct.calcsize.param-doc.fmt": {
@@ -4888,7 +4888,7 @@
     "description": "Parameter docs"
   },
   "struct.pack": {
-    "message": "pack (empaqueta)",
+    "message": "pack",
     "description": "(function name) Pack values according to a format string."
   },
   "struct.pack.summary": {
@@ -4904,7 +4904,7 @@
     "description": "Parameter docs"
   },
   "struct.pack.param-name.fmt": {
-    "message": "format (fmt)",
+    "message": "fmt",
     "description": "(parameter name) The format string."
   },
   "struct.pack.param-doc.fmt": {
@@ -4920,7 +4920,7 @@
     "description": "Parameter docs"
   },
   "struct.pack_into": {
-    "message": "pack into (empaquetar a)",
+    "message": "pack into",
     "description": "(function name) Pack values according to a format string."
   },
   "struct.pack_into.summary": {
@@ -4936,7 +4936,7 @@
     "description": "Parameter docs"
   },
   "struct.pack_into.param-name.buffer": {
-    "message": "memòria intermèdia (buffer)",
+    "message": "memòria intermèdia",
     "description": "(parameter name) The target buffer to write into."
   },
   "struct.pack_into.param-doc.buffer": {
@@ -4944,7 +4944,7 @@
     "description": "Parameter docs"
   },
   "struct.pack_into.param-name.fmt": {
-    "message": "fmt (format)",
+    "message": "fmt",
     "description": "(parameter name) The format string."
   },
   "struct.pack_into.param-doc.fmt": {
@@ -4952,11 +4952,11 @@
     "description": "Parameter docs"
   },
   "struct.pack_into.param-name.offset": {
-    "message": "desplaçament (offset)",
+    "message": "offset",
     "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
   },
   "struct.pack_into.param-doc.offset": {
-    "message": "El desplaçament a la memòria intermèdia (buffer). Pot ser negatiu per comptar des del final de la memòria intermèdia.",
+    "message": "El desplaçament a la memòria intermèdia. Pot ser negatiu per comptar des del final de la memòria intermèdia.",
     "description": "Parameter docs"
   },
   "struct.pack_into.param-name.v1": {
@@ -4968,7 +4968,7 @@
     "description": "Parameter docs"
   },
   "struct.unpack": {
-    "message": "unpack (desempaqueta)",
+    "message": "unpack",
     "description": "(function name) Unpack data according to a format string."
   },
   "struct.unpack.summary": {
@@ -4976,7 +4976,7 @@
     "description": "Unpack data according to a format string."
   },
   "struct.unpack.param-name.data": {
-    "message": "dades (data)",
+    "message": "data",
     "description": "(parameter name) The data."
   },
   "struct.unpack.param-doc.data": {
@@ -4984,7 +4984,7 @@
     "description": "Parameter docs"
   },
   "struct.unpack.param-name.fmt": {
-    "message": "format (fmt)",
+    "message": "fmt",
     "description": "(parameter name) The format string."
   },
   "struct.unpack.param-doc.fmt": {
@@ -4996,19 +4996,19 @@
     "description": "(function name) Unpack data from a buffer according to a format string."
   },
   "struct.unpack_from.summary": {
-    "message": "Desempaqueta les dades d'una memòria intermèdia (buffer) segons una cadena de format.",
+    "message": "Desempaqueta les dades d'una memòria intermèdia  segons una cadena de format.",
     "description": "Unpack data from a buffer according to a format string."
   },
   "struct.unpack_from.param-name.buffer": {
-    "message": "memòria intermèdia (buffer)",
+    "message": "memòria intermèdia",
     "description": "(parameter name) The source buffer to read from."
   },
   "struct.unpack_from.param-doc.buffer": {
-    "message": "La memòria intermèdia (buffer) d'origen d'on llegir.",
+    "message": "La memòria intermèdia d'origen d'on llegir.",
     "description": "Parameter docs"
   },
   "struct.unpack_from.param-name.fmt": {
-    "message": "format (fmt)",
+    "message": "fmt",
     "description": "(parameter name) The format string."
   },
   "struct.unpack_from.param-doc.fmt": {
@@ -5016,15 +5016,15 @@
     "description": "Parameter docs"
   },
   "struct.unpack_from.param-name.offset": {
-    "message": "desplaçament (offset)",
+    "message": "offset",
     "description": "(parameter name) The offset into the buffer. May be negative to count from the end of the buffer."
   },
   "struct.unpack_from.param-doc.offset": {
-    "message": "El desplaçament a la memòria intermèdia (buffer). Pot ser negatiu per comptar des del final de la memòria intermèdia.",
+    "message": "El desplaçament a la memòria intermèdia. Pot ser negatiu per comptar des del final de la memòria intermèdia.",
     "description": "Parameter docs"
   },
   "sys": {
-    "message": "sistema (sys)",
+    "message": "sys",
     "description": "(module name) System specific functions"
   },
   "sys.summary": {
@@ -5032,7 +5032,7 @@
     "description": "System specific functions"
   },
   "sys.exit": {
-    "message": "sortida (exit)",
+    "message": "exit",
     "description": "(function name) Terminate current program with a given exit code."
   },
   "sys.exit.summary": {
@@ -5040,7 +5040,7 @@
     "description": "Terminate current program with a given exit code."
   },
   "sys.exit.param-name.retval": {
-    "message": "retval (codi o missatge de sortida)",
+    "message": "retval",
     "description": "(parameter name) The exit code or message."
   },
   "sys.exit.param-doc.retval": {
@@ -5048,7 +5048,7 @@
     "description": "Parameter docs"
   },
   "sys.print_exception": {
-    "message": "print exception (impressió d'excepció)",
+    "message": "print exception",
     "description": "(function name) Print an exception with a traceback."
   },
   "sys.print_exception.summary": {
@@ -5056,7 +5056,7 @@
     "description": "Print an exception with a traceback."
   },
   "sys.print_exception.param-name.exc": {
-    "message": "exc (excepció a imprimir)\n",
+    "message": "exc",
     "description": "(parameter name) The exception to print"
   },
   "sys.print_exception.param-doc.exc": {
@@ -5064,7 +5064,7 @@
     "description": "Parameter docs"
   },
   "sys.argv": {
-    "message": "arguments (argv)",
+    "message": "argv",
     "description": "(field name) A mutable list of arguments the current program was started with."
   },
   "sys.argv.summary": {
@@ -5072,7 +5072,7 @@
     "description": "A mutable list of arguments the current program was started with."
   },
   "sys.byteorder": {
-    "message": "byteorder (l'ordre del byte)",
+    "message": "byteorder",
     "description": "(field name) The byte order of the system (``\"little\"`` or ``\"big\"``)."
   },
   "sys.byteorder.summary": {
@@ -5088,7 +5088,7 @@
     "description": "Object with information about the current Python implementation."
   },
   "sys.maxsize": {
-    "message": "mida màxima (maxsize)",
+    "message": "maxsize",
     "description": "(field name) \nMaximum value which a native integer type can hold on the current platform,\nor maximum value representable by MicroPython integer type, if it's smaller\nthan platform max value (that is the case for MicroPython ports without\nlong int support)."
   },
   "sys.maxsize.summary": {
@@ -5104,7 +5104,7 @@
     "description": "Dictionary of loaded modules. "
   },
   "sys.path": {
-    "message": "camí (path)",
+    "message": "path",
     "description": "(field name) A mutable list of directories to search for imported modules."
   },
   "sys.path.summary": {
@@ -5128,11 +5128,11 @@
     "description": "Python language version that this implementation conforms to, as a string."
   },
   "sys.version_info": {
-    "message": "informació de la versió (version info)",
+    "message": "informació de la versió",
     "description": "(field name) Python language version that this implementation conforms to, as a tuple of ints."
   },
   "sys.version_info.summary": {
-    "message": "Versió del llenguatge Python a la qual s'ajusta aquesta implementació, com una tupla d'ints (enters).",
+    "message": "Versió del llenguatge Python a la qual s'ajusta aquesta implementació, com una tupla d'enters.",
     "description": "Python language version that this implementation conforms to, as a tuple of ints."
   },
   "time": {
@@ -5184,7 +5184,7 @@
     "description": "Delay for given number of microseconds."
   },
   "time.sleep_us.param-name.us": {
-    "message": "microsegons (us)",
+    "message": "us",
     "description": "(parameter name) The number of microseconds delay (>= 0)."
   },
   "time.sleep_us.param-doc.us": {
@@ -5224,7 +5224,7 @@
     "description": "Parameter docs"
   },
   "time.ticks_add.param-name.ticks": {
-    "message": "tics (ticks)",
+    "message": "ticks",
     "description": "(parameter name) A ticks value"
   },
   "time.ticks_add.param-doc.ticks": {
@@ -5232,7 +5232,7 @@
     "description": "Parameter docs"
   },
   "time.ticks_diff": {
-    "message": "ticks diff (diferència de tics)",
+    "message": "ticks diff",
     "description": "(function name) Measure ticks difference between values returned from\n``time.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
   },
   "time.ticks_diff.summary": {
@@ -5240,7 +5240,7 @@
     "description": "Measure ticks difference between values returned from\n``time.ticks_ms()`` or ``ticks_us()``, as a signed value\nwhich may wrap around."
   },
   "time.ticks_diff.param-name.ticks1": {
-    "message": "ticks1 (tics 1)",
+    "message": "ticks1",
     "description": "(parameter name) The value to subtract from"
   },
   "time.ticks_diff.param-doc.ticks1": {
@@ -5248,7 +5248,7 @@
     "description": "Parameter docs"
   },
   "time.ticks_diff.param-name.ticks2": {
-    "message": "ticks2 (tics 2)",
+    "message": "ticks2",
     "description": "(parameter name) The value to subtract"
   },
   "time.ticks_diff.param-doc.ticks2": {

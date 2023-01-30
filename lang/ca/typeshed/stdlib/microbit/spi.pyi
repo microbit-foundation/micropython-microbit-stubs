@@ -1,4 +1,4 @@
-"""Comunica amb dispositius mitjançant el bus d'interfície perifèrica sèrie (SPI). (spi (bus d'interfície perifèrica sèrie).)"""
+"""Comunica amb dispositius mitjançant el bus d'interfície perifèrica sèrie (SPI)."""
 from _typeshed import ReadableBuffer, WriteableBuffer
 from ..microbit import pin13, pin14, pin15, MicroBitDigitalPin
 
@@ -22,7 +22,7 @@ def read(nbytes: int) -> bytes:
 
 Example: ``spi.read(64)``
 
-:param nbytes: (nombre de bytes (nbytes)) Nombre màxim de bytes per llegir.
+:param nbytes: Nombre màxim de bytes per llegir.
 :return: The bytes read."""
     ...
 
@@ -31,16 +31,16 @@ def write(buffer: ReadableBuffer) -> None:
 
 Example: ``spi.write(bytes([1, 2, 3]))``
 
-:param buffer: (memòria intermèdia (buffer)) Una memòria intermèdia (buffer) per a llegir dades."""
+:param buffer: (memòria intermèdia) Una memòria intermèdia per a llegir dades."""
     ...
 
 def write_readinto(out: WriteableBuffer, in_: ReadableBuffer) -> None:
-    """Escriu la memòria intermèdia ``out`` al bus i llegeix qualsevol resposta a la memòria intermèdia ``in_``. (escriu i llegeix memòria intermèdia (write readinto))
+    """Escriu la memòria intermèdia ``out`` al bus i llegeix qualsevol resposta a la memòria intermèdia ``in_``.
 
 Example: ``spi.write_readinto(out_buffer, in_buffer)``
 
 The length of the buffers should be the same. The buffers can be the same object.
 
-:param out: (out (fora)) La memòria intermèdia (buffer) per a escriure qualsevol resposta.
-:param in_: (in (en)) La memòria intermèdia (buffer) per a llegir dades."""
+:param out: La memòria intermèdia per a escriure qualsevol resposta.
+:param in_: La memòria intermèdia per a llegir dades."""
     ...

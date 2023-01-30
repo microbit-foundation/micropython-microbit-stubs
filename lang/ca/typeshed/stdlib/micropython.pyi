@@ -4,7 +4,7 @@ _T = TypeVar('_T')
 
 def const(expr: _T) -> _T:
     """S'utilitza per declarar que l'expressió és una constant perquè el compilador pugui
-optimitzar-la. (constant (const))
+optimitzar-la.
 
 The use of this function should be as follows::
 
@@ -17,12 +17,12 @@ outside the module they are declared in. On the other hand, if a constant
 begins with an underscore then it is hidden, it is not available as a
 global variable, and does not take up any memory during execution.
 
-:param expr: (expressió constant (expr)) Una expressió constant"""
+:param expr: Una expressió constant"""
     ...
 
 @overload
 def opt_level() -> int:
-    """Obté el nivell d'optimització actual per a la compilació d'scripts. (nivell d'optimització (opt level))
+    """Obté el nivell d'optimització actual per a la compilació d'scripts.
 
 Example: ``micropython.opt_level()``
 
@@ -44,7 +44,7 @@ The optimisation level controls the following compilation features:
 
 @overload
 def opt_level(level: int) -> None:
-    """Estableix el nivell d'optimització per a la compilació posterior dels scripts. (nivell d'optimització (opt level))
+    """Estableix el nivell d'optimització per a la compilació posterior dels scripts.
 
 Example: ``micropython.opt_level(1)``
 
@@ -63,7 +63,7 @@ The optimisation level controls the following compilation features:
 
 The default optimisation level is usually level 0.
 
-:param level: (nivell (level)) Un nivell d'optimització enter."""
+:param level: Un nivell d'optimització enter."""
     ...
 
 def mem_info(verbose: Any=None) -> None:
@@ -99,7 +99,7 @@ should be used to compute differences in stack usage at different points.
     ...
 
 def heap_lock() -> None:
-    """Bloqueja el munt (heap). (heap lock (bloqueja el munt))
+    """Bloqueja el munt.
 
 Example: ``micropython.heap_lock()``
 
@@ -108,7 +108,7 @@ raised if any heap allocation is attempted."""
     ...
 
 def heap_unlock() -> None:
-    """Desbloqueja el munt (heap).
+    """Desbloqueja el munt.
 
 Example: ``micropython.heap_unlock()``
 
@@ -121,7 +121,7 @@ def kbd_intr(chr: int) -> None:
 
 Example: ``micropython.kbd_intr(-1)``
 
-:param chr: (caràcter (chr)) Codi de caràcter per augmentar la interrupció o -1 per desactivar la captura de Ctrl-C.
+:param chr: Codi de caràcter per augmentar la interrupció o -1 per desactivar la captura de Ctrl-C.
 
 By default this is set to 3 during script execution, corresponding to Ctrl-C.
 Passing -1 to this function will disable capture of Ctrl-C, and passing 3

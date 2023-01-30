@@ -23,7 +23,7 @@ Example: ``display.set_pixel(0, 0, 9)``
     ...
 
 def clear() -> None:
-    """Estableix la brillantor de tots els leds a 0 (apagat). (clear (esborra))
+    """Estableix la brillantor de tots els leds a 0 (apagat).
 
 Example: ``display.clear()``"""
     ...
@@ -38,22 +38,22 @@ If ``image`` is a string or number, each letter or digit is displayed in turn.
 
 :param image: (imatge) Una cadena, un nombre, una imatge o una llista d'imatges per mostrar.
 :param delay: (retard) Cada lletra, dígit o imatge es mostra amb un ``delay`` mil·lisegons entre ells.
-:param wait: (espera) Si ``wait`` (espera) és ``True`` (Cert), aquesta funció es bloquejarà fins que s'acabi l'animació, en cas contrari, l'animació passarà en segon pla.
-:param loop: (bucle) Si el ``loop`` (bucle) és ``True`` (Cert), l'animació es repetirà per sempre.
-:param clear: (clear (esborra)) Si ``clear`` és ``True``, la pantalla s'esborrarà un cop finalitzada la seqüència.
+:param wait: (espera) Si ``wait`` és ``True``, aquesta funció es bloquejarà fins que s'acabi l'animació, en cas contrari, l'animació passarà en segon pla.
+:param loop: (bucle) Si el ``loop`` és ``True``, l'animació es repetirà per sempre.
+:param clear: Si ``clear`` és ``True``, la pantalla s'esborrarà un cop finalitzada la seqüència.
 
 The ``wait``, ``loop`` and ``clear`` arguments must be specified using their keyword."""
     ...
 
 def scroll(text: Union[str, float, int], delay: int=150, wait: bool=True, loop: bool=False, monospace: bool=False) -> None:
-    """Desplaça un número o text per la pantalla LED. (scroll (desplaça))
+    """Desplaça un número o text per la pantalla LED.
 
 Example: ``display.scroll('micro:bit')``
 
 :param text: La cadena per a desplaçar. Si ``text`` és un nombre enter o flotant, primer es converteix en una cadena mitjançant ``str()``.
 :param delay: (retard) El paràmetre ``delay`` controla la rapidesa amb què es desplaça el text.
-:param wait: (espera) Si ``wait`` (espera) és ``True`` (Cert), aquesta funció es bloquejarà fins que s'acabi l'animació, en cas contrari, l'animació passarà en segon pla.
-:param loop: (bucle) Si el ``loop`` (bucle) és ``True`` (Cert), l'animació es repetirà per sempre.
+:param wait: (espera) Si ``wait`` és ``True``, aquesta funció es bloquejarà fins que s'acabi l'animació, en cas contrari, l'animació passarà en segon pla.
+:param loop: (bucle) Si el ``loop`` és ``True``, l'animació es repetirà per sempre.
 :param monospace: Si ``monospace`` és ``True``, tots els caràcters ocuparan 5 columnes de píxels d'amplada, en cas contrari, hi haurà exactament 1 columna de píxels en blanc entre cada caràcter mentre es desplacen.
 
 The ``wait``, ``loop`` and ``monospace`` arguments must be specified
@@ -61,19 +61,19 @@ using their keyword."""
     ...
 
 def on() -> None:
-    """Encén la pantalla LED. (encén (on))
+    """Encén la pantalla LED.
 
 Example: ``display.on()``"""
     ...
 
 def off() -> None:
-    """Apaga la pantalla LED (desactivar la pantalla et permet reutilitzar els pins GPIO per a altres finalitats). (apagar (off))
+    """Apaga la pantalla LED (desactivar la pantalla et permet reutilitzar els pins GPIO per a altres finalitats).
 
 Example: ``display.off()``"""
     ...
 
 def is_on() -> bool:
-    """Comprova si la pantalla LED està habilitada. (està activat (is on))
+    """Comprova si la pantalla LED està habilitada.
 
 Example: ``display.is_on()``
 

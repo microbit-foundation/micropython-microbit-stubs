@@ -55,7 +55,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """Comprova si el gest nomenat està actiu actualment. (is gesture (és un gest))
+    """Comprova si el gest nomenat està actiu actualment.
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -69,7 +69,7 @@ represented as strings.
     ...
 
 def was_gesture(name: str) -> bool:
-    """Comprova si el gest nomenat ha estat actiu des de l'última crida. (was gesture (ha estat un gest))
+    """Comprova si el gest nomenat ha estat actiu des de l'última crida.
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -96,7 +96,7 @@ gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
     ...
 
 def set_range(value: int) -> None:
-    """Estableix l'interval de la sensibilitat de l'acceleròmetre, en g (gravetat estàndard), al valor més proper acceptat pel maquinari (hardware), arrodonit a ``2``, ``4``, o ``8`` (set range (estableix l'interval))
+    """Estableix l'interval de la sensibilitat de l'acceleròmetre, en g (gravetat estàndard), al valor més proper acceptat pel maquinari, arrodonit a ``2``, ``4``, o ``8``
 
 Example: ``accelerometer.set_range(8)``
 

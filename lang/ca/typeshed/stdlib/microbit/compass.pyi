@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """Obté l'orientació de la brúixola. (orientació (heading))
+    """Obté l'orientació de la brúixola.
 
 Example: ``compass.heading()``
 

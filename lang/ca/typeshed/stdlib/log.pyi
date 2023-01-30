@@ -75,7 +75,7 @@ To add the log headers again the ``set_labels`` function should to be called aft
 There are two erase modes; “full” completely removes the data from the physical storage,
 and “fast” invalidates the data without removing it.
 
-:param full: (ple) ``True`` (Cert) selecciona un esborrat "total"  ``False`` (Fals) selecciona un mètode d'esborrat "ràpid"."""
+:param full: (ple) ``True`` selecciona un esborrat "total"  ``False`` selecciona un mètode d'esborrat "ràpid"."""
     ...
 
 def set_mirroring(serial: bool):
@@ -85,5 +85,5 @@ Example: ``log.set_mirroring(True)``
 
 Serial mirroring is disabled by default. When enabled, it will print to serial each row logged into the log file.
 
-:param serial: ``True`` (Cert) permet la duplicació de les dades a la sortida sèrie."""
+:param serial: ``True`` permet la duplicació de les dades a la sortida sèrie."""
     ...

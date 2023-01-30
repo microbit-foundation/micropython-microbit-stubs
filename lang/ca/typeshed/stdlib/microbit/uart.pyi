@@ -3,9 +3,9 @@ from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
 ODD: int
-"""Paritat senar (senar (odd))"""
+"""Paritat senar (senar)"""
 EVEN: int
-"""Paritat parella (parell (even))"""
+"""Paritat parella (parell)"""
 
 def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
     """Inicialitzar la comunicació en sèrie.
@@ -17,7 +17,7 @@ Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 :param parity: (paritat) Com es verifica la paritat, ``None``, ``uart.ODD`` o ``uart.EVEN``.
 :param stop: (atura) El nombre de bits de parada ha de ser 1 per micro:bit.
 :param tx: Pin transmissor.
-:param rx: Receiving pin. (Pin receptor).
+:param rx: Receiving pin.
 
 Initializing the UART on external pins will cause the Python console on
 USB to become unaccessible, as it uses the same hardware. To bring the
@@ -29,7 +29,7 @@ For more details see `the online documentation <https://microbit-micropython.rea
     ...
 
 def any() -> bool:
-    """Verifica si hi ha alguna data esperant. (qualsevol (any))
+    """Verifica si hi ha alguna data esperant.
 
 Example: ``uart.any()``
 
@@ -50,13 +50,13 @@ def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
 
 Example: ``uart.readinto(input_buffer)``
 
-:param buf: (memòria intermèdia (buffer)) La memòria intermèdia a on escriure.
-:param nbytes: (nbytes (nombre de bytes)) Si s'especifica ``nbytes``, llegeix com a màxim aquests bytes, en cas contrari llegeix ``len(buf)`` bytes.
+:param buf: La memòria intermèdia a on escriure.
+:param nbytes: Si s'especifica ``nbytes``, llegeix com a màxim aquests bytes, en cas contrari llegeix ``len(buf)`` bytes.
 :return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
     ...
 
 def readline() -> Optional[bytes]:
-    """Llegir una línia que acaba en un caràcter de nova línia. (readline (llegeix una línia))
+    """Llegir una línia que acaba en un caràcter de nova línia.
 
 Example: ``uart.readline()``
 
@@ -64,11 +64,11 @@ Example: ``uart.readline()``
     ...
 
 def write(buf: Union[bytes, str]) -> Optional[int]:
-    """Escriu una memòria intermèdia (buffer) al bus (escriu)
+    """Escriu una memòria intermèdia al bus (escriu)
 
 Example: ``uart.write('hello world')``
 
-:param buf: (memòria intermèdia (buffer)) Un objecte bytes o una cadena.
+:param buf: Un objecte bytes o una cadena.
 :return: The number of bytes written, or ``None`` on timeout.
 
 Examples::

@@ -8,7 +8,7 @@ def init(freq: int=100000, sda: MicroBitDigitalPin=pin20, scl: MicroBitDigitalPi
 
 Example: ``i2c.init()``
 
-:param freq: (freq (frequency)) freqüència del rellotge
+:param freq: freqüència del rellotge
 :param sda: Pin ``sda`` (per defecte 20)
 :param scl: pin ``scl``  (per defecte 19)
 
@@ -20,7 +20,7 @@ for the motion sensors and the edge connector."""
     ...
 
 def scan() -> List[int]:
-    """Escaneja el bus dels dispositius (scan (escaneja))
+    """Escaneja el bus dels dispositius
 
 Example: ``i2c.scan()``
 
@@ -32,7 +32,7 @@ def read(addr: int, n: int, repeat: bool=False) -> bytes:
 
 Example: ``i2c.read(0x50, 64)``
 
-:param addr: (adreça (addr)) L'adreça de 7-bit del dispositiu
+:param addr: L'adreça de 7-bit del dispositiu
 :param n: El nombre de bytes a llegir
 :param repeat: (repeteix) Si ``True``, no s'enviarà cap bit d'aturada
 :return: The bytes read"""
@@ -43,7 +43,7 @@ def write(addr: int, buf: ReadableBuffer, repeat: bool=False) -> None:
 
 Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 
-:param addr: (adreça (addr)) L'adreça de 7-bit del dispositiu
-:param buf: (memòria intermèdia (buffer)) Una memòria intermèdia que conté els bytes per escriure
+:param addr: L'adreça de 7-bit del dispositiu
+:param buf: Una memòria intermèdia que conté els bytes per escriure
 :param repeat: (repeteix) Si ``True``, no s'enviarà cap bit d'aturada"""
     ...

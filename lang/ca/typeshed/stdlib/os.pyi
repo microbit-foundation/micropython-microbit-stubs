@@ -1,9 +1,9 @@
-"""Accedeix al sistema de fitxers. (mòdul os (accés al sistema de fitxers))"""
+"""Accedeix al sistema de fitxers."""
 from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
-    """Llista dels fitxers. (listdir (Llista fitxers))
+    """Llista dels fitxers.
 
 Example: ``os.listdir()``
 
@@ -32,20 +32,20 @@ Example: ``os.size('data.txt')``
 If the file does not exist an ``OSError`` exception will occur."""
 
 class uname_result(Tuple[str, str, str, str, str]):
-    """Resultat de ``os.uname()`` (uname result (resultat de uname, nom del OS))"""
+    """Resultat de ``os.uname()``"""
     sysname: str
-    """Nom del sistema operatiu. (nom del sistema operatiu (sysname))"""
+    """Nom del sistema operatiu."""
     nodename: str
-    """Nom de la màquina a la xarxa (definida per la implementació). (nodename (nom del node))"""
+    """Nom de la màquina a la xarxa (definida per la implementació)."""
     release: str
-    """Versió del sistema operatiu. (versió (release))"""
+    """Versió del sistema operatiu. (versió)"""
     version: str
     """Versió del sistema operatiu. (versió)"""
     machine: str
-    """Identificador del maquinari (hardware). (màquina)"""
+    """Identificador del maquinari. (màquina)"""
 
 def uname() -> uname_result:
-    """Retorna informació que identifica el sistema operatiu actual. (uname (retorna el nom de l'OS))
+    """Retorna informació que identifica el sistema operatiu actual.
 
 Example: ``os.uname()``
 

@@ -3,7 +3,7 @@ from typing import Any
 from .microbit import MicroBitDigitalPin
 
 def unique_id() -> bytes:
-    """Obté una cadena de bytes amb un identificador únic d'una placa. (id únic (unique id))
+    """Obté una cadena de bytes amb un identificador únic d'una placa.
 
 Example: ``machine.unique_id()``
 
@@ -11,13 +11,13 @@ Example: ``machine.unique_id()``
     ...
 
 def reset() -> None:
-    """Reinicia el dispositiu d'una manera semblant a la de prémer el botó extern REINICI (RESET). (reiniciar)
+    """Reinicia el dispositiu d'una manera semblant a la de prémer el botó extern de REINICI. (reiniciar)
 
 Example: ``machine.reset()``"""
     ...
 
 def freq() -> int:
-    """Obté la freqüència en Hertz de la CPU (freq (frequency))
+    """Obté la freqüència en Hertz de la CPU
 
 Example: ``machine.freq()``
 

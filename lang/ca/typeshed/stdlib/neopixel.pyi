@@ -22,17 +22,17 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: El pin que controla la tira de neopíxels.
 :param n: El nombre de neopíxels de la tira.
-:param bpp: (bytes per píxel (bpp)) Bytes per píxel. Per al suport de micro:bit V2 RGBW neopixel, passa 4 en lloc de 3 per defecte per a RGB i GRB."""
+:param bpp: Bytes per píxel. Per al suport de micro:bit V2 RGBW neopixel, passa 4 en lloc de 3 per defecte per a RGB i GRB."""
         ...
 
     def clear(self) -> None:
-        """Esborra tots els píxels. (clear (esborra))
+        """Esborra tots els píxels.
 
 Example: ``np.clear()``"""
         ...
 
     def show(self) -> None:
-        """mostra els píxels. (mostra (show))
+        """mostra els píxels.
 
 Example: ``np.show()``
 
@@ -64,7 +64,7 @@ Use in conjunction with ``show()`` to update the neopixels."""
 
 Example: ``np[0] = (255, 0, 0)``
 
-:param key: (clau (key)) El nombre de píxels.
+:param key: El nombre de píxels.
 :param value: (valor) El color."""
 
     def __getitem__(self, key: int) -> Tuple[int, ...]:
@@ -72,10 +72,10 @@ Example: ``np[0] = (255, 0, 0)``
 
 Example: ``r, g, b = np[0]``
 
-:param key: (clau (key)) El nombre de píxels.
+:param key: El nombre de píxels.
 :return: The colour tuple."""
 
     def __len__(self) -> int:
-        """Obté la longitud d'aquesta cinta de píxels. (longitud (len))
+        """Obté la longitud d'aquesta cinta de píxels.
 
 Example: ``len(np)``"""

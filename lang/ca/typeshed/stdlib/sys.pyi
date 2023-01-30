@@ -1,30 +1,30 @@
-"""Funcions específiques del sistema (sistema (sys))"""
+"""Funcions específiques del sistema"""
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
-    """Finalitza el programa actual amb un codi de sortida determinat. (sortida (exit))
+    """Finalitza el programa actual amb un codi de sortida determinat.
 
 Example: ``sys.exit(1)``
 
 This function raises a ``SystemExit`` exception. If an argument is given, its
 value given as an argument to ``SystemExit``.
 
-:param retval: (retval (codi o missatge de sortida)) El codi o missatge de sortida."""
+:param retval: El codi o missatge de sortida."""
     ...
 
 def print_exception(exc: Exception) -> None:
-    """Imprimeix una excepció amb un rastreig. (print exception (impressió d'excepció))
+    """Imprimeix una excepció amb un rastreig.
 
 Example: ``sys.print_exception(e)``
 
-:param exc: (exc (excepció a imprimir)) L'excepció a imprimir
+:param exc: L'excepció a imprimir
 
 This is simplified version of a function which appears in the
 ``traceback`` module in CPython."""
 argv: List[str]
-"""Una llista mutable d'arguments amb què s'ha iniciat el programa actual. (arguments (argv))"""
+"""Una llista mutable d'arguments amb què s'ha iniciat el programa actual."""
 byteorder: str
-"""L'ordre dels bytes del sistema (``"little"`` o ``"big"``). (byteorder (l'ordre del byte))"""
+"""L'ordre dels bytes del sistema (``"little"`` o ``"big"``)."""
 
 class _implementation:
     name: str
@@ -49,7 +49,7 @@ maxsize: int
 Valor màxim que pot tenir un tipus d'enter natiu a la plataforma actual,
 o valor màxim representable pel tipus d'enter MicroPython, si és més petit
 que el valor màxim de la plataforma (és el cas dels ports MicroPython sense
-suport d'enter llarg - long int support). (mida màxima (maxsize))
+suport d'enter llarg - long int support).
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some
@@ -74,7 +74,7 @@ modules: Dict[str, Any]
 
 On some ports, it may not include builtin modules."""
 path: List[str]
-"""Una llista mutable de directoris per cercar mòduls importats. (camí (path))"""
+"""Una llista mutable de directoris per cercar mòduls importats."""
 platform: str
 """La plataforma en què s'executa MicroPython. (plataforma) 
 
@@ -89,7 +89,7 @@ Python implementation), use ``sys.implementation`` instead.
 version: str
 """Versió del llenguatge Python a la qual s'ajusta aquesta implementació, com a cadena. (versió)"""
 version_info: Tuple[int, int, int]
-"""Versió del llenguatge Python a la qual s'ajusta aquesta implementació, com una tupla d'ints (enters). (informació de la versió (version info))
+"""Versió del llenguatge Python a la qual s'ajusta aquesta implementació, com una tupla d'enters. (informació de la versió)
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.

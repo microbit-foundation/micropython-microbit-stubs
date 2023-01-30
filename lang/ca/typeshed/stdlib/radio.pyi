@@ -2,12 +2,12 @@
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 RATE_1MBIT: int
-"""La constant utilitzada per indicar un rendiment d'1 Mbit per segon. (velocitat de transmissió 1mbit (rate 1mbit))"""
+"""La constant utilitzada per indicar un rendiment d'1 Mbit per segon. (velocitat de transmissió 1mbit)"""
 RATE_2MBIT: int
-"""La constant utilitzada per indicar un rendiment de 2 Mbit per segon. (velocitat de transmissió 2mbit (rate 2mbit))"""
+"""La constant utilitzada per indicar un rendiment de 2 Mbit per segon. (velocitat de transmissió 2mbit)"""
 
 def on() -> None:
-    """Encén la ràdio. (encén (on))
+    """Encén la ràdio.
 
 Example: ``radio.on()``
 
@@ -16,13 +16,13 @@ up memory that you may otherwise need."""
     ...
 
 def off() -> None:
-    """Apaga la ràdio, estalviant energia i memòria. (apaga (off))
+    """Apaga la ràdio, estalviant energia i memòria.
 
 Example: ``radio.off()``"""
     ...
 
 def config(length: int=32, queue: int=3, channel: int=7, power: int=6, address: int=1969383796, group: int=0, data_rate: int=RATE_1MBIT) -> None:
-    """Configura la ràdio. (configuració (config))
+    """Configura la ràdio.
 
 Example: ``radio.config(group=42)``
 
@@ -34,7 +34,7 @@ Pot tenir una longitud de fins a 251 bytes (254 - 3 bytes per al preàmbul S0, L
 Si no queden espais a la cua per als missatges entrants, s'elimina el missatge entrant.
 :param channel: (canal) (per defecte=7) un valor enter de 0 a 83 (inclosos) que defineix un "canal" arbitrari al qual està sintonitzada la ràdio.
 Els missatges s'enviaran a través d'aquest canal i només els missatges rebuts per aquest canal es posaran a la cua de missatges entrants. Cada pas té una amplada d'1MHz, basat en 2400MHz.
-:param power: (alimentació (power)) (per defecte=6) és un valor enter de 0 a 7 (inclosos) per indicar la intensitat del senyal utilitzat quan s'emet un missatge.
+:param power: (per defecte=6) és un valor enter de 0 a 7 (inclosos) per indicar la intensitat del senyal utilitzat quan s'emet un missatge.
 Com més alt sigui el valor, més fort és el senyal, però més potència consumeix el dispositiu. La numeració es tradueix en posicions a la llista següent de valors en dBm (decibels mil·liwatts): -30, -20, -16, -12, -8, -4, 0, 4.
 :param address: (adreça) (per defecte=0x75626974) un nom arbitrari, expressat com una adreça de 32 bits, que s'utilitza per filtrar els paquets entrants a nivell de maquinari, conservant només els que coincideixen amb l'adreça que has establert.
 La configuració predeterminada utilitzada per altres plataformes relacionades amb micro:bit és la configuració predeterminada que s'utilitza aquí.
@@ -75,7 +75,7 @@ def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
 
 Example: ``radio.receive_bytes_info(buffer)``
 
-:param buffer: (memòria intermèdia (buffer)) La memòria intermèdia (buffer) objectiu. El missatge es trunca si és més gran que la memòria intermèdia.
+:param buffer: (memòria intermèdia) La memòria intermèdia objectiu. El missatge es trunca si és més gran que la memòria intermèdia.
 :return: ``None`` if there are no pending messages, otherwise it returns the length of the message (which might be more than the length of the buffer)."""
     ...
 
@@ -91,7 +91,7 @@ prepended to the front (to make it compatible with other platforms that target t
     ...
 
 def receive() -> Optional[str]:
-    """Funciona exactament de la mateixa manera que ``receive_bytes`` però retorna el que s'ha enviat. (receive (rebre))
+    """Funciona exactament de la mateixa manera que ``receive_bytes`` però retorna el que s'ha enviat.
 
 Example: ``radio.receive()``
 

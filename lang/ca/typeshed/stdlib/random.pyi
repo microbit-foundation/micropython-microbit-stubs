@@ -14,14 +14,14 @@ def seed(n: int) -> None:
 
 Example: ``random.seed(0)``
 
-:param n: La llavor entera (integer seed)
+:param n: The integer seed
 
 This will give you reproducibly deterministic randomness from a given starting
 state (``n``)."""
     ...
 
 def randint(a: int, b: int) -> int:
-    """Tria un nombre enter aleatori entre ``a`` i ``b`` inclosos. (randint (nombre enter aleatori))
+    """Tria un nombre enter aleatori entre ``a`` i ``b`` inclosos.
 
 Example: ``random.randint(0, 9)``
 
@@ -34,7 +34,7 @@ Alias for ``randrange(a, b + 1)``."""
 @overload
 def randrange(stop: int) -> int:
     """Tria un nombre enter seleccionat aleatòriament entre zero i fins a (però no
-inclòs) ``stop``. (interval aleatori (randrange))
+inclòs) ``stop``.
 
 Example: ``random.randrange(10)``
 
@@ -43,28 +43,28 @@ Example: ``random.randrange(10)``
 
 @overload
 def randrange(start: int, stop: int, step: int=1) -> int:
-    """Tria un element seleccionat aleatòriament de ``range(start, stop, step)``. (interval aleatori (randrange))
+    """Tria un element seleccionat aleatòriament de ``range(start, stop, step)``.
 
 Example: ``random.randrange(0, 10)``
 
-:param start: (inici (start)) L'inici de l'interval (inclòs)
+:param start: L'inici de l'interval (inclòs)
 :param stop: (atura) El final de l'interval (exclusiu)
-:param step: (pas (step)) El pas."""
+:param step: El pas."""
     ...
 _T = TypeVar('_T')
 
 def choice(seq: Sequence[_T]) -> _T:
-    """Tria un element aleatori de la seqüència no buida ``seq``. (tria (choice))
+    """Tria un element aleatori de la seqüència no buida ``seq``.
 
 Example: ``random.choice([Image.HAPPY, Image.SAD])``
 
-:param seq: (seqüència (seq)) Una seqüència.
+:param seq: Una seqüència.
 
 If ``seq`` is  empty, raises ``IndexError``."""
     ...
 
 def random() -> float:
-    """Genera un nombre aleatori de coma flotant en l'interval [0,0 , 1,0). (aleatori)
+    """Genera un nombre aleatori de coma flotant en l'interval [0.0, 1.0). (aleatori)
 
 Example: ``random.random()``
 
