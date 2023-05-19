@@ -27,7 +27,7 @@ present, it will generate a new header row with the additional columns.
 By default the first column contains a timestamp for each row. The time
 unit can be selected via the timestamp argument.
 
-:param *labels: (*etiquettes) Un nombre quelconque d'arguments positionnels, chacun correspondant à une entrée dans l'en-tête du journal.
+:param *labels: Un nombre quelconque d'arguments positionnels, chacun correspondant à une entrée dans l'en-tête du journal.
 :param timestamp: (horodatage) Sélectionnez l'unité d'horodatage qui sera automatiquement ajoutée comme première colonne de chaque ligne. Les valeurs d'horodatage peuvent être l'une des suivantes ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` ou ``None`` pour désactiver l'horodatage. La valeur par défaut est ``log.SECONDS``."""
     ...
 
@@ -46,7 +46,7 @@ to the log with the extra labels.
 Labels previously specified and not present in a call to this function will
 be skipped with an empty value in the log row.
 
-:param data_dictionary: (dictionnaire de données) Les données à enregistrer sous forme de dictionnaire avec une clé pour chaque en-tête."""
+:param data_dictionary: Les données à enregistrer sous forme de dictionnaire avec une clé pour chaque en-tête."""
     ...
 
 @overload

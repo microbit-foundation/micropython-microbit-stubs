@@ -128,7 +128,7 @@
     "description": "Set up the log file header."
   },
   "log.set_labels.param-name.*labels": {
-    "message": "*etiquettes",
+    "message": "*labels",
     "description": "(parameter name) Any number of positional arguments, each corresponding to an entry in the log header."
   },
   "log.set_labels.param-doc.*labels": {
@@ -152,7 +152,7 @@
     "description": "Add a data row to the log by passing a dictionary of headers and values."
   },
   "log.add-1.param-name.data_dictionary": {
-    "message": "dictionnaire de données",
+    "message": "data dictionary",
     "description": "(parameter name) The data to log as a dictionary with a key for each header."
   },
   "log.add-1.param-doc.data_dictionary": {
@@ -920,15 +920,15 @@
     "description": "Restart the board."
   },
   "microbit.scale-1": {
-    "message": "Mise à l'échelle",
+    "message": "scale",
     "description": "(function name) Converts a value from a range to an integer range."
   },
   "microbit.scale-1.summary": {
-    "message": "Convertit une valeur dans intervalle donné vers son équivalent dans un autre intervalle d'entiers.",
+    "message": "Convertit une valeur dans l'intervalle donné vers son équivalent dans un autre intervalle d'entiers.",
     "description": "Converts a value from a range to an integer range."
   },
   "microbit.scale-1.param-name.from_": {
-    "message": "de",
+    "message": "from",
     "description": "(parameter name) A tuple to define the range to convert from."
   },
   "microbit.scale-1.param-doc.from_": {
@@ -936,7 +936,7 @@
     "description": "Parameter docs"
   },
   "microbit.scale-1.param-name.to": {
-    "message": "vers",
+    "message": "to",
     "description": "(parameter name) A tuple to define the range to convert to."
   },
   "microbit.scale-1.param-doc.to": {
@@ -952,15 +952,15 @@
     "description": "Parameter docs"
   },
   "microbit.scale-2": {
-    "message": "Mise à l'échelle",
+    "message": "scale",
     "description": "(function name) Converts a value from a range to a floating point range."
   },
   "microbit.scale-2.summary": {
-    "message": "Convertit une valeur dans intervalle donné vers son équivalent dans un autre intervalle de nombres à virgule flottante.",
+    "message": "Convertit une valeur dans l'intervalle donné vers son équivalent dans un autre intervalle de nombres à virgule flottante.",
     "description": "Converts a value from a range to a floating point range."
   },
   "microbit.scale-2.param-name.from_": {
-    "message": "de",
+    "message": "from",
     "description": "(parameter name) A tuple to define the range to convert from."
   },
   "microbit.scale-2.param-doc.from_": {
@@ -968,7 +968,7 @@
     "description": "Parameter docs"
   },
   "microbit.scale-2.param-name.to": {
-    "message": "vers",
+    "message": "to",
     "description": "(parameter name) A tuple to define the range to convert to."
   },
   "microbit.scale-2.param-doc.to": {
@@ -1920,7 +1920,7 @@
     "description": "Snake image."
   },
   "microbit.Image.SCISSORS": {
-    "message": "ciseaux",
+    "message": "scissors",
     "description": "(field name) Scissors image."
   },
   "microbit.Image.SCISSORS.summary": {
@@ -2488,7 +2488,7 @@
     "description": "Get the acceleration measurements in all axes at once as a tuple."
   },
   "microbit.accelerometer.get_strength": {
-    "message": "obtenir la force",
+    "message": "get strength",
     "description": "(function name) Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
   },
   "microbit.accelerometer.get_strength.summary": {
@@ -2548,7 +2548,7 @@
     "description": "(function name) Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.summary": {
-    "message": "Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either {{2}}, {{4}}, or {{8}} g.",
+    "message": "Définir la plage de sensibilité de l'accéléromètre, en g (gravité standard), à la valeur la plus proche supportée par le matériel, l'arrondi se fait soit à {{2}}, {{4}}, ou {{8}} g.",
     "description": "Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.param-name.value": {
@@ -2556,7 +2556,7 @@
     "description": "(parameter name) New range for the accelerometer, an integer in ``g``."
   },
   "microbit.accelerometer.set_range.param-doc.value": {
-    "message": "New range for the accelerometer, an integer in {{g}}.",
+    "message": "Nouvelle plage pour l'accéléromètre, un entier en {{g}}.",
     "description": "Parameter docs"
   },
   "microbit.audio": {
@@ -2572,7 +2572,7 @@
     "description": "(function name) Play a built-in sound, sound effect or custom audio frames."
   },
   "microbit.audio.play.summary": {
-    "message": "Play a built-in sound, sound effect or custom audio frames.",
+    "message": "Jouer un son intégré, un effet sonore ou des frames audio personnalisées.",
     "description": "Play a built-in sound, sound effect or custom audio frames."
   },
   "microbit.audio.play.param-name.pin": {
@@ -2596,7 +2596,7 @@
     "description": "(parameter name) A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects."
   },
   "microbit.audio.play.param-doc.source": {
-    "message": "A built-in {{Sound}} such as {{Sound.GIGGLE}}, a {{SoundEffect}} or sample data as an iterable of {{AudioFrame}} objects.",
+    "message": "Un {{Sound}} intégré tel que {{Sound.GIGGLE}}, un {{SoundEffect}} ou un échantillon de données sous la forme d'un itérable d'objets {{AudioFrame}}.",
     "description": "Parameter docs"
   },
   "microbit.audio.play.param-name.wait": {
@@ -2628,7 +2628,7 @@
     "description": "(class name) A sound effect, composed by a set of parameters configured via the constructor or attributes."
   },
   "microbit.audio.SoundEffect.summary": {
-    "message": "A sound effect, composed by a set of parameters configured via the constructor or attributes.",
+    "message": "Un effet sonore, composé d'un ensemble de paramètres configurés via le constructeur ou les attributs.",
     "description": "A sound effect, composed by a set of parameters configured via the constructor or attributes."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SINE": {
@@ -2636,7 +2636,7 @@
     "description": "(field name) Sine wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SINE.summary": {
-    "message": "Sine wave option used for the {{waveform}} parameter.",
+    "message": "Option d'onde sinusoïdale utilisée pour le paramètre {{waveform}}.",
     "description": "Sine wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SAWTOOTH": {
@@ -2644,7 +2644,7 @@
     "description": "(field name) Sawtooth wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SAWTOOTH.summary": {
-    "message": "Sawtooth wave option used for the {{waveform}} parameter.",
+    "message": "Optionde forme d'onde en dent de scie utilisée pour le paramètre {{waveform}}.",
     "description": "Sawtooth wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_TRIANGLE": {
@@ -2652,7 +2652,7 @@
     "description": "(field name) Triangle wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_TRIANGLE.summary": {
-    "message": "Triangle wave option used for the {{waveform}} parameter.",
+    "message": "Option d'onde triangulaire utilisée pour le paramètre {{waveform}}.",
     "description": "Triangle wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SQUARE": {
@@ -2660,7 +2660,7 @@
     "description": "(field name) Square wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SQUARE.summary": {
-    "message": "Square wave option used for the {{waveform}} parameter.",
+    "message": "Option d'onde carrée utilisée pour le paramètre {{waveform}}.",
     "description": "Square wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_NOISE": {
@@ -2668,7 +2668,7 @@
     "description": "(field name) Noise option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_NOISE.summary": {
-    "message": "Noise option used for the {{waveform}} parameter.",
+    "message": "Option d'onde de bruit utilisée pour le paramètre {{waveform}}.",
     "description": "Noise option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.SHAPE_LINEAR": {
@@ -2676,7 +2676,7 @@
     "description": "(field name) Linear interpolation option used for the ``shape`` parameter."
   },
   "microbit.audio.SoundEffect.SHAPE_LINEAR.summary": {
-    "message": "Linear interpolation option used for the {{shape}} parameter.",
+    "message": "Option d'interpolation linéaire utilisée pour le paramètre {{shape}}.",
     "description": "Linear interpolation option used for the ``shape`` parameter."
   },
   "microbit.audio.SoundEffect.SHAPE_CURVE": {
@@ -2684,7 +2684,7 @@
     "description": "(field name) Curve interpolation option used for the ``shape`` parameter."
   },
   "microbit.audio.SoundEffect.SHAPE_CURVE.summary": {
-    "message": "Curve interpolation option used for the {{shape}} parameter.",
+    "message": "Option d'interpolation courbe utilisée pour le paramètre {{shape}}.",
     "description": "Curve interpolation option used for the ``shape`` parameter."
   },
   "microbit.audio.SoundEffect.SHAPE_LOG": {
@@ -2692,7 +2692,7 @@
     "description": "(field name) Logarithmic interpolation option used for the ``shape`` parameter."
   },
   "microbit.audio.SoundEffect.SHAPE_LOG.summary": {
-    "message": "Logarithmic interpolation option used for the {{shape}} parameter.",
+    "message": "Option d'interpolation logarithmique utilisée pour le paramètre {{shape}}.",
     "description": "Logarithmic interpolation option used for the ``shape`` parameter."
   },
   "microbit.audio.SoundEffect.FX_NONE": {
@@ -2700,7 +2700,7 @@
     "description": "(field name) No effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_NONE.summary": {
-    "message": "No effect option used for the {{fx}} parameter.",
+    "message": "Option sans effet utilisée pour le paramètre {{fx}}.",
     "description": "No effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_TREMOLO": {
@@ -2708,7 +2708,7 @@
     "description": "(field name) Tremelo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_TREMOLO.summary": {
-    "message": "Tremelo effect option used for the {{fx}} parameter.",
+    "message": "Option d'effet tremolo utilisée pour le paramètre {{fx}}.",
     "description": "Tremelo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_VIBRATO": {
@@ -2716,7 +2716,7 @@
     "description": "(field name) Vibrato effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_VIBRATO.summary": {
-    "message": "Vibrato effect option used for the {{fx}} parameter.",
+    "message": "Option d'effet vibrato utilisée pour le paramètre {{fx}}.",
     "description": "Vibrato effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_WARBLE": {
@@ -2724,7 +2724,7 @@
     "description": "(field name) Warble effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_WARBLE.summary": {
-    "message": "Warble effect option used for the {{fx}} parameter.",
+    "message": "Option d'effet de Warble utilisée pour le paramètre {{fx}}.",
     "description": "Warble effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.freq_start": {
@@ -2732,7 +2732,7 @@
     "description": "(field name) Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"
   },
   "microbit.audio.SoundEffect.freq_start.summary": {
-    "message": "Start frequency in Hertz (Hz), a number between {{0}} and {{9999}}",
+    "message": "Fréquence de départ en Hertz (Hz), un nombre compris entre {{0}} et {{9999}}",
     "description": "Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"
   },
   "microbit.audio.SoundEffect.freq_end": {
@@ -2740,7 +2740,7 @@
     "description": "(field name) End frequency in Hertz (Hz), a number between ``0`` and ``9999``"
   },
   "microbit.audio.SoundEffect.freq_end.summary": {
-    "message": "End frequency in Hertz (Hz), a number between {{0}} and {{9999}}",
+    "message": "Fréquence de fin en Hertz (Hz), un nombre compris entre {{0}} et {{9999}}",
     "description": "End frequency in Hertz (Hz), a number between ``0`` and ``9999``"
   },
   "microbit.audio.SoundEffect.duration": {
@@ -2748,7 +2748,7 @@
     "description": "(field name) Duration of the sound in milliseconds, a number between ``0`` and ``9999``"
   },
   "microbit.audio.SoundEffect.duration.summary": {
-    "message": "Duration of the sound in milliseconds, a number between {{0}} and {{9999}}",
+    "message": "Durée du son en millisecondes, un nombre compris entre {{0}} et {{9999}}",
     "description": "Duration of the sound in milliseconds, a number between ``0`` and ``9999``"
   },
   "microbit.audio.SoundEffect.vol_start": {
@@ -2756,7 +2756,7 @@
     "description": "(field name) Start volume value, a number between ``0`` and ``255``"
   },
   "microbit.audio.SoundEffect.vol_start.summary": {
-    "message": "Start volume value, a number between {{0}} and {{255}}",
+    "message": "Valeur du volume de départ, un nombre compris entre {{0}} et {{255}}",
     "description": "Start volume value, a number between ``0`` and ``255``"
   },
   "microbit.audio.SoundEffect.vol_end": {
@@ -2764,7 +2764,7 @@
     "description": "(field name) End volume value, a number between ``0`` and ``255``"
   },
   "microbit.audio.SoundEffect.vol_end.summary": {
-    "message": "End volume value, a number between {{0}} and {{255}}",
+    "message": "Valeur du volume à la fin, un nombre compris entre {{0}} et {{255}}",
     "description": "End volume value, a number between ``0`` and ``255``"
   },
   "microbit.audio.SoundEffect.waveform": {
@@ -2772,7 +2772,7 @@
     "description": "(field name) Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"
   },
   "microbit.audio.SoundEffect.waveform.summary": {
-    "message": "Type of waveform shape, one of these values: {{WAVEFORM_SINE}}, {{WAVEFORM_SAWTOOTH}}, {{WAVEFORM_TRIANGLE}}, {{WAVEFORM_SQUARE}}, {{WAVEFORM_NOISE}} (randomly generated noise)",
+    "message": "Type de forme d'onde, une de ces valeurs : {{WAVEFORM_SINE}}, {{WAVEFORM_SAWTOOTH}}, {{WAVEFORM_TRIANGLE}}, {{WAVEFORM_SQUARE}}, {{WAVEFORM_NOISE}} (bruit généré aléatoirement)",
     "description": "Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"
   },
   "microbit.audio.SoundEffect.fx": {
@@ -2780,7 +2780,7 @@
     "description": "(field name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
   },
   "microbit.audio.SoundEffect.fx.summary": {
-    "message": "Effect to add on the sound, one of the following values: {{FX_TREMOLO}}, {{FX_VIBRATO}}, {{FX_WARBLE}}, or {{FX_NONE}}",
+    "message": "Effet à ajouter au son, l'une des valeurs suivantes : {{FX_TREMOLO}}, {{FX_VIBRATO}}, {{FX_WARBLE}}, ou {{FX_NONE}}",
     "description": "Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
   },
   "microbit.audio.SoundEffect.shape": {
@@ -2788,7 +2788,7 @@
     "description": "(field name) The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"
   },
   "microbit.audio.SoundEffect.shape.summary": {
-    "message": "The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: {{SHAPE_LINEAR}}, {{SHAPE_CURVE}}, {{SHAPE_LOG}}",
+    "message": "Le type de la courbe d'interpolation entre les fréquences de début et de fin, les différentes formes d'onde ont des taux de variation de fréquence différents. L'une des valeurs suivantes : {{SHAPE_LINEAR}}, {{SHAPE_CURVE}}, {{SHAPE_LOG}}",
     "description": "The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"
   },
   "microbit.audio.SoundEffect.__init__": {
@@ -2796,7 +2796,7 @@
     "description": "(function name) Create a new sound effect."
   },
   "microbit.audio.SoundEffect.__init__.summary": {
-    "message": "Create a new sound effect.",
+    "message": "Créer un nouvel effet sonore.",
     "description": "Create a new sound effect."
   },
   "microbit.audio.SoundEffect.__init__.param-name.duration": {
@@ -2804,7 +2804,7 @@
     "description": "(parameter name) Duration of the sound in milliseconds, a number between ``0`` and ``9999``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.duration": {
-    "message": "Duration of the sound in milliseconds, a number between {{0}} and {{9999}}.",
+    "message": "Durée du son en millisecondes, un nombre compris entre {{0}} et {{9999}}.",
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.freq_end": {
@@ -2812,7 +2812,7 @@
     "description": "(parameter name) End frequency in Hertz (Hz), a number between ``0`` and ``9999``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.freq_end": {
-    "message": "End frequency in Hertz (Hz), a number between {{0}} and {{9999}}.",
+    "message": "Fréquence de fin en Hertz (Hz), un nombre compris entre {{0}} et {{9999}}.",
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.freq_start": {
@@ -2820,7 +2820,7 @@
     "description": "(parameter name) Start frequency in Hertz (Hz), a number between ``0`` and ``9999``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.freq_start": {
-    "message": "Start frequency in Hertz (Hz), a number between {{0}} and {{9999}}.",
+    "message": "Fréquence de départ en Hertz (Hz), un nombre compris entre {{0}} et {{9999}}.",
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.fx": {
@@ -2828,7 +2828,7 @@
     "description": "(parameter name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.fx": {
-    "message": "Effect to add on the sound, one of the following values: {{FX_TREMOLO}}, {{FX_VIBRATO}}, {{FX_WARBLE}}, or {{FX_NONE}}.",
+    "message": "Effet à ajouter au son, l'une des valeurs suivantes : {{FX_TREMOLO}}, {{FX_VIBRATO}}, {{FX_WARBLE}}, ou {{FX_NONE}}.",
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.shape": {
@@ -2836,7 +2836,7 @@
     "description": "(parameter name) The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.shape": {
-    "message": "The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: {{SHAPE_LINEAR}}, {{SHAPE_CURVE}}, {{SHAPE_LOG}}.",
+    "message": "Le type de la courbe d'interpolation entre les fréquences de début et de fin, les différentes formes d'onde ont des taux de variation de fréquence différents. L'une des valeurs suivantes : {{SHAPE_LINEAR}}, {{SHAPE_CURVE}}, {{SHAPE_LOG}}.",
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.vol_end": {
@@ -2844,7 +2844,7 @@
     "description": "(parameter name) End volume value, a number between ``0`` and ``255``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.vol_end": {
-    "message": "End volume value, a number between {{0}} and {{255}}.",
+    "message": "Valeur du volume à la fin, un nombre compris entre {{0}} et {{255}}.",
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.vol_start": {
@@ -2852,7 +2852,7 @@
     "description": "(parameter name) Start volume value, a number between ``0`` and ``255``."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.vol_start": {
-    "message": "Start volume value, a number between {{0}} and {{255}}.",
+    "message": "Valeur du volume de départ, un nombre compris entre {{0}} et {{255}}.",
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.__init__.param-name.waveform": {
@@ -2860,7 +2860,7 @@
     "description": "(parameter name) Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)."
   },
   "microbit.audio.SoundEffect.__init__.param-doc.waveform": {
-    "message": "Type of waveform shape, one of these values: {{WAVEFORM_SINE}}, {{WAVEFORM_SAWTOOTH}}, {{WAVEFORM_TRIANGLE}}, {{WAVEFORM_SQUARE}}, {{WAVEFORM_NOISE}} (randomly generated noise).",
+    "message": "Type de forme d'onde, une de ces valeurs : {{WAVEFORM_SINE}}, {{WAVEFORM_SAWTOOTH}}, {{WAVEFORM_TRIANGLE}}, {{WAVEFORM_SQUARE}}, {{WAVEFORM_NOISE}} (bruit généré aléatoirement).",
     "description": "Parameter docs"
   },
   "microbit.audio.SoundEffect.copy": {
@@ -2868,7 +2868,7 @@
     "description": "(function name) Create a copy of this ``SoundEffect``."
   },
   "microbit.audio.SoundEffect.copy.summary": {
-    "message": "Create a copy of this {{SoundEffect}}.",
+    "message": "Créer une copie de ce {{SoundEffect}}.",
     "description": "Create a copy of this ``SoundEffect``."
   },
   "microbit.audio.AudioFrame": {
@@ -2884,7 +2884,7 @@
     "description": "(function name) Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
   },
   "microbit.audio.AudioFrame.copyfrom.summary": {
-    "message": "Overwrite the data in this {{AudioFrame}} with the data from another {{AudioFrame}} instance.",
+    "message": "Écraser les données de ce {{AudioFrame}} avec les données d'une autre instance {{AudioFrame}}.",
     "description": "Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
   },
   "microbit.audio.AudioFrame.copyfrom.param-name.other": {
@@ -2892,7 +2892,7 @@
     "description": "(parameter name) ``AudioFrame`` instance from which to copy the data."
   },
   "microbit.audio.AudioFrame.copyfrom.param-doc.other": {
-    "message": "{{AudioFrame}} instance from which to copy the data.",
+    "message": "Instance {{AudioFrame}} à partir de laquelle copier les données.",
     "description": "Parameter docs"
   },
   "microbit.compass": {
