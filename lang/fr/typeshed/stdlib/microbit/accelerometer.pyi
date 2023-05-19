@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def get_strength() -> int:
-    """Obtenir la mesure de l'accélération de tous les axes combinés, sous la forme d'un nombre entier positif. C'est la somme pythagoricienne des axes X, Y et Z. (obtenir la force)
+    """Obtenir la mesure de l'accélération de tous les axes combinés, sous la forme d'un nombre entier positif. C'est la somme pythagoricienne des axes X, Y et Z.
 
 Example: ``accelerometer.get_strength()``
 
@@ -96,8 +96,8 @@ gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
     ...
 
 def set_range(value: int) -> None:
-    """Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g.
+    """Définir la plage de sensibilité de l'accéléromètre, en g (gravité standard), à la valeur la plus proche supportée par le matériel, l'arrondi se fait soit à ``2``, ``4``, ou ``8`` g.
 
 Example: ``accelerometer.set_range(8)``
 
-:param value: New range for the accelerometer, an integer in ``g``."""
+:param value: Nouvelle plage pour l'accéléromètre, un entier en ``g``."""
