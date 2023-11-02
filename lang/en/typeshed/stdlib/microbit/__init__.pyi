@@ -132,7 +132,7 @@ def running_time() -> int:
     """
 
 def temperature() -> int:
-    """Get the temperature of the micro:bit in degrees Celcius."""
+    """Get the temperature of the micro:bit in degrees Celsius."""
 
 def set_volume(v: int) -> None:
     """Sets the volume.

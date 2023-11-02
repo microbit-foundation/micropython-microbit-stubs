@@ -34,7 +34,7 @@ def scan() -> List[int]:
     ...
 
 def read(addr: int, n: int, repeat: bool = False) -> bytes:
-    """Read bytes from a device..
+    """Read bytes from a device.
 
     Example: ``i2c.read(0x50, 64)``
 
