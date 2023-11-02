@@ -159,7 +159,7 @@ def isinf(x: float) -> bool:
     ...
 
 def isnan(x: float) -> bool:
-    """Check is a value is not-a-number (NaN).
+    """Check if a value is not-a-number (NaN).
 
     Example: ``math.isnan(float('nan'))``
 
