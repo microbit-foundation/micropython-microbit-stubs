@@ -50,7 +50,7 @@ class NeoPixel:
         """
         ...
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """Colour all pixels a given RGB/RGBW value.
+        """Colour all pixels a given RGB/RGBW value (micro:bit V2 only).
 
         Example: ``np.fill((0, 0, 255))``
 
