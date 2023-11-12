@@ -28,7 +28,7 @@ Example: ``i2c.scan()``
     ...
 
 def read(addr: int, n: int, repeat: bool=False) -> bytes:
-    """장치에서 바이트 값을 읽습니다..
+    """장치에서 바이트 값을 읽습니다.
 
 Example: ``i2c.read(0x50, 64)``
 

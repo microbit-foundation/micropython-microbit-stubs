@@ -22,7 +22,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: (broche) La broche qui contrôle la bande neopixel.
 :param n: Le nombre de neopixels sur la bande.
-:param bpp: Octets par pixel. Pour le support du neopixel RGBW microbit V2, passez 4 plutôt que la valeur par défaut de 3 pour RGB et GRB."""
+:param bpp: Octets par pixel. Pour le support du neopixel RGBW, passez 4 plutôt que la valeur par défaut 3 pour RGB et GRB."""
         ...
 
     def clear(self) -> None:
@@ -50,7 +50,7 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """Colorer tous les pixels d'une valeur RGB/RGBW donnée.
+        """Colorer tous les pixels d'une valeur RGB/RGBW donnée (micro:bit V2 uniquement).
 
 Example: ``np.fill((0, 0, 255))``
 

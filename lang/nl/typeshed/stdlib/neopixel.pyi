@@ -22,7 +22,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: De pin regelt de neopixelstrook.
 :param n: Het aantal neopixels in de strip.
-:param bpp: Bytes per pixel. Voor micro:bit V2 RGBW neopixel ondersteuning, geef 4 door in plaats van de standaard 3 voor RGB en GRB."""
+:param bpp: Bytes per pixel. Voor ondersteuning van RGBW neopixels geeft je 4 aan in plaats van de standaardwaarde van 3 voor RGB en GRB."""
         ...
 
     def clear(self) -> None:
@@ -50,7 +50,7 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """Kleur alle pixels een bepaalde RGB/RGBW waarde. (opvullen)
+        """Kleur alle pixels een bepaalde RGB/RGBW waarde (alleen micro:bit V2). (opvullen)
 
 Example: ``np.fill((0, 0, 255))``
 

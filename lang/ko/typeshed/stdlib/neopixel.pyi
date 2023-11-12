@@ -22,7 +22,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: (핀) 네오픽셀 스트립을 제어하는 핀입니다.
 :param n: 스트립의 네오픽셀 수입니다.
-:param bpp: 픽셀당 바이트입니다. micro:bit V2 RGBW 네오픽셀 지원을 위해서는 RGB 및 GRB의 기본값 3 대신 4를 패스해야 합니다."""
+:param bpp: 픽셀당 바이트입니다. RGBW 네오픽셀 지원을 위해서는 RGB 및 GRB의 기본값 3 대신 4를 패스해야 합니다."""
         ...
 
     def clear(self) -> None:
@@ -50,7 +50,7 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """모든 픽셀에 주어진 RGB/RGBW 값을 칠합니다.
+        """모든 픽셀에 주어진 RGB/RGBW 값을 칠합니다(micro:bit V2 전용).
 
 Example: ``np.fill((0, 0, 255))``
 
