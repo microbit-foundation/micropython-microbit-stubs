@@ -4116,7 +4116,7 @@
     "description": "(parameter name) Bytes per pixel. For RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
   },
   "neopixel.NeoPixel.__init__.param-doc.bpp": {
-    "message": "Bytes per píxel. Per al suport de micro:bit V2 RGBW neopixel, passa 4 en lloc dels 3 per defecte per a RGB i GRB.",
+    "message": "Bytes per píxel. Per al suport de RGBW neopixel, passa 4 en lloc dels 3 per defecte per a RGB i GRB.",
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.__init__.param-name.n": {
