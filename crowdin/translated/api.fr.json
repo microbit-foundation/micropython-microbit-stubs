@@ -633,11 +633,11 @@
   },
   "math.isnan": {
     "message": "isnan",
-    "description": "(function name) Check is a value is not-a-number (NaN)."
+    "description": "(function name) Check if a value is not-a-number (NaN)."
   },
   "math.isnan.summary": {
     "message": "Vérifie si une valeur n'est pas un nombre (NaN).",
-    "description": "Check is a value is not-a-number (NaN)."
+    "description": "Check if a value is not-a-number (NaN)."
   },
   "math.isnan.param-name.x": {
     "message": "x",
@@ -1009,11 +1009,11 @@
   },
   "microbit.temperature": {
     "message": "temperature",
-    "description": "(function name) Get the temperature of the micro:bit in degrees Celcius."
+    "description": "(function name) Get the temperature of the micro:bit in degrees Celsius."
   },
   "microbit.temperature.summary": {
-    "message": "Obtenir la température du micro:bit en degrés Celcius.",
-    "description": "Get the temperature of the micro:bit in degrees Celcius."
+    "message": "Obtenir la température du micro:bit en degrés Celsius.",
+    "description": "Get the temperature of the micro:bit in degrees Celsius."
   },
   "microbit.set_volume": {
     "message": "set volume",
@@ -2705,11 +2705,11 @@
   },
   "microbit.audio.SoundEffect.FX_TREMOLO": {
     "message": "fx tremolo",
-    "description": "(field name) Tremelo effect option used for the ``fx`` parameter."
+    "description": "(field name) Tremolo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_TREMOLO.summary": {
     "message": "Option d'effet tremolo utilisée pour le paramètre {{fx}}.",
-    "description": "Tremelo effect option used for the ``fx`` parameter."
+    "description": "Tremolo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_VIBRATO": {
     "message": "fx vibrato",
@@ -3217,11 +3217,11 @@
   },
   "microbit.i2c.read": {
     "message": "read",
-    "description": "(function name) Read bytes from a device.."
+    "description": "(function name) Read bytes from a device."
   },
   "microbit.i2c.read.summary": {
     "message": "Lire des octets depuis un périphérique.",
-    "description": "Read bytes from a device.."
+    "description": "Read bytes from a device."
   },
   "microbit.i2c.read.param-name.addr": {
     "message": "addr",
@@ -4113,10 +4113,10 @@
   },
   "neopixel.NeoPixel.__init__.param-name.bpp": {
     "message": "bpp",
-    "description": "(parameter name) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
+    "description": "(parameter name) Bytes per pixel. For RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
   },
   "neopixel.NeoPixel.__init__.param-doc.bpp": {
-    "message": "Octets par pixel. Pour le support du neopixel RGBW microbit V2, passez 4 plutôt que la valeur par défaut de 3 pour RGB et GRB.",
+    "message": "Octets par pixel. Pour le support du neopixel RGBW, passez 4 plutôt que la valeur par défaut 3 pour RGB et GRB.",
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.__init__.param-name.n": {
@@ -4161,11 +4161,11 @@
   },
   "neopixel.NeoPixel.fill": {
     "message": "fill",
-    "description": "(function name) Colour all pixels a given RGB/RGBW value."
+    "description": "(function name) Colour all pixels a given RGB/RGBW value (micro:bit V2 only)."
   },
   "neopixel.NeoPixel.fill.summary": {
-    "message": "Colorer tous les pixels d'une valeur RGB/RGBW donnée.",
-    "description": "Colour all pixels a given RGB/RGBW value."
+    "message": "Colorer tous les pixels d'une valeur RGB/RGBW donnée (micro:bit V2 uniquement).",
+    "description": "Colour all pixels a given RGB/RGBW value (micro:bit V2 only)."
   },
   "neopixel.NeoPixel.fill.param-name.colour": {
     "message": "colour",

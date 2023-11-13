@@ -22,7 +22,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: (引腳) 控制 NeoPixel 燈條的引腳。
 :param n: 燈條中的 NeoPixel 數。
-:param bpp: 各像素位元組數。對於 micro:bit V2 RGBW neopixel 支援，傳遞 4 而不是 RGB 和 GRB 的預設值 3。"""
+:param bpp: 各像素位元組數。對於 RGBW neopixel 支援，傳遞 4 而不是 RGB 和 GRB 的預設值 3。"""
         ...
 
     def clear(self) -> None:
@@ -50,7 +50,7 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """用特定 RGB/RGBW 值為所有像素著色。
+        """用特定 RGB/RGBW 值為所有像素著色 (僅限 micro:bit V2)。
 
 Example: ``np.fill((0, 0, 255))``
 

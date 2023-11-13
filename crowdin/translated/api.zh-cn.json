@@ -633,11 +633,11 @@
   },
   "math.isnan": {
     "message": "不是数字",
-    "description": "(function name) Check is a value is not-a-number (NaN)."
+    "description": "(function name) Check if a value is not-a-number (NaN)."
   },
   "math.isnan.summary": {
     "message": "检查一个值是否不是一个数字 (NaN)。",
-    "description": "Check is a value is not-a-number (NaN)."
+    "description": "Check if a value is not-a-number (NaN)."
   },
   "math.isnan.param-name.x": {
     "message": "x",
@@ -1009,11 +1009,11 @@
   },
   "microbit.temperature": {
     "message": "temperature",
-    "description": "(function name) Get the temperature of the micro:bit in degrees Celcius."
+    "description": "(function name) Get the temperature of the micro:bit in degrees Celsius."
   },
   "microbit.temperature.summary": {
     "message": "以摄氏度为单位获取 micro:bit 的温度。",
-    "description": "Get the temperature of the micro:bit in degrees Celcius."
+    "description": "Get the temperature of the micro:bit in degrees Celsius."
   },
   "microbit.set_volume": {
     "message": "set volume",
@@ -2705,11 +2705,11 @@
   },
   "microbit.audio.SoundEffect.FX_TREMOLO": {
     "message": "fx 音量颤音",
-    "description": "(field name) Tremelo effect option used for the ``fx`` parameter."
+    "description": "(field name) Tremolo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_TREMOLO.summary": {
     "message": "用于 {{fx}} 参数的音量颤音效果选项。",
-    "description": "Tremelo effect option used for the ``fx`` parameter."
+    "description": "Tremolo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_VIBRATO": {
     "message": "fx 音高颤音",
@@ -3217,11 +3217,11 @@
   },
   "microbit.i2c.read": {
     "message": "读取",
-    "description": "(function name) Read bytes from a device.."
+    "description": "(function name) Read bytes from a device."
   },
   "microbit.i2c.read.summary": {
-    "message": "从设备读取字节..",
-    "description": "Read bytes from a device.."
+    "message": "从设备读取字节.",
+    "description": "Read bytes from a device."
   },
   "microbit.i2c.read.param-name.addr": {
     "message": "地址",
@@ -4113,10 +4113,10 @@
   },
   "neopixel.NeoPixel.__init__.param-name.bpp": {
     "message": "每像素字节数",
-    "description": "(parameter name) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
+    "description": "(parameter name) Bytes per pixel. For RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
   },
   "neopixel.NeoPixel.__init__.param-doc.bpp": {
-    "message": "每个像素的字节数。对于 RGB 和 GRB 而言，只有将该值设置为 4 而不是默认值 3，micro:bit V2 RGBW neopixel 才能支持。",
+    "message": "每个像素的字节数。对于 RGB 和 GRB 而言，只有将该值设置为 4 而不是默认值 3，RGBW neopixel 才能支持。",
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.__init__.param-name.n": {
@@ -4161,11 +4161,11 @@
   },
   "neopixel.NeoPixel.fill": {
     "message": "填充",
-    "description": "(function name) Colour all pixels a given RGB/RGBW value."
+    "description": "(function name) Colour all pixels a given RGB/RGBW value (micro:bit V2 only)."
   },
   "neopixel.NeoPixel.fill.summary": {
-    "message": "\n用给定的 RGB/RGBW 值为所有像素着色。",
-    "description": "Colour all pixels a given RGB/RGBW value."
+    "message": "\n用给定的 RGB/RGBW 值为所有像素着色（仅限 micro:bit V2）。",
+    "description": "Colour all pixels a given RGB/RGBW value (micro:bit V2 only)."
   },
   "neopixel.NeoPixel.fill.param-name.colour": {
     "message": "颜色",

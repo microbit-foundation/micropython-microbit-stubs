@@ -113,7 +113,7 @@ def running_time() -> int:
 :return: The number of milliseconds since the board was switched on or restarted."""
 
 def temperature() -> int:
-    """Obtiene la temperatura del micro:bit en grados Celcius. (temperatura)"""
+    """Obtiene la temperatura del micro:bit en grados Celsius. (temperatura)"""
 
 def set_volume(v: int) -> None:
     """Establece el volumen. (configurar volumen)

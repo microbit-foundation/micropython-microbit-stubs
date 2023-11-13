@@ -22,7 +22,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: El pin que controla la tira de neopíxels.
 :param n: El nombre de neopíxels de la tira.
-:param bpp: Bytes per píxel. Per al suport de micro:bit V2 RGBW neopixel, passa 4 en lloc de 3 per defecte per a RGB i GRB."""
+:param bpp: Bytes per píxel. Per al suport de RGBW neopixel, passa 4 en lloc dels 3 per defecte per a RGB i GRB."""
         ...
 
     def clear(self) -> None:
@@ -50,7 +50,7 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """Acoloreix tots els píxels amb un valor RGB/RGBW determinat. (omple)
+        """Acoloreix tots els píxels amb un valor RGB/RGBW determinat (només micro:bit V2). (omple)
 
 Example: ``np.fill((0, 0, 255))``
 

@@ -27,8 +27,8 @@ present, it will generate a new header row with the additional columns.
 By default the first column contains a timestamp for each row. The time
 unit can be selected via the timestamp argument.
 
-:param *labels: Any number of positional arguments, each corresponding to an entry in the log header.
-:param timestamp: (타임스탬프) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."""
+:param *labels: (*레이블) 각각 로그 헤더의 항목에 해당하는 임의의 위치 인수 수입니다.
+:param timestamp: (타임스탬프) 모든 행의 첫 번째에 자동으로 삽입될 타임스탬프 단위를 선택하십시오. 타임스탬프의 값은 ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS``가 될 수 있고 비활성화하려면 ``None``값으로 설정하십시오. 타임스탬프의 기본값은 ``log.SECONDS``입니다."""
     ...
 
 @overload
@@ -46,7 +46,7 @@ to the log with the extra labels.
 Labels previously specified and not present in a call to this function will
 be skipped with an empty value in the log row.
 
-:param data_dictionary: The data to log as a dictionary with a key for each header."""
+:param data_dictionary: (데이터 사전) 각 헤더에 대한 키가 있는 사전으로 기록할 데이터입니다."""
     ...
 
 @overload
@@ -75,11 +75,11 @@ To add the log headers again the ``set_labels`` function should to be called aft
 There are two erase modes; “full” completely removes the data from the physical storage,
 and “fast” invalidates the data without removing it.
 
-:param full: ``True`` selects a “full” erase and ``False`` selects the “fast” erase method."""
+:param full: ``True``는 "전체" 지우기를 선택하고 ``False``는 "빠른" 지우기 방법을 선택합니다."""
     ...
 
 def set_mirroring(serial: bool):
-    """Configure mirroring of the data logging activity to the serial output.
+    """직렬 출력에 대한 데이터 로깅 작업 미러링을 구성합니다.
 
 Example: ``log.set_mirroring(True)``
 

@@ -47,7 +47,7 @@ class SoundEffect:
     FX_NONE: ClassVar[int]
     """No effect option used for the ``fx`` parameter."""
     FX_TREMOLO: ClassVar[int]
-    """Tremelo effect option used for the ``fx`` parameter."""
+    """Tremolo effect option used for the ``fx`` parameter."""
     FX_VIBRATO: ClassVar[int]
     """Vibrato effect option used for the ``fx`` parameter."""
     FX_WARBLE: ClassVar[int]

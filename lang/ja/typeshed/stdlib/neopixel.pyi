@@ -22,7 +22,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: ネオピクセルストリップを制御する端子。
 :param n: ストリップ内のネオピクセルの数。
-:param bpp: ピクセルあたりのバイト数。micro:bit V2 の RGBW ネオピクセルに対応するには、RGBやGRBのデフォルト値の3ではなく、4 を指定します。"""
+:param bpp: ピクセルあたりのバイト数。RGBW ネオピクセルに対応するには、RGBやGRBのデフォルト値の3ではなく、4 を指定します。"""
         ...
 
     def clear(self) -> None:
@@ -50,7 +50,7 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """指定した RGB/RGBW 値をすべてのピクセルに設定します。
+        """指定した RGB/RGBW 値をすべてのピクセルに設定します（micro:bit V2 のみ）。
 
 Example: ``np.fill((0, 0, 255))``
 

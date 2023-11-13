@@ -28,7 +28,7 @@ Example: ``i2c.scan()``
     ...
 
 def read(addr: int, n: int, repeat: bool=False) -> bytes:
-    """从设备读取字节.. (读取)
+    """从设备读取字节. (读取)
 
 Example: ``i2c.read(0x50, 64)``
 

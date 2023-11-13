@@ -128,11 +128,11 @@
     "description": "Set up the log file header."
   },
   "log.set_labels.param-name.*labels": {
-    "message": "*labels",
+    "message": "*레이블",
     "description": "(parameter name) Any number of positional arguments, each corresponding to an entry in the log header."
   },
   "log.set_labels.param-doc.*labels": {
-    "message": "Any number of positional arguments, each corresponding to an entry in the log header.",
+    "message": "각각 로그 헤더의 항목에 해당하는 임의의 위치 인수 수입니다.",
     "description": "Parameter docs"
   },
   "log.set_labels.param-name.timestamp": {
@@ -140,7 +140,7 @@
     "description": "(parameter name) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."
   },
   "log.set_labels.param-doc.timestamp": {
-    "message": "Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of {{log.MILLISECONDS}}, {{log.SECONDS}}, {{log.MINUTES}}, {{log.HOURS}}, {{log.DAYS}} or {{None}} to disable the timestamp. The default value is {{log.SECONDS}}.",
+    "message": "모든 행의 첫 번째에 자동으로 삽입될 타임스탬프 단위를 선택하십시오. 타임스탬프의 값은 {{log.MILLISECONDS}}, {{log.SECONDS}}, {{log.MINUTES}}, {{log.HOURS}}, {{log.DAYS}}가 될 수 있고 비활성화하려면 {{None}}값으로 설정하십시오. 타임스탬프의 기본값은 {{log.SECONDS}}입니다.",
     "description": "Parameter docs"
   },
   "log.add-1": {
@@ -152,11 +152,11 @@
     "description": "Add a data row to the log by passing a dictionary of headers and values."
   },
   "log.add-1.param-name.data_dictionary": {
-    "message": "data dictionary",
+    "message": "데이터 사전",
     "description": "(parameter name) The data to log as a dictionary with a key for each header."
   },
   "log.add-1.param-doc.data_dictionary": {
-    "message": "The data to log as a dictionary with a key for each header.",
+    "message": "각 헤더에 대한 키가 있는 사전으로 기록할 데이터입니다.",
     "description": "Parameter docs"
   },
   "log.add-2": {
@@ -180,7 +180,7 @@
     "description": "(parameter name) ``True`` selects a “full” erase and ``False`` selects the “fast” erase method."
   },
   "log.delete.param-doc.full": {
-    "message": "{{True}} selects a “full” erase and {{False}} selects the “fast” erase method.",
+    "message": "{{True}}는 \"전체\" 지우기를 선택하고 {{False}}는 \"빠른\" 지우기 방법을 선택합니다.",
     "description": "Parameter docs"
   },
   "log.set_mirroring": {
@@ -188,7 +188,7 @@
     "description": "(function name) Configure mirroring of the data logging activity to the serial output."
   },
   "log.set_mirroring.summary": {
-    "message": "Configure mirroring of the data logging activity to the serial output.",
+    "message": "직렬 출력에 대한 데이터 로깅 작업 미러링을 구성합니다.",
     "description": "Configure mirroring of the data logging activity to the serial output."
   },
   "log.set_mirroring.param-name.serial": {
@@ -633,11 +633,11 @@
   },
   "math.isnan": {
     "message": "isnan",
-    "description": "(function name) Check is a value is not-a-number (NaN)."
+    "description": "(function name) Check if a value is not-a-number (NaN)."
   },
   "math.isnan.summary": {
     "message": "값이 숫자가 아닌 값(NaN)인지 확인합니다.",
-    "description": "Check is a value is not-a-number (NaN)."
+    "description": "Check if a value is not-a-number (NaN)."
   },
   "math.isnan.param-name.x": {
     "message": "x",
@@ -1009,11 +1009,11 @@
   },
   "microbit.temperature": {
     "message": "온도",
-    "description": "(function name) Get the temperature of the micro:bit in degrees Celcius."
+    "description": "(function name) Get the temperature of the micro:bit in degrees Celsius."
   },
   "microbit.temperature.summary": {
     "message": "섭씨로 micro:bit의 온도를 불러옵니다.",
-    "description": "Get the temperature of the micro:bit in degrees Celcius."
+    "description": "Get the temperature of the micro:bit in degrees Celsius."
   },
   "microbit.set_volume": {
     "message": "set volume",
@@ -2705,11 +2705,11 @@
   },
   "microbit.audio.SoundEffect.FX_TREMOLO": {
     "message": "fx tremolo",
-    "description": "(field name) Tremelo effect option used for the ``fx`` parameter."
+    "description": "(field name) Tremolo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_TREMOLO.summary": {
-    "message": "Tremelo effect option used for the {{fx}} parameter.",
-    "description": "Tremelo effect option used for the ``fx`` parameter."
+    "message": "Tremolo effect option used for the {{fx}} parameter.",
+    "description": "Tremolo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_VIBRATO": {
     "message": "fx vibrato",
@@ -3217,11 +3217,11 @@
   },
   "microbit.i2c.read": {
     "message": "read",
-    "description": "(function name) Read bytes from a device.."
+    "description": "(function name) Read bytes from a device."
   },
   "microbit.i2c.read.summary": {
-    "message": "장치에서 바이트 값을 읽습니다..",
-    "description": "Read bytes from a device.."
+    "message": "장치에서 바이트 값을 읽습니다.",
+    "description": "Read bytes from a device."
   },
   "microbit.i2c.read.param-name.addr": {
     "message": "addr",
@@ -4113,10 +4113,10 @@
   },
   "neopixel.NeoPixel.__init__.param-name.bpp": {
     "message": "bpp",
-    "description": "(parameter name) Bytes per pixel. For micro:bit V2 RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
+    "description": "(parameter name) Bytes per pixel. For RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
   },
   "neopixel.NeoPixel.__init__.param-doc.bpp": {
-    "message": "픽셀당 바이트입니다. micro:bit V2 RGBW 네오픽셀 지원을 위해서는 RGB 및 GRB의 기본값 3 대신 4를 패스해야 합니다.",
+    "message": "픽셀당 바이트입니다. RGBW 네오픽셀 지원을 위해서는 RGB 및 GRB의 기본값 3 대신 4를 패스해야 합니다.",
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.__init__.param-name.n": {
@@ -4161,11 +4161,11 @@
   },
   "neopixel.NeoPixel.fill": {
     "message": "fill",
-    "description": "(function name) Colour all pixels a given RGB/RGBW value."
+    "description": "(function name) Colour all pixels a given RGB/RGBW value (micro:bit V2 only)."
   },
   "neopixel.NeoPixel.fill.summary": {
-    "message": "모든 픽셀에 주어진 RGB/RGBW 값을 칠합니다.",
-    "description": "Colour all pixels a given RGB/RGBW value."
+    "message": "모든 픽셀에 주어진 RGB/RGBW 값을 칠합니다(micro:bit V2 전용).",
+    "description": "Colour all pixels a given RGB/RGBW value (micro:bit V2 only)."
   },
   "neopixel.NeoPixel.fill.param-name.colour": {
     "message": "colour",
