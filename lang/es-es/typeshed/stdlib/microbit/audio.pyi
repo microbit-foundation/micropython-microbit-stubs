@@ -3,11 +3,11 @@ from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
 def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
-    """Play a built-in sound, sound effect or custom audio frames. (reproducir)
+    """Reproducir un sonido, un efecto de sonido o marcos de audio personalizados. (reproducir)
 
 Example: ``audio.play(Sound.GIGGLE)``
 
-:param source: (origen) A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects.
+:param source: (origen) Un ``Sound`` integrado como ``Sound.GIGGLE``, un ``SoundEffect`` o datos de muestra como un iterable de objetos ``AudioFrame``.
 :param wait: (esperar) Si ``wait`` es ``True`` (verdadero), la función se bloqueará hasta que el sonido finalice.
 :param pin: Se puede usar un argumento opcional para especificar el pin de salida, reemplazando el valor predeterminado de ``pin0``. Si no queremos que se reproduzca ningún sonido, podemos usar ``pin=None``.
 :param return_pin: (devolver pin) Especifica un pin de conector de borde diferencial para conectarse a un altavoz externo en lugar de tierra. Esto se ignora para la revisión **V2**."""
@@ -27,50 +27,50 @@ Example: ``audio.stop()``"""
     ...
 
 class SoundEffect:
-    """A sound effect, composed by a set of parameters configured via the constructor or attributes."""
+    """Un efecto de sonido, compuesto por un conjunto de parámetros configurados a través del constructor o atributos. (efecto de sonido)"""
     WAVEFORM_SINE: ClassVar[int]
-    """Sine wave option used for the ``waveform`` parameter."""
+    """Opción de onda sinusoidal utilizada para el parámetro ``waveform``. (forma de onda sinusoidal)"""
     WAVEFORM_SAWTOOTH: ClassVar[int]
-    """Sawtooth wave option used for the ``waveform`` parameter."""
+    """Opción de onda con diente de sierra usada para el parámetro ``waveform``. (diente de sierra de forma de onda)"""
     WAVEFORM_TRIANGLE: ClassVar[int]
-    """Triangle wave option used for the ``waveform`` parameter."""
+    """Opción de onda triangular usada para el parámetro ``waveform``. (forma de onda triangular)"""
     WAVEFORM_SQUARE: ClassVar[int]
-    """Square wave option used for the ``waveform`` parameter."""
+    """Opción de onda cuadrada usada para el parámetro ``waveform``. (forma de onda cuadrada)"""
     WAVEFORM_NOISE: ClassVar[int]
-    """Noise option used for the ``waveform`` parameter."""
+    """Opción de ruido usada para el parámetro ``waveform``. (forma de onda de ruido)"""
     SHAPE_LINEAR: ClassVar[int]
-    """Linear interpolation option used for the ``shape`` parameter."""
+    """Opción de interpolación lineal usada para el parámetro ``shape``. (forma lineal)"""
     SHAPE_CURVE: ClassVar[int]
-    """Curve interpolation option used for the ``shape`` parameter."""
+    """Opción de interpolación de curva usada para el parámetro ``shape``. (forma curva)"""
     SHAPE_LOG: ClassVar[int]
-    """Logarithmic interpolation option used for the ``shape`` parameter."""
+    """Opción de interpolación logarítmica usada para el parámetro ``shape``. (registro de forma)"""
     FX_NONE: ClassVar[int]
-    """No effect option used for the ``fx`` parameter."""
+    """Ninguna opción de efecto usada para el parámetro ``fx``. (fx ninguno)"""
     FX_TREMOLO: ClassVar[int]
-    """Tremolo effect option used for the ``fx`` parameter."""
+    """Opción de efecto Trémolo usada para el parámetro ``fx``."""
     FX_VIBRATO: ClassVar[int]
-    """Vibrato effect option used for the ``fx`` parameter."""
+    """Opción de efecto vibrato utilizada para el parámetro ``fx``."""
     FX_WARBLE: ClassVar[int]
-    """Warble effect option used for the ``fx`` parameter."""
+    """Opción de efecto gorjeo utilizada para el parámetro ``fx``. (fx gorjeo)"""
     freq_start: int
-    """Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
+    """Frecuencia de inicio en Hertz (Hz), un número entre ``0`` y ``9999`` (frecuencia de inicio)"""
     freq_end: int
-    """End frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
+    """Frecuencia final en Hertz (Hz), un número entre ``0`` y ``9999`` (frecuencia final)"""
     duration: int
-    """Duration of the sound in milliseconds, a number between ``0`` and ``9999`` (duración)"""
+    """Duración del sonido en milisegundos, un número entre ``0`` y ``9999`` (duración)"""
     vol_start: int
-    """Start volume value, a number between ``0`` and ``255``"""
+    """Valor de volumen inicial, un número entre ``0`` y ``255`` (volumen de inicio)"""
     vol_end: int
-    """End volume value, a number between ``0`` and ``255``"""
+    """Valor final del volumen, un número entre ``0`` y ``255`` (volumen final)"""
     waveform: int
-    """Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"""
+    """Tipo de forma ondulada, uno de estos valores: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (ruido generado aleatoriamente) (forma de onda)"""
     fx: int
-    """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"""
+    """Efecto para añadir en el sonido, uno de los siguientes valores: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``o ``FX_NONE``"""
     shape: int
-    """The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"""
+    """El tipo de curva de interpolación entre las frecuencias de inicio y final, diferentes formas de onda tienen diferentes tasas de cambio en la frecuencia. Uno de los siguientes valores: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG`` (forma)"""
 
     def __init__(self, freq_start: int=500, freq_end: int=2500, duration: int=500, vol_start: int=255, vol_end: int=0, waveform: int=WAVEFORM_SQUARE, fx: int=FX_NONE, shape: int=SHAPE_LOG):
-        """Create a new sound effect.
+        """Crear un nuevo efecto de sonido.
 
 Example: ``my_effect = SoundEffect(duration=1000)``
 
@@ -79,17 +79,17 @@ they can all be modified via attributes of the same name. For example, we
 can first create an effect ``my_effect = SoundEffect(duration=1000)``,
 and then change its attributes ``my_effect.duration = 500``.
 
-:param freq_start: Start frequency in Hertz (Hz), a number between ``0`` and ``9999``.
-:param freq_end: End frequency in Hertz (Hz), a number between ``0`` and ``9999``.
-:param duration: (duración) Duration of the sound in milliseconds, a number between ``0`` and ``9999``.
-:param vol_start: Start volume value, a number between ``0`` and ``255``.
-:param vol_end: End volume value, a number between ``0`` and ``255``.
-:param waveform: Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise).
-:param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``.
-:param shape: The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."""
+:param freq_start: (frecuencia de inicio) Frecuencia de inicio en Hertz (Hz), un número entre ``0`` y ``9999``.
+:param freq_end: (frecuencia final) Frecuencia final en Hertz (Hz), un número entre ``0`` y ``9999``.
+:param duration: (duración) Duración del sonido en milisegundos, un número entre ``0`` y ``9999``.
+:param vol_start: (volumen inicial) Valor de volumen inicial, un número entre ``0`` y ``255``.
+:param vol_end: (volumen final) Valor de volumen final, un número entre ``0`` y ``255``.
+:param waveform: (forma de onda) Tipo de forma de onda, uno de estos valores: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (ruido generado aleatoriamente).
+:param fx: Efecto para añadir en el sonido, uno de los siguientes valores: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``o ``FX_NONE``.
+:param shape: (forma) El tipo de curva de interpolación entre las frecuencias de inicio y final, diferentes formas de onda tienen diferentes tasas de cambio en la frecuencia. Uno de los siguientes valores: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."""
 
     def copy(self) -> SoundEffect:
-        """Create a copy of this ``SoundEffect``. (copiar)
+        """Crear una copia de este ``SoundEffect``. (copiar)
 
 Example: ``sound_2 = sound_1.copy()``
 
@@ -108,11 +108,11 @@ Example::
         frame[i] = 252 - i * 8"""
 
     def copyfrom(self, other: AudioFrame) -> None:
-        """Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance.
+        """Sobrescribir los datos en este ``AudioFrame`` con los datos de otra instancia de ``AudioFrame``. (copiar forma)
 
 Example: ``my_frame.copyfrom(source_frame)``
 
-:param other: (otro) ``AudioFrame`` instance from which to copy the data."""
+:param other: (otro) Instancia ``AudioFrame`` desde la que copiar los datos."""
 
     def __len__(self) -> int:
         ...

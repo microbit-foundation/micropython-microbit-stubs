@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Schedule to run a function at the interval specified by the time arguments **V2 only**. (ejecutar cada)
+    """Programe para ejecutar una función en el intervalo especificado por los argumentos de tiempo **V2 solamente**. (ejecutar cada)
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -36,12 +36,12 @@ So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: Function to call at the provided interval. Omit when using as a decorator.
-:param days: (días) Sets the day mark for the scheduling.
-:param h: Sets the hour mark for the scheduling.
-:param min: Sets the minute mark for the scheduling.
-:param s: Sets the second mark for the scheduling.
-:param ms: Sets the millisecond mark for the scheduling."""
+:param callback: Función para llamar al intervalo proporcionado. Omitir cuando se utiliza como decorador.
+:param days: (días) Establece la marca del día para la programación.
+:param h: Establece la marca de hora para la programación.
+:param min: Establece la marca de minuto para la programación.
+:param s: Establece la segunda marca para la programación.
+:param ms: Establece la marca de milisegundos para la programación."""
 
 def panic(n: int) -> None:
     """Entra en modo pánico (pánico)
@@ -57,7 +57,7 @@ def reset() -> None:
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
-    """Converts a value from a range to an integer range.
+    """Convierte un valor de un rango a un rango de números enteros. (escala)
 
 Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
@@ -69,14 +69,14 @@ floating point number.
 
     temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-:param value: (valor) A number to convert.
-:param from_: A tuple to define the range to convert from.
-:param to: A tuple to define the range to convert to.
+:param value: (valor) Un número a convertir.
+:param from_: (de) Una tupla para definir el rango desde el que convertir.
+:param to: (a) Una tupla para definir el rango al que convertir.
 :return: The ``value`` converted to the ``to`` range."""
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Converts a value from a range to a floating point range.
+    """Convierte un valor de un rango a un rango de punto flotante. (escala)
 
 Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
@@ -89,9 +89,9 @@ If they are both integers (i.e ``10``), it will return an integer::
 
     returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-:param value: (valor) A number to convert.
-:param from_: A tuple to define the range to convert from.
-:param to: A tuple to define the range to convert to.
+:param value: (valor) Un número a convertir.
+:param from_: (de) Una tupla para definir el rango desde el que convertir.
+:param to: (a) Una tupla para definir el rango al que convertir.
 :return: The ``value`` converted to the ``to`` range."""
 
 def sleep(n: float) -> None:
@@ -460,7 +460,7 @@ Given an image object it's possible to display it via the ``display`` API::
     SNAKE: Image
     """Imagen de una serpiente. (serpiente)"""
     SCISSORS: Image
-    """Scissors image."""
+    """Imagen de tijeras. (tijeras)"""
     ALL_CLOCKS: List[Image]
     """Una lista que contiene todas las imágenes CLOCK_ en secuencia. (todos los relojes)"""
     ALL_ARROWS: List[Image]
