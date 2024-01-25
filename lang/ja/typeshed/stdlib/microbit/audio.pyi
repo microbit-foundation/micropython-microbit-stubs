@@ -36,7 +36,7 @@ class SoundEffect:
     WAVEFORM_TRIANGLE: ClassVar[int]
     """``waveform`` パラメータに指定できる「三角波」オプション。"""
     WAVEFORM_SQUARE: ClassVar[int]
-    """``waveform`` パラメータに指定できる「方形波」オプション。"""
+    """``waveform`` パラメータに指定できる「矩形波」オプション。"""
     WAVEFORM_NOISE: ClassVar[int]
     """``waveform`` パラメータに指定できる「ノイズ」オプション。"""
     SHAPE_LINEAR: ClassVar[int]
@@ -52,7 +52,7 @@ class SoundEffect:
     FX_VIBRATO: ClassVar[int]
     """``fx`` パラメータに指定できる「ビブラート効果」オプション。"""
     FX_WARBLE: ClassVar[int]
-    """``fx`` パラメータに指定できる「さえずり効果」オプション。"""
+    """``fx`` パラメータに指定できる「ワブル効果」オプション。"""
     freq_start: int
     """開始周波数。単位はヘルツ(Hz)で、``0``から``9999``の範囲の数値です。"""
     freq_end: int

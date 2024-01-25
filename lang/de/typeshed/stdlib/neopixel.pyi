@@ -1,11 +1,11 @@
-"""Cintes LED RGB i RGBW adreçables individualment."""
+"""Individuell adressierbare RGB- und RGBW-LED-Streifen."""
 from .microbit import MicroBitDigitalPin
 from typing import Tuple
 
 class NeoPixel:
 
     def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int=3) -> None:
-        """Inicialitza una nova tira de LED de neopixel controlada mitjançant un pin.
+        """Initialisierung eines neuen Streifens von Neopixel-LEDs, die über einen Pin gesteuert werden.
 
 Example: ``np = neopixel.NeoPixel(pin0, 8)``
 
@@ -20,19 +20,19 @@ white. In RGBW, ``(255,255,255,0)`` or ``(0,0,0,255)`` is white.
 
 See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`_ for warnings and other advice.
 
-:param pin: El pin que controla la tira de neopíxels.
-:param n: El nombre de neopíxels de la tira.
-:param bpp: Bytes per píxel. Per al suport del neopixel RGBW , passa 4 en lloc dels 3 per defecte per a RGB i GRB."""
+:param pin: Der Pin, der den Neopixelstreifen steuert.
+:param n: Die Anzahl der Neopixel auf dem Streifen.
+:param bpp: Bytes pro Pixel. Für die RGBW Neopixel-Unterstützung, müssen 4 statt der standardmäßigen 3 Bytes pro Pixel für RGB und GRB übergeben werden."""
         ...
 
     def clear(self) -> None:
-        """Esborra tots els píxels.
+        """Lösche alle Pixel. (löschen)
 
 Example: ``np.clear()``"""
         ...
 
     def show(self) -> None:
-        """mostra els píxels.
+        """Die Pixel anzeigen.
 
 Example: ``np.show()``
 
@@ -40,7 +40,7 @@ Must be called for any updates to become visible."""
         ...
 
     def write(self) -> None:
-        """Mostra els píxels (només micro:bit V2) (escriu)
+        """Pixel anzeigen (nur micro:bit V2) (schreiben)
 
 Example: ``np.write()``
 
@@ -50,32 +50,32 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """Acoloreix tots els píxels amb un valor RGB/RGBW determinat (només micro:bit V2). (omple)
+        """Alle Pixel mit einem bestimmten RGB/RGBW-Wert färben.
 
 Example: ``np.fill((0, 0, 255))``
 
-:param colour: (color) Una tupla de la mateixa longitud que el nombre de bytes per píxel (bpp).
+:param colour: (Farbe) Ein Tupel mit der gleichen Länge wie die Anzahl der Bytes pro Pixel (bpp).
 
 Use in conjunction with ``show()`` to update the neopixels."""
         ...
 
     def __setitem__(self, key: int, value: Tuple[int, ...]) -> None:
-        """Estableix un color de píxel.
+        """Eine Pixelfarbe festlegen.
 
 Example: ``np[0] = (255, 0, 0)``
 
-:param key: El nombre de píxels.
-:param value: (valor) El color."""
+:param key: Die Pixelnummer.
+:param value: (wert) Die Farbe."""
 
     def __getitem__(self, key: int) -> Tuple[int, ...]:
-        """Obté un color de píxel.
+        """Eine Pixelfarbe erfassen.
 
 Example: ``r, g, b = np[0]``
 
-:param key: El nombre de píxels.
+:param key: Die Pixelnummer.
 :return: The colour tuple."""
 
     def __len__(self) -> int:
-        """Obté la longitud d'aquesta cinta de píxels.
+        """Erhalte die Länge des Pixelstreifens.
 
 Example: ``len(np)``"""

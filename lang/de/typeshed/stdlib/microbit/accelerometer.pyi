@@ -1,8 +1,8 @@
-"""Mide la aceleración del micro:bit y reconoce gestos. (acelerómetro)"""
+"""Messen Sie die Beschleunigung des micro:bit und erkennen Sie Gesten. (Beschleunigungssensor)"""
 from typing import Tuple
 
 def get_x() -> int:
-    """Obtiene la medición de la aceleración en el eje ``x`` en mili-g. (obtener x)
+    """Erhalte die Beschleunigungsmessung in der ``x`` -Achse in Milli-g. (erhalte x)
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """Obtiene la medición de la aceleración en el eje ``y`` en mili-g. (obtener y)
+    """Erhalte die Beschleunigungsmessung in der ``y`` -Achse in Milli-g. (erhalte y)
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """Obtiene la medición de la aceleración en el eje ``z`` en mili-g. (obtener z)
+    """Erhalte die Beschleunigungsmessung in der ``z`` -Achse in Milli-g. (erhalte z)
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Obtiene las mediciones de las aceleraciones en todos los ejes como una tupla. (obtener valores)
+    """Erhalten Sie die Beschleunigungsmessungen in allen Achsen auf einmal als Tupel. (Werte erhalten)
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def get_strength() -> int:
-    """Obtener la medición de aceleración de todos los ejes combinados, como un entero positivo. Esta es la suma de Pitagórica de los ejes X, Y y Z. (obtener fuerza)
+    """Erhalte die Beschleunigungsmessung aller Achsen als positive Ganzzahl. Dies ist die euklidische Summe der X-, Y- und Z-Achsen. (erhalte Stärke)
 
 Example: ``accelerometer.get_strength()``
 
@@ -42,7 +42,7 @@ Example: ``accelerometer.get_strength()``
     ...
 
 def current_gesture() -> str:
-    """Obtiene el nombre del gesto actual. (gesto actual)
+    """Erhalte den Namen der aktuellen Geste. (derzeitige Geste)
 
 Example: ``accelerometer.current_gesture()``
 
@@ -55,7 +55,7 @@ represented as strings.
     ...
 
 def is_gesture(name: str) -> bool:
-    """Comprueba si el gesto está actualmente activo. (gesto activo)
+    """Überprüft, ob die benannte Geste derzeit aktiv ist. (ist Geste)
 
 Example: ``accelerometer.is_gesture('shake')``
 
@@ -64,12 +64,12 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (nombre) El nombre del gesto.
+:param name: Der Name der Geste.
 :return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """Comprueba si el gesto estuvo activo desde la última llamada. (gesto anterior)
+    """Überprüft, ob die benannte Geste seit dem letzten Aufruf aktiv war. (war Geste)
 
 Example: ``accelerometer.was_gesture('shake')``
 
@@ -78,11 +78,11 @@ MicroPython understands the following gesture names: ``"up"``, ``"down"``,
 ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
 represented as strings.
 
-:param name: (nombre) El nombre del gesto.
+:param name: Der Name der Geste.
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """Devuelve una tupla con el historial de gestos. (obtener gestos)
+    """Gibt ein Tupel der vergangenen Gesten zurück. (erhalte Gesten)
 
 Example: ``accelerometer.get_gestures()``
 
@@ -96,8 +96,8 @@ gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
     ...
 
 def set_range(value: int) -> None:
-    """Establecer el rango de sensibilidad acelerómetro, en g (gravedad estándar), a los valores más cercanos soportados por el hardware, así que se redondea a ``2``, ``4``o ``8`` g. (establecer rango)
+    """Legen Sie den Bereich des Beschleunigungsmessers in g (Fallbeschleunigung) auf den nächstgelegenen Wert fest, welcher von der Hardware unterstützt wird. Diese sind ``2``, ``4``oder ``8`` g. (Bereich einstellen)
 
 Example: ``accelerometer.set_range(8)``
 
-:param value: (valor) Nuevo rango para el acelerómetro, un entero en ``g``."""
+:param value: (wert) Neuer Bereich für den Beschleunigungssensor, eine Ganzzahl in ``g``."""

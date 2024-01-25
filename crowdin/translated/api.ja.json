@@ -884,7 +884,7 @@
     "description": "(parameter name) Sets the millisecond mark for the scheduling."
   },
   "microbit.run_every.param-doc.ms": {
-    "message": "スケジューリングのための秒を設定します。",
+    "message": "スケジューリングのためのミリ秒を設定します。",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.s": {
@@ -892,7 +892,7 @@
     "description": "(parameter name) Sets the second mark for the scheduling."
   },
   "microbit.run_every.param-doc.s": {
-    "message": "スケジューリングのためのミリ秒を設定します。",
+    "message": "スケジューリングのための秒を設定します。",
     "description": "Parameter docs"
   },
   "microbit.panic": {
@@ -1932,7 +1932,7 @@
     "description": "(field name) A list containing all the CLOCK_ images in sequence."
   },
   "microbit.Image.ALL_CLOCKS.summary": {
-    "message": "すべての CLOCK_ イメージを順番に並べたリスト。",
+    "message": "すべての時計イメージを順番に並べたリスト。",
     "description": "A list containing all the CLOCK_ images in sequence."
   },
   "microbit.Image.ALL_ARROWS": {
@@ -1940,7 +1940,7 @@
     "description": "(field name) A list containing all the ARROW_ images in sequence."
   },
   "microbit.Image.ALL_ARROWS.summary": {
-    "message": "すべての ARROW_ イメージを順番に並べたリスト。",
+    "message": "すべての矢印イメージを順番に並べたリスト。",
     "description": "A list containing all the ARROW_ images in sequence."
   },
   "microbit.Image.__init__-1": {
@@ -2660,7 +2660,7 @@
     "description": "(field name) Square wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SQUARE.summary": {
-    "message": "{{waveform}} パラメータに指定できる「方形波」オプション。",
+    "message": "{{waveform}} パラメータに指定できる「矩形波」オプション。",
     "description": "Square wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_NOISE": {
@@ -2724,7 +2724,7 @@
     "description": "(field name) Warble effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_WARBLE.summary": {
-    "message": "{{fx}} パラメータに指定できる「さえずり効果」オプション。",
+    "message": "{{fx}} パラメータに指定できる「ワブル効果」オプション。",
     "description": "Warble effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.freq_start": {

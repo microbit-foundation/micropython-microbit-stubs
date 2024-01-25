@@ -1,18 +1,18 @@
-"""Registra datos en el micro:bit V2. (registrar)"""
+"""Zeichne Daten auf deinem micro:bit V2 auf."""
 from typing import Literal, Mapping, Optional, Union, overload
 MILLISECONDS = 1
-"""Formato de marca temporal en milisegundos. (milisegundos)"""
+"""Millisekunden Zeitstempelformat. (millisekunden)"""
 SECONDS = 10
-"""Formato de marca temporal en segundos. (segundos)"""
+"""Sekunden Zeitstempelformat. (sekunden)"""
 MINUTES = 600
-"""Formato de marca temporal en minutos. (minutos)"""
+"""Minuten Zeitstempelformat. (minuten)"""
 HOURS = 36000
-"""Formato de marca temporal en horas. (horas)"""
+"""Stunden Zeitstempelformat. (stunden)"""
 DAYS = 864000
-"""Formato de marca temporal en días. (días)"""
+"""Tage Zeitstempelformat. (tage)"""
 
 def set_labels(*labels: str, timestamp: Optional[Literal[1, 10, 36000, 864000]]=SECONDS) -> None:
-    """Configura la cabecera del archivo de registro. (configurar etiquetas)
+    """Den Logdatei-Header setzen (Beschriftungen festlegen)
 
 Example: ``log.set_labels('X', 'Y', 'Z', timestamp=log.MINUTES)``
 
@@ -27,13 +27,13 @@ present, it will generate a new header row with the additional columns.
 By default the first column contains a timestamp for each row. The time
 unit can be selected via the timestamp argument.
 
-:param *labels: (*Etiquetas) Cualquier número de argumentos posicionales, cada uno correspondiente a una entrada en el encabezado del registro.
-:param timestamp: (marca de tiempo) Seleccione la unidad de marca de tiempo que se añadirá automáticamente como la primera columna de cada fila. Los valores de la marca de tiempo pueden ser ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` o ``None`` para desactivar la marca de tiempo. El valor por defecto es ``log.SECONDS``."""
+:param *labels: Eine beliebige Anzahl von Positionsargumenten, die jeweils einem Eintrag in der Kopfzeile des Logs entsprechen.
+:param timestamp: (Zeitstempel) Wähle die Zeitstempel-Einheit, die automatisch als erste Spalte in jeder Zeile hinzugefügt wird. Der Zeitstempel kann einen der folgenden Werte annehmen: ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` oder ``None``, um den Zeitstempel zu deaktivieren. Der Standardwert ist ``log.SECONDS``."""
     ...
 
 @overload
 def add(data_dictionary: Optional[Mapping[str, Union[str, int, float]]]) -> None:
-    """Añade una fila de datos al registro pasando un diccionario de cabeceras y valores. (añadir)
+    """Füge dem Protokoll eine Datenzeile hinzu, indem du ein Dictionary mit Kopfzeileneinträgen und Werten übergibst. (hinzufügen)
 
 Example: ``log.add({ 'temp': temperature() })``
 
@@ -46,12 +46,12 @@ to the log with the extra labels.
 Labels previously specified and not present in a call to this function will
 be skipped with an empty value in the log row.
 
-:param data_dictionary: (diccionario de datos) Los datos a registrar como un diccionario con una clave para cada cabecera."""
+:param data_dictionary: (daten wörterbuch) Die zu protokollierenden Daten in Form eines Dictionarys mit einem Schlüssel für jeden Kopfzeileneintrag."""
     ...
 
 @overload
 def add(**kwargs: Union[str, int, float]) -> None:
-    """Añade una fila de datos al registro usando argumentos de palabra clave. (añadir)
+    """Füge dem Protokoll eine Datenzeile mit Schlüsselwörtern als Argumenten hinzu. (hinzufügen)
 
 Example: ``log.add(temp=temperature())``
 
@@ -66,7 +66,7 @@ be skipped with an empty value in the log row."""
     ...
 
 def delete(full=False):
-    """Elimina el contenido del registro, incluyendo las cabeceras. (eliminar)
+    """Löscht den Inhalt des Protokolls, einschließlich der Kopfzeilen. (löschen)
 
 Example: ``log.delete()``
 
@@ -75,15 +75,15 @@ To add the log headers again the ``set_labels`` function should to be called aft
 There are two erase modes; “full” completely removes the data from the physical storage,
 and “fast” invalidates the data without removing it.
 
-:param full: (completo) ``True`` selecciona un borrador “completo” y ``False`` selecciona el método de borrado “rápido”."""
+:param full: (vollständig) Mit ``True`` wird ein " vollständiges" Löschen und mit ``False`` die "schnelle" Löschmethode gewählt."""
     ...
 
 def set_mirroring(serial: bool):
-    """Configure la duplicación de la actividad de registro de datos en la salida en serie. (configurar replicación)
+    """Richte die Spiegelung der Datenprotokollierung auf dem seriellen Ausgang ein. (spiegeln)
 
 Example: ``log.set_mirroring(True)``
 
 Serial mirroring is disabled by default. When enabled, it will print to serial each row logged into the log file.
 
-:param serial: (serie) ``True`` habilita la reproducción de datos en la salida de serie."""
+:param serial: (seriell) ``True`` aktiviert die Spiegelung von Daten auf dem seriellen Ausgang."""
     ...

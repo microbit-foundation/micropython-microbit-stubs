@@ -1,4 +1,4 @@
-"""端子、イメージ、サウンド、温度と音量。"""
+"""Pins, Bilder, Töne, Temperatur und Lautstärke."""
 from typing import Any, Callable, List, Optional, Tuple, Union, overload
 from _typeshed import ReadableBuffer
 from . import accelerometer as accelerometer
@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """time 引数で指定した間隔で関数を実行するようスケジュールします。 **V2** のみで使えます。
+    """Plant die Ausführung einer Funktion in dem durch die Zeitargumente festgelegten Intervall **nur V2**.
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -36,28 +36,28 @@ So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: 指定した間隔で呼び出す関数。デコレータとして使う場合は省略してください。
-:param days: スケジューリングのための日数を設定します。
-:param h: スケジューリングのための時間を設定します。
-:param min: スケジューリングのための分を設定します。
-:param s: スケジューリングのための秒を設定します。
-:param ms: スケジューリングのためのミリ秒を設定します。"""
+:param callback: Funktion, die in dem angegebenen Intervall aufgerufen wird. Bei Verwendung als Dekorator weglassen.
+:param days: (tage) Legt den Tag für die Planung fest.
+:param h: Legt die Uhrzeit für die Planung fest.
+:param min: Legt die Minute für die Planung fest.
+:param s: Legt die Sekunde für die Planung fest.
+:param ms: Legt die Millisekunde für die Planung fest."""
 
 def panic(n: int) -> None:
-    """パニックモードに入ります。
+    """In einen Panik-Modus gehen.
 
 Example: ``panic(127)``
 
-:param n: 状態を示す 255 以下の任意の整数。
+:param n: Eine beliebige ganze Zahl <= 255, um einen Status anzugeben.
 
 Requires restart."""
 
 def reset() -> None:
-    """ボードを再起動します。"""
+    """Board neu starten."""
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
-    """ある整数区間から別の整数区間に値を変換します。
+    """Konvertiert einen Wert aus einem Bereich in einen Ganzzahlenbereich.
 
 Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
@@ -69,14 +69,14 @@ floating point number.
 
     temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-:param value: 変換する数値。
-:param from_: 変換元の区間を定義するためのタプル。
-:param to: 変換先の区間を定義するためのタプル。
+:param value: (wert) Eine umzurechnende Zahl.
+:param from_: Ein Tupel, das den Bereich definiert, aus dem konvertiert werden soll.
+:param to: Ein Tupel, das den Bereich definiert, in den konvertiert werden soll.
 :return: The ``value`` converted to the ``to`` range."""
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """ある浮動小数点数区間から別の浮動小数点数区間に値を変換します。
+    """Konvertiert einen Wert von einem Bereich in einen Gleitkommabereich.
 
 Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
@@ -89,17 +89,17 @@ If they are both integers (i.e ``10``), it will return an integer::
 
     returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-:param value: 変換する数値。
-:param from_: 変換元の区間を定義するためのタプル。
-:param to: 変換先の区間を定義するためのタプル。
+:param value: (wert) Eine umzurechnende Zahl.
+:param from_: Ein Tupel, das den Bereich definiert, aus dem konvertiert werden soll.
+:param to: Ein Tupel, das den Bereich definiert, in den konvertiert werden soll.
 :return: The ``value`` converted to the ``to`` range."""
 
 def sleep(n: float) -> None:
-    """``n`` ミリ秒待機します。
+    """Warte auf ``n`` Millisekunden.
 
 Example: ``sleep(1000)``
 
-:param n: ミリ秒単位の待機時間
+:param n: Die Anzahl der zu wartenden Millisekunden
 
 One second is 1000 milliseconds, so::
 
@@ -108,19 +108,19 @@ One second is 1000 milliseconds, so::
 will pause the execution for one second."""
 
 def running_time() -> int:
-    """ボードの実行時間を取得します。
+    """Ermittelt die Laufzeit des Boards.
 
 :return: The number of milliseconds since the board was switched on or restarted."""
 
 def temperature() -> int:
-    """micro:bitの温度を摂氏で取得します。 (温度)"""
+    """Ermittelt die Temperatur des micro:bit in Grad Celcius."""
 
 def set_volume(v: int) -> None:
-    """音量を設定します。
+    """Legt die Lautstärke fest.
 
 Example: ``set_volume(127)``
 
-:param v: 0（下限）から 255（上限）までの間の値。
+:param v: ein Wert zwischen 0 (niedrig) und 255 (hoch).
 
 Out of range values will be clamped to 0 or 255.
 
@@ -128,16 +128,16 @@ Out of range values will be clamped to 0 or 255.
     ...
 
 class Button:
-    """ボタン ``button_a`` と ``button_b`` のクラス。"""
+    """Die Klasse für die Tasten ``button_a`` und ``button_b``."""
 
     def is_pressed(self) -> bool:
-        """ボタンが押されているかどうかを確認します。
+        """Überprüft, ob die Taste gedrückt ist.
 
 :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
         ...
 
     def was_pressed(self) -> bool:
-        """デバイスが起動されてから、もしくは前回このメソッドが呼び出されてからボタンが押されたかどうかを確認します。
+        """Überprüft, ob die Taste seit dem Start des Geräts oder dem letzten Aufruf dieser Methode gedrückt wurde.
 
 Calling this method will clear the press state so
 that the button must be pressed again before this method will return
@@ -147,17 +147,17 @@ that the button must be pressed again before this method will return
         ...
 
     def get_presses(self) -> int:
-        """ボタンを押した回数の合計を取得し、返す前に回数をゼロにリセットします。
+        """Ermittelt die Gesamtzahl der Tastendrücke und setzt diese Summe auf Null zurück, bevor sie zurückgegeben wird.
 
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""左のボタン ``Button`` オブジェクト。"""
+"""Das ``Button``-Objekt der linken Taste."""
 button_b: Button
-"""右のボタン ``Button`` オブジェクト。"""
+"""Das ``Button``-Objekt der rechten Taste."""
 
 class MicroBitDigitalPin:
-    """デジタル端子。
+    """Ein digitaler Pin.
 
 Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
     NO_PULL: int
@@ -165,7 +165,7 @@ Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin
     PULL_DOWN: int
 
     def read_digital(self) -> int:
-        """端子のデジタル値を取得します。
+        """Ermittelt den digitalen Wert des Pins.
 
 Example: ``value = pin0.read_digital()``
 
@@ -173,23 +173,23 @@ Example: ``value = pin0.read_digital()``
         ...
 
     def write_digital(self, value: int) -> None:
-        """端子のデジタル値を設定します。
+        """Stellt den digitalen Wert des Pins ein. (digital schreiben)
 
 Example: ``pin0.write_digital(1)``
 
-:param value: 端子をハイにするには 1 、ローにするには 0 を指定"""
+:param value: (wert) 1, um den Pin zu aktivieren, oder 0, um den Pin zu deaktivieren"""
         ...
 
     def set_pull(self, value: int) -> None:
-        """プル状態を ``PULL_UP``、``PULL_DOWN``、``NO_PULL`` の３つの値のいずれかに設定します。
+        """Setze den Status des Pull-Widerstands auf einen von drei möglichen Werten: ``PULL_UP``, ``PULL_DOWN`` oder ``NO_PULL``. (setze Pull-Widerstand)
 
 Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: ``pin0.PULL_UP`` などの関連する端子のプル状態。"""
+:param value: (wert) Der Status des Pull-Widerstands vom relevanten Pin, z.B. ``pin0.PULL_UP``."""
         ...
 
     def get_pull(self) -> int:
-        """端子のプル状態を取得します。
+        """Abrufen des Status des Pull-Widerstands eines Pins. (gib Pull-Widerstand)
 
 Example: ``pin0.get_pull()``
 
@@ -200,7 +200,7 @@ when a pin mode requires it."""
         ...
 
     def get_mode(self) -> str:
-        """端子のモードを返します。
+        """Gibt den Pin-Modus zurück. (gib Pin-Modus)
 
 Example: ``pin0.get_mode()``
 
@@ -212,43 +212,43 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """PWM 信号を端子に出力します。時間幅周期は ``value`` に比例します。
+        """Erzeugt ein PWM-Signal am Pin mit der Einschaltdauer proportional zu ``value``. (analog schreiben)
 
 Example: ``pin0.write_analog(254)``
 
-:param value: 0（時間幅周期 0%）から 1023（時間幅周期 100%）までの整数または浮動小数点数。"""
+:param value: (wert) Eine Ganzzahl oder eine Gleitpunktzahl zwischen 0 (0% Einschaltdauer) und 1023 (100% Einschaltdauer)."""
 
     def set_analog_period(self, period: int) -> None:
-        """出力されるPWM信号の周期を ``period`` にミリ秒単位で設定します。
+        """Setzt die Periodendauer des PWM-Signals, das ausgegeben wird, auf ``period`` in Millisekunden. (setze analoge Periodendauer)
 
 Example: ``pin0.set_analog_period(10)``
 
-:param period: 周期をミリ秒単位で指定。有効な最小値は1ms。"""
+:param period: (Periodendauer) Der Periodendauer in Millisekunden mit einem Mindestwert von 1ms."""
 
     def set_analog_period_microseconds(self, period: int) -> None:
-        """出力されるPWM信号の周期を ``period`` にマイクロ秒単位で設定します。
+        """Setze die Periodendauer für die Ausgabe des PWM-Signals auf ``period`` in Mikrosekunden. (setze analoge Periodendauer)
 
 Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: 周期をマイクロ秒単位で指定。有効な最小値は256µs。"""
+:param period: (Periodendauer) Die Periodendauer in Mikrosekunden mit einem Mindestwert von 256μs."""
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """アナログとデジタル機能を備えた端子。"""
+    """Ein Pin, der analogen und digitalen Signale erlaubt."""
 
     def read_analog(self) -> int:
-        """端子にかかっている電圧を読み取ります。
+        """Einlesen der Spannung, die am Pin anliegt. (analog lesen)
 
 Example: ``pin0.read_analog()``
 
 :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """アナログ、デジタル、タッチ機能を備えた端子。"""
+    """Ein Pin mit analogen, digitalen und Touchfunktionen."""
     CAPACITIVE: int
     RESISTIVE: int
 
     def is_touched(self) -> bool:
-        """端子にタッチしているかどうかを確認します。
+        """Überprüft, ob der Pin berührt wird. (wird berührt)
 
 Example: ``pin0.is_touched()``
 
@@ -271,203 +271,203 @@ does not require you to make a ground connection as part of a circuit.
         ...
 
     def set_touch_mode(self, value: int) -> None:
-        """端子のタッチモードを設定します。
+        """Legt den Touchmodus für den Pin fest. (definiert Berührungsmodus)
 
 Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
 The default touch mode for the pins on the edge connector is
 ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-:param value: 関連する端子の ``CAPACITIVE`` または ``RESISTIVE``。"""
+:param value: (wert) ``CAPACITIVE`` oder ``RESISTIVE`` Touchmodus des entsprechenden Pins."""
         ...
 pin0: MicroBitTouchPin
-"""デジタル、アナログ、タッチ機能を備えた端子。"""
+"""Pin mit digitalen, analogen und Touchfunktionen."""
 pin1: MicroBitTouchPin
-"""デジタル、アナログ、タッチ機能を備えた端子。"""
+"""Pin mit digitalen, analogen und Touchfunktionen."""
 pin2: MicroBitTouchPin
-"""デジタル、アナログ、タッチ機能を備えた端子。"""
+"""Pin mit digitalen, analogen und Touchfunktionen."""
 pin3: MicroBitAnalogDigitalPin
-"""デジタルとアナログ機能を備えた端子。"""
+"""Pin mit digitalen und analogen Funktionen."""
 pin4: MicroBitAnalogDigitalPin
-"""デジタルとアナログ機能を備えた端子。"""
+"""Pin mit digitalen und analogen Funktionen."""
 pin5: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit Unterstützung für digitale Signale."""
 pin6: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit Unterstützung für digitale Signale."""
 pin7: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin8: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin9: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin10: MicroBitAnalogDigitalPin
-"""デジタルとアナログ機能を備えた端子。"""
+"""Pin mit digitalen und analogen Funktionen."""
 pin11: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin12: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin13: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin14: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin15: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin16: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin19: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin20: MicroBitDigitalPin
-"""デジタル機能を備えた端子。"""
+"""Pin mit digitalen Funktionen."""
 pin_logo: MicroBitTouchPin
-"""micro:bitの前面にあるタッチセンサー機能のあるロゴの端子です。デフォルトでは静電容量方式タッチモードになっています。"""
+"""Ein berührungsempfindlicher Logo-Pin auf der Vorderseite des micro:bit, der standardmäßig auf den kapazitiven Touch-Modus eingestellt ist."""
 pin_speaker: MicroBitAnalogDigitalPin
-"""micro:bitスピーカーをアドレスするための端子。
+"""Ein Pin zur Ansteuerung des micro:bit Lautsprechers.
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """micro:bitのLEDディスプレイに表示するイメージ。
+    """Ein Bild, das auf dem micro:bit LED-Display angezeigt werden soll.
 
 Given an image object it's possible to display it via the ``display`` API::
 
     display.show(Image.HAPPY)"""
     HEART: Image
-    """「ハート」イメージ。"""
+    """Herz-Bild."""
     HEART_SMALL: Image
-    """「小さいハート」イメージ。"""
+    """Kleines Herz-Bild."""
     HAPPY: Image
-    """「うれしい顔」イメージ。"""
+    """Glückliches Gesichtsbild."""
     SMILE: Image
-    """「笑顔」イメージ。"""
+    """Lächelndes Gesichtsbild."""
     SAD: Image
-    """「かなしい顔」イメージ。"""
+    """Trauriges Gesichtsbild."""
     CONFUSED: Image
-    """「こまり顔」イメージ。"""
+    """Verwirrtes Gesichtsbild."""
     ANGRY: Image
-    """「おこり顔」イメージ。"""
+    """Wütendes Gesichtsbild."""
     ASLEEP: Image
-    """「ねてる顔」イメージ。"""
+    """Schlafendes Gesichtsbild."""
     SURPRISED: Image
-    """「びっくり顔」イメージ。"""
+    """Überraschtes Gesichtsbild."""
     SILLY: Image
-    """「へん顔」イメージ。"""
+    """Albernes Gesichtsbild."""
     FABULOUS: Image
-    """「サングラスの笑顔」イメージ。"""
+    """Bild mit Sonnenbrillengesicht. (fabelhaft)"""
     MEH: Image
-    """「ふーん」イメージ"""
+    """Gleichgültiges Gesicht Bild."""
     YES: Image
-    """「チェック」イメージ。"""
+    """abgehakt-Bild"""
     NO: Image
-    """「バツ」イメージ。"""
+    """angekreuzt-Bild"""
     CLOCK12: Image
-    """「12時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 12 Uhr zeigt."""
     CLOCK11: Image
-    """「11時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 11 Uhr zeigt."""
     CLOCK10: Image
-    """「10時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 10 Uhr zeigt."""
     CLOCK9: Image
-    """「9時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 9 Uhr zeigt."""
     CLOCK8: Image
-    """「8時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 8 Uhr zeigt."""
     CLOCK7: Image
-    """「7時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 7 Uhr zeigt."""
     CLOCK6: Image
-    """「6時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 6 Uhr zeigt."""
     CLOCK5: Image
-    """「5時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 5 Uhr zeigt."""
     CLOCK4: Image
-    """「4時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 4 Uhr zeigt."""
     CLOCK3: Image
-    """「3時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 3 Uhr zeigt."""
     CLOCK2: Image
-    """「2時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 2 Uhr zeigt."""
     CLOCK1: Image
-    """「1時を指す線」イメージ。"""
+    """Bild mit Linie, die auf 1 Uhr zeigt."""
     ARROW_N: Image
-    """「北を指す矢印」イメージ。"""
+    """Bild eines Pfeils, der nach Norden zeigt."""
     ARROW_NE: Image
-    """「北東を指す矢印」イメージ。"""
+    """Bild eines Pfeils, der nach Nordosten zeigt."""
     ARROW_E: Image
-    """「西を指す矢印」イメージ。"""
+    """Bild eines Pfeils, der nach Osten zeigt."""
     ARROW_SE: Image
-    """「南東を指す矢印」イメージ。"""
+    """Bild eines Pfeils, der nach Südosten zeigt."""
     ARROW_S: Image
-    """「南を指す矢印」イメージ。"""
+    """Bild eines Pfeils, der nach Süden zeigt."""
     ARROW_SW: Image
-    """「南西を指す矢印」イメージ。"""
+    """Bild eines Pfeils, der nach Südwesten zeigt."""
     ARROW_W: Image
-    """「西を指す矢印」イメージ。"""
+    """Bild eines Pfeils, der nach Westen zeigt."""
     ARROW_NW: Image
-    """「北西を指す矢印」イメージ。"""
+    """Bild eines Pfeils, der nach Nordwesten zeigt."""
     TRIANGLE: Image
-    """「上向きの三角形」イメージ"""
+    """Bild eines Dreiecks, das nach oben zeigt."""
     TRIANGLE_LEFT: Image
-    """「左向き三角」イメージ。"""
+    """Bild eines Dreiecks in der linken Ecke."""
     CHESSBOARD: Image
-    """チェス盤パターンで交互に点灯するLED。"""
+    """Abwechselnd leuchtende LEDs in einem Schachbrettmuster."""
     DIAMOND: Image
-    """「ダイヤモンド」イメージ。"""
+    """Diamant-Bild."""
     DIAMOND_SMALL: Image
-    """「小さいダイヤモンド」イメージ。"""
+    """Kleines Diamant-Bild."""
     SQUARE: Image
-    """「四角」イメージ。"""
+    """Quadrat-Bild"""
     SQUARE_SMALL: Image
-    """「小さい四角」イメージ。"""
+    """Kleines Quadrat-Bild."""
     RABBIT: Image
-    """「うさぎ」イメージ。"""
+    """Kaninchen-Bild."""
     COW: Image
-    """「うし」イメージ。"""
+    """Kuh-Bild."""
     MUSIC_CROTCHET: Image
-    """「４分音符」イメージ。"""
+    """Viertelnoten-Bild."""
     MUSIC_QUAVER: Image
-    """「８分音符」イメージ。"""
+    """Achtelnoten-Bild."""
     MUSIC_QUAVERS: Image
-    """「連結した８分音符」イメージ。"""
+    """Achtelnotenpaar-Bild."""
     PITCHFORK: Image
-    """「くまで」イメージ。"""
+    """Heugabel-Bild"""
     XMAS: Image
-    """「クリスマスツリー」イメージ。"""
+    """Weihnachtsbaum-Bild."""
     PACMAN: Image
-    """「パックマン」イメージ。"""
+    """Pac-Man Spielfigurenbild."""
     TARGET: Image
-    """「まと」イメージ。"""
+    """Ziel-Bild"""
     TSHIRT: Image
-    """「Tシャツ」イメージ。"""
+    """T-Shirt-Bild."""
     ROLLERSKATE: Image
-    """「ローラースケート」イメージ。"""
+    """Rollerskate-Bild."""
     DUCK: Image
-    """「あひる」イメージ。"""
+    """Ente-Bild"""
     HOUSE: Image
-    """「家」イメージ。"""
+    """Haus-Bild"""
     TORTOISE: Image
-    """「かめ」イメージ。"""
+    """Schildkröte-Bild"""
     BUTTERFLY: Image
-    """「ちょうちょ」イメージ。"""
+    """Schmetterling-Bild."""
     STICKFIGURE: Image
-    """「棒人間」イメージ。"""
+    """Strichmännchen-Bild."""
     GHOST: Image
-    """「おばけ」イメージ。"""
+    """Geist-Bild."""
     SWORD: Image
-    """「剣」イメージ。"""
+    """Schwert-Bild"""
     GIRAFFE: Image
-    """「きりん」イメージ。"""
+    """Giraffe-Bild."""
     SKULL: Image
-    """「がいこつ」イメージ。"""
+    """Schädel-Bild."""
     UMBRELLA: Image
-    """「かさ」イメージ。"""
+    """Bild eines Schirms."""
     SNAKE: Image
-    """「へび」イメージ。"""
+    """Bild einer Schlange. (Schlange)"""
     SCISSORS: Image
-    """「はさみ」イメージ。"""
+    """BIld einer Schere. (Schere)"""
     ALL_CLOCKS: List[Image]
-    """すべての時計イメージを順番に並べたリスト。"""
+    """Eine Liste mit allen CLOCK_ Bildern. (alle Uhren)"""
     ALL_ARROWS: List[Image]
-    """すべての矢印イメージを順番に並べたリスト。"""
+    """Eine Liste mit allen ARROW_ Bildern. (alle Pfeile)"""
 
     @overload
     def __init__(self, string: str) -> None:
-        """LEDの点灯パターンを示す文字列からイメージを作成します。
+        """Erstellen Sie ein Bild aus einer Zeichenkette, die beschreibt, welche LEDs leuchten.
 
 ``string`` has to consist of digits 0-9 arranged into lines,
 describing the image, for example::
@@ -481,16 +481,16 @@ describing the image, for example::
 will create a 5×5 image of an X. The end of a line is indicated by a
 colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: イメージについて記述する文字列。"""
+:param string: (Zeichenkette) Eine Zeichenkette, die das Bild beschreibt."""
         ...
 
     @overload
     def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """``width`` 列と ``height`` 行からなる空のイメージを作成します。
+        """Erstelle ein leeres Bild mit ``width`` Spalten und ``height`` Zeilen.
 
-:param width: イメージの幅を指定するオプション
-:param height: イメージの高さを指定するオプション
-:param buffer: イメージを初期化するために、整数値（0～9）を ``width``×``height`` 個並べた配列またはバイト列を指定します
+:param width: (Breite) Optionale Breite des Bildes
+:param height: (Höhe) Optionale Höhe des Bildes
+:param buffer: (Puffer) Optionales Array oder Bytes von ``width``×``height`` Ganzzahlen im Bereich 0-9 um das Bild zu initialisieren
 
 Examples::
 
@@ -501,90 +501,90 @@ These create 2 x 2 pixel images at full brightness."""
         ...
 
     def width(self) -> int:
-        """列数を取得します。
+        """Ermittelt die Anzahl der Spalten. (Breite)
 
 :return: The number of columns in the image"""
         ...
 
     def height(self) -> int:
-        """行数を取得します。
+        """Ermittelt die Anzahl der Zeilen. (Höhe)
 
 :return: The number of rows in the image"""
         ...
 
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """1ピクセルの明るさを設定します。
+        """Legt die Helligkeit eines Pixels fest. (Pixelwerte setzen)
 
 Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: 列数
-:param y: 行数
-:param value: 明るさを 0（暗い）から 9（明るい）までの整数値で指定します
+:param x: Die Spaltennummer
+:param y: Die Zeilennummer
+:param value: (wert) Die Helligkeit als Ganzzahl zwischen 0 (dunkel) und 9 (hell)
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def get_pixel(self, x: int, y: int) -> int:
-        """1ピクセルの明るさを取得します。
+        """Ermittle die Helligkeit eines Pixels. (Pixelwerte holen)
 
 Example: ``my_image.get_pixel(0, 0)``
 
-:param x: 列数
-:param y: 行数
+:param x: Die Spaltennummer
+:param y: Die Zeilennummer
 :return: The brightness as an integer between 0 and 9."""
         ...
 
     def shift_left(self, n: int) -> Image:
-        """画像を左にシフトした新しいイメージを作成します。
+        """Erstellen Sie ein neues Bild, indem Sie das Bild nach links verschieben. (links verschieben)
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: シフトする列数
+:param n: Die Anzahl der Spalten um die verschoben wird
 :return: The shifted image"""
         ...
 
     def shift_right(self, n: int) -> Image:
-        """画像を右にシフトした新しいイメージを作成します。
+        """Erstellen Sie ein neues Bild, indem Sie das Bild nach rechts verschieben. (rechts verschieben)
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: シフトする列数
+:param n: Die Anzahl der Spalten um die verschoben wird
 :return: The shifted image"""
         ...
 
     def shift_up(self, n: int) -> Image:
-        """画像を上にシフトした新しいイメージを作成します。
+        """Erstellen Sie ein neues Bild, indem Sie das Bild nach oben verschoben wird. (nach oben verschieben)
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: シフトする行数
+:param n: Die Anzahl der Zeilen um die verschoben wird
 :return: The shifted image"""
         ...
 
     def shift_down(self, n: int) -> Image:
-        """画像を下にシフトした新しいイメージを作成します。
+        """Erstellen Sie ein neues Bild, indem Sie das Bild nach unten verschoben wird. (nach unten verschieben)
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: シフトする行数
+:param n: Die Anzahl der Zeilen um die verschoben wird
 :return: The shifted image"""
         ...
 
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """画像をトリミングした新しいイメージを作成します。
+        """Erstellen Sie ein neues Bild, indem das Bild zugeschnitten wird.
 
 Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: トリミングするオフセット列
-:param y: トリミングするオフセット行
-:param w: トリミングする幅
-:param h: トリミングする高さ
+:param x: Die Offset-Spalte des Zuschneidens
+:param y: Die Offset-Zeile des Zuschneidens
+:param w: Die Zuschneide-Breite
+:param h: Die Zuschneide-Höhe
 :return: The new image"""
         ...
 
     def copy(self) -> Image:
-        """イメージ全体のコピーを作成します。
+        """Erstellt eine exakte Kopie des Bildes. (kopieren)
 
 Example: ``Image.HEART.copy()``
 
@@ -592,7 +592,7 @@ Example: ``Image.HEART.copy()``
         ...
 
     def invert(self) -> Image:
-        """元イメージのピクセルの明るさを反転した新しいイメージ作成します。
+        """Erstellt ein neues Bild, indem es die Helligkeit der Pixel des Ausgangsbildes invertiert.
 
 Example: ``Image.SMALL_HEART.invert()``
 
@@ -600,28 +600,28 @@ Example: ``Image.SMALL_HEART.invert()``
         ...
 
     def fill(self, value: int) -> None:
-        """イメージのすべてのピクセルの明るさを設定します。
+        """Legt die Helligkeit für alle Pixel des Bildes fest.
 
 Example: ``my_image.fill(5)``
 
-:param value: 0（暗い）から 9（明るい）までの数値で新しい明るさを指定します。
+:param value: Die neue Helligkeit als Zahl zwischen 0 (dunkel) und 9 (hell).
 
 This method will raise an exception when called on any of the built-in
 read-only images, like ``Image.HEART``."""
         ...
 
     def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """このイメージに別のイメージから領域をコピーします。
+        """Kopiert einen Bereich aus einem anderen Bild in dieses Bild.
 
 Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-:param src: 元イメージ
-:param x: 元イメージの開始列オフセット
-:param y: 元イメージの開始行オフセット
-:param w: コピーする列数
-:param h: コピーする行数
-:param xdest: このイメージで変更する列オフセット
-:param ydest: このイメージで変更する行オフセット
+:param src: Das Ausgangsbild
+:param x: Der Anfangsspalten-Offset im Ausgangsbild
+:param y: Der Anfangszeilen-Offset im Ausgangsbild
+:param w: Die Anzahl der zu kopierenden Spalten
+:param h: Die Anzahl der zu kopierenden Zeilen
+:param xdest: Der Spalten-Offset, der in diesem Bild geändert werden soll
+:param ydest: Der Zeilen-Offset, der in diesem Bild geändert werden soll
 
 Pixels outside the source image are treated as having a brightness of 0.
 
@@ -637,70 +637,70 @@ For example, img.crop(x, y, w, h) can be implemented as::
         ...
 
     def __repr__(self) -> str:
-        """イメージのコンパクトな文字列表現を取得します。"""
+        """Liefert eine kompakte Stringrepräsentation des Bildes."""
         ...
 
     def __str__(self) -> str:
-        """イメージの判読可能な文字列表現を取得します。"""
+        """Liefert eine lesbare String-Repräsentation des Bildes."""
         ...
 
     def __add__(self, other: Image) -> Image:
-        """２つのイメージの各ピクセルの明るさを足した新しいイメージを作成します。
+        """Erstellt ein neues Bild, indem für jedes Pixel die Helligkeitswerte der beiden Bilder addiert werden.
 
 Example: ``Image.HEART + Image.HAPPY``
 
-:param other: 加算するイメージ。"""
+:param other: Das zu addierende Bild."""
         ...
 
     def __sub__(self, other: Image) -> Image:
-        """このイメージから他のイメージの明るさの値を引いた新しいイメージを作成します。
+        """Erstellt ein neues Bild, indem für jedes Pixel die Helligkeitswerte der beiden Bilder subtrahiert werden.
 
 Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: 減算するイメージ。"""
+:param other: Das zu subtrahierende Bild."""
         ...
 
     def __mul__(self, n: float) -> Image:
-        """各ピクセルの明るさを ``n`` 倍した新しいイメージを作成します。
+        """Erstellt ein neues Bild, indem der Helligkeitswert jedes Pixels mit ``n`` multipliziert wird.
 
 Example: ``Image.HEART * 0.5``
 
-:param n: 乗算する値。"""
+:param n: Der Wert, mit dem multipliziert werden soll."""
         ...
 
     def __truediv__(self, n: float) -> Image:
-        """各ピクセルの明るさを ``n`` で割った新しいイメージを作成します。
+        """Erstellt ein neues Bild, indem der Helligkeitswert jedes Pixels durch ``n`` dividiert wird.
 
 Example: ``Image.HEART / 2``
 
-:param n: 除算する値。"""
+:param n: Der Wert, durch den dividiert werden soll."""
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
-    """拍手や叫び声などで ``quiet`` から ``loud`` へのサウンドイベントの変化を表します。"""
+    """Stellt den Übergang von Klangereignissen von ``quiet`` auf ``loud`` dar; wie beim Klatschen oder Rufen."""
     QUIET: SoundEvent
-    """発話やBGMなどで ``loud`` から ``quiet`` へのサウンドイベントの変化を表します。"""
+    """Stellt den Übergang von akustischen Ereignissen, wie Sprechen oder Hintergrundmusik, von ``loud`` zu ``quiet`` dar. (stumm)"""
 
 class Sound:
-    """内蔵のサウンドは ``audio.play(Sound.NAME)`` で呼び出すことができます。"""
+    """Die eingebauten Klänge können mit ``audio.play(Sound.NAME)`` aufgerufen werden."""
     GIGGLE: Sound
-    """「くすくす笑う」サウンド。"""
+    """Kichern-Sound."""
     HAPPY: Sound
-    """「ハッピー」サウンド。"""
+    """Happy-Sound."""
     HELLO: Sound
-    """「ハロー」サウンド"""
+    """Begrüßung-Sound"""
     MYSTERIOUS: Sound
-    """「ミステリアス」サウンド。"""
+    """Geheimnisvoll-Sound"""
     SAD: Sound
-    """「悲しい」サウンド。"""
+    """Traurig-Sound."""
     SLIDE: Sound
-    """「するする動く」サウンド。"""
+    """Gleitender Ton."""
     SOARING: Sound
-    """「舞い上がる」サウンド。"""
+    """Aufsteigender Klang. (aufsteigend)"""
     SPRING: Sound
-    """「バネ」サウンド。"""
+    """Springfeder Klang (Sppringfeder)"""
     TWINKLE: Sound
-    """「キラキラ」サウンド。"""
+    """Funkeln Klang (Funkeln)"""
     YAWN: Sound
-    """「あくび」サウンド。"""
+    """Gähnen Klang"""
