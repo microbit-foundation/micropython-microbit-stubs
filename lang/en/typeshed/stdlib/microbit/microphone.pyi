@@ -3,6 +3,7 @@
 
 from typing import Optional, Tuple
 from ..microbit import SoundEvent
+from ..microbit.audio import AudioFrame
 
 def current_event() -> Optional[SoundEvent]:
     """Get the last recorded sound event
@@ -66,5 +67,67 @@ def sound_level() -> int:
     Example: ``microphone.sound_level()``
 
     :return: A representation of the sound pressure level in the range 0 to 255.
+    """
+    ...
+
+def record(duration: int = 3000, rate: int = 7812) -> AudioFrame:
+    """Record sound into an ``AudioFrame`` for the amount of time indicated by
+    ``duration`` at the sampling rate indicated by ``rate``.
+
+    The amount of memory consumed is directly related to the length of the
+    recording and the sampling rate. The higher these values, the more memory
+    it will use.
+
+    A lower sampling rate will reduce both memory consumption and sound
+    quality.
+
+    If there isn't enough memory available a ``MemoryError`` will be raised.
+
+    :param duration: How long to record in milliseconds.
+    :param rate: Number of samples to capture per second.
+    :returns: An ``AudioFrame`` with the sound samples.
+    """
+    ...
+
+def record_into(buffer: AudioFrame, rate: int = 7812, wait: bool = True) -> None:
+    """Record sound into an existing ``AudioFrame`` until it is filled,
+    or the ``stop_recording()`` function is called.
+
+    :param buffer: An ``AudioFrame`` to record sound.
+    :param rate: Number of samples to capture per second.
+    :param wait: When set to ``True`` it blocks until the recording is
+        done, if it is set to ``False`` it will run in the background.
+    """
+    ...
+
+def is_recording() -> bool:
+    """Checks whether the microphone is currently recording.
+
+    :returns: ``True`` if the microphone is currently recording sound, or
+   ``False`` otherwise.
+    """
+    ...
+
+def stop_recording() -> None:
+    """Stops a recording running in the background.
+    """
+    ...
+
+SENSITIVITY_LOW: float;
+"""Low microphone sensitivity."""
+
+SENSITIVITY_MEDIUM: float;
+"""Medium microphone sensitivity."""
+
+SENSITIVITY_HIGH: float;
+"""High microphone sensitivity."""
+
+
+def set_sensitivity(gain: float) -> None:
+    """Configure the microphone sensitivity.
+
+    The default sensitivity is ``microphone.SENSITIVITY_MEDIUM``.
+
+    :param gain: The microphone gain. Use ``microphone.SENSITIVITY_LOW``, ``microphone.SENSITIVITY_MEDIUM``, ``microphone.SENSITIVITY_HIGH``, or a value between these levels.
     """
     ...
