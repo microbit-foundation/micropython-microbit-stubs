@@ -290,6 +290,15 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
         :return: ``True`` or ``False`` to indicate if the pin was touched since the device started or since the last time this method was called.
         """
         ...
+    
+    def get_touches(self) -> int:
+        """Get the number of times the pin was touched since the last time this method was called.
+
+        Example: ``pin0.get_touches()``
+
+        :return: the number of times the pin was touched since the device started or since the last time this method was called.
+        """
+        ...
 
     def set_touch_mode(self, value: int) -> None:
         """Set the touch mode for the pin.
