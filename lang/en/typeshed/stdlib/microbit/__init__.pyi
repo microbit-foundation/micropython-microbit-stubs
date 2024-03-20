@@ -296,7 +296,7 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
 
         Example: ``pin0.get_touches()``
 
-        :return: the number of times the pin was touched since the device started or since the last time this method was called.
+        :return: The number of times the pin was touched since the device started or since the last time this method was called.
         """
         ...
 
