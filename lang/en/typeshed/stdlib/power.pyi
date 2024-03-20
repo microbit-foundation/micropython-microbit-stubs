@@ -43,8 +43,8 @@ def deep_sleep(
     when the USB cable is inserted.
 
     When the ``run_every`` parameter is set to ``True`` (the default), any
-    function scheduled with ``run_every`` will momentarily wake up the board
-    to run and when it finishes it will go back to sleep.
+    function scheduled with ``run_every`` will momentarily wake up the board to 
+    run and when it finishes it will go back to sleep.
 
     :param ms: A time in milliseconds to wait before it wakes up.
     :param wake_on: A single instance or a tuple of pins and/or buttons to wake up the board, e.g. ``deep_sleep(wake_on=button_a)`` or ``deep_sleep(wake_on=(pin0, pin2, button_b))``.
