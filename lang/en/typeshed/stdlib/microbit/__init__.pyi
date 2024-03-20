@@ -32,7 +32,7 @@ def run_every(
 
     As a Decorator - placed on top of the function to schedule. For example::
 
-        @run_every(h=1, min=20, s=30, ms=50)
+        @run_every(days=1, h=1, min=20, s=30, ms=50)
         def my_function():
             # Do something here
 
