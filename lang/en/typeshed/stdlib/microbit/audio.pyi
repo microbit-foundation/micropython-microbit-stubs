@@ -184,7 +184,7 @@ class AudioFrame:
         """Get the sampling rate associated with the data in the
         ``AudioFrame`` instance (V2 only).
 
-         :returns: The configured sampling rate for this ``AudioFrame`` instance.
+         :return: The configured sampling rate for this ``AudioFrame`` instance.
         """
 
     def copyfrom(self, other: AudioFrame) -> None:

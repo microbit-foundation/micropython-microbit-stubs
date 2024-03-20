@@ -85,7 +85,7 @@ def record(duration: int = 3000, rate: int = 7812) -> AudioFrame:
 
     :param duration: How long to record in milliseconds.
     :param rate: Number of samples to capture per second.
-    :returns: An ``AudioFrame`` with the sound samples.
+    :return: An ``AudioFrame`` with the sound samples.
     """
     ...
 
@@ -103,7 +103,7 @@ def record_into(buffer: AudioFrame, rate: int = 7812, wait: bool = True) -> None
 def is_recording() -> bool:
     """Checks whether the microphone is currently recording.
 
-    :returns: ``True`` if the microphone is currently recording sound, or
+    :return: ``True`` if the microphone is currently recording sound, or
    ``False`` otherwise.
     """
     ...
