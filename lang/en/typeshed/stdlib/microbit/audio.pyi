@@ -173,9 +173,12 @@ class AudioFrame:
         """Configure the sampling rate associated with the data in the
         ``AudioFrame`` instance (V2 only).
 
+        Example: ``my_frame.set_rate(7812)``
+
         For recording from the microphone, increasing the sampling rate
         increases the sound quality, but reduces the length of audio it
         can store.
+
         During playback, increasing the sampling rate speeds up the sound
         and decreasing it slows it down.
         """
@@ -183,6 +186,8 @@ class AudioFrame:
     def get_rate(self) -> int:
         """Get the sampling rate associated with the data in the
         ``AudioFrame`` instance (V2 only).
+
+        Example: ``current_rate = my_frame.get_rate()``
 
          :return: The configured sampling rate for this ``AudioFrame`` instance.
         """

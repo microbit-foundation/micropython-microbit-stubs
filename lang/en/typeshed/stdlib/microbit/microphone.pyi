@@ -74,6 +74,8 @@ def record(duration: int = 3000, rate: int = 7812) -> AudioFrame:
     """Record sound into an ``AudioFrame`` for the amount of time indicated by
     ``duration`` at the sampling rate indicated by ``rate``.
 
+    Example: ``my_frame = microphone.record()``
+
     The amount of memory consumed is directly related to the length of the
     recording and the sampling rate. The higher these values, the more memory
     it will use.
@@ -93,6 +95,8 @@ def record_into(buffer: AudioFrame, rate: int = 7812, wait: bool = True) -> None
     """Record sound into an existing ``AudioFrame`` until it is filled,
     or the ``stop_recording()`` function is called.
 
+    Example: ``microphone.record_into()``
+
     :param buffer: An ``AudioFrame`` to record sound.
     :param rate: Number of samples to capture per second.
     :param wait: When set to ``True`` it blocks until the recording is
@@ -103,13 +107,16 @@ def record_into(buffer: AudioFrame, rate: int = 7812, wait: bool = True) -> None
 def is_recording() -> bool:
     """Checks whether the microphone is currently recording.
 
-    :return: ``True`` if the microphone is currently recording sound, or
-   ``False`` otherwise.
+    Example: ``is_recording = microphone.is_recording()``
+
+    :return: ``True`` if the microphone is currently recording sound, otherwise returns ``False``.
     """
     ...
 
 def stop_recording() -> None:
     """Stops a recording running in the background.
+
+    Example: ``microphone.stop_recording()``
     """
     ...
 
@@ -125,6 +132,8 @@ SENSITIVITY_HIGH: float;
 
 def set_sensitivity(gain: float) -> None:
     """Configure the microphone sensitivity.
+
+    Example: ``microphone.set_sensitivity(microphone.SENSITIVITY_HIGH)``
 
     The default sensitivity is ``microphone.SENSITIVITY_MEDIUM``.
 
