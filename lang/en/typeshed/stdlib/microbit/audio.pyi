@@ -28,6 +28,14 @@ def is_playing() -> bool:
     :return: ``True`` if audio is playing, otherwise ``False``."""
     ...
 
+def sound_level() -> int:
+    """Returns the average intensity of the sound played.
+
+    Example: ``audio.sound_level()``
+
+    :return: A number between 0 and 254, being the average intensity of the sound played from the most recent chunk of data."""
+    ...
+
 def stop() -> None:
     """Stop all audio playback.
 
