@@ -70,11 +70,11 @@ def sound_level() -> int:
     """
     ...
 
-def record(duration: int = 3000, rate: int = 7812) -> AudioFrame:
+def record(duration: int, rate: int = 7812) -> AudioFrame:
     """Record sound into an ``AudioFrame`` for the amount of time indicated by
     ``duration`` at the sampling rate indicated by ``rate``.
 
-    Example: ``my_frame = microphone.record()``
+    Example: ``my_frame = microphone.record(3000)``
 
     The amount of memory consumed is directly related to the length of the
     recording and the sampling rate. The higher these values, the more memory
@@ -95,7 +95,7 @@ def record_into(buffer: AudioFrame, rate: int = 7812, wait: bool = True) -> None
     """Record sound into an existing ``AudioFrame`` until it is filled,
     or the ``stop_recording()`` function is called.
 
-    Example: ``microphone.record_into()``
+    Example: ``microphone.record_into(my_frame)``
 
     :param buffer: An ``AudioFrame`` to record sound.
     :param rate: Number of samples to capture per second.
