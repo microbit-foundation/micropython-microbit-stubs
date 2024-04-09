@@ -392,7 +392,7 @@ class Image:
     """Happy face image."""
 
     SMILE: Image
-    """Smiling face image."""
+    """Smiling mouth image."""
 
     SAD: Image
     """Sad face image."""
