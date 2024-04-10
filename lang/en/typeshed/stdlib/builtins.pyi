@@ -141,7 +141,14 @@ class type(object):
         self, name: str, bases: Tuple[type, ...], dict: dict[str, Any], **kwds: Any
     ) -> None: ...
     @overload
-    def __new__(cls, o: object) -> type: ...
+    def __new__(cls, o: object) -> type:
+        """Get the type of an object.
+
+        Example: ``type("hello, world)``
+
+        :return: The type of the object passed in.
+        """
+        ...
     @overload
     def __new__(
         cls: Type[_TT],
@@ -171,15 +178,32 @@ class super(object):
     def __init__(self) -> None: ...
 
 class int:
+    """Get an integer from a number or a string.
+    """
     @overload
     def __new__(
         cls: Type[_T],
         x: str | bytes | SupportsInt | SupportsIndex | _SupportsTrunc = ...,
-    ) -> _T: ...
+    ) -> _T:
+        """Get an integer from a number or a string.
+
+        Example: ``int("1.2")``
+
+        :return: Zero if no argument is provided, or an ``int`` from a number or string truncated toward zero.
+        """
+        ...
     @overload
     def __new__(
         cls: Type[_T], x: str | bytes | bytearray, base: SupportsIndex
-    ) -> _T: ...
+    ) -> _T:
+        """Get an integer from a number or a string.
+
+        Example: ``int("8.3", 2)``
+
+        :param base: (default=10) Allowed bases are 0 and 2–36.
+        :return: Zero if no argument is provided, or an ``int`` from a number or string truncated toward zero.
+        """
+        ...
     def to_bytes(
         self,
         length: SupportsIndex,
@@ -251,7 +275,14 @@ class int:
 class float:
     def __new__(
         cls: Type[_T], x: SupportsFloat | SupportsIndex | str | bytes | bytearray = ...
-    ) -> _T: ...
+    ) -> _T:
+        """Convert a string or number to a floating point number, if possible.
+
+        Example: ``float("1.2")``
+
+        :return: ``0.0`` if no argument is provided, or a ``float`` from a number or string.
+        """
+        ...
     def __add__(self, x: float) -> float: ...
     def __sub__(self, x: float) -> float: ...
     def __mul__(self, x: float) -> float: ...
@@ -326,11 +357,29 @@ class complex:
 
 class str(Sequence[str]):
     @overload
-    def __new__(cls: Type[_T], o: object = ...) -> _T: ...
+    def __new__(cls: Type[_T], object: object = "") -> _T:
+        """Get a string version of an object.
+
+        Example: ``print("The number " + str(42) " is great!")``
+        
+        :param object: (default="") Object to return a string version of.
+        :return: A string reprentation of an object.
+        """
+        ...
     @overload
     def __new__(
-        cls: Type[_T], o: bytes, encoding: str = ..., errors: str = ...
-    ) -> _T: ...
+        cls: Type[_T], object: bytes = b"", encoding: str = "uft-8", errors: str = "strict"
+    ) -> _T:
+        """Get a string version of an object.
+
+        Example: ``print("The number " + str(42) " is great!")``
+        
+        :param object: (default=b"") Object to return a string version of as bytes or a bytearray.
+        :param encoding: (default="uft-8") Encoding used to decode object.
+        :param errors: (default="strict") Something about error handling...
+        :return: A string reprentation of an object.
+        """
+        ...
     def count(
         self,
         x: str,
@@ -813,11 +862,29 @@ class range(Sequence[int]):
     stop: int
     step: int
     @overload
-    def __init__(self, stop: SupportsIndex) -> None: ...
+    def __init__(self, stop: SupportsIndex) -> None:
+        """Get a range of values from 0 up tp the stop parameter.
+
+        Example: ``rangeTimesTwo = [x * 2 for x in range(5)]``
+        
+        :param stop: An integer to determine the end of the range (exclusive).
+        :return: A range object
+        """
+        ...
     @overload
     def __init__(
         self, start: SupportsIndex, stop: SupportsIndex, step: SupportsIndex = ...
-    ) -> None: ...
+    ) -> None:
+        """Get a range of values from 0 up tp the stop parameter.
+
+        Example: ``rangeTimesTwo = [x * 2 for x in range(1, 11, 2)]``
+        
+        :param start: (default=0) An integer to determine the start of the range (inclusive).
+        :param stop: An integer to determine the end of the range (exclusive).
+        :param step: (default=1) The increment for each value in the range.
+        :return: A range object
+        """
+        ...
     def __len__(self) -> int: ...
     def __contains__(self, o: object) -> bool: ...
     def __iter__(self) -> Iterator[int]: ...
@@ -853,7 +920,15 @@ class _NotImplementedType(Any):  # type: ignore
 
 NotImplemented: _NotImplementedType
 
-def abs(__x: SupportsAbs[_T]) -> _T: ...
+def abs(__x: SupportsAbs[_T]) -> _T:
+    """Get the absolute value of a number.
+
+    Example: ``abs(-42)``
+
+    :param __x: A number.
+    :return: The length of or number of items in an object. 
+    """ 
+    ...
 def all(__iterable: Iterable[object]) -> bool: ...
 def any(__iterable: Iterable[object]) -> bool: ...
 def bin(__number: int | SupportsIndex) -> str: ...
@@ -862,7 +937,15 @@ if sys.version_info >= (3, 7):
     def breakpoint(*args: Any, **kws: Any) -> None: ...
 
 def callable(__obj: object) -> bool: ...
-def chr(__i: int) -> str: ...
+def chr(__i: int) -> str:
+    """Get a Unicode string representation of an integer.
+
+    Example: ``chr(97)``
+
+    :param __i: An integer within the range 0..1,114,111.
+    :return: A Unicode string representation of a number within a valid range. 
+    """ 
+    ...
 
 # We define this here instead of using os.PathLike to avoid import cycle issues.
 # See https://github.com/python/typeshed/pull/991#issuecomment-288160993
@@ -919,10 +1002,30 @@ def getattr(__o: object, name: str, __default: _T) -> Any | _T: ...
 def globals() -> dict[str, Any]: ...
 def hasattr(__obj: object, __name: str) -> bool: ...
 def hash(__obj: object) -> int: ...
-def help(*args: Any, **kwds: Any) -> None: ...
-def hex(__number: int | SupportsIndex) -> str: ...
+def help(request: object) -> None:
+    """Starts interactive help or provides help for the request object, if valid.
+
+    Example: ``help("print")``
+    """
+    ...
+def hex(__number: int | SupportsIndex) -> str:
+    """Get the hexadecimal representation of an integer.
+
+    Example: ``hex(42)``
+    
+    :return: The hexadecimal representation of an integer as a string.
+    """
+    ...
 def id(__obj: object) -> int: ...
-def input(__prompt: Any = ...) -> str: ...
+def input(prompt: object = "") -> str:
+    """Get user input as a string.
+
+    Example: ``prompt("Enter your name: ")``
+
+    :param prompt: (default="") Text prompt seen by users.
+    :return: The length of or number of items in an object.
+    """
+    ...
 @overload
 def iter(__iterable: Iterable[_T]) -> Iterator[_T]: ...
 @overload
@@ -952,7 +1055,15 @@ else:
         __cls: type, __class_or_tuple: type | Tuple[type | Tuple[Any, ...], ...]
     ) -> bool: ...
 
-def len(__obj: Sized) -> int: ...
+def len(__obj: Sized) -> int:
+    """Get the length of, or number of items in an object.
+
+    Example: ``len("Hello, world")``
+
+    :param __obj: A sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
+    :return: The length of or number of items in an object.
+    """ 
+    ...
 def locals() -> dict[str, Any]: ...
 
 class map(Iterator[_S], Generic[_S]):
@@ -1104,14 +1215,33 @@ def open(
     closefd: bool = ...,
     opener: _Opener | None = ...,
 ) -> IO[Any]: ...
-def ord(__c: str | bytes) -> int: ...
+def ord(__c: str | bytes) -> int:
+    """Get an integer representation of a Unicode character.
+
+    Example: ``ord("a")``
+
+    :param __c: A Unicode character.
+    :return: The length of or number of items in an object.
+    """
+    ...
 def print(
     *values: object,
-    sep: str | None = ...,
-    end: str | None = ...,
-    file: SupportsWrite[str] | None = ...,
-    flush: bool = ...,
-) -> None: ...
+    sep: str | None = " ",
+    end: str | None = "\n",
+    file: SupportsWrite[str] | None = None,
+    flush: bool = False,
+) -> None:
+    """Prints values to a stream or standard output, typically the serial console.
+
+    Example: ``print("Hello, world")``
+
+    :param *values: Arguments or literals to print.
+    :param sep: (default=" ") A string separator inserted between values.
+    :param end: (default="\n") A string appended after the last value.
+    :param file: (default=None) A file-like object (stream).
+    :param flush: (default=False) Whether to forcibly flush the stream.
+    """
+    ...
 
 _E = TypeVar("_E", contravariant=True)
 _M = TypeVar("_M", contravariant=True)
@@ -1160,11 +1290,37 @@ class reversed(Iterator[_T], Generic[_T]):
 
 def repr(__obj: object) -> str: ...
 @overload
-def round(number: SupportsRound[Any]) -> int: ...
+def round(number: SupportsRound[Any]) -> int:
+    """Round a number to the nearest integer.
+
+    Example: ``round(42.42)``
+
+    :param number: A number to round to the nearest integer.
+    :return: Round a number to the nearest integer.
+    """
+    ...
 @overload
-def round(number: SupportsRound[Any], ndigits: None) -> int: ...
+def round(number: SupportsRound[Any], ndigits: None) -> int:
+    """Round a number to the nearest integer.
+
+    Example: ``round(42.42, None)``
+
+    :param number: A number to round to the nearest integer.
+    :param ndigits: The number of decimal digits to round to.
+    :return: Round a number to the nearest integer.
+    """
+    ...
 @overload
-def round(number: SupportsRound[_T], ndigits: SupportsIndex) -> _T: ...
+def round(number: SupportsRound[_T], ndigits: SupportsIndex) -> _T:
+    """Round a number to the nearest integer.
+
+    Example: ``round(42.42, 1)``
+
+    :param number: A number to round to the number of decimal digits specified.
+    :param ndigits: The number of decimal digits to round to.
+    :return: The input number rounded to the number of decimal digits specified.
+    """
+    ...
 def setattr(__obj: object, __name: str, __value: Any) -> None: ...
 @overload
 def sorted(
