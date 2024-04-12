@@ -54,15 +54,16 @@ def set_threshold(event: SoundEvent, value: int) -> None:
 
     Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 
-    The ``SoundEvent.LOUD`` event will be triggered when the sound level
-    crosses this threshold upwards (from "quiet" to "loud"),
-    and ``SoundEvent.QUIET`` event is triggered when crossing the threshold
-    downwards (from "loud" to "quiet").
+    The ``SoundEvent.LOUD`` event is triggered when the sound level crosses the 
+    threshold from "quiet" to "loud", and the ``SoundEvent.QUIET`` event is 
+    triggered when the sound level crosses from "loud" to "quiet".
 
-    If the ``SoundEvent.LOUD`` value set is lower than ``SoundEvent.QUIET``,
-    then "quiet" threshold will be decreased to one unit below the "loud"
-    threshold. If the ``SoundEvent.QUIET`` value is set higher than
-    ``SoundEvent.LOUD``, then the "loud" threshold will be set one unit above.
+    If the ``SoundEvent.LOUD`` threshold is set lower than the 
+    ``SoundEvent.QUIET`` threshold, then the ``SoundEvent.QUIET`` threshold 
+    will decrease by one unit below the ``SoundEvent.LOUD`` threshold. If the 
+    ``SoundEvent.QUIET`` threshold is set higher than the ``SoundEvent.LOUD``
+    threshold, then the ``SoundEvent.LOUD`` threshold will increase by one unit 
+    above the ``SoundEvent.QUIET`` threshold.
 
     :param event: A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``.
     :param value: The threshold level in the range 0-255. Values outside this range will be clamped.
