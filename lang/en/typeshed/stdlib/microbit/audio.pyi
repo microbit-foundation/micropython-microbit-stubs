@@ -29,11 +29,11 @@ def is_playing() -> bool:
     ...
 
 def sound_level() -> int:
-    """Returns the average intensity of the sound played.
+    """Returns the sound pressure level produced by audio currently being played.
 
     Example: ``audio.sound_level()``
 
-    :return: A number between 0 and 254, being the average intensity of the sound played from the most recent chunk of data."""
+    :return: A representation of the output sound pressure level in the range 0 to 255."""
     ...
 
 def stop() -> None:
