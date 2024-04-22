@@ -360,7 +360,7 @@ class str(Sequence[str]):
     def __new__(cls: Type[_T], object: object = "") -> _T:
         """Get a string version of an object.
 
-        Example: ``print("The number " + str(42) " is great!")``
+        Example: ``string = str(42)``
         
         :param object: (default="") Object to return a string version of.
         :return: A string reprentation of an object.
@@ -372,7 +372,7 @@ class str(Sequence[str]):
     ) -> _T:
         """Get a string version of an object.
 
-        Example: ``print("The number " + str(42) " is great!")``
+        Example: ``string = str(42)``
         
         :param object: (default=b"") Object to return a string version of as bytes or a bytearray.
         :param encoding: (default="uft-8") Encoding used to decode object.
@@ -385,20 +385,56 @@ class str(Sequence[str]):
         x: str,
         __start: SupportsIndex | None = ...,
         __end: SupportsIndex | None = ...,
-    ) -> int: ...
+    ) -> int:
+        """Get the number of non-overlapping occurences of a substring in the string.
+
+        The optional ``__start`` and ``__end`` arguments can be used to specify a substring in which to count.
+
+        Example: ``count = "banana".count("na")``
+        
+        :param x: The substring to count.
+        :param __start: Optional argument to specify the start of the substring in which to count.
+        :param __end: Optional argument to specify the end of the substring in which to count.
+        :return: The number of non-overlapping occurences of a substring in the string as an ``int``.
+        """
+        ...
     def encode(self, encoding: str = ..., errors: str = ...) -> bytes: ...
     def endswith(
         self,
         __suffix: str | Tuple[str, ...],
         __start: SupportsIndex | None = ...,
         __end: SupportsIndex | None = ...,
-    ) -> bool: ...
+    ) -> bool:
+        """Check if the string ends with a substring.
+
+        The optional ``__start`` and ``__end`` arguments can be used to specify the range to test.
+
+        Example: ``ends_with_hello = "hello, world".endswith("hello")``
+        
+        :param __prefix: The prefix to check for.
+        :param __start: Optional argument to specify the start of the substring to test.
+        :param __end: Optional argument to specify the end of the substring to test.
+        :return: ``True`` if the string ends with the substring, otherwise ``False``.
+        """
+        ...
     def find(
         self,
         __sub: str,
         __start: SupportsIndex | None = ...,
         __end: SupportsIndex | None = ...,
-    ) -> int: ...
+    ) -> int:
+        """Get the lowest index of where the substring is found.
+
+        The optional ``__start`` and ``__end`` arguments can be used to specify a substring in which to search.
+
+        Example: ``index = "banana".find("na")``
+        
+        :param __sub: The substring to find.
+        :param __start: Optional argument to specify the start of the substring in which to search.
+        :param __end: Optional argument to specify the end of the substring in which to search.
+        :return: The the lowest index of where the substring is found, -1 if not found.
+        """
+        ...
     def format(self, *args: object, **kwargs: object) -> str: ...
     def index(
         self,
@@ -406,21 +442,93 @@ class str(Sequence[str]):
         __start: SupportsIndex | None = ...,
         __end: SupportsIndex | None = ...,
     ) -> int: ...
-    def isalpha(self) -> bool: ...
-    def isdigit(self) -> bool: ...
-    def islower(self) -> bool: ...
-    def isspace(self) -> bool: ...
-    def isupper(self) -> bool: ...
+    def isalpha(self) -> bool:
+        """Check if all the characters in the string are alphabetical.
+
+        Example: ``"Hello".isalpha()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are alphabetical, otherwise ``False``.
+        """
+        ...
+    def isdigit(self) -> bool:
+        """Check if all the characters in the string are digits.
+
+        Example: ``"123".isdigit()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are digits, otherwise ``False``.
+        """
+        ...
+    def islower(self) -> bool:
+        """Check if all the characters in the string are lower case.
+
+        Example: ``"hello".islower()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are lower case, otherwise ``False``.
+        """
+        ...
+    def isspace(self) -> bool:
+        """Check if all the characters in the string are whitespace characters.
+
+        Example: ``" ".isspace()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are whitespace characters, otherwise ``False``.
+        """
+        ...
+    def isupper(self) -> bool:
+        """Check if all the characters in the string are upper case.
+
+        Example: ``"HELLO".isupper()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are upper case, otherwise ``False``.
+        """
+        ...
     def join(self, __iterable: Iterable[str]) -> str: ...
-    def lower(self) -> str: ...
-    def lstrip(self, __chars: str | None = ...) -> str: ...
-    def replace(self, __old: str, __new: str, __count: SupportsIndex = ...) -> str: ...
+    def lower(self) -> str:
+        """Get a copy of the string in lower case.
+
+        Example: ``as_lower_case = "HELLO".lower()``
+        
+        :return: A copy of the string in lower case.
+        """
+        ...
+    def lstrip(self, __chars: str | None = ...) -> str:
+        """Get a copy of the string with the leading characters removed.
+
+        Example: ``stripped = "  hello".lstrip()``
+        
+        :param __chars: (default=" ") The characters to be removed. Defaults to whitespace characters if not provided.
+        :return: A copy of the string with the leading characters removed.
+        """
+        ...
+    def replace(self, __old: str, __new: str, __count: SupportsIndex = ...) -> str:
+        """Get a copy of the string with all occurrences of the old substring replaced by new.
+
+        Example: ``replaced = "apple, orange".replace("orange", "banana")``
+        
+        :param __old: The substring to replace.
+        :param __new: The replacement substring.
+        :param __count: Optional argument to specify the number of occurences of the old substring that should be replaced.
+        :return: A copy of the string with all occurrences of the old substring replaced by new.
+        """
+        ...
     def rfind(
         self,
         __sub: str,
         __start: SupportsIndex | None = ...,
         __end: SupportsIndex | None = ...,
-    ) -> int: ...
+    ) -> int:
+        """Get the highest index of where the substring is found.
+
+        The optional ``__start`` and ``__end`` arguments can be used to specify a substring in which to search.
+
+        Example: ``index = "banana".rfind("na")``
+
+        :param __sub: The substring to find.
+        :param __start: Optional argument to specify the start of the substring in which to search.
+        :param __end: Optional argument to specify the end of the substring in which to search.
+        :return: The the highest index of where the substring is found, -1 if not found.
+        """
+        ...
     def rindex(
         self,
         __sub: str,
@@ -430,7 +538,15 @@ class str(Sequence[str]):
     def rsplit(
         self, sep: str | None = ..., maxsplit: SupportsIndex = ...
     ) -> list[str]: ...
-    def rstrip(self, __chars: str | None = ...) -> str: ...
+    def rstrip(self, __chars: str | None = ...) -> str:
+        """Get a copy of the string with the trailing characters removed.
+
+        Example: ``stripped = "hello  ".rstrip()``
+        
+        :param __chars: (default=" ") The characters to be removed. Defaults to whitespace characters if not provided.
+        :return: A copy of the string with the trailing characters removed.
+        """
+        ...
     def split(
         self, sep: str | None = ..., maxsplit: SupportsIndex = ...
     ) -> list[str]: ...
@@ -439,9 +555,36 @@ class str(Sequence[str]):
         __prefix: str | Tuple[str, ...],
         __start: SupportsIndex | None = ...,
         __end: SupportsIndex | None = ...,
-    ) -> bool: ...
-    def strip(self, __chars: str | None = ...) -> str: ...
-    def upper(self) -> str: ...
+    ) -> bool:
+        """Check if the string starts with a substring.
+
+        The optional ``__start`` and ``__end`` arguments can be used to specify the range to test.
+
+        Example: ``starts_with_hello = "hello, world".startswith("hello")``
+        
+        :param __prefix: The prefix to check for.
+        :param __start: Optional argument to specify the start of the substring to test.
+        :param __end: Optional argument to specify the end of the substring to test.
+        :return: ``True`` if the string starts with the substring, otherwise ``False``.
+        """
+        ...
+    def strip(self, __chars: str | None = ...) -> str:
+        """Get a copy of the string with the leading and trailing characters removed.
+
+        Example: ``stripped = "  hello  ".strip()``
+        
+        :param __chars: (default=" ") The characters to be removed. Defaults to whitespace characters if not provided.
+        :return: A copy of the string with the leading and trailing characters removed.
+        """
+        ...
+    def upper(self) -> str:
+        """Get a copy of the string in upper case.
+
+        Example: ``as_upper_case = "hello".upper()``
+        
+        :return: A copy of the string in upper case.
+        """
+        ...
     def __add__(self, s: str) -> str: ...
     # Incompatible with Sequence.__contains__
     def __contains__(self, o: str) -> bool: ...  # type: ignore
