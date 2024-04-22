@@ -716,26 +716,93 @@ class list(MutableSequence[_T], Generic[_T]):
     def __init__(self) -> None: ...
     @overload
     def __init__(self, iterable: Iterable[_T]) -> None: ...
-    def clear(self) -> None: ...
+    def clear(self) -> None:
+        """Remove all items from the list.
+        """
+        ...
     def copy(self) -> list[_T]: ...
-    def append(self, __object: _T) -> None: ...
+    def append(self, __object: _T) -> None:
+        """Add an item to the end of the list.
+
+        Example: ``[1, 2, 3].append(4)``
+        
+        :param __object: An item to add the end of the list.
+        """
+        ...
     def extend(self, __iterable: Iterable[_T]) -> None: ...
-    def pop(self, __index: SupportsIndex = ...) -> _T: ...
+    def pop(self, __index: SupportsIndex = ...) -> _T:
+        """Remove and return an item from the list.
+
+        If no ``index`` is provided, the last item in the list is removed.
+        An ``IndexError`` is raised if the ``index`` is outside of the list range.
+
+        Example: ``[1, 2, 3, 4].pop()``
+        
+        :param __index: The index of the item to remove.
+        :return: An item from the list.
+        """
+        ...
     def index(
         self, __value: _T, __start: SupportsIndex = ..., __stop: SupportsIndex = ...
     ) -> int: ...
-    def count(self, __value: _T) -> int: ...
-    def insert(self, __index: SupportsIndex, __object: _T) -> None: ...
-    def remove(self, __value: _T) -> None: ...
-    def reverse(self) -> None: ...
+    def count(self, __value: _T) -> int:
+        """Get the number of times an item appears in the list.
+
+        Example: ``["a", "b", "a"].count("a")``
+        
+        :param __value: The item to count.
+        :return: The number of times an item appears in the list.
+        """
+        ...
+    def insert(self, __index: SupportsIndex, __object: _T) -> None:
+        """Insert an item into the list at a given position.
+
+        Example: ``["a", "b", "a"].insert(2, "c")``
+        
+        :param __index: The position at which to insert the item.
+        :param __object: The item to insert.
+        """
+        ...
+    def remove(self, __value: _T) -> None:
+        """Remove the first occurence of a value from the list.
+
+        A ``ValueError`` is raised if the ``value`` does not appear in the list.
+
+        Example: ``["a", "b", "a"].remove("a")``
+        
+        :param __value: The item to remove.
+        """
+        ...
+    def reverse(self) -> None:
+        """Reverses the order of the items in the list, in place.
+
+        Example: ``[3, 2, 1].reverse()`
+        """
+        ...
     @overload
     def sort(
-        self: list[SupportsLessThanT], *, key: None = ..., reverse: bool = ...
-    ) -> None: ...
+        self: list[SupportsLessThanT], *, key: None = None, reverse: bool = False
+    ) -> None:
+        """Sorts the items in the list, in place.
+
+        Example: ``[1, 3, 2].sort()`
+
+        :param key: A function used to specify the comparison between items in the list.
+        :param reverse: A ``bool`` used to reverse the sorting order.
+        """
+        ...
     @overload
     def sort(
-        self, *, key: Callable[[_T], SupportsLessThan], reverse: bool = ...
-    ) -> None: ...
+        self, *, key: Callable[[_T], SupportsLessThan], reverse: bool = False
+    ) -> None:
+        """Sorts the items in the list, in place.
+
+        Example: ``['Watermelon', 'avocado'].sort(str.lower)``
+
+        :param key: A function used to specify the comparison between items in the list.
+        :param reverse: A ``bool`` used to reverse the sorting order.
+        """
+        ...
     def __len__(self) -> int: ...
     def __iter__(self) -> Iterator[_T]: ...
     def __str__(self) -> str: ...
