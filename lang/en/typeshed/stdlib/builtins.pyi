@@ -273,6 +273,8 @@ class int:
     def __index__(self) -> int: ...
 
 class float:
+    """Get a float from a number or a string.
+    """
     def __new__(
         cls: Type[_T], x: SupportsFloat | SupportsIndex | str | bytes | bytearray = ...
     ) -> _T:
@@ -356,6 +358,8 @@ class complex:
     def __bool__(self) -> bool: ...
 
 class str(Sequence[str]):
+    """Get a string version of an object or new empty string.
+    """
     @overload
     def __new__(cls: Type[_T], object: object = "") -> _T:
         """Get a string version of an object.
@@ -855,6 +859,8 @@ class frozenset(AbstractSet[_T_co], Generic[_T_co]):
         def __class_getitem__(cls, item: Any) -> GenericAlias: ...
 
 class list(MutableSequence[_T], Generic[_T]):
+    """The list data type
+    """
     @overload
     def __init__(self) -> None: ...
     @overload
