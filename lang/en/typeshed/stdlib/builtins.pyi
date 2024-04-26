@@ -1,3 +1,6 @@
+"""Use builtin classes and functions
+"""
+
 import sys
 import types
 from _typeshed import (
@@ -122,6 +125,8 @@ class classmethod(object):  # Special, only valid as a decorator.
     def __get__(self, obj: _T, type: Type[_T] | None = ...) -> Callable[..., Any]: ...
 
 class type(object):
+    """The type class.
+    """
     __base__: type
     __bases__: Tuple[type, ...]
     __basicsize__: int
@@ -1074,6 +1079,8 @@ class enumerate(Iterator[Tuple[int, _T]], Generic[_T]):
         def __class_getitem__(cls, item: Any) -> GenericAlias: ...
 
 class range(Sequence[int]):
+    """ The range class.
+    """
     start: int
     stop: int
     step: int
