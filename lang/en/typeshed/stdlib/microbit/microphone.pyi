@@ -71,11 +71,20 @@ def set_threshold(event: SoundEvent, value: int) -> None:
     ...
 
 def sound_level() -> int:
-    """Get the sound pressure level.
+    """Get the sound pressure level in the range 0 to 255.
 
     Example: ``microphone.sound_level()``
 
     :return: A representation of the sound pressure level in the range 0 to 255.
+    """
+    ...
+
+def sound_level_db() -> int:
+    """Get the sound pressure level in decibels.
+
+    Example: ``microphone.sound_level_db()``
+
+    :return: A representation of the sound pressure level in decibels (dB).
     """
     ...
 
