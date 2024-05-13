@@ -27,12 +27,13 @@ def init(
     """
     ...
 
-def read(nbytes: int) -> bytes:
-    """Read bytes.
+def read(nbytes: int, out: int = 0) -> bytes:
+    """Read at most ``nbytes`` while continuously writing the single byte given by ``out``.
 
     Example: ``spi.read(64)``
 
     :param nbytes: Maximum number of bytes to read.
+    :param out: The byte value to write (default 0).
     :return: The bytes read.
     """
     ...
