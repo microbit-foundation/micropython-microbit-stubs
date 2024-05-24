@@ -1,4 +1,4 @@
-"""Use builtin classes and functions
+"""Built-in classes and functions
 """
 
 import sys
@@ -392,55 +392,55 @@ class str(Sequence[str]):
     def count(
         self,
         x: str,
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
     ) -> int:
         """Get the number of non-overlapping occurences of a substring in the string.
 
-        The optional ``__start`` and ``__end`` arguments can be used to specify a substring in which to count.
+        The optional ``start`` and ``end`` arguments can be used to specify a substring in which to count.
 
         Example: ``count = "banana".count("na")``
         
         :param x: The substring to count.
-        :param __start: Optional argument to specify the start of the substring in which to count.
-        :param __end: Optional argument to specify the end of the substring in which to count.
+        :param start: Optional argument to specify the start of the substring in which to count.
+        :param end: Optional argument to specify the end of the substring in which to count.
         :return: The number of non-overlapping occurences of a substring in the string as an ``int``.
         """
         ...
     def encode(self, encoding: str = ..., errors: str = ...) -> bytes: ...
     def endswith(
         self,
-        __suffix: str | Tuple[str, ...],
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
+        suffix: str | Tuple[str, ...],
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
     ) -> bool:
         """Check if the string ends with a substring.
 
-        The optional ``__start`` and ``__end`` arguments can be used to specify the range to test.
+        The optional ``start`` and ``end`` arguments can be used to specify the range to test.
 
         Example: ``ends_with_hello = "hello, world".endswith("hello")``
         
-        :param __prefix: The prefix to check for.
-        :param __start: Optional argument to specify the start of the substring to test.
-        :param __end: Optional argument to specify the end of the substring to test.
+        :param prefix: The prefix to check for.
+        :param start: Optional argument to specify the start of the substring to test.
+        :param end: Optional argument to specify the end of the substring to test.
         :return: ``True`` if the string ends with the substring, otherwise ``False``.
         """
         ...
     def find(
         self,
-        __sub: str,
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
+        sub: str,
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
     ) -> int:
         """Get the lowest index of where the substring is found.
 
-        The optional ``__start`` and ``__end`` arguments can be used to specify a substring in which to search.
+        The optional ``start`` and ``end`` arguments can be used to specify a substring in which to search.
 
         Example: ``index = "banana".find("na")``
         
-        :param __sub: The substring to find.
-        :param __start: Optional argument to specify the start of the substring in which to search.
-        :param __end: Optional argument to specify the end of the substring in which to search.
+        :param sub: The substring to find.
+        :param start: Optional argument to specify the start of the substring in which to search.
+        :param end: Optional argument to specify the end of the substring in which to search.
         :return: The the lowest index of where the substring is found, -1 if not found.
         """
         ...
@@ -509,32 +509,32 @@ class str(Sequence[str]):
         :return: A copy of the string with the leading characters removed.
         """
         ...
-    def replace(self, __old: str, __new: str, __count: SupportsIndex = ...) -> str:
+    def replace(self, old: str, new: str, count: SupportsIndex = ...) -> str:
         """Get a copy of the string with all occurrences of the old substring replaced by new.
 
         Example: ``replaced = "apple, orange".replace("orange", "banana")``
         
-        :param __old: The substring to replace.
-        :param __new: The replacement substring.
-        :param __count: Optional argument to specify the number of occurences of the old substring that should be replaced.
+        :param old: The substring to replace.
+        :param new: The replacement substring.
+        :param count: Optional argument to specify the number of occurences of the old substring that should be replaced.
         :return: A copy of the string with all occurrences of the old substring replaced by new.
         """
         ...
     def rfind(
         self,
-        __sub: str,
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
+        sub: str,
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
     ) -> int:
         """Get the highest index of where the substring is found.
 
-        The optional ``__start`` and ``__end`` arguments can be used to specify a substring in which to search.
+        The optional ``start`` and ``end`` arguments can be used to specify a substring in which to search.
 
         Example: ``index = "banana".rfind("na")``
 
-        :param __sub: The substring to find.
-        :param __start: Optional argument to specify the start of the substring in which to search.
-        :param __end: Optional argument to specify the end of the substring in which to search.
+        :param sub: The substring to find.
+        :param start: Optional argument to specify the start of the substring in which to search.
+        :param end: Optional argument to specify the end of the substring in which to search.
         :return: The the highest index of where the substring is found, -1 if not found.
         """
         ...
@@ -561,28 +561,28 @@ class str(Sequence[str]):
     ) -> list[str]: ...
     def startswith(
         self,
-        __prefix: str | Tuple[str, ...],
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
+        prefix: str | Tuple[str, ...],
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
     ) -> bool:
         """Check if the string starts with a substring.
 
-        The optional ``__start`` and ``__end`` arguments can be used to specify the range to test.
+        The optional ``start`` and ``end`` arguments can be used to specify the range to test.
 
         Example: ``starts_with_hello = "hello, world".startswith("hello")``
         
-        :param __prefix: The prefix to check for.
-        :param __start: Optional argument to specify the start of the substring to test.
-        :param __end: Optional argument to specify the end of the substring to test.
+        :param prefix: The prefix to check for.
+        :param start: Optional argument to specify the start of the substring to test.
+        :param end: Optional argument to specify the end of the substring to test.
         :return: ``True`` if the string starts with the substring, otherwise ``False``.
         """
         ...
-    def strip(self, __chars: str | None = ...) -> str:
+    def strip(self, chars: str | None = ...) -> str:
         """Get a copy of the string with the leading and trailing characters removed.
 
         Example: ``stripped = "  hello  ".strip()``
         
-        :param __chars: (default=" ") The characters to be removed. Defaults to whitespace characters if not provided.
+        :param chars: (default=" ") The characters to be removed. Defaults to whitespace characters if not provided.
         :return: A copy of the string with the leading and trailing characters removed.
         """
         ...
@@ -875,16 +875,16 @@ class list(MutableSequence[_T], Generic[_T]):
         """
         ...
     def copy(self) -> list[_T]: ...
-    def append(self, __object: _T) -> None:
+    def append(self, object: _T) -> None:
         """Add an item to the end of the list.
 
         Example: ``[1, 2, 3].append(4)``
         
-        :param __object: An item to add the end of the list.
+        :param object: An item to add the end of the list.
         """
         ...
     def extend(self, __iterable: Iterable[_T]) -> None: ...
-    def pop(self, __index: SupportsIndex = ...) -> _T:
+    def pop(self, index: SupportsIndex = ...) -> _T:
         """Remove and return an item from the list.
 
         If no ``index`` is provided, the last item in the list is removed.
@@ -897,34 +897,34 @@ class list(MutableSequence[_T], Generic[_T]):
         """
         ...
     def index(
-        self, __value: _T, __start: SupportsIndex = ..., __stop: SupportsIndex = ...
+        self, value: _T, start: SupportsIndex = ..., stop: SupportsIndex = ...
     ) -> int: ...
-    def count(self, __value: _T) -> int:
+    def count(self, value: _T) -> int:
         """Get the number of times an item appears in the list.
 
         Example: ``["a", "b", "a"].count("a")``
         
-        :param __value: The item to count.
+        :param value: The item to count.
         :return: The number of times an item appears in the list.
         """
         ...
-    def insert(self, __index: SupportsIndex, __object: _T) -> None:
+    def insert(self, index: SupportsIndex, object: _T) -> None:
         """Insert an item into the list at a given position.
 
         Example: ``["a", "b", "a"].insert(2, "c")``
         
-        :param __index: The position at which to insert the item.
-        :param __object: The item to insert.
+        :param index: The position at which to insert the item.
+        :param object: The item to insert.
         """
         ...
-    def remove(self, __value: _T) -> None:
+    def remove(self, value: _T) -> None:
         """Remove the first occurence of a value from the list.
 
         A ``ValueError`` is raised if the ``value`` does not appear in the list.
 
         Example: ``["a", "b", "a"].remove("a")``
         
-        :param __value: The item to remove.
+        :param value: The item to remove.
         """
         ...
     def reverse(self) -> None:
@@ -1143,12 +1143,12 @@ class _NotImplementedType(Any):  # type: ignore
 
 NotImplemented: _NotImplementedType
 
-def abs(__x: SupportsAbs[_T]) -> _T:
+def abs(x: SupportsAbs[_T]) -> _T:
     """Get the absolute value of a number.
 
     Example: ``abs(-42)``
 
-    :param __x: A number.
+    :param x: A number.
     :return: The length of or number of items in an object. 
     """ 
     ...
@@ -1160,12 +1160,12 @@ if sys.version_info >= (3, 7):
     def breakpoint(*args: Any, **kws: Any) -> None: ...
 
 def callable(__obj: object) -> bool: ...
-def chr(__i: int) -> str:
+def chr(i: int) -> str:
     """Get a Unicode string representation of an integer.
 
     Example: ``chr(97)``
 
-    :param __i: An integer within the range 0..1,114,111.
+    :param i: An integer within the range 0..1,114,111.
     :return: A Unicode string representation of a number within a valid range. 
     """ 
     ...
@@ -1231,7 +1231,7 @@ def help(request: object) -> None:
     Example: ``help("print")``
     """
     ...
-def hex(__number: int | SupportsIndex) -> str:
+def hex(number: int | SupportsIndex) -> str:
     """Get the hexadecimal representation of an integer.
 
     Example: ``hex(42)``
@@ -1278,7 +1278,7 @@ else:
         __cls: type, __class_or_tuple: type | Tuple[type | Tuple[Any, ...], ...]
     ) -> bool: ...
 
-def len(__obj: Sized) -> int:
+def len(obj: Sized) -> int:
     """Get the length of, or number of items in an object.
 
     Example: ``len("Hello, world")``
@@ -1438,12 +1438,12 @@ def open(
     closefd: bool = ...,
     opener: _Opener | None = ...,
 ) -> IO[Any]: ...
-def ord(__c: str | bytes) -> int:
+def ord(c: str | bytes) -> int:
     """Get an integer representation of a Unicode character.
 
     Example: ``ord("a")``
 
-    :param __c: A Unicode character.
+    :param c: A Unicode character.
     :return: The length of or number of items in an object.
     """
     ...
