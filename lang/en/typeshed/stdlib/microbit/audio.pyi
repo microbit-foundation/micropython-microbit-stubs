@@ -5,16 +5,16 @@ from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
 def play(
-    source: Union[Iterable[AudioFrame], Sound, SoundEffect],
+    source: Union[AudioFrame, Iterable[AudioFrame], Sound, SoundEffect],
     wait: bool = True,
     pin: MicroBitDigitalPin = pin0,
     return_pin: Union[MicroBitDigitalPin, None] = None,
 ) -> None:
-    """Play a built-in sound, sound effect or custom audio frames.
+    """Play a built-in sound, sound effect or audio samples using ``AudioFrame``.
 
     Example: ``audio.play(Sound.GIGGLE)``
 
-    :param source: A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects.
+    :param source: A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an ``AudioFrame`` object or an iterable of ``AudioFrame`` objects.
     :param wait: If ``wait`` is ``True``, this function will block until the sound is complete.
     :param pin: An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``.
     :param return_pin: Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision.
@@ -26,6 +26,14 @@ def is_playing() -> bool:
     Example: ``audio.is_playing()``
 
     :return: ``True`` if audio is playing, otherwise ``False``."""
+    ...
+
+def sound_level() -> int:
+    """Returns the sound pressure level produced by audio currently being played.
+
+    Example: ``audio.sound_level()``
+
+    :return: A representation of the output sound pressure level in the range 0 to 255."""
     ...
 
 def stop() -> None:
@@ -136,10 +144,18 @@ class SoundEffect:
         """
 
 class AudioFrame:
-    """An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte
+    """An ``AudioFrame`` object is a list of samples, each of which is an unsigned byte
     (whole number between 0 and 255).
 
-    It takes just over 4 ms to play a single frame.
+    The number of samples in an AudioFrame will depend on the
+    ``rate`` (number of samples per second) and ``duration`` parameters.
+    The total number of samples will always be a round up multiple of 32.
+
+    On micro:bit V1 the constructor does not take any arguments,
+    and an AudioFrame instance is always 32 bytes.
+
+    For example, playing 32 samples at 7812 Hz takes just over 4 milliseconds
+    (1/7812.5 * 32 = 0.004096 = 4096 microseconds).
 
     Example::
 
@@ -147,6 +163,42 @@ class AudioFrame:
         for i in range(len(frame)):
             frame[i] = 252 - i * 8
     """
+
+    def __init__(
+        self,
+        duration: int = -1,
+        rate: int = 7812
+    ):
+        """Create a new ``AudioFrame``.
+
+        Example: ``my_recording = AudioFrame(duration=5000)``
+
+        :param duration: Indicates how many milliseconds of audio this instance can store (V2 only).
+        :param rate: The sampling rate at which data will be stored via the microphone, or played via the ``audio.play()`` function (V2 only).
+        """
+
+    def set_rate(self, sample_rate: int) -> None:
+        """Configure the sampling rate associated with the data in the
+        ``AudioFrame`` instance (V2 only).
+
+        Example: ``my_frame.set_rate(7812)``
+
+        For recording from the microphone, increasing the sampling rate
+        increases the sound quality, but reduces the length of audio it
+        can store.
+
+        During playback, increasing the sampling rate speeds up the sound
+        and decreasing it slows it down.
+        """
+
+    def get_rate(self) -> int:
+        """Get the sampling rate associated with the data in the
+        ``AudioFrame`` instance (V2 only).
+
+        Example: ``current_rate = my_frame.get_rate()``
+
+         :return: The configured sampling rate for this ``AudioFrame`` instance.
+        """
 
     def copyfrom(self, other: AudioFrame) -> None:
         """Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance.
@@ -158,3 +210,9 @@ class AudioFrame:
     def __len__(self) -> int: ...
     def __setitem__(self, key: int, value: int) -> None: ...
     def __getitem__(self, key: int) -> int: ...
+    def __add__(self, v: AudioFrame) -> AudioFrame: ...
+    def __iadd__(self, v: AudioFrame) -> AudioFrame: ...
+    def __sub__(self, v: AudioFrame) -> AudioFrame: ...
+    def __isub__(self, v: AudioFrame) -> AudioFrame: ...
+    def __mul__(self, v: float) -> AudioFrame: ...
+    def __imul__(self, v: float) -> AudioFrame: ...
