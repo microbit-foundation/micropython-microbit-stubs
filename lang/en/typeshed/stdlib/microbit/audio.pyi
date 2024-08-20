@@ -2,7 +2,7 @@
 """
 
 from ..microbit import MicroBitDigitalPin, Sound, pin0
-from typing import ClassVar, Iterable, Union
+from typing import ClassVar, Iterable, Optional, Union
 
 def play(
     source: Union[AudioFrame, Iterable[AudioFrame], Sound, SoundEffect],
@@ -143,19 +143,151 @@ class SoundEffect:
         :return: A copy of the SoundEffect.
         """
 
+
+class AudioRecording:
+    """The ``AudioRecording`` object contains audio data and the sampling rate
+    associated to it (V2 only).
+
+    The size of the internal buffer will depend on the ``rate``
+    (number of samples per second) and ``duration`` parameters.
+    The larger these values are, the more memory that will be used.
+
+    When an ``AudioRecording`` is used to record data from the microphone,
+    a higher sampling rate produces better sound quality,
+    but it also uses more memory.
+
+    During playback, increasing the sampling rate speeds up the sound
+    and decreasing the sample rate slows it down.
+    
+    The data inside an ``AudioRecording`` is not easy to modify, so the
+    ``AudioTrack`` class is provided to help access the audio data like a list.
+    The method ``AudioRecording.track()`` can be used to create an ``AudioTrack``,
+    and its arguments ``start_ms`` and ``end_ms`` can be used to slice portions
+    of the data.
+    """
+
+    def __init__(
+        self,
+        duration: int = -1,
+        rate: int = 11_000
+    ):
+        """Create a new ``AudioRecording``.
+
+        Example: ``my_recording = AudioRecording(duration=5000)``
+
+        :param duration: Indicates how many milliseconds of audio this instance can store.
+        :param rate: The sampling rate at which data will be stored via the microphone, or played via the ``audio.play()`` function.
+        """
+
+    def copy(self) -> None:
+        """Create a copy of the ``AudioRecording``.
+
+        Example: ``copy = my_recording.copy()``
+
+        :return: A copy of the ``AudioRecording``.
+        """
+
+    def track(self, start_ms: int = 0, end_ms: int = -1) -> None:
+        """Create an ``AudioTrack`` instance from a portion of the data in this ``AudioRecording`` instance.
+
+        Example: ``first_second = my_recording.track(0, 1000)``
+
+        :param start_ms: (default=0) Where to start of the track in milliseconds.
+        :param end_ms: (default=-1) The end of the track in milliseconds. If the default value of ``-1`` is provided it will end the track at the end of the AudioRecording.
+        :return: An ``AudioTrack`` backed by the sample data between ``start_ms`` and ``end_ms``.
+        """
+    def __len__(self) -> int: ...
+    def __setitem__(self, key: int, value: int) -> None: ...
+    def __getitem__(self, key: int) -> int: ...
+    def __add__(self, v: AudioRecording) -> AudioRecording: ...
+    def __iadd__(self, v: AudioRecording) -> AudioRecording: ...
+    def __sub__(self, v: AudioRecording) -> AudioRecording: ...
+    def __isub__(self, v: AudioRecording) -> AudioRecording: ...
+    def __mul__(self, v: float) -> AudioRecording: ...
+    def __imul__(self, v: float) -> AudioRecording: ...
+
+class AudioTrack:
+    """ The ``AudioTrack`` object points to the data provided by the input buffer,
+    which can be an ``AudioRecording``, another ``AudioTrack``,
+    or a buffer-like object like a ``bytearray`` (V2 only).
+    """
+
+    def __init__(
+        self,
+        buffer: Union[bytearray, AudioRecording, AudioTrack],
+        rate: Optional[int] = None
+    ):
+        """Create a new ``AudioTrack``.
+
+        When the input buffer has an associated rate (e.g. an ``AudioRecording``
+        or ``AudioTrack``), the rate is copied. If the buffer object does not have
+        a rate, the default value of 11_000 is used.
+
+        Example: ``my_track = AudioTrack(bytearray(4096))``
+
+        An ``AudioTrack`` can be created from an ``AudioRecording``, another
+        ``AudioTrack``, or a ``bytearray`` and individual bytes can be accessed and
+        modified like elements in a list::
+
+            my_track = AudioTrack(bytearray(100))
+            # Create a square wave
+            half_length = len(my_track) // 2
+            for i in range(half_length):
+                my_track[i] = 255
+            for i in range(half_length, len(my_track)):
+                my_track[i] = 0
+
+        Or smaller AudioTracks can be created using slices, useful to send them
+        via radio or serial::
+
+            recording = microphone.record(duration=2000)
+            track = AudioTrack(recording)
+            packet_size = 32
+            for i in range(0, len(track), packet_size):
+                radio.send_bytes(track[i:i+packet_size])
+
+        :param buffer: The buffer containing the audio data.
+        :param rate: (default=None) The sampling rate at which data will be stored via the microphone, or played via the ``audio.play()`` function. 
+        """
+
+    def set_rate(self, sample_rate: int) -> None:
+        """Configure the sampling rate associated with the data in the
+        ``AudioTrack`` instance.
+
+
+        Changes to an ``AudioTrack`` rate won't affect the original source rate,
+        so multiple instances pointing to the same buffer can have different
+        rates and the original buffer rate would stay unmodified.
+
+        Example: ``my_track.set_rate(22_000)``
+        """
+
+    def get_rate(self) -> int:
+        """Get the sampling rate associated with the data in the
+        ``AudioRecording`` instance.
+
+        Example: ``current_rate = my_track.get_rate()``
+
+         :return: The configured sample rate.
+        """
+
+
+    def __len__(self) -> int: ...
+    def __setitem__(self, key: int, value: int) -> None: ...
+    def __getitem__(self, key: int) -> int: ...
+    def __add__(self, v: AudioTrack) -> AudioTrack: ...
+    def __iadd__(self, v: AudioTrack) -> AudioTrack: ...
+    def __sub__(self, v: AudioTrack) -> AudioTrack: ...
+    def __isub__(self, v: AudioTrack) -> AudioTrack: ...
+    def __mul__(self, v: float) -> AudioTrack: ...
+    def __imul__(self, v: float) -> AudioTrack: ...
+
+
 class AudioFrame:
-    """An ``AudioFrame`` object is a list of samples, each of which is an unsigned byte
+    """An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte
     (whole number between 0 and 255).
 
-    The number of samples in an AudioFrame will depend on the
-    ``rate`` (number of samples per second) and ``duration`` parameters.
-    The total number of samples will always be a round up multiple of 32.
-
-    On micro:bit V1 the constructor does not take any arguments,
-    and an AudioFrame instance is always 32 bytes.
-
-    For example, playing 32 samples at 7812 Hz takes just over 4 milliseconds
-    (1/7812.5 * 32 = 0.004096 = 4096 microseconds).
+    It takes just over 4 ms to play a single frame.
 
     Example::
 
@@ -163,42 +295,6 @@ class AudioFrame:
         for i in range(len(frame)):
             frame[i] = 252 - i * 8
     """
-
-    def __init__(
-        self,
-        duration: int = -1,
-        rate: int = 7812
-    ):
-        """Create a new ``AudioFrame``.
-
-        Example: ``my_recording = AudioFrame(duration=5000)``
-
-        :param duration: Indicates how many milliseconds of audio this instance can store (V2 only).
-        :param rate: The sampling rate at which data will be stored via the microphone, or played via the ``audio.play()`` function (V2 only).
-        """
-
-    def set_rate(self, sample_rate: int) -> None:
-        """Configure the sampling rate associated with the data in the
-        ``AudioFrame`` instance (V2 only).
-
-        Example: ``my_frame.set_rate(7812)``
-
-        For recording from the microphone, increasing the sampling rate
-        increases the sound quality, but reduces the length of audio it
-        can store.
-
-        During playback, increasing the sampling rate speeds up the sound
-        and decreasing it slows it down.
-        """
-
-    def get_rate(self) -> int:
-        """Get the sampling rate associated with the data in the
-        ``AudioFrame`` instance (V2 only).
-
-        Example: ``current_rate = my_frame.get_rate()``
-
-         :return: The configured sampling rate for this ``AudioFrame`` instance.
-        """
 
     def copyfrom(self, other: AudioFrame) -> None:
         """Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance.
@@ -210,9 +306,3 @@ class AudioFrame:
     def __len__(self) -> int: ...
     def __setitem__(self, key: int, value: int) -> None: ...
     def __getitem__(self, key: int) -> int: ...
-    def __add__(self, v: AudioFrame) -> AudioFrame: ...
-    def __iadd__(self, v: AudioFrame) -> AudioFrame: ...
-    def __sub__(self, v: AudioFrame) -> AudioFrame: ...
-    def __isub__(self, v: AudioFrame) -> AudioFrame: ...
-    def __mul__(self, v: float) -> AudioFrame: ...
-    def __imul__(self, v: float) -> AudioFrame: ...
