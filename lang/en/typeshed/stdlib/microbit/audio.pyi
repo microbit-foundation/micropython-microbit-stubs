@@ -10,11 +10,11 @@ def play(
     pin: MicroBitDigitalPin = pin0,
     return_pin: Union[MicroBitDigitalPin, None] = None,
 ) -> None:
-    """Play a built-in sound, sound effect or audio samples using ``AudioFrame``.
+    """Play a built-in sound, sound effect or audio samples.
 
     Example: ``audio.play(Sound.GIGGLE)``
 
-    :param source: A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an ``AudioFrame`` object or an iterable of ``AudioFrame`` objects.
+    :param source: A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an ``AudioFrame``, ``AudioRecording`` or ``AudioTrack`` object or an iterable of ``AudioFrame`` objects.
     :param wait: If ``wait`` is ``True``, this function will block until the sound is complete.
     :param pin: An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``.
     :param return_pin: Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision.
