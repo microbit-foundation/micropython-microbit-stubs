@@ -1,9 +1,9 @@
 """Respond to sound using the built-in microphone (V2 only).
 """
 
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Union
 from ..microbit import SoundEvent
-from ..microbit.audio import AudioFrame
+from ..microbit.audio import AudioRecording, AudioTrack
 
 def current_event() -> Optional[SoundEvent]:
     """Get the last recorded sound event
@@ -88,11 +88,9 @@ def sound_level_db() -> int:
     """
     ...
 
-def record(duration: int, rate: int = 7812) -> AudioFrame:
-    """Record sound into an ``AudioFrame`` for the amount of time indicated by
+def record(duration: int, rate: int = 11_000) -> AudioRecording:
+    """Record sound into an ``AudioRecording`` for the amount of time indicated by
     ``duration`` at the sampling rate indicated by ``rate``.
-
-    Example: ``my_frame = microphone.record(3000)``
 
     The amount of memory consumed is directly related to the length of the
     recording and the sampling rate. The higher these values, the more memory
@@ -105,20 +103,23 @@ def record(duration: int, rate: int = 7812) -> AudioFrame:
 
     :param duration: How long to record in milliseconds.
     :param rate: Number of samples to capture per second.
-    :return: An ``AudioFrame`` with the sound samples.
+    :returns: An ``AudioRecording`` with the sound samples.
     """
     ...
 
-def record_into(buffer: AudioFrame, rate: int = 7812, wait: bool = True) -> None:
-    """Record sound into an existing ``AudioFrame`` until it is filled,
-    or the ``stop_recording()`` function is called.
+def record_into(buffer: Union[AudioRecording, AudioTrack], wait: bool = True) -> AudioTrack:
+    """Record sound into an existing ``AudioRecording`` or ``AudioTrack``
+    until it is filled, or the ``stop_recording()`` function is called.
 
-    Example: ``microphone.record_into(my_frame)``
+    This function also returns an ``AudioTrack`` created from the provided
+    input buffer, which length matches the recording duration.
+    This is useful when recording with ``wait`` set to ``False``, and the
+    recording is stopped before the input buffer is filled.
 
-    :param buffer: An ``AudioFrame`` to record sound.
-    :param rate: Number of samples to capture per second.
+    :param buffer: ``AudioRecording`` or ``AudioTrack`` to record sound into.
     :param wait: When set to ``True`` it blocks until the recording is
         done, if it is set to ``False`` it will run in the background.
+    :returns: An ``AudioTrack`` which ends where the recording ended.
     """
     ...
 
