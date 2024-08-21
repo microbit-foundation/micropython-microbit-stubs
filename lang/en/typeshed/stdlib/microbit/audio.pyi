@@ -2,7 +2,7 @@
 """
 
 from ..microbit import MicroBitDigitalPin, Sound, pin0
-from typing import ClassVar, Iterable, Optional, Union
+from typing import ClassVar, Iterable, Optional, Union, overload
 
 def play(
     source: Union[AudioFrame, Iterable[AudioFrame], Sound, SoundEffect],
@@ -262,10 +262,27 @@ class AudioTrack:
          :return: The configured sample rate.
         """
 
+    def copyfrom(self, other: Union[bytearray, AudioRecording, AudioTrack]) -> None:
+        """Overwrite the data in this ``AudioTrack`` with the data from another
+        ``AudioTrack``, ``AudioRecording``, or buffer-like object like  a
+        ``bytearray`` instance.
+
+        If the input buffer is smaller than the available space in this
+        instance, the rest of the data is left untouched.
+        If it is larger, it will stop copying once this instance is filled.
+        
+        :param other: Buffer-like instance from which to copy the data.
+        """
 
     def __len__(self) -> int: ...
-    def __setitem__(self, key: int, value: int) -> None: ...
-    def __getitem__(self, key: int) -> int: ...
+
+
+    @overload
+    def __getitem__(self, i: int) -> int: ...
+    @overload
+    def __getitem__(self, s: slice) -> AudioTrack: ...
+    def __setitem__(self, i: int, x: int) -> None: ...
+
     def __add__(self, v: AudioTrack) -> AudioTrack: ...
     def __iadd__(self, v: AudioTrack) -> AudioTrack: ...
     def __sub__(self, v: AudioTrack) -> AudioTrack: ...
