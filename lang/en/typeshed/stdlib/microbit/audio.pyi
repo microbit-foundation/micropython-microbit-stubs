@@ -5,7 +5,7 @@ from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Optional, Union, overload
 
 def play(
-    source: Union[AudioFrame, Iterable[AudioFrame], Sound, SoundEffect],
+    source: Union[AudioFrame, Iterable[AudioFrame], AudioRecording, AudioTrack, Sound, SoundEffect],
     wait: bool = True,
     pin: MicroBitDigitalPin = pin0,
     return_pin: Union[MicroBitDigitalPin, None] = None,
