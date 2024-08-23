@@ -3,7 +3,7 @@ from ..microbit import Image
 from typing import Union, overload, Iterable
 
 def get_pixel(x: int, y: int) -> int:
-    """Ermittle die Helligkeit der LED auf Spalte ``x`` und Zeile ``y``. (Pixelwerte holen)
+    """Ermittelt die Helligkeit der LED in Spalte ``x`` und Zeile ``y``.
 
 Example: ``display.get_pixel(0, 0)``
 
@@ -13,17 +13,17 @@ Example: ``display.get_pixel(0, 0)``
     ...
 
 def set_pixel(x: int, y: int, value: int) -> None:
-    """Ändere die Helligkeit der LED auf Spalte ``x`` und Zeile ``y``. (Pixelwerte setzen)
+    """Stellt die Helligkeit der LED in Spalte ``x`` und Zeile ``y`` ein.
 
 Example: ``display.set_pixel(0, 0, 9)``
 
 :param x: Die Anzeige-Spalte (0..4)
 :param y: Die Anzeigezeile (0..4)
-:param value: (wert) Die Helligkeit zwischen 0 (aus) und 9 (am hellsten)"""
+:param value: Die Helligkeit zwischen 0 (aus) und 9 (am hellsten)"""
     ...
 
 def clear() -> None:
-    """Setzt die Helligkeit aller LEDs auf 0 (aus). (löschen)
+    """Setzt die Helligkeit aller LEDs auf 0 (aus).
 
 Example: ``display.clear()``"""
     ...
@@ -36,44 +36,44 @@ Example: ``display.show(Image.HEART)``
 When ``image`` is an image or a list of images then each image is displayed in turn.
 If ``image`` is a string or number, each letter or digit is displayed in turn.
 
-:param image: Eine Zeichenkette, Nummer, Bild oder Liste der anzuzeigenden Bilder.
-:param delay: (Verzögerung) Jeder Buchstabe, Ziffer oder Bild wird mit ``delay`` Millisekunden zwischen ihnen angezeigt.
-:param wait: Wenn ``wait`` ``True``ist, wird diese Funktion blockiert, bis die Animation beendet ist, andernfalls wird die Animation im Hintergrund stattfinden.
-:param loop: Wenn ``loop`` ``True``ist, wird sich die Animation für immer wiederholen.
-:param clear: (löschen) Wenn ``clear`` ``True``ist, wird die Anzeige ausgeschaltet, nachdem die Sequenz beendet ist.
+:param image: Eine Zeichenkette, eine Zahl, ein Bild oder eine Liste von Bildern, die angezeigt werden sollen.
+:param delay: Jeder Buchstabe, jede Ziffer oder jedes Bild wird mit einer Verzögerung von ``delay`` Millisekunden angezeigt.
+:param wait: Wenn ``wait`` ``True`` ist, wird diese Funktion das Programm so lange anhalten, bis die Animation beendet ist, andernfalls wird die Animation im Hintergrund ausgeführt.
+:param loop: Wenn ``loop`` ``True`` ist, wird die Animation endlos wiederholt.
+:param clear: Wenn ``clear`` ``True`` ist, wird die Anzeige nach Beendigung der Sequenz gelöscht.
 
 The ``wait``, ``loop`` and ``clear`` arguments must be specified using their keyword."""
     ...
 
 def scroll(text: Union[str, float, int], delay: int=150, wait: bool=True, loop: bool=False, monospace: bool=False) -> None:
-    """Scrollt eine Zahl oder einen Text auf dem LED-Display. (scrollen)
+    """Scrollt eine Zahl oder einen Text auf dem LED-Display.
 
 Example: ``display.scroll('micro:bit')``
 
-:param text: Der zu wiederzugebende String. Wenn ``text`` eine Ganzzahl oder ein Float ist, wird er zuerst mit ``str()`` in einen String konvertiert.
-:param delay: (Verzögerung) Der ``delay`` -Parameter bestimmt, wie schnell der Text scrollt.
-:param wait: Wenn ``wait`` ``True``ist, wird diese Funktion blockiert, bis die Animation beendet ist, andernfalls wird die Animation im Hintergrund stattfinden.
-:param loop: Wenn ``loop`` ``True``ist, wird sich die Animation für immer wiederholen.
-:param monospace: (Monospace) Wenn ``monospace`` ``True``ist, werden alle Zeichen 5 Pixel breit sein. Zwischen den Zeichen gibt es beim scrollen genau 1 leere Pixelspalte.
+:param text: Die zu scrollende Zeichenkette. Wenn ``text`` ein Integer oder Float ist, wird der Text vorher mit ``str()`` in einen String umgewandelt.
+:param delay: Der Parameter ``delay`` bestimmt, wie schnell der Text gescrollt wird.
+:param wait: Wenn ``wait`` ``True`` ist, wird diese Funktion das Programm anhalten, bis die Animation beendet ist, andernfalls läuft die Animation im Hintergrund ab.
+:param loop: Wenn ``loop`` ``True`` ist, wird die Animation endlos wiederholt.
+:param monospace: Wenn ``monospace`` ``True``ist, werden alle Zeichen 5 Pixel breit sein. Zwischen den Zeichen gibt es beim scrollen genau 1 leere Pixelspalte.
 
 The ``wait``, ``loop`` and ``monospace`` arguments must be specified
 using their keyword."""
     ...
 
 def on() -> None:
-    """Schalten Sie das LED-Display ein. (an)
+    """Das LED-Display einschalten.
 
 Example: ``display.on()``"""
     ...
 
 def off() -> None:
-    """Schalten Sie die LED-Anzeige aus (das Deaktivieren des Displays erlaubt es Ihnen, die GPIO-Pins für andere Zwecke zu verwenden).
+    """Die LED-Anzeige ausschalten (Deaktivieren des Displays ermöglicht es dir, die GPIO-Pins für andere Zwecke zu verwenden).
 
 Example: ``display.off()``"""
     ...
 
 def is_on() -> bool:
-    """Überprüfen Sie, ob die LED-Anzeige aktiviert ist. (ist an)
+    """Überprüfung, ob die LED-Anzeige aktiviert ist.
 
 Example: ``display.is_on()``
 
@@ -81,7 +81,7 @@ Example: ``display.is_on()``
     ...
 
 def read_light_level() -> int:
-    """Bestimmt die Lichtintensität. (bestimme Licht Intensität)
+    """Bestimmt die Lichtintensität.
 
 Example: ``display.read_light_level()``
 

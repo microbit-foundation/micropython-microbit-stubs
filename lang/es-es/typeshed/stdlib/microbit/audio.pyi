@@ -3,7 +3,7 @@ from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
 def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
-    """Reproducir un sonido, un efecto de sonido o marcos de audio personalizados. (reproducir)
+    """Reproduce un sonido integrado, un efecto de sonido o marcos de audio personalizados. (reproducir)
 
 Example: ``audio.play(Sound.GIGGLE)``
 
@@ -27,11 +27,11 @@ Example: ``audio.stop()``"""
     ...
 
 class SoundEffect:
-    """Un efecto de sonido, compuesto por un conjunto de parámetros configurados a través del constructor o atributos. (efecto de sonido)"""
+    """Un efecto de sonido, compuesto por un conjunto de parámetros configurados a través del constructor o atributos. (efectosonido)"""
     WAVEFORM_SINE: ClassVar[int]
-    """Opción de onda sinusoidal utilizada para el parámetro ``waveform``. (forma de onda sinusoidal)"""
+    """Opción de onda senoidal utilizada para el parámetro ``waveform``. (forma de onda senoidal)"""
     WAVEFORM_SAWTOOTH: ClassVar[int]
-    """Opción de onda con diente de sierra usada para el parámetro ``waveform``. (diente de sierra de forma de onda)"""
+    """Opción de onda con diente de sierra usada para el parámetro ``waveform``. (forma de onda diente de sierra)"""
     WAVEFORM_TRIANGLE: ClassVar[int]
     """Opción de onda triangular usada para el parámetro ``waveform``. (forma de onda triangular)"""
     WAVEFORM_SQUARE: ClassVar[int]
@@ -47,7 +47,7 @@ class SoundEffect:
     FX_NONE: ClassVar[int]
     """Ninguna opción de efecto usada para el parámetro ``fx``. (fx ninguno)"""
     FX_TREMOLO: ClassVar[int]
-    """Opción de efecto Trémolo usada para el parámetro ``fx``."""
+    """Opción de efecto Trémolo usada para el parámetro ``fx``. (fx trémolo)"""
     FX_VIBRATO: ClassVar[int]
     """Opción de efecto vibrato utilizada para el parámetro ``fx``."""
     FX_WARBLE: ClassVar[int]
@@ -70,7 +70,7 @@ class SoundEffect:
     """El tipo de curva de interpolación entre las frecuencias de inicio y final, diferentes formas de onda tienen diferentes tasas de cambio en la frecuencia. Uno de los siguientes valores: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG`` (forma)"""
 
     def __init__(self, freq_start: int=500, freq_end: int=2500, duration: int=500, vol_start: int=255, vol_end: int=0, waveform: int=WAVEFORM_SQUARE, fx: int=FX_NONE, shape: int=SHAPE_LOG):
-        """Crear un nuevo efecto de sonido.
+        """Crea un nuevo efecto de sonido.
 
 Example: ``my_effect = SoundEffect(duration=1000)``
 
@@ -89,7 +89,7 @@ and then change its attributes ``my_effect.duration = 500``.
 :param shape: (forma) El tipo de curva de interpolación entre las frecuencias de inicio y final, diferentes formas de onda tienen diferentes tasas de cambio en la frecuencia. Uno de los siguientes valores: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."""
 
     def copy(self) -> SoundEffect:
-        """Crear una copia de este ``SoundEffect``. (copiar)
+        """Crea una copia de este ``SoundEffect``. (copiar)
 
 Example: ``sound_2 = sound_1.copy()``
 
@@ -108,7 +108,7 @@ Example::
         frame[i] = 252 - i * 8"""
 
     def copyfrom(self, other: AudioFrame) -> None:
-        """Sobrescribir los datos en este ``AudioFrame`` con los datos de otra instancia de ``AudioFrame``. (copiar forma)
+        """Sobrescribe los datos de este ``AudioFrame`` con los datos de otra instancia ``AudioFrame``. (copiadesde)
 
 Example: ``my_frame.copyfrom(source_frame)``
 

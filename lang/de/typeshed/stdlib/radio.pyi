@@ -7,7 +7,7 @@ RATE_2MBIT: int
 """Konstante zur Angabe eines Durchsatzes von 2 MBit pro Sekunde."""
 
 def on() -> None:
-    """Schaltet den Funk ein. (an)
+    """Schaltet den Funk ein.
 
 Example: ``radio.on()``
 

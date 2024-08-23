@@ -22,7 +22,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
 
 :param pin: El pin que controla la tira NeoPixel.
 :param n: El número de LED NeoPixel de la tira.
-:param bpp: Bytes por píxel. Para compatibilidad con NeoPixel RGBW, pasa 4 en lugar del valor predeterminado 3 para RGB y GRB."""
+:param bpp: Bytes por píxel. Para compatibilidad de neopíxeles RGBW, pasa 4 en lugar del valor predeterminado de 3 para RGB y GRB."""
         ...
 
     def clear(self) -> None:

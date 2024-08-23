@@ -112,7 +112,7 @@
     "description": "Hours timestamp format."
   },
   "log.DAYS": {
-    "message": "tage",
+    "message": "days",
     "description": "(field name) Days timestamp format."
   },
   "log.DAYS.summary": {
@@ -136,7 +136,7 @@
     "description": "Parameter docs"
   },
   "log.set_labels.param-name.timestamp": {
-    "message": "Zeitstempel",
+    "message": "timestamp",
     "description": "(parameter name) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."
   },
   "log.set_labels.param-doc.timestamp": {
@@ -856,7 +856,7 @@
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.days": {
-    "message": "tage",
+    "message": "days",
     "description": "(parameter name) Sets the day mark for the scheduling."
   },
   "microbit.run_every.param-doc.days": {
@@ -900,7 +900,7 @@
     "description": "(function name) Enter a panic mode."
   },
   "microbit.panic.summary": {
-    "message": "In einen Panik-Modus gehen.",
+    "message": "In einen Panik-Modus wechseln.",
     "description": "Enter a panic mode."
   },
   "microbit.panic.param-name.n": {
@@ -976,7 +976,7 @@
     "description": "Parameter docs"
   },
   "microbit.scale-2.param-name.value": {
-    "message": "wert",
+    "message": "value",
     "description": "(parameter name) A number to convert."
   },
   "microbit.scale-2.param-doc.value": {
@@ -1441,11 +1441,11 @@
   },
   "microbit.Image.SMILE": {
     "message": "smile",
-    "description": "(field name) Smiling face image."
+    "description": "(field name) Smiling mouth image."
   },
   "microbit.Image.SMILE.summary": {
     "message": "Lächelndes Gesichtsbild.",
-    "description": "Smiling face image."
+    "description": "Smiling mouth image."
   },
   "microbit.Image.SAD": {
     "message": "sad",
@@ -2456,7 +2456,7 @@
     "description": "Measure the acceleration of the micro:bit and recognise gestures."
   },
   "microbit.accelerometer.get_x": {
-    "message": "erhalte x",
+    "message": "get x",
     "description": "(function name) Get the acceleration measurement in the ``x`` axis in milli-g."
   },
   "microbit.accelerometer.get_x.summary": {
@@ -2464,7 +2464,7 @@
     "description": "Get the acceleration measurement in the ``x`` axis in milli-g."
   },
   "microbit.accelerometer.get_y": {
-    "message": "erhalte y",
+    "message": "get y",
     "description": "(function name) Get the acceleration measurement in the ``y`` axis in milli-g."
   },
   "microbit.accelerometer.get_y.summary": {
@@ -2472,7 +2472,7 @@
     "description": "Get the acceleration measurement in the ``y`` axis in milli-g."
   },
   "microbit.accelerometer.get_z": {
-    "message": "erhalte z",
+    "message": "get z",
     "description": "(function name) Get the acceleration measurement in the ``z`` axis in milli-g."
   },
   "microbit.accelerometer.get_z.summary": {
@@ -2480,7 +2480,7 @@
     "description": "Get the acceleration measurement in the ``z`` axis in milli-g."
   },
   "microbit.accelerometer.get_values": {
-    "message": "Werte erhalten",
+    "message": "get values",
     "description": "(function name) Get the acceleration measurements in all axes at once as a tuple."
   },
   "microbit.accelerometer.get_values.summary": {
@@ -2488,7 +2488,7 @@
     "description": "Get the acceleration measurements in all axes at once as a tuple."
   },
   "microbit.accelerometer.get_strength": {
-    "message": "erhalte Stärke",
+    "message": "get strength",
     "description": "(function name) Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
   },
   "microbit.accelerometer.get_strength.summary": {
@@ -2536,7 +2536,7 @@
     "description": "Parameter docs"
   },
   "microbit.accelerometer.get_gestures": {
-    "message": "erhalte Gesten",
+    "message": "get gestures",
     "description": "(function name) Return a tuple of the gesture history."
   },
   "microbit.accelerometer.get_gestures.summary": {
@@ -2584,7 +2584,7 @@
     "description": "Parameter docs"
   },
   "microbit.audio.play.param-name.return_pin": {
-    "message": "erhalte Pin",
+    "message": "return pin",
     "description": "(parameter name) Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision."
   },
   "microbit.audio.play.param-doc.return_pin": {
@@ -2928,27 +2928,27 @@
     "description": "Undoes the calibration, making the compass uncalibrated again."
   },
   "microbit.compass.get_x": {
-    "message": "erhalte x",
+    "message": "get x",
     "description": "(function name) Get the magnetic field strength on the ``x`` axis."
   },
   "microbit.compass.get_x.summary": {
-    "message": "Ermittle die Magnetfeldstärke der {{x}}-Achse. ",
+    "message": "Liefert die Magnetfeldstärke der {{x}}-Achse. ",
     "description": "Get the magnetic field strength on the ``x`` axis."
   },
   "microbit.compass.get_y": {
-    "message": "erhalte y",
+    "message": "get y",
     "description": "(function name) Get the magnetic field strength on the ``y`` axis."
   },
   "microbit.compass.get_y.summary": {
-    "message": "Ermittle die Magnetfeldstärke der {{y}}-Achse. ",
+    "message": "Liefert die Magnetfeldstärke der {{y}}-Achse. ",
     "description": "Get the magnetic field strength on the ``y`` axis."
   },
   "microbit.compass.get_z": {
-    "message": "erhalte z",
+    "message": "get z",
     "description": "(function name) Get the magnetic field strength on the ``z`` axis."
   },
   "microbit.compass.get_z.summary": {
-    "message": "Ermittle die Magnetfeldstärke der {{z}}-Achse. ",
+    "message": "Liefert die Magnetfeldstärke der {{z}}-Achse. ",
     "description": "Get the magnetic field strength on the ``z`` axis."
   },
   "microbit.compass.heading": {
@@ -2976,11 +2976,11 @@
     "description": "Show text, images and animations on the 5×5 LED display."
   },
   "microbit.display.get_pixel": {
-    "message": "Pixelwerte holen",
+    "message": "get pixel",
     "description": "(function name) Get the brightness of the LED at column ``x`` and row ``y``."
   },
   "microbit.display.get_pixel.summary": {
-    "message": "Ermittle die Helligkeit der LED auf Spalte {{x}} und Zeile {{y}}. ",
+    "message": "Ermittelt die Helligkeit der LED in Spalte {{x}} und Zeile {{y}}.",
     "description": "Get the brightness of the LED at column ``x`` and row ``y``."
   },
   "microbit.display.get_pixel.param-name.x": {
@@ -3000,15 +3000,15 @@
     "description": "Parameter docs"
   },
   "microbit.display.set_pixel": {
-    "message": "Pixelwerte setzen",
+    "message": "set pixel",
     "description": "(function name) Set the brightness of the LED at column ``x`` and row ``y``."
   },
   "microbit.display.set_pixel.summary": {
-    "message": "Ändere die Helligkeit der LED auf Spalte {{x}} und Zeile {{y}}. ",
+    "message": "Stellt die Helligkeit der LED in Spalte {{x}} und Zeile {{y}} ein.",
     "description": "Set the brightness of the LED at column ``x`` and row ``y``."
   },
   "microbit.display.set_pixel.param-name.value": {
-    "message": "wert",
+    "message": "value",
     "description": "(parameter name) The brightness between 0 (off) and 9 (bright)"
   },
   "microbit.display.set_pixel.param-doc.value": {
@@ -3032,7 +3032,7 @@
     "description": "Parameter docs"
   },
   "microbit.display.clear": {
-    "message": "löschen",
+    "message": "clear",
     "description": "(function name) Set the brightness of all LEDs to 0 (off)."
   },
   "microbit.display.clear.summary": {
@@ -3048,19 +3048,19 @@
     "description": "Shows images, letters or digits on the LED display."
   },
   "microbit.display.show.param-name.clear": {
-    "message": "löschen",
+    "message": "clear",
     "description": "(parameter name) If ``clear`` is ``True``, the display will be cleared after the sequence has finished."
   },
   "microbit.display.show.param-doc.clear": {
-    "message": "Wenn {{clear}} {{True}}ist, wird die Anzeige ausgeschaltet, nachdem die Sequenz beendet ist.",
+    "message": "Wenn {{clear}} {{True}} ist, wird die Anzeige nach Beendigung der Sequenz gelöscht.",
     "description": "Parameter docs"
   },
   "microbit.display.show.param-name.delay": {
-    "message": "Verzögerung",
+    "message": "delay",
     "description": "(parameter name) Each letter, digit or image is shown with ``delay`` milliseconds between them."
   },
   "microbit.display.show.param-doc.delay": {
-    "message": "Jeder Buchstabe, Ziffer oder Bild wird mit {{delay}} Millisekunden zwischen ihnen angezeigt.",
+    "message": "Jeder Buchstabe, jede Ziffer oder jedes Bild wird mit einer Verzögerung von {{delay}} Millisekunden angezeigt.",
     "description": "Parameter docs"
   },
   "microbit.display.show.param-name.image": {
@@ -3068,7 +3068,7 @@
     "description": "(parameter name) A string, number, image or list of images to show."
   },
   "microbit.display.show.param-doc.image": {
-    "message": "Eine Zeichenkette, Nummer, Bild oder Liste der anzuzeigenden Bilder.",
+    "message": "Eine Zeichenkette, eine Zahl, ein Bild oder eine Liste von Bildern, die angezeigt werden sollen.",
     "description": "Parameter docs"
   },
   "microbit.display.show.param-name.loop": {
@@ -3076,7 +3076,7 @@
     "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
   },
   "microbit.display.show.param-doc.loop": {
-    "message": "Wenn {{loop}} {{True}}ist, wird sich die Animation für immer wiederholen.",
+    "message": "Wenn {{loop}} {{True}} ist, wird die Animation endlos wiederholt.",
     "description": "Parameter docs"
   },
   "microbit.display.show.param-name.wait": {
@@ -3084,11 +3084,11 @@
     "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
   },
   "microbit.display.show.param-doc.wait": {
-    "message": "Wenn {{wait}} {{True}}ist, wird diese Funktion blockiert, bis die Animation beendet ist, andernfalls wird die Animation im Hintergrund stattfinden.",
+    "message": "Wenn {{wait}} {{True}} ist, wird diese Funktion das Programm so lange anhalten, bis die Animation beendet ist, andernfalls wird die Animation im Hintergrund ausgeführt.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll": {
-    "message": "scrollen",
+    "message": "scroll",
     "description": "(function name) Scrolls a number or text on the LED display."
   },
   "microbit.display.scroll.summary": {
@@ -3096,11 +3096,11 @@
     "description": "Scrolls a number or text on the LED display."
   },
   "microbit.display.scroll.param-name.delay": {
-    "message": "Verzögerung",
+    "message": "delay",
     "description": "(parameter name) The ``delay`` parameter controls how fast the text is scrolling."
   },
   "microbit.display.scroll.param-doc.delay": {
-    "message": "Der {{delay}} -Parameter bestimmt, wie schnell der Text scrollt.",
+    "message": "Der Parameter {{delay}} bestimmt, wie schnell der Text gescrollt wird.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll.param-name.loop": {
@@ -3108,11 +3108,11 @@
     "description": "(parameter name) If ``loop`` is ``True``, the animation will repeat forever."
   },
   "microbit.display.scroll.param-doc.loop": {
-    "message": "Wenn {{loop}} {{True}}ist, wird sich die Animation für immer wiederholen.",
+    "message": "Wenn {{loop}} {{True}} ist, wird die Animation endlos wiederholt.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll.param-name.monospace": {
-    "message": "Monospace",
+    "message": "monospace",
     "description": "(parameter name) If ``monospace`` is ``True``, the characters will all take up 5 pixel-columns in width, otherwise there will be exactly 1 blank pixel-column between each character as they scroll."
   },
   "microbit.display.scroll.param-doc.monospace": {
@@ -3124,7 +3124,7 @@
     "description": "(parameter name) The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``."
   },
   "microbit.display.scroll.param-doc.text": {
-    "message": "Der zu wiederzugebende String. Wenn {{text}} eine Ganzzahl oder ein Float ist, wird er zuerst mit {{str()}} in einen String konvertiert.",
+    "message": "Die zu scrollende Zeichenkette. Wenn {{text}} ein Integer oder Float ist, wird der Text vorher mit {{str()}} in einen String umgewandelt.",
     "description": "Parameter docs"
   },
   "microbit.display.scroll.param-name.wait": {
@@ -3132,15 +3132,15 @@
     "description": "(parameter name) If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background."
   },
   "microbit.display.scroll.param-doc.wait": {
-    "message": "Wenn {{wait}} {{True}}ist, wird diese Funktion blockiert, bis die Animation beendet ist, andernfalls wird die Animation im Hintergrund stattfinden.",
+    "message": "Wenn {{wait}} {{True}} ist, wird diese Funktion das Programm anhalten, bis die Animation beendet ist, andernfalls läuft die Animation im Hintergrund ab.",
     "description": "Parameter docs"
   },
   "microbit.display.on": {
-    "message": "an",
+    "message": "on",
     "description": "(function name) Turn on the LED display."
   },
   "microbit.display.on.summary": {
-    "message": "Schalten Sie das LED-Display ein.",
+    "message": "Das LED-Display einschalten.",
     "description": "Turn on the LED display."
   },
   "microbit.display.off": {
@@ -3148,19 +3148,19 @@
     "description": "(function name) Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
   },
   "microbit.display.off.summary": {
-    "message": "Schalten Sie die LED-Anzeige aus (das Deaktivieren des Displays erlaubt es Ihnen, die GPIO-Pins für andere Zwecke zu verwenden).",
+    "message": "Die LED-Anzeige ausschalten (Deaktivieren des Displays ermöglicht es dir, die GPIO-Pins für andere Zwecke zu verwenden).",
     "description": "Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
   },
   "microbit.display.is_on": {
-    "message": "ist an",
+    "message": "is on",
     "description": "(function name) Check whether the LED display is enabled."
   },
   "microbit.display.is_on.summary": {
-    "message": "Überprüfen Sie, ob die LED-Anzeige aktiviert ist.",
+    "message": "Überprüfung, ob die LED-Anzeige aktiviert ist.",
     "description": "Check whether the LED display is enabled."
   },
   "microbit.display.read_light_level": {
-    "message": "bestimme Licht Intensität",
+    "message": "read light level",
     "description": "(function name) Read the light level."
   },
   "microbit.display.read_light_level.summary": {
@@ -3384,7 +3384,7 @@
     "description": "Turn the speaker off."
   },
   "microbit.speaker.on": {
-    "message": "an",
+    "message": "on",
     "description": "(function name) Turn the speaker on."
   },
   "microbit.speaker.on.summary": {
@@ -3457,11 +3457,11 @@
   },
   "microbit.spi.read": {
     "message": "read",
-    "description": "(function name) Read bytes."
+    "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
     "message": "Bytes lesen.",
-    "description": "Read bytes."
+    "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {
     "message": "nbytes",
@@ -3469,6 +3469,14 @@
   },
   "microbit.spi.read.param-doc.nbytes": {
     "message": "Maximum der zu lesenden Bytes. ",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read.param-name.out": {
+    "message": "out",
+    "description": "(parameter name) The byte value to write (default 0)."
+  },
+  "microbit.spi.read.param-doc.out": {
+    "message": "The byte value to write (default 0).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {
@@ -4136,7 +4144,7 @@
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.clear": {
-    "message": "löschen",
+    "message": "clear",
     "description": "(function name) Clear all the pixels."
   },
   "neopixel.NeoPixel.clear.summary": {
@@ -4220,7 +4228,7 @@
     "description": "(function name) Get length of this pixel strip."
   },
   "neopixel.NeoPixel.__len__.summary": {
-    "message": "Erhalte die Länge des Pixelstreifens.",
+    "message": "Liefert die Länge des Pixelstreifens.",
     "description": "Get length of this pixel strip."
   },
   "os": {
@@ -4352,7 +4360,7 @@
     "description": "Constant used to indicate a throughput of 2 MBit a second."
   },
   "radio.on": {
-    "message": "an",
+    "message": "on",
     "description": "(function name) Turns the radio on."
   },
   "radio.on.summary": {

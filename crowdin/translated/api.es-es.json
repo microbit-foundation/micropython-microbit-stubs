@@ -140,7 +140,7 @@
     "description": "(parameter name) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."
   },
   "log.set_labels.param-doc.timestamp": {
-    "message": "Seleccione la unidad de marca de tiempo que se añadirá automáticamente como la primera columna de cada fila. Los valores de la marca de tiempo pueden ser {{log.MILLISECONDS}}, {{log.SECONDS}}, {{log.MINUTES}}, {{log.HOURS}}, {{log.DAYS}} o {{None}} para desactivar la marca de tiempo. El valor por defecto es {{log.SECONDS}}.",
+    "message": "Selecciona la unidad de marca de tiempo que se añadirá automáticamente como la primera columna de cada fila. Los valores de la marca de tiempo pueden ser {{log.MILLISECONDS}}, {{log.SECONDS}}, {{log.MINUTES}}, {{log.HOURS}}, {{log.DAYS}} o {{None}} para desactivar la marca de tiempo. El valor por defecto es {{log.SECONDS}}.",
     "description": "Parameter docs"
   },
   "log.add-1": {
@@ -156,7 +156,7 @@
     "description": "(parameter name) The data to log as a dictionary with a key for each header."
   },
   "log.add-1.param-doc.data_dictionary": {
-    "message": "Los datos a registrar como un diccionario con una clave para cada cabecera.",
+    "message": "Los datos que se registrarán como un diccionario con una clave para cada cabecera.",
     "description": "Parameter docs"
   },
   "log.add-2": {
@@ -188,7 +188,7 @@
     "description": "(function name) Configure mirroring of the data logging activity to the serial output."
   },
   "log.set_mirroring.summary": {
-    "message": "Configure la duplicación de la actividad de registro de datos en la salida en serie.",
+    "message": "Configura la duplicación de la actividad de registro de datos en la salida serie.",
     "description": "Configure mirroring of the data logging activity to the serial output."
   },
   "log.set_mirroring.param-name.serial": {
@@ -844,7 +844,7 @@
     "description": "(function name) Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.summary": {
-    "message": "Programe para ejecutar una función en el intervalo especificado por los argumentos de tiempo **V2 solamente**.",
+    "message": "Programa la ejecución de una función en el intervalo especificado por los argumentos de tiempo **Sólo V2**.",
     "description": "Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.param-name.callback": {
@@ -852,7 +852,7 @@
     "description": "(parameter name) Function to call at the provided interval. Omit when using as a decorator."
   },
   "microbit.run_every.param-doc.callback": {
-    "message": "Función para llamar al intervalo proporcionado. Omitir cuando se utiliza como decorador.",
+    "message": "Función a llamar en el intervalo proporcionado. Omitir cuando se utiliza como un decorador.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.days": {
@@ -860,7 +860,7 @@
     "description": "(parameter name) Sets the day mark for the scheduling."
   },
   "microbit.run_every.param-doc.days": {
-    "message": "Establece la marca del día para la programación.",
+    "message": "Configura la marca del día para la programación.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.h": {
@@ -868,7 +868,7 @@
     "description": "(parameter name) Sets the hour mark for the scheduling."
   },
   "microbit.run_every.param-doc.h": {
-    "message": "Establece la marca de hora para la programación.",
+    "message": "Configura la marca de la hora para la programación.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.min": {
@@ -876,7 +876,7 @@
     "description": "(parameter name) Sets the minute mark for the scheduling."
   },
   "microbit.run_every.param-doc.min": {
-    "message": "Establece la marca de minuto para la programación.",
+    "message": "Configura la marca de los minutos para la programación.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.ms": {
@@ -884,7 +884,7 @@
     "description": "(parameter name) Sets the millisecond mark for the scheduling."
   },
   "microbit.run_every.param-doc.ms": {
-    "message": "Establece la marca de milisegundos para la programación.",
+    "message": "Configura la marca de los milisegundos para la programación.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.s": {
@@ -892,7 +892,7 @@
     "description": "(parameter name) Sets the second mark for the scheduling."
   },
   "microbit.run_every.param-doc.s": {
-    "message": "Establece la segunda marca para la programación.",
+    "message": "Configura la segunda marca para la programación.",
     "description": "Parameter docs"
   },
   "microbit.panic": {
@@ -1441,11 +1441,11 @@
   },
   "microbit.Image.SMILE": {
     "message": "sonrisa",
-    "description": "(field name) Smiling face image."
+    "description": "(field name) Smiling mouth image."
   },
   "microbit.Image.SMILE.summary": {
     "message": "Imagen de una cara sonriente.",
-    "description": "Smiling face image."
+    "description": "Smiling mouth image."
   },
   "microbit.Image.SAD": {
     "message": "triste",
@@ -2492,7 +2492,7 @@
     "description": "(function name) Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
   },
   "microbit.accelerometer.get_strength.summary": {
-    "message": "Obtener la medición de aceleración de todos los ejes combinados, como un entero positivo. Esta es la suma de Pitagórica de los ejes X, Y y Z.",
+    "message": "Obtiene la medida de la aceleración de todos los ejes combinados, como un entero positivo. Es la suma Pitagórica de los ejes X, Y y Z.",
     "description": "Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
   },
   "microbit.accelerometer.current_gesture": {
@@ -2544,11 +2544,11 @@
     "description": "Return a tuple of the gesture history."
   },
   "microbit.accelerometer.set_range": {
-    "message": "establecer rango",
+    "message": "configurar rango",
     "description": "(function name) Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.summary": {
-    "message": "Establecer el rango de sensibilidad acelerómetro, en g (gravedad estándar), a los valores más cercanos soportados por el hardware, así que se redondea a {{2}}, {{4}}o {{8}} g.",
+    "message": "Configura el rango de sensibilidad del acelerómetro, en g (gravedad estándar), a los valores más cercanos soportados por el hardware, por lo que redondea a {{2}}, {{4}}, u {{8}} g.",
     "description": "Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.param-name.value": {
@@ -2572,7 +2572,7 @@
     "description": "(function name) Play a built-in sound, sound effect or custom audio frames."
   },
   "microbit.audio.play.summary": {
-    "message": "Reproducir un sonido, un efecto de sonido o marcos de audio personalizados.",
+    "message": "Reproduce un sonido integrado, un efecto de sonido o marcos de audio personalizados.",
     "description": "Play a built-in sound, sound effect or custom audio frames."
   },
   "microbit.audio.play.param-name.pin": {
@@ -2624,7 +2624,7 @@
     "description": "Stop all audio playback."
   },
   "microbit.audio.SoundEffect": {
-    "message": "efecto de sonido",
+    "message": "efectosonido",
     "description": "(class name) A sound effect, composed by a set of parameters configured via the constructor or attributes."
   },
   "microbit.audio.SoundEffect.summary": {
@@ -2632,15 +2632,15 @@
     "description": "A sound effect, composed by a set of parameters configured via the constructor or attributes."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SINE": {
-    "message": "forma de onda sinusoidal",
+    "message": "forma de onda senoidal",
     "description": "(field name) Sine wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SINE.summary": {
-    "message": "Opción de onda sinusoidal utilizada para el parámetro {{waveform}}.",
+    "message": "Opción de onda senoidal utilizada para el parámetro {{waveform}}.",
     "description": "Sine wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SAWTOOTH": {
-    "message": "diente de sierra de forma de onda",
+    "message": "forma de onda diente de sierra",
     "description": "(field name) Sawtooth wave option used for the ``waveform`` parameter."
   },
   "microbit.audio.SoundEffect.WAVEFORM_SAWTOOTH.summary": {
@@ -2704,7 +2704,7 @@
     "description": "No effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_TREMOLO": {
-    "message": "fx tremolo",
+    "message": "fx trémolo",
     "description": "(field name) Tremolo effect option used for the ``fx`` parameter."
   },
   "microbit.audio.SoundEffect.FX_TREMOLO.summary": {
@@ -2796,7 +2796,7 @@
     "description": "(function name) Create a new sound effect."
   },
   "microbit.audio.SoundEffect.__init__.summary": {
-    "message": "Crear un nuevo efecto de sonido.",
+    "message": "Crea un nuevo efecto de sonido.",
     "description": "Create a new sound effect."
   },
   "microbit.audio.SoundEffect.__init__.param-name.duration": {
@@ -2868,7 +2868,7 @@
     "description": "(function name) Create a copy of this ``SoundEffect``."
   },
   "microbit.audio.SoundEffect.copy.summary": {
-    "message": "Crear una copia de este {{SoundEffect}}.",
+    "message": "Crea una copia de este {{SoundEffect}}.",
     "description": "Create a copy of this ``SoundEffect``."
   },
   "microbit.audio.AudioFrame": {
@@ -2880,11 +2880,11 @@
     "description": "An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte\n(whole number between 0 and 255)."
   },
   "microbit.audio.AudioFrame.copyfrom": {
-    "message": "copiar forma",
+    "message": "copiadesde",
     "description": "(function name) Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
   },
   "microbit.audio.AudioFrame.copyfrom.summary": {
-    "message": "Sobrescribir los datos en este {{AudioFrame}} con los datos de otra instancia de {{AudioFrame}}.",
+    "message": "Sobrescribe los datos de este {{AudioFrame}} con los datos de otra instancia {{AudioFrame}}.",
     "description": "Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
   },
   "microbit.audio.AudioFrame.copyfrom.param-name.other": {
@@ -3457,11 +3457,11 @@
   },
   "microbit.spi.read": {
     "message": "leer",
-    "description": "(function name) Read bytes."
+    "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
     "message": "Lee bytes.",
-    "description": "Read bytes."
+    "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {
     "message": "nbytes",
@@ -3469,6 +3469,14 @@
   },
   "microbit.spi.read.param-doc.nbytes": {
     "message": "Número máximo de bytes a leer.",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read.param-name.out": {
+    "message": "a",
+    "description": "(parameter name) The byte value to write (default 0)."
+  },
+  "microbit.spi.read.param-doc.out": {
+    "message": "The byte value to write (default 0).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {
@@ -3596,7 +3604,7 @@
     "description": "(function name) Check if any data is waiting."
   },
   "microbit.uart.any.summary": {
-    "message": "Comprueba si hay algún dato esperando.",
+    "message": "Comprueba si hay datos en espera.",
     "description": "Check if any data is waiting."
   },
   "microbit.uart.read": {
@@ -4116,7 +4124,7 @@
     "description": "(parameter name) Bytes per pixel. For RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB."
   },
   "neopixel.NeoPixel.__init__.param-doc.bpp": {
-    "message": "Bytes por píxel. Para compatibilidad con NeoPixel RGBW, pasa 4 en lugar del valor predeterminado 3 para RGB y GRB.",
+    "message": "Bytes por píxel. Para compatibilidad de neopíxeles RGBW, pasa 4 en lugar del valor predeterminado de 3 para RGB y GRB.",
     "description": "Parameter docs"
   },
   "neopixel.NeoPixel.__init__.param-name.n": {

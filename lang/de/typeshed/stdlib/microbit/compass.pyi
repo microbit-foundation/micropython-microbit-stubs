@@ -24,7 +24,7 @@ Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """Ermittle die Magnetfeldstärke der ``x``-Achse. (erhalte x)
+    """Liefert die Magnetfeldstärke der ``x``-Achse.
 
 Example: ``compass.get_x()``
 
@@ -34,7 +34,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_y() -> int:
-    """Ermittle die Magnetfeldstärke der ``y``-Achse. (erhalte y)
+    """Liefert die Magnetfeldstärke der ``y``-Achse.
 
 Example: ``compass.get_y()``
 
@@ -44,7 +44,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def get_z() -> int:
-    """Ermittle die Magnetfeldstärke der ``z``-Achse. (erhalte z)
+    """Liefert die Magnetfeldstärke der ``z``-Achse.
 
 Example: ``compass.get_z()``
 

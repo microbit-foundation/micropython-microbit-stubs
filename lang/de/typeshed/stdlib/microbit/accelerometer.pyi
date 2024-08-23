@@ -2,7 +2,7 @@
 from typing import Tuple
 
 def get_x() -> int:
-    """Erhalte die Beschleunigungsmessung in der ``x`` -Achse in Milli-g. (erhalte x)
+    """Erhalte die Beschleunigungsmessung in der ``x`` -Achse in Milli-g.
 
 Example: ``accelerometer.get_x()``
 
@@ -10,7 +10,7 @@ Example: ``accelerometer.get_x()``
     ...
 
 def get_y() -> int:
-    """Erhalte die Beschleunigungsmessung in der ``y`` -Achse in Milli-g. (erhalte y)
+    """Erhalte die Beschleunigungsmessung in der ``y`` -Achse in Milli-g.
 
 Example: ``accelerometer.get_y()``
 
@@ -18,7 +18,7 @@ Example: ``accelerometer.get_y()``
     ...
 
 def get_z() -> int:
-    """Erhalte die Beschleunigungsmessung in der ``z`` -Achse in Milli-g. (erhalte z)
+    """Erhalte die Beschleunigungsmessung in der ``z`` -Achse in Milli-g.
 
 Example: ``accelerometer.get_z()``
 
@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Erhalten Sie die Beschleunigungsmessungen in allen Achsen auf einmal als Tupel. (Werte erhalten)
+    """Erhalten Sie die Beschleunigungsmessungen in allen Achsen auf einmal als Tupel.
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def get_strength() -> int:
-    """Erhalte die Beschleunigungsmessung aller Achsen als positive Ganzzahl. Dies ist die euklidische Summe der X-, Y- und Z-Achsen. (erhalte Stärke)
+    """Erhalte die Beschleunigungsmessung aller Achsen als positive Ganzzahl. Dies ist die euklidische Summe der X-, Y- und Z-Achsen.
 
 Example: ``accelerometer.get_strength()``
 
@@ -82,7 +82,7 @@ represented as strings.
 :return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """Gibt ein Tupel der vergangenen Gesten zurück. (erhalte Gesten)
+    """Gibt ein Tupel der vergangenen Gesten zurück.
 
 Example: ``accelerometer.get_gestures()``
 

@@ -9,7 +9,7 @@ MINUTES = 600
 HOURS = 36000
 """Stunden Zeitstempelformat. (stunden)"""
 DAYS = 864000
-"""Tage Zeitstempelformat. (tage)"""
+"""Tage Zeitstempelformat."""
 
 def set_labels(*labels: str, timestamp: Optional[Literal[1, 10, 36000, 864000]]=SECONDS) -> None:
     """Den Logdatei-Header setzen (Beschriftungen festlegen)
@@ -28,7 +28,7 @@ By default the first column contains a timestamp for each row. The time
 unit can be selected via the timestamp argument.
 
 :param *labels: Eine beliebige Anzahl von Positionsargumenten, die jeweils einem Eintrag in der Kopfzeile des Logs entsprechen.
-:param timestamp: (Zeitstempel) Wähle die Zeitstempel-Einheit, die automatisch als erste Spalte in jeder Zeile hinzugefügt wird. Der Zeitstempel kann einen der folgenden Werte annehmen: ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` oder ``None``, um den Zeitstempel zu deaktivieren. Der Standardwert ist ``log.SECONDS``."""
+:param timestamp: Wähle die Zeitstempel-Einheit, die automatisch als erste Spalte in jeder Zeile hinzugefügt wird. Der Zeitstempel kann einen der folgenden Werte annehmen: ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` oder ``None``, um den Zeitstempel zu deaktivieren. Der Standardwert ist ``log.SECONDS``."""
     ...
 
 @overload

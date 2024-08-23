@@ -85,5 +85,5 @@ Example: ``log.set_mirroring(True)``
 
 Serial mirroring is disabled by default. When enabled, it will print to serial each row logged into the log file.
 
-:param serial: ``True`` enables mirroring data to the serial output."""
+:param serial: ``True``로 설정할 경우 시리얼 출력 인터페이스에 데이터를 미러링하는 것이 허용됩니다."""
     ...

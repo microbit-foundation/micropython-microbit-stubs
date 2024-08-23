@@ -1441,11 +1441,11 @@
   },
   "microbit.Image.SMILE": {
     "message": "smile",
-    "description": "(field name) Smiling face image."
+    "description": "(field name) Smiling mouth image."
   },
   "microbit.Image.SMILE.summary": {
     "message": "「笑顔」イメージ。",
-    "description": "Smiling face image."
+    "description": "Smiling mouth image."
   },
   "microbit.Image.SAD": {
     "message": "sad",
@@ -3457,11 +3457,11 @@
   },
   "microbit.spi.read": {
     "message": "read",
-    "description": "(function name) Read bytes."
+    "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
     "message": "バイト列を読み取ります。",
-    "description": "Read bytes."
+    "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {
     "message": "nbytes",
@@ -3469,6 +3469,14 @@
   },
   "microbit.spi.read.param-doc.nbytes": {
     "message": "読み取る最大バイト数。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read.param-name.out": {
+    "message": "out",
+    "description": "(parameter name) The byte value to write (default 0)."
+  },
+  "microbit.spi.read.param-doc.out": {
+    "message": "The byte value to write (default 0).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {

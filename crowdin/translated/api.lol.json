@@ -1441,11 +1441,11 @@
   },
   "microbit.Image.SMILE": {
     "message": "crwdns329418:0crwdne329418:0",
-    "description": "(field name) Smiling face image."
+    "description": "(field name) Smiling mouth image."
   },
   "microbit.Image.SMILE.summary": {
     "message": "crwdns329420:0crwdne329420:0",
-    "description": "Smiling face image."
+    "description": "Smiling mouth image."
   },
   "microbit.Image.SAD": {
     "message": "crwdns329422:0crwdne329422:0",
@@ -3457,11 +3457,11 @@
   },
   "microbit.spi.read": {
     "message": "crwdns330282:0crwdne330282:0",
-    "description": "(function name) Read bytes."
+    "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
-    "message": "crwdns330284:0crwdne330284:0",
-    "description": "Read bytes."
+    "message": "crwdns330284:0{{nbytes}}crwdnd330284:0{{out}}crwdne330284:0",
+    "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {
     "message": "crwdns330286:0crwdne330286:0",
@@ -3469,6 +3469,14 @@
   },
   "microbit.spi.read.param-doc.nbytes": {
     "message": "crwdns330288:0crwdne330288:0",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read.param-name.out": {
+    "message": "crwdns360362:0crwdne360362:0",
+    "description": "(parameter name) The byte value to write (default 0)."
+  },
+  "microbit.spi.read.param-doc.out": {
+    "message": "crwdns360364:0crwdne360364:0",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {

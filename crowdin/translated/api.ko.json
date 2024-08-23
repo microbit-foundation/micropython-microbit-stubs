@@ -196,7 +196,7 @@
     "description": "(parameter name) ``True`` enables mirroring data to the serial output."
   },
   "log.set_mirroring.param-doc.serial": {
-    "message": "{{True}} enables mirroring data to the serial output.",
+    "message": "{{True}}로 설정할 경우 시리얼 출력 인터페이스에 데이터를 미러링하는 것이 허용됩니다.",
     "description": "Parameter docs"
   },
   "machine": {
@@ -844,7 +844,7 @@
     "description": "(function name) Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.summary": {
-    "message": "Schedule to run a function at the interval specified by the time arguments **V2 only**.",
+    "message": "매개 변수로 주어진 일정한 시간(밀리초, ms)마다 특정 함수를 호출합니다. **micro:bit V2 전용**",
     "description": "Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.param-name.callback": {
@@ -852,7 +852,7 @@
     "description": "(parameter name) Function to call at the provided interval. Omit when using as a decorator."
   },
   "microbit.run_every.param-doc.callback": {
-    "message": "Function to call at the provided interval. Omit when using as a decorator.",
+    "message": "주어진 시간이 되었을 때 호출할 함수. 데코레이터(장식자)로 사용할 때 호출.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.days": {
@@ -860,7 +860,7 @@
     "description": "(parameter name) Sets the day mark for the scheduling."
   },
   "microbit.run_every.param-doc.days": {
-    "message": "Sets the day mark for the scheduling.",
+    "message": "함수 호출 반복 시간의 날 단위를 정합니다.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.h": {
@@ -868,7 +868,7 @@
     "description": "(parameter name) Sets the hour mark for the scheduling."
   },
   "microbit.run_every.param-doc.h": {
-    "message": "Sets the hour mark for the scheduling.",
+    "message": "함수 호출 반복 시간의 시간 단위를 정합니다.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.min": {
@@ -876,7 +876,7 @@
     "description": "(parameter name) Sets the minute mark for the scheduling."
   },
   "microbit.run_every.param-doc.min": {
-    "message": "Sets the minute mark for the scheduling.",
+    "message": "함수 호출 반복 시간의 분 단위를 정합니다.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.ms": {
@@ -884,7 +884,7 @@
     "description": "(parameter name) Sets the millisecond mark for the scheduling."
   },
   "microbit.run_every.param-doc.ms": {
-    "message": "Sets the millisecond mark for the scheduling.",
+    "message": "함수 호출 반복 시간의 밀리초 단위를 정합니다.",
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.s": {
@@ -892,7 +892,7 @@
     "description": "(parameter name) Sets the second mark for the scheduling."
   },
   "microbit.run_every.param-doc.s": {
-    "message": "Sets the second mark for the scheduling.",
+    "message": "함수 호출 반복 시간의 초 단위를 정합니다.",
     "description": "Parameter docs"
   },
   "microbit.panic": {
@@ -932,7 +932,7 @@
     "description": "(parameter name) A tuple to define the range to convert from."
   },
   "microbit.scale-1.param-doc.from_": {
-    "message": "A tuple to define the range to convert from.",
+    "message": "변환할 범위를 정의할 튜플 값",
     "description": "Parameter docs"
   },
   "microbit.scale-1.param-name.to": {
@@ -964,7 +964,7 @@
     "description": "(parameter name) A tuple to define the range to convert from."
   },
   "microbit.scale-2.param-doc.from_": {
-    "message": "A tuple to define the range to convert from.",
+    "message": "변환할 범위를 정의할 튜플 값",
     "description": "Parameter docs"
   },
   "microbit.scale-2.param-name.to": {
@@ -1441,11 +1441,11 @@
   },
   "microbit.Image.SMILE": {
     "message": "smile",
-    "description": "(field name) Smiling face image."
+    "description": "(field name) Smiling mouth image."
   },
   "microbit.Image.SMILE.summary": {
     "message": "미소 짓는 얼굴 이미지입니다.",
-    "description": "Smiling face image."
+    "description": "Smiling mouth image."
   },
   "microbit.Image.SAD": {
     "message": "sad",
@@ -3457,11 +3457,11 @@
   },
   "microbit.spi.read": {
     "message": "read",
-    "description": "(function name) Read bytes."
+    "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
     "message": "바이트를 읽습니다.",
-    "description": "Read bytes."
+    "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {
     "message": "nbytes",
@@ -3469,6 +3469,14 @@
   },
   "microbit.spi.read.param-doc.nbytes": {
     "message": "읽을 바이트의 최대 수입니다.",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read.param-name.out": {
+    "message": "out",
+    "description": "(parameter name) The byte value to write (default 0)."
+  },
+  "microbit.spi.read.param-doc.out": {
+    "message": "The byte value to write (default 0).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {
