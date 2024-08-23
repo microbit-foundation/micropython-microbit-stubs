@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Schedule to run a function at the interval specified by the time arguments **V2 only**.
+    """매개 변수로 주어진 일정한 시간(밀리초, ms)마다 특정 함수를 호출합니다. **micro:bit V2 전용**
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -36,12 +36,12 @@ So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: Function to call at the provided interval. Omit when using as a decorator.
-:param days: Sets the day mark for the scheduling.
-:param h: Sets the hour mark for the scheduling.
-:param min: Sets the minute mark for the scheduling.
-:param s: Sets the second mark for the scheduling.
-:param ms: Sets the millisecond mark for the scheduling."""
+:param callback: 주어진 시간이 되었을 때 호출할 함수. 데코레이터(장식자)로 사용할 때 호출.
+:param days: 함수 호출 반복 시간의 날 단위를 정합니다.
+:param h: 함수 호출 반복 시간의 시간 단위를 정합니다.
+:param min: 함수 호출 반복 시간의 분 단위를 정합니다.
+:param s: 함수 호출 반복 시간의 초 단위를 정합니다.
+:param ms: 함수 호출 반복 시간의 밀리초 단위를 정합니다."""
 
 def panic(n: int) -> None:
     """패닉 모드를 활성화합니다.
@@ -70,7 +70,7 @@ floating point number.
     temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
 :param value: A number to convert.
-:param from_: A tuple to define the range to convert from.
+:param from_: 변환할 범위를 정의할 튜플 값
 :param to: A tuple to define the range to convert to.
 :return: The ``value`` converted to the ``to`` range."""
 
@@ -90,7 +90,7 @@ If they are both integers (i.e ``10``), it will return an integer::
     returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
 :param value: A number to convert.
-:param from_: A tuple to define the range to convert from.
+:param from_: 변환할 범위를 정의할 튜플 값
 :param to: A tuple to define the range to convert to.
 :return: The ``value`` converted to the ``to`` range."""
 

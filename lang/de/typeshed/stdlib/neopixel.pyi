@@ -26,7 +26,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
         ...
 
     def clear(self) -> None:
-        """Lösche alle Pixel. (löschen)
+        """Lösche alle Pixel.
 
 Example: ``np.clear()``"""
         ...
@@ -76,6 +76,6 @@ Example: ``r, g, b = np[0]``
 :return: The colour tuple."""
 
     def __len__(self) -> int:
-        """Erhalte die Länge des Pixelstreifens.
+        """Liefert die Länge des Pixelstreifens.
 
 Example: ``len(np)``"""

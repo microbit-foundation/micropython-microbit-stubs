@@ -10,7 +10,7 @@ Example: ``audio.play(Sound.GIGGLE)``
 :param source: (Quelle) Ein eingebauter ``Sound`` wie ``Sound.GIGGLE``, ein ``SoundEffect`` oder Beispieldaten als Teil eines ``AudioFrame`` Objekts.
 :param wait: Wenn ``wait`` ``True`` ist, wird diese Funktion blockiert, bis der Klang abgeschlossen ist.
 :param pin: Ein optionales Argument für den Ausgabepin kann angegeben werden, um die Standardeinstellung von ``pin0``zu überschreiben. Wenn kein Ton wiedergegeben werden soll, kann ``pin=None`` verwendet werden.
-:param return_pin: (erhalte Pin) Bestimmt einen Pin, mit dem der externen Lautsprecher anstatt mit Ground verbunden wird. Dies wird bei der **V2** Revision ignoriert."""
+:param return_pin: Bestimmt einen Pin, mit dem der externen Lautsprecher anstatt mit Ground verbunden wird. Dies wird bei der **V2** Revision ignoriert."""
 
 def is_playing() -> bool:
     """Überprüfen Sie, ob ein Ton abgespielt wird. (spielt gerade)

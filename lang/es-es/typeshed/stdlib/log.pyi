@@ -28,7 +28,7 @@ By default the first column contains a timestamp for each row. The time
 unit can be selected via the timestamp argument.
 
 :param *labels: (*Etiquetas) Cualquier número de argumentos posicionales, cada uno correspondiente a una entrada en el encabezado del registro.
-:param timestamp: (marca de tiempo) Seleccione la unidad de marca de tiempo que se añadirá automáticamente como la primera columna de cada fila. Los valores de la marca de tiempo pueden ser ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` o ``None`` para desactivar la marca de tiempo. El valor por defecto es ``log.SECONDS``."""
+:param timestamp: (marca de tiempo) Selecciona la unidad de marca de tiempo que se añadirá automáticamente como la primera columna de cada fila. Los valores de la marca de tiempo pueden ser ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` o ``None`` para desactivar la marca de tiempo. El valor por defecto es ``log.SECONDS``."""
     ...
 
 @overload
@@ -46,7 +46,7 @@ to the log with the extra labels.
 Labels previously specified and not present in a call to this function will
 be skipped with an empty value in the log row.
 
-:param data_dictionary: (diccionario de datos) Los datos a registrar como un diccionario con una clave para cada cabecera."""
+:param data_dictionary: (diccionario de datos) Los datos que se registrarán como un diccionario con una clave para cada cabecera."""
     ...
 
 @overload
@@ -79,7 +79,7 @@ and “fast” invalidates the data without removing it.
     ...
 
 def set_mirroring(serial: bool):
-    """Configure la duplicación de la actividad de registro de datos en la salida en serie. (configurar replicación)
+    """Configura la duplicación de la actividad de registro de datos en la salida serie. (configurar replicación)
 
 Example: ``log.set_mirroring(True)``
 

@@ -17,12 +17,13 @@ For correct communication, the parameters have to be the same on both communicat
 :param miso: Broche miso (14 par défaut)"""
     ...
 
-def read(nbytes: int) -> bytes:
+def read(nbytes: int, out: int=0) -> bytes:
     """Lire des octets.
 
 Example: ``spi.read(64)``
 
 :param nbytes: Nombre maximal d'octets à lire.
+:param out: The byte value to write (default 0).
 :return: The bytes read."""
     ...
 

@@ -17,12 +17,13 @@ For correct communication, the parameters have to be the same on both communicat
 :param miso: (MISO) MISO引脚（默认值14）"""
     ...
 
-def read(nbytes: int) -> bytes:
-    """读取字节。 (读取)
+def read(nbytes: int, out: int=0) -> bytes:
+    """读取字节数。 (读取)
 
 Example: ``spi.read(64)``
 
 :param nbytes: (字节数) 要读取的最大字节数。
+:param out: (写出) The byte value to write (default 0).
 :return: The bytes read."""
     ...
 

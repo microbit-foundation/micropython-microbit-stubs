@@ -17,12 +17,13 @@ For correct communication, the parameters have to be the same on both communicat
 :param miso: miso pin (Voreinstellung 14)"""
     ...
 
-def read(nbytes: int) -> bytes:
+def read(nbytes: int, out: int=0) -> bytes:
     """Bytes lesen.
 
 Example: ``spi.read(64)``
 
 :param nbytes: Maximum der zu lesenden Bytes.
+:param out: The byte value to write (default 0).
 :return: The bytes read."""
     ...
 

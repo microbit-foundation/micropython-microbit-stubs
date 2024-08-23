@@ -1441,11 +1441,11 @@
   },
   "microbit.Image.SMILE": {
     "message": "微笑",
-    "description": "(field name) Smiling face image."
+    "description": "(field name) Smiling mouth image."
   },
   "microbit.Image.SMILE.summary": {
     "message": "微笑的脸部图像。",
-    "description": "Smiling face image."
+    "description": "Smiling mouth image."
   },
   "microbit.Image.SAD": {
     "message": "难过",
@@ -3457,11 +3457,11 @@
   },
   "microbit.spi.read": {
     "message": "读取",
-    "description": "(function name) Read bytes."
+    "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
-    "message": "读取字节。",
-    "description": "Read bytes."
+    "message": "读取字节数。",
+    "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {
     "message": "字节数",
@@ -3469,6 +3469,14 @@
   },
   "microbit.spi.read.param-doc.nbytes": {
     "message": "要读取的最大字节数。",
+    "description": "Parameter docs"
+  },
+  "microbit.spi.read.param-name.out": {
+    "message": "写出",
+    "description": "(parameter name) The byte value to write (default 0)."
+  },
+  "microbit.spi.read.param-doc.out": {
+    "message": "The byte value to write (default 0).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {

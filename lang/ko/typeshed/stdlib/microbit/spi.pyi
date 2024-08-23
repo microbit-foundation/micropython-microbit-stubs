@@ -17,12 +17,13 @@ For correct communication, the parameters have to be the same on both communicat
 :param miso: miso 핀(기본값 14)"""
     ...
 
-def read(nbytes: int) -> bytes:
+def read(nbytes: int, out: int=0) -> bytes:
     """바이트를 읽습니다.
 
 Example: ``spi.read(64)``
 
 :param nbytes: 읽을 바이트의 최대 수입니다.
+:param out: The byte value to write (default 0).
 :return: The bytes read."""
     ...
 

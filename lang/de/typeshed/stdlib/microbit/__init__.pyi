@@ -37,14 +37,14 @@ When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
 :param callback: Funktion, die in dem angegebenen Intervall aufgerufen wird. Bei Verwendung als Dekorator weglassen.
-:param days: (tage) Legt den Tag für die Planung fest.
+:param days: Legt den Tag für die Planung fest.
 :param h: Legt die Uhrzeit für die Planung fest.
 :param min: Legt die Minute für die Planung fest.
 :param s: Legt die Sekunde für die Planung fest.
 :param ms: Legt die Millisekunde für die Planung fest."""
 
 def panic(n: int) -> None:
-    """In einen Panik-Modus gehen.
+    """In einen Panik-Modus wechseln.
 
 Example: ``panic(127)``
 
@@ -89,7 +89,7 @@ If they are both integers (i.e ``10``), it will return an integer::
 
     returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-:param value: (wert) Eine umzurechnende Zahl.
+:param value: Eine umzurechnende Zahl.
 :param from_: Ein Tupel, das den Bereich definiert, aus dem konvertiert werden soll.
 :param to: Ein Tupel, das den Bereich definiert, in den konvertiert werden soll.
 :return: The ``value`` converted to the ``to`` range."""

@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Programe para ejecutar una función en el intervalo especificado por los argumentos de tiempo **V2 solamente**. (ejecutar cada)
+    """Programa la ejecución de una función en el intervalo especificado por los argumentos de tiempo **Sólo V2**. (ejecutar cada)
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -36,12 +36,12 @@ So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: Función para llamar al intervalo proporcionado. Omitir cuando se utiliza como decorador.
-:param days: (días) Establece la marca del día para la programación.
-:param h: Establece la marca de hora para la programación.
-:param min: Establece la marca de minuto para la programación.
-:param s: Establece la segunda marca para la programación.
-:param ms: Establece la marca de milisegundos para la programación."""
+:param callback: Función a llamar en el intervalo proporcionado. Omitir cuando se utiliza como un decorador.
+:param days: (días) Configura la marca del día para la programación.
+:param h: Configura la marca de la hora para la programación.
+:param min: Configura la marca de los minutos para la programación.
+:param s: Configura la segunda marca para la programación.
+:param ms: Configura la marca de los milisegundos para la programación."""
 
 def panic(n: int) -> None:
     """Entra en modo pánico (pánico)
