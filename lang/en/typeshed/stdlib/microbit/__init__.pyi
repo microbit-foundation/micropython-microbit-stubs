@@ -32,7 +32,7 @@ def run_every(
 
     As a Decorator - placed on top of the function to schedule. For example::
 
-        @run_every(h=1, min=20, s=30, ms=50)
+        @run_every(days=1, h=1, min=20, s=30, ms=50)
         def my_function():
             # Do something here
 
@@ -278,8 +278,35 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
 
         Example: ``pin0.is_touched()``
 
-        The default touch mode for the pins on the edge connector is ``resistive``.
-        The default for the logo pin **V2** is ``capacitive``.
+        :return: ``True`` if the pin is being touched with a finger, otherwise return ``False``.
+        """
+        ...
+
+    def was_touched(self) -> bool:
+        """Check if the pin was touched since the last time this method was called.
+
+        Example: ``pin0.was_touched()``
+
+        :return: ``True`` or ``False`` to indicate if the pin was touched since the device started or since the last time this method was called.
+        """
+        ...
+    
+    def get_touches(self) -> int:
+        """Get the number of times the pin was touched since the last time this method was called.
+
+        Example: ``pin0.get_touches()``
+
+        :return: The number of times the pin was touched since the device started or since the last time this method was called.
+        """
+        ...
+
+    def set_touch_mode(self, value: int) -> None:
+        """Set the touch mode for the pin.
+
+        Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
+
+        The default touch mode for the pins on the edge connector is
+        ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
         **Resistive touch**
         This test is done by measuring how much resistance there is between the
@@ -292,17 +319,6 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
         using a finger as a conductor. `Capacitive touch
         <https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
         does not require you to make a ground connection as part of a circuit.
-
-        :return: ``True`` if the pin is being touched with a finger, otherwise return ``False``.
-        """
-        ...
-    def set_touch_mode(self, value: int) -> None:
-        """Set the touch mode for the pin.
-
-        Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
-
-        The default touch mode for the pins on the edge connector is
-        ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
         :param value: ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin.
         """

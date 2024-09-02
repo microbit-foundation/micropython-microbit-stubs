@@ -6,6 +6,8 @@ from .microbit.audio import (
     is_playing as is_playing,
     play as play,
     stop as stop,
+    AudioRecording as AudioRecording,
+    AudioTrack as AudioTrack,
     AudioFrame as AudioFrame,
     SoundEffect as SoundEffect,
 )
