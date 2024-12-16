@@ -1,6 +1,11 @@
-"""핀, 이미지, 소리, 온도 및 음량입니다."""
+"""Pins, images, sounds, temperature and volume.
+"""
+
 from typing import Any, Callable, List, Optional, Tuple, Union, overload
+
 from _typeshed import ReadableBuffer
+
+# V2 only
 from . import accelerometer as accelerometer
 from . import audio as audio
 from . import compass as compass
@@ -11,696 +16,831 @@ from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
 
-def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """매개 변수로 주어진 일정한 시간(밀리초, ms)마다 특정 함수를 호출합니다. **micro:bit V2 전용**
+def run_every(
+    callback: Optional[Callable[[], None]] = None,
+    days: int = 0,
+    h: int = 0,
+    min: int = 0,
+    s: int = 0,
+    ms: int = 0,
+) -> Callable[[Callable[[], None]], Callable[[], None]]:
+    """Schedule to run a function at the interval specified by the time arguments **V2 only**.
 
-Example: ``run_every(my_logging, min=5)``
+    Example: ``run_every(my_logging, min=5)``
 
-``run_every`` can be used in two ways:
+    ``run_every`` can be used in two ways:
 
-As a Decorator - placed on top of the function to schedule. For example::
+    As a Decorator - placed on top of the function to schedule. For example::
 
-    @run_every(h=1, min=20, s=30, ms=50)
-    def my_function():
-        # Do something here
+        @run_every(h=1, min=20, s=30, ms=50)
+        def my_function():
+            # Do something here
 
-As a Function - passing the callback as a positional argument. For example::
+    As a Function - passing the callback as a positional argument. For example::
 
-    def my_function():
-        # Do something here
-    run_every(my_function, s=30)
+        def my_function():
+            # Do something here
+        run_every(my_function, s=30)
 
-Each argument corresponds to a different time unit and they are additive.
-So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
+    Each argument corresponds to a different time unit and they are additive.
+    So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 
-When an exception is thrown inside the callback function it deschedules the
-function. To avoid this you can catch exceptions with ``try/except``.
+    When an exception is thrown inside the callback function it deschedules the
+    function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: 주어진 시간이 되었을 때 호출할 함수. 데코레이터(장식자)로 사용할 때 호출.
-:param days: 함수 호출 반복 시간의 날 단위를 정합니다.
-:param h: 함수 호출 반복 시간의 시간 단위를 정합니다.
-:param min: 함수 호출 반복 시간의 분 단위를 정합니다.
-:param s: 함수 호출 반복 시간의 초 단위를 정합니다.
-:param ms: 함수 호출 반복 시간의 밀리초 단위를 정합니다."""
+    :param callback: Function to call at the provided interval. Omit when using as a decorator.
+    :param days: Sets the day mark for the scheduling.
+    :param h: Sets the hour mark for the scheduling.
+    :param min: Sets the minute mark for the scheduling.
+    :param s: Sets the second mark for the scheduling.
+    :param ms: Sets the millisecond mark for the scheduling.
+    """
 
 def panic(n: int) -> None:
-    """패닉 모드를 활성화합니다.
+    """Enter a panic mode.
 
-Example: ``panic(127)``
+    Example: ``panic(127)``
 
-:param n: <= 255의 임의 정수로 상태를 표시합니다.
+    :param n: An arbitrary integer <= 255 to indicate a status.
 
-Requires restart."""
+    Requires restart.
+    """
 
 def reset() -> None:
-    """보드를 재시작합니다."""
+    """Restart the board."""
+
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
     """Converts a value from a range to an integer range.
 
-Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
+    Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
-For example, to convert an accelerometer X value to a speaker volume.
+    For example, to convert an accelerometer X value to a speaker volume.
 
-If one of the numbers in the ``to`` parameter is a floating point
-(i.e a decimal number like ``10.0``), this function will return a
-floating point number.
+    If one of the numbers in the ``to`` parameter is a floating point
+    (i.e a decimal number like ``10.0``), this function will return a
+    floating point number.
 
-    temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
+        temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-:param value: A number to convert.
-:param from_: 변환할 범위를 정의할 튜플 값
-:param to: A tuple to define the range to convert to.
-:return: The ``value`` converted to the ``to`` range."""
+    :param value: A number to convert.
+    :param from_: A tuple to define the range to convert from.
+    :param to: A tuple to define the range to convert to.
+    :return: The ``value`` converted to the ``to`` range.
+    """
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
     """Converts a value from a range to a floating point range.
 
-Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
+    Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
-For example, to convert temperature from a Celsius scale to Fahrenheit.
+    For example, to convert temperature from a Celsius scale to Fahrenheit.
 
-If one of the numbers in the ``to`` parameter is a floating point
-(i.e a decimal number like ``10.0``), this function will return a
-floating point number.
-If they are both integers (i.e ``10``), it will return an integer::
+    If one of the numbers in the ``to`` parameter is a floating point
+    (i.e a decimal number like ``10.0``), this function will return a
+    floating point number.
+    If they are both integers (i.e ``10``), it will return an integer::
 
-    returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
+        returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-:param value: A number to convert.
-:param from_: 변환할 범위를 정의할 튜플 값
-:param to: A tuple to define the range to convert to.
-:return: The ``value`` converted to the ``to`` range."""
+    :param value: A number to convert.
+    :param from_: A tuple to define the range to convert from.
+    :param to: A tuple to define the range to convert to.
+    :return: The ``value`` converted to the ``to`` range.
+    """
 
 def sleep(n: float) -> None:
-    """``n``밀리초 동안 대기합니다.
+    """Wait for ``n`` milliseconds.
 
-Example: ``sleep(1000)``
+    Example: ``sleep(1000)``
 
-:param n: 대기할 밀리초 수
+    :param n: The number of milliseconds to wait
 
-One second is 1000 milliseconds, so::
+    One second is 1000 milliseconds, so::
 
-    microbit.sleep(1000)
+        microbit.sleep(1000)
 
-will pause the execution for one second."""
+    will pause the execution for one second.
+    """
 
 def running_time() -> int:
-    """보드의 실행 시간을 불러옵니다.
+    """Get the running time of the board.
 
-:return: The number of milliseconds since the board was switched on or restarted."""
+    :return: The number of milliseconds since the board was switched on or restarted.
+    """
 
 def temperature() -> int:
-    """섭씨로 micro:bit의 온도를 불러옵니다. (온도)"""
+    """Get the temperature of the micro:bit in degrees Celsius."""
 
 def set_volume(v: int) -> None:
-    """음량을 설정합니다.
+    """Sets the volume.
 
-Example: ``set_volume(127)``
+    Example: ``set_volume(127)``
 
-:param v: 0(낮음) 및 255(높음) 사이의 값입니다.
+    :param v: a value between 0 (low) and 255 (high).
 
-Out of range values will be clamped to 0 or 255.
+    Out of range values will be clamped to 0 or 255.
 
-**V2** only."""
+    **V2** only.
+    """
     ...
 
 class Button:
-    """``button_a`` 및 ``button_b`` 버튼 클래스입니다."""
+    """The class for the buttons ``button_a`` and ``button_b``."""
 
     def is_pressed(self) -> bool:
-        """해당 버튼이 눌렸는지 확인합니다.
+        """Check if the button is pressed.
 
-:return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
+        :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise.
+        """
         ...
-
     def was_pressed(self) -> bool:
-        """장치가 시작한 후 또는 이 메서드가 호출된 후 해당 버튼이 눌렸는지 확인합니다.
+        """Check if the button was pressed since the device started or the last time this method was called.
 
-Calling this method will clear the press state so
-that the button must be pressed again before this method will return
-``True`` again.
+        Calling this method will clear the press state so
+        that the button must be pressed again before this method will return
+        ``True`` again.
 
-:return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise"""
+        :return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise
+        """
         ...
-
     def get_presses(self) -> int:
-        """버튼이 눌린 총 횟수를 불러오고, 총값을 반환하기 전 초기화합니다.
+        """Get the running total of button presses, and resets this total
+        to zero before returning.
 
-:return: The number of presses since the device started or the last time this method was called"""
+        :return: The number of presses since the device started or the last time this method was called
+        """
         ...
+
 button_a: Button
-"""왼쪽 버튼 ``Button`` 개체입니다."""
+"""The left button ``Button`` object."""
+
 button_b: Button
-"""오른쪽 버튼 ``Button`` 개체입니다."""
+"""The right button ``Button`` object."""
 
 class MicroBitDigitalPin:
-    """디지털 핀입니다.
+    """A digital pin.
 
-Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
+    Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses.
+    """
+
     NO_PULL: int
     PULL_UP: int
     PULL_DOWN: int
-
     def read_digital(self) -> int:
-        """핀의 디지털 값을 불러옵니다.
+        """Get the digital value of the pin.
 
-Example: ``value = pin0.read_digital()``
+        Example: ``value = pin0.read_digital()``
 
-:return: 1 if the pin is high, and 0 if it's low."""
+        :return: 1 if the pin is high, and 0 if it's low.
+        """
         ...
-
     def write_digital(self, value: int) -> None:
-        """핀의 디지털 값을 설정합니다.
+        """Set the digital value of the pin.
 
-Example: ``pin0.write_digital(1)``
+        Example: ``pin0.write_digital(1)``
 
-:param value: 핀을 하이로 설정하려면 1, 로우로 설정하려면 0"""
+        :param value: 1 to set the pin high or 0 to set the pin low"""
         ...
-
     def set_pull(self, value: int) -> None:
-        """다음 중 하나의 값으로 풀 상태를 설정: ``PULL_UP``, ``PULL_DOWN`` 또는 ``NO_PULL``
+        """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
 
-Example: ``pin0.set_pull(pin0.PULL_UP)``
+        Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: 관련 핀의 풀 상태입니다. (예: ``pin0.PULL_UP``)"""
+        :param value: The pull state from the relevant pin, e.g. ``pin0.PULL_UP``.
+        """
         ...
-
     def get_pull(self) -> int:
-        """핀의 풀 상태를 불러옵니다.
+        """Get the pull state on a pin.
 
-Example: ``pin0.get_pull()``
+        Example: ``pin0.get_pull()``
 
-:return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
+        :return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
 
-These are set using the ``set_pull()`` method or automatically configured
-when a pin mode requires it."""
+        These are set using the ``set_pull()`` method or automatically configured
+        when a pin mode requires it.
+        """
         ...
-
     def get_mode(self) -> str:
-        """핀 모드를 반환합니다.
+        """Returns the pin mode.
 
-Example: ``pin0.get_mode()``
+        Example: ``pin0.get_mode()``
 
-When a pin is used for a specific function, like
-writing a digital value, or reading an analog value, the pin mode
-changes.
+        When a pin is used for a specific function, like
+        writing a digital value, or reading an analog value, the pin mode
+        changes.
 
-:return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``"""
+        :return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``
+        """
         ...
-
     def write_analog(self, value: int) -> None:
-        """핀의 PWM 신호를 출력하고 ``value``와(과) 비례해 듀티 사이클을 설정합니다.
+        """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
 
-Example: ``pin0.write_analog(254)``
+        Example: ``pin0.write_analog(254)``
 
-:param value: 0(0% 듀티 사이클) 및 1023(100% 듀티) 사이의 정수 또는 부동 소수점 수입니다."""
-
+        :param value: An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty).
+        """
     def set_analog_period(self, period: int) -> None:
-        """PWM 신호가 출력되는 주기를 ``period``밀리초로 설정합니다.
+        """Set the period of the PWM signal being output to ``period`` in milliseconds.
 
-Example: ``pin0.set_analog_period(10)``
+        Example: ``pin0.set_analog_period(10)``
 
-:param period: 유효한 최소값이 1ms인 밀리초 주기입니다."""
-
+        :param period: The period in milliseconds with a minimum valid value of 1ms.
+        """
     def set_analog_period_microseconds(self, period: int) -> None:
-        """PWM 신호가 출력되는 주기를 ``period``마이크로초로 설정합니다.
+        """Set the period of the PWM signal being output to ``period`` in microseconds.
 
-Example: ``pin0.set_analog_period_microseconds(512)``
+        Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: 유효한 최소값이 256µs인 마이크로초 주기입니다."""
+        :param period: The period in microseconds with a minimum valid value of 256µs.
+        """
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """아날로그 및 디지털 기능이 있는 핀입니다."""
+    """A pin with analog and digital features."""
 
     def read_analog(self) -> int:
-        """핀에 적용된 전압을 읽습니다.
+        """Read the voltage applied to the pin.
 
-Example: ``pin0.read_analog()``
+        Example: ``pin0.read_analog()``
 
-:return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
+        :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V).
+        """
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """아날로그, 디지털, 터치 기능이 있는 핀입니다."""
+    """A pin with analog, digital and touch features."""
+
     CAPACITIVE: int
     RESISTIVE: int
-
     def is_touched(self) -> bool:
-        """핀이 접촉 상태인지 확인합니다.
+        """Check if the pin is being touched.
 
-Example: ``pin0.is_touched()``
+        Example: ``pin0.is_touched()``
 
-The default touch mode for the pins on the edge connector is ``resistive``.
-The default for the logo pin **V2** is ``capacitive``.
+        The default touch mode for the pins on the edge connector is ``resistive``.
+        The default for the logo pin **V2** is ``capacitive``.
 
-**Resistive touch**
-This test is done by measuring how much resistance there is between the
-pin and ground.  A low resistance gives a reading of ``True``.  To get
-a reliable reading using a finger you may need to touch the ground pin
-with another part of your body, for example your other hand.
+        **Resistive touch**
+        This test is done by measuring how much resistance there is between the
+        pin and ground.  A low resistance gives a reading of ``True``.  To get
+        a reliable reading using a finger you may need to touch the ground pin
+        with another part of your body, for example your other hand.
 
-**Capacitive touch**
-This test is done by interacting with the electric field of a capacitor
-using a finger as a conductor. `Capacitive touch
-<https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
-does not require you to make a ground connection as part of a circuit.
+        **Capacitive touch**
+        This test is done by interacting with the electric field of a capacitor
+        using a finger as a conductor. `Capacitive touch
+        <https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
+        does not require you to make a ground connection as part of a circuit.
 
-:return: ``True`` if the pin is being touched with a finger, otherwise return ``False``."""
+        :return: ``True`` if the pin is being touched with a finger, otherwise return ``False``.
+        """
         ...
-
     def set_touch_mode(self, value: int) -> None:
-        """핀의 터치 모드를 설정합니다.
+        """Set the touch mode for the pin.
 
-Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
+        Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
-The default touch mode for the pins on the edge connector is
-``resistive``. The default for the logo pin **V2** is ``capacitive``.
+        The default touch mode for the pins on the edge connector is
+        ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-:param value: 관련 핀의 ``CAPACITIVE`` 또는 ``RESISTIVE``입니다."""
+        :param value: ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin.
+        """
         ...
+
 pin0: MicroBitTouchPin
-"""디지털 및 아날로그, 터치 기능이 있는 핀입니다."""
+"""Pin with digital, analog and touch features."""
+
 pin1: MicroBitTouchPin
-"""디지털 및 아날로그, 터치 기능이 있는 핀입니다."""
+"""Pin with digital, analog and touch features."""
+
 pin2: MicroBitTouchPin
-"""디지털 및 아날로그, 터치 기능이 있는 핀입니다."""
+"""Pin with digital, analog and touch features."""
+
 pin3: MicroBitAnalogDigitalPin
-"""디지털 및 아날로그 기능이 있는 핀입니다."""
+"""Pin with digital and analog features."""
+
 pin4: MicroBitAnalogDigitalPin
-"""디지털 및 아날로그 기능이 있는 핀입니다."""
+"""Pin with digital and analog features."""
+
 pin5: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다. (pin speaker)"""
+"""Pin with digital features."""
+
 pin6: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin7: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin8: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin9: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin10: MicroBitAnalogDigitalPin
-"""디지털 및 아날로그 기능이 있는 핀입니다."""
+"""Pin with digital and analog features."""
+
 pin11: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin12: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin13: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin14: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin15: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin16: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin19: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin20: MicroBitDigitalPin
-"""디지털 기능이 있는 핀입니다."""
+"""Pin with digital features."""
+
 pin_logo: MicroBitTouchPin
-"""micro:bit 전면의 터치 감지 로고 핀으로, 기본값은 정전식 터치 모드입니다. (핀 로고)"""
+"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."""
+
 pin_speaker: MicroBitAnalogDigitalPin
-"""micro:bit 스피커를 처리하는 핀입니다. (핀 스피커)
+"""A pin to address the micro:bit speaker.
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """micro:bit LED 디스플레이에 표시할 이미지입니다.
+    """An image to show on the micro:bit LED display.
 
-Given an image object it's possible to display it via the ``display`` API::
+    Given an image object it's possible to display it via the ``display`` API::
 
-    display.show(Image.HAPPY)"""
+        display.show(Image.HAPPY)
+    """
+
     HEART: Image
-    """하트 이미지입니다."""
+    """Heart image."""
+
     HEART_SMALL: Image
-    """작은 하트 이미지입니다."""
+    """Small heart image."""
+
     HAPPY: Image
-    """행복한 얼굴 이미지입니다."""
+    """Happy face image."""
+
     SMILE: Image
-    """미소 짓는 얼굴 이미지입니다."""
+    """Smiling mouth image."""
+
     SAD: Image
-    """슬픈 얼굴 이미지입니다."""
+    """Sad face image."""
+
     CONFUSED: Image
-    """혼란스러운 얼굴 이미지입니다."""
+    """Confused face image."""
+
     ANGRY: Image
-    """화난 얼굴 이미지입니다."""
+    """Angry face image."""
+
     ASLEEP: Image
-    """자는 얼굴 이미지입니다."""
+    """Sleeping face image."""
+
     SURPRISED: Image
-    """놀란 얼굴 이미지입니다."""
+    """Surprised face image."""
+
     SILLY: Image
-    """우스꽝스러운 얼굴 이미지입니다."""
+    """Silly face image."""
+
     FABULOUS: Image
-    """선글라스를 쓴 얼굴 이미지입니다."""
+    """Sunglasses face image."""
+
     MEH: Image
-    """지루한 얼굴 이미지입니다."""
+    """Unimpressed face image."""
+
     YES: Image
-    """체크 표시 이미지입니다."""
+    """Tick image."""
+
     NO: Image
-    """엑스 표시 이미지입니다."""
+    """Cross image."""
+
     CLOCK12: Image
-    """12시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 12 o'clock."""
+
     CLOCK11: Image
-    """11시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 11 o'clock."""
+
     CLOCK10: Image
-    """10시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 10 o'clock."""
+
     CLOCK9: Image
-    """9시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 9 o'clock."""
+
     CLOCK8: Image
-    """8시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 8 o'clock."""
+
     CLOCK7: Image
-    """7시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 7 o'clock."""
+
     CLOCK6: Image
-    """6시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 6 o'clock."""
+
     CLOCK5: Image
-    """5시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 5 o'clock."""
+
     CLOCK4: Image
-    """4시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 4 o'clock."""
+
     CLOCK3: Image
-    """3시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 3 o'clock."""
+
     CLOCK2: Image
-    """2시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 2 o'clock."""
+
     CLOCK1: Image
-    """1시 정각을 가리키는 이미지입니다."""
+    """Image with line pointing to 1 o'clock."""
+
     ARROW_N: Image
-    """북쪽을 가리키는 화살표 이미지입니다."""
+    """Image of arrow pointing north."""
+
     ARROW_NE: Image
-    """북동쪽을 가리키는 화살표 이미지입니다."""
+    """Image of arrow pointing north east."""
+
     ARROW_E: Image
-    """동쪽을 가리키는 화살표 이미지입니다."""
+    """Image of arrow pointing east."""
+
     ARROW_SE: Image
-    """남동쪽을 가리키는 화살표 이미지입니다."""
+    """Image of arrow pointing south east."""
+
     ARROW_S: Image
-    """남쪽을 가리키는 화살표 이미지입니다."""
+    """Image of arrow pointing south."""
+
     ARROW_SW: Image
-    """남서쪽을 가리키는 화살표 이미지입니다."""
+    """Image of arrow pointing south west."""
+
     ARROW_W: Image
-    """서쪽을 가리키는 화살표 이미지입니다."""
+    """Image of arrow pointing west."""
+
     ARROW_NW: Image
-    """북서쪽을 가리키는 화살표 이미지입니다."""
+    """Image of arrow pointing north west."""
+
     TRIANGLE: Image
-    """위쪽을 가리키는 삼각형 이미지입니다."""
+    """Image of a triangle pointing up."""
+
     TRIANGLE_LEFT: Image
-    """왼쪽 구석의 삼각형 이미지입니다."""
+    """Image of a triangle in the left corner."""
+
     CHESSBOARD: Image
-    """체스판 패턴으로 깜빡이는 LED 불빛입니다."""
+    """Alternate LEDs lit in a chessboard pattern."""
+
     DIAMOND: Image
-    """다이아몬드 이미지입니다."""
+    """Diamond image."""
+
     DIAMOND_SMALL: Image
-    """작은 다이아몬드 이미지입니다."""
+    """Small diamond image."""
+
     SQUARE: Image
-    """사각형 이미지입니다."""
+    """Square image."""
+
     SQUARE_SMALL: Image
-    """작은 사각형 이미지입니다."""
+    """Small square image."""
+
     RABBIT: Image
-    """토끼 이미지입니다."""
+    """Rabbit image."""
+
     COW: Image
-    """소 이미지입니다."""
+    """Cow image."""
+
     MUSIC_CROTCHET: Image
-    """사분음표 이미지입니다."""
+    """Crotchet note image."""
+
     MUSIC_QUAVER: Image
-    """팔분음표 이미지입니다."""
+    """Quaver note image."""
+
     MUSIC_QUAVERS: Image
-    """두 개의 팔분음표 이미지입니다."""
+    """Pair of quavers note image."""
+
     PITCHFORK: Image
-    """쇠스랑 이미지입니다."""
+    """Pitchfork image."""
+
     XMAS: Image
-    """크리스마스 나무 이미지입니다."""
+    """Christmas tree image."""
+
     PACMAN: Image
-    """오락실 캐릭터 Pac-Man 이미지입니다."""
+    """Pac-Man arcade character image."""
+
     TARGET: Image
-    """표적 이미지입니다."""
+    """Target image."""
+
     TSHIRT: Image
-    """티셔츠 이미지입니다."""
+    """T-shirt image."""
+
     ROLLERSKATE: Image
-    """롤러스케이트 이미지입니다."""
+    """Rollerskate image."""
+
     DUCK: Image
-    """오리 이미지입니다."""
+    """Duck image."""
+
     HOUSE: Image
-    """집 이미지입니다."""
+    """House image."""
+
     TORTOISE: Image
-    """거북이 이미지입니다."""
+    """Tortoise image."""
+
     BUTTERFLY: Image
-    """나비 이미지입니다."""
+    """Butterfly image."""
+
     STICKFIGURE: Image
-    """막대인간 이미지입니다."""
+    """Stick figure image."""
+
     GHOST: Image
-    """유령 이미지입니다."""
+    """Ghost image."""
+
     SWORD: Image
-    """칼 이미지입니다."""
+    """Sword image."""
+
     GIRAFFE: Image
-    """기린 이미지입니다."""
+    """Giraffe image."""
+
     SKULL: Image
-    """해골 이미지입니다."""
+    """Skull image."""
+
     UMBRELLA: Image
-    """우산 이미지입니다."""
+    """Umbrella image."""
+
     SNAKE: Image
-    """뱀 이미지입니다."""
+    """Snake image."""
+
     SCISSORS: Image
     """Scissors image."""
-    ALL_CLOCKS: List[Image]
-    """모든 CLOCK_ 이미지를 순서대로 나열한 리스트입니다."""
-    ALL_ARROWS: List[Image]
-    """모든 ARROW_ 이미지를 순서대로 나열한 리스트입니다."""
 
+    ALL_CLOCKS: List[Image]
+    """A list containing all the CLOCK_ images in sequence."""
+
+    ALL_ARROWS: List[Image]
+    """A list containing all the ARROW_ images in sequence."""
     @overload
     def __init__(self, string: str) -> None:
-        """어떤 LED가 켜져있는지 설명하는 문자열로부터 이미지를 생성합니다. (string)
+        """Create an image from a string describing which LEDs are lit.
 
-``string`` has to consist of digits 0-9 arranged into lines,
-describing the image, for example::
+        ``string`` has to consist of digits 0-9 arranged into lines,
+        describing the image, for example::
 
-    image = Image("90009:"
-                  "09090:"
-                  "00900:"
-                  "09090:"
-                  "90009")
+            image = Image("90009:"
+                          "09090:"
+                          "00900:"
+                          "09090:"
+                          "90009")
 
-will create a 5×5 image of an X. The end of a line is indicated by a
-colon. It's also possible to use newlines (\\n) insead of the colons.
+        will create a 5×5 image of an X. The end of a line is indicated by a
+        colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: 이미지를 설명하는 문자열입니다."""
+        :param string: The string describing the image.
+        """
         ...
-
     @overload
-    def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """``width`` 열과 ``height`` 행의 비어있는 이미지를 생성합니다.
+    def __init__(
+        self, width: int = 5, height: int = 5, buffer: ReadableBuffer = None
+    ) -> None:
+        """Create an empty image with ``width`` columns and ``height`` rows.
 
-:param width: 이미지 너비(선택 사항)
-:param height: 이미지 높이(선택 사항)
-:param buffer: 0~9의 범위에 속하는 정수로 구성된 ``width``x``height`` 배열 또는 바이트(선택 사항)
+        :param width: Optional width of the image
+        :param height: Optional height of the image
+        :param buffer: Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
 
-Examples::
+        Examples::
 
-    Image(2, 2, b'\x08\x08\x08\x08')
-    Image(2, 2, bytearray([9,9,9,9]))
+            Image(2, 2, b'\x08\x08\x08\x08')
+            Image(2, 2, bytearray([9,9,9,9]))
 
-These create 2 x 2 pixel images at full brightness."""
+        These create 2 x 2 pixel images at full brightness.
+        """
         ...
-
     def width(self) -> int:
-        """열의 수를 불러옵니다.
+        """Get the number of columns.
 
-:return: The number of columns in the image"""
+        :return: The number of columns in the image
+        """
         ...
-
     def height(self) -> int:
-        """행의 수를 불러옵니다.
+        """Get the number of rows.
 
-:return: The number of rows in the image"""
+        :return: The number of rows in the image
+        """
         ...
-
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """픽셀의 밝기를 설정합니다.
+        """Set the brightness of a pixel.
 
-Example: ``my_image.set_pixel(0, 0, 9)``
+        Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: 열 번호
-:param y: 행 번호
-:param value: 0(어두움)과 9(밝음) 사이의 정수로 밝기를 설정합니다.
+        :param x: The column number
+        :param y: The row number
+        :param value: The brightness as an integer between 0 (dark) and 9 (bright)
 
-This method will raise an exception when called on any of the built-in
-read-only images, like ``Image.HEART``."""
+        This method will raise an exception when called on any of the built-in
+        read-only images, like ``Image.HEART``.
+        """
         ...
-
     def get_pixel(self, x: int, y: int) -> int:
-        """픽셀의 밝기를 불러옵니다.
+        """Get the brightness of a pixel.
 
-Example: ``my_image.get_pixel(0, 0)``
+        Example: ``my_image.get_pixel(0, 0)``
 
-:param x: 열 번호
-:param y: 행 번호
-:return: The brightness as an integer between 0 and 9."""
+        :param x: The column number
+        :param y: The row number
+        :return: The brightness as an integer between 0 and 9.
+        """
         ...
-
     def shift_left(self, n: int) -> Image:
-        """사진을 왼쪽으로 옮겨 새로운 이미지를 생성합니다.
+        """Create a new image by shifting the picture left.
 
-Example: ``Image.HEART_SMALL.shift_left(1)``
+        Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: 옮길 열의 수
-:return: The shifted image"""
+        :param n: The number of columns to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_right(self, n: int) -> Image:
-        """사진을 오른쪽으로 옮겨 새로운 이미지를 생성합니다.
+        """Create a new image by shifting the picture right.
 
-Example: ``Image.HEART_SMALL.shift_right(1)``
+        Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: 옮길 열의 수
-:return: The shifted image"""
+        :param n: The number of columns to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_up(self, n: int) -> Image:
-        """사진을 위로 옮겨 새로운 이미지를 생성합니다.
+        """Create a new image by shifting the picture up.
 
-Example: ``Image.HEART_SMALL.shift_up(1)``
+        Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: 옮길 행의 수
-:return: The shifted image"""
+        :param n: The number of rows to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_down(self, n: int) -> Image:
-        """사진을 아래로 옮겨 새로운 이미지를 생성합니다.
+        """Create a new image by shifting the picture down.
 
-Example: ``Image.HEART_SMALL.shift_down(1)``
+        Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: 옮길 행의 수
-:return: The shifted image"""
+        :param n: The number of rows to shift by
+        :return: The shifted image
+        """
         ...
-
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """사진을 잘라 내 새로운 이미지를 생성합니다.
+        """Create a new image by cropping the picture.
 
-Example: ``Image.HEART.crop(1, 1, 3, 3)``
+        Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: 자르기 오프셋 열
-:param y: 자르기 오프셋 행
-:param w: 자르기 너비
-:param h: 자르기 높이
-:return: The new image"""
+        :param x: The crop offset column
+        :param y: The crop offset row
+        :param w: The crop width
+        :param h: The crop height
+        :return: The new image
+        """
         ...
-
     def copy(self) -> Image:
-        """이미지와 동일한 사본을 생성합니다.
+        """Create an exact copy of the image.
 
-Example: ``Image.HEART.copy()``
+        Example: ``Image.HEART.copy()``
 
-:return: The new image"""
+        :return: The new image
+        """
         ...
-
     def invert(self) -> Image:
-        """소스 이미지에 있는 픽셀을 밝기를 반전해 새로운 이미지를 생성합니다.
+        """Create a new image by inverting the brightness of the pixels in the
+        source image.
 
-Example: ``Image.SMALL_HEART.invert()``
+        Example: ``Image.SMALL_HEART.invert()``
 
-:return: The new image."""
+        :return: The new image.
+        """
         ...
-
     def fill(self, value: int) -> None:
-        """이미지의 모든 픽셀의 밝기를 설정합니다.
+        """Set the brightness of all the pixels in the image.
 
-Example: ``my_image.fill(5)``
+        Example: ``my_image.fill(5)``
 
-:param value: 새로운 밝기를 0(어두움)과 9(밝기) 사이로 설정합니다.
+        :param value: The new brightness as a number between 0 (dark) and 9 (bright).
 
-This method will raise an exception when called on any of the built-in
-read-only images, like ``Image.HEART``."""
+        This method will raise an exception when called on any of the built-in
+        read-only images, like ``Image.HEART``.
+        """
         ...
+    def blit(
+        self,
+        src: Image,
+        x: int,
+        y: int,
+        w: int,
+        h: int,
+        xdest: int = 0,
+        ydest: int = 0,
+    ) -> None:
+        """Copy an area from another image into this image.
 
-    def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """다른 이미지로부터 영역을 복사해 이 이미지로 가져옵니다.
+        Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
+        :param src: The source image
+        :param x: The starting column offset in the source image
+        :param y: The starting row offset in the source image
+        :param w: The number of columns to copy
+        :param h: The number of rows to copy
+        :param xdest: The column offset to modify in this image
+        :param ydest: The row offset to modify in this image
 
-:param src: 소스 이미지
-:param x: 소스 이미지 내 시작 열 오프셋
-:param y: 소스 이미지 내 시작 행 오프셋
-:param w: 복사할 열의 수
-:param h: 복사할 행 번호
-:param xdest: 이 이미지에서 수정할 열의 오프셋
-:param ydest: 이 이미지에서 수정할 행의 오프셋
+        Pixels outside the source image are treated as having a brightness of 0.
 
-Pixels outside the source image are treated as having a brightness of 0.
+        ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
+        and ``crop()`` can are all implemented by using ``blit()``.
 
-``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
-and ``crop()`` can are all implemented by using ``blit()``.
+        For example, img.crop(x, y, w, h) can be implemented as::
 
-For example, img.crop(x, y, w, h) can be implemented as::
-
-    def crop(self, x, y, w, h):
-        res = Image(w, h)
-        res.blit(self, x, y, w, h)
-        return res"""
+            def crop(self, x, y, w, h):
+                res = Image(w, h)
+                res.blit(self, x, y, w, h)
+                return res
+        """
         ...
-
     def __repr__(self) -> str:
-        """이미지에 해당하는 컴팩트 스트링을 불러옵니다."""
+        """Get a compact string representation of the image."""
         ...
-
     def __str__(self) -> str:
-        """이미지에 해당하는 읽기 가능 문자열을 불러옵니다."""
+        """Get a readable string representation of the image."""
         ...
-
     def __add__(self, other: Image) -> Image:
-        """두 이미지의 각 픽셀의 밝기 값을 더해 새로운 이미지를 생성합니다.
+        """Create a new image by adding the brightness values from the two
+        images for each pixel.
 
-Example: ``Image.HEART + Image.HAPPY``
+        Example: ``Image.HEART + Image.HAPPY``
 
-:param other: 더할 이미지입니다."""
+        :param other: The image to add.
+        """
         ...
-
     def __sub__(self, other: Image) -> Image:
-        """두 이미지의 각 픽셀의 밝기 값을 빼 새로운 이미지를 생성합니다.
+        """Create a new image by subtracting the brightness values of the
+        other image from this image.
 
-Example: ``Image.HEART - Image.HEART_SMALL``
+        Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: 뺄 이미지입니다."""
+        :param other: The image to subtract.
+        """
         ...
-
     def __mul__(self, n: float) -> Image:
-        """각 픽셀의 밝기 값을 ``n``만큼 곱해 새로운 이미지를 생성합니다.
+        """Create a new image by multiplying the brightness of each pixel by
+        ``n``.
 
-Example: ``Image.HEART * 0.5``
+        Example: ``Image.HEART * 0.5``
 
-:param n: 곱할 값입니다."""
+        :param n: The value to multiply by.
+        """
         ...
-
     def __truediv__(self, n: float) -> Image:
-        """각 픽셀의 밝기 값을 ``n``만큼 나누어 새로운 이미지를 생성합니다.
+        """Create a new image by dividing the brightness of each pixel by
+        ``n``.
 
-Example: ``Image.HEART / 2``
+        Example: ``Image.HEART / 2``
 
-:param n: 나눌 값입니다."""
+        :param n: The value to divide by.
+        """
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
-    """``quiet``에서 박수 또는 함성 등 ``loud``로 소리 이벤트의 변화를 나타냅니다."""
+    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
+
     QUIET: SoundEvent
-    """``loud``에서 말소리 또는 배경 음악 등 ``quiet``로 소리 이벤트의 변화를 나타냅니다."""
+    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
 
 class Sound:
-    """``audio.play(Sound.NAME)``을 사용해 내장된 소리를 호출합니다."""
+    """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
+
     GIGGLE: Sound
-    """웃는 소리입니다."""
+    """Giggling sound."""
+
     HAPPY: Sound
-    """행복해하는 소리입니다."""
+    """Happy sound."""
+
     HELLO: Sound
-    """인사 소리입니다."""
+    """Greeting sound."""
+
     MYSTERIOUS: Sound
-    """신비한 소리입니다."""
+    """Mysterious sound."""
+
     SAD: Sound
-    """슬퍼하는 소리입니다."""
+    """Sad sound."""
+
     SLIDE: Sound
-    """슬라이드 소리입니다."""
+    """Sliding sound."""
+
     SOARING: Sound
-    """솟아오르는 소리입니다."""
+    """Soaring sound."""
+
     SPRING: Sound
-    """스프링 소리입니다."""
+    """Spring sound."""
+
     TWINKLE: Sound
-    """반짝이는 소리입니다."""
+    """Twinkling sound."""
+
     YAWN: Sound
-    """하품 소리입니다."""
+    """Yawning sound."""

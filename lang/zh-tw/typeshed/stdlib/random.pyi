@@ -1,80 +1,93 @@
-"""生成隨機數。"""
+"""Generate random numbers.
+"""
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:
-    """生成具有 ``n`` 個隨機位元的整數。
+    """Generate an integer with ``n`` random bits.
 
-Example: ``random.getrandbits(1)``
+    Example: ``random.getrandbits(1)``
 
-:param n: 介於 1-30 (包含) 之間的值。"""
+    :param n: A value between 1-30 (inclusive).
+    """
     ...
 
 def seed(n: int) -> None:
-    """初始化隨機數生成器。
+    """Initialize the random number generator.
 
-Example: ``random.seed(0)``
+    Example: ``random.seed(0)``
 
-:param n: 整數種子
+    :param n: The integer seed
 
-This will give you reproducibly deterministic randomness from a given starting
-state (``n``)."""
+    This will give you reproducibly deterministic randomness from a given starting
+    state (``n``).
+    """
     ...
 
 def randint(a: int, b: int) -> int:
-    """在 ``a`` 和 ``b`` (包含) 之間選擇一個隨機整數。
+    """Choose a random integer between ``a`` and ``b`` inclusive.
 
-Example: ``random.randint(0, 9)``
+    Example: ``random.randint(0, 9)``
 
-:param a: 範圍的起始值 (包含)
-:param b: 範圍的結束值 (包含)
+    :param a: Start value for the range (inclusive)
+    :param b: End value for the range (inclusive)
 
-Alias for ``randrange(a, b + 1)``."""
+    Alias for ``randrange(a, b + 1)``.
+    """
     ...
 
 @overload
 def randrange(stop: int) -> int:
-    """在零到 (但不包括) ``stop`` 之間隨機選擇一個整數。
+    """Choose a randomly selected integer between zero and up to (but not
+    including) ``stop``.
 
-Example: ``random.randrange(10)``
+    Example: ``random.randrange(10)``
 
-:param stop: 範圍的結束值 (排除)"""
+    :param stop: End value for the range (exclusive)
+    """
     ...
 
 @overload
-def randrange(start: int, stop: int, step: int=1) -> int:
-    """從 ``range(start, stop, step)`` 中選擇一個隨機選擇的元素。
+def randrange(start: int, stop: int, step: int = 1) -> int:
+    """
+    Choose a randomly selected element from ``range(start, stop, step)``.
 
-Example: ``random.randrange(0, 10)``
+    Example: ``random.randrange(0, 10)``
 
-:param start: 範圍的開始 (包含)
-:param stop: 範圍結束 (排除)
-:param step: 步驟。"""
+    :param start: The start of the range (inclusive)
+    :param stop: The end of the range (exclusive)
+    :param step: The step.
+    """
     ...
-_T = TypeVar('_T')
+
+_T = TypeVar("_T")
 
 def choice(seq: Sequence[_T]) -> _T:
-    """從非空序列 ``seq`` 中選擇一個隨機元素。
+    """Choose a random element from the non-empty sequence ``seq``.
 
-Example: ``random.choice([Image.HAPPY, Image.SAD])``
+    Example: ``random.choice([Image.HAPPY, Image.SAD])``
 
-:param seq: 序列。
+    :param seq: A sequence.
 
-If ``seq`` is  empty, raises ``IndexError``."""
+    If ``seq`` is  empty, raises ``IndexError``.
+    """
     ...
 
 def random() -> float:
-    """在 [0.0, 1.0) 範圍內生成一個隨機浮點數。
+    """Generate a random floating point number in the range [0.0, 1.0).
 
-Example: ``random.random()``
+    Example: ``random.random()``
 
-:return: The random floating point number"""
+    :return: The random floating point number
+    """
     ...
 
 def uniform(a: float, b: float) -> float:
-    """傳回一個介於 ``a`` 和 ``b`` 之間的隨機浮點數。
+    """
+    Return a random floating point number between ``a`` and ``b`` inclusive.
 
-Example: ``random.uniform(0, 9)``
+    Example: ``random.uniform(0, 9)``
 
-:param a: 範圍的起始值 (包括)
-:param b: 範圍的結束值 (包含)"""
+    :param a: Start value for the range (inclusive)
+    :param b: End value for the range (inclusive)
+    """
     ...

@@ -1,92 +1,115 @@
-"""Tekst, afbeeldingen en animaties weergeven op het 5×5 LED-weergave."""
+"""Show text, images and animations on the 5×5 LED display.
+"""
+
 from ..microbit import Image
 from typing import Union, overload, Iterable
 
 def get_pixel(x: int, y: int) -> int:
-    """Krijg de helderheid van de LED in kolom ``x`` en rij ``y``. (verkrijg pixel)
+    """Get the brightness of the LED at column ``x`` and row ``y``.
 
-Example: ``display.get_pixel(0, 0)``
+    Example: ``display.get_pixel(0, 0)``
 
-:param x: (х) De weergavekolom (0..4)
-:param y: De weergave rij (0.4)
-:return: A number between 0 (off) and 9 (bright)"""
+    :param x: The display column (0..4)
+    :param y: The display row (0..4)
+    :return: A number between 0 (off) and 9 (bright)
+    """
     ...
 
 def set_pixel(x: int, y: int, value: int) -> None:
-    """Stel de helderheid van de LED in op kolom ``x`` en rij ``y``. (pixel instellen)
+    """Set the brightness of the LED at column ``x`` and row ``y``.
 
-Example: ``display.set_pixel(0, 0, 9)``
+    Example: ``display.set_pixel(0, 0, 9)``
 
-:param x: (х) De weergavekolom (0..4)
-:param y: De weergave rij (0.4)
-:param value: (waarde) De helderheid tussen 0 (uit) en 9 (helderst)"""
+    :param x: The display column (0..4)
+    :param y: The display row (0..4)
+    :param value: The brightness between 0 (off) and 9 (bright)
+    """
     ...
 
 def clear() -> None:
-    """Stel de helderheid van alle LED's in op 0 (uit). (wissen)
+    """Set the brightness of all LEDs to 0 (off).
 
-Example: ``display.clear()``"""
+    Example: ``display.clear()``
+    """
     ...
 
-def show(image: Union[str, float, int, Image, Iterable[Image]], delay: int=400, wait: bool=True, loop: bool=False, clear: bool=False) -> None:
-    """Toont afbeeldingen, letters of cijfers op het LED-scherm. (toon)
+def show(
+    image: Union[str, float, int, Image, Iterable[Image]],
+    delay: int = 400,
+    wait: bool = True,
+    loop: bool = False,
+    clear: bool = False,
+) -> None:
+    """Shows images, letters or digits on the LED display.
 
-Example: ``display.show(Image.HEART)``
+    Example: ``display.show(Image.HEART)``
 
-When ``image`` is an image or a list of images then each image is displayed in turn.
-If ``image`` is a string or number, each letter or digit is displayed in turn.
+    When ``image`` is an image or a list of images then each image is displayed in turn.
+    If ``image`` is a string or number, each letter or digit is displayed in turn.
 
-:param image: (afbeelding) Een string, nummer, afbeelding of lijst van weer te geven afbeeldingen.
-:param delay: (vertraging) Elke letter, cijfer of afbeelding wordt weergegeven met ``delay`` milliseconden tussen hen.
-:param wait: (wacht) Als ``wait`` ``True``is, blokkeert deze functie totdat de animatie is voltooid, anders gebeurt de animatie op de achtergrond.
-:param loop: Als ``loop`` ``True``is, zal de animatie voor altijd herhalen.
-:param clear: (wissen) Als ``clear`` ``True``is, wordt het scherm gewist nadat de reeks is voltooid.
+    :param image: A string, number, image or list of images to show.
+    :param delay: Each letter, digit or image is shown with ``delay`` milliseconds between them.
+    :param wait: If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.
+    :param loop: If ``loop`` is ``True``, the animation will repeat forever.
+    :param clear: If ``clear`` is ``True``, the display will be cleared after the sequence has finished.
 
-The ``wait``, ``loop`` and ``clear`` arguments must be specified using their keyword."""
+    The ``wait``, ``loop`` and ``clear`` arguments must be specified using their keyword.
+    """
     ...
 
-def scroll(text: Union[str, float, int], delay: int=150, wait: bool=True, loop: bool=False, monospace: bool=False) -> None:
-    """Scrolt een nummer of tekst op het LED display (scrollen)
+def scroll(
+    text: Union[str, float, int],
+    delay: int = 150,
+    wait: bool = True,
+    loop: bool = False,
+    monospace: bool = False,
+) -> None:
+    """Scrolls a number or text on the LED display.
 
-Example: ``display.scroll('micro:bit')``
+    Example: ``display.scroll('micro:bit')``
 
-:param text: (tekst) De tekenreeks om te scrollen. Als ``text`` een geheel getal of float is, wordt het eerst geconverteerd naar een tekenreeks met behulp van ``str()``.
-:param delay: (vertraging) De parameter ``delay`` bepaalt hoe snel de tekst scrolt.
-:param wait: (wacht) Als ``wait`` ``True``is, blokkeert deze functie totdat de animatie is voltooid, anders gebeurt de animatie op de achtergrond.
-:param loop: Als ``loop`` ``True``is, zal de animatie voor altijd herhalen.
-:param monospace: Als ``monospace`` ``True`` is, nemen de tekens allemaal 5 pixel kolommen in de breedte in beslag, anders staat er precies 1 lege pixelkolom tussen elk teken terwijl ze scrollen.
+    :param text: The string to scroll. If ``text`` is an integer or float it is first converted to a string using ``str()``.
+    :param delay: The ``delay`` parameter controls how fast the text is scrolling.
+    :param wait: If ``wait`` is ``True``, this function will block until the animation is finished, otherwise the animation will happen in the background.
+    :param loop: If ``loop`` is ``True``, the animation will repeat forever.
+    :param monospace: If ``monospace`` is ``True``, the characters will all take up 5 pixel-columns in width, otherwise there will be exactly 1 blank pixel-column between each character as they scroll.
 
-The ``wait``, ``loop`` and ``monospace`` arguments must be specified
-using their keyword."""
+    The ``wait``, ``loop`` and ``monospace`` arguments must be specified
+    using their keyword.
+    """
     ...
 
 def on() -> None:
-    """Schakel het LED display in. (aan)
+    """Turn on the LED display.
 
-Example: ``display.on()``"""
+    Example: ``display.on()``
+    """
     ...
 
 def off() -> None:
-    """Het uitschakelen van het LED display (uitschakelen van het scherm geeft je de mogelijkheid om de GPIO-pinnen opnieuw te gebruiken voor andere doeleinden). (uit)
+    """Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes).
 
-Example: ``display.off()``"""
+    Example: ``display.off()``
+    """
     ...
 
 def is_on() -> bool:
-    """Controleer of de LED-weergave is ingeschakeld. (staat aan)
+    """Check whether the LED display is enabled.
 
-Example: ``display.is_on()``
+    Example: ``display.is_on()``
 
-:return: ``True`` if the display is on, otherwise returns ``False``."""
+    :return: ``True`` if the display is on, otherwise returns ``False``.
+    """
     ...
 
 def read_light_level() -> int:
-    """Lees het licht niveau. (lees licht niveau)
+    """Read the light level.
 
-Example: ``display.read_light_level()``
+    Example: ``display.read_light_level()``
 
-Uses the display's LEDs in reverse-bias mode to sense the amount of light
-falling on the display.
+    Uses the display's LEDs in reverse-bias mode to sense the amount of light
+    falling on the display.
 
-:return: An integer between 0 and 255 representing the light level, with larger meaning more light."""
+    :return: An integer between 0 and 255 representing the light level, with larger meaning more light.
+    """
     ...

@@ -1,56 +1,65 @@
-"""Primitieve datatypes inpakken en uitpakken."""
+"""Pack and unpack primitive data types.
+"""
+
 from _typeshed import ReadableBuffer, WriteableBuffer
 from typing import Any, Tuple, Union
 
 def calcsize(fmt: str) -> int:
-    """Haal het aantal bytes op dat nodig is om de gegeven ``fmt`` op te slaan.
+    """Get the number of bytes needed to store the given ``fmt``.
 
-Example: ``struct.calcsize('hf')``
+    Example: ``struct.calcsize('hf')``
 
-:param fmt: Tekenreeks opmaak.
-:return The number of bytes needed to store such a value."""
+    :param fmt: A format string.
+    :return The number of bytes needed to store such a value.
+    """
     ...
 
 def pack(fmt: str, v1: Any, *vn: Any) -> bytes:
-    """Verpak de waarden op basis van een string formaat. (inpakken)
+    """Pack values according to a format string.
 
-Example: ``struct.pack('hf', 1, 3.1415)``
+    Example: ``struct.pack('hf', 1, 3.1415)``
 
-:param fmt: De formaat tekenreeks.
-:param v1: De eerste waarde.
-:param *vn: De resterende waarden.
-:return A bytes object encoding the values."""
+    :param fmt: The format string.
+    :param v1: The first value.
+    :param *vn: The remaining values.
+    :return A bytes object encoding the values.
+    """
     ...
 
-def pack_into(fmt: str, buffer: WriteableBuffer, offset: int, v1: Any, *vn: Any) -> None:
-    """Verpak de waarden op basis van een string formaat. (inpakken)
+def pack_into(
+    fmt: str, buffer: WriteableBuffer, offset: int, v1: Any, *vn: Any
+) -> None:
+    """Pack values according to a format string.
 
-Example: ``struct.pack_info('hf', buffer, 1, 3.1415)``
+    Example: ``struct.pack_info('hf', buffer, 1, 3.1415)``
 
-:param fmt: De formaat tekenreeks.
-:param buffer: De doelbuffer om in te schrijven.
-:param offset: (Offset) De compensatie in de buffer. Kan negatief zijn om te tellen aan het einde van de buffer.
-:param v1: De eerste waarde.
-:param *vn: De resterende waarden."""
+    :param fmt: The format string.
+    :param buffer: The target buffer to write into.
+    :param offset: The offset into the buffer. May be negative to count from the end of the buffer.
+    :param v1: The first value.
+    :param *vn: The remaining values.
+    """
     ...
 
 def unpack(fmt: str, data: ReadableBuffer) -> Tuple[Any, ...]:
-    """Uitpakken van gegevens volgens een opmaakreeks. (uitpakken)
+    """Unpack data according to a format string.
 
-Example: ``v1, v2 = struct.unpack('hf', buffer)``
+    Example: ``v1, v2 = struct.unpack('hf', buffer)``
 
-:param fmt: De formaat tekenreeks.
-:param data: (gegevens) De gegevens.
-:return: A tuple of the unpacked values."""
+    :param fmt: The format string.
+    :param data: The data.
+    :return: A tuple of the unpacked values.
+    """
     ...
 
-def unpack_from(fmt: str, buffer: ReadableBuffer, offset: int=0) -> Tuple:
-    """Uitpakken van gegevens van een buffer volgens een opmaak. (uitpakken van)
+def unpack_from(fmt: str, buffer: ReadableBuffer, offset: int = 0) -> Tuple:
+    """Unpack data from a buffer according to a format string.
 
-Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
+    Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
 
-:param fmt: De formaat tekenreeks.
-:param buffer: De bronbuffer om uit te lezen.
-:param offset: (Offset) De compensatie in de buffer. Kan negatief zijn om te tellen aan het einde van de buffer.
-:return: A tuple of the unpacked values."""
+    :param fmt: The format string.
+    :param buffer: The source buffer to read from.
+    :param offset: The offset into the buffer. May be negative to count from the end of the buffer.
+    :return: A tuple of the unpacked values.
+    """
     ...

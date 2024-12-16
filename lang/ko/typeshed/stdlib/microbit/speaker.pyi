@@ -1,15 +1,18 @@
-"""내장 스피커를 제어합니다(V2 전용)."""
+"""Control the built-in speaker (V2 only).
+"""
 
 def off() -> None:
-    """스피커를 끕니다.
+    """Turn the speaker off.
 
-Example: ``speaker.off()``
+    Example: ``speaker.off()``
 
-This does not disable sound output to an edge connector pin."""
+    This does not disable sound output to an edge connector pin.
+    """
     ...
 
 def on() -> None:
-    """스피커를 켭니다.
+    """Turn the speaker on.
 
-Example: ``speaker.on()``"""
+    Example: ``speaker.on()``
+    """
     ...

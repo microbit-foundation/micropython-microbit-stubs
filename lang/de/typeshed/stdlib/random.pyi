@@ -1,80 +1,93 @@
-"""Gibt eine Zufallszahl zurück."""
+"""Generate random numbers.
+"""
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:
-    """Erzeugt einen Integerwert mit ``n`` zufälligen Bits.
+    """Generate an integer with ``n`` random bits.
 
-Example: ``random.getrandbits(1)``
+    Example: ``random.getrandbits(1)``
 
-:param n: Ein Wert zwischen 1-30 (einschließlich)."""
+    :param n: A value between 1-30 (inclusive).
+    """
     ...
 
 def seed(n: int) -> None:
-    """Initialisiert den Zufallszahlengenerator.
+    """Initialize the random number generator.
 
-Example: ``random.seed(0)``
+    Example: ``random.seed(0)``
 
-:param n: Der Integer-Seed
+    :param n: The integer seed
 
-This will give you reproducibly deterministic randomness from a given starting
-state (``n``)."""
+    This will give you reproducibly deterministic randomness from a given starting
+    state (``n``).
+    """
     ...
 
 def randint(a: int, b: int) -> int:
-    """Wählt eine zufällige Ganzzahl zwischen ``a`` und ``b`` (einschließlich) aus.
+    """Choose a random integer between ``a`` and ``b`` inclusive.
 
-Example: ``random.randint(0, 9)``
+    Example: ``random.randint(0, 9)``
 
-:param a: Anfangswert für den Bereich (inklusiv)
-:param b: Endwert für den Bereich (inklusiv)
+    :param a: Start value for the range (inclusive)
+    :param b: End value for the range (inclusive)
 
-Alias for ``randrange(a, b + 1)``."""
+    Alias for ``randrange(a, b + 1)``.
+    """
     ...
 
 @overload
 def randrange(stop: int) -> int:
-    """Wählt eine zufällige Ganzzahl zwischen Null und ``stop`` (exklusiv) aus.
+    """Choose a randomly selected integer between zero and up to (but not
+    including) ``stop``.
 
-Example: ``random.randrange(10)``
+    Example: ``random.randrange(10)``
 
-:param stop: Endwert für den Bereich (exklusiv)"""
+    :param stop: End value for the range (exclusive)
+    """
     ...
 
 @overload
-def randrange(start: int, stop: int, step: int=1) -> int:
-    """Wählt ein zufälliges Element aus ``range(start, stop, step)``.
+def randrange(start: int, stop: int, step: int = 1) -> int:
+    """
+    Choose a randomly selected element from ``range(start, stop, step)``.
 
-Example: ``random.randrange(0, 10)``
+    Example: ``random.randrange(0, 10)``
 
-:param start: Anfang des Bereichs (inklusiv)
-:param stop: Das Ende des Bereichs (exklusiv)
-:param step: Schrittweite"""
+    :param start: The start of the range (inclusive)
+    :param stop: The end of the range (exclusive)
+    :param step: The step.
+    """
     ...
-_T = TypeVar('_T')
+
+_T = TypeVar("_T")
 
 def choice(seq: Sequence[_T]) -> _T:
-    """Wählt ein zufälliges Element aus der nicht leeren Sequenz ``seq``.
+    """Choose a random element from the non-empty sequence ``seq``.
 
-Example: ``random.choice([Image.HAPPY, Image.SAD])``
+    Example: ``random.choice([Image.HAPPY, Image.SAD])``
 
-:param seq: Eine Sequenz.
+    :param seq: A sequence.
 
-If ``seq`` is  empty, raises ``IndexError``."""
+    If ``seq`` is  empty, raises ``IndexError``.
+    """
     ...
 
 def random() -> float:
-    """Erzeugt eine zufällige Fließkommazahl im Bereich [0.0, 1.0).
+    """Generate a random floating point number in the range [0.0, 1.0).
 
-Example: ``random.random()``
+    Example: ``random.random()``
 
-:return: The random floating point number"""
+    :return: The random floating point number
+    """
     ...
 
 def uniform(a: float, b: float) -> float:
-    """Gibt eine zufällige Fließkommazahl zwischen ``a`` und ``b`` inklusiv aus.
+    """
+    Return a random floating point number between ``a`` and ``b`` inclusive.
 
-Example: ``random.uniform(0, 9)``
+    Example: ``random.uniform(0, 9)``
 
-:param a: Anfangswert für den Bereich (inklusiv)
-:param b: Endwert für den Bereich (inklusiv)"""
+    :param a: Start value for the range (inclusive)
+    :param b: End value for the range (inclusive)
+    """
     ...

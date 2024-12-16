@@ -1,103 +1,115 @@
-"""micro:bitの加速度測定とジェスチャー認識をします。"""
+"""Measure the acceleration of the micro:bit and recognise gestures.
+"""
+
 from typing import Tuple
 
 def get_x() -> int:
-    """``x`` 軸の加速度測定値をミリg単位で取得します。
+    """Get the acceleration measurement in the ``x`` axis in milli-g.
 
-Example: ``accelerometer.get_x()``
+    Example: ``accelerometer.get_x()``
 
-:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
+    :return: A positive or negative integer depending on direction in the range +/- 2000mg.
+    """
     ...
 
 def get_y() -> int:
-    """``y`` 軸の加速度測定値をミリg単位で取得します。
+    """Get the acceleration measurement in the ``y`` axis in milli-g.
 
-Example: ``accelerometer.get_y()``
+    Example: ``accelerometer.get_y()``
 
-:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
+    :return: A positive or negative integer depending on direction in the range +/- 2000mg.
+    """
     ...
 
 def get_z() -> int:
-    """``z`` 軸の加速度測定値をミリg単位で取得します。
+    """Get the acceleration measurement in the ``z`` axis in milli-g.
 
-Example: ``accelerometer.get_z()``
+    Example: ``accelerometer.get_z()``
 
-:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
+    :return: A positive or negative integer depending on direction in the range +/- 2000mg.
+    """
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """すべての軸の加速度測定値をタプルとして一度に取得します。
+    """Get the acceleration measurements in all axes at once as a tuple.
 
-Example: ``x, y, z = accelerometer.get_values()``
+    Example: ``x, y, z = accelerometer.get_values()``
 
-:return: a three-element tuple of integers ordered as X, Y, Z, each value a positive or negative integer depending on direction in the range +/- 2000mg"""
+    :return: a three-element tuple of integers ordered as X, Y, Z, each value a positive or negative integer depending on direction in the range +/- 2000mg
+    """
     ...
 
 def get_strength() -> int:
-    """すべての軸を合成した加速度測定値を正の整数値で得ます。これは X軸、Y軸、Z軸のピタゴラス和になります。
+    """Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes.
 
-Example: ``accelerometer.get_strength()``
+    Example: ``accelerometer.get_strength()``
 
-:return: The combined acceleration strength of all the axes, in milli-g."""
+    :return: The combined acceleration strength of all the axes, in milli-g.
+    """
     ...
 
 def current_gesture() -> str:
-    """現在のジェスチャーの名前を取得します。
+    """Get the name of the current gesture.
 
-Example: ``accelerometer.current_gesture()``
+    Example: ``accelerometer.current_gesture()``
 
-MicroPython understands the following gesture names: ``"up"``, ``"down"``,
-``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
-``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
-represented as strings.
+    MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+    ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+    ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+    represented as strings.
 
-:return: The current gesture"""
+    :return: The current gesture
+    """
     ...
 
 def is_gesture(name: str) -> bool:
-    """指定した名前のジェスチャーが現在アクティブであるかどうかを確認します。
+    """Check if the named gesture is currently active.
 
-Example: ``accelerometer.is_gesture('shake')``
+    Example: ``accelerometer.is_gesture('shake')``
 
-MicroPython understands the following gesture names: ``"up"``, ``"down"``,
-``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
-``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
-represented as strings.
+    MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+    ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+    ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+    represented as strings.
 
-:param name: ジェスチャー名。
-:return: ``True`` if the gesture is active, ``False`` otherwise."""
+    :param name: The gesture name.
+    :return: ``True`` if the gesture is active, ``False`` otherwise.
+    """
     ...
 
 def was_gesture(name: str) -> bool:
-    """直前の呼び出し以降に、指定した名前のジェスチャーがアクティブになったかどうかを確認します。
+    """Check if the named gesture was active since the last call.
 
-Example: ``accelerometer.was_gesture('shake')``
+    Example: ``accelerometer.was_gesture('shake')``
 
-MicroPython understands the following gesture names: ``"up"``, ``"down"``,
-``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
-``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
-represented as strings.
+    MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+    ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+    ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+    represented as strings.
 
-:param name: ジェスチャー名。
-:return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
+    :param name: The gesture name.
+    :return: ``True`` if the gesture was active since the last call, ``False`` otherwise.
+    """
 
 def get_gestures() -> Tuple[str, ...]:
-    """ジェスチャー履歴のタプルを返します。
+    """Return a tuple of the gesture history.
 
-Example: ``accelerometer.get_gestures()``
+    Example: ``accelerometer.get_gestures()``
 
-Clears the gesture history before returning.
+    Clears the gesture history before returning.
 
-Gestures are not updated in the background so there needs to be constant
-calls to some accelerometer method to do the gesture detection. Usually
-gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
+    Gestures are not updated in the background so there needs to be constant
+    calls to some accelerometer method to do the gesture detection. Usually
+    gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
 
-:return: The history as a tuple, most recent last."""
+    :return: The history as a tuple, most recent last.
+    """
     ...
 
 def set_range(value: int) -> None:
-    """加速度センサーの感度範囲を g (標準重力)で設定します。設定値は、ハードウェアがサポートする最も近い値、すなわち ``2``、``4``、``8`` g のいずれかに丸められます。
+    """Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g.
 
-Example: ``accelerometer.set_range(8)``
+    Example: ``accelerometer.set_range(8)``
 
-:param value: 加速度センサーの新しい感度範囲。``g`` 単位の整数値で指定します。"""
+    :param value: New range for the accelerometer, an integer in ``g``.
+    """

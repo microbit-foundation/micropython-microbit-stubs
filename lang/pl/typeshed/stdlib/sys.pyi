@@ -1,36 +1,43 @@
-"""Funkcje specyficzne dla systemu"""
+"""System specific functions"""
+
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
-def exit(retval: object=...) -> NoReturn:
-    """Zakończ bieżący program z podanym kodem wyjścia.
+def exit(retval: object = ...) -> NoReturn:
+    """Terminate current program with a given exit code.
 
-Example: ``sys.exit(1)``
+    Example: ``sys.exit(1)``
 
-This function raises a ``SystemExit`` exception. If an argument is given, its
-value given as an argument to ``SystemExit``.
+    This function raises a ``SystemExit`` exception. If an argument is given, its
+    value given as an argument to ``SystemExit``.
 
-:param retval: Kod lub wiadomość wyjściowa."""
+    :param retval: The exit code or message.
+    """
     ...
 
 def print_exception(exc: Exception) -> None:
-    """Wydrukuj wyjątek ze śledzeniem.
+    """
+    Print an exception with a traceback.
 
-Example: ``sys.print_exception(e)``
+    Example: ``sys.print_exception(e)``
 
-:param exc: Wyjątek do wydrukowania
+    :param exc: The exception to print
 
-This is simplified version of a function which appears in the
-``traceback`` module in CPython."""
+    This is simplified version of a function which appears in the
+    ``traceback`` module in CPython.
+    """
+
 argv: List[str]
-"""Zmienna lista argumentów, od których uruchomiono bieżący program."""
+"""A mutable list of arguments the current program was started with."""
+
 byteorder: str
-"""Kolejność bajtów systemu (``"little"`` lub ``"big"``)."""
+"""The byte order of the system (``"little"`` or ``"big"``)."""
 
 class _implementation:
     name: str
     version: Tuple[int, int, int]
+
 implementation: _implementation
-"""Obiekt z informacjami o bieżącej implementacji Pythona.
+"""Object with information about the current Python implementation.
 
 For MicroPython, it has following attributes:
 
@@ -44,12 +51,13 @@ minimal ports).
 CPython mandates more attributes for this object, but the actual useful
 bare minimum is implemented in MicroPython.
 """
+
 maxsize: int
 """
-Maksymalna wartość, jaką może przechowywać natywny typ całkowity na bieżącej platformie,
-lub maksymalna wartość reprezentowana przez typ całkowity MicroPythona, jeśli jest mniejsza
-niż maksymalna wartość platformy (tak jest w przypadku portów MicroPython bez
-wsparcia long int).
+Maximum value which a native integer type can hold on the current platform,
+or maximum value representable by MicroPython integer type, if it's smaller
+than platform max value (that is the case for MicroPython ports without
+long int support).
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some
@@ -69,14 +77,17 @@ value directly, but instead count number of bits in it::
         # (e.g. 31) due to peculiarities described above, so use "> 16",
         # "> 32", "> 64" style of comparisons.
 """
+
 modules: Dict[str, Any]
-"""Słownik załadowanych modułów. 
+"""Dictionary of loaded modules. 
 
 On some ports, it may not include builtin modules."""
+
 path: List[str]
-"""Zmienna lista katalogów do wyszukiwania importowanych modułów."""
+"""A mutable list of directories to search for imported modules."""
+
 platform: str
-"""Platforma na której działa MicroPython. 
+"""The platform that MicroPython is running on. 
 
 For OS/RTOS ports, this is usually an identifier of the OS, e.g. ``"linux"``.
 For baremetal ports it is an identifier of a board, e.g. ``"pyboard"`` for 
@@ -86,10 +97,12 @@ distinguish one board from another.
 If you need to check whether your program runs on MicroPython (vs other
 Python implementation), use ``sys.implementation`` instead.
 """
+
 version: str
-"""Wersja Pythona, z którą ta implementacja jest zgodna, jako łańcuch."""
+"""Python language version that this implementation conforms to, as a string."""
+
 version_info: Tuple[int, int, int]
-"""Wersja Pythona, z którą ta implementacja jest zgodna, jako krotka typu int.
+"""Python language version that this implementation conforms to, as a tuple of ints.
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.

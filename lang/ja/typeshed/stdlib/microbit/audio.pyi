@@ -1,124 +1,160 @@
-"""micro:bitでサウンドを再生します（V1との互換のために ``audio`` をインポートしてください）。"""
+"""Play sounds using the micro:bit (import ``audio`` for V1 compatibility).
+"""
+
 from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
-def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
-    """内蔵サウンド、サウンド効果、カスタム化したオーディオフレームのいずれかを再生します。
+def play(
+    source: Union[Iterable[AudioFrame], Sound, SoundEffect],
+    wait: bool = True,
+    pin: MicroBitDigitalPin = pin0,
+    return_pin: Union[MicroBitDigitalPin, None] = None,
+) -> None:
+    """Play a built-in sound, sound effect or custom audio frames.
 
-Example: ``audio.play(Sound.GIGGLE)``
+    Example: ``audio.play(Sound.GIGGLE)``
 
-:param source: ``Sound.GIGGLE`` などの内蔵の``Sound``、``SoundEffect``、``AudioFrame`` オブジェクトのイテラブルであるサンプルデータのいずれか。
-:param wait: ``wait`` が ``True`` の場合、サウンドの再生が終わるまでこの関数がブロックします。
-:param pin: (ピン) 出力端子をデフォルトの ``pin0`` から変えるためのオプション引数です。音を鳴らしたくない場合は ``pin=None`` を指定します。
-:param return_pin: グランドではなく外部スピーカーに接続する差動エッジコネクタの端子
-を指定します。**V2** ではこの指定を無視します。"""
+    :param source: A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects.
+    :param wait: If ``wait`` is ``True``, this function will block until the sound is complete.
+    :param pin: An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``.
+    :param return_pin: Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision.
+    """
 
 def is_playing() -> bool:
-    """オーディオが再生中であるかどうかを確認します。
+    """Check whether a sound is playing.
 
-Example: ``audio.is_playing()``
+    Example: ``audio.is_playing()``
 
-:return: ``True`` if audio is playing, otherwise ``False``."""
+    :return: ``True`` if audio is playing, otherwise ``False``."""
     ...
 
 def stop() -> None:
-    """すべてのオーディオ再生を停止します。
+    """Stop all audio playback.
 
-Example: ``audio.stop()``"""
+    Example: ``audio.stop()``
+    """
     ...
 
 class SoundEffect:
-    """コンストラクタや属性で設定したパラメータのセットで構成されるサウンド効果。"""
+    """A sound effect, composed by a set of parameters configured via the constructor or attributes."""
+
     WAVEFORM_SINE: ClassVar[int]
-    """``waveform`` パラメータに指定できる「サイン波」オプション。"""
+    """Sine wave option used for the ``waveform`` parameter."""
+
     WAVEFORM_SAWTOOTH: ClassVar[int]
-    """``waveform`` パラメータに指定できる「のこぎり波」オプション。"""
+    """Sawtooth wave option used for the ``waveform`` parameter."""
+
     WAVEFORM_TRIANGLE: ClassVar[int]
-    """``waveform`` パラメータに指定できる「三角波」オプション。"""
+    """Triangle wave option used for the ``waveform`` parameter."""
+
     WAVEFORM_SQUARE: ClassVar[int]
-    """``waveform`` パラメータに指定できる「矩形波」オプション。"""
+    """Square wave option used for the ``waveform`` parameter."""
+
     WAVEFORM_NOISE: ClassVar[int]
-    """``waveform`` パラメータに指定できる「ノイズ」オプション。"""
+    """Noise option used for the ``waveform`` parameter."""
+
     SHAPE_LINEAR: ClassVar[int]
-    """``shape`` パラメータに指定できる「リニア補間」オプション。"""
+    """Linear interpolation option used for the ``shape`` parameter."""
+
     SHAPE_CURVE: ClassVar[int]
-    """``shape`` パラメータに指定できる「カーブ補間」オプション。"""
+    """Curve interpolation option used for the ``shape`` parameter."""
+
     SHAPE_LOG: ClassVar[int]
-    """``shape`` パラメータに指定できる「対数補間」オプション。"""
+    """Logarithmic interpolation option used for the ``shape`` parameter."""
+
     FX_NONE: ClassVar[int]
-    """``fx`` パラメータに指定できる「効果なし」オプション。"""
+    """No effect option used for the ``fx`` parameter."""
+
     FX_TREMOLO: ClassVar[int]
-    """``fx`` パラメータに指定できる「トレモロ効果」オプション。"""
+    """Tremolo effect option used for the ``fx`` parameter."""
+
     FX_VIBRATO: ClassVar[int]
-    """``fx`` パラメータに指定できる「ビブラート効果」オプション。"""
+    """Vibrato effect option used for the ``fx`` parameter."""
+
     FX_WARBLE: ClassVar[int]
-    """``fx`` パラメータに指定できる「ワブル効果」オプション。"""
+    """Warble effect option used for the ``fx`` parameter."""
+
     freq_start: int
-    """開始周波数。単位はヘルツ(Hz)で、``0``から``9999``の範囲の数値です。"""
+    """Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
+
     freq_end: int
-    """終了周波数。単位はヘルツ(Hz)で、``0``から``9999``の範囲の数値です。"""
+    """End frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
+
     duration: int
-    """サウンドの長さ。``0`` から``9999``の範囲の数値です。"""
+    """Duration of the sound in milliseconds, a number between ``0`` and ``9999``"""
+
     vol_start: int
-    """開始音量。``0``から``255``の範囲の数値です。"""
+    """Start volume value, a number between ``0`` and ``255``"""
+
     vol_end: int
-    """終了音量。``0``から``255``の範囲の数値です。"""
+    """End volume value, a number between ``0`` and ``255``"""
+
     waveform: int
-    """波形の種類。次の値のいずれか: ``WAVEFORM_SINE``、 ``WAVEFORM_SAWTOOTH``、``WAVEFORM_TRIANGLE``、 ``WAVEFORM_SQUARE``、``WAVEFORM_NOISE`` (ランダムに生成したノイズ)"""
+    """Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"""
+
     fx: int
-    """サウンドに追加する効果。次の値のいずれか: ``FX_TREMOLO``、``FX_VIBRATO``、``FX_WARBLE``、``FX_NONE``"""
+    """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"""
+
     shape: int
-    """開始周波数と終了周波数の補間曲線の種類で、波形の違いにより周波数の変化率が異なります。次の値のうちのいずれか: ``SHAPE_LINEAR``、``SHAPE_CURVE``、``SHAPE_LOG``"""
+    """The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"""
 
-    def __init__(self, freq_start: int=500, freq_end: int=2500, duration: int=500, vol_start: int=255, vol_end: int=0, waveform: int=WAVEFORM_SQUARE, fx: int=FX_NONE, shape: int=SHAPE_LOG):
-        """新しいサウンド効果を作成します。
+    def __init__(
+        self,
+        freq_start: int = 500,
+        freq_end: int = 2500,
+        duration: int = 500,
+        vol_start: int = 255,
+        vol_end: int = 0,
+        waveform: int = WAVEFORM_SQUARE,
+        fx: int = FX_NONE,
+        shape: int = SHAPE_LOG,
+    ):
+        """Create a new sound effect.
 
-Example: ``my_effect = SoundEffect(duration=1000)``
+        Example: ``my_effect = SoundEffect(duration=1000)``
 
-All the parameters are optional, with default values as shown above, and
-they can all be modified via attributes of the same name. For example, we
-can first create an effect ``my_effect = SoundEffect(duration=1000)``,
-and then change its attributes ``my_effect.duration = 500``.
+        All the parameters are optional, with default values as shown above, and
+        they can all be modified via attributes of the same name. For example, we
+        can first create an effect ``my_effect = SoundEffect(duration=1000)``,
+        and then change its attributes ``my_effect.duration = 500``.
 
-:param freq_start: 開始周波数。単位はヘルツ(Hz)で、``0``から``9999``の範囲の数値です。
-:param freq_end: 終了周波数。単位はヘルツ(Hz)で、``0``から``9999``の範囲の数値です。
-:param duration: サウンドの長さ。単位はミリ秒で、``0`` から``9999``の範囲の数値です。
-:param vol_start: 開始音量。``0``から``255``の範囲の数値です。
-:param vol_end: 終了音量。``0``から``255``の範囲の数値です。
-:param waveform: 波形の種類。次の値のいずれか: ``WAVEFORM_SINE``、 ``WAVEFORM_SAWTOOTH``、``WAVEFORM_TRIANGLE``、 ``WAVEFORM_SQUARE``、``WAVEFORM_NOISE`` (ランダムに生成したノイズ)。
-:param fx: サウンドに追加する効果。次の値のいずれか: ``FX_TREMOLO``、``FX_VIBRATO``、``FX_WARBLE``、``FX_NONE``
-:param shape: 開始周波数と終了周波数の補間曲線の種類で、波形の違いにより周波数の変化率が異なります。次の値のうちのいずれか: ``SHAPE_LINEAR``、``SHAPE_CURVE``、``SHAPE_LOG``"""
-
+        :param freq_start: Start frequency in Hertz (Hz), a number between ``0`` and ``9999``.
+        :param freq_end: End frequency in Hertz (Hz), a number between ``0`` and ``9999``.
+        :param duration: Duration of the sound in milliseconds, a number between ``0`` and ``9999``.
+        :param vol_start: Start volume value, a number between ``0`` and ``255``.
+        :param vol_end: End volume value, a number between ``0`` and ``255``.
+        :param waveform: Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise).
+        :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``.
+        :param shape: The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``.
+        """
     def copy(self) -> SoundEffect:
-        """この ``SoundEffect`` のコピーを作成します。
+        """Create a copy of this ``SoundEffect``.
 
-Example: ``sound_2 = sound_1.copy()``
+        Example: ``sound_2 = sound_1.copy()``
 
-:return: A copy of the SoundEffect."""
+        :return: A copy of the SoundEffect.
+        """
 
 class AudioFrame:
-    """``AudioFrame`` オブジェクトは32個のサンプルからなるリストです。それぞのサンプルは符号なしバイト（0〜255の整数）です。
+    """An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte
+    (whole number between 0 and 255).
 
-It takes just over 4 ms to play a single frame.
+    It takes just over 4 ms to play a single frame.
 
-Example::
+    Example::
 
-    frame = AudioFrame()
-    for i in range(len(frame)):
-        frame[i] = 252 - i * 8"""
+        frame = AudioFrame()
+        for i in range(len(frame)):
+            frame[i] = 252 - i * 8
+    """
 
     def copyfrom(self, other: AudioFrame) -> None:
-        """この ``AudioFrame`` のデータを、別の ``AudioFrame`` インスタンスのデータで上書きします。
+        """Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance.
 
-Example: ``my_frame.copyfrom(source_frame)``
+        Example: ``my_frame.copyfrom(source_frame)``
 
-:param other: コピーするデータを持つ ``AudioFrame`` インスタンス。"""
-
-    def __len__(self) -> int:
-        ...
-
-    def __setitem__(self, key: int, value: int) -> None:
-        ...
-
-    def __getitem__(self, key: int) -> int:
-        ...
+        :param other: ``AudioFrame`` instance from which to copy the data.
+        """
+    def __len__(self) -> int: ...
+    def __setitem__(self, key: int, value: int) -> None: ...
+    def __getitem__(self, key: int) -> int: ...

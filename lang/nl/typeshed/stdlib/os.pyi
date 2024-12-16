@@ -1,63 +1,73 @@
-"""Toegang tot het bestandssysteem."""
+"""Access the file system.
+"""
+
 from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
-    """Bestanden weergeven.
+    """List files.
 
-Example: ``os.listdir()``
+    Example: ``os.listdir()``
 
-:return: A list of the names of all the files contained within the local
-persistent on-device file system."""
+    :return: A list of the names of all the files contained within the local
+    persistent on-device file system.
+    """
     ...
 
 def remove(filename: str) -> None:
-    """Verwijder (verwijder) een bestand. (verwijder)
+    """Remove (delete) a file.
 
-Example: ``os.remove('data.txt')``
+    Example: ``os.remove('data.txt')``
 
-:param filename: (bestands naam) Het bestand is verwijderd
+    :param filename: The file to delete.
 
-If the file does not exist an ``OSError`` exception will occur."""
+    If the file does not exist an ``OSError`` exception will occur.
+    """
     ...
 
 def size(filename: str) -> int:
-    """Geeft de grootte van een bestand weer. (grootte)
+    """Returns the size of a file.
 
-Example: ``os.size('data.txt')``
+    Example: ``os.size('data.txt')``
 
-:param filename: (bestands naam) Het bestand
-:return: The size in bytes.
+    :param filename: The file
+    :return: The size in bytes.
 
-If the file does not exist an ``OSError`` exception will occur."""
+    If the file does not exist an ``OSError`` exception will occur.
+    """
 
 class uname_result(Tuple[str, str, str, str, str]):
-    """Resultaat van ``os.uname()`` (uname resultaat)"""
+    """Result of ``os.uname()``"""
     sysname: str
-    """Besturingssysteem naam"""
+    """Operating system name."""
+
     nodename: str
-    """Naam van machine op het netwerk (implementation-defined)."""
+    """Name of machine on network (implementation-defined)."""
+
     release: str
-    """Besturingssysteem release. (vrijgeven)"""
+    """Operating system release."""
+    
     version: str
-    """Besturingssysteem versie. (versie)"""
+    """Operating system version."""
+    
     machine: str
-    """Identificatie hardware"""
+    """Hardware identifier."""
 
 def uname() -> uname_result:
-    """Geeft informatie terug die het huidige besturingssysteem identificeert.
+    """Returns information identifying the current operating system.
 
-Example: ``os.uname()``
+    Example: ``os.uname()``
 
-The return value is an object with five attributes:
+    The return value is an object with five attributes:
 
-- ``sysname`` - operating system name
-- ``nodename`` - name of machine on network (implementation-defined)
-- ``release`` - operating system release
-- ``version`` - operating system version
-- ``machine`` - hardware identifier
+    - ``sysname`` - operating system name
+    - ``nodename`` - name of machine on network (implementation-defined)
+    - ``release`` - operating system release
+    - ``version`` - operating system version
+    - ``machine`` - hardware identifier
 
-There is no underlying operating system in MicroPython. As a result the
-information returned by the ``uname`` function is mostly useful for
-versioning details."""
+    There is no underlying operating system in MicroPython. As a result the
+    information returned by the ``uname`` function is mostly useful for
+    versioning details.
+    """
     ...

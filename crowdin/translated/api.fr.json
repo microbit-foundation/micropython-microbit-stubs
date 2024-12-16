@@ -3472,11 +3472,11 @@
     "description": "Parameter docs"
   },
   "microbit.spi.read.param-name.out": {
-    "message": "out",
+    "message": "Sortie",
     "description": "(parameter name) The byte value to write (default 0)."
   },
   "microbit.spi.read.param-doc.out": {
-    "message": "The byte value to write (default 0).",
+    "message": "La valeur d'octet à écrire (0 par défaut).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {

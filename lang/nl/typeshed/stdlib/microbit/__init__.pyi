@@ -1,6 +1,11 @@
-"""Pinnen, afbeeldingen, geluiden, temperatuur en volume."""
+"""Pins, images, sounds, temperature and volume.
+"""
+
 from typing import Any, Callable, List, Optional, Tuple, Union, overload
+
 from _typeshed import ReadableBuffer
+
+# V2 only
 from . import accelerometer as accelerometer
 from . import audio as audio
 from . import compass as compass
@@ -11,701 +16,831 @@ from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
 
-def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Plan om een functie uit te voeren volgens het interval dat gespecificeerd is door het time argument  **V2 alleen**. (draai elke)
+def run_every(
+    callback: Optional[Callable[[], None]] = None,
+    days: int = 0,
+    h: int = 0,
+    min: int = 0,
+    s: int = 0,
+    ms: int = 0,
+) -> Callable[[Callable[[], None]], Callable[[], None]]:
+    """Schedule to run a function at the interval specified by the time arguments **V2 only**.
 
-Example: ``run_every(my_logging, min=5)``
+    Example: ``run_every(my_logging, min=5)``
 
-``run_every`` can be used in two ways:
+    ``run_every`` can be used in two ways:
 
-As a Decorator - placed on top of the function to schedule. For example::
+    As a Decorator - placed on top of the function to schedule. For example::
 
-    @run_every(h=1, min=20, s=30, ms=50)
-    def my_function():
-        # Do something here
+        @run_every(h=1, min=20, s=30, ms=50)
+        def my_function():
+            # Do something here
 
-As a Function - passing the callback as a positional argument. For example::
+    As a Function - passing the callback as a positional argument. For example::
 
-    def my_function():
-        # Do something here
-    run_every(my_function, s=30)
+        def my_function():
+            # Do something here
+        run_every(my_function, s=30)
 
-Each argument corresponds to a different time unit and they are additive.
-So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
+    Each argument corresponds to a different time unit and they are additive.
+    So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 
-When an exception is thrown inside the callback function it deschedules the
-function. To avoid this you can catch exceptions with ``try/except``.
+    When an exception is thrown inside the callback function it deschedules the
+    function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: Functie om op te roepen bij de meegeleverde interval. Weglaten wanneer je als decorator gebruikt.
-:param days: (dagen) Stelt de dag markering in voor de planning.
-:param h: (uur) Stelt de urenmarkering in voor de planning.
-:param min: Stelt de minuut markering in voor de planning.
-:param s: Stelt de seconde markering in voor de planning.
-:param ms: Stelt de milliseconde markering in voor de planning."""
+    :param callback: Function to call at the provided interval. Omit when using as a decorator.
+    :param days: Sets the day mark for the scheduling.
+    :param h: Sets the hour mark for the scheduling.
+    :param min: Sets the minute mark for the scheduling.
+    :param s: Sets the second mark for the scheduling.
+    :param ms: Sets the millisecond mark for the scheduling.
+    """
 
 def panic(n: int) -> None:
-    """Voer een paniekmodus in. (paniek)
+    """Enter a panic mode.
 
-Example: ``panic(127)``
+    Example: ``panic(127)``
 
-:param n: Een willekeurig geheel getal <= 255 om een status aan te geven.
+    :param n: An arbitrary integer <= 255 to indicate a status.
 
-Requires restart."""
+    Requires restart.
+    """
 
 def reset() -> None:
-    """Herstart het bord."""
+    """Restart the board."""
+
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
-    """Zet een waarde om van een bereik naar een ander bereik van natuurlijke getallen. (schaal)
+    """Converts a value from a range to an integer range.
 
-Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
+    Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
-For example, to convert an accelerometer X value to a speaker volume.
+    For example, to convert an accelerometer X value to a speaker volume.
 
-If one of the numbers in the ``to`` parameter is a floating point
-(i.e a decimal number like ``10.0``), this function will return a
-floating point number.
+    If one of the numbers in the ``to`` parameter is a floating point
+    (i.e a decimal number like ``10.0``), this function will return a
+    floating point number.
 
-    temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
+        temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-:param value: (waarde) Een getal om te converteren
-:param from_: (van) Een getallen paar wat het bereik aangeeft vanwaar je wilt converteren
-:param to: (naar) Een getallen paar om het bereik te definiëren waar je naar wilt converteren.
-:return: The ``value`` converted to the ``to`` range."""
+    :param value: A number to convert.
+    :param from_: A tuple to define the range to convert from.
+    :param to: A tuple to define the range to convert to.
+    :return: The ``value`` converted to the ``to`` range.
+    """
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Zet een waarde om van een bereik naar een ander bereik van decimale getallen. (schaal)
+    """Converts a value from a range to a floating point range.
 
-Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
+    Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
-For example, to convert temperature from a Celsius scale to Fahrenheit.
+    For example, to convert temperature from a Celsius scale to Fahrenheit.
 
-If one of the numbers in the ``to`` parameter is a floating point
-(i.e a decimal number like ``10.0``), this function will return a
-floating point number.
-If they are both integers (i.e ``10``), it will return an integer::
+    If one of the numbers in the ``to`` parameter is a floating point
+    (i.e a decimal number like ``10.0``), this function will return a
+    floating point number.
+    If they are both integers (i.e ``10``), it will return an integer::
 
-    returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
+        returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-:param value: (waarde) Een getal om te converteren
-:param from_: (van) Een getallen paar wat het bereik aangeeft vanwaar je wilt converteren
-:param to: (naar) Een getallen paar om het bereik te definiëren waar je naar wilt converteren.
-:return: The ``value`` converted to the ``to`` range."""
+    :param value: A number to convert.
+    :param from_: A tuple to define the range to convert from.
+    :param to: A tuple to define the range to convert to.
+    :return: The ``value`` converted to the ``to`` range.
+    """
 
 def sleep(n: float) -> None:
-    """Wacht op ``n`` milliseconden. (slapen)
+    """Wait for ``n`` milliseconds.
 
-Example: ``sleep(1000)``
+    Example: ``sleep(1000)``
 
-:param n: Het aantal milliseconden te wachten
+    :param n: The number of milliseconds to wait
 
-One second is 1000 milliseconds, so::
+    One second is 1000 milliseconds, so::
 
-    microbit.sleep(1000)
+        microbit.sleep(1000)
 
-will pause the execution for one second."""
+    will pause the execution for one second.
+    """
 
 def running_time() -> int:
-    """Bekijk de looptijd van het bord. (looptijd)
+    """Get the running time of the board.
 
-:return: The number of milliseconds since the board was switched on or restarted."""
+    :return: The number of milliseconds since the board was switched on or restarted.
+    """
 
 def temperature() -> int:
-    """Krijg de temperatuur van de micro:bit in graden Celsius. (temperatuur)"""
+    """Get the temperature of the micro:bit in degrees Celsius."""
 
 def set_volume(v: int) -> None:
-    """Stelt het volume in. (stel volume in)
+    """Sets the volume.
 
-Example: ``set_volume(127)``
+    Example: ``set_volume(127)``
 
-:param v: een waarde tussen 0 (laag) en 255 (hoog).
+    :param v: a value between 0 (low) and 255 (high).
 
-Out of range values will be clamped to 0 or 255.
+    Out of range values will be clamped to 0 or 255.
 
-**V2** only."""
+    **V2** only.
+    """
     ...
 
 class Button:
-    """De klasse voor de knoppen ``button_a`` en ``button_b``. (knop)"""
+    """The class for the buttons ``button_a`` and ``button_b``."""
 
     def is_pressed(self) -> bool:
-        """Controleer of op de knop wordt gedrukt. (is ingedrukt)
+        """Check if the button is pressed.
 
-:return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
+        :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise.
+        """
         ...
-
     def was_pressed(self) -> bool:
-        """Controleer of de knop was ingedrukt sinds het apparaat is gestart of de laatste keer dat deze methode is gebruikt. (was ingedrukt)
+        """Check if the button was pressed since the device started or the last time this method was called.
 
-Calling this method will clear the press state so
-that the button must be pressed again before this method will return
-``True`` again.
+        Calling this method will clear the press state so
+        that the button must be pressed again before this method will return
+        ``True`` again.
 
-:return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise"""
+        :return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise
+        """
         ...
-
     def get_presses(self) -> int:
-        """Krijg het totale aantal ingedrukte knoppen en reset dit totaal
-naar nul voordat u terugkeert. (zie knop acties)
+        """Get the running total of button presses, and resets this total
+        to zero before returning.
 
-:return: The number of presses since the device started or the last time this method was called"""
+        :return: The number of presses since the device started or the last time this method was called
+        """
         ...
+
 button_a: Button
-"""Het object van de linker knop ``Button``. (knop a)"""
+"""The left button ``Button`` object."""
+
 button_b: Button
-"""Het object van de rechter knop ``Button``. (knop b)"""
+"""The right button ``Button`` object."""
 
 class MicroBitDigitalPin:
-    """Een digitale pin
+    """A digital pin.
 
-Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
+    Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses.
+    """
+
     NO_PULL: int
     PULL_UP: int
     PULL_DOWN: int
-
     def read_digital(self) -> int:
-        """Haal de digitale waarde van de pincode op. (digitaal lezen)
+        """Get the digital value of the pin.
 
-Example: ``value = pin0.read_digital()``
+        Example: ``value = pin0.read_digital()``
 
-:return: 1 if the pin is high, and 0 if it's low."""
+        :return: 1 if the pin is high, and 0 if it's low.
+        """
         ...
-
     def write_digital(self, value: int) -> None:
-        """Stel de digitale waarde van de pin in. (digitaal schrijven)
+        """Set the digital value of the pin.
 
-Example: ``pin0.write_digital(1)``
+        Example: ``pin0.write_digital(1)``
 
-:param value: (waarde) 1 om de pin hoog of 0 om de pin laag in te stellen"""
+        :param value: 1 to set the pin high or 0 to set the pin low"""
         ...
-
     def set_pull(self, value: int) -> None:
-        """Zet de pull-status op een van de drie mogelijke waarden: ``PULL_UP``, ``PULL_DOWN`` of ``NO_PULL``. (pull instellen)
+        """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
 
-Example: ``pin0.set_pull(pin0.PULL_UP)``
+        Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: (waarde) De pull-status van de relevante pincode, bijvoorbeeld ``pin0.PULL_UP``."""
+        :param value: The pull state from the relevant pin, e.g. ``pin0.PULL_UP``.
+        """
         ...
-
     def get_pull(self) -> int:
-        """Bekijk de pull status van een pin. (pull instellen)
+        """Get the pull state on a pin.
 
-Example: ``pin0.get_pull()``
+        Example: ``pin0.get_pull()``
 
-:return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
+        :return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
 
-These are set using the ``set_pull()`` method or automatically configured
-when a pin mode requires it."""
+        These are set using the ``set_pull()`` method or automatically configured
+        when a pin mode requires it.
+        """
         ...
-
     def get_mode(self) -> str:
-        """Geeft de pinmodus weer. (Bekijk modus)
+        """Returns the pin mode.
 
-Example: ``pin0.get_mode()``
+        Example: ``pin0.get_mode()``
 
-When a pin is used for a specific function, like
-writing a digital value, or reading an analog value, the pin mode
-changes.
+        When a pin is used for a specific function, like
+        writing a digital value, or reading an analog value, the pin mode
+        changes.
 
-:return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``"""
+        :return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``
+        """
         ...
-
     def write_analog(self, value: int) -> None:
-        """Voer een PWM-signaal uit op de pin, waarbij de taakcyclus proportioneel is aan ``value``. (analoge schrijven)
+        """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
 
-Example: ``pin0.write_analog(254)``
+        Example: ``pin0.write_analog(254)``
 
-:param value: (waarde) Een geheel getal of een zwevend punt getal tussen 0 (0% tariefcyclus) en 1023 (100% belasting)."""
-
+        :param value: An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty).
+        """
     def set_analog_period(self, period: int) -> None:
-        """Stel de periode in van het PWM-signaal dat uitgevoerd wordt naar ``period`` in milliseconden. (gebruik analoge periode)
+        """Set the period of the PWM signal being output to ``period`` in milliseconds.
 
-Example: ``pin0.set_analog_period(10)``
+        Example: ``pin0.set_analog_period(10)``
 
-:param period: (periode) De periode in milliseconden met een minimale geldige waarde van 1 ms."""
-
+        :param period: The period in milliseconds with a minimum valid value of 1ms.
+        """
     def set_analog_period_microseconds(self, period: int) -> None:
-        """Stel de periode in van het PWM-signaal dat uitgevoerd wordt naar ``period`` in milliseconden. (microseconden analoge periode instellen)
+        """Set the period of the PWM signal being output to ``period`` in microseconds.
 
-Example: ``pin0.set_analog_period_microseconds(512)``
+        Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: (periode) De periode in microseconden met een minimumwaarde van 256 mres."""
+        :param period: The period in microseconds with a minimum valid value of 256µs.
+        """
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """Een pin met analoge en digitale functies."""
+    """A pin with analog and digital features."""
 
     def read_analog(self) -> int:
-        """Lees de spanning op de pin. (lees analoge)
+        """Read the voltage applied to the pin.
 
-Example: ``pin0.read_analog()``
+        Example: ``pin0.read_analog()``
 
-:return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
+        :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V).
+        """
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """Een pin met analoge, digitale en touch functies."""
+    """A pin with analog, digital and touch features."""
+
     CAPACITIVE: int
     RESISTIVE: int
-
     def is_touched(self) -> bool:
-        """Controleer of de pin aangeraakt wordt. (is aangeraakt)
+        """Check if the pin is being touched.
 
-Example: ``pin0.is_touched()``
+        Example: ``pin0.is_touched()``
 
-The default touch mode for the pins on the edge connector is ``resistive``.
-The default for the logo pin **V2** is ``capacitive``.
+        The default touch mode for the pins on the edge connector is ``resistive``.
+        The default for the logo pin **V2** is ``capacitive``.
 
-**Resistive touch**
-This test is done by measuring how much resistance there is between the
-pin and ground.  A low resistance gives a reading of ``True``.  To get
-a reliable reading using a finger you may need to touch the ground pin
-with another part of your body, for example your other hand.
+        **Resistive touch**
+        This test is done by measuring how much resistance there is between the
+        pin and ground.  A low resistance gives a reading of ``True``.  To get
+        a reliable reading using a finger you may need to touch the ground pin
+        with another part of your body, for example your other hand.
 
-**Capacitive touch**
-This test is done by interacting with the electric field of a capacitor
-using a finger as a conductor. `Capacitive touch
-<https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
-does not require you to make a ground connection as part of a circuit.
+        **Capacitive touch**
+        This test is done by interacting with the electric field of a capacitor
+        using a finger as a conductor. `Capacitive touch
+        <https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
+        does not require you to make a ground connection as part of a circuit.
 
-:return: ``True`` if the pin is being touched with a finger, otherwise return ``False``."""
+        :return: ``True`` if the pin is being touched with a finger, otherwise return ``False``.
+        """
         ...
-
     def set_touch_mode(self, value: int) -> None:
-        """Stel de aanraakmodus voor de pin in. (aanraakmodus instellen)
+        """Set the touch mode for the pin.
 
-Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
+        Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
-The default touch mode for the pins on the edge connector is
-``resistive``. The default for the logo pin **V2** is ``capacitive``.
+        The default touch mode for the pins on the edge connector is
+        ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-:param value: (waarde) ``CAPACITIVE`` of ``RESISTIVE`` van de relevante speler."""
+        :param value: ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin.
+        """
         ...
+
 pin0: MicroBitTouchPin
-"""Pin met digitale, analoge en touch functies."""
+"""Pin with digital, analog and touch features."""
+
 pin1: MicroBitTouchPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital, analog and touch features."""
+
 pin2: MicroBitTouchPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital, analog and touch features."""
+
 pin3: MicroBitAnalogDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital and analog features."""
+
 pin4: MicroBitAnalogDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital and analog features."""
+
 pin5: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin6: MicroBitDigitalPin
-"""Pin met digitale functies."""
+"""Pin with digital features."""
+
 pin7: MicroBitDigitalPin
-"""Pin met digitale functies."""
+"""Pin with digital features."""
+
 pin8: MicroBitDigitalPin
-"""Pin met digitale functies."""
+"""Pin with digital features."""
+
 pin9: MicroBitDigitalPin
-"""Pin met digitale functies."""
+"""Pin with digital features."""
+
 pin10: MicroBitAnalogDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital and analog features."""
+
 pin11: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin12: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin13: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin14: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin15: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin16: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin19: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin20: MicroBitDigitalPin
-"""Pin met digitale, analoge en aanraak functies."""
+"""Pin with digital features."""
+
 pin_logo: MicroBitTouchPin
-"""Een aanraak gevoelige logo pin op de voorkant van de micro:bit, die standaard is ingesteld op capacitieve aanraking modus."""
+"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."""
+
 pin_speaker: MicroBitAnalogDigitalPin
-"""Een pin om de micro:bit luidspreker aan te spreken. (pin luidspreker)
+"""A pin to address the micro:bit speaker.
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """Een afbeelding om te laten zien op het micro:bit LED display. (afbeelding)
+    """An image to show on the micro:bit LED display.
 
-Given an image object it's possible to display it via the ``display`` API::
+    Given an image object it's possible to display it via the ``display`` API::
 
-    display.show(Image.HAPPY)"""
+        display.show(Image.HAPPY)
+    """
+
     HEART: Image
-    """Hart afbeelding (hart)"""
-    HEART_SMALL: Image
-    """Klein hart afbeelding. (hart klein)"""
-    HAPPY: Image
-    """Blije gezichtsafbeelding. (blij)"""
-    SMILE: Image
-    """Glimlach gezicht afbeelding. (glimlach)"""
-    SAD: Image
-    """Droevige gezichtsafbeelding. (verdrietig)"""
-    CONFUSED: Image
-    """Verward gezichtsafbeelding. (verward)"""
-    ANGRY: Image
-    """Boos gezichtsafbeelding. (kwaad)"""
-    ASLEEP: Image
-    """Slapend gezicht afbeelding. (in slaap)"""
-    SURPRISED: Image
-    """Verraste gezichtsafbeelding. (verrast)"""
-    SILLY: Image
-    """Gek gezichtsafbeelding. (gek)"""
-    FABULOUS: Image
-    """Zonnebril gezichtsafbeelding. (fantastisch)"""
-    MEH: Image
-    """Niet onder de indruk gezichtsafbeelding."""
-    YES: Image
-    """Aanvinken afbeelding. (ja)"""
-    NO: Image
-    """Kruis afbeelding. (nee)"""
-    CLOCK12: Image
-    """Afbeelding met lijn die naar 12.00 uur wijst. (klok 12)"""
-    CLOCK11: Image
-    """Afbeelding met lijn die naar 11.00 uur wijst. (klok 11)"""
-    CLOCK10: Image
-    """Afbeelding met lijn die naar 10.00 uur wijst. (klok 10)"""
-    CLOCK9: Image
-    """Afbeelding met lijn die naar 9.00 uur wijst. (klok 9)"""
-    CLOCK8: Image
-    """Afbeelding met lijn die naar 8.00 uur wijst. (klok 8)"""
-    CLOCK7: Image
-    """Afbeelding met lijn die naar 7.00 uur wijst. (klok 7)"""
-    CLOCK6: Image
-    """Afbeelding met lijn die naar 6.00 uur wijst. (klok 6)"""
-    CLOCK5: Image
-    """Afbeelding met lijn die naar 5.00 uur wijst. (klok 5)"""
-    CLOCK4: Image
-    """Afbeelding met lijn die naar 4.00 uur wijst. (klok 4)"""
-    CLOCK3: Image
-    """Afbeelding met lijn die naar 3.00 uur wijst. (klok 3)"""
-    CLOCK2: Image
-    """Afbeelding met lijn die naar 2 uur wijst. (klok2)"""
-    CLOCK1: Image
-    """Afbeelding met lijn die naar 1 uur wijst. (klok1)"""
-    ARROW_N: Image
-    """Afbeelding van pijl richting het noorden. (pijl n)"""
-    ARROW_NE: Image
-    """Afbeelding van pijl richting het noord oosten. (pijl NO)"""
-    ARROW_E: Image
-    """Afbeelding van pijl richting het oosten. (pijl e)"""
-    ARROW_SE: Image
-    """Afbeelding van pijl richting het zuid-oosten. (pijl ZO)"""
-    ARROW_S: Image
-    """Afbeelding van pijltje richting het zuiden. (pijl z)"""
-    ARROW_SW: Image
-    """Afbeelding van pijl richting het zuid-westen. (pijl ZW)"""
-    ARROW_W: Image
-    """Afbeelding van pijl richting het westen. (pijl w)"""
-    ARROW_NW: Image
-    """Afbeelding van pijl richting het noord-westen. (pijl NW)"""
-    TRIANGLE: Image
-    """Afbeelding van een driehoek die naar boven wijst. (driehoek)"""
-    TRIANGLE_LEFT: Image
-    """Afbeelding van een driehoek in de linker hoek. (Driehoek links)"""
-    CHESSBOARD: Image
-    """Alternatieve LED's verlichten in een schaakbord patroon. (schaakbord)"""
-    DIAMOND: Image
-    """Diamanten afbeelding. (diamant)"""
-    DIAMOND_SMALL: Image
-    """Kleine diamanten afbeelding. (diamant klein)"""
-    SQUARE: Image
-    """Vierkante afbeelding (vierkant)"""
-    SQUARE_SMALL: Image
-    """Kleine vierkante afbeelding. (vierkant klein)"""
-    RABBIT: Image
-    """Konijn afbeelding. (konijn)"""
-    COW: Image
-    """Koe afbeelding. (koe)"""
-    MUSIC_CROTCHET: Image
-    """Kwartnoot afbeelding. (muziek kwartnoot)"""
-    MUSIC_QUAVER: Image
-    """Kwartnoot afbeelding. (muziek kwartnoot)"""
-    MUSIC_QUAVERS: Image
-    """Koppel van kwartnoten afbeelding. (muziek kwartnoten)"""
-    PITCHFORK: Image
-    """Stemvork afbeelding. (stemvork)"""
-    XMAS: Image
-    """Kerstboom afbeelding. (kerstmis)"""
-    PACMAN: Image
-    """Pac-Man arcade karakterafbeelding. (Pacman)"""
-    TARGET: Image
-    """Doel afbeelding. (doel)"""
-    TSHIRT: Image
-    """T-shirt afbeelding."""
-    ROLLERSKATE: Image
-    """Rolschaats afbeelding. (rolschaatsen)"""
-    DUCK: Image
-    """Eend afbeelding. (eend)"""
-    HOUSE: Image
-    """Huis afbeelding. (huis)"""
-    TORTOISE: Image
-    """Schildpad afbeelding. (schildpad)"""
-    BUTTERFLY: Image
-    """Vlinder afbeelding. (vlinder)"""
-    STICKFIGURE: Image
-    """Stok figuur afbeelding. (stok figuur)"""
-    GHOST: Image
-    """Spook afbeelding. (spook)"""
-    SWORD: Image
-    """Zwaard afbeelding. (zwaard)"""
-    GIRAFFE: Image
-    """Giraffe afbeelding."""
-    SKULL: Image
-    """Schedel afbeelding. (doodshoofd)"""
-    UMBRELLA: Image
-    """Paraplu afbeelding. (paraplu)"""
-    SNAKE: Image
-    """Slang afbeelding. (slang)"""
-    SCISSORS: Image
-    """Schaar afbeelding. (schaar)"""
-    ALL_CLOCKS: List[Image]
-    """Een lijst met alle CLOCK_ afbeeldingen achter elkaar. (alle klokken)"""
-    ALL_ARROWS: List[Image]
-    """Een lijst met alle ARROW_ afbeeldingen in reeks. (alle pijlen)"""
+    """Heart image."""
 
+    HEART_SMALL: Image
+    """Small heart image."""
+
+    HAPPY: Image
+    """Happy face image."""
+
+    SMILE: Image
+    """Smiling mouth image."""
+
+    SAD: Image
+    """Sad face image."""
+
+    CONFUSED: Image
+    """Confused face image."""
+
+    ANGRY: Image
+    """Angry face image."""
+
+    ASLEEP: Image
+    """Sleeping face image."""
+
+    SURPRISED: Image
+    """Surprised face image."""
+
+    SILLY: Image
+    """Silly face image."""
+
+    FABULOUS: Image
+    """Sunglasses face image."""
+
+    MEH: Image
+    """Unimpressed face image."""
+
+    YES: Image
+    """Tick image."""
+
+    NO: Image
+    """Cross image."""
+
+    CLOCK12: Image
+    """Image with line pointing to 12 o'clock."""
+
+    CLOCK11: Image
+    """Image with line pointing to 11 o'clock."""
+
+    CLOCK10: Image
+    """Image with line pointing to 10 o'clock."""
+
+    CLOCK9: Image
+    """Image with line pointing to 9 o'clock."""
+
+    CLOCK8: Image
+    """Image with line pointing to 8 o'clock."""
+
+    CLOCK7: Image
+    """Image with line pointing to 7 o'clock."""
+
+    CLOCK6: Image
+    """Image with line pointing to 6 o'clock."""
+
+    CLOCK5: Image
+    """Image with line pointing to 5 o'clock."""
+
+    CLOCK4: Image
+    """Image with line pointing to 4 o'clock."""
+
+    CLOCK3: Image
+    """Image with line pointing to 3 o'clock."""
+
+    CLOCK2: Image
+    """Image with line pointing to 2 o'clock."""
+
+    CLOCK1: Image
+    """Image with line pointing to 1 o'clock."""
+
+    ARROW_N: Image
+    """Image of arrow pointing north."""
+
+    ARROW_NE: Image
+    """Image of arrow pointing north east."""
+
+    ARROW_E: Image
+    """Image of arrow pointing east."""
+
+    ARROW_SE: Image
+    """Image of arrow pointing south east."""
+
+    ARROW_S: Image
+    """Image of arrow pointing south."""
+
+    ARROW_SW: Image
+    """Image of arrow pointing south west."""
+
+    ARROW_W: Image
+    """Image of arrow pointing west."""
+
+    ARROW_NW: Image
+    """Image of arrow pointing north west."""
+
+    TRIANGLE: Image
+    """Image of a triangle pointing up."""
+
+    TRIANGLE_LEFT: Image
+    """Image of a triangle in the left corner."""
+
+    CHESSBOARD: Image
+    """Alternate LEDs lit in a chessboard pattern."""
+
+    DIAMOND: Image
+    """Diamond image."""
+
+    DIAMOND_SMALL: Image
+    """Small diamond image."""
+
+    SQUARE: Image
+    """Square image."""
+
+    SQUARE_SMALL: Image
+    """Small square image."""
+
+    RABBIT: Image
+    """Rabbit image."""
+
+    COW: Image
+    """Cow image."""
+
+    MUSIC_CROTCHET: Image
+    """Crotchet note image."""
+
+    MUSIC_QUAVER: Image
+    """Quaver note image."""
+
+    MUSIC_QUAVERS: Image
+    """Pair of quavers note image."""
+
+    PITCHFORK: Image
+    """Pitchfork image."""
+
+    XMAS: Image
+    """Christmas tree image."""
+
+    PACMAN: Image
+    """Pac-Man arcade character image."""
+
+    TARGET: Image
+    """Target image."""
+
+    TSHIRT: Image
+    """T-shirt image."""
+
+    ROLLERSKATE: Image
+    """Rollerskate image."""
+
+    DUCK: Image
+    """Duck image."""
+
+    HOUSE: Image
+    """House image."""
+
+    TORTOISE: Image
+    """Tortoise image."""
+
+    BUTTERFLY: Image
+    """Butterfly image."""
+
+    STICKFIGURE: Image
+    """Stick figure image."""
+
+    GHOST: Image
+    """Ghost image."""
+
+    SWORD: Image
+    """Sword image."""
+
+    GIRAFFE: Image
+    """Giraffe image."""
+
+    SKULL: Image
+    """Skull image."""
+
+    UMBRELLA: Image
+    """Umbrella image."""
+
+    SNAKE: Image
+    """Snake image."""
+
+    SCISSORS: Image
+    """Scissors image."""
+
+    ALL_CLOCKS: List[Image]
+    """A list containing all the CLOCK_ images in sequence."""
+
+    ALL_ARROWS: List[Image]
+    """A list containing all the ARROW_ images in sequence."""
     @overload
     def __init__(self, string: str) -> None:
-        """Maak een afbeelding van een tekenreeks die beschrijft welke LED's zijn. (initialiseren)
+        """Create an image from a string describing which LEDs are lit.
 
-``string`` has to consist of digits 0-9 arranged into lines,
-describing the image, for example::
+        ``string`` has to consist of digits 0-9 arranged into lines,
+        describing the image, for example::
 
-    image = Image("90009:"
-                  "09090:"
-                  "00900:"
-                  "09090:"
-                  "90009")
+            image = Image("90009:"
+                          "09090:"
+                          "00900:"
+                          "09090:"
+                          "90009")
 
-will create a 5×5 image of an X. The end of a line is indicated by a
-colon. It's also possible to use newlines (\\n) insead of the colons.
+        will create a 5×5 image of an X. The end of a line is indicated by a
+        colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: (tekenreeks) De tekenreeks die de afbeelding beschrijft."""
+        :param string: The string describing the image.
+        """
         ...
-
     @overload
-    def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """Maak een lege afbeelding met ``width`` kolommen en ``height`` rijen. (initialiseren)
+    def __init__(
+        self, width: int = 5, height: int = 5, buffer: ReadableBuffer = None
+    ) -> None:
+        """Create an empty image with ``width`` columns and ``height`` rows.
 
-:param width: (breedte) Optionele breedte van de afbeelding
-:param height: (hoogte) Optionele hoogte van de afbeelding
-:param buffer: Optionele array of bytes van ``width``×``height`` integers in bereik 0-9 om de afbeelding te initialiseren
+        :param width: Optional width of the image
+        :param height: Optional height of the image
+        :param buffer: Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
 
-Examples::
+        Examples::
 
-    Image(2, 2, b'\x08\x08\x08\x08')
-    Image(2, 2, bytearray([9,9,9,9]))
+            Image(2, 2, b'\x08\x08\x08\x08')
+            Image(2, 2, bytearray([9,9,9,9]))
 
-These create 2 x 2 pixel images at full brightness."""
+        These create 2 x 2 pixel images at full brightness.
+        """
         ...
-
     def width(self) -> int:
-        """Haal het aantal kolommen op. (breedte)
+        """Get the number of columns.
 
-:return: The number of columns in the image"""
+        :return: The number of columns in the image
+        """
         ...
-
     def height(self) -> int:
-        """Krijg het aantal rijen. (hoogte)
+        """Get the number of rows.
 
-:return: The number of rows in the image"""
+        :return: The number of rows in the image
+        """
         ...
-
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """Stel de helderheid van een pixel in. (pixel instellen)
+        """Set the brightness of a pixel.
 
-Example: ``my_image.set_pixel(0, 0, 9)``
+        Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: (х) Het kolom nummer
-:param y: Het rij nummer
-:param value: (waarde) De helderheid als een geheel getal tussen 0 (donker) en 9 (helder)
+        :param x: The column number
+        :param y: The row number
+        :param value: The brightness as an integer between 0 (dark) and 9 (bright)
 
-This method will raise an exception when called on any of the built-in
-read-only images, like ``Image.HEART``."""
+        This method will raise an exception when called on any of the built-in
+        read-only images, like ``Image.HEART``.
+        """
         ...
-
     def get_pixel(self, x: int, y: int) -> int:
-        """Krijg de helderheid van een pixel. (verkrijg pixel)
+        """Get the brightness of a pixel.
 
-Example: ``my_image.get_pixel(0, 0)``
+        Example: ``my_image.get_pixel(0, 0)``
 
-:param x: (х) Het kolom nummer
-:param y: Het rij nummer
-:return: The brightness as an integer between 0 and 9."""
+        :param x: The column number
+        :param y: The row number
+        :return: The brightness as an integer between 0 and 9.
+        """
         ...
-
     def shift_left(self, n: int) -> Image:
-        """Maak een nieuwe afbeelding door de afbeelding naar links te verschuiven. (verschuiving naar links)
+        """Create a new image by shifting the picture left.
 
-Example: ``Image.HEART_SMALL.shift_left(1)``
+        Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: Het aantal te verschuiven kolommen
-:return: The shifted image"""
+        :param n: The number of columns to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_right(self, n: int) -> Image:
-        """Maak een nieuwe afbeelding door de afbeelding rechts te verschuiven. (verschuif Rechts)
+        """Create a new image by shifting the picture right.
 
-Example: ``Image.HEART_SMALL.shift_right(1)``
+        Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: Het aantal te verschuiven kolommen
-:return: The shifted image"""
+        :param n: The number of columns to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_up(self, n: int) -> Image:
-        """Maak een nieuwe afbeelding door de afbeelding omhoog te schuiven. (verschuiving omhoog)
+        """Create a new image by shifting the picture up.
 
-Example: ``Image.HEART_SMALL.shift_up(1)``
+        Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: Het aantal rijen om te verschuiven met
-:return: The shifted image"""
+        :param n: The number of rows to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_down(self, n: int) -> Image:
-        """Maak een nieuwe afbeelding door de afbeelding omlaag te verschuiven. (verschuif omlaag)
+        """Create a new image by shifting the picture down.
 
-Example: ``Image.HEART_SMALL.shift_down(1)``
+        Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: Het aantal rijen om te verschuiven met
-:return: The shifted image"""
+        :param n: The number of rows to shift by
+        :return: The shifted image
+        """
         ...
-
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Maak een nieuwe afbeelding door de afbeelding bij te snijden. (bij snijden)
+        """Create a new image by cropping the picture.
 
-Example: ``Image.HEART.crop(1, 1, 3, 3)``
+        Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: (х) De kolom verschuiving
-:param y: De rij verschuiving
-:param w: De bij snij breedte
-:param h: (uur) Hoogte bijsnijden
-:return: The new image"""
+        :param x: The crop offset column
+        :param y: The crop offset row
+        :param w: The crop width
+        :param h: The crop height
+        :return: The new image
+        """
         ...
-
     def copy(self) -> Image:
-        """Maak een exacte kopie van de afbeelding. (kopiëer)
+        """Create an exact copy of the image.
 
-Example: ``Image.HEART.copy()``
+        Example: ``Image.HEART.copy()``
 
-:return: The new image"""
+        :return: The new image
+        """
         ...
-
     def invert(self) -> Image:
-        """Maak een nieuwe afbeelding door de helderheid van de pixels in de
-bronafbeelding om te draaien. (omkeren)
+        """Create a new image by inverting the brightness of the pixels in the
+        source image.
 
-Example: ``Image.SMALL_HEART.invert()``
+        Example: ``Image.SMALL_HEART.invert()``
 
-:return: The new image."""
+        :return: The new image.
+        """
         ...
-
     def fill(self, value: int) -> None:
-        """Stel de helderheid van alle pixels in de afbeelding in. (opvullen)
+        """Set the brightness of all the pixels in the image.
 
-Example: ``my_image.fill(5)``
+        Example: ``my_image.fill(5)``
 
-:param value: (waarde) De nieuwe helderheid als een getal tussen 0 (donker) en 9 (helder).
+        :param value: The new brightness as a number between 0 (dark) and 9 (bright).
 
-This method will raise an exception when called on any of the built-in
-read-only images, like ``Image.HEART``."""
+        This method will raise an exception when called on any of the built-in
+        read-only images, like ``Image.HEART``.
+        """
         ...
+    def blit(
+        self,
+        src: Image,
+        x: int,
+        y: int,
+        w: int,
+        h: int,
+        xdest: int = 0,
+        ydest: int = 0,
+    ) -> None:
+        """Copy an area from another image into this image.
 
-    def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """Kopieer een gebied van een andere afbeelding naar deze afbeelding.
+        Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
+        :param src: The source image
+        :param x: The starting column offset in the source image
+        :param y: The starting row offset in the source image
+        :param w: The number of columns to copy
+        :param h: The number of rows to copy
+        :param xdest: The column offset to modify in this image
+        :param ydest: The row offset to modify in this image
 
-:param src: De bron afbeelding
-:param x: (х) De begin kolom offset in de bron afbeelding
-:param y: De beginkolom offset in de bronafbeelding
-:param w: Het aantal te kopiëren kolommen
-:param h: (uur) Het aantal te kopiëren rijen
-:param xdest: De kolomverschuiving om aan te passen in deze afbeelding
-:param ydest: De kolomverschuiving om aan te passen in deze afbeelding
+        Pixels outside the source image are treated as having a brightness of 0.
 
-Pixels outside the source image are treated as having a brightness of 0.
+        ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
+        and ``crop()`` can are all implemented by using ``blit()``.
 
-``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
-and ``crop()`` can are all implemented by using ``blit()``.
+        For example, img.crop(x, y, w, h) can be implemented as::
 
-For example, img.crop(x, y, w, h) can be implemented as::
-
-    def crop(self, x, y, w, h):
-        res = Image(w, h)
-        res.blit(self, x, y, w, h)
-        return res"""
+            def crop(self, x, y, w, h):
+                res = Image(w, h)
+                res.blit(self, x, y, w, h)
+                return res
+        """
         ...
-
     def __repr__(self) -> str:
-        """Krijg een compacte tekenreeks die de afbeelding vertegenwoordigt."""
+        """Get a compact string representation of the image."""
         ...
-
     def __str__(self) -> str:
-        """Krijg een leesbare tekenreeks die de afbeelding vertegenwoordigt."""
+        """Get a readable string representation of the image."""
         ...
-
     def __add__(self, other: Image) -> Image:
-        """Maak een nieuwe afbeelding door de helderheidswaarden van de twee
-afbeeldingen voor elke pixel toe te voegen. (toevoegen)
+        """Create a new image by adding the brightness values from the two
+        images for each pixel.
 
-Example: ``Image.HEART + Image.HAPPY``
+        Example: ``Image.HEART + Image.HAPPY``
 
-:param other: (overige) De afbeelding om toe te voegen."""
+        :param other: The image to add.
+        """
         ...
-
     def __sub__(self, other: Image) -> Image:
-        """Maak een nieuw beeld door de helderheidswaarden van de andere afbeelding van deze afbeelding af te trekken.
+        """Create a new image by subtracting the brightness values of the
+        other image from this image.
 
-Example: ``Image.HEART - Image.HEART_SMALL``
+        Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: (overige) De afbeelding om af te trekken."""
+        :param other: The image to subtract.
+        """
         ...
-
     def __mul__(self, n: float) -> Image:
-        """Maak een nieuwe afbeelding door de helderheid van elke pixel te vermenigvuldigen met
-``n``.
+        """Create a new image by multiplying the brightness of each pixel by
+        ``n``.
 
-Example: ``Image.HEART * 0.5``
+        Example: ``Image.HEART * 0.5``
 
-:param n: De waarde om te vermenigvuldigen."""
+        :param n: The value to multiply by.
+        """
         ...
-
     def __truediv__(self, n: float) -> Image:
-        """Maak een nieuwe afbeelding door de helderheid van elke pixel te delen door
-``n``.
+        """Create a new image by dividing the brightness of each pixel by
+        ``n``.
 
-Example: ``Image.HEART / 2``
+        Example: ``Image.HEART / 2``
 
-:param n: De waarde om mee te delen."""
+        :param n: The value to divide by.
+        """
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Vertegenwoordigt de transitie van geluidsgebeurtenissen, van ``quiet`` tot ``loud`` zoals klappen of roepen. (luid)"""
+    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
+
     QUIET: SoundEvent
-    """Vertegenwoordigt de transitie van geluidsgebeurtenissen, van ``loud`` tot ``quiet`` zoals spreken of achtergrondmuziek. (stil)"""
+    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
 
 class Sound:
-    """De ingebouwde geluiden kunnen worden aangeroepen met ``audio.play(Sound.NAME)``. (geluid)"""
+    """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
+
     GIGGLE: Sound
-    """Giechelgeluidjes (giechelen)"""
+    """Giggling sound."""
+
     HAPPY: Sound
-    """Blij geluid. (blij)"""
+    """Happy sound."""
+
     HELLO: Sound
-    """Groet geluid. (hallo)"""
+    """Greeting sound."""
+
     MYSTERIOUS: Sound
-    """Mysterieus geluid. (mysterieus)"""
+    """Mysterious sound."""
+
     SAD: Sound
-    """Droevig geluid. (verdrietig)"""
+    """Sad sound."""
+
     SLIDE: Sound
-    """Glij geluid. (Veeg)"""
+    """Sliding sound."""
+
     SOARING: Sound
-    """Zweef geluid. (stijgend)"""
+    """Soaring sound."""
+
     SPRING: Sound
-    """Spring geluid. (veer)"""
+    """Spring sound."""
+
     TWINKLE: Sound
-    """Twinkel geluid. (twinkeling)"""
+    """Twinkling sound."""
+
     YAWN: Sound
-    """Geeuwgeluiden (geeuw)"""
+    """Yawning sound."""

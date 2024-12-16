@@ -1,124 +1,160 @@
-"""Geluid afspelen met behulp van de micro:bit (importeer ``audio`` voor V1 compatibiliteit)."""
+"""Play sounds using the micro:bit (import ``audio`` for V1 compatibility).
+"""
+
 from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
-def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
-    """Een ingebouwde geluid, geluids effect of aangepaste audio frames afspelen. (afspelen)
+def play(
+    source: Union[Iterable[AudioFrame], Sound, SoundEffect],
+    wait: bool = True,
+    pin: MicroBitDigitalPin = pin0,
+    return_pin: Union[MicroBitDigitalPin, None] = None,
+) -> None:
+    """Play a built-in sound, sound effect or custom audio frames.
 
-Example: ``audio.play(Sound.GIGGLE)``
+    Example: ``audio.play(Sound.GIGGLE)``
 
-:param source: (bron) Een ingebouwde ``Sound`` zoals ``Sound.GIGGLE``, een ``SoundEffect`` of voorbeeldgegevens als een iteratie van ``AudioFrame`` objecten.
-:param wait: (wacht) Als ``wait`` ``True``is, wordt deze functie geblokkeerd totdat het geluid is voltooid.
-:param pin: Een optioneel argument om de uitvoerpin op te geven kan worden gebruikt om de standaard van ``pin0``te overschrijven. Als we geen geluid willen afspelen, kunnen we ``pin=None`` gebruiken.
-:param return_pin: (retourneer pin) Specificeert een differentiële rand connector pin om verbinding te maken met een externe luidspreker in plaats van de grond. Dit wordt genegeerd voor de **V2** herziening."""
+    :param source: A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects.
+    :param wait: If ``wait`` is ``True``, this function will block until the sound is complete.
+    :param pin: An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``.
+    :param return_pin: Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision.
+    """
 
 def is_playing() -> bool:
-    """Controleer of een geluid wordt gespeeld. (speelt af)
+    """Check whether a sound is playing.
 
-Example: ``audio.is_playing()``
+    Example: ``audio.is_playing()``
 
-:return: ``True`` if audio is playing, otherwise ``False``."""
+    :return: ``True`` if audio is playing, otherwise ``False``."""
     ...
 
 def stop() -> None:
-    """Stop het afspelen van de audio.
+    """Stop all audio playback.
 
-Example: ``audio.stop()``"""
+    Example: ``audio.stop()``
+    """
     ...
 
 class SoundEffect:
-    """Een geluidseffect, bestaande uit een set parameters geconfigureerd via de constructor of attributen."""
+    """A sound effect, composed by a set of parameters configured via the constructor or attributes."""
+
     WAVEFORM_SINE: ClassVar[int]
-    """De sinusgolf optie gebruikt voor de ``waveform`` parameter. (golfvorm sinus)"""
+    """Sine wave option used for the ``waveform`` parameter."""
+
     WAVEFORM_SAWTOOTH: ClassVar[int]
-    """Zaag golf optie gebruikt voor de ``waveform`` parameter. (golfvorm zaagtand)"""
+    """Sawtooth wave option used for the ``waveform`` parameter."""
+
     WAVEFORM_TRIANGLE: ClassVar[int]
-    """De drie hoeks golf optie gebruikt voor de ``waveform`` parameter. (golfvorm driehoek)"""
+    """Triangle wave option used for the ``waveform`` parameter."""
+
     WAVEFORM_SQUARE: ClassVar[int]
-    """Blok golf optie die wordt gebruikt voor de parameter ``waveform``. (golfvorm vierkant)"""
+    """Square wave option used for the ``waveform`` parameter."""
+
     WAVEFORM_NOISE: ClassVar[int]
-    """Noise optie gebruikt voor de ``waveform`` parameter. (golfvormig geluid)"""
+    """Noise option used for the ``waveform`` parameter."""
+
     SHAPE_LINEAR: ClassVar[int]
-    """Lineaire interpolatie optie die wordt gebruikt voor de ``shape`` parameter. (vorm lineair)"""
+    """Linear interpolation option used for the ``shape`` parameter."""
+
     SHAPE_CURVE: ClassVar[int]
-    """Curve interpolatie optie gebruikt voor de ``shape`` parameter. (vorm curve)"""
+    """Curve interpolation option used for the ``shape`` parameter."""
+
     SHAPE_LOG: ClassVar[int]
-    """Logaritmische interpolatie optie gebruikt voor de ``shape`` parameter. (vorm log)"""
+    """Logarithmic interpolation option used for the ``shape`` parameter."""
+
     FX_NONE: ClassVar[int]
-    """Geen effectoptie gebruikt voor de  ``fx`` parameter. (geen fx)"""
+    """No effect option used for the ``fx`` parameter."""
+
     FX_TREMOLO: ClassVar[int]
-    """Tremolo effect optie die wordt gebruikt voor de ``fx`` parameter."""
+    """Tremolo effect option used for the ``fx`` parameter."""
+
     FX_VIBRATO: ClassVar[int]
-    """Vibrato effect optie die wordt gebruikt voor de ``fx`` parameter."""
+    """Vibrato effect option used for the ``fx`` parameter."""
+
     FX_WARBLE: ClassVar[int]
-    """Warble effect optie die wordt gebruikt voor de ``fx`` parameter ."""
+    """Warble effect option used for the ``fx`` parameter."""
+
     freq_start: int
-    """Start frequentie in Hertz (Hz), een getal tussen ``0`` en ``9999`` (frequentie start)"""
+    """Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
+
     freq_end: int
-    """Eind frequentie in Hertz (Hz), een getal tussen ``0`` en ``9999`` (frequentie einde)"""
+    """End frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
+
     duration: int
-    """Duur van het geluid in milliseconden, een getal tussen ``0`` en ``9999`` (Duur)"""
+    """Duration of the sound in milliseconds, a number between ``0`` and ``9999``"""
+
     vol_start: int
-    """Start volume waarde, een getal tussen ``0`` en ``255``"""
+    """Start volume value, a number between ``0`` and ``255``"""
+
     vol_end: int
-    """Eind volume waarde, een getal tussen ``0`` en ``255`` (vol einde)"""
+    """End volume value, a number between ``0`` and ``255``"""
+
     waveform: int
-    """Type van golfvorm, één van deze waarden: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (willekeurig gegenereerde lawaai) (golfvorm)"""
+    """Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"""
+
     fx: int
-    """Effect om aan het geluid toe te voegen, een van de volgende waarden: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``of ``FX_NONE``"""
+    """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"""
+
     shape: int
-    """Het type van de interpolatie curve tussen de begin- en eind frequenties, verschillende golfvormen hebben verschillende snelheid bij het wijzigen van de frequentie. Een van de volgende waarden: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG`` (vorm)"""
+    """The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"""
 
-    def __init__(self, freq_start: int=500, freq_end: int=2500, duration: int=500, vol_start: int=255, vol_end: int=0, waveform: int=WAVEFORM_SQUARE, fx: int=FX_NONE, shape: int=SHAPE_LOG):
-        """Maak een nieuw geluidseffect. (initialiseren)
+    def __init__(
+        self,
+        freq_start: int = 500,
+        freq_end: int = 2500,
+        duration: int = 500,
+        vol_start: int = 255,
+        vol_end: int = 0,
+        waveform: int = WAVEFORM_SQUARE,
+        fx: int = FX_NONE,
+        shape: int = SHAPE_LOG,
+    ):
+        """Create a new sound effect.
 
-Example: ``my_effect = SoundEffect(duration=1000)``
+        Example: ``my_effect = SoundEffect(duration=1000)``
 
-All the parameters are optional, with default values as shown above, and
-they can all be modified via attributes of the same name. For example, we
-can first create an effect ``my_effect = SoundEffect(duration=1000)``,
-and then change its attributes ``my_effect.duration = 500``.
+        All the parameters are optional, with default values as shown above, and
+        they can all be modified via attributes of the same name. For example, we
+        can first create an effect ``my_effect = SoundEffect(duration=1000)``,
+        and then change its attributes ``my_effect.duration = 500``.
 
-:param freq_start: (frequentie start) Start frequentie in Hertz (Hz), een getal tussen ``0`` en ``9999``.
-:param freq_end: (frequentie einde) Eind frequentie in Hertz (Hz), een getal tussen ``0`` en ``9999``.
-:param duration: (duur) Duur van het geluid in milliseconden, een getal tussen ``0`` en ``9999``.
-:param vol_start: Startvolumewaarde, een getal tussen ``0`` en ``255``.
-:param vol_end: (vol einde) Eindvolumewaarde, een getal tussen ``0`` en ``255``.
-:param waveform: (golfvorm) Type golfvorm, één van deze waarden: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (willekeurig gegenereerde geluid).
-:param fx: Effect om het geluid toe te voegen, een van de volgende waarden: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``of ``FX_NONE``.
-:param shape: (vorm) Het type van de interpolatie curve tussen de begin- en eind frequenties, verschillende golfvormen hebben verschillende snelheid bij het wijzigen van de frequentie. Een van de volgende waarden: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."""
-
+        :param freq_start: Start frequency in Hertz (Hz), a number between ``0`` and ``9999``.
+        :param freq_end: End frequency in Hertz (Hz), a number between ``0`` and ``9999``.
+        :param duration: Duration of the sound in milliseconds, a number between ``0`` and ``9999``.
+        :param vol_start: Start volume value, a number between ``0`` and ``255``.
+        :param vol_end: End volume value, a number between ``0`` and ``255``.
+        :param waveform: Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise).
+        :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``.
+        :param shape: The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``.
+        """
     def copy(self) -> SoundEffect:
-        """Maak een kopie van dit ``SoundEffect``. (kopiëer)
+        """Create a copy of this ``SoundEffect``.
 
-Example: ``sound_2 = sound_1.copy()``
+        Example: ``sound_2 = sound_1.copy()``
 
-:return: A copy of the SoundEffect."""
+        :return: A copy of the SoundEffect.
+        """
 
 class AudioFrame:
-    """Een ``AudioFrame`` object is een lijst van 32 samples elk een niet-ondertekende byte
-(geheel getal tussen 0 en 255).
+    """An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte
+    (whole number between 0 and 255).
 
-It takes just over 4 ms to play a single frame.
+    It takes just over 4 ms to play a single frame.
 
-Example::
+    Example::
 
-    frame = AudioFrame()
-    for i in range(len(frame)):
-        frame[i] = 252 - i * 8"""
+        frame = AudioFrame()
+        for i in range(len(frame)):
+            frame[i] = 252 - i * 8
+    """
 
     def copyfrom(self, other: AudioFrame) -> None:
-        """Overschrijf de gegevens in deze ``AudioFrame`` met de gegevens van een andere ``AudioFrame`` instantie. (kopieer van)
+        """Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance.
 
-Example: ``my_frame.copyfrom(source_frame)``
+        Example: ``my_frame.copyfrom(source_frame)``
 
-:param other: (overige) ``AudioFrame`` exemplaar van waar de gegevens worden gekopieerd."""
-
-    def __len__(self) -> int:
-        ...
-
-    def __setitem__(self, key: int, value: int) -> None:
-        ...
-
-    def __getitem__(self, key: int) -> int:
-        ...
+        :param other: ``AudioFrame`` instance from which to copy the data.
+        """
+    def __len__(self) -> int: ...
+    def __setitem__(self, key: int, value: int) -> None: ...
+    def __getitem__(self, key: int) -> int: ...

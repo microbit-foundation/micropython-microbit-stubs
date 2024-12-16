@@ -1,63 +1,73 @@
-"""Auf das Dateisystem zugreifen."""
+"""Access the file system.
+"""
+
 from typing import Tuple
 from typing import List
 
 def listdir() -> List[str]:
-    """Dateien auflisten.
+    """List files.
 
-Example: ``os.listdir()``
+    Example: ``os.listdir()``
 
-:return: A list of the names of all the files contained within the local
-persistent on-device file system."""
+    :return: A list of the names of all the files contained within the local
+    persistent on-device file system.
+    """
     ...
 
 def remove(filename: str) -> None:
-    """Entferne (lösche) eine Datei. (Entfernen)
+    """Remove (delete) a file.
 
-Example: ``os.remove('data.txt')``
+    Example: ``os.remove('data.txt')``
 
-:param filename: (Dateiname) Die zu löschende Datei.
+    :param filename: The file to delete.
 
-If the file does not exist an ``OSError`` exception will occur."""
+    If the file does not exist an ``OSError`` exception will occur.
+    """
     ...
 
 def size(filename: str) -> int:
-    """Gibt die Größe einer Datei zurück
+    """Returns the size of a file.
 
-Example: ``os.size('data.txt')``
+    Example: ``os.size('data.txt')``
 
-:param filename: (Dateiname) Die Datei
-:return: The size in bytes.
+    :param filename: The file
+    :return: The size in bytes.
 
-If the file does not exist an ``OSError`` exception will occur."""
+    If the file does not exist an ``OSError`` exception will occur.
+    """
 
 class uname_result(Tuple[str, str, str, str, str]):
-    """Ergebnis von  ``os.uname()``"""
+    """Result of ``os.uname()``"""
     sysname: str
-    """Name des Betriebssystems."""
+    """Operating system name."""
+
     nodename: str
-    """Name des Rechners im Netz (durch die Implementierung definiert). (Knotenname)"""
+    """Name of machine on network (implementation-defined)."""
+
     release: str
-    """Betriebssystemveröffentlichung. (Veröffentlichung)"""
+    """Operating system release."""
+    
     version: str
-    """Betriebssystemversion. (Version)"""
+    """Operating system version."""
+    
     machine: str
-    """Hardware-Kennung. (maschine)"""
+    """Hardware identifier."""
 
 def uname() -> uname_result:
-    """Gibt Informationen zum aktuellen Betriebssystem zurück.
+    """Returns information identifying the current operating system.
 
-Example: ``os.uname()``
+    Example: ``os.uname()``
 
-The return value is an object with five attributes:
+    The return value is an object with five attributes:
 
-- ``sysname`` - operating system name
-- ``nodename`` - name of machine on network (implementation-defined)
-- ``release`` - operating system release
-- ``version`` - operating system version
-- ``machine`` - hardware identifier
+    - ``sysname`` - operating system name
+    - ``nodename`` - name of machine on network (implementation-defined)
+    - ``release`` - operating system release
+    - ``version`` - operating system version
+    - ``machine`` - hardware identifier
 
-There is no underlying operating system in MicroPython. As a result the
-information returned by the ``uname`` function is mostly useful for
-versioning details."""
+    There is no underlying operating system in MicroPython. As a result the
+    information returned by the ``uname`` function is mostly useful for
+    versioning details.
+    """
     ...

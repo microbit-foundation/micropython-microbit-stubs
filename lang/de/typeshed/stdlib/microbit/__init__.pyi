@@ -1,6 +1,11 @@
-"""Pins, Bilder, Töne, Temperatur und Lautstärke."""
+"""Pins, images, sounds, temperature and volume.
+"""
+
 from typing import Any, Callable, List, Optional, Tuple, Union, overload
+
 from _typeshed import ReadableBuffer
+
+# V2 only
 from . import accelerometer as accelerometer
 from . import audio as audio
 from . import compass as compass
@@ -11,696 +16,831 @@ from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
 
-def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Plant die Ausführung einer Funktion in dem durch die Zeitargumente festgelegten Intervall **nur V2**.
+def run_every(
+    callback: Optional[Callable[[], None]] = None,
+    days: int = 0,
+    h: int = 0,
+    min: int = 0,
+    s: int = 0,
+    ms: int = 0,
+) -> Callable[[Callable[[], None]], Callable[[], None]]:
+    """Schedule to run a function at the interval specified by the time arguments **V2 only**.
 
-Example: ``run_every(my_logging, min=5)``
+    Example: ``run_every(my_logging, min=5)``
 
-``run_every`` can be used in two ways:
+    ``run_every`` can be used in two ways:
 
-As a Decorator - placed on top of the function to schedule. For example::
+    As a Decorator - placed on top of the function to schedule. For example::
 
-    @run_every(h=1, min=20, s=30, ms=50)
-    def my_function():
-        # Do something here
+        @run_every(h=1, min=20, s=30, ms=50)
+        def my_function():
+            # Do something here
 
-As a Function - passing the callback as a positional argument. For example::
+    As a Function - passing the callback as a positional argument. For example::
 
-    def my_function():
-        # Do something here
-    run_every(my_function, s=30)
+        def my_function():
+            # Do something here
+        run_every(my_function, s=30)
 
-Each argument corresponds to a different time unit and they are additive.
-So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
+    Each argument corresponds to a different time unit and they are additive.
+    So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 
-When an exception is thrown inside the callback function it deschedules the
-function. To avoid this you can catch exceptions with ``try/except``.
+    When an exception is thrown inside the callback function it deschedules the
+    function. To avoid this you can catch exceptions with ``try/except``.
 
-:param callback: Funktion, die in dem angegebenen Intervall aufgerufen wird. Bei Verwendung als Dekorator weglassen.
-:param days: Legt den Tag für die Planung fest.
-:param h: Legt die Uhrzeit für die Planung fest.
-:param min: Legt die Minute für die Planung fest.
-:param s: Legt die Sekunde für die Planung fest.
-:param ms: Legt die Millisekunde für die Planung fest."""
+    :param callback: Function to call at the provided interval. Omit when using as a decorator.
+    :param days: Sets the day mark for the scheduling.
+    :param h: Sets the hour mark for the scheduling.
+    :param min: Sets the minute mark for the scheduling.
+    :param s: Sets the second mark for the scheduling.
+    :param ms: Sets the millisecond mark for the scheduling.
+    """
 
 def panic(n: int) -> None:
-    """In einen Panik-Modus wechseln.
+    """Enter a panic mode.
 
-Example: ``panic(127)``
+    Example: ``panic(127)``
 
-:param n: Eine beliebige ganze Zahl <= 255, um einen Status anzugeben.
+    :param n: An arbitrary integer <= 255 to indicate a status.
 
-Requires restart."""
+    Requires restart.
+    """
 
 def reset() -> None:
-    """Board neu starten."""
+    """Restart the board."""
+
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
-    """Konvertiert einen Wert aus einem Bereich in einen Ganzzahlenbereich.
+    """Converts a value from a range to an integer range.
 
-Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
+    Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
-For example, to convert an accelerometer X value to a speaker volume.
+    For example, to convert an accelerometer X value to a speaker volume.
 
-If one of the numbers in the ``to`` parameter is a floating point
-(i.e a decimal number like ``10.0``), this function will return a
-floating point number.
+    If one of the numbers in the ``to`` parameter is a floating point
+    (i.e a decimal number like ``10.0``), this function will return a
+    floating point number.
 
-    temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
+        temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-:param value: (wert) Eine umzurechnende Zahl.
-:param from_: Ein Tupel, das den Bereich definiert, aus dem konvertiert werden soll.
-:param to: Ein Tupel, das den Bereich definiert, in den konvertiert werden soll.
-:return: The ``value`` converted to the ``to`` range."""
+    :param value: A number to convert.
+    :param from_: A tuple to define the range to convert from.
+    :param to: A tuple to define the range to convert to.
+    :return: The ``value`` converted to the ``to`` range.
+    """
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Konvertiert einen Wert von einem Bereich in einen Gleitkommabereich.
+    """Converts a value from a range to a floating point range.
 
-Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
+    Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
-For example, to convert temperature from a Celsius scale to Fahrenheit.
+    For example, to convert temperature from a Celsius scale to Fahrenheit.
 
-If one of the numbers in the ``to`` parameter is a floating point
-(i.e a decimal number like ``10.0``), this function will return a
-floating point number.
-If they are both integers (i.e ``10``), it will return an integer::
+    If one of the numbers in the ``to`` parameter is a floating point
+    (i.e a decimal number like ``10.0``), this function will return a
+    floating point number.
+    If they are both integers (i.e ``10``), it will return an integer::
 
-    returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
+        returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-:param value: Eine umzurechnende Zahl.
-:param from_: Ein Tupel, das den Bereich definiert, aus dem konvertiert werden soll.
-:param to: Ein Tupel, das den Bereich definiert, in den konvertiert werden soll.
-:return: The ``value`` converted to the ``to`` range."""
+    :param value: A number to convert.
+    :param from_: A tuple to define the range to convert from.
+    :param to: A tuple to define the range to convert to.
+    :return: The ``value`` converted to the ``to`` range.
+    """
 
 def sleep(n: float) -> None:
-    """Warte auf ``n`` Millisekunden.
+    """Wait for ``n`` milliseconds.
 
-Example: ``sleep(1000)``
+    Example: ``sleep(1000)``
 
-:param n: Die Anzahl der zu wartenden Millisekunden
+    :param n: The number of milliseconds to wait
 
-One second is 1000 milliseconds, so::
+    One second is 1000 milliseconds, so::
 
-    microbit.sleep(1000)
+        microbit.sleep(1000)
 
-will pause the execution for one second."""
+    will pause the execution for one second.
+    """
 
 def running_time() -> int:
-    """Ermittelt die Laufzeit des Boards.
+    """Get the running time of the board.
 
-:return: The number of milliseconds since the board was switched on or restarted."""
+    :return: The number of milliseconds since the board was switched on or restarted.
+    """
 
 def temperature() -> int:
-    """Ermittelt die Temperatur des micro:bit in Grad Celcius."""
+    """Get the temperature of the micro:bit in degrees Celsius."""
 
 def set_volume(v: int) -> None:
-    """Legt die Lautstärke fest.
+    """Sets the volume.
 
-Example: ``set_volume(127)``
+    Example: ``set_volume(127)``
 
-:param v: ein Wert zwischen 0 (niedrig) und 255 (hoch).
+    :param v: a value between 0 (low) and 255 (high).
 
-Out of range values will be clamped to 0 or 255.
+    Out of range values will be clamped to 0 or 255.
 
-**V2** only."""
+    **V2** only.
+    """
     ...
 
 class Button:
-    """Die Klasse für die Tasten ``button_a`` und ``button_b``."""
+    """The class for the buttons ``button_a`` and ``button_b``."""
 
     def is_pressed(self) -> bool:
-        """Überprüft, ob die Taste gedrückt ist.
+        """Check if the button is pressed.
 
-:return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
+        :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise.
+        """
         ...
-
     def was_pressed(self) -> bool:
-        """Überprüft, ob die Taste seit dem Start des Geräts oder dem letzten Aufruf dieser Methode gedrückt wurde.
+        """Check if the button was pressed since the device started or the last time this method was called.
 
-Calling this method will clear the press state so
-that the button must be pressed again before this method will return
-``True`` again.
+        Calling this method will clear the press state so
+        that the button must be pressed again before this method will return
+        ``True`` again.
 
-:return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise"""
+        :return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise
+        """
         ...
-
     def get_presses(self) -> int:
-        """Ermittelt die Gesamtzahl der Tastendrücke und setzt diese Summe auf Null zurück, bevor sie zurückgegeben wird.
+        """Get the running total of button presses, and resets this total
+        to zero before returning.
 
-:return: The number of presses since the device started or the last time this method was called"""
+        :return: The number of presses since the device started or the last time this method was called
+        """
         ...
+
 button_a: Button
-"""Das ``Button``-Objekt der linken Taste."""
+"""The left button ``Button`` object."""
+
 button_b: Button
-"""Das ``Button``-Objekt der rechten Taste."""
+"""The right button ``Button`` object."""
 
 class MicroBitDigitalPin:
-    """Ein digitaler Pin.
+    """A digital pin.
 
-Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
+    Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses.
+    """
+
     NO_PULL: int
     PULL_UP: int
     PULL_DOWN: int
-
     def read_digital(self) -> int:
-        """Ermittelt den digitalen Wert des Pins.
+        """Get the digital value of the pin.
 
-Example: ``value = pin0.read_digital()``
+        Example: ``value = pin0.read_digital()``
 
-:return: 1 if the pin is high, and 0 if it's low."""
+        :return: 1 if the pin is high, and 0 if it's low.
+        """
         ...
-
     def write_digital(self, value: int) -> None:
-        """Stellt den digitalen Wert des Pins ein. (digital schreiben)
+        """Set the digital value of the pin.
 
-Example: ``pin0.write_digital(1)``
+        Example: ``pin0.write_digital(1)``
 
-:param value: (wert) 1, um den Pin zu aktivieren, oder 0, um den Pin zu deaktivieren"""
+        :param value: 1 to set the pin high or 0 to set the pin low"""
         ...
-
     def set_pull(self, value: int) -> None:
-        """Setze den Status des Pull-Widerstands auf einen von drei möglichen Werten: ``PULL_UP``, ``PULL_DOWN`` oder ``NO_PULL``. (setze Pull-Widerstand)
+        """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
 
-Example: ``pin0.set_pull(pin0.PULL_UP)``
+        Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-:param value: (wert) Der Status des Pull-Widerstands vom relevanten Pin, z.B. ``pin0.PULL_UP``."""
+        :param value: The pull state from the relevant pin, e.g. ``pin0.PULL_UP``.
+        """
         ...
-
     def get_pull(self) -> int:
-        """Abrufen des Status des Pull-Widerstands eines Pins. (gib Pull-Widerstand)
+        """Get the pull state on a pin.
 
-Example: ``pin0.get_pull()``
+        Example: ``pin0.get_pull()``
 
-:return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
+        :return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
 
-These are set using the ``set_pull()`` method or automatically configured
-when a pin mode requires it."""
+        These are set using the ``set_pull()`` method or automatically configured
+        when a pin mode requires it.
+        """
         ...
-
     def get_mode(self) -> str:
-        """Gibt den Pin-Modus zurück. (gib Pin-Modus)
+        """Returns the pin mode.
 
-Example: ``pin0.get_mode()``
+        Example: ``pin0.get_mode()``
 
-When a pin is used for a specific function, like
-writing a digital value, or reading an analog value, the pin mode
-changes.
+        When a pin is used for a specific function, like
+        writing a digital value, or reading an analog value, the pin mode
+        changes.
 
-:return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``"""
+        :return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``
+        """
         ...
-
     def write_analog(self, value: int) -> None:
-        """Erzeugt ein PWM-Signal am Pin mit der Einschaltdauer proportional zu ``value``. (analog schreiben)
+        """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
 
-Example: ``pin0.write_analog(254)``
+        Example: ``pin0.write_analog(254)``
 
-:param value: (wert) Eine Ganzzahl oder eine Gleitpunktzahl zwischen 0 (0% Einschaltdauer) und 1023 (100% Einschaltdauer)."""
-
+        :param value: An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty).
+        """
     def set_analog_period(self, period: int) -> None:
-        """Setzt die Periodendauer des PWM-Signals, das ausgegeben wird, auf ``period`` in Millisekunden. (setze analoge Periodendauer)
+        """Set the period of the PWM signal being output to ``period`` in milliseconds.
 
-Example: ``pin0.set_analog_period(10)``
+        Example: ``pin0.set_analog_period(10)``
 
-:param period: (Periodendauer) Der Periodendauer in Millisekunden mit einem Mindestwert von 1ms."""
-
+        :param period: The period in milliseconds with a minimum valid value of 1ms.
+        """
     def set_analog_period_microseconds(self, period: int) -> None:
-        """Setze die Periodendauer für die Ausgabe des PWM-Signals auf ``period`` in Mikrosekunden. (setze analoge Periodendauer)
+        """Set the period of the PWM signal being output to ``period`` in microseconds.
 
-Example: ``pin0.set_analog_period_microseconds(512)``
+        Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: (Periodendauer) Die Periodendauer in Mikrosekunden mit einem Mindestwert von 256μs."""
+        :param period: The period in microseconds with a minimum valid value of 256µs.
+        """
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """Ein Pin, der analogen und digitalen Signale erlaubt."""
+    """A pin with analog and digital features."""
 
     def read_analog(self) -> int:
-        """Einlesen der Spannung, die am Pin anliegt. (analog lesen)
+        """Read the voltage applied to the pin.
 
-Example: ``pin0.read_analog()``
+        Example: ``pin0.read_analog()``
 
-:return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
+        :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V).
+        """
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """Ein Pin mit analogen, digitalen und Touchfunktionen."""
+    """A pin with analog, digital and touch features."""
+
     CAPACITIVE: int
     RESISTIVE: int
-
     def is_touched(self) -> bool:
-        """Überprüft, ob der Pin berührt wird. (wird berührt)
+        """Check if the pin is being touched.
 
-Example: ``pin0.is_touched()``
+        Example: ``pin0.is_touched()``
 
-The default touch mode for the pins on the edge connector is ``resistive``.
-The default for the logo pin **V2** is ``capacitive``.
+        The default touch mode for the pins on the edge connector is ``resistive``.
+        The default for the logo pin **V2** is ``capacitive``.
 
-**Resistive touch**
-This test is done by measuring how much resistance there is between the
-pin and ground.  A low resistance gives a reading of ``True``.  To get
-a reliable reading using a finger you may need to touch the ground pin
-with another part of your body, for example your other hand.
+        **Resistive touch**
+        This test is done by measuring how much resistance there is between the
+        pin and ground.  A low resistance gives a reading of ``True``.  To get
+        a reliable reading using a finger you may need to touch the ground pin
+        with another part of your body, for example your other hand.
 
-**Capacitive touch**
-This test is done by interacting with the electric field of a capacitor
-using a finger as a conductor. `Capacitive touch
-<https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
-does not require you to make a ground connection as part of a circuit.
+        **Capacitive touch**
+        This test is done by interacting with the electric field of a capacitor
+        using a finger as a conductor. `Capacitive touch
+        <https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
+        does not require you to make a ground connection as part of a circuit.
 
-:return: ``True`` if the pin is being touched with a finger, otherwise return ``False``."""
+        :return: ``True`` if the pin is being touched with a finger, otherwise return ``False``.
+        """
         ...
-
     def set_touch_mode(self, value: int) -> None:
-        """Legt den Touchmodus für den Pin fest. (definiert Berührungsmodus)
+        """Set the touch mode for the pin.
 
-Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
+        Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
-The default touch mode for the pins on the edge connector is
-``resistive``. The default for the logo pin **V2** is ``capacitive``.
+        The default touch mode for the pins on the edge connector is
+        ``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-:param value: (wert) ``CAPACITIVE`` oder ``RESISTIVE`` Touchmodus des entsprechenden Pins."""
+        :param value: ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin.
+        """
         ...
+
 pin0: MicroBitTouchPin
-"""Pin mit digitalen, analogen und Touchfunktionen."""
+"""Pin with digital, analog and touch features."""
+
 pin1: MicroBitTouchPin
-"""Pin mit digitalen, analogen und Touchfunktionen."""
+"""Pin with digital, analog and touch features."""
+
 pin2: MicroBitTouchPin
-"""Pin mit digitalen, analogen und Touchfunktionen."""
+"""Pin with digital, analog and touch features."""
+
 pin3: MicroBitAnalogDigitalPin
-"""Pin mit digitalen und analogen Funktionen."""
+"""Pin with digital and analog features."""
+
 pin4: MicroBitAnalogDigitalPin
-"""Pin mit digitalen und analogen Funktionen."""
+"""Pin with digital and analog features."""
+
 pin5: MicroBitDigitalPin
-"""Pin mit Unterstützung für digitale Signale."""
+"""Pin with digital features."""
+
 pin6: MicroBitDigitalPin
-"""Pin mit Unterstützung für digitale Signale."""
+"""Pin with digital features."""
+
 pin7: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin8: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin9: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin10: MicroBitAnalogDigitalPin
-"""Pin mit digitalen und analogen Funktionen."""
+"""Pin with digital and analog features."""
+
 pin11: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin12: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin13: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin14: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin15: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin16: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin19: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin20: MicroBitDigitalPin
-"""Pin mit digitalen Funktionen."""
+"""Pin with digital features."""
+
 pin_logo: MicroBitTouchPin
-"""Ein berührungsempfindlicher Logo-Pin auf der Vorderseite des micro:bit, der standardmäßig auf den kapazitiven Touch-Modus eingestellt ist."""
+"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."""
+
 pin_speaker: MicroBitAnalogDigitalPin
-"""Ein Pin zur Ansteuerung des micro:bit Lautsprechers.
+"""A pin to address the micro:bit speaker.
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """Ein Bild, das auf dem micro:bit LED-Display angezeigt werden soll.
+    """An image to show on the micro:bit LED display.
 
-Given an image object it's possible to display it via the ``display`` API::
+    Given an image object it's possible to display it via the ``display`` API::
 
-    display.show(Image.HAPPY)"""
+        display.show(Image.HAPPY)
+    """
+
     HEART: Image
-    """Herz-Bild."""
-    HEART_SMALL: Image
-    """Kleines Herz-Bild."""
-    HAPPY: Image
-    """Glückliches Gesichtsbild."""
-    SMILE: Image
-    """Lächelndes Gesichtsbild."""
-    SAD: Image
-    """Trauriges Gesichtsbild."""
-    CONFUSED: Image
-    """Verwirrtes Gesichtsbild."""
-    ANGRY: Image
-    """Wütendes Gesichtsbild."""
-    ASLEEP: Image
-    """Schlafendes Gesichtsbild."""
-    SURPRISED: Image
-    """Überraschtes Gesichtsbild."""
-    SILLY: Image
-    """Albernes Gesichtsbild."""
-    FABULOUS: Image
-    """Bild mit Sonnenbrillengesicht. (fabelhaft)"""
-    MEH: Image
-    """Gleichgültiges Gesicht Bild."""
-    YES: Image
-    """abgehakt-Bild"""
-    NO: Image
-    """angekreuzt-Bild"""
-    CLOCK12: Image
-    """Bild mit Linie, die auf 12 Uhr zeigt."""
-    CLOCK11: Image
-    """Bild mit Linie, die auf 11 Uhr zeigt."""
-    CLOCK10: Image
-    """Bild mit Linie, die auf 10 Uhr zeigt."""
-    CLOCK9: Image
-    """Bild mit Linie, die auf 9 Uhr zeigt."""
-    CLOCK8: Image
-    """Bild mit Linie, die auf 8 Uhr zeigt."""
-    CLOCK7: Image
-    """Bild mit Linie, die auf 7 Uhr zeigt."""
-    CLOCK6: Image
-    """Bild mit Linie, die auf 6 Uhr zeigt."""
-    CLOCK5: Image
-    """Bild mit Linie, die auf 5 Uhr zeigt."""
-    CLOCK4: Image
-    """Bild mit Linie, die auf 4 Uhr zeigt."""
-    CLOCK3: Image
-    """Bild mit Linie, die auf 3 Uhr zeigt."""
-    CLOCK2: Image
-    """Bild mit Linie, die auf 2 Uhr zeigt."""
-    CLOCK1: Image
-    """Bild mit Linie, die auf 1 Uhr zeigt."""
-    ARROW_N: Image
-    """Bild eines Pfeils, der nach Norden zeigt."""
-    ARROW_NE: Image
-    """Bild eines Pfeils, der nach Nordosten zeigt."""
-    ARROW_E: Image
-    """Bild eines Pfeils, der nach Osten zeigt."""
-    ARROW_SE: Image
-    """Bild eines Pfeils, der nach Südosten zeigt."""
-    ARROW_S: Image
-    """Bild eines Pfeils, der nach Süden zeigt."""
-    ARROW_SW: Image
-    """Bild eines Pfeils, der nach Südwesten zeigt."""
-    ARROW_W: Image
-    """Bild eines Pfeils, der nach Westen zeigt."""
-    ARROW_NW: Image
-    """Bild eines Pfeils, der nach Nordwesten zeigt."""
-    TRIANGLE: Image
-    """Bild eines Dreiecks, das nach oben zeigt."""
-    TRIANGLE_LEFT: Image
-    """Bild eines Dreiecks in der linken Ecke."""
-    CHESSBOARD: Image
-    """Abwechselnd leuchtende LEDs in einem Schachbrettmuster."""
-    DIAMOND: Image
-    """Diamant-Bild."""
-    DIAMOND_SMALL: Image
-    """Kleines Diamant-Bild."""
-    SQUARE: Image
-    """Quadrat-Bild"""
-    SQUARE_SMALL: Image
-    """Kleines Quadrat-Bild."""
-    RABBIT: Image
-    """Kaninchen-Bild."""
-    COW: Image
-    """Kuh-Bild."""
-    MUSIC_CROTCHET: Image
-    """Viertelnoten-Bild."""
-    MUSIC_QUAVER: Image
-    """Achtelnoten-Bild."""
-    MUSIC_QUAVERS: Image
-    """Achtelnotenpaar-Bild."""
-    PITCHFORK: Image
-    """Heugabel-Bild"""
-    XMAS: Image
-    """Weihnachtsbaum-Bild."""
-    PACMAN: Image
-    """Pac-Man Spielfigurenbild."""
-    TARGET: Image
-    """Ziel-Bild"""
-    TSHIRT: Image
-    """T-Shirt-Bild."""
-    ROLLERSKATE: Image
-    """Rollerskate-Bild."""
-    DUCK: Image
-    """Ente-Bild"""
-    HOUSE: Image
-    """Haus-Bild"""
-    TORTOISE: Image
-    """Schildkröte-Bild"""
-    BUTTERFLY: Image
-    """Schmetterling-Bild."""
-    STICKFIGURE: Image
-    """Strichmännchen-Bild."""
-    GHOST: Image
-    """Geist-Bild."""
-    SWORD: Image
-    """Schwert-Bild"""
-    GIRAFFE: Image
-    """Giraffe-Bild."""
-    SKULL: Image
-    """Schädel-Bild."""
-    UMBRELLA: Image
-    """Bild eines Schirms."""
-    SNAKE: Image
-    """Bild einer Schlange. (Schlange)"""
-    SCISSORS: Image
-    """BIld einer Schere. (Schere)"""
-    ALL_CLOCKS: List[Image]
-    """Eine Liste mit allen CLOCK_ Bildern. (alle Uhren)"""
-    ALL_ARROWS: List[Image]
-    """Eine Liste mit allen ARROW_ Bildern. (alle Pfeile)"""
+    """Heart image."""
 
+    HEART_SMALL: Image
+    """Small heart image."""
+
+    HAPPY: Image
+    """Happy face image."""
+
+    SMILE: Image
+    """Smiling mouth image."""
+
+    SAD: Image
+    """Sad face image."""
+
+    CONFUSED: Image
+    """Confused face image."""
+
+    ANGRY: Image
+    """Angry face image."""
+
+    ASLEEP: Image
+    """Sleeping face image."""
+
+    SURPRISED: Image
+    """Surprised face image."""
+
+    SILLY: Image
+    """Silly face image."""
+
+    FABULOUS: Image
+    """Sunglasses face image."""
+
+    MEH: Image
+    """Unimpressed face image."""
+
+    YES: Image
+    """Tick image."""
+
+    NO: Image
+    """Cross image."""
+
+    CLOCK12: Image
+    """Image with line pointing to 12 o'clock."""
+
+    CLOCK11: Image
+    """Image with line pointing to 11 o'clock."""
+
+    CLOCK10: Image
+    """Image with line pointing to 10 o'clock."""
+
+    CLOCK9: Image
+    """Image with line pointing to 9 o'clock."""
+
+    CLOCK8: Image
+    """Image with line pointing to 8 o'clock."""
+
+    CLOCK7: Image
+    """Image with line pointing to 7 o'clock."""
+
+    CLOCK6: Image
+    """Image with line pointing to 6 o'clock."""
+
+    CLOCK5: Image
+    """Image with line pointing to 5 o'clock."""
+
+    CLOCK4: Image
+    """Image with line pointing to 4 o'clock."""
+
+    CLOCK3: Image
+    """Image with line pointing to 3 o'clock."""
+
+    CLOCK2: Image
+    """Image with line pointing to 2 o'clock."""
+
+    CLOCK1: Image
+    """Image with line pointing to 1 o'clock."""
+
+    ARROW_N: Image
+    """Image of arrow pointing north."""
+
+    ARROW_NE: Image
+    """Image of arrow pointing north east."""
+
+    ARROW_E: Image
+    """Image of arrow pointing east."""
+
+    ARROW_SE: Image
+    """Image of arrow pointing south east."""
+
+    ARROW_S: Image
+    """Image of arrow pointing south."""
+
+    ARROW_SW: Image
+    """Image of arrow pointing south west."""
+
+    ARROW_W: Image
+    """Image of arrow pointing west."""
+
+    ARROW_NW: Image
+    """Image of arrow pointing north west."""
+
+    TRIANGLE: Image
+    """Image of a triangle pointing up."""
+
+    TRIANGLE_LEFT: Image
+    """Image of a triangle in the left corner."""
+
+    CHESSBOARD: Image
+    """Alternate LEDs lit in a chessboard pattern."""
+
+    DIAMOND: Image
+    """Diamond image."""
+
+    DIAMOND_SMALL: Image
+    """Small diamond image."""
+
+    SQUARE: Image
+    """Square image."""
+
+    SQUARE_SMALL: Image
+    """Small square image."""
+
+    RABBIT: Image
+    """Rabbit image."""
+
+    COW: Image
+    """Cow image."""
+
+    MUSIC_CROTCHET: Image
+    """Crotchet note image."""
+
+    MUSIC_QUAVER: Image
+    """Quaver note image."""
+
+    MUSIC_QUAVERS: Image
+    """Pair of quavers note image."""
+
+    PITCHFORK: Image
+    """Pitchfork image."""
+
+    XMAS: Image
+    """Christmas tree image."""
+
+    PACMAN: Image
+    """Pac-Man arcade character image."""
+
+    TARGET: Image
+    """Target image."""
+
+    TSHIRT: Image
+    """T-shirt image."""
+
+    ROLLERSKATE: Image
+    """Rollerskate image."""
+
+    DUCK: Image
+    """Duck image."""
+
+    HOUSE: Image
+    """House image."""
+
+    TORTOISE: Image
+    """Tortoise image."""
+
+    BUTTERFLY: Image
+    """Butterfly image."""
+
+    STICKFIGURE: Image
+    """Stick figure image."""
+
+    GHOST: Image
+    """Ghost image."""
+
+    SWORD: Image
+    """Sword image."""
+
+    GIRAFFE: Image
+    """Giraffe image."""
+
+    SKULL: Image
+    """Skull image."""
+
+    UMBRELLA: Image
+    """Umbrella image."""
+
+    SNAKE: Image
+    """Snake image."""
+
+    SCISSORS: Image
+    """Scissors image."""
+
+    ALL_CLOCKS: List[Image]
+    """A list containing all the CLOCK_ images in sequence."""
+
+    ALL_ARROWS: List[Image]
+    """A list containing all the ARROW_ images in sequence."""
     @overload
     def __init__(self, string: str) -> None:
-        """Erstellen Sie ein Bild aus einer Zeichenkette, die beschreibt, welche LEDs leuchten.
+        """Create an image from a string describing which LEDs are lit.
 
-``string`` has to consist of digits 0-9 arranged into lines,
-describing the image, for example::
+        ``string`` has to consist of digits 0-9 arranged into lines,
+        describing the image, for example::
 
-    image = Image("90009:"
-                  "09090:"
-                  "00900:"
-                  "09090:"
-                  "90009")
+            image = Image("90009:"
+                          "09090:"
+                          "00900:"
+                          "09090:"
+                          "90009")
 
-will create a 5×5 image of an X. The end of a line is indicated by a
-colon. It's also possible to use newlines (\\n) insead of the colons.
+        will create a 5×5 image of an X. The end of a line is indicated by a
+        colon. It's also possible to use newlines (\\n) insead of the colons.
 
-:param string: (Zeichenkette) Eine Zeichenkette, die das Bild beschreibt."""
+        :param string: The string describing the image.
+        """
         ...
-
     @overload
-    def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
-        """Erstelle ein leeres Bild mit ``width`` Spalten und ``height`` Zeilen.
+    def __init__(
+        self, width: int = 5, height: int = 5, buffer: ReadableBuffer = None
+    ) -> None:
+        """Create an empty image with ``width`` columns and ``height`` rows.
 
-:param width: (Breite) Optionale Breite des Bildes
-:param height: (Höhe) Optionale Höhe des Bildes
-:param buffer: (Puffer) Optionales Array oder Bytes von ``width``×``height`` Ganzzahlen im Bereich 0-9 um das Bild zu initialisieren
+        :param width: Optional width of the image
+        :param height: Optional height of the image
+        :param buffer: Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
 
-Examples::
+        Examples::
 
-    Image(2, 2, b'\x08\x08\x08\x08')
-    Image(2, 2, bytearray([9,9,9,9]))
+            Image(2, 2, b'\x08\x08\x08\x08')
+            Image(2, 2, bytearray([9,9,9,9]))
 
-These create 2 x 2 pixel images at full brightness."""
+        These create 2 x 2 pixel images at full brightness.
+        """
         ...
-
     def width(self) -> int:
-        """Ermittelt die Anzahl der Spalten. (Breite)
+        """Get the number of columns.
 
-:return: The number of columns in the image"""
+        :return: The number of columns in the image
+        """
         ...
-
     def height(self) -> int:
-        """Ermittelt die Anzahl der Zeilen. (Höhe)
+        """Get the number of rows.
 
-:return: The number of rows in the image"""
+        :return: The number of rows in the image
+        """
         ...
-
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """Legt die Helligkeit eines Pixels fest. (Pixelwerte setzen)
+        """Set the brightness of a pixel.
 
-Example: ``my_image.set_pixel(0, 0, 9)``
+        Example: ``my_image.set_pixel(0, 0, 9)``
 
-:param x: Die Spaltennummer
-:param y: Die Zeilennummer
-:param value: (wert) Die Helligkeit als Ganzzahl zwischen 0 (dunkel) und 9 (hell)
+        :param x: The column number
+        :param y: The row number
+        :param value: The brightness as an integer between 0 (dark) and 9 (bright)
 
-This method will raise an exception when called on any of the built-in
-read-only images, like ``Image.HEART``."""
+        This method will raise an exception when called on any of the built-in
+        read-only images, like ``Image.HEART``.
+        """
         ...
-
     def get_pixel(self, x: int, y: int) -> int:
-        """Ermittle die Helligkeit eines Pixels. (Pixelwerte holen)
+        """Get the brightness of a pixel.
 
-Example: ``my_image.get_pixel(0, 0)``
+        Example: ``my_image.get_pixel(0, 0)``
 
-:param x: Die Spaltennummer
-:param y: Die Zeilennummer
-:return: The brightness as an integer between 0 and 9."""
+        :param x: The column number
+        :param y: The row number
+        :return: The brightness as an integer between 0 and 9.
+        """
         ...
-
     def shift_left(self, n: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem Sie das Bild nach links verschieben. (links verschieben)
+        """Create a new image by shifting the picture left.
 
-Example: ``Image.HEART_SMALL.shift_left(1)``
+        Example: ``Image.HEART_SMALL.shift_left(1)``
 
-:param n: Die Anzahl der Spalten um die verschoben wird
-:return: The shifted image"""
+        :param n: The number of columns to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_right(self, n: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem Sie das Bild nach rechts verschieben. (rechts verschieben)
+        """Create a new image by shifting the picture right.
 
-Example: ``Image.HEART_SMALL.shift_right(1)``
+        Example: ``Image.HEART_SMALL.shift_right(1)``
 
-:param n: Die Anzahl der Spalten um die verschoben wird
-:return: The shifted image"""
+        :param n: The number of columns to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_up(self, n: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem Sie das Bild nach oben verschoben wird. (nach oben verschieben)
+        """Create a new image by shifting the picture up.
 
-Example: ``Image.HEART_SMALL.shift_up(1)``
+        Example: ``Image.HEART_SMALL.shift_up(1)``
 
-:param n: Die Anzahl der Zeilen um die verschoben wird
-:return: The shifted image"""
+        :param n: The number of rows to shift by
+        :return: The shifted image
+        """
         ...
-
     def shift_down(self, n: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem Sie das Bild nach unten verschoben wird. (nach unten verschieben)
+        """Create a new image by shifting the picture down.
 
-Example: ``Image.HEART_SMALL.shift_down(1)``
+        Example: ``Image.HEART_SMALL.shift_down(1)``
 
-:param n: Die Anzahl der Zeilen um die verschoben wird
-:return: The shifted image"""
+        :param n: The number of rows to shift by
+        :return: The shifted image
+        """
         ...
-
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem das Bild zugeschnitten wird.
+        """Create a new image by cropping the picture.
 
-Example: ``Image.HEART.crop(1, 1, 3, 3)``
+        Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-:param x: Die Offset-Spalte des Zuschneidens
-:param y: Die Offset-Zeile des Zuschneidens
-:param w: Die Zuschneide-Breite
-:param h: Die Zuschneide-Höhe
-:return: The new image"""
+        :param x: The crop offset column
+        :param y: The crop offset row
+        :param w: The crop width
+        :param h: The crop height
+        :return: The new image
+        """
         ...
-
     def copy(self) -> Image:
-        """Erstellt eine exakte Kopie des Bildes. (kopieren)
+        """Create an exact copy of the image.
 
-Example: ``Image.HEART.copy()``
+        Example: ``Image.HEART.copy()``
 
-:return: The new image"""
+        :return: The new image
+        """
         ...
-
     def invert(self) -> Image:
-        """Erstellt ein neues Bild, indem es die Helligkeit der Pixel des Ausgangsbildes invertiert.
+        """Create a new image by inverting the brightness of the pixels in the
+        source image.
 
-Example: ``Image.SMALL_HEART.invert()``
+        Example: ``Image.SMALL_HEART.invert()``
 
-:return: The new image."""
+        :return: The new image.
+        """
         ...
-
     def fill(self, value: int) -> None:
-        """Legt die Helligkeit für alle Pixel des Bildes fest.
+        """Set the brightness of all the pixels in the image.
 
-Example: ``my_image.fill(5)``
+        Example: ``my_image.fill(5)``
 
-:param value: Die neue Helligkeit als Zahl zwischen 0 (dunkel) und 9 (hell).
+        :param value: The new brightness as a number between 0 (dark) and 9 (bright).
 
-This method will raise an exception when called on any of the built-in
-read-only images, like ``Image.HEART``."""
+        This method will raise an exception when called on any of the built-in
+        read-only images, like ``Image.HEART``.
+        """
         ...
+    def blit(
+        self,
+        src: Image,
+        x: int,
+        y: int,
+        w: int,
+        h: int,
+        xdest: int = 0,
+        ydest: int = 0,
+    ) -> None:
+        """Copy an area from another image into this image.
 
-    def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
-        """Kopiert einen Bereich aus einem anderen Bild in dieses Bild.
+        Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
+        :param src: The source image
+        :param x: The starting column offset in the source image
+        :param y: The starting row offset in the source image
+        :param w: The number of columns to copy
+        :param h: The number of rows to copy
+        :param xdest: The column offset to modify in this image
+        :param ydest: The row offset to modify in this image
 
-:param src: Das Ausgangsbild
-:param x: Der Anfangsspalten-Offset im Ausgangsbild
-:param y: Der Anfangszeilen-Offset im Ausgangsbild
-:param w: Die Anzahl der zu kopierenden Spalten
-:param h: Die Anzahl der zu kopierenden Zeilen
-:param xdest: Der Spalten-Offset, der in diesem Bild geändert werden soll
-:param ydest: Der Zeilen-Offset, der in diesem Bild geändert werden soll
+        Pixels outside the source image are treated as having a brightness of 0.
 
-Pixels outside the source image are treated as having a brightness of 0.
+        ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
+        and ``crop()`` can are all implemented by using ``blit()``.
 
-``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
-and ``crop()`` can are all implemented by using ``blit()``.
+        For example, img.crop(x, y, w, h) can be implemented as::
 
-For example, img.crop(x, y, w, h) can be implemented as::
-
-    def crop(self, x, y, w, h):
-        res = Image(w, h)
-        res.blit(self, x, y, w, h)
-        return res"""
+            def crop(self, x, y, w, h):
+                res = Image(w, h)
+                res.blit(self, x, y, w, h)
+                return res
+        """
         ...
-
     def __repr__(self) -> str:
-        """Liefert eine kompakte Stringrepräsentation des Bildes."""
+        """Get a compact string representation of the image."""
         ...
-
     def __str__(self) -> str:
-        """Liefert eine lesbare String-Repräsentation des Bildes."""
+        """Get a readable string representation of the image."""
         ...
-
     def __add__(self, other: Image) -> Image:
-        """Erstellt ein neues Bild, indem für jedes Pixel die Helligkeitswerte der beiden Bilder addiert werden.
+        """Create a new image by adding the brightness values from the two
+        images for each pixel.
 
-Example: ``Image.HEART + Image.HAPPY``
+        Example: ``Image.HEART + Image.HAPPY``
 
-:param other: Das zu addierende Bild."""
+        :param other: The image to add.
+        """
         ...
-
     def __sub__(self, other: Image) -> Image:
-        """Erstellt ein neues Bild, indem für jedes Pixel die Helligkeitswerte der beiden Bilder subtrahiert werden.
+        """Create a new image by subtracting the brightness values of the
+        other image from this image.
 
-Example: ``Image.HEART - Image.HEART_SMALL``
+        Example: ``Image.HEART - Image.HEART_SMALL``
 
-:param other: Das zu subtrahierende Bild."""
+        :param other: The image to subtract.
+        """
         ...
-
     def __mul__(self, n: float) -> Image:
-        """Erstellt ein neues Bild, indem der Helligkeitswert jedes Pixels mit ``n`` multipliziert wird.
+        """Create a new image by multiplying the brightness of each pixel by
+        ``n``.
 
-Example: ``Image.HEART * 0.5``
+        Example: ``Image.HEART * 0.5``
 
-:param n: Der Wert, mit dem multipliziert werden soll."""
+        :param n: The value to multiply by.
+        """
         ...
-
     def __truediv__(self, n: float) -> Image:
-        """Erstellt ein neues Bild, indem der Helligkeitswert jedes Pixels durch ``n`` dividiert wird.
+        """Create a new image by dividing the brightness of each pixel by
+        ``n``.
 
-Example: ``Image.HEART / 2``
+        Example: ``Image.HEART / 2``
 
-:param n: Der Wert, durch den dividiert werden soll."""
+        :param n: The value to divide by.
+        """
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Stellt den Übergang von Klangereignissen von ``quiet`` auf ``loud`` dar; wie beim Klatschen oder Rufen."""
+    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
+
     QUIET: SoundEvent
-    """Stellt den Übergang von akustischen Ereignissen, wie Sprechen oder Hintergrundmusik, von ``loud`` zu ``quiet`` dar. (stumm)"""
+    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
 
 class Sound:
-    """Die eingebauten Klänge können mit ``audio.play(Sound.NAME)`` aufgerufen werden."""
+    """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
+
     GIGGLE: Sound
-    """Kichern-Sound."""
+    """Giggling sound."""
+
     HAPPY: Sound
-    """Happy-Sound."""
+    """Happy sound."""
+
     HELLO: Sound
-    """Begrüßung-Sound"""
+    """Greeting sound."""
+
     MYSTERIOUS: Sound
-    """Geheimnisvoll-Sound"""
+    """Mysterious sound."""
+
     SAD: Sound
-    """Traurig-Sound."""
+    """Sad sound."""
+
     SLIDE: Sound
-    """Gleitender Ton."""
+    """Sliding sound."""
+
     SOARING: Sound
-    """Aufsteigender Klang. (aufsteigend)"""
+    """Soaring sound."""
+
     SPRING: Sound
-    """Springfeder Klang (Sppringfeder)"""
+    """Spring sound."""
+
     TWINKLE: Sound
-    """Funkeln Klang (Funkeln)"""
+    """Twinkling sound."""
+
     YAWN: Sound
-    """Gähnen Klang"""
+    """Yawning sound."""

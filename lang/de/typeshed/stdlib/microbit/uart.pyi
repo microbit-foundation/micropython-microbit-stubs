@@ -1,79 +1,96 @@
-"""Verbindet mit einem Gerät über eine serielle Schnittstelle."""
+"""Communicate with a device using a serial interface.
+"""
+
 from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
+
 ODD: int
-"""Ungerade Parität"""
+"""Odd parity"""
+
 EVEN: int
-"""Gerade Parität (gerade)"""
+"""Even parity"""
 
-def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
-    """Initialisiere die serielle Kommunikation.
+def init(
+    baudrate: int = 9600,
+    bits: int = 8,
+    parity: Optional[int] = None,
+    stop: int = 1,
+    tx: Optional[MicroBitDigitalPin] = None,
+    rx: Optional[MicroBitDigitalPin] = None,
+) -> None:
+    """Initialize serial communication.
 
-Example: ``uart.init(115200, tx=pin0, rx=pin1)``
+    Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
-:param baudrate: (Baudrate) Die Übertragungsgeschwindigkeit.
-:param bits: (Bits) Die Größe der Bytes die übertragen werden. micro:bit unterstützt nur 8.
-:param parity: (Parität) Wie Parität geprüft wird, ``None``, ``uart.ODD`` oder ``uart.EVEN``.
-:param stop: (Stop) Die Anzahl der Stopbits, muss 1 für micro:bit sein.
-:param tx: Sendepin.
-:param rx: Empfangspin.
+    :param baudrate: The speed of communication.
+    :param bits: The size of bytes being transmitted. micro:bit only supports 8.
+    :param parity: How parity is checked, ``None``, ``uart.ODD`` or ``uart.EVEN``.
+    :param stop: The number of stop bits, has to be 1 for micro:bit.
+    :param tx: Transmitting pin.
+    :param rx: Receiving pin.
 
-Initializing the UART on external pins will cause the Python console on
-USB to become unaccessible, as it uses the same hardware. To bring the
-console back you must reinitialize the UART without passing anything for
-``tx`` or ``rx`` (or passing ``None`` to these arguments).  This means
-that calling ``uart.init(115200)`` is enough to restore the Python console.
+    Initializing the UART on external pins will cause the Python console on
+    USB to become unaccessible, as it uses the same hardware. To bring the
+    console back you must reinitialize the UART without passing anything for
+    ``tx`` or ``rx`` (or passing ``None`` to these arguments).  This means
+    that calling ``uart.init(115200)`` is enough to restore the Python console.
 
-For more details see `the online documentation <https://microbit-micropython.readthedocs.io/en/v2-docs/uart.html>`_."""
+    For more details see `the online documentation <https://microbit-micropython.readthedocs.io/en/v2-docs/uart.html>`_.
+    """
     ...
 
 def any() -> bool:
-    """Überprüfen Sie, ob irgendwelche Daten warten.
+    """Check if any data is waiting.
 
-Example: ``uart.any()``
+    Example: ``uart.any()``
 
-:return: ``True`` if any data is waiting, else ``False``."""
+    :return: ``True`` if any data is waiting, else ``False``.
+    """
     ...
 
-def read(nbytes: Optional[int]=None) -> Optional[bytes]:
-    """Bytes lesen.
+def read(nbytes: Optional[int] = None) -> Optional[bytes]:
+    """Read bytes.
 
-Example: ``uart.read()``
+    Example: ``uart.read()``
 
-:param nbytes: Wenn ``nbytes`` angegeben ist, werden höchstens so viele Bytes gelesen. Andernfalls werden so viele Bytes wie möglich gelesen.
-:return: A bytes object or ``None`` on timeout"""
+    :param nbytes: If ``nbytes`` is specified then read at most that many bytes, otherwise read as many bytes as possible
+    :return: A bytes object or ``None`` on timeout
+    """
     ...
 
-def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
-    """Lese Bytes in ``buf``.
+def readinto(buf: WriteableBuffer, nbytes: Optional[int] = None) -> Optional[int]:
+    """Read bytes into the ``buf``.
 
-Example: ``uart.readinto(input_buffer)``
+    Example: ``uart.readinto(input_buffer)``
 
-:param buf: Der Puffer, in den geschrieben werden soll.
-:param nbytes: Wenn ``nbytes`` angegeben ist, werden höchstens so viele Bytes gelesen. Andernfalls werden ``len(buf)`` Bytes gelesen.
-:return: number of bytes read and stored into ``buf`` or ``None`` on timeout."""
+    :param buf: The buffer to write to.
+    :param nbytes: If ``nbytes`` is specified then read at most that many bytes, otherwise read ``len(buf)`` bytes.
+    :return: number of bytes read and stored into ``buf`` or ``None`` on timeout.
+    """
     ...
 
 def readline() -> Optional[bytes]:
-    """Liest eine Zeile bis zum Zeilenumbruch.
+    """Read a line, ending in a newline character.
 
-Example: ``uart.readline()``
+    Example: ``uart.readline()``
 
-:return: The line read or ``None`` on timeout. The newline character is included in the returned bytes."""
+    :return: The line read or ``None`` on timeout. The newline character is included in the returned bytes.
+    """
     ...
 
 def write(buf: Union[bytes, str]) -> Optional[int]:
-    """Schreibt einen Puffer auf den Bus. (schreiben)
+    """Write a buffer to the bus.
 
-Example: ``uart.write('hello world')``
+    Example: ``uart.write('hello world')``
 
-:param buf: Ein Byte-Objekt oder ein String.
-:return: The number of bytes written, or ``None`` on timeout.
+    :param buf: A bytes object or a string.
+    :return: The number of bytes written, or ``None`` on timeout.
 
-Examples::
+    Examples::
 
-    uart.write('hello world')
-    uart.write(b'hello world')
-    uart.write(bytes([1, 2, 3]))"""
+        uart.write('hello world')
+        uart.write(b'hello world')
+        uart.write(bytes([1, 2, 3]))
+    """
     ...
