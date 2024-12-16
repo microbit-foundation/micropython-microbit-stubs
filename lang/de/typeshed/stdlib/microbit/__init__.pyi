@@ -12,7 +12,7 @@ from . import spi as spi
 from . import uart as uart
 
 def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Plant die Ausführung einer Funktion in dem durch die Zeitargumente festgelegten Intervall **nur V2**.
+    """Plant die Ausführung einer Funktion in dem durch die Zeitargumente festgelegten Intervall. **Nur micro:bit\xa0V2**.
 
 Example: ``run_every(my_logging, min=5)``
 
@@ -95,7 +95,7 @@ If they are both integers (i.e ``10``), it will return an integer::
 :return: The ``value`` converted to the ``to`` range."""
 
 def sleep(n: float) -> None:
-    """Warte auf ``n`` Millisekunden.
+    """Wartet ``n`` Millisekunden.
 
 Example: ``sleep(1000)``
 
@@ -152,9 +152,9 @@ that the button must be pressed again before this method will return
 :return: The number of presses since the device started or the last time this method was called"""
         ...
 button_a: Button
-"""Das ``Button``-Objekt der linken Taste."""
+"""Das Objekt ``Button`` der linken Taste."""
 button_b: Button
-"""Das ``Button``-Objekt der rechten Taste."""
+"""Das Objekt ``Button`` der rechten Taste."""
 
 class MicroBitDigitalPin:
     """Ein digitaler Pin.
@@ -212,25 +212,25 @@ changes.
         ...
 
     def write_analog(self, value: int) -> None:
-        """Erzeugt ein PWM-Signal am Pin mit der Einschaltdauer proportional zu ``value``. (analog schreiben)
+        """Gib ein PWM-Signal am Pin aus, bei dem das Verhältnis von An- zu Auszeit proportional zu ``value`` ist. (analog schreiben)
 
 Example: ``pin0.write_analog(254)``
 
 :param value: (wert) Eine Ganzzahl oder eine Gleitpunktzahl zwischen 0 (0% Einschaltdauer) und 1023 (100% Einschaltdauer)."""
 
     def set_analog_period(self, period: int) -> None:
-        """Setzt die Periodendauer des PWM-Signals, das ausgegeben wird, auf ``period`` in Millisekunden. (setze analoge Periodendauer)
+        """Setze die Periodendauer für die Ausgabe des PWM-Signals auf ``period`` in Mikrosekunden. (setze analoge Periodendauer)
 
 Example: ``pin0.set_analog_period(10)``
 
 :param period: (Periodendauer) Der Periodendauer in Millisekunden mit einem Mindestwert von 1ms."""
 
     def set_analog_period_microseconds(self, period: int) -> None:
-        """Setze die Periodendauer für die Ausgabe des PWM-Signals auf ``period`` in Mikrosekunden. (setze analoge Periodendauer)
+        """Setzt den Zeitraum des PWM-Signals, das ausgegeben wird, auf ``period`` in Mikrosekunden. (setze analoge Periodendauer)
 
 Example: ``pin0.set_analog_period_microseconds(512)``
 
-:param period: (Periodendauer) Die Periodendauer in Mikrosekunden mit einem Mindestwert von 256μs."""
+:param period: (Periodendauer) Die Periodendauer in Mikrosekunden mit einem Mindestwert von 256\xa0μs."""
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
     """Ein Pin, der analogen und digitalen Signale erlaubt."""
@@ -271,7 +271,7 @@ does not require you to make a ground connection as part of a circuit.
         ...
 
     def set_touch_mode(self, value: int) -> None:
-        """Legt den Touchmodus für den Pin fest. (definiert Berührungsmodus)
+        """Legt den Berührungsmodus für den Pin fest. (definiert Berührungsmodus)
 
 Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
@@ -319,9 +319,9 @@ pin19: MicroBitDigitalPin
 pin20: MicroBitDigitalPin
 """Pin mit digitalen Funktionen."""
 pin_logo: MicroBitTouchPin
-"""Ein berührungsempfindlicher Logo-Pin auf der Vorderseite des micro:bit, der standardmäßig auf den kapazitiven Touch-Modus eingestellt ist."""
+"""Ein berührungsempfindlicher Logo-Pin auf der Vorderseite des micro:bit, der standardmäßig auf den kapazitiven Berührungsmodus eingestellt ist."""
 pin_speaker: MicroBitAnalogDigitalPin
-"""Ein Pin zur Ansteuerung des micro:bit Lautsprechers.
+"""Ein Pin zur Ansteuerung des micro:bit-Lautsprechers.
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
@@ -467,7 +467,7 @@ Given an image object it's possible to display it via the ``display`` API::
 
     @overload
     def __init__(self, string: str) -> None:
-        """Erstellen Sie ein Bild aus einer Zeichenkette, die beschreibt, welche LEDs leuchten.
+        """Erstellt ein Bild aus einer Zeichenkette, die beschreibt, welche LEDs leuchten.
 
 ``string`` has to consist of digits 0-9 arranged into lines,
 describing the image, for example::
@@ -536,7 +536,7 @@ Example: ``my_image.get_pixel(0, 0)``
         ...
 
     def shift_left(self, n: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem Sie das Bild nach links verschieben. (links verschieben)
+        """Erstellt ein neues Bild, indem das Bild nach links verschoben wird. (links verschieben)
 
 Example: ``Image.HEART_SMALL.shift_left(1)``
 
@@ -545,7 +545,7 @@ Example: ``Image.HEART_SMALL.shift_left(1)``
         ...
 
     def shift_right(self, n: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem Sie das Bild nach rechts verschieben. (rechts verschieben)
+        """Erstellt ein neues Bild, indem das Bild nach rechts verschoben wird. (rechts verschieben)
 
 Example: ``Image.HEART_SMALL.shift_right(1)``
 
@@ -554,7 +554,7 @@ Example: ``Image.HEART_SMALL.shift_right(1)``
         ...
 
     def shift_up(self, n: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem Sie das Bild nach oben verschoben wird. (nach oben verschieben)
+        """Erstellt ein neues Bild, indem das Bild nach oben verschoben wird. (nach oben verschieben)
 
 Example: ``Image.HEART_SMALL.shift_up(1)``
 
@@ -563,7 +563,7 @@ Example: ``Image.HEART_SMALL.shift_up(1)``
         ...
 
     def shift_down(self, n: int) -> Image:
-        """Erstellen Sie ein neues Bild, indem Sie das Bild nach unten verschoben wird. (nach unten verschieben)
+        """Erstellt ein neues Bild, indem das Bild nach unten verschoben wird. (nach unten verschieben)
 
 Example: ``Image.HEART_SMALL.shift_down(1)``
 

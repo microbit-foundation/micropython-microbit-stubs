@@ -23,7 +23,7 @@ def read(nbytes: int, out: int=0) -> bytes:
 Example: ``spi.read(64)``
 
 :param nbytes: 読み取る最大バイト数。
-:param out: The byte value to write (default 0).
+:param out: 書き込むバイト値（初期値は'0'）
 :return: The bytes read."""
     ...
 

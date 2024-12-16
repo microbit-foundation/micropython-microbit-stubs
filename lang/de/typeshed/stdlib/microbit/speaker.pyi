@@ -1,7 +1,7 @@
 """Steuere den integrierten Lautsprecher (nur V2). (Lautsprecher)"""
 
 def off() -> None:
-    """Lautsprecher ausschalten.
+    """Schaltet den Lautsprecher aus.
 
 Example: ``speaker.off()``
 
@@ -9,7 +9,7 @@ This does not disable sound output to an edge connector pin."""
     ...
 
 def on() -> None:
-    """Lautsprecher einschalten.
+    """Schaltet den Lautsprecher ein.
 
 Example: ``speaker.on()``"""
     ...

@@ -1,13 +1,13 @@
 """Zeichne Daten auf deinem micro:bit V2 auf."""
 from typing import Literal, Mapping, Optional, Union, overload
 MILLISECONDS = 1
-"""Millisekunden Zeitstempelformat. (millisekunden)"""
+"""Zeitstempelformat: Millisekunden (millisekunden)"""
 SECONDS = 10
-"""Sekunden Zeitstempelformat. (sekunden)"""
+"""Zeitstempelformat: Sekunden (sekunden)"""
 MINUTES = 600
-"""Minuten Zeitstempelformat. (minuten)"""
+"""Zeitstempelformat: Minuten (minuten)"""
 HOURS = 36000
-"""Stunden Zeitstempelformat. (stunden)"""
+"""Zeitstempelformat: Stunden (stunden)"""
 DAYS = 864000
 """Tage Zeitstempelformat."""
 

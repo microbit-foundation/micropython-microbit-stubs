@@ -39,7 +39,7 @@ Example: ``i2c.read(0x50, 64)``
     ...
 
 def write(addr: int, buf: ReadableBuffer, repeat: bool=False) -> None:
-    """Schreibe Bytes auf ein Gerät. (schreiben)
+    """Schreibt Bytes auf ein Gerät. (schreiben)
 
 Example: ``i2c.write(0x50, bytes([1, 2, 3]))``
 

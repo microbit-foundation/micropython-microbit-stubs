@@ -5,7 +5,7 @@ from typing import Tuple
 class NeoPixel:
 
     def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int=3) -> None:
-        """Initialisierung eines neuen Streifens von Neopixel-LEDs, die über einen Pin gesteuert werden.
+        """Initialisiert einen neuen Streifen von Neopixel-LEDs, die über einen Pin gesteuert werden.
 
 Example: ``np = neopixel.NeoPixel(pin0, 8)``
 
@@ -26,7 +26,7 @@ See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neo
         ...
 
     def clear(self) -> None:
-        """Lösche alle Pixel.
+        """Löscht alle Pixel.
 
 Example: ``np.clear()``"""
         ...
@@ -50,7 +50,7 @@ Equivalent to ``show``."""
         ...
 
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """Alle Pixel mit einem bestimmten RGB/RGBW-Wert färben.
+        """Färbt alle Pixel mit einem bestimmten RGB/RGBW-Wert (nur micro:bit\xa0V2).
 
 Example: ``np.fill((0, 0, 255))``
 

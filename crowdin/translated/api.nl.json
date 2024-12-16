@@ -3460,7 +3460,7 @@
     "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
-    "message": "Lees bytes.",
+    "message": "Lees minstens {{nbytes}} terwijl het enkele byte gegeven in {{out}} continu geschreven wordt.",
     "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {
@@ -3476,7 +3476,7 @@
     "description": "(parameter name) The byte value to write (default 0)."
   },
   "microbit.spi.read.param-doc.out": {
-    "message": "The byte value to write (default 0).",
+    "message": "De byte-waarde om te schrijven (standaard 0).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {

@@ -10,7 +10,7 @@ to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """Überprüfe, dass der Kompass kalibriert ist. (ist kalibriert)
+    """Überprüft, dass der Kompass kalibriert ist. (ist kalibriert)
 
 Example: ``compass.is_calibrated()``
 
@@ -54,7 +54,7 @@ Call ``calibrate`` first or the results will be inaccurate.
     ...
 
 def heading() -> int:
-    """Ermittle die Kompassrichtung. (Ausrichtung)
+    """Ermittelt die Kompassrichtung. (Ausrichtung)
 
 Example: ``compass.heading()``
 
@@ -62,7 +62,7 @@ Example: ``compass.heading()``
     ...
 
 def get_field_strength() -> int:
-    """Ermittle die Größe des Magnetfelds um das Gerät herum.
+    """Ermittelt die Größe des Magnetfelds um das Gerät herum.
 
 Example: ``compass.get_field_strength()``
 

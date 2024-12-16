@@ -48,7 +48,7 @@ Example: ``math.ceil(0.1)``
     ...
 
 def copysign(x: float, y: float) -> float:
-    """Berechne ``x`` mit dem Vorzeichen von ``y``.
+    """Berechnet ``x`` mit dem Vorzeichen von ``y``.
 
 Example: ``math.copysign(1, -1)``
 
@@ -103,7 +103,7 @@ Example: ``math.floor(0.9)``
     ...
 
 def fmod(x: float, y: float) -> float:
-    """Berechne den Rest von ``x/y``.
+    """Berechnet den Rest von ``x/y``.
 
 Example: ``math.fmod(10, 3)``
 
@@ -143,7 +143,7 @@ Example: ``math.isinf(float('-inf'))``
     ...
 
 def isnan(x: float) -> bool:
-    """Prüft, ob ein Wert keine Zahl (NaN ... Not A Number) ist.
+    """Prüft, ob ein Wert keine Zahl (NaN bzw. Not A Number) ist.
 
 Example: ``math.isnan(float('nan'))``
 
@@ -152,7 +152,7 @@ Example: ``math.isnan(float('nan'))``
     ...
 
 def ldexp(x: float, exp: int) -> float:
-    """Berechne ``x * (2**exp)``.
+    """Berechnet ``x * (2**exp)``.
 
 Example: ``math.ldexp(0.5, 2)``
 
@@ -176,7 +176,7 @@ With two arguments, return the logarithm of x to the given base, calculated as `
     ...
 
 def modf(x: float) -> Tuple[float, float]:
-    """Berechne die gebrochenen und ganzzahligen Teile von ``x``.
+    """Berechnet die gebrochenen und ganzzahligen Teile von ``x``.
 
 Example: ``fractional, integral = math.modf(1.5)``
 
@@ -241,6 +241,6 @@ Example: ``math.trunc(-0.9)``
 :return: ``x`` rounded towards zero."""
     ...
 e: float
-"""Basis des natürlichen Logarithmus"""
+"""Basis des natürlichen Logarithmus."""
 pi: float
-"""Das Verhältnis des Umfangs eines Kreises zu seinem Durchmesser"""
+"""Das Verhältnis des Umfangs eines Kreises zu seinem Durchmesser."""

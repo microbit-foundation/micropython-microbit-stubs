@@ -1,4 +1,4 @@
-"""Gibt eine Zufallszahl zurück."""
+"""Zufallszahlen generieren."""
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:

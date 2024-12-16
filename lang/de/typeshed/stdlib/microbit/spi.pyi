@@ -28,7 +28,7 @@ Example: ``spi.read(64)``
     ...
 
 def write(buffer: ReadableBuffer) -> None:
-    """Schreibe Bytes auf den Bus. (schreiben)
+    """Schreibt Bytes auf den Bus. (schreiben)
 
 Example: ``spi.write(bytes([1, 2, 3]))``
 

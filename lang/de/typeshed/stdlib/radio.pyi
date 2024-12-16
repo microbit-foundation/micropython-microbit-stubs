@@ -2,9 +2,9 @@
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
 RATE_1MBIT: int
-"""Konstante zur Angabe eines Durchsatzes von 1 MBit pro Sekunde."""
+"""Konstante zur Angabe eines Durchsatzes von 1\xa0MBit pro Sekunde."""
 RATE_2MBIT: int
-"""Konstante zur Angabe eines Durchsatzes von 2 MBit pro Sekunde."""
+"""Konstante zur Angabe eines Durchsatzes von 2\xa0MBit pro Sekunde."""
 
 def on() -> None:
     """Schaltet den Funk ein.

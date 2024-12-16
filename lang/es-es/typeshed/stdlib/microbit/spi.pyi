@@ -18,12 +18,12 @@ For correct communication, the parameters have to be the same on both communicat
     ...
 
 def read(nbytes: int, out: int=0) -> bytes:
-    """Lee bytes. (leer)
+    """Lee como máximo ``nbytes`` mientras está escribiendo continuamente el byte individual dado por ``out``. (leer)
 
 Example: ``spi.read(64)``
 
 :param nbytes: Número máximo de bytes a leer.
-:param out: (a) The byte value to write (default 0).
+:param out: (salida) El valor del byte a escribir (por defecto 0).
 :return: The bytes read."""
     ...
 

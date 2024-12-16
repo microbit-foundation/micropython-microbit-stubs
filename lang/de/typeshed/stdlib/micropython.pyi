@@ -97,7 +97,7 @@ should be used to compute differences in stack usage at different points.
     ...
 
 def heap_lock() -> None:
-    """Heap-Speicher sperren.
+    """Sperrt den Heap-Speicher.
 
 Example: ``micropython.heap_lock()``
 
@@ -106,7 +106,7 @@ raised if any heap allocation is attempted."""
     ...
 
 def heap_unlock() -> None:
-    """Heap-Speicher entsperren.
+    """Entsperrt den Heap-Speicher.
 
 Example: ``micropython.heap_unlock()``
 

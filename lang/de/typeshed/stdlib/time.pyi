@@ -1,4 +1,4 @@
-"""Messe Zeit und füge Verzögerung zu Programmen hinzu. (Zeit)"""
+"""Miss Zeit und füge Verzögerung zu Programmen hinzu. (Zeit)"""
 from typing import Union
 
 def sleep(seconds: Union[int, float]) -> None:

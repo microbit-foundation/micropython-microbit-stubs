@@ -1,4 +1,4 @@
-"""Verbindet mit einem Gerät über eine serielle Schnittstelle."""
+"""Kommunikation mit einem Gerät über eine serielle Schnittstelle."""
 from _typeshed import WriteableBuffer
 from ..microbit import MicroBitDigitalPin
 from typing import Optional, Union
@@ -8,7 +8,7 @@ EVEN: int
 """Gerade Parität (gerade)"""
 
 def init(baudrate: int=9600, bits: int=8, parity: Optional[int]=None, stop: int=1, tx: Optional[MicroBitDigitalPin]=None, rx: Optional[MicroBitDigitalPin]=None) -> None:
-    """Initialisiere die serielle Kommunikation.
+    """Initialisiert die serielle Kommunikation.
 
 Example: ``uart.init(115200, tx=pin0, rx=pin1)``
 
@@ -29,7 +29,7 @@ For more details see `the online documentation <https://microbit-micropython.rea
     ...
 
 def any() -> bool:
-    """Überprüfen Sie, ob irgendwelche Daten warten.
+    """Überprüft, ob irgendwelche Daten warten.
 
 Example: ``uart.any()``
 
@@ -46,7 +46,7 @@ Example: ``uart.read()``
     ...
 
 def readinto(buf: WriteableBuffer, nbytes: Optional[int]=None) -> Optional[int]:
-    """Lese Bytes in ``buf``.
+    """Liest Bytes in ``buf``.
 
 Example: ``uart.readinto(input_buffer)``
 
@@ -56,7 +56,7 @@ Example: ``uart.readinto(input_buffer)``
     ...
 
 def readline() -> Optional[bytes]:
-    """Liest eine Zeile bis zum Zeilenumbruch.
+    """Liest eine Zeile bis zu einem Zeilenumbruch.
 
 Example: ``uart.readline()``
 

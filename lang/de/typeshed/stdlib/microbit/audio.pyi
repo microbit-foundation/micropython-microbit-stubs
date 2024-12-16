@@ -13,7 +13,7 @@ Example: ``audio.play(Sound.GIGGLE)``
 :param return_pin: Bestimmt einen Pin, mit dem der externen Lautsprecher anstatt mit Ground verbunden wird. Dies wird bei der **V2** Revision ignoriert."""
 
 def is_playing() -> bool:
-    """Überprüfen Sie, ob ein Ton abgespielt wird. (spielt gerade)
+    """Überprüft, ob ein Ton abgespielt wird. (spielt gerade)
 
 Example: ``audio.is_playing()``
 
@@ -21,7 +21,7 @@ Example: ``audio.is_playing()``
     ...
 
 def stop() -> None:
-    """Stoppe jede Audio-Wiedergabe. (Stop)
+    """Stoppt jede Audio-Wiedergabe. (Stop)
 
 Example: ``audio.stop()``"""
     ...
@@ -65,12 +65,12 @@ class SoundEffect:
     waveform: int
     """Typ der Sinuswelle, einer dieser Werte: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (zufällig generiertes Geräusch)"""
     fx: int
-    """Effekt, der dem Sound hinzugefügt werden soll, in Frage kommende Werte: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, oder ``FX_NONE``"""
+    """Effekt, der dem Sound hinzugefügt werden soll. Mögliche Werte: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE`` oder ``FX_NONE``"""
     shape: int
     """Die Art der Interpolationskurve zwischen der Anfangs- und der Endfrequenz. Verschiedene Wellenformen haben unterschiedliche Frequenzänderungsraten. In Frage kommende Werte: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"""
 
     def __init__(self, freq_start: int=500, freq_end: int=2500, duration: int=500, vol_start: int=255, vol_end: int=0, waveform: int=WAVEFORM_SQUARE, fx: int=FX_NONE, shape: int=SHAPE_LOG):
-        """Erstelle einen neuen Soundeffekt.
+        """Erstellt einen neuen Soundeffekt.
 
 Example: ``my_effect = SoundEffect(duration=1000)``
 
@@ -89,7 +89,7 @@ and then change its attributes ``my_effect.duration = 500``.
 :param shape: Die Art der Interpolationskurve zwischen der Anfangs- und der Endfrequenz. Verschiedene Wellenformen haben unterschiedliche Frequenzänderungsraten. In Frage kommende Werte: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``."""
 
     def copy(self) -> SoundEffect:
-        """Erstelle eine Kopie dieses ``SoundEffect``. (kopieren)
+        """Erstellt eine Kopie dieses ``SoundEffect``. (kopieren)
 
 Example: ``sound_2 = sound_1.copy()``
 
@@ -108,7 +108,7 @@ Example::
         frame[i] = 252 - i * 8"""
 
     def copyfrom(self, other: AudioFrame) -> None:
-        """Überschreibe die Daten in diesem ``AudioFrame`` mit den Daten einer anderen ``AudioFrame`` Instanz.
+        """Überschreibt die Daten in diesem ``AudioFrame`` mit den Daten einer anderen ``AudioFrame``-Instanz.
 
 Example: ``my_frame.copyfrom(source_frame)``
 

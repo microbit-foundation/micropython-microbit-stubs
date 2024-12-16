@@ -12,7 +12,7 @@ persistent on-device file system."""
     ...
 
 def remove(filename: str) -> None:
-    """Entferne (lösche) eine Datei. (Entfernen)
+    """Entfernt\xa0/ Löscht eine Datei. (Entfernen)
 
 Example: ``os.remove('data.txt')``
 

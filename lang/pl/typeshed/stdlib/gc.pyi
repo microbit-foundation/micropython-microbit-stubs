@@ -1,4 +1,4 @@
-"""Steruj zbieraniem sieci"""
+"""Steruj zbieraniem śmieci"""
 from typing import overload
 
 def enable() -> None:

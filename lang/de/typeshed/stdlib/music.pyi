@@ -2,19 +2,19 @@
 from typing import Optional, Tuple, Union, List
 from .microbit import MicroBitDigitalPin, pin0
 DADADADUM: Tuple[str, ...]
-"""Melodie: der Anfang von Beethovens 5. Symphonie in c-Moll. (dadadadaam)"""
+"""Melodie: Der Anfang von Beethovens 5. Symphonie in c-Moll. (dadadadaam)"""
 ENTERTAINER: Tuple[str, ...]
-"""Melodie: die ersten Takte des Ragtime-Klassikers "The Entertainer" von Scott Joplin. (Entertainer)"""
+"""Melodie: Die ersten Takte des Ragtime-Klassikers „The Entertainer“ von Scott Joplin. (Entertainer)"""
 PRELUDE: Tuple[str, ...]
 """Melodie: Beginn des ersten Präludiums in C-Dur der 48 Präludien und Fugen von J.S. Bach."""
 ODE: Tuple[str, ...]
 """Melodie: Die „Ode an die Freude“ von Beethovens neunter Symphonie in d-Moll. (Ode)"""
 NYAN: Tuple[str, ...]
-"""Melodie: Die Nyan-Katze (http://www.nyan.cat/) (Nyan)
+"""Melodie: Nyan-Katze (http://www.nyan.cat/). (Nyan)
 
 The composer is unknown. This is fair use for educational porpoises (as they say in New York)."""
 RINGTONE: Tuple[str, ...]
-"""Melodie: Etwas das wie ein Handy-Klingelton klingt. (Klingelton)
+"""Melodie: Etwas, das wie ein Handy-Klingelton klingt. (Klingelton)
 
 To be used to indicate an incoming message.
 """
@@ -23,18 +23,18 @@ FUNK: Tuple[str, ...]
 BLUES: Tuple[str, ...]
 """Melodie: ein 12-taktiger Boogie-Woogie-Blues mit Walking Bass. (Blues)"""
 BIRTHDAY: Tuple[str, ...]
-"""Melodie: „Alles Gute zum Geburtstag…“ (Geburtstag)
+"""Melodie: „Alles Gute zum Geburtstag\xa0…“ (Geburtstag)
 
 For copyright status see: http://www.bbc.co.uk/news/world-us-canada-34332853
 """
 WEDDING: Tuple[str, ...]
-"""Melodie: der Hochzeitschor aus Wagners Oper "Lohengrin". (Hochzeit)"""
+"""Melodie: der Hochzeitschor aus Wagners Oper „Lohengrin“. (Hochzeit)"""
 FUNERAL: Tuple[str, ...]
-"""Melodie: der "Trauermarsch", auch bekannt als Frédéric Chopins Klaviersonate Nr. 2 in b-Moll, op. 35. (Beerdigung)"""
+"""Melodie: Der „Trauermarsch“, auch bekannt als Frédéric Chopins Klaviersonate Nr. 2 in b-Moll, op. 35. (Beerdigung)"""
 PUNCHLINE: Tuple[str, ...]
 """Melodie: ein lustiges Fragment, das anzeigt, dass ein Scherz gemacht worden ist."""
 PYTHON: Tuple[str, ...]
-"""Melodie: John Philip Sousas Marsch "Liberty Bell", auch bekannt als das Thema von "Monty Python's Flying Circus" (nach dem die Programmiersprache Python benannt ist)."""
+"""Melodie: John Philip Sousas Marsch „Liberty Bell“, auch bekannt als die Titelmusik von „Monty Python's Flying Circus“ (nach dem die Programmiersprache Python benannt ist)."""
 BADDY: Tuple[str, ...]
 """Melodie: Auftritt eines Stummfilm-Bösewichts."""
 CHASE: Tuple[str, ...]

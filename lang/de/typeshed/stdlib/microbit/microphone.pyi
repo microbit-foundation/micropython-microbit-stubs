@@ -11,7 +11,7 @@ Example: ``microphone.current_event()``
     ...
 
 def was_event(event: SoundEvent) -> bool:
-    """Überprüfung, ob seit dem letzten Anruf mindestens einmal ein Geräusch gehört wurde.
+    """Überprüft, ob seit dem letzten Anruf mindestens einmal ein Geräusch gehört wurde.
 
 Example: ``microphone.was_event(SoundEvent.LOUD)``
 
@@ -22,7 +22,7 @@ This call clears the sound history before returning.
     ...
 
 def is_event(event: SoundEvent) -> bool:
-    """Überprüfe das zuletzt erkannte Sound-Ereignis.
+    """Überprüft das zuletzt erkannte Sound-Ereignis.
 
 Example: ``microphone.is_event(SoundEvent.LOUD)``
 
@@ -54,7 +54,7 @@ A high threshold means the event will only trigger if the sound is very loud (>=
     ...
 
 def sound_level() -> int:
-    """Ermittle den Schalldruckpegel. (Lautstärke)
+    """Ermittelt den Schalldruckpegel. (Lautstärke)
 
 Example: ``microphone.sound_level()``
 

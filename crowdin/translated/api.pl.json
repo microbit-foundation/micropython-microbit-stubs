@@ -4,7 +4,7 @@
     "description": "(module name) Control the garbage collector"
   },
   "gc.summary": {
-    "message": "Steruj zbieraniem sieci",
+    "message": "Steruj zbieraniem śmieci",
     "description": "Control the garbage collector"
   },
   "gc.enable": {
@@ -3460,7 +3460,7 @@
     "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
-    "message": "Czytaj bajty.",
+    "message": "Przeczytaj co najwyżej {{nbytes}} podczas ciągłego pisania pojedynczego bajtu danego przez {{out}}.",
     "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {
@@ -3476,7 +3476,7 @@
     "description": "(parameter name) The byte value to write (default 0)."
   },
   "microbit.spi.read.param-doc.out": {
-    "message": "The byte value to write (default 0).",
+    "message": "Wartość bajtu do zapisu (domyślnie 0).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {

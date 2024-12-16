@@ -61,19 +61,19 @@ using their keyword."""
     ...
 
 def on() -> None:
-    """Das LED-Display einschalten.
+    """Schaltet das LED-Display ein.
 
 Example: ``display.on()``"""
     ...
 
 def off() -> None:
-    """Die LED-Anzeige ausschalten (Deaktivieren des Displays ermöglicht es dir, die GPIO-Pins für andere Zwecke zu verwenden).
+    """Schaltet das LED-Display aus (Deaktivieren des Displays ermöglicht es dir, die GPIO-Pins für andere Zwecke zu verwenden).
 
 Example: ``display.off()``"""
     ...
 
 def is_on() -> bool:
-    """Überprüfung, ob die LED-Anzeige aktiviert ist.
+    """Überprüft, ob die LED-Anzeige aktiviert ist.
 
 Example: ``display.is_on()``
 

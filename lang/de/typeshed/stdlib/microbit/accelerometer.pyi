@@ -26,7 +26,7 @@ Example: ``accelerometer.get_z()``
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Erhalten Sie die Beschleunigungsmessungen in allen Achsen auf einmal als Tupel.
+    """Erhalte die Beschleunigungsmessung in allen Achsen auf einmal als Tupel.
 
 Example: ``x, y, z = accelerometer.get_values()``
 
@@ -34,7 +34,7 @@ Example: ``x, y, z = accelerometer.get_values()``
     ...
 
 def get_strength() -> int:
-    """Erhalte die Beschleunigungsmessung aller Achsen als positive Ganzzahl. Dies ist die euklidische Summe der X-, Y- und Z-Achsen.
+    """Erhalte die Beschleunigungsmessung aller Achsen als positive Ganzzahl. Dies ist die euklidische Summe der x-, y- und z-Achsen.
 
 Example: ``accelerometer.get_strength()``
 
@@ -96,7 +96,7 @@ gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
     ...
 
 def set_range(value: int) -> None:
-    """Legen Sie den Bereich des Beschleunigungsmessers in g (Fallbeschleunigung) auf den nächstgelegenen Wert fest, welcher von der Hardware unterstützt wird. Diese sind ``2``, ``4``oder ``8`` g. (Bereich einstellen)
+    """Legt den Bereich des Beschleunigungsmessers in g (Fallbeschleunigung) auf den nächstgelegenen Wert fest, welcher von der Hardware unterstützt wird. Diese sind ``2``, ``4``oder ``8`` g. (Bereich einstellen)
 
 Example: ``accelerometer.set_range(8)``
 

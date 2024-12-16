@@ -84,7 +84,7 @@
     "description": "(field name) Milliseconds timestamp format."
   },
   "log.MILLISECONDS.summary": {
-    "message": "Millisekunden Zeitstempelformat.",
+    "message": "Zeitstempelformat: Millisekunden",
     "description": "Milliseconds timestamp format."
   },
   "log.SECONDS": {
@@ -92,7 +92,7 @@
     "description": "(field name) Seconds timestamp format."
   },
   "log.SECONDS.summary": {
-    "message": "Sekunden Zeitstempelformat.",
+    "message": "Zeitstempelformat: Sekunden",
     "description": "Seconds timestamp format."
   },
   "log.MINUTES": {
@@ -100,7 +100,7 @@
     "description": "(field name) Minutes timestamp format."
   },
   "log.MINUTES.summary": {
-    "message": "Minuten Zeitstempelformat.",
+    "message": "Zeitstempelformat: Minuten",
     "description": "Minutes timestamp format."
   },
   "log.HOURS": {
@@ -108,7 +108,7 @@
     "description": "(field name) Hours timestamp format."
   },
   "log.HOURS.summary": {
-    "message": "Stunden Zeitstempelformat.",
+    "message": "Zeitstempelformat: Stunden",
     "description": "Hours timestamp format."
   },
   "log.DAYS": {
@@ -460,7 +460,7 @@
     "description": "(function name) Calculate ``x`` with the sign of ``y``."
   },
   "math.copysign.summary": {
-    "message": "Berechne {{x}} mit dem Vorzeichen von {{y}}.",
+    "message": "Berechnet {{x}} mit dem Vorzeichen von {{y}}.",
     "description": "Calculate ``x`` with the sign of ``y``."
   },
   "math.copysign.param-name.x": {
@@ -564,7 +564,7 @@
     "description": "(function name) Calculate the remainder of ``x/y``."
   },
   "math.fmod.summary": {
-    "message": "Berechne den Rest von {{x/y}}.",
+    "message": "Berechnet den Rest von {{x/y}}.",
     "description": "Calculate the remainder of ``x/y``."
   },
   "math.fmod.param-name.x": {
@@ -636,7 +636,7 @@
     "description": "(function name) Check if a value is not-a-number (NaN)."
   },
   "math.isnan.summary": {
-    "message": "Prüft, ob ein Wert keine Zahl (NaN ... Not A Number) ist.",
+    "message": "Prüft, ob ein Wert keine Zahl (NaN bzw. Not A Number) ist.",
     "description": "Check if a value is not-a-number (NaN)."
   },
   "math.isnan.param-name.x": {
@@ -652,7 +652,7 @@
     "description": "(function name) Calculate ``x * (2**exp)``."
   },
   "math.ldexp.summary": {
-    "message": "Berechne {{x * (2**exp)}}.",
+    "message": "Berechnet {{x * (2**exp)}}.",
     "description": "Calculate ``x * (2**exp)``."
   },
   "math.ldexp.param-name.exp": {
@@ -700,7 +700,7 @@
     "description": "(function name) Calculate the fractional and integral parts of ``x``."
   },
   "math.modf.summary": {
-    "message": "Berechne die gebrochenen und ganzzahligen Teile von {{x}}.",
+    "message": "Berechnet die gebrochenen und ganzzahligen Teile von {{x}}.",
     "description": "Calculate the fractional and integral parts of ``x``."
   },
   "math.modf.param-name.x": {
@@ -820,7 +820,7 @@
     "description": "(field name) Base of the natural logarithm"
   },
   "math.e.summary": {
-    "message": "Basis des natürlichen Logarithmus",
+    "message": "Basis des natürlichen Logarithmus.",
     "description": "Base of the natural logarithm"
   },
   "math.pi": {
@@ -828,7 +828,7 @@
     "description": "(field name) The ratio of a circle's circumference to its diameter"
   },
   "math.pi.summary": {
-    "message": "Das Verhältnis des Umfangs eines Kreises zu seinem Durchmesser",
+    "message": "Das Verhältnis des Umfangs eines Kreises zu seinem Durchmesser.",
     "description": "The ratio of a circle's circumference to its diameter"
   },
   "microbit": {
@@ -844,7 +844,7 @@
     "description": "(function name) Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.summary": {
-    "message": "Plant die Ausführung einer Funktion in dem durch die Zeitargumente festgelegten Intervall **nur V2**.",
+    "message": "Plant die Ausführung einer Funktion in dem durch die Zeitargumente festgelegten Intervall. **Nur micro:bit V2**.",
     "description": "Schedule to run a function at the interval specified by the time arguments **V2 only**."
   },
   "microbit.run_every.param-name.callback": {
@@ -988,7 +988,7 @@
     "description": "(function name) Wait for ``n`` milliseconds."
   },
   "microbit.sleep.summary": {
-    "message": "Warte auf {{n}} Millisekunden.",
+    "message": "Wartet {{n}} Millisekunden.",
     "description": "Wait for ``n`` milliseconds."
   },
   "microbit.sleep.param-name.n": {
@@ -1068,7 +1068,7 @@
     "description": "(field name) The left button ``Button`` object."
   },
   "microbit.button_a.summary": {
-    "message": "Das {{Button}}-Objekt der linken Taste.",
+    "message": "Das Objekt {{Button}} der linken Taste.",
     "description": "The left button ``Button`` object."
   },
   "microbit.button_b": {
@@ -1076,7 +1076,7 @@
     "description": "(field name) The right button ``Button`` object."
   },
   "microbit.button_b.summary": {
-    "message": "Das {{Button}}-Objekt der rechten Taste.",
+    "message": "Das Objekt {{Button}} der rechten Taste.",
     "description": "The right button ``Button`` object."
   },
   "microbit.MicroBitDigitalPin": {
@@ -1148,7 +1148,7 @@
     "description": "(function name) Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
   },
   "microbit.MicroBitDigitalPin.write_analog.summary": {
-    "message": "Erzeugt ein PWM-Signal am Pin mit der Einschaltdauer proportional zu {{value}}.",
+    "message": "Gib ein PWM-Signal am Pin aus, bei dem das Verhältnis von An- zu Auszeit proportional zu {{value}} ist.",
     "description": "Output a PWM signal on the pin, with the duty cycle proportional to ``value``."
   },
   "microbit.MicroBitDigitalPin.write_analog.param-name.value": {
@@ -1164,7 +1164,7 @@
     "description": "(function name) Set the period of the PWM signal being output to ``period`` in milliseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period.summary": {
-    "message": "Setzt die Periodendauer des PWM-Signals, das ausgegeben wird, auf {{period}} in Millisekunden.",
+    "message": "Setze die Periodendauer für die Ausgabe des PWM-Signals auf {{period}} in Mikrosekunden.",
     "description": "Set the period of the PWM signal being output to ``period`` in milliseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period.param-name.period": {
@@ -1180,7 +1180,7 @@
     "description": "(function name) Set the period of the PWM signal being output to ``period`` in microseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period_microseconds.summary": {
-    "message": "Setze die Periodendauer für die Ausgabe des PWM-Signals auf {{period}} in Mikrosekunden.",
+    "message": "Setzt den Zeitraum des PWM-Signals, das ausgegeben wird, auf {{period}} in Mikrosekunden.",
     "description": "Set the period of the PWM signal being output to ``period`` in microseconds."
   },
   "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-name.period": {
@@ -1188,7 +1188,7 @@
     "description": "(parameter name) The period in microseconds with a minimum valid value of 256µs."
   },
   "microbit.MicroBitDigitalPin.set_analog_period_microseconds.param-doc.period": {
-    "message": "Die Periodendauer in Mikrosekunden mit einem Mindestwert von 256μs.",
+    "message": "Die Periodendauer in Mikrosekunden mit einem Mindestwert von 256 μs.",
     "description": "Parameter docs"
   },
   "microbit.MicroBitAnalogDigitalPin": {
@@ -1228,7 +1228,7 @@
     "description": "(function name) Set the touch mode for the pin."
   },
   "microbit.MicroBitTouchPin.set_touch_mode.summary": {
-    "message": "Legt den Touchmodus für den Pin fest.",
+    "message": "Legt den Berührungsmodus für den Pin fest.",
     "description": "Set the touch mode for the pin."
   },
   "microbit.MicroBitTouchPin.set_touch_mode.param-name.value": {
@@ -1396,7 +1396,7 @@
     "description": "(field name) A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
   },
   "microbit.pin_logo.summary": {
-    "message": "Ein berührungsempfindlicher Logo-Pin auf der Vorderseite des micro:bit, der standardmäßig auf den kapazitiven Touch-Modus eingestellt ist.",
+    "message": "Ein berührungsempfindlicher Logo-Pin auf der Vorderseite des micro:bit, der standardmäßig auf den kapazitiven Berührungsmodus eingestellt ist.",
     "description": "A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."
   },
   "microbit.pin_speaker": {
@@ -1404,7 +1404,7 @@
     "description": "(field name) A pin to address the micro:bit speaker."
   },
   "microbit.pin_speaker.summary": {
-    "message": "Ein Pin zur Ansteuerung des micro:bit Lautsprechers.",
+    "message": "Ein Pin zur Ansteuerung des micro:bit-Lautsprechers.",
     "description": "A pin to address the micro:bit speaker."
   },
   "microbit.Image": {
@@ -1948,7 +1948,7 @@
     "description": "(function name) Create an image from a string describing which LEDs are lit."
   },
   "microbit.Image.__init__-1.summary": {
-    "message": "Erstellen Sie ein Bild aus einer Zeichenkette, die beschreibt, welche LEDs leuchten.",
+    "message": "Erstellt ein Bild aus einer Zeichenkette, die beschreibt, welche LEDs leuchten.",
     "description": "Create an image from a string describing which LEDs are lit."
   },
   "microbit.Image.__init__-1.param-name.string": {
@@ -2068,7 +2068,7 @@
     "description": "(function name) Create a new image by shifting the picture left."
   },
   "microbit.Image.shift_left.summary": {
-    "message": "Erstellen Sie ein neues Bild, indem Sie das Bild nach links verschieben.",
+    "message": "Erstellt ein neues Bild, indem das Bild nach links verschoben wird.",
     "description": "Create a new image by shifting the picture left."
   },
   "microbit.Image.shift_left.param-name.n": {
@@ -2084,7 +2084,7 @@
     "description": "(function name) Create a new image by shifting the picture right."
   },
   "microbit.Image.shift_right.summary": {
-    "message": "Erstellen Sie ein neues Bild, indem Sie das Bild nach rechts verschieben.",
+    "message": "Erstellt ein neues Bild, indem das Bild nach rechts verschoben wird.",
     "description": "Create a new image by shifting the picture right."
   },
   "microbit.Image.shift_right.param-name.n": {
@@ -2100,7 +2100,7 @@
     "description": "(function name) Create a new image by shifting the picture up."
   },
   "microbit.Image.shift_up.summary": {
-    "message": "Erstellen Sie ein neues Bild, indem Sie das Bild nach oben verschoben wird.",
+    "message": "Erstellt ein neues Bild, indem das Bild nach oben verschoben wird.",
     "description": "Create a new image by shifting the picture up."
   },
   "microbit.Image.shift_up.param-name.n": {
@@ -2116,7 +2116,7 @@
     "description": "(function name) Create a new image by shifting the picture down."
   },
   "microbit.Image.shift_down.summary": {
-    "message": "Erstellen Sie ein neues Bild, indem Sie das Bild nach unten verschoben wird.",
+    "message": "Erstellt ein neues Bild, indem das Bild nach unten verschoben wird.",
     "description": "Create a new image by shifting the picture down."
   },
   "microbit.Image.shift_down.param-name.n": {
@@ -2484,7 +2484,7 @@
     "description": "(function name) Get the acceleration measurements in all axes at once as a tuple."
   },
   "microbit.accelerometer.get_values.summary": {
-    "message": "Erhalten Sie die Beschleunigungsmessungen in allen Achsen auf einmal als Tupel.",
+    "message": "Erhalte die Beschleunigungsmessung in allen Achsen auf einmal als Tupel.",
     "description": "Get the acceleration measurements in all axes at once as a tuple."
   },
   "microbit.accelerometer.get_strength": {
@@ -2492,7 +2492,7 @@
     "description": "(function name) Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
   },
   "microbit.accelerometer.get_strength.summary": {
-    "message": "Erhalte die Beschleunigungsmessung aller Achsen als positive Ganzzahl. Dies ist die euklidische Summe der X-, Y- und Z-Achsen.",
+    "message": "Erhalte die Beschleunigungsmessung aller Achsen als positive Ganzzahl. Dies ist die euklidische Summe der x-, y- und z-Achsen.",
     "description": "Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes."
   },
   "microbit.accelerometer.current_gesture": {
@@ -2548,7 +2548,7 @@
     "description": "(function name) Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.summary": {
-    "message": "Legen Sie den Bereich des Beschleunigungsmessers in g (Fallbeschleunigung) auf den nächstgelegenen Wert fest, welcher von der Hardware unterstützt wird. Diese sind {{2}}, {{4}}oder {{8}} g.",
+    "message": "Legt den Bereich des Beschleunigungsmessers in g (Fallbeschleunigung) auf den nächstgelegenen Wert fest, welcher von der Hardware unterstützt wird. Diese sind {{2}}, {{4}}oder {{8}} g.",
     "description": "Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g."
   },
   "microbit.accelerometer.set_range.param-name.value": {
@@ -2612,7 +2612,7 @@
     "description": "(function name) Check whether a sound is playing."
   },
   "microbit.audio.is_playing.summary": {
-    "message": "Überprüfen Sie, ob ein Ton abgespielt wird.",
+    "message": "Überprüft, ob ein Ton abgespielt wird.",
     "description": "Check whether a sound is playing."
   },
   "microbit.audio.stop": {
@@ -2620,7 +2620,7 @@
     "description": "(function name) Stop all audio playback."
   },
   "microbit.audio.stop.summary": {
-    "message": "Stoppe jede Audio-Wiedergabe.",
+    "message": "Stoppt jede Audio-Wiedergabe.",
     "description": "Stop all audio playback."
   },
   "microbit.audio.SoundEffect": {
@@ -2780,7 +2780,7 @@
     "description": "(field name) Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
   },
   "microbit.audio.SoundEffect.fx.summary": {
-    "message": "Effekt, der dem Sound hinzugefügt werden soll, in Frage kommende Werte: {{FX_TREMOLO}}, {{FX_VIBRATO}}, {{FX_WARBLE}}, oder {{FX_NONE}}",
+    "message": "Effekt, der dem Sound hinzugefügt werden soll. Mögliche Werte: {{FX_TREMOLO}}, {{FX_VIBRATO}}, {{FX_WARBLE}} oder {{FX_NONE}}",
     "description": "Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"
   },
   "microbit.audio.SoundEffect.shape": {
@@ -2796,7 +2796,7 @@
     "description": "(function name) Create a new sound effect."
   },
   "microbit.audio.SoundEffect.__init__.summary": {
-    "message": "Erstelle einen neuen Soundeffekt. ",
+    "message": "Erstellt einen neuen Soundeffekt. ",
     "description": "Create a new sound effect."
   },
   "microbit.audio.SoundEffect.__init__.param-name.duration": {
@@ -2868,7 +2868,7 @@
     "description": "(function name) Create a copy of this ``SoundEffect``."
   },
   "microbit.audio.SoundEffect.copy.summary": {
-    "message": "Erstelle eine Kopie dieses {{SoundEffect}}. ",
+    "message": "Erstellt eine Kopie dieses {{SoundEffect}}. ",
     "description": "Create a copy of this ``SoundEffect``."
   },
   "microbit.audio.AudioFrame": {
@@ -2884,7 +2884,7 @@
     "description": "(function name) Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
   },
   "microbit.audio.AudioFrame.copyfrom.summary": {
-    "message": "Überschreibe die Daten in diesem {{AudioFrame}} mit den Daten einer anderen {{AudioFrame}} Instanz. ",
+    "message": "Überschreibt die Daten in diesem {{AudioFrame}} mit den Daten einer anderen {{AudioFrame}}-Instanz. ",
     "description": "Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance."
   },
   "microbit.audio.AudioFrame.copyfrom.param-name.other": {
@@ -2916,7 +2916,7 @@
     "description": "(function name) Check is the compass is calibrated."
   },
   "microbit.compass.is_calibrated.summary": {
-    "message": "Überprüfe, dass der Kompass kalibriert ist. ",
+    "message": "Überprüft, dass der Kompass kalibriert ist. ",
     "description": "Check is the compass is calibrated."
   },
   "microbit.compass.clear_calibration": {
@@ -2956,7 +2956,7 @@
     "description": "(function name) Get the compass heading."
   },
   "microbit.compass.heading.summary": {
-    "message": "Ermittle die Kompassrichtung. ",
+    "message": "Ermittelt die Kompassrichtung. ",
     "description": "Get the compass heading."
   },
   "microbit.compass.get_field_strength": {
@@ -2964,7 +2964,7 @@
     "description": "(function name) Get the magnitude of the magnetic field around the device."
   },
   "microbit.compass.get_field_strength.summary": {
-    "message": "Ermittle die Größe des Magnetfelds um das Gerät herum.",
+    "message": "Ermittelt die Größe des Magnetfelds um das Gerät herum.",
     "description": "Get the magnitude of the magnetic field around the device."
   },
   "microbit.display": {
@@ -3140,7 +3140,7 @@
     "description": "(function name) Turn on the LED display."
   },
   "microbit.display.on.summary": {
-    "message": "Das LED-Display einschalten.",
+    "message": "Schaltet das LED-Display ein.",
     "description": "Turn on the LED display."
   },
   "microbit.display.off": {
@@ -3148,7 +3148,7 @@
     "description": "(function name) Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
   },
   "microbit.display.off.summary": {
-    "message": "Die LED-Anzeige ausschalten (Deaktivieren des Displays ermöglicht es dir, die GPIO-Pins für andere Zwecke zu verwenden).",
+    "message": "Schaltet das LED-Display aus (Deaktivieren des Displays ermöglicht es dir, die GPIO-Pins für andere Zwecke zu verwenden).",
     "description": "Turn off the LED display (disabling the display allows you to re-use the GPIO pins for other purposes)."
   },
   "microbit.display.is_on": {
@@ -3156,7 +3156,7 @@
     "description": "(function name) Check whether the LED display is enabled."
   },
   "microbit.display.is_on.summary": {
-    "message": "Überprüfung, ob die LED-Anzeige aktiviert ist.",
+    "message": "Überprüft, ob die LED-Anzeige aktiviert ist.",
     "description": "Check whether the LED display is enabled."
   },
   "microbit.display.read_light_level": {
@@ -3252,7 +3252,7 @@
     "description": "(function name) Write bytes to a device."
   },
   "microbit.i2c.write.summary": {
-    "message": "Schreibe Bytes auf ein Gerät.",
+    "message": "Schreibt Bytes auf ein Gerät.",
     "description": "Write bytes to a device."
   },
   "microbit.i2c.write.param-name.addr": {
@@ -3300,7 +3300,7 @@
     "description": "(function name) Check if a sound was heard at least once since the last call."
   },
   "microbit.microphone.was_event.summary": {
-    "message": "Überprüfung, ob seit dem letzten Anruf mindestens einmal ein Geräusch gehört wurde.",
+    "message": "Überprüft, ob seit dem letzten Anruf mindestens einmal ein Geräusch gehört wurde.",
     "description": "Check if a sound was heard at least once since the last call."
   },
   "microbit.microphone.was_event.param-name.event": {
@@ -3316,7 +3316,7 @@
     "description": "(function name) Check the most recent sound event detected."
   },
   "microbit.microphone.is_event.summary": {
-    "message": "Überprüfe das zuletzt erkannte Sound-Ereignis.",
+    "message": "Überprüft das zuletzt erkannte Sound-Ereignis.",
     "description": "Check the most recent sound event detected."
   },
   "microbit.microphone.is_event.param-name.event": {
@@ -3364,7 +3364,7 @@
     "description": "(function name) Get the sound pressure level."
   },
   "microbit.microphone.sound_level.summary": {
-    "message": "Ermittle den Schalldruckpegel. ",
+    "message": "Ermittelt den Schalldruckpegel. ",
     "description": "Get the sound pressure level."
   },
   "microbit.speaker": {
@@ -3380,7 +3380,7 @@
     "description": "(function name) Turn the speaker off."
   },
   "microbit.speaker.off.summary": {
-    "message": "Lautsprecher ausschalten. ",
+    "message": "Schaltet den Lautsprecher aus.",
     "description": "Turn the speaker off."
   },
   "microbit.speaker.on": {
@@ -3388,7 +3388,7 @@
     "description": "(function name) Turn the speaker on."
   },
   "microbit.speaker.on.summary": {
-    "message": "Lautsprecher einschalten. ",
+    "message": "Schaltet den Lautsprecher ein.",
     "description": "Turn the speaker on."
   },
   "microbit.spi": {
@@ -3484,7 +3484,7 @@
     "description": "(function name) Write bytes to the bus."
   },
   "microbit.spi.write.summary": {
-    "message": "Schreibe Bytes auf den Bus. ",
+    "message": "Schreibt Bytes auf den Bus. ",
     "description": "Write bytes to the bus."
   },
   "microbit.spi.write.param-name.buffer": {
@@ -3524,7 +3524,7 @@
     "description": "(module name) Communicate with a device using a serial interface."
   },
   "microbit.uart.summary": {
-    "message": "Verbindet mit einem Gerät über eine serielle Schnittstelle.",
+    "message": "Kommunikation mit einem Gerät über eine serielle Schnittstelle.",
     "description": "Communicate with a device using a serial interface."
   },
   "microbit.uart.ODD": {
@@ -3548,7 +3548,7 @@
     "description": "(function name) Initialize serial communication."
   },
   "microbit.uart.init.summary": {
-    "message": "Initialisiere die serielle Kommunikation.",
+    "message": "Initialisiert die serielle Kommunikation.",
     "description": "Initialize serial communication."
   },
   "microbit.uart.init.param-name.baudrate": {
@@ -3604,7 +3604,7 @@
     "description": "(function name) Check if any data is waiting."
   },
   "microbit.uart.any.summary": {
-    "message": "Überprüfen Sie, ob irgendwelche Daten warten.",
+    "message": "Überprüft, ob irgendwelche Daten warten.",
     "description": "Check if any data is waiting."
   },
   "microbit.uart.read": {
@@ -3628,7 +3628,7 @@
     "description": "(function name) Read bytes into the ``buf``."
   },
   "microbit.uart.readinto.summary": {
-    "message": "Lese Bytes in {{buf}}.",
+    "message": "Liest Bytes in {{buf}}.",
     "description": "Read bytes into the ``buf``."
   },
   "microbit.uart.readinto.param-name.buf": {
@@ -3652,7 +3652,7 @@
     "description": "(function name) Read a line, ending in a newline character."
   },
   "microbit.uart.readline.summary": {
-    "message": "Liest eine Zeile bis zum Zeilenumbruch.",
+    "message": "Liest eine Zeile bis zu einem Zeilenumbruch.",
     "description": "Read a line, ending in a newline character."
   },
   "microbit.uart.write": {
@@ -3764,7 +3764,7 @@
     "description": "(function name) Lock the heap."
   },
   "micropython.heap_lock.summary": {
-    "message": "Heap-Speicher sperren.",
+    "message": "Sperrt den Heap-Speicher.",
     "description": "Lock the heap."
   },
   "micropython.heap_unlock": {
@@ -3772,7 +3772,7 @@
     "description": "(function name) Unlock the heap."
   },
   "micropython.heap_unlock.summary": {
-    "message": "Heap-Speicher entsperren.",
+    "message": "Entsperrt den Heap-Speicher.",
     "description": "Unlock the heap."
   },
   "micropython.kbd_intr": {
@@ -3804,7 +3804,7 @@
     "description": "(field name) Melody: the opening to Beethoven’s 5th Symphony in C minor."
   },
   "music.DADADADUM.summary": {
-    "message": "Melodie: der Anfang von Beethovens 5. Symphonie in c-Moll.",
+    "message": "Melodie: Der Anfang von Beethovens 5. Symphonie in c-Moll.",
     "description": "Melody: the opening to Beethoven’s 5th Symphony in C minor."
   },
   "music.ENTERTAINER": {
@@ -3812,7 +3812,7 @@
     "description": "(field name) Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."
   },
   "music.ENTERTAINER.summary": {
-    "message": "Melodie: die ersten Takte des Ragtime-Klassikers \"The Entertainer\" von Scott Joplin.",
+    "message": "Melodie: Die ersten Takte des Ragtime-Klassikers „The Entertainer“ von Scott Joplin.",
     "description": "Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."
   },
   "music.PRELUDE": {
@@ -3836,7 +3836,7 @@
     "description": "(field name) Melody: the Nyan Cat theme (http://www.nyan.cat/)."
   },
   "music.NYAN.summary": {
-    "message": "Melodie: Die Nyan-Katze (http://www.nyan.cat/)",
+    "message": "Melodie: Nyan-Katze (http://www.nyan.cat/).",
     "description": "Melody: the Nyan Cat theme (http://www.nyan.cat/)."
   },
   "music.RINGTONE": {
@@ -3844,7 +3844,7 @@
     "description": "(field name) Melody: something that sounds like a mobile phone ringtone."
   },
   "music.RINGTONE.summary": {
-    "message": "Melodie: Etwas das wie ein Handy-Klingelton klingt.",
+    "message": "Melodie: Etwas, das wie ein Handy-Klingelton klingt.",
     "description": "Melody: something that sounds like a mobile phone ringtone."
   },
   "music.FUNK": {
@@ -3868,7 +3868,7 @@
     "description": "(field name) Melody: “Happy Birthday to You…”"
   },
   "music.BIRTHDAY.summary": {
-    "message": "Melodie: „Alles Gute zum Geburtstag…“",
+    "message": "Melodie: „Alles Gute zum Geburtstag …“",
     "description": "Melody: “Happy Birthday to You…”"
   },
   "music.WEDDING": {
@@ -3876,7 +3876,7 @@
     "description": "(field name) Melody: the bridal chorus from Wagner’s opera “Lohengrin”."
   },
   "music.WEDDING.summary": {
-    "message": "Melodie: der Hochzeitschor aus Wagners Oper \"Lohengrin\".",
+    "message": "Melodie: der Hochzeitschor aus Wagners Oper „Lohengrin“.",
     "description": "Melody: the bridal chorus from Wagner’s opera “Lohengrin”."
   },
   "music.FUNERAL": {
@@ -3884,7 +3884,7 @@
     "description": "(field name) Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."
   },
   "music.FUNERAL.summary": {
-    "message": "Melodie: der \"Trauermarsch\", auch bekannt als Frédéric Chopins Klaviersonate Nr. 2 in b-Moll, op. 35.",
+    "message": "Melodie: Der „Trauermarsch“, auch bekannt als Frédéric Chopins Klaviersonate Nr. 2 in b-Moll, op. 35.",
     "description": "Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."
   },
   "music.PUNCHLINE": {
@@ -3900,7 +3900,7 @@
     "description": "(field name) Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."
   },
   "music.PYTHON.summary": {
-    "message": "Melodie: John Philip Sousas Marsch \"Liberty Bell\", auch bekannt als das Thema von \"Monty Python's Flying Circus\" (nach dem die Programmiersprache Python benannt ist).",
+    "message": "Melodie: John Philip Sousas Marsch „Liberty Bell“, auch bekannt als die Titelmusik von „Monty Python's Flying Circus“ (nach dem die Programmiersprache Python benannt ist).",
     "description": "Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."
   },
   "music.BADDY": {
@@ -4116,7 +4116,7 @@
     "description": "(function name) Initialise a new strip of neopixel LEDs controlled via a pin."
   },
   "neopixel.NeoPixel.__init__.summary": {
-    "message": "Initialisierung eines neuen Streifens von Neopixel-LEDs, die über einen Pin gesteuert werden.",
+    "message": "Initialisiert einen neuen Streifen von Neopixel-LEDs, die über einen Pin gesteuert werden.",
     "description": "Initialise a new strip of neopixel LEDs controlled via a pin."
   },
   "neopixel.NeoPixel.__init__.param-name.bpp": {
@@ -4148,7 +4148,7 @@
     "description": "(function name) Clear all the pixels."
   },
   "neopixel.NeoPixel.clear.summary": {
-    "message": "Lösche alle Pixel.",
+    "message": "Löscht alle Pixel.",
     "description": "Clear all the pixels."
   },
   "neopixel.NeoPixel.show": {
@@ -4172,7 +4172,7 @@
     "description": "(function name) Colour all pixels a given RGB/RGBW value (micro:bit V2 only)."
   },
   "neopixel.NeoPixel.fill.summary": {
-    "message": "Alle Pixel mit einem bestimmten RGB/RGBW-Wert färben.",
+    "message": "Färbt alle Pixel mit einem bestimmten RGB/RGBW-Wert (nur micro:bit V2).",
     "description": "Colour all pixels a given RGB/RGBW value (micro:bit V2 only)."
   },
   "neopixel.NeoPixel.fill.param-name.colour": {
@@ -4252,7 +4252,7 @@
     "description": "(function name) Remove (delete) a file."
   },
   "os.remove.summary": {
-    "message": "Entferne (lösche) eine Datei.",
+    "message": "Entfernt / Löscht eine Datei.",
     "description": "Remove (delete) a file."
   },
   "os.remove.param-name.filename": {
@@ -4348,7 +4348,7 @@
     "description": "(field name) Constant used to indicate a throughput of 1 MBit a second."
   },
   "radio.RATE_1MBIT.summary": {
-    "message": "Konstante zur Angabe eines Durchsatzes von 1 MBit pro Sekunde.",
+    "message": "Konstante zur Angabe eines Durchsatzes von 1 MBit pro Sekunde.",
     "description": "Constant used to indicate a throughput of 1 MBit a second."
   },
   "radio.RATE_2MBIT": {
@@ -4356,7 +4356,7 @@
     "description": "(field name) Constant used to indicate a throughput of 2 MBit a second."
   },
   "radio.RATE_2MBIT.summary": {
-    "message": "Konstante zur Angabe eines Durchsatzes von 2 MBit pro Sekunde.",
+    "message": "Konstante zur Angabe eines Durchsatzes von 2 MBit pro Sekunde.",
     "description": "Constant used to indicate a throughput of 2 MBit a second."
   },
   "radio.on": {
@@ -4524,7 +4524,7 @@
     "description": "(module name) Generate random numbers."
   },
   "random.summary": {
-    "message": "Gibt eine Zufallszahl zurück.",
+    "message": "Zufallszahlen generieren.",
     "description": "Generate random numbers."
   },
   "random.getrandbits": {
@@ -4684,7 +4684,7 @@
     "description": "(module name) Make the micro:bit talk, sing and make other speech like sounds."
   },
   "speech.summary": {
-    "message": "Bringe den micro:bit dazu zu Sprechen, zu Singen und andere sprachähnliche Geräusche zu machen.",
+    "message": "Bringe den micro:bit zum Sprechen, singen und dazu, andere sprachähnliche Geräusche zu machen.",
     "description": "Make the micro:bit talk, sing and make other speech like sounds."
   },
   "speech.translate": {
@@ -4692,7 +4692,7 @@
     "description": "(function name) Translate English words to phonemes."
   },
   "speech.translate.summary": {
-    "message": "Übersetze englische Wörter in Sprache.",
+    "message": "Übersetzt englische Wörter in Sprache.",
     "description": "Translate English words to phonemes."
   },
   "speech.translate.param-name.words": {
@@ -4708,7 +4708,7 @@
     "description": "(function name) Pronounce phonemes."
   },
   "speech.pronounce.summary": {
-    "message": "Laute aussprechen.",
+    "message": "Spricht Laute aus.",
     "description": "Pronounce phonemes."
   },
   "speech.pronounce.param-name.mouth": {
@@ -4716,7 +4716,7 @@
     "description": "(parameter name) A number representing the mouth of the voice"
   },
   "speech.pronounce.param-doc.mouth": {
-    "message": "Eine Zahl, die den Mund der Stimme repräsentiert",
+    "message": "Eine Zahl, die den Mund der Stimme repräsentiert.",
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.phonemes": {
@@ -4724,7 +4724,7 @@
     "description": "(parameter name) The string of phonemes to pronounce"
   },
   "speech.pronounce.param-doc.phonemes": {
-    "message": "Die auszusprechenden Phoneme als Zeichenkette",
+    "message": "Die auszusprechende Laut als Zeichenkette.",
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.pin": {
@@ -4740,7 +4740,7 @@
     "description": "(parameter name) A number representing the pitch of the voice"
   },
   "speech.pronounce.param-doc.pitch": {
-    "message": "Eine Zahl, die die Tonhöhe der Stimme angibt",
+    "message": "Eine Zahl, die die Tonhöhe der Stimme angibt.",
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.speed": {
@@ -4748,7 +4748,7 @@
     "description": "(parameter name) A number representing the speed of the voice"
   },
   "speech.pronounce.param-doc.speed": {
-    "message": "Eine Zahl, die die Geschwindigkeit der Stimme angibt",
+    "message": "Eine Zahl, die die Geschwindigkeit der Stimme angibt.",
     "description": "Parameter docs"
   },
   "speech.pronounce.param-name.throat": {
@@ -4756,7 +4756,7 @@
     "description": "(parameter name) A number representing the throat of the voice"
   },
   "speech.pronounce.param-doc.throat": {
-    "message": "Eine Zahl, die den Klang der Stimme angibt",
+    "message": "Eine Zahl, die den Klang der Stimme angibt.",
     "description": "Parameter docs"
   },
   "speech.say": {
@@ -4772,7 +4772,7 @@
     "description": "(parameter name) A number representing the mouth of the voice"
   },
   "speech.say.param-doc.mouth": {
-    "message": "Eine Zahl, die den Mund der Stimme repräsentiert",
+    "message": "Eine Zahl, die den Mund der Stimme repräsentiert.",
     "description": "Parameter docs"
   },
   "speech.say.param-name.pin": {
@@ -4788,7 +4788,7 @@
     "description": "(parameter name) A number representing the pitch of the voice"
   },
   "speech.say.param-doc.pitch": {
-    "message": "Eine Zahl, die die Tonhöhe der Stimme angibt",
+    "message": "Eine Zahl, die die Tonhöhe der Stimme angibt.",
     "description": "Parameter docs"
   },
   "speech.say.param-name.speed": {
@@ -4796,7 +4796,7 @@
     "description": "(parameter name) A number representing the speed of the voice"
   },
   "speech.say.param-doc.speed": {
-    "message": "Eine Zahl, die die Geschwindigkeit der Stimme angibt",
+    "message": "Eine Zahl, die die Geschwindigkeit der Stimme angibt.",
     "description": "Parameter docs"
   },
   "speech.say.param-name.throat": {
@@ -4804,7 +4804,7 @@
     "description": "(parameter name) A number representing the throat of the voice"
   },
   "speech.say.param-doc.throat": {
-    "message": "Eine Zahl, die den Klang der Stimme angibt",
+    "message": "Eine Zahl, die den Klang der Stimme angibt.",
     "description": "Parameter docs"
   },
   "speech.say.param-name.words": {
@@ -4820,7 +4820,7 @@
     "description": "(function name) Sing phonemes."
   },
   "speech.sing.summary": {
-    "message": "Singe Phoneme",
+    "message": "Singt Laute.",
     "description": "Sing phonemes."
   },
   "speech.sing.param-name.mouth": {
@@ -4828,7 +4828,7 @@
     "description": "(parameter name) A number representing the mouth of the voice"
   },
   "speech.sing.param-doc.mouth": {
-    "message": "Eine Zahl, die den Mund der Stimme repräsentiert",
+    "message": "Eine Zahl, die den Mund der Stimme repräsentiert.",
     "description": "Parameter docs"
   },
   "speech.sing.param-name.phonemes": {
@@ -4836,7 +4836,7 @@
     "description": "(parameter name) The string of words to sing."
   },
   "speech.sing.param-doc.phonemes": {
-    "message": "Der zu singende String",
+    "message": "Der zu singende String.",
     "description": "Parameter docs"
   },
   "speech.sing.param-name.pin": {
@@ -4852,7 +4852,7 @@
     "description": "(parameter name) A number representing the pitch of the voice"
   },
   "speech.sing.param-doc.pitch": {
-    "message": "Eine Zahl, die die Tonhöhe der Stimme angibt",
+    "message": "Eine Zahl, die die Tonhöhe der Stimme angibt.",
     "description": "Parameter docs"
   },
   "speech.sing.param-name.speed": {
@@ -4860,7 +4860,7 @@
     "description": "(parameter name) A number representing the speed of the voice"
   },
   "speech.sing.param-doc.speed": {
-    "message": "Eine Zahl, die die Geschwindigkeit der Stimme angibt",
+    "message": "Eine Zahl, die die Geschwindigkeit der Stimme angibt.",
     "description": "Parameter docs"
   },
   "speech.sing.param-name.throat": {
@@ -4868,7 +4868,7 @@
     "description": "(parameter name) A number representing the throat of the voice"
   },
   "speech.sing.param-doc.throat": {
-    "message": "Eine Zahl, die den Klang der Stimme angibt",
+    "message": "Eine Zahl, die den Klang der Stimme angibt.",
     "description": "Parameter docs"
   },
   "struct": {
@@ -5044,7 +5044,7 @@
     "description": "(function name) Terminate current program with a given exit code."
   },
   "sys.exit.summary": {
-    "message": "Ein Programm mit dem gegebenen Exit-Code beenden.",
+    "message": "Beendet ein Programm mit dem gegeneben Exit-Code.",
     "description": "Terminate current program with a given exit code."
   },
   "sys.exit.param-name.retval": {
@@ -5148,7 +5148,7 @@
     "description": "(module name) Measure time and add delays to programs."
   },
   "time.summary": {
-    "message": "Messe Zeit und füge Verzögerung zu Programmen hinzu.",
+    "message": "Miss Zeit und füge Verzögerung zu Programmen hinzu.",
     "description": "Measure time and add delays to programs."
   },
   "time.sleep": {

@@ -2,7 +2,7 @@
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
 def exit(retval: object=...) -> NoReturn:
-    """Ein Programm mit dem gegebenen Exit-Code beenden.
+    """Beendet ein Programm mit dem gegeneben Exit-Code.
 
 Example: ``sys.exit(1)``
 
