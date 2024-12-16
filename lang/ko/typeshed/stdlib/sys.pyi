@@ -1,43 +1,36 @@
-"""System specific functions"""
-
+"""시스템 특정 함수"""
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
-def exit(retval: object = ...) -> NoReturn:
-    """Terminate current program with a given exit code.
+def exit(retval: object=...) -> NoReturn:
+    """주어진 종료 코드로 현재 프로그램을 종료합니다.
 
-    Example: ``sys.exit(1)``
+Example: ``sys.exit(1)``
 
-    This function raises a ``SystemExit`` exception. If an argument is given, its
-    value given as an argument to ``SystemExit``.
+This function raises a ``SystemExit`` exception. If an argument is given, its
+value given as an argument to ``SystemExit``.
 
-    :param retval: The exit code or message.
-    """
+:param retval: 종료 코드 또는 메시지입니다."""
     ...
 
 def print_exception(exc: Exception) -> None:
-    """
-    Print an exception with a traceback.
+    """트레이스백으로 예외를 프린트합니다.
 
-    Example: ``sys.print_exception(e)``
+Example: ``sys.print_exception(e)``
 
-    :param exc: The exception to print
+:param exc: 프린트할 예외
 
-    This is simplified version of a function which appears in the
-    ``traceback`` module in CPython.
-    """
-
+This is simplified version of a function which appears in the
+``traceback`` module in CPython."""
 argv: List[str]
-"""A mutable list of arguments the current program was started with."""
-
+"""현재 프로그램과 같이 시작된 인자의 가변 리스트입니다."""
 byteorder: str
-"""The byte order of the system (``"little"`` or ``"big"``)."""
+"""시스템의 바이트 순서를 (``"little"`` 또는 ``"big"``)으로 정렬합니다."""
 
 class _implementation:
     name: str
     version: Tuple[int, int, int]
-
 implementation: _implementation
-"""Object with information about the current Python implementation.
+"""현재 Python 구현에 관한 정보가 담긴 개체
 
 For MicroPython, it has following attributes:
 
@@ -51,13 +44,9 @@ minimal ports).
 CPython mandates more attributes for this object, but the actual useful
 bare minimum is implemented in MicroPython.
 """
-
 maxsize: int
 """
-Maximum value which a native integer type can hold on the current platform,
-or maximum value representable by MicroPython integer type, if it's smaller
-than platform max value (that is the case for MicroPython ports without
-long int support).
+현재 플랫폼에서 자연 정수 유형이 지원할 수 있는 최대 값, 또는 값이 플랫폼의 최대 값보다 작다면 MicroPython 정수 유형으로 표현할 수 있는 최대 값입니다(long int를 지원하지 않는 MicroPython 포트의 경우).
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some
@@ -77,17 +66,14 @@ value directly, but instead count number of bits in it::
         # (e.g. 31) due to peculiarities described above, so use "> 16",
         # "> 32", "> 64" style of comparisons.
 """
-
 modules: Dict[str, Any]
-"""Dictionary of loaded modules. 
+"""로드된 모듈의 딕셔너리입니다. 
 
 On some ports, it may not include builtin modules."""
-
 path: List[str]
-"""A mutable list of directories to search for imported modules."""
-
+"""불러온 모듈을 검색하기 위한 딕셔너리 가변 리스트입니다."""
 platform: str
-"""The platform that MicroPython is running on. 
+"""MicroPython이 실행되고 있는 플랫폼입니다. 
 
 For OS/RTOS ports, this is usually an identifier of the OS, e.g. ``"linux"``.
 For baremetal ports it is an identifier of a board, e.g. ``"pyboard"`` for 
@@ -97,12 +83,10 @@ distinguish one board from another.
 If you need to check whether your program runs on MicroPython (vs other
 Python implementation), use ``sys.implementation`` instead.
 """
-
 version: str
-"""Python language version that this implementation conforms to, as a string."""
-
+"""이 구현이 준수하는 Python 언어 버전을 문자열로 제공합니다."""
 version_info: Tuple[int, int, int]
-"""Python language version that this implementation conforms to, as a tuple of ints.
+"""이 구현이 준수하는 Python 언어 버전을 정수 튜플로 제공합니다.
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.

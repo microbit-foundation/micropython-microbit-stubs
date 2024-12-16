@@ -1,18 +1,15 @@
-"""Control the built-in speaker (V2 only).
-"""
+"""Sprawdź wbudowany głośnik (tylko V2)."""
 
 def off() -> None:
-    """Turn the speaker off.
+    """Wyłącz głośnik.
 
-    Example: ``speaker.off()``
+Example: ``speaker.off()``
 
-    This does not disable sound output to an edge connector pin.
-    """
+This does not disable sound output to an edge connector pin."""
     ...
 
 def on() -> None:
-    """Turn the speaker on.
+    """Włącz głośnik.
 
-    Example: ``speaker.on()``
-    """
+Example: ``speaker.on()``"""
     ...

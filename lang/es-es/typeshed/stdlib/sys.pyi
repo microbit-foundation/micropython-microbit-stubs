@@ -1,43 +1,36 @@
-"""System specific functions"""
-
+"""Funciones específicas del sistema"""
 from typing import Any, Dict, List, NoReturn, TextIO, Tuple
 
-def exit(retval: object = ...) -> NoReturn:
-    """Terminate current program with a given exit code.
+def exit(retval: object=...) -> NoReturn:
+    """Termina el programa actual con un código de salida determinado. (salir)
 
-    Example: ``sys.exit(1)``
+Example: ``sys.exit(1)``
 
-    This function raises a ``SystemExit`` exception. If an argument is given, its
-    value given as an argument to ``SystemExit``.
+This function raises a ``SystemExit`` exception. If an argument is given, its
+value given as an argument to ``SystemExit``.
 
-    :param retval: The exit code or message.
-    """
+:param retval: El mensaje o código de salida."""
     ...
 
 def print_exception(exc: Exception) -> None:
-    """
-    Print an exception with a traceback.
+    """Imprime una excepción con un seguimiento. (imprimir excepción)
 
-    Example: ``sys.print_exception(e)``
+Example: ``sys.print_exception(e)``
 
-    :param exc: The exception to print
+:param exc: La excepción a imprimir
 
-    This is simplified version of a function which appears in the
-    ``traceback`` module in CPython.
-    """
-
+This is simplified version of a function which appears in the
+``traceback`` module in CPython."""
 argv: List[str]
-"""A mutable list of arguments the current program was started with."""
-
+"""Una lista mutable de argumentos con los que se inició el programa actual."""
 byteorder: str
-"""The byte order of the system (``"little"`` or ``"big"``)."""
+"""El orden de bytes del sistema (``"little"`` o ``"big"``). (ordenbytes)"""
 
 class _implementation:
     name: str
     version: Tuple[int, int, int]
-
 implementation: _implementation
-"""Object with information about the current Python implementation.
+"""Objeto con información sobre la implementación actual de Python. (implementación)
 
 For MicroPython, it has following attributes:
 
@@ -51,13 +44,12 @@ minimal ports).
 CPython mandates more attributes for this object, but the actual useful
 bare minimum is implemented in MicroPython.
 """
-
 maxsize: int
 """
-Maximum value which a native integer type can hold on the current platform,
-or maximum value representable by MicroPython integer type, if it's smaller
-than platform max value (that is the case for MicroPython ports without
-long int support).
+Valor máximo que un tipo entero nativo puede contener en la plataforma actual
+o valor máximo representable por el tipo entero de MicroPython, en el caso de que sea más pequeño
+que el valor máximo de la plataforma (que es el caso de los puertos de MicroPython incompatibles con el
+tipo entero largo). (tamañomáx)
 
 This attribute is useful for detecting "bitness" of a platform (32-bit vs
 64-bit, etc.). It's recommended to not compare this attribute to some
@@ -77,17 +69,14 @@ value directly, but instead count number of bits in it::
         # (e.g. 31) due to peculiarities described above, so use "> 16",
         # "> 32", "> 64" style of comparisons.
 """
-
 modules: Dict[str, Any]
-"""Dictionary of loaded modules. 
+"""Diccionario de módulos cargados. (módulos) 
 
 On some ports, it may not include builtin modules."""
-
 path: List[str]
-"""A mutable list of directories to search for imported modules."""
-
+"""Una lista mutable de directorios para buscar módulos importados. (ruta)"""
 platform: str
-"""The platform that MicroPython is running on. 
+"""La plataforma en la que se está ejecutando MicroPython. (plataforma) 
 
 For OS/RTOS ports, this is usually an identifier of the OS, e.g. ``"linux"``.
 For baremetal ports it is an identifier of a board, e.g. ``"pyboard"`` for 
@@ -97,12 +86,10 @@ distinguish one board from another.
 If you need to check whether your program runs on MicroPython (vs other
 Python implementation), use ``sys.implementation`` instead.
 """
-
 version: str
-"""Python language version that this implementation conforms to, as a string."""
-
+"""Versión del lenguaje Python a la que se ajusta esta implementación, en forma de cadena. (versión)"""
 version_info: Tuple[int, int, int]
-"""Python language version that this implementation conforms to, as a tuple of ints.
+"""Versión del lenguaje Python a la que se ajusta esta implementación, en forma de tupla de enteros. (info de versión)
 
 Only the first three version numbers (major, minor, micro) are supported and
 they can be referenced only by index, not by name.

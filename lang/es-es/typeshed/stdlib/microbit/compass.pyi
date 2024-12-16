@@ -1,78 +1,70 @@
-"""Use the built-in compass.
-"""
+"""Usar la brújula incorporada. (brújula)"""
 
 def calibrate() -> None:
-    """Starts the calibration process.
+    """Inicia el proceso de calibración. (calibrar)
 
-    Example: ``compass.calibrate()``
+Example: ``compass.calibrate()``
 
-    An instructive message will be scrolled to the user after which they will need
-    to rotate the device in order to draw a circle on the LED display.
-    """
+An instructive message will be scrolled to the user after which they will need
+to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """Check is the compass is calibrated.
+    """Comprueba si la brújula está calibrada. (está calibrado)
 
-    Example: ``compass.is_calibrated()``
+Example: ``compass.is_calibrated()``
 
-    :return: ``True`` if the compass has been successfully calibrated, ``False`` otherwise.
-    """
+:return: ``True`` if the compass has been successfully calibrated, ``False`` otherwise."""
     ...
 
 def clear_calibration() -> None:
-    """Undoes the calibration, making the compass uncalibrated again.
+    """Deshace la calibración, haciendo que la brújula esté otra vez sin calibrar. (eliminar calibración)
 
-    Example: ``compass.clear_calibration()``
-    """
+Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """Get the magnetic field strength on the ``x`` axis.
+    """Obtiene la fuerza del campo magnético en el eje ``x``. (obtener x)
 
-    Example: ``compass.get_x()``
+Example: ``compass.get_x()``
 
-    Call ``calibrate`` first or the results will be inaccurate.
+Call ``calibrate`` first or the results will be inaccurate.
 
-    :return: A positive or negative integer in nano tesla representing the magnitude and direction of the field.
-    """
+:return: A positive or negative integer in nano tesla representing the magnitude and direction of the field."""
     ...
 
 def get_y() -> int:
-    """Get the magnetic field strength on the ``y`` axis.
+    """Obtiene la fuerza del campo magnético en el eje ``y``. (obtener y)
 
-    Example: ``compass.get_y()``
+Example: ``compass.get_y()``
 
-    Call ``calibrate`` first or the results will be inaccurate.
+Call ``calibrate`` first or the results will be inaccurate.
 
-    :return: A positive or negative integer in nano tesla representing the magnitude and direction of the field.
-    """
+:return: A positive or negative integer in nano tesla representing the magnitude and direction of the field."""
     ...
 
 def get_z() -> int:
-    """Get the magnetic field strength on the ``z`` axis.
+    """Obtiene la fuerza del campo magnético en el eje ``z``. (obtener z)
 
-    Example: ``compass.get_z()``
+Example: ``compass.get_z()``
 
-    Call ``calibrate`` first or the results will be inaccurate.
+Call ``calibrate`` first or the results will be inaccurate.
 
-    :return: A positive or negative integer in nano tesla representing the magnitude and direction of the field.
-    """
+:return: A positive or negative integer in nano tesla representing the magnitude and direction of the field."""
     ...
 
 def heading() -> int:
-    """Get the compass heading.
+    """Obtiene el rumbo de la brújula. (rumbo)
 
-    Example: ``compass.heading()``
+Example: ``compass.heading()``
 
-    :return: An integer in the range from 0 to 360, representing the angle in degrees, clockwise, with north as 0.
-    """
+:return: An integer in the range from 0 to 360, representing the angle in degrees, clockwise, with north as 0."""
     ...
 
 def get_field_strength() -> int:
-    """Get the magnitude of the magnetic field around the device.
+    """Obtiene la magnitud del campo magnético alrededor del dispositivo. (obtener fuerza del campo)
 
-    Example: ``compass.get_field_strength()``
+Example: ``compass.get_field_strength()``
 
-    :return: An integer indication of the magnitude of the magnetic field in nano tesla."""
+:return: An integer indication of the magnitude of the magnetic field in nano tesla."""
     ...

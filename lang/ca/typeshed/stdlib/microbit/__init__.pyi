@@ -1,11 +1,6 @@
-"""Pins, images, sounds, temperature and volume.
-"""
-
+"""Pins, imatges, sons, temperatura i volum."""
 from typing import Any, Callable, List, Optional, Tuple, Union, overload
-
 from _typeshed import ReadableBuffer
-
-# V2 only
 from . import accelerometer as accelerometer
 from . import audio as audio
 from . import compass as compass
@@ -16,831 +11,701 @@ from . import speaker as speaker
 from . import spi as spi
 from . import uart as uart
 
-def run_every(
-    callback: Optional[Callable[[], None]] = None,
-    days: int = 0,
-    h: int = 0,
-    min: int = 0,
-    s: int = 0,
-    ms: int = 0,
-) -> Callable[[Callable[[], None]], Callable[[], None]]:
-    """Schedule to run a function at the interval specified by the time arguments **V2 only**.
+def run_every(callback: Optional[Callable[[], None]]=None, days: int=0, h: int=0, min: int=0, s: int=0, ms: int=0) -> Callable[[Callable[[], None]], Callable[[], None]]:
+    """Programa l'execució d'una funció a cada interval especificat pels arguments de temps  **només V2**.
 
-    Example: ``run_every(my_logging, min=5)``
+Example: ``run_every(my_logging, min=5)``
 
-    ``run_every`` can be used in two ways:
+``run_every`` can be used in two ways:
 
-    As a Decorator - placed on top of the function to schedule. For example::
+As a Decorator - placed on top of the function to schedule. For example::
 
-        @run_every(h=1, min=20, s=30, ms=50)
-        def my_function():
-            # Do something here
+    @run_every(h=1, min=20, s=30, ms=50)
+    def my_function():
+        # Do something here
 
-    As a Function - passing the callback as a positional argument. For example::
+As a Function - passing the callback as a positional argument. For example::
 
-        def my_function():
-            # Do something here
-        run_every(my_function, s=30)
+    def my_function():
+        # Do something here
+    run_every(my_function, s=30)
 
-    Each argument corresponds to a different time unit and they are additive.
-    So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
+Each argument corresponds to a different time unit and they are additive.
+So ``run_every(min=1, s=30)`` schedules the callback every minute and a half.
 
-    When an exception is thrown inside the callback function it deschedules the
-    function. To avoid this you can catch exceptions with ``try/except``.
+When an exception is thrown inside the callback function it deschedules the
+function. To avoid this you can catch exceptions with ``try/except``.
 
-    :param callback: Function to call at the provided interval. Omit when using as a decorator.
-    :param days: Sets the day mark for the scheduling.
-    :param h: Sets the hour mark for the scheduling.
-    :param min: Sets the minute mark for the scheduling.
-    :param s: Sets the second mark for the scheduling.
-    :param ms: Sets the millisecond mark for the scheduling.
-    """
+:param callback: Funció a cridar a l'interval previst. Omet quan el fas servir com decorador.
+:param days: (dies) Estableix la marca del dia per la programació
+:param h: Estableix la marca de l'hora per la programació
+:param min: Estableix la marca del minut per la programació
+:param s: Estableix la marca del segon per la programació
+:param ms: Estableix la marca del mil·lisegon per la programació"""
 
 def panic(n: int) -> None:
-    """Enter a panic mode.
+    """Entrar en mode pànic. (pànic)
 
-    Example: ``panic(127)``
+Example: ``panic(127)``
 
-    :param n: An arbitrary integer <= 255 to indicate a status.
+:param n: Un nombre enter arbitrari <= 255 per indicar un estat.
 
-    Requires restart.
-    """
+Requires restart."""
 
 def reset() -> None:
-    """Restart the board."""
-
+    """Reinicialitza la placa. (reiniciar)"""
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[int, int]) -> int:
-    """Converts a value from a range to an integer range.
+    """Converteix un valor d'un interval a un interval de nombre enter. (escala)
 
-    Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
+Example: ``volume = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))``
 
-    For example, to convert an accelerometer X value to a speaker volume.
+For example, to convert an accelerometer X value to a speaker volume.
 
-    If one of the numbers in the ``to`` parameter is a floating point
-    (i.e a decimal number like ``10.0``), this function will return a
-    floating point number.
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
 
-        temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
+    temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-    :param value: A number to convert.
-    :param from_: A tuple to define the range to convert from.
-    :param to: A tuple to define the range to convert to.
-    :return: The ``value`` converted to the ``to`` range.
-    """
+:param value: (valor) Un nombre a convertir.
+:param from_: (des de) Una tupla des d'on definir l'interval a convertir
+:param to: (a) Una tupla que defineix l'interval d'arribada
+:return: The ``value`` converted to the ``to`` range."""
 
 @overload
 def scale(value: float, from_: Tuple[float, float], to: Tuple[float, float]) -> float:
-    """Converts a value from a range to a floating point range.
+    """Converteix un valor d'un interval a un altre interval de coma flotant. (escala)
 
-    Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
+Example: ``temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))``
 
-    For example, to convert temperature from a Celsius scale to Fahrenheit.
+For example, to convert temperature from a Celsius scale to Fahrenheit.
 
-    If one of the numbers in the ``to`` parameter is a floating point
-    (i.e a decimal number like ``10.0``), this function will return a
-    floating point number.
-    If they are both integers (i.e ``10``), it will return an integer::
+If one of the numbers in the ``to`` parameter is a floating point
+(i.e a decimal number like ``10.0``), this function will return a
+floating point number.
+If they are both integers (i.e ``10``), it will return an integer::
 
-        returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
+    returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
 
-    :param value: A number to convert.
-    :param from_: A tuple to define the range to convert from.
-    :param to: A tuple to define the range to convert to.
-    :return: The ``value`` converted to the ``to`` range.
-    """
+:param value: (valor) Un nombre a convertir.
+:param from_: (des de) Una tupla des d'on definir l'interval a convertir
+:param to: (a) Una tupla que defineix l'interval d'arribada de la conversió.
+:return: The ``value`` converted to the ``to`` range."""
 
 def sleep(n: float) -> None:
-    """Wait for ``n`` milliseconds.
+    """Espera per ``n`` mil·lisegons. (dormir)
 
-    Example: ``sleep(1000)``
+Example: ``sleep(1000)``
 
-    :param n: The number of milliseconds to wait
+:param n: El nombre de mil·lisegons a esperar
 
-    One second is 1000 milliseconds, so::
+One second is 1000 milliseconds, so::
 
-        microbit.sleep(1000)
+    microbit.sleep(1000)
 
-    will pause the execution for one second.
-    """
+will pause the execution for one second."""
 
 def running_time() -> int:
-    """Get the running time of the board.
+    """Obté el temps d'execució de la placa. (temps d'execució)
 
-    :return: The number of milliseconds since the board was switched on or restarted.
-    """
+:return: The number of milliseconds since the board was switched on or restarted."""
 
 def temperature() -> int:
-    """Get the temperature of the micro:bit in degrees Celsius."""
+    """Obté la temperatura de la micro:bit en graus Celsius. (temperatura)"""
 
 def set_volume(v: int) -> None:
-    """Sets the volume.
+    """Configura el volum (assigna volum)
 
-    Example: ``set_volume(127)``
+Example: ``set_volume(127)``
 
-    :param v: a value between 0 (low) and 255 (high).
+:param v: un valor entre 0 (baix) i 255 (alt).
 
-    Out of range values will be clamped to 0 or 255.
+Out of range values will be clamped to 0 or 255.
 
-    **V2** only.
-    """
+**V2** only."""
     ...
 
 class Button:
-    """The class for the buttons ``button_a`` and ``button_b``."""
+    """La classe dels botons ``button_a`` i ``button_b``. (botó)"""
 
     def is_pressed(self) -> bool:
-        """Check if the button is pressed.
+        """Verifica si el botó està premut. (és premut)
 
-        :return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise.
-        """
+:return: ``True`` if the specified button ``button`` is pressed, and ``False`` otherwise."""
         ...
+
     def was_pressed(self) -> bool:
-        """Check if the button was pressed since the device started or the last time this method was called.
+        """Verifica si el botó ha estat premut d'ençà que el dispositiu va arrancar o l'última vegada que aquest mètode va ser cridat. (ha estat premut)
 
-        Calling this method will clear the press state so
-        that the button must be pressed again before this method will return
-        ``True`` again.
+Calling this method will clear the press state so
+that the button must be pressed again before this method will return
+``True`` again.
 
-        :return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise
-        """
+:return: ``True`` if the specified button ``button`` was pressed, and ``False`` otherwise"""
         ...
+
     def get_presses(self) -> int:
-        """Get the running total of button presses, and resets this total
-        to zero before returning.
+        """Obté el total acumulat de pressions dels botons i restableix aquest total
+a zero abans de tornar. (obté pitjades)
 
-        :return: The number of presses since the device started or the last time this method was called
-        """
+:return: The number of presses since the device started or the last time this method was called"""
         ...
-
 button_a: Button
-"""The left button ``Button`` object."""
-
+"""L'objecte botó esquerre ``Button`` . (botó a)"""
 button_b: Button
-"""The right button ``Button`` object."""
+"""L'objecte el botó dret ``Button``. (botó b)"""
 
 class MicroBitDigitalPin:
-    """A digital pin.
+    """Un pin digital.
 
-    Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses.
-    """
-
+Some pins support analog and touch features using the ``MicroBitAnalogDigitalPin`` and ``MicroBitTouchPin`` subclasses."""
     NO_PULL: int
     PULL_UP: int
     PULL_DOWN: int
+
     def read_digital(self) -> int:
-        """Get the digital value of the pin.
+        """Obté el valor digital del pin. (llegeix digital)
 
-        Example: ``value = pin0.read_digital()``
+Example: ``value = pin0.read_digital()``
 
-        :return: 1 if the pin is high, and 0 if it's low.
-        """
+:return: 1 if the pin is high, and 0 if it's low."""
         ...
+
     def write_digital(self, value: int) -> None:
-        """Set the digital value of the pin.
+        """Assigna el valor digital del pin. (escriu digital)
 
-        Example: ``pin0.write_digital(1)``
+Example: ``pin0.write_digital(1)``
 
-        :param value: 1 to set the pin high or 0 to set the pin low"""
+:param value: (valor) 1 per posar el pin alt o 0 per posar el pin baix"""
         ...
+
     def set_pull(self, value: int) -> None:
-        """Set the pull state to one of three possible values: ``PULL_UP``, ``PULL_DOWN`` or ``NO_PULL``.
+        """Configura les resistències de pull-up/pull-down un dels tres valors possibles: ``PULL_UP``, ``PULL_DOWN`` o ``NO_PULL``. (configuració de les resistències de pull up/down)
 
-        Example: ``pin0.set_pull(pin0.PULL_UP)``
+Example: ``pin0.set_pull(pin0.PULL_UP)``
 
-        :param value: The pull state from the relevant pin, e.g. ``pin0.PULL_UP``.
-        """
+:param value: (valor) L'estat del pull-up/pull-down del pin corresponent, per ex. ``pin0.PULL_UP``."""
         ...
+
     def get_pull(self) -> int:
-        """Get the pull state on a pin.
+        """Obté l'estat de pull-up/pull-down d'un pin.
 
-        Example: ``pin0.get_pull()``
+Example: ``pin0.get_pull()``
 
-        :return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
+:return: ``NO_PULL``, ``PULL_DOWN``, or ``PULL_UP``
 
-        These are set using the ``set_pull()`` method or automatically configured
-        when a pin mode requires it.
-        """
+These are set using the ``set_pull()`` method or automatically configured
+when a pin mode requires it."""
         ...
+
     def get_mode(self) -> str:
-        """Returns the pin mode.
+        """Retorna el mode del pin (obté el mode)
 
-        Example: ``pin0.get_mode()``
+Example: ``pin0.get_mode()``
 
-        When a pin is used for a specific function, like
-        writing a digital value, or reading an analog value, the pin mode
-        changes.
+When a pin is used for a specific function, like
+writing a digital value, or reading an analog value, the pin mode
+changes.
 
-        :return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``
-        """
+:return: ``"unused"``, ``"analog"``, ``"read_digital"``, ``"write_digital"``, ``"display"``, ``"button"``, ``"music"``, ``"audio"``, ``"touch"``, ``"i2c"``, or ``"spi"``"""
         ...
+
     def write_analog(self, value: int) -> None:
-        """Output a PWM signal on the pin, with the duty cycle proportional to ``value``.
+        """Genera un senyal PWM al pin, amb el cicle de treball proporcional a ``value``. (escriu analògic)
 
-        Example: ``pin0.write_analog(254)``
+Example: ``pin0.write_analog(254)``
 
-        :param value: An integer or a floating point number between 0 (0% duty cycle) and 1023 (100% duty).
-        """
+:param value: (valor) Un nombre enter o de coma flotant entre 0 (cicle de treball del 0%) i 1023 (cicle de treball del 100%)."""
+
     def set_analog_period(self, period: int) -> None:
-        """Set the period of the PWM signal being output to ``period`` in milliseconds.
+        """Estableix el període del senyal PWM a ``period`` en mil·lisegons. (configura el període amb un valor analògic)
 
-        Example: ``pin0.set_analog_period(10)``
+Example: ``pin0.set_analog_period(10)``
 
-        :param period: The period in milliseconds with a minimum valid value of 1ms.
-        """
+:param period: (període) El període en mil·lisegons amb un valor mínim vàlid d'1\u202fms"""
+
     def set_analog_period_microseconds(self, period: int) -> None:
-        """Set the period of the PWM signal being output to ``period`` in microseconds.
+        """Estableix el període del senyal PWM a ``period`` microsegons. (configura el període amb un valor analògic en microsegons)
 
-        Example: ``pin0.set_analog_period_microseconds(512)``
+Example: ``pin0.set_analog_period_microseconds(512)``
 
-        :param period: The period in microseconds with a minimum valid value of 256µs.
-        """
+:param period: (període) El període en microsegons amb un valor vàlid mínim  de 256\u202fµs."""
 
 class MicroBitAnalogDigitalPin(MicroBitDigitalPin):
-    """A pin with analog and digital features."""
+    """Un pin amb funcions analògiques i digitals."""
 
     def read_analog(self) -> int:
-        """Read the voltage applied to the pin.
+        """Llegeix el voltatge aplicat al pin. (llegeix analògic)
 
-        Example: ``pin0.read_analog()``
+Example: ``pin0.read_analog()``
 
-        :return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V).
-        """
+:return: An integer between 0 (meaning 0V) and 1023 (meaning 3.3V)."""
 
 class MicroBitTouchPin(MicroBitAnalogDigitalPin):
-    """A pin with analog, digital and touch features."""
-
+    """Un pin amb  característiques analògiques, digitals i tàctils."""
     CAPACITIVE: int
     RESISTIVE: int
+
     def is_touched(self) -> bool:
-        """Check if the pin is being touched.
+        """Comprova si el pin està sent tocat. (està tocat)
 
-        Example: ``pin0.is_touched()``
+Example: ``pin0.is_touched()``
 
-        The default touch mode for the pins on the edge connector is ``resistive``.
-        The default for the logo pin **V2** is ``capacitive``.
+The default touch mode for the pins on the edge connector is ``resistive``.
+The default for the logo pin **V2** is ``capacitive``.
 
-        **Resistive touch**
-        This test is done by measuring how much resistance there is between the
-        pin and ground.  A low resistance gives a reading of ``True``.  To get
-        a reliable reading using a finger you may need to touch the ground pin
-        with another part of your body, for example your other hand.
+**Resistive touch**
+This test is done by measuring how much resistance there is between the
+pin and ground.  A low resistance gives a reading of ``True``.  To get
+a reliable reading using a finger you may need to touch the ground pin
+with another part of your body, for example your other hand.
 
-        **Capacitive touch**
-        This test is done by interacting with the electric field of a capacitor
-        using a finger as a conductor. `Capacitive touch
-        <https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
-        does not require you to make a ground connection as part of a circuit.
+**Capacitive touch**
+This test is done by interacting with the electric field of a capacitor
+using a finger as a conductor. `Capacitive touch
+<https://www.allaboutcircuits.com/technical-articles/introduction-to-capacitive-touch-sensing>`_
+does not require you to make a ground connection as part of a circuit.
 
-        :return: ``True`` if the pin is being touched with a finger, otherwise return ``False``.
-        """
+:return: ``True`` if the pin is being touched with a finger, otherwise return ``False``."""
         ...
+
     def set_touch_mode(self, value: int) -> None:
-        """Set the touch mode for the pin.
+        """Estableix el mode tàctil per al pin. (estableix el mode tàctil)
 
-        Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
+Example: ``pin0.set_touch_mode(pin0.CAPACITIVE)``
 
-        The default touch mode for the pins on the edge connector is
-        ``resistive``. The default for the logo pin **V2** is ``capacitive``.
+The default touch mode for the pins on the edge connector is
+``resistive``. The default for the logo pin **V2** is ``capacitive``.
 
-        :param value: ``CAPACITIVE`` or ``RESISTIVE`` from the relevant pin.
-        """
+:param value: (valor) ``CAPACITIVE`` o ``RESISTIVE`` del pin corresponent."""
         ...
-
 pin0: MicroBitTouchPin
-"""Pin with digital, analog and touch features."""
-
+"""Pin amb característiques digitals, analògiques i tàctils."""
 pin1: MicroBitTouchPin
-"""Pin with digital, analog and touch features."""
-
+"""Pin amb característiques digitals, analògiques i tàctils."""
 pin2: MicroBitTouchPin
-"""Pin with digital, analog and touch features."""
-
+"""Pin amb característiques digitals, analògiques i tàctils."""
 pin3: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features."""
-
+"""Pin amb característiques digitals i analògiques."""
 pin4: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features."""
-
+"""Pin amb característiques digitals i analògiques."""
 pin5: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin6: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin7: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin8: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin9: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin10: MicroBitAnalogDigitalPin
-"""Pin with digital and analog features."""
-
+"""Pin amb característiques digitals i analògiques."""
 pin11: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin12: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin13: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin14: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin15: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin16: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin19: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin20: MicroBitDigitalPin
-"""Pin with digital features."""
-
+"""Pin amb característiques digitals."""
 pin_logo: MicroBitTouchPin
-"""A touch sensitive logo pin on the front of the micro:bit, which by default is set to capacitive touch mode."""
-
+"""Un logotip tàctil a la part frontal de la micro:bit, que per defecte està establert al mode tàctil capacitiu. (pin logotip)"""
 pin_speaker: MicroBitAnalogDigitalPin
-"""A pin to address the micro:bit speaker.
+"""Un pin per adreçar-se a l'altaveu micro:bit. (pin altaveu)
 
 This API is intended only for use in Pulse-Width Modulation pin operations e.g. pin_speaker.write_analog(128).
 """
 
 class Image:
-    """An image to show on the micro:bit LED display.
+    """Una imatge per mostrar a la pantalla LED de micro:bit. (imatge)
 
-    Given an image object it's possible to display it via the ``display`` API::
+Given an image object it's possible to display it via the ``display`` API::
 
-        display.show(Image.HAPPY)
-    """
-
+    display.show(Image.HAPPY)"""
     HEART: Image
-    """Heart image."""
-
+    """Imatge d'un cor. (cor)"""
     HEART_SMALL: Image
-    """Small heart image."""
-
+    """Imatge d'un cor petit (cor petit)"""
     HAPPY: Image
-    """Happy face image."""
-
+    """Imatge d'una cara feliç (feliç)"""
     SMILE: Image
-    """Smiling mouth image."""
-
+    """Imatge d'una cara somrient (somriure)"""
     SAD: Image
-    """Sad face image."""
-
+    """Imatge d'una cara trista (tristesa)"""
     CONFUSED: Image
-    """Confused face image."""
-
+    """Imatge de cara confusa. (confusa)"""
     ANGRY: Image
-    """Angry face image."""
-
+    """Imatge d'una cara enfadada. (enfadat)"""
     ASLEEP: Image
-    """Sleeping face image."""
-
+    """Imatge d'una cara dormint. (despert)"""
     SURPRISED: Image
-    """Surprised face image."""
-
+    """Imatge d'una cara de sorpresa (sorprès)"""
     SILLY: Image
-    """Silly face image."""
-
+    """Imatge d'una cara ximple. (ximple)"""
     FABULOUS: Image
-    """Sunglasses face image."""
-
+    """Imatge d'una cara amb ulleres de sol. (fabulós)"""
     MEH: Image
-    """Unimpressed face image."""
-
+    """Imatge d'una cara inexpressiva. (BAH avorrit)"""
     YES: Image
-    """Tick image."""
-
+    """Imatge d'una marca tic. (sí)"""
     NO: Image
-    """Cross image."""
-
+    """Imatge d'una creu."""
     CLOCK12: Image
-    """Image with line pointing to 12 o'clock."""
-
+    """Imatge d'una línia apuntant les dotze. (les dotze)"""
     CLOCK11: Image
-    """Image with line pointing to 11 o'clock."""
-
+    """Imatge d'una línia apuntant les onze. (les onze)"""
     CLOCK10: Image
-    """Image with line pointing to 10 o'clock."""
-
+    """Imatge d'una línia apuntant les deu. (les deu)"""
     CLOCK9: Image
-    """Image with line pointing to 9 o'clock."""
-
+    """Imatge d'una línia apuntant les nou. (les nou)"""
     CLOCK8: Image
-    """Image with line pointing to 8 o'clock."""
-
+    """Imatge d'una línia apuntant les vuit. (les vuit)"""
     CLOCK7: Image
-    """Image with line pointing to 7 o'clock."""
-
+    """Imatge d'una línia apuntant les set. (les set)"""
     CLOCK6: Image
-    """Image with line pointing to 6 o'clock."""
-
+    """Imatge amb una línia apuntant a les 6 en punt. (les sis)"""
     CLOCK5: Image
-    """Image with line pointing to 5 o'clock."""
-
+    """Imatge amb una línia apuntant a les 5 en punt. (les cinc)"""
     CLOCK4: Image
-    """Image with line pointing to 4 o'clock."""
-
+    """Imatge amb una línia apuntant a les 4 en punt. (les quatre)"""
     CLOCK3: Image
-    """Image with line pointing to 3 o'clock."""
-
+    """Imatge amb una línia apuntant a les 3 en punt. (les tres)"""
     CLOCK2: Image
-    """Image with line pointing to 2 o'clock."""
-
+    """Imatge amb una línia apuntant a les 2 en punt. (les dues)"""
     CLOCK1: Image
-    """Image with line pointing to 1 o'clock."""
-
+    """Imatge amb una línia apuntant a la 1 en punt. (la una)"""
     ARROW_N: Image
-    """Image of arrow pointing north."""
-
+    """Imatge de fletxa apuntant al nord. (fletxa n)"""
     ARROW_NE: Image
-    """Image of arrow pointing north east."""
-
+    """Imatge de fletxa apuntant al nord-est. (fletxa ne)"""
     ARROW_E: Image
-    """Image of arrow pointing east."""
-
+    """Imatge de fletxa apuntant a l'est. (fletxa e)"""
     ARROW_SE: Image
-    """Image of arrow pointing south east."""
-
+    """Imatge de fletxa apuntant al sud-est. (fletxa se)"""
     ARROW_S: Image
-    """Image of arrow pointing south."""
-
+    """Imatge de fletxa apuntant al sud. (fletxa s)"""
     ARROW_SW: Image
-    """Image of arrow pointing south west."""
-
+    """Imatge de fletxa apuntant al sud-oest. (fletxa so)"""
     ARROW_W: Image
-    """Image of arrow pointing west."""
-
+    """Imatge de fletxa apuntant a l'oest. (fletxa o)"""
     ARROW_NW: Image
-    """Image of arrow pointing north west."""
-
+    """Imatge de fletxa apuntant al nord-oest. (fletxa no)"""
     TRIANGLE: Image
-    """Image of a triangle pointing up."""
-
+    """Imatge d'un triangle apuntant amunt."""
     TRIANGLE_LEFT: Image
-    """Image of a triangle in the left corner."""
-
+    """Imatge d'un triangle en la cantonada esquerra. (triangle a l'esquerra)"""
     CHESSBOARD: Image
-    """Alternate LEDs lit in a chessboard pattern."""
-
+    """Leds alternatius il·luminats en un patró d'escacs. (Tauler d'escacs)"""
     DIAMOND: Image
-    """Diamond image."""
-
+    """Imatge d'un diamant (diamant)"""
     DIAMOND_SMALL: Image
-    """Small diamond image."""
-
+    """Imatge d'un diamant petit (diamant petit)"""
     SQUARE: Image
-    """Square image."""
-
+    """Imatge d'un quadrat (quadrat)"""
     SQUARE_SMALL: Image
-    """Small square image."""
-
+    """Imatge d'un quadrat petit (quadrat petit)"""
     RABBIT: Image
-    """Rabbit image."""
-
+    """Imatge d'un conill. (conill)"""
     COW: Image
-    """Cow image."""
-
+    """Imatge d'una vaca. (vaca)"""
     MUSIC_CROTCHET: Image
-    """Crotchet note image."""
-
+    """Imatge de la nota musical negra (nota musical negra)"""
     MUSIC_QUAVER: Image
-    """Quaver note image."""
-
+    """Imatge de la nota musical corxera (nota musical corxera)"""
     MUSIC_QUAVERS: Image
-    """Pair of quavers note image."""
-
+    """Imatge d'un parell de notes musicals corxeres (nota musical corxera)"""
     PITCHFORK: Image
-    """Pitchfork image."""
-
+    """Imatge d'una forca. (forca)"""
     XMAS: Image
-    """Christmas tree image."""
-
+    """Imatge d'un arbre de Nadal (nadal)"""
     PACMAN: Image
-    """Pac-Man arcade character image."""
-
+    """Imatge del personatge de Pac-man a arcade"""
     TARGET: Image
-    """Target image."""
-
+    """Imatge d'objectiu. (diana)"""
     TSHIRT: Image
-    """T-shirt image."""
-
+    """Imatge de samarreta. (Imatge d'una samarreta T-shirt)"""
     ROLLERSKATE: Image
-    """Rollerskate image."""
-
+    """Imatge d'un patinet. (patinet)"""
     DUCK: Image
-    """Duck image."""
-
+    """Imatge d'un ànec. (ànec)"""
     HOUSE: Image
-    """House image."""
-
+    """Imatge d'una casa. (casa)"""
     TORTOISE: Image
-    """Tortoise image."""
-
+    """Imatge d'una tortuga. (tortuga)"""
     BUTTERFLY: Image
-    """Butterfly image."""
-
+    """Imatge d'una papallona. (papallona)"""
     STICKFIGURE: Image
-    """Stick figure image."""
-
+    """Imatge de figura d'un pal. (imatge d'un pal)"""
     GHOST: Image
-    """Ghost image."""
-
+    """Imatge d'un fantasma. (fantasma)"""
     SWORD: Image
-    """Sword image."""
-
+    """Imatge d'una espasa (espasa)"""
     GIRAFFE: Image
-    """Giraffe image."""
-
+    """Imatge d'una girafa. (girafa)"""
     SKULL: Image
-    """Skull image."""
-
+    """Imatge d'un crani. (crani)"""
     UMBRELLA: Image
-    """Umbrella image."""
-
+    """Imatge d'un paraigua, (paraigua)"""
     SNAKE: Image
-    """Snake image."""
-
+    """Imatge d'una serp. (serp)"""
     SCISSORS: Image
-    """Scissors image."""
-
+    """Imatge d'unes tisores. (tisores)"""
     ALL_CLOCKS: List[Image]
-    """A list containing all the CLOCK_ images in sequence."""
-
+    """Una llista que conté totes les imatges CLOCK_ en seqüència. (tots els rellotges)"""
     ALL_ARROWS: List[Image]
-    """A list containing all the ARROW_ images in sequence."""
+    """Una llista que conté totes les ARROW_images en seqüència. (totes les fletxes)"""
+
     @overload
     def __init__(self, string: str) -> None:
-        """Create an image from a string describing which LEDs are lit.
+        """Crea una imatge a partir d'una cadena que descrigui quins leds estan encesos.
 
-        ``string`` has to consist of digits 0-9 arranged into lines,
-        describing the image, for example::
+``string`` has to consist of digits 0-9 arranged into lines,
+describing the image, for example::
 
-            image = Image("90009:"
-                          "09090:"
-                          "00900:"
-                          "09090:"
-                          "90009")
+    image = Image("90009:"
+                  "09090:"
+                  "00900:"
+                  "09090:"
+                  "90009")
 
-        will create a 5×5 image of an X. The end of a line is indicated by a
-        colon. It's also possible to use newlines (\\n) insead of the colons.
+will create a 5×5 image of an X. The end of a line is indicated by a
+colon. It's also possible to use newlines (\\n) insead of the colons.
 
-        :param string: The string describing the image.
-        """
+:param string: (cadena) La cadena descrivint la imatge."""
         ...
+
     @overload
-    def __init__(
-        self, width: int = 5, height: int = 5, buffer: ReadableBuffer = None
-    ) -> None:
-        """Create an empty image with ``width`` columns and ``height`` rows.
+    def __init__(self, width: int=5, height: int=5, buffer: ReadableBuffer=None) -> None:
+        """Crea una imatge buida amb ``width`` columnes i ``height`` files.
 
-        :param width: Optional width of the image
-        :param height: Optional height of the image
-        :param buffer: Optional array or bytes of ``width``×``height`` integers in range 0-9 to initialize the image
+:param width: (amplada) Amplada opcional de la imatge
+:param height: (alçària) Alçària opcional de la imatge
+:param buffer: (memòria intermèdia) Llistes o bytes opcionals d'enters de ``width``×``height`` dins l'interval de 0 a 9 per inicialitzar la imatge
 
-        Examples::
+Examples::
 
-            Image(2, 2, b'\x08\x08\x08\x08')
-            Image(2, 2, bytearray([9,9,9,9]))
+    Image(2, 2, b'\x08\x08\x08\x08')
+    Image(2, 2, bytearray([9,9,9,9]))
 
-        These create 2 x 2 pixel images at full brightness.
-        """
+These create 2 x 2 pixel images at full brightness."""
         ...
+
     def width(self) -> int:
-        """Get the number of columns.
+        """Obté el nombre de columnes (amplada)
 
-        :return: The number of columns in the image
-        """
+:return: The number of columns in the image"""
         ...
+
     def height(self) -> int:
-        """Get the number of rows.
+        """Obté el nombre de files. (alçària)
 
-        :return: The number of rows in the image
-        """
+:return: The number of rows in the image"""
         ...
+
     def set_pixel(self, x: int, y: int, value: int) -> None:
-        """Set the brightness of a pixel.
+        """Estableix la brillantor d'un píxel. (estableix píxel)
 
-        Example: ``my_image.set_pixel(0, 0, 9)``
+Example: ``my_image.set_pixel(0, 0, 9)``
 
-        :param x: The column number
-        :param y: The row number
-        :param value: The brightness as an integer between 0 (dark) and 9 (bright)
+:param x: El nombre de la columna
+:param y: El nombre de la fila
+:param value: (valor) La brillantor com a nombre enter entre 0 (fosc) i 9 (brillant)
 
-        This method will raise an exception when called on any of the built-in
-        read-only images, like ``Image.HEART``.
-        """
+This method will raise an exception when called on any of the built-in
+read-only images, like ``Image.HEART``."""
         ...
+
     def get_pixel(self, x: int, y: int) -> int:
-        """Get the brightness of a pixel.
+        """Obté la brillantor d'un píxel. (obté píxel)
 
-        Example: ``my_image.get_pixel(0, 0)``
+Example: ``my_image.get_pixel(0, 0)``
 
-        :param x: The column number
-        :param y: The row number
-        :return: The brightness as an integer between 0 and 9.
-        """
+:param x: El nombre de la columna
+:param y: El nombre de la fila
+:return: The brightness as an integer between 0 and 9."""
         ...
+
     def shift_left(self, n: int) -> Image:
-        """Create a new image by shifting the picture left.
+        """Crea una imatge nova movent-la cap a l'esquerra. (desplaça a l'esquerra)
 
-        Example: ``Image.HEART_SMALL.shift_left(1)``
+Example: ``Image.HEART_SMALL.shift_left(1)``
 
-        :param n: The number of columns to shift by
-        :return: The shifted image
-        """
+:param n: El nombre de columnes per desplaçar-se
+:return: The shifted image"""
         ...
+
     def shift_right(self, n: int) -> Image:
-        """Create a new image by shifting the picture right.
+        """Crea una imatge nova movent-la cap a la dreta. (desplaça a la dreta)
 
-        Example: ``Image.HEART_SMALL.shift_right(1)``
+Example: ``Image.HEART_SMALL.shift_right(1)``
 
-        :param n: The number of columns to shift by
-        :return: The shifted image
-        """
+:param n: El nombre de columnes per desplaçar-se
+:return: The shifted image"""
         ...
+
     def shift_up(self, n: int) -> Image:
-        """Create a new image by shifting the picture up.
+        """Crea una imatge nova desplaçant la imatge cap amunt. (desplaça cap amunt)
 
-        Example: ``Image.HEART_SMALL.shift_up(1)``
+Example: ``Image.HEART_SMALL.shift_up(1)``
 
-        :param n: The number of rows to shift by
-        :return: The shifted image
-        """
+:param n: El nombre de files per desplaçar-se
+:return: The shifted image"""
         ...
+
     def shift_down(self, n: int) -> Image:
-        """Create a new image by shifting the picture down.
+        """Crea una imatge nova desplaçant-la cap avall. (desplaça cap avall)
 
-        Example: ``Image.HEART_SMALL.shift_down(1)``
+Example: ``Image.HEART_SMALL.shift_down(1)``
 
-        :param n: The number of rows to shift by
-        :return: The shifted image
-        """
+:param n: El nombre de files per desplaçar-se
+:return: The shifted image"""
         ...
+
     def crop(self, x: int, y: int, w: int, h: int) -> Image:
-        """Create a new image by cropping the picture.
+        """Crea una imatge nova retallant la imatge. (retalla)
 
-        Example: ``Image.HEART.crop(1, 1, 3, 3)``
+Example: ``Image.HEART.crop(1, 1, 3, 3)``
 
-        :param x: The crop offset column
-        :param y: The crop offset row
-        :param w: The crop width
-        :param h: The crop height
-        :return: The new image
-        """
+:param x: La columna de desplaçament del retall
+:param y: La fila de desplaçament del retall
+:param w: L'amplada del retall
+:param h: L'alçària del retall
+:return: The new image"""
         ...
+
     def copy(self) -> Image:
-        """Create an exact copy of the image.
+        """Crea una còpia exacta de la imatge (còpia)
 
-        Example: ``Image.HEART.copy()``
+Example: ``Image.HEART.copy()``
 
-        :return: The new image
-        """
+:return: The new image"""
         ...
+
     def invert(self) -> Image:
-        """Create a new image by inverting the brightness of the pixels in the
-        source image.
+        """Crea una imatge nova invertint la brillantor dels píxels de la imatge
+font. (inverteix)
 
-        Example: ``Image.SMALL_HEART.invert()``
+Example: ``Image.SMALL_HEART.invert()``
 
-        :return: The new image.
-        """
+:return: The new image."""
         ...
+
     def fill(self, value: int) -> None:
-        """Set the brightness of all the pixels in the image.
+        """Assigna la brillantor de tots els píxels de la imatge (omple)
 
-        Example: ``my_image.fill(5)``
+Example: ``my_image.fill(5)``
 
-        :param value: The new brightness as a number between 0 (dark) and 9 (bright).
+:param value: (valor) La nova brillantor com a nombre entre 0 (fosc) i 9 (brillant).
 
-        This method will raise an exception when called on any of the built-in
-        read-only images, like ``Image.HEART``.
-        """
+This method will raise an exception when called on any of the built-in
+read-only images, like ``Image.HEART``."""
         ...
-    def blit(
-        self,
-        src: Image,
-        x: int,
-        y: int,
-        w: int,
-        h: int,
-        xdest: int = 0,
-        ydest: int = 0,
-    ) -> None:
-        """Copy an area from another image into this image.
 
-        Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
+    def blit(self, src: Image, x: int, y: int, w: int, h: int, xdest: int=0, ydest: int=0) -> None:
+        """Copia una àrea d'una altra imatge a aquesta imatge.
 
-        :param src: The source image
-        :param x: The starting column offset in the source image
-        :param y: The starting row offset in the source image
-        :param w: The number of columns to copy
-        :param h: The number of rows to copy
-        :param xdest: The column offset to modify in this image
-        :param ydest: The row offset to modify in this image
+Example: ``my_image.blit(Image.HEART, 1, 1, 3, 3, 1, 1)``
 
-        Pixels outside the source image are treated as having a brightness of 0.
+:param src: (font) La imatge font
+:param x: Desplaçament de la columna inicial a la imatge d'origen
+:param y: Desplaçament de la fila inicial a la imatge d'origen
+:param w: El nombre de columnes a copiar
+:param h: El nombre de files a copiar
+:param xdest: El desplaçament de columna a modificar en aquesta imatge
+:param ydest: El desplaçament de fila que cal modificar en aquesta imatge
 
-        ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
-        and ``crop()`` can are all implemented by using ``blit()``.
+Pixels outside the source image are treated as having a brightness of 0.
 
-        For example, img.crop(x, y, w, h) can be implemented as::
+``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()``
+and ``crop()`` can are all implemented by using ``blit()``.
 
-            def crop(self, x, y, w, h):
-                res = Image(w, h)
-                res.blit(self, x, y, w, h)
-                return res
-        """
+For example, img.crop(x, y, w, h) can be implemented as::
+
+    def crop(self, x, y, w, h):
+        res = Image(w, h)
+        res.blit(self, x, y, w, h)
+        return res"""
         ...
+
     def __repr__(self) -> str:
-        """Get a compact string representation of the image."""
+        """Obté una representació de cadena compacta de la imatge. (repr - Obté una representació de cadena compacta de la imatge.)"""
         ...
+
     def __str__(self) -> str:
-        """Get a readable string representation of the image."""
+        """Obté una representació de cadena llegible de la imatge."""
         ...
+
     def __add__(self, other: Image) -> Image:
-        """Create a new image by adding the brightness values from the two
-        images for each pixel.
+        """Crea una imatge nova afegint els valors de brillantor de les dues
+imatges per a cada píxel. (afegeix)
 
-        Example: ``Image.HEART + Image.HAPPY``
+Example: ``Image.HEART + Image.HAPPY``
 
-        :param other: The image to add.
-        """
+:param other: (altre) La imatge a afegir."""
         ...
+
     def __sub__(self, other: Image) -> Image:
-        """Create a new image by subtracting the brightness values of the
-        other image from this image.
+        """Crea una imatge nova restant els valors de brillantor d'una altra imatge d'aquesta imatge.
 
-        Example: ``Image.HEART - Image.HEART_SMALL``
+Example: ``Image.HEART - Image.HEART_SMALL``
 
-        :param other: The image to subtract.
-        """
+:param other: (altre) La imatge a restar."""
         ...
+
     def __mul__(self, n: float) -> Image:
-        """Create a new image by multiplying the brightness of each pixel by
-        ``n``.
+        """Crea una imatge nova multiplicant la brillantor de cada píxel per
+``n``.
 
-        Example: ``Image.HEART * 0.5``
+Example: ``Image.HEART * 0.5``
 
-        :param n: The value to multiply by.
-        """
+:param n: El valor per multiplicar."""
         ...
+
     def __truediv__(self, n: float) -> Image:
-        """Create a new image by dividing the brightness of each pixel by
-        ``n``.
+        """Crea una imatge nova dividint la brillantor de cada píxel per
+``n``.
 
-        Example: ``Image.HEART / 2``
+Example: ``Image.HEART / 2``
 
-        :param n: The value to divide by.
-        """
+:param n: El valor del divisor."""
         ...
 
 class SoundEvent:
     LOUD: SoundEvent
-    """Represents the transition of sound events, from ``quiet`` to ``loud`` like clapping or shouting."""
-
+    """Representa la transició dels esdeveniments de so, des de ``quiet`` a ``loud`` com picant de mans o cridant. (so fort)"""
     QUIET: SoundEvent
-    """Represents the transition of sound events, from ``loud`` to ``quiet`` like speaking or background music."""
+    """Representa la transició dels esdeveniments de so, des de ``loud`` a ``quiet`` com parlant o música de fons. (so fluix)"""
 
 class Sound:
-    """The built-in sounds can be called using ``audio.play(Sound.NAME)``."""
-
+    """Els sons integrats es poden reproduir mitjançant ``audio.play(Sound.NAME)``. (so)"""
     GIGGLE: Sound
-    """Giggling sound."""
-
+    """So de riure (riure)"""
     HAPPY: Sound
-    """Happy sound."""
-
+    """So feliç. (feliç)"""
     HELLO: Sound
-    """Greeting sound."""
-
+    """So de salutació. (hola)"""
     MYSTERIOUS: Sound
-    """Mysterious sound."""
-
+    """So misteriós. (misteriós)"""
     SAD: Sound
-    """Sad sound."""
-
+    """So trist. (tristesa)"""
     SLIDE: Sound
-    """Sliding sound."""
-
+    """So lliscant (so lliscant)"""
     SOARING: Sound
-    """Soaring sound."""
-
+    """So creixent. (creixent)"""
     SPRING: Sound
-    """Spring sound."""
-
+    """So primaveral. (primaveral)"""
     TWINKLE: Sound
-    """Twinkling sound."""
-
+    """So de centelleig. (centelleig)"""
     YAWN: Sound
-    """Yawning sound."""
+    """So de badall. (badall)"""

@@ -1,97 +1,84 @@
-"""Low-level utilities.
-"""
+"""低级实用程序。 (机器)"""
 from typing import Any
 from .microbit import MicroBitDigitalPin
 
 def unique_id() -> bytes:
-    """Get a byte string with a unique identifier of a board.
+    """获取具有板的唯一标识符的字节字符串。
 
-    Example: ``machine.unique_id()``
+Example: ``machine.unique_id()``
 
-    :return: An identifier that varies from one board instance to another.
-    """
+:return: An identifier that varies from one board instance to another."""
     ...
 
 def reset() -> None:
-    """Reset the device in a manner similar to pushing the external RESET button.
+    """以类似于按下外部 RESET （重置）按钮的方式重置设备。
 
-    Example: ``machine.reset()``
-    """
+Example: ``machine.reset()``"""
     ...
 
 def freq() -> int:
-    """Get the CPU frequency in hertz.
+    """以赫兹为单位获取 CPU 频率。
 
-    Example: ``machine.freq()``
+Example: ``machine.freq()``
 
-    :return: The CPU frequency.
-    """
+:return: The CPU frequency."""
     ...
 
 def disable_irq() -> Any:
-    """Disable interrupt requests.
+    """禁止中断请求。
 
-    Example: ``interrupt_state = machine.disable_irq()``
+Example: ``interrupt_state = machine.disable_irq()``
 
-    :return: the previous IRQ state which should be considered an opaque value
+:return: the previous IRQ state which should be considered an opaque value
 
-    The return value should be passed to the ``enable_irq`` function to restore
-    interrupts to their original state.
-    """
+The return value should be passed to the ``enable_irq`` function to restore
+interrupts to their original state."""
     ...
 
 def enable_irq(state: Any) -> None:
-    """Re-enable interrupt requests.
+    """重新启用中断请求。
 
-    Example: ``machine.enable_irq(interrupt_state)``
+Example: ``machine.enable_irq(interrupt_state)``
 
-    :param state: The value that was returned from the most recent call to the ``disable_irq`` function.
-    """
+:param state: 最近一次调用 ``disable_irq`` 函数得到的返回值。"""
     ...
 
-def time_pulse_us(
-    pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int = 1000000
-) -> int:
-    """Time a pulse on a pin.
+def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
+    """对引脚上的脉冲计时。
 
-    Example: ``time_pulse_us(pin0, 1)``
+Example: ``time_pulse_us(pin0, 1)``
 
-    If the current input value of the pin is different to ``pulse_level``, the
-    function first waits until the pin input becomes equal to
-    ``pulse_level``, then times the duration that the pin is equal to
-    ``pulse_level``. If the pin is already equal to ``pulse_level`` then timing
-    starts straight away.
+If the current input value of the pin is different to ``pulse_level``, the
+function first waits until the pin input becomes equal to
+``pulse_level``, then times the duration that the pin is equal to
+``pulse_level``. If the pin is already equal to ``pulse_level`` then timing
+starts straight away.
 
-    :param pin: The pin to use
-    :param pulse_level: 0 to time a low pulse or 1 to time a high pulse
-    :param timeout_us: A microsecond timeout
-    :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end
-    """
+:param pin: (引脚) 要使用的引脚
+:param pulse_level: 0 来计时低脉冲或 1 来计时高脉冲。
+:param timeout_us: 微秒超时
+:return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
 
 class mem:
-    """The class for the ``mem8``, ``mem16`` and ``mem32`` memory views."""
+    """``mem8``、 ``mem16`` 和 ``mem32`` 内存视图的类。"""
 
     def __getitem__(self, address: int) -> int:
-        """Access a value from memory.
+        """从内存中获取一个值。
 
-        :param address: The memory address.
-        :return: The value at that address as an integer.
-        """
+:param address: (地址) 内存地址。
+:return: The value at that address as an integer."""
         ...
+
     def __setitem__(self, address: int, value: int) -> None:
-        """Set a value at the given address.
+        """在给定地址处设置一个值。
 
-        :param address: The memory address.
-        :param value: The integer value to set.
-        """
+:param address: (地址) 内存地址。
+:param value: 要设置的整数值。"""
         ...
-
 mem8: mem
-"""8-bit (byte) view of memory."""
-
+"""8 位(字节) 内存视图。"""
 mem16: mem
-"""16-bit view of memory."""
-
+"""16 位内存视图。"""
 mem32: mem
-"""32-bit view of memory."""
+"""32 位内存视图。"""

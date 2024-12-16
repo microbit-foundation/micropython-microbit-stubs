@@ -1,160 +1,123 @@
-"""Play sounds using the micro:bit (import ``audio`` for V1 compatibility).
-"""
-
+"""crwdns329964:0``audio``crwdne329964:0 (crwdns329962:0crwdne329962:0)"""
 from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
-def play(
-    source: Union[Iterable[AudioFrame], Sound, SoundEffect],
-    wait: bool = True,
-    pin: MicroBitDigitalPin = pin0,
-    return_pin: Union[MicroBitDigitalPin, None] = None,
-) -> None:
-    """Play a built-in sound, sound effect or custom audio frames.
+def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
+    """crwdns335834:0crwdne335834:0 (crwdns329966:0crwdne329966:0)
 
-    Example: ``audio.play(Sound.GIGGLE)``
+Example: ``audio.play(Sound.GIGGLE)``
 
-    :param source: A built-in ``Sound`` such as ``Sound.GIGGLE``, a ``SoundEffect`` or sample data as an iterable of ``AudioFrame`` objects.
-    :param wait: If ``wait`` is ``True``, this function will block until the sound is complete.
-    :param pin: An optional argument to specify the output pin can be used to  override the default of ``pin0``. If we do not want any sound to play we can use ``pin=None``.
-    :param return_pin: Specifies a differential edge connector pin to connect to an external speaker instead of ground. This is ignored for the **V2** revision.
-    """
+:param source: (crwdns329978:0crwdne329978:0) crwdns335836:0``Sound``crwdnd335836:0``Sound.GIGGLE``crwdnd335836:0``SoundEffect``crwdnd335836:0``AudioFrame``crwdne335836:0
+:param wait: (crwdns329982:0crwdne329982:0) crwdns329984:0``wait``crwdnd329984:0``True``crwdne329984:0
+:param pin: (crwdns329970:0crwdne329970:0) crwdns329972:0``pin0``crwdne329972:0
+:param return_pin: (crwdns329974:0crwdne329974:0) crwdns329976:0crwdne329976:0"""
 
 def is_playing() -> bool:
-    """Check whether a sound is playing.
+    """crwdns329988:0crwdne329988:0 (crwdns329986:0crwdne329986:0)
 
-    Example: ``audio.is_playing()``
+Example: ``audio.is_playing()``
 
-    :return: ``True`` if audio is playing, otherwise ``False``."""
+:return: ``True`` if audio is playing, otherwise ``False``."""
     ...
 
 def stop() -> None:
-    """Stop all audio playback.
+    """crwdns329992:0crwdne329992:0 (crwdns329990:0crwdne329990:0)
 
-    Example: ``audio.stop()``
-    """
+Example: ``audio.stop()``"""
     ...
 
 class SoundEffect:
-    """A sound effect, composed by a set of parameters configured via the constructor or attributes."""
-
+    """crwdns335840:0crwdne335840:0 (crwdns335838:0crwdne335838:0)"""
     WAVEFORM_SINE: ClassVar[int]
-    """Sine wave option used for the ``waveform`` parameter."""
-
+    """crwdns335844:0``waveform``crwdne335844:0 (crwdns335842:0crwdne335842:0)"""
     WAVEFORM_SAWTOOTH: ClassVar[int]
-    """Sawtooth wave option used for the ``waveform`` parameter."""
-
+    """crwdns335848:0``waveform``crwdne335848:0 (crwdns335846:0crwdne335846:0)"""
     WAVEFORM_TRIANGLE: ClassVar[int]
-    """Triangle wave option used for the ``waveform`` parameter."""
-
+    """crwdns335852:0``waveform``crwdne335852:0 (crwdns335850:0crwdne335850:0)"""
     WAVEFORM_SQUARE: ClassVar[int]
-    """Square wave option used for the ``waveform`` parameter."""
-
+    """crwdns335856:0``waveform``crwdne335856:0 (crwdns335854:0crwdne335854:0)"""
     WAVEFORM_NOISE: ClassVar[int]
-    """Noise option used for the ``waveform`` parameter."""
-
+    """crwdns335860:0``waveform``crwdne335860:0 (crwdns335858:0crwdne335858:0)"""
     SHAPE_LINEAR: ClassVar[int]
-    """Linear interpolation option used for the ``shape`` parameter."""
-
+    """crwdns335864:0``shape``crwdne335864:0 (crwdns335862:0crwdne335862:0)"""
     SHAPE_CURVE: ClassVar[int]
-    """Curve interpolation option used for the ``shape`` parameter."""
-
+    """crwdns335868:0``shape``crwdne335868:0 (crwdns335866:0crwdne335866:0)"""
     SHAPE_LOG: ClassVar[int]
-    """Logarithmic interpolation option used for the ``shape`` parameter."""
-
+    """crwdns335872:0``shape``crwdne335872:0 (crwdns335870:0crwdne335870:0)"""
     FX_NONE: ClassVar[int]
-    """No effect option used for the ``fx`` parameter."""
-
+    """crwdns335876:0``fx``crwdne335876:0 (crwdns335874:0crwdne335874:0)"""
     FX_TREMOLO: ClassVar[int]
-    """Tremolo effect option used for the ``fx`` parameter."""
-
+    """crwdns335880:0``fx``crwdne335880:0 (crwdns335878:0crwdne335878:0)"""
     FX_VIBRATO: ClassVar[int]
-    """Vibrato effect option used for the ``fx`` parameter."""
-
+    """crwdns335884:0``fx``crwdne335884:0 (crwdns335882:0crwdne335882:0)"""
     FX_WARBLE: ClassVar[int]
-    """Warble effect option used for the ``fx`` parameter."""
-
+    """crwdns335888:0``fx``crwdne335888:0 (crwdns335886:0crwdne335886:0)"""
     freq_start: int
-    """Start frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
-
+    """crwdns335892:0``0``crwdnd335892:0``9999``crwdne335892:0 (crwdns335890:0crwdne335890:0)"""
     freq_end: int
-    """End frequency in Hertz (Hz), a number between ``0`` and ``9999``"""
-
+    """crwdns335896:0``0``crwdnd335896:0``9999``crwdne335896:0 (crwdns335894:0crwdne335894:0)"""
     duration: int
-    """Duration of the sound in milliseconds, a number between ``0`` and ``9999``"""
-
+    """crwdns335900:0``0``crwdnd335900:0``9999``crwdne335900:0 (crwdns335898:0crwdne335898:0)"""
     vol_start: int
-    """Start volume value, a number between ``0`` and ``255``"""
-
+    """crwdns335904:0``0``crwdnd335904:0``255``crwdne335904:0 (crwdns335902:0crwdne335902:0)"""
     vol_end: int
-    """End volume value, a number between ``0`` and ``255``"""
-
+    """crwdns335908:0``0``crwdnd335908:0``255``crwdne335908:0 (crwdns335906:0crwdne335906:0)"""
     waveform: int
-    """Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise)"""
-
+    """crwdns335912:0``WAVEFORM_SINE``crwdnd335912:0``WAVEFORM_SAWTOOTH``crwdnd335912:0``WAVEFORM_TRIANGLE``crwdnd335912:0``WAVEFORM_SQUARE``crwdnd335912:0``WAVEFORM_NOISE``crwdne335912:0 (crwdns335910:0crwdne335910:0)"""
     fx: int
-    """Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``"""
-
+    """crwdns335916:0``FX_TREMOLO``crwdnd335916:0``FX_VIBRATO``crwdnd335916:0``FX_WARBLE``crwdnd335916:0``FX_NONE``crwdne335916:0 (crwdns335914:0crwdne335914:0)"""
     shape: int
-    """The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``"""
+    """crwdns335920:0``SHAPE_LINEAR``crwdnd335920:0``SHAPE_CURVE``crwdnd335920:0``SHAPE_LOG``crwdne335920:0 (crwdns335918:0crwdne335918:0)"""
 
-    def __init__(
-        self,
-        freq_start: int = 500,
-        freq_end: int = 2500,
-        duration: int = 500,
-        vol_start: int = 255,
-        vol_end: int = 0,
-        waveform: int = WAVEFORM_SQUARE,
-        fx: int = FX_NONE,
-        shape: int = SHAPE_LOG,
-    ):
-        """Create a new sound effect.
+    def __init__(self, freq_start: int=500, freq_end: int=2500, duration: int=500, vol_start: int=255, vol_end: int=0, waveform: int=WAVEFORM_SQUARE, fx: int=FX_NONE, shape: int=SHAPE_LOG):
+        """crwdns335924:0crwdne335924:0 (crwdns335922:0crwdne335922:0)
 
-        Example: ``my_effect = SoundEffect(duration=1000)``
+Example: ``my_effect = SoundEffect(duration=1000)``
 
-        All the parameters are optional, with default values as shown above, and
-        they can all be modified via attributes of the same name. For example, we
-        can first create an effect ``my_effect = SoundEffect(duration=1000)``,
-        and then change its attributes ``my_effect.duration = 500``.
+All the parameters are optional, with default values as shown above, and
+they can all be modified via attributes of the same name. For example, we
+can first create an effect ``my_effect = SoundEffect(duration=1000)``,
+and then change its attributes ``my_effect.duration = 500``.
 
-        :param freq_start: Start frequency in Hertz (Hz), a number between ``0`` and ``9999``.
-        :param freq_end: End frequency in Hertz (Hz), a number between ``0`` and ``9999``.
-        :param duration: Duration of the sound in milliseconds, a number between ``0`` and ``9999``.
-        :param vol_start: Start volume value, a number between ``0`` and ``255``.
-        :param vol_end: End volume value, a number between ``0`` and ``255``.
-        :param waveform: Type of waveform shape, one of these values: ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise).
-        :param fx: Effect to add on the sound, one of the following values: ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``.
-        :param shape: The type of the interpolation curve between the start and end frequencies, different wave shapes have different rates of change in frequency. One of the following values: ``SHAPE_LINEAR``, ``SHAPE_CURVE``, ``SHAPE_LOG``.
-        """
+:param freq_start: (crwdns335934:0crwdne335934:0) crwdns335936:0``0``crwdnd335936:0``9999``crwdne335936:0
+:param freq_end: (crwdns335930:0crwdne335930:0) crwdns335932:0``0``crwdnd335932:0``9999``crwdne335932:0
+:param duration: (crwdns335926:0crwdne335926:0) crwdns335928:0``0``crwdnd335928:0``9999``crwdne335928:0
+:param vol_start: (crwdns335950:0crwdne335950:0) crwdns335952:0``0``crwdnd335952:0``255``crwdne335952:0
+:param vol_end: (crwdns335946:0crwdne335946:0) crwdns335948:0``0``crwdnd335948:0``255``crwdne335948:0
+:param waveform: (crwdns335954:0crwdne335954:0) crwdns335956:0``WAVEFORM_SINE``crwdnd335956:0``WAVEFORM_SAWTOOTH``crwdnd335956:0``WAVEFORM_TRIANGLE``crwdnd335956:0``WAVEFORM_SQUARE``crwdnd335956:0``WAVEFORM_NOISE``crwdne335956:0
+:param fx: (crwdns335938:0crwdne335938:0) crwdns335940:0``FX_TREMOLO``crwdnd335940:0``FX_VIBRATO``crwdnd335940:0``FX_WARBLE``crwdnd335940:0``FX_NONE``crwdne335940:0
+:param shape: (crwdns335942:0crwdne335942:0) crwdns335944:0``SHAPE_LINEAR``crwdnd335944:0``SHAPE_CURVE``crwdnd335944:0``SHAPE_LOG``crwdne335944:0"""
+
     def copy(self) -> SoundEffect:
-        """Create a copy of this ``SoundEffect``.
+        """crwdns335960:0``SoundEffect``crwdne335960:0 (crwdns335958:0crwdne335958:0)
 
-        Example: ``sound_2 = sound_1.copy()``
+Example: ``sound_2 = sound_1.copy()``
 
-        :return: A copy of the SoundEffect.
-        """
+:return: A copy of the SoundEffect."""
 
 class AudioFrame:
-    """An ``AudioFrame`` object is a list of 32 samples each of which is a unsigned byte
-    (whole number between 0 and 255).
+    """crwdns329996:0``AudioFrame``crwdne329996:0 (crwdns329994:0crwdne329994:0)
 
-    It takes just over 4 ms to play a single frame.
+It takes just over 4 ms to play a single frame.
 
-    Example::
+Example::
 
-        frame = AudioFrame()
-        for i in range(len(frame)):
-            frame[i] = 252 - i * 8
-    """
+    frame = AudioFrame()
+    for i in range(len(frame)):
+        frame[i] = 252 - i * 8"""
 
     def copyfrom(self, other: AudioFrame) -> None:
-        """Overwrite the data in this ``AudioFrame`` with the data from another ``AudioFrame`` instance.
+        """crwdns335964:0``AudioFrame``crwdnd335964:0``AudioFrame``crwdne335964:0 (crwdns335962:0crwdne335962:0)
 
-        Example: ``my_frame.copyfrom(source_frame)``
+Example: ``my_frame.copyfrom(source_frame)``
 
-        :param other: ``AudioFrame`` instance from which to copy the data.
-        """
-    def __len__(self) -> int: ...
-    def __setitem__(self, key: int, value: int) -> None: ...
-    def __getitem__(self, key: int) -> int: ...
+:param other: (crwdns335966:0crwdne335966:0) crwdns335968:0``AudioFrame``crwdne335968:0"""
+
+    def __len__(self) -> int:
+        ...
+
+    def __setitem__(self, key: int, value: int) -> None:
+        ...
+
+    def __getitem__(self, key: int) -> int:
+        ...

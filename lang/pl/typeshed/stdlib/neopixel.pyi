@@ -1,82 +1,81 @@
-"""Individually addressable RGB and RGBW LED strips.
-"""
+"""Indywidualnie adresowalne paski LED RGB i RGBW."""
 from .microbit import MicroBitDigitalPin
 from typing import Tuple
 
 class NeoPixel:
-    def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int = 3) -> None:
-        """Initialise a new strip of neopixel LEDs controlled via a pin.
 
-        Example: ``np = neopixel.NeoPixel(pin0, 8)``
+    def __init__(self, pin: MicroBitDigitalPin, n: int, bpp: int=3) -> None:
+        """Zainicjuj nowy pasek neopikselowych diod LED sterowanych za pomocą pinu.
 
-        To support RGBW neopixels, a third argument can be passed to
-        ``NeoPixel`` to indicate the number of bytes per pixel (``bpp``).
-        For RGBW, this is is 4 rather than the default of 3 for RGB and GRB.
+Example: ``np = neopixel.NeoPixel(pin0, 8)``
 
-        Each pixel is addressed by a position (starting from 0). Neopixels are
-        given RGB (red, green, blue) / RGBW (red, green, blue, white) values
-        between 0-255 as a tuple. For example, in RGB, ``(255,255,255)`` is
-        white. In RGBW, ``(255,255,255,0)`` or ``(0,0,0,255)`` is white.
+To support RGBW neopixels, a third argument can be passed to
+``NeoPixel`` to indicate the number of bytes per pixel (``bpp``).
+For RGBW, this is is 4 rather than the default of 3 for RGB and GRB.
 
-        See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`_ for warnings and other advice.
+Each pixel is addressed by a position (starting from 0). Neopixels are
+given RGB (red, green, blue) / RGBW (red, green, blue, white) values
+between 0-255 as a tuple. For example, in RGB, ``(255,255,255)`` is
+white. In RGBW, ``(255,255,255,0)`` or ``(0,0,0,255)`` is white.
 
-        :param pin: The pin controlling the neopixel strip.
-        :param n: The number of neopixels in the strip.
-        :param bpp: Bytes per pixel. For RGBW neopixel support, pass 4 rather than the default of 3 for RGB and GRB.
-        """
+See `the online docs <https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`_ for warnings and other advice.
+
+:param pin: Pin kontrolujący pasek neopikseli.
+:param n: Liczba neopikseli w pasku.
+:param bpp: Bajty na piksel. W przypadku obsługi neopikseli RGBW należy przekazać 4 zamiast domyślnych 3 dla RGB i GRB."""
         ...
+
     def clear(self) -> None:
-        """Clear all the pixels.
+        """Wyczyść wszystkie piksele.
 
-        Example: ``np.clear()``
-        """
+Example: ``np.clear()``"""
         ...
+
     def show(self) -> None:
-        """Show the pixels.
+        """Pokaż piksele.
 
-        Example: ``np.show()``
+Example: ``np.show()``
 
-        Must be called for any updates to become visible.
-        """
+Must be called for any updates to become visible."""
         ...
+
     def write(self) -> None:
-        """Show the pixels (micro:bit V2 only).
+        """Pokaż piksele (tylko micro:bit V2).
 
-        Example: ``np.write()``
+Example: ``np.write()``
 
-        Must be called for any updates to become visible.
+Must be called for any updates to become visible.
 
-        Equivalent to ``show``.
-        """
+Equivalent to ``show``."""
         ...
+
     def fill(self, colour: Tuple[int, ...]) -> None:
-        """Colour all pixels a given RGB/RGBW value (micro:bit V2 only).
+        """Pokoloruj wszystkie piksele określoną wartością RGB/RGBW (tylko micro:bit V2).
 
-        Example: ``np.fill((0, 0, 255))``
+Example: ``np.fill((0, 0, 255))``
 
-        :param colour: A tuple of the same length as the number of bytes per pixel (bpp).
+:param colour: Krotka o takiej samej długości jak liczba bajtów na piksel (bpp).
 
-        Use in conjunction with ``show()`` to update the neopixels.
-        """
+Use in conjunction with ``show()`` to update the neopixels."""
         ...
+
     def __setitem__(self, key: int, value: Tuple[int, ...]) -> None:
-        """Set a pixel colour.
+        """Ustaw kolor pikseli.
 
-        Example: ``np[0] = (255, 0, 0)``
+Example: ``np[0] = (255, 0, 0)``
 
-        :param key: The pixel number.
-        :param value: The colour.
-        """
+:param key: Liczba pikseli.
+:param value: Kolor"""
+
     def __getitem__(self, key: int) -> Tuple[int, ...]:
-        """Get a pixel colour.
+        """Uzyskaj kolor piksela.
 
-        Example: ``r, g, b = np[0]``
+Example: ``r, g, b = np[0]``
 
-        :param key: The pixel number.
-        :return: The colour tuple.
-        """
+:param key: Liczba pikseli.
+:return: The colour tuple."""
+
     def __len__(self) -> int:
-        """Get length of this pixel strip.
+        """Uzyskaj długość tego paska pikseli.
 
-        Example: ``len(np)``
-        """
+Example: ``len(np)``"""

@@ -1,70 +1,62 @@
-"""Respond to sound using the built-in microphone (V2 only).
-"""
-
+"""Responde al sonido usando el micrófono integrado (solo V2). (micrófono)"""
 from typing import Optional, Tuple
 from ..microbit import SoundEvent
 
 def current_event() -> Optional[SoundEvent]:
-    """Get the last recorded sound event
+    """Obtiene el último evento de sonido grabado (evento actual)
 
-    Example: ``microphone.current_event()``
+Example: ``microphone.current_event()``
 
-    :return: The event, ``SoundEvent('loud')`` or ``SoundEvent('quiet')``.
-    """
+:return: The event, ``SoundEvent('loud')`` or ``SoundEvent('quiet')``."""
     ...
 
 def was_event(event: SoundEvent) -> bool:
-    """Check if a sound was heard at least once since the last call.
+    """Comprueba si se ha escuchado un sonido al menos una vez desde la última llamada. (evento anterior)
 
-    Example: ``microphone.was_event(SoundEvent.LOUD)``
+Example: ``microphone.was_event(SoundEvent.LOUD)``
 
-    This call clears the sound history before returning.
+This call clears the sound history before returning.
 
-    :param event: The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``
-    :return: ``True`` if sound was heard at least once since the last call, otherwise ``False``.
-    """
+:param event: (evento) El evento a comprobar, como ``SoundEvent.LOUD`` o ``SoundEvent.QUIET``
+:return: ``True`` if sound was heard at least once since the last call, otherwise ``False``."""
     ...
 
 def is_event(event: SoundEvent) -> bool:
-    """Check the most recent sound event detected.
+    """Comprueba el evento de sonido más reciente detectado. (evento reciente)
 
-    Example: ``microphone.is_event(SoundEvent.LOUD)``
+Example: ``microphone.is_event(SoundEvent.LOUD)``
 
-    This call does not clear the sound event history.
+This call does not clear the sound event history.
 
-    :param event: The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``
-    :return: ``True`` if sound was the most recent heard, ``False`` otherwise.
-    """
+:param event: (evento) El evento a comprobar, como ``SoundEvent.LOUD`` o ``SoundEvent.QUIET``
+:return: ``True`` if sound was the most recent heard, ``False`` otherwise."""
     ...
 
 def get_events() -> Tuple[SoundEvent, ...]:
-    """Get the sound event history as a tuple.
+    """Obtiene el historial de eventos de sonido como una tupla. (obtener eventos)
 
-    Example: ``microphone.get_events()``
+Example: ``microphone.get_events()``
 
-    This call clears the sound history before returning.
+This call clears the sound history before returning.
 
-    :return: A tuple of the event history with the most recent event last.
-    """
+:return: A tuple of the event history with the most recent event last."""
     ...
 
 def set_threshold(event: SoundEvent, value: int) -> None:
-    """Set the threshold for a sound event.
+    """Establece el umbral para un evento de sonido. (configurar límite)
 
-    Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
+Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 
-    A high threshold means the event will only trigger if the sound is very loud (>= 250 in the example).
+A high threshold means the event will only trigger if the sound is very loud (>= 250 in the example).
 
-    :param event: A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``.
-    :param value: The threshold level in the range 0-255.
-    """
+:param event: (evento) Un evento de sonido, como ``SoundEvent.LOUD`` o ``SoundEvent.QUIET``.
+:param value: (valor) El nivel de umbral en el rango 0 - 255."""
     ...
 
 def sound_level() -> int:
-    """Get the sound pressure level.
+    """Obtiene el nivel de presión sonora. (nivel de sonido)
 
-    Example: ``microphone.sound_level()``
+Example: ``microphone.sound_level()``
 
-    :return: A representation of the sound pressure level in the range 0 to 255.
-    """
+:return: A representation of the sound pressure level in the range 0 to 255."""
     ...

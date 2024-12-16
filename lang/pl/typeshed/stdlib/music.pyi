@@ -1,167 +1,128 @@
-"""Create and play melodies.
-"""
+"""Twórz i graj w melodie."""
 from typing import Optional, Tuple, Union, List
-
 from .microbit import MicroBitDigitalPin, pin0
-
 DADADADUM: Tuple[str, ...]
-"""Melody: the opening to Beethoven’s 5th Symphony in C minor."""
-
+"""Melodia: otwarcie 5. symfonii Beethovena w C minor"""
 ENTERTAINER: Tuple[str, ...]
-"""Melody: the opening fragment of Scott Joplin’s Ragtime classic “The Entertainer”."""
-
+"""Melodia: fragment otwierający klasyczny Scott Joplin Ragtime "The Entertainer"."""
 PRELUDE: Tuple[str, ...]
-"""Melody: the opening of the first Prelude in C Major of J.S.Bach’s 48 Preludes and Fugues."""
-
+"""Melodia: otwarcie pierwszego Preludium w C Major, 48 preludiów i Fug J.S.Bacha."""
 ODE: Tuple[str, ...]
-"""Melody: the “Ode to Joy” theme from Beethoven’s 9th Symphony in D minor."""
-
+"""Melodia: motyw Ody do radości z 9. Symfonii Beethovena w D minor."""
 NYAN: Tuple[str, ...]
-"""Melody: the Nyan Cat theme (http://www.nyan.cat/).
+"""Melodia: motyw Nyan Kot (http://www.nyan.cat/).
 
 The composer is unknown. This is fair use for educational porpoises (as they say in New York)."""
-
 RINGTONE: Tuple[str, ...]
-"""Melody: something that sounds like a mobile phone ringtone.
+"""Melodia: coś, co brzmi jak dzwonek telefonu komórkowego.
 
 To be used to indicate an incoming message.
 """
-
 FUNK: Tuple[str, ...]
-"""Melody: a funky bass line for secret agents and criminal masterminds."""
-
+"""Melody: funkowa linia basu dla tajnych agentów i geniuszy kryminalnych."""
 BLUES: Tuple[str, ...]
-"""Melody: a boogie-woogie 12-bar blues walking bass."""
-
+"""Melodia: 12-taktowy bluesowy chodzący bas w stylu boogie-woogie."""
 BIRTHDAY: Tuple[str, ...]
-"""Melody: “Happy Birthday to You…”
+"""Melodia: "Wszystkiego najlepszego…"
 
 For copyright status see: http://www.bbc.co.uk/news/world-us-canada-34332853
 """
-
 WEDDING: Tuple[str, ...]
-"""Melody: the bridal chorus from Wagner’s opera “Lohengrin”."""
-
+"""Melodia: chór panny młodej z opery Wagnera „Lohengrin”. (ślub)"""
 FUNERAL: Tuple[str, ...]
-"""Melody: the “funeral march” otherwise known as Frédéric Chopin’s Piano Sonata No. 2 in B♭ minor, Op. 35."""
-
+"""Melodia: »Marsz pogrzebowy« znany jako Sonata Fortepianowa No. 2 w B♭ minor, Op. 35 Fryderyka Chopina. (pogrzeb)"""
 PUNCHLINE: Tuple[str, ...]
-"""Melody: a fun fragment that signifies a joke has been made."""
-
+"""Melodia: zabawny fragment oznaczający, że zażartowano."""
 PYTHON: Tuple[str, ...]
-"""Melody: John Philip Sousa’s march “Liberty Bell” aka, the theme for “Monty Python’s Flying Circus” (after which the Python programming language is named)."""
-
+"""Melodia: Marsz John Philip Sousa „Liberty Bell” aka, motyw „Monty Python Flating Circus” (po którym nazwano język programowania Pythona)."""
 BADDY: Tuple[str, ...]
-"""Melody: silent movie era entrance of a baddy."""
-
+"""Melodia: wejście złego człowieka do ery kina niemego."""
 CHASE: Tuple[str, ...]
-"""Melody: silent movie era chase scene."""
-
+"""Melodia: scena pościgu z epoki kina niemego."""
 BA_DING: Tuple[str, ...]
-"""Melody: a short signal to indicate something has happened."""
-
+"""Melodia: krótki sygnał informujący, że coś się wydarzyło."""
 WAWAWAWAA: Tuple[str, ...]
-"""Melody: a very sad trombone."""
-
+"""Melodia: bardzo smutny puzon."""
 JUMP_UP: Tuple[str, ...]
-"""Melody: for use in a game, indicating upward movement."""
-
+"""Melodia: do użytku w grze, wskazujący ruch w górę."""
 JUMP_DOWN: Tuple[str, ...]
-"""Melody: for use in a game, indicating downward movement."""
-
+"""Melodia: do użytku w grze, wskazujący ruch w górę."""
 POWER_UP: Tuple[str, ...]
-"""Melody: a fanfare to indicate an achievement unlocked."""
-
+"""Melodia: fanfara oznaczająca odblokowanie osiągnięcia."""
 POWER_DOWN: Tuple[str, ...]
-"""Melody: a sad fanfare to indicate an achievement lost."""
+"""Melodia: smutna fanfara oznaczająca utracenie osiągnięcia."""
 
-def set_tempo(ticks: int = 4, bpm: int = 120) -> None:
-    """Sets the approximate tempo for playback.
+def set_tempo(ticks: int=4, bpm: int=120) -> None:
+    """Ustawia przybliżone tempo dla odtwarzania.
 
-    Example: ``music.set_tempo(bpm=120)``
+Example: ``music.set_tempo(bpm=120)``
 
-    :param ticks: The number of ticks constituting a beat.
-    :param bpm: An integer determining how many beats per minute.
+:param ticks: Liczba taktów składających się na uderzenie.
+:param bpm: Liczba całkowita określająca liczbę uderzeń na minutę.
 
-    Suggested default values allow the following useful behaviour:
+Suggested default values allow the following useful behaviour:
 
-    - music.set_tempo() – reset the tempo to default of ticks = 4, bpm = 120
-    - music.set_tempo(ticks=8) – change the “definition” of a beat
-    - music.set_tempo(bpm=180) – just change the tempo
+- music.set_tempo() – reset the tempo to default of ticks = 4, bpm = 120
+- music.set_tempo(ticks=8) – change the “definition” of a beat
+- music.set_tempo(bpm=180) – just change the tempo
 
-    To work out the length of a tick in milliseconds is very simple arithmetic:
-    60000/bpm/ticks_per_beat. For the default values that’s
-    60000/120/4 = 125 milliseconds or 1 beat = 500 milliseconds.
-    """
+To work out the length of a tick in milliseconds is very simple arithmetic:
+60000/bpm/ticks_per_beat. For the default values that’s
+60000/120/4 = 125 milliseconds or 1 beat = 500 milliseconds."""
     ...
 
 def get_tempo() -> Tuple[int, int]:
-    """Gets the current tempo as a tuple of integers: ``(ticks, bpm)``.
+    """Pobiera bieżące tempo jako parę liczb całkowitych: ``(ticks, bpm)``.
 
-    Example: ``ticks, beats = music.get_tempo()``
+Example: ``ticks, beats = music.get_tempo()``
 
-    :return: The temp as a tuple with two integer values, the ticks then the beats per minute.
-    """
+:return: The temp as a tuple with two integer values, the ticks then the beats per minute."""
     ...
 
-def play(
-    music: Union[str, List[str], Tuple[str, ...]],
-    pin: Optional[MicroBitDigitalPin] = pin0,
-    wait: bool = True,
-    loop: bool = False,
-) -> None:
-    """Plays music.
+def play(music: Union[str, List[str], Tuple[str, ...]], pin: Optional[MicroBitDigitalPin]=pin0, wait: bool=True, loop: bool=False) -> None:
+    """Odtwarzaj muzykę.
 
-    Example: ``music.play(music.NYAN)``
+Example: ``music.play(music.NYAN)``
 
-    :param music: music specified in `a special notation <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
-    :param pin: the output pin for use with an external speaker (default ``pin0``), ``None`` for no sound.
-    :param wait: If ``wait`` is set to ``True``, this function is blocking.
-    :param loop: If ``loop`` is set to ``True``, the tune repeats until ``stop`` is called or the blocking call is interrupted.
+:param music: muzyka określona w `specjalnej notacji <https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#musical-notation>`_
+:param pin: pin wyjściowy do użycia z zewnętrznym głośnikiem (domyślnie ``pin0``), ``None`` dla braku dźwięku.
+:param wait: Jeśli ``wait`` jest ustawiony na ``True``, ta funkcja jest blokowana.
+:param loop: Jeśli ``loop`` jest ustawiony na ``True``, melodia powtarza się, aż ``stop`` jest wywołana lub połączenie blokujące zostanie przerwane.
 
-    Many built-in melodies are defined in this module.
-    """
+Many built-in melodies are defined in this module."""
     ...
 
-def pitch(
-    frequency: int,
-    duration: int = -1,
-    pin: Optional[MicroBitDigitalPin] = pin0,
-    wait: bool = True,
-) -> None:
-    """Play a note.
+def pitch(frequency: int, duration: int=-1, pin: Optional[MicroBitDigitalPin]=pin0, wait: bool=True) -> None:
+    """Zagraj nutę.
 
-    Example: ``music.pitch(185, 1000)``
+Example: ``music.pitch(185, 1000)``
 
-    :param frequency: An integer frequency
-    :param duration: A millisecond duration. If negative then sound is continuous until the next call or a call to ``stop``.
-    :param pin: Optional output pin (default ``pin0``).
-    :param wait: If ``wait`` is set to ``True``, this function is blocking.
+:param frequency: Częstotliwość całkowitoliczbowa
+:param duration: Czas trwania w milisekundach. Jeśli ujemny, to dźwięk jest ciągły aż do następnego połączenia lub połączenia z ``stop``.
+:param pin: Opcjonalny pin wyjściowy (domyślny ``pin0``).
+:param wait: Jeśli ``wait`` jest ustawiony na ``True``, ta funkcja jest blokowana.
 
-    For example, if the frequency is set to 440 and the length to
-    1000 then we hear a standard concert A for one second.
+For example, if the frequency is set to 440 and the length to
+1000 then we hear a standard concert A for one second.
 
-    You can only play one pitch on one pin at any one time.
-    """
+You can only play one pitch on one pin at any one time."""
     ...
 
-def stop(pin: Optional[MicroBitDigitalPin] = pin0) -> None:
-    """Stops all music playback on the built-in speaker and any pin outputting sound.
+def stop(pin: Optional[MicroBitDigitalPin]=pin0) -> None:
+    """Zatrzymuje odtwarzanie muzyki na wbudowanym głośniku i jakimkolwiek pinie wyjściowym dźwięku.
 
-    Example: ``music.stop()``
+Example: ``music.stop()``
 
-    :param pin: An optional argument can be provided to specify a pin, e.g. ``music.stop(pin1)``.
-    """
+:param pin: Opcjonalny argument może być podany do określenia pinu, np. ``music.stop(pin1)``."""
 
 def reset() -> None:
-    """Resets ticks, bpm, duration and octave to their default values.
+    """Resetuje takty, bpm, czas trwania i oktawę do ich wartości domyślnych.
 
-    Example: ``music.reset()``
+Example: ``music.reset()``
 
-    Values:
-    - ``ticks = 4``
-    - ``bpm = 120``
-    - ``duration = 4``
-    - ``octave = 4``
-    """
+Values:
+- ``ticks = 4``
+- ``bpm = 120``
+- ``duration = 4``
+- ``octave = 4``"""
     ...

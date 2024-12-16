@@ -1,78 +1,70 @@
-"""Use the built-in compass.
-"""
+"""使用内置罗盘。 (罗盘)"""
 
 def calibrate() -> None:
-    """Starts the calibration process.
+    """开始校准过程。 (校准)
 
-    Example: ``compass.calibrate()``
+Example: ``compass.calibrate()``
 
-    An instructive message will be scrolled to the user after which they will need
-    to rotate the device in order to draw a circle on the LED display.
-    """
+An instructive message will be scrolled to the user after which they will need
+to rotate the device in order to draw a circle on the LED display."""
     ...
 
 def is_calibrated() -> bool:
-    """Check is the compass is calibrated.
+    """检查罗盘是否已校准。
 
-    Example: ``compass.is_calibrated()``
+Example: ``compass.is_calibrated()``
 
-    :return: ``True`` if the compass has been successfully calibrated, ``False`` otherwise.
-    """
+:return: ``True`` if the compass has been successfully calibrated, ``False`` otherwise."""
     ...
 
 def clear_calibration() -> None:
-    """Undoes the calibration, making the compass uncalibrated again.
+    """取消校准，将罗盘恢复到未校准状态。
 
-    Example: ``compass.clear_calibration()``
-    """
+Example: ``compass.clear_calibration()``"""
     ...
 
 def get_x() -> int:
-    """Get the magnetic field strength on the ``x`` axis.
+    """获取 ``x`` 轴上的磁场强度。
 
-    Example: ``compass.get_x()``
+Example: ``compass.get_x()``
 
-    Call ``calibrate`` first or the results will be inaccurate.
+Call ``calibrate`` first or the results will be inaccurate.
 
-    :return: A positive or negative integer in nano tesla representing the magnitude and direction of the field.
-    """
+:return: A positive or negative integer in nano tesla representing the magnitude and direction of the field."""
     ...
 
 def get_y() -> int:
-    """Get the magnetic field strength on the ``y`` axis.
+    """获取 ``y`` 轴上的磁场强度。
 
-    Example: ``compass.get_y()``
+Example: ``compass.get_y()``
 
-    Call ``calibrate`` first or the results will be inaccurate.
+Call ``calibrate`` first or the results will be inaccurate.
 
-    :return: A positive or negative integer in nano tesla representing the magnitude and direction of the field.
-    """
+:return: A positive or negative integer in nano tesla representing the magnitude and direction of the field."""
     ...
 
 def get_z() -> int:
-    """Get the magnetic field strength on the ``z`` axis.
+    """获取 ``z`` 轴上的磁场强度。
 
-    Example: ``compass.get_z()``
+Example: ``compass.get_z()``
 
-    Call ``calibrate`` first or the results will be inaccurate.
+Call ``calibrate`` first or the results will be inaccurate.
 
-    :return: A positive or negative integer in nano tesla representing the magnitude and direction of the field.
-    """
+:return: A positive or negative integer in nano tesla representing the magnitude and direction of the field."""
     ...
 
 def heading() -> int:
-    """Get the compass heading.
+    """获取罗盘指向。
 
-    Example: ``compass.heading()``
+Example: ``compass.heading()``
 
-    :return: An integer in the range from 0 to 360, representing the angle in degrees, clockwise, with north as 0.
-    """
+:return: An integer in the range from 0 to 360, representing the angle in degrees, clockwise, with north as 0."""
     ...
 
 def get_field_strength() -> int:
-    """Get the magnitude of the magnetic field around the device.
+    """获取设备周围磁场的强度。 (获取磁场强度)
 
-    Example: ``compass.get_field_strength()``
+Example: ``compass.get_field_strength()``
 
-    :return: An integer indication of the magnitude of the magnetic field in nano tesla."""
+:return: An integer indication of the magnitude of the magnetic field in nano tesla."""
     ...

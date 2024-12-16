@@ -1,18 +1,15 @@
-"""Control the built-in speaker (V2 only).
-"""
+"""控制内置扬声器（仅限 V2）。 (扬声器\u200b\u200b\u200b\u200b)"""
 
 def off() -> None:
-    """Turn the speaker off.
+    """关闭扬声器\u200b\u200b\u200b\u200b。 (关闭)
 
-    Example: ``speaker.off()``
+Example: ``speaker.off()``
 
-    This does not disable sound output to an edge connector pin.
-    """
+This does not disable sound output to an edge connector pin."""
     ...
 
 def on() -> None:
-    """Turn the speaker on.
+    """打开扬声器\u200b\u200b\u200b\u200b。 (打开)
 
-    Example: ``speaker.on()``
-    """
+Example: ``speaker.on()``"""
     ...

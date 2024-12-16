@@ -1,273 +1,246 @@
-"""Mathematical functions.
-"""
-
+"""수학 함수입니다."""
 from typing import Tuple
 
 def acos(x: float) -> float:
-    """Calculate the inverse cosine.
+    """코사인의 역을 계산합니다.
 
-    Example: ``math.acos(1)``
+Example: ``math.acos(1)``
 
-    :param x: A number
-    :return: The inverse cosine of ``x``
-    """
+:param x: 숫자
+:return: The inverse cosine of ``x``"""
     ...
 
 def asin(x: float) -> float:
-    """Calculate the inverse sine.
+    """사인의 역을 계산합니다.
 
-    Example: ``math.asin(0)``
+Example: ``math.asin(0)``
 
-    :param x: A number
-    :return: The inverse sine of ``x``
-    """
+:param x: 숫자
+:return: The inverse sine of ``x``"""
     ...
 
 def atan(x: float) -> float:
-    """Calculate the inverse tangent.
+    """탄젠트의 역을 계산합니다.
 
-    Example: ``math.atan(0)``
+Example: ``math.atan(0)``
 
-    :param x: A number
-    :return: The inverse tangent of ``x``
-    """
+:param x: 숫자
+:return: The inverse tangent of ``x``"""
     ...
 
 def atan2(y: float, x: float) -> float:
-    """Calculate the principal value of the inverse tangent of ``y/x``.
+    """``y/x``의 역 탄젠트의 주 값을 계산합니다.
 
-    Example: ``math.atan2(0, -1)``
+Example: ``math.atan2(0, -1)``
 
-    :param y: A number
-    :param x: A number
-    :return: The principal value of the inverse tangent of ``y/x``
-    """
+:param y: 숫자
+:param x: 숫자
+:return: The principal value of the inverse tangent of ``y/x``"""
     ...
 
 def ceil(x: float) -> float:
-    """Round a number towards positive infinity.
+    """양의 무한대로 숫자를 반올림합니다.
 
-    Example: ``math.ceil(0.1)``
+Example: ``math.ceil(0.1)``
 
-    :param x: A number
-    :return: ``x`` rounded towards positive infinity.
-    """
+:param x: 숫자
+:return: ``x`` rounded towards positive infinity."""
     ...
 
 def copysign(x: float, y: float) -> float:
-    """Calculate ``x`` with the sign of ``y``.
+    """``y``의 사인 값으로 ``x``를 계산합니다.
 
-    Example: ``math.copysign(1, -1)``
+Example: ``math.copysign(1, -1)``
 
-    :param x: A number
-    :param y: The source of the sign for the return value
-    :return: ``x`` with the sign of ``y``
-    """
+:param x: 숫자
+:param y: 반환값의 사인의 출처
+:return: ``x`` with the sign of ``y``"""
     ...
 
 def cos(x: float) -> float:
-    """Calculate the cosine of ``x``.
+    """``x``의 코사인을 계산합니다.
 
-    Example: ``math.cos(0)``
+Example: ``math.cos(0)``
 
-    :param x: A number
-    :return: The cosine of ``x``
-    """
+:param x: 숫자
+:return: The cosine of ``x``"""
     ...
 
 def degrees(x: float) -> float:
-    """Convert radians to degrees.
+    """호도법을 각도법으로 변환합니다. (도)
 
-    Example: ``math.degrees(2 * math.pi)``
+Example: ``math.degrees(2 * math.pi)``
 
-    :param x: A value in radians
-    :return: The value converted to degrees"""
+:param x: 호도법 값
+:return: The value converted to degrees"""
     ...
 
 def exp(x: float) -> float:
-    """Calculate the exponential of ``x``.
+    """``x``의 지수를 계산합니다.
 
-    Example: ``math.exp(1)``
+Example: ``math.exp(1)``
 
-    :param x: A number
-    :return: The exponential of ``x``.
-    """
+:param x: 숫자
+:return: The exponential of ``x``."""
     ...
 
 def fabs(x: float) -> float:
-    """Return the absolute value of ``x``.
+    """``x``의 절댓값을 반환합니다.
 
-    Example: ``math.fabs(-0.1)``
+Example: ``math.fabs(-0.1)``
 
-    :param x: A number
-    :return: The absolute value of ``x``
-    """
+:param x: 숫자
+:return: The absolute value of ``x``"""
     ...
 
 def floor(x: float) -> int:
-    """Round a number towards negative infinity.
+    """음의 무한대로 숫자를 반올림합니다.
 
-    Example: ``math.floor(0.9)``
+Example: ``math.floor(0.9)``
 
-    :param x: A number
-    :return: ``x`` rounded towards negative infinity.
-    """
+:param x: 숫자
+:return: ``x`` rounded towards negative infinity."""
     ...
 
 def fmod(x: float, y: float) -> float:
-    """Calculate the remainder of ``x/y``.
+    """``x/y``의 나머지를 계산합니다.
 
-    Example: ``math.fmod(10, 3)``
+Example: ``math.fmod(10, 3)``
 
-    :param x: The numerator
-    :param y: The denominator
-    """
+:param x: 분자
+:param y: 분모"""
     ...
 
 def frexp(x: float) -> Tuple[float, int]:
-    """Decomposes a floating-point number into its mantissa and exponent.
+    """부동 소수점 수를 가수와 지수로 분해합니다.
 
-    Example: ``mantissa, exponent = math.frexp(2)``
+Example: ``mantissa, exponent = math.frexp(2)``
 
-    The returned value is the tuple ``(m, e)`` such that ``x == m * 2**e``
-    exactly.  If ``x == 0`` then the function returns ``(0.0, 0)``, otherwise
-    the relation ``0.5 <= abs(m) < 1`` holds.
+The returned value is the tuple ``(m, e)`` such that ``x == m * 2**e``
+exactly.  If ``x == 0`` then the function returns ``(0.0, 0)``, otherwise
+the relation ``0.5 <= abs(m) < 1`` holds.
 
-    :param x: A floating-point number
-    :return: A tuple of length two containing its mantissa then exponent
-    """
+:param x: 부동 소수점 수
+:return: A tuple of length two containing its mantissa then exponent"""
     ...
 
 def isfinite(x: float) -> bool:
-    """Check if a value is finite.
+    """값이 유한값인지 확인합니다.
 
-    Example: ``math.isfinite(float('inf'))``
+Example: ``math.isfinite(float('inf'))``
 
-    :param x: A number.
-    :return: ``True`` if ``x`` is finite, ``False`` otherwise.
-    """
+:param x: 숫자입니다.
+:return: ``True`` if ``x`` is finite, ``False`` otherwise."""
     ...
 
 def isinf(x: float) -> bool:
-    """Check if a value is infinite.
+    """값이 무한인지 확인합니다.
 
-    Example: ``math.isinf(float('-inf'))``
+Example: ``math.isinf(float('-inf'))``
 
-    :param x: A number.
-    :return: ``True`` if ``x`` is infinite, ``False`` otherwise.
-    """
+:param x: 숫자입니다.
+:return: ``True`` if ``x`` is infinite, ``False`` otherwise."""
     ...
 
 def isnan(x: float) -> bool:
-    """Check if a value is not-a-number (NaN).
+    """값이 숫자가 아닌 값(NaN)인지 확인합니다.
 
-    Example: ``math.isnan(float('nan'))``
+Example: ``math.isnan(float('nan'))``
 
-    :param x: A number
-    :return: ``True`` if ``x`` is not-a-number (NaN), ``False`` otherwise."""
+:param x: 숫자
+:return: ``True`` if ``x`` is not-a-number (NaN), ``False`` otherwise."""
     ...
 
 def ldexp(x: float, exp: int) -> float:
-    """Calculate ``x * (2**exp)``.
+    """``x * (2**exp)``를 계산합니다.
 
-    Example: ``math.ldexp(0.5, 2)``
+Example: ``math.ldexp(0.5, 2)``
 
-    :param x: A number
-    :param exp: Integer exponent
-    :return: ``x * (2**exp)``
-    """
+:param x: 숫자
+:param exp: 정수 지수
+:return: ``x * (2**exp)``"""
     ...
 
-def log(x: float, base: float = e) -> float:
-    """Calculate the logarithm of ``x`` to the given base (defaults to natural logorithm).
+def log(x: float, base: float=e) -> float:
+    """``x``의 로그를 주어진 베이스에 따라 계산합니다(기본값은 자연로그).
 
-    Example: ``math.log(math.e)``
+Example: ``math.log(math.e)``
 
-    With one argument, return the natural logarithm of x (to base e).
+With one argument, return the natural logarithm of x (to base e).
 
-    With two arguments, return the logarithm of x to the given base, calculated as ``log(x)/log(base)``.
+With two arguments, return the logarithm of x to the given base, calculated as ``log(x)/log(base)``.
 
-    :param x: A number
-    :param base: The base to use
-    :return: The natural logarithm of ``x``
-    """
+:param x: 숫자
+:param base: 사용할 베이스
+:return: The natural logarithm of ``x``"""
     ...
 
 def modf(x: float) -> Tuple[float, float]:
-    """Calculate the fractional and integral parts of ``x``.
+    """``x``의 분수 및 정수 부분을 계산합니다.
 
-    Example: ``fractional, integral = math.modf(1.5)``
+Example: ``fractional, integral = math.modf(1.5)``
 
-    :param x: A number
-    :return: A tuple of two floats representing the fractional then integral parts of ``x``.
+:param x: 숫자
+:return: A tuple of two floats representing the fractional then integral parts of ``x``.
 
-    Both the fractional and integral values have the same sign as ``x``.
-    """
+Both the fractional and integral values have the same sign as ``x``."""
     ...
 
 def pow(x: float, y: float) -> float:
-    """Returns ``x`` to the power of ``y``.
+    """``y``의 제곱을 ``x``(으)로 반환합니다.
 
-    Example: ``math.pow(4, 0.5)``
+Example: ``math.pow(4, 0.5)``
 
-    :param x: A number
-    :param y: The exponent
-    :return: ``x`` to the power of ``y``
-    """
+:param x: 숫자
+:param y: 지수
+:return: ``x`` to the power of ``y``"""
     ...
 
 def radians(x: float) -> float:
-    """Convert a degrees to radians.
+    """각도법을 호도법으로 변환합니다.
 
-    Example: ``math.radians(360)``
+Example: ``math.radians(360)``
 
-    :param x: A value in degrees
-    :return: The value converted to radians
-    """
+:param x: 각도법 값
+:return: The value converted to radians"""
     ...
 
 def sin(x: float) -> float:
-    """Calculate the sine of ``x``.
+    """``x``의 사인을 계산합니다.
 
-    Example: ``math.sin(math.pi/2)``
+Example: ``math.sin(math.pi/2)``
 
-    :param x: A number
-    :return: The sine of ``x``
-    """
+:param x: 숫자
+:return: The sine of ``x``"""
     ...
 
 def sqrt(x: float) -> float:
-    """Calculate the square root of ``x``.
+    """``x``의 제곱근을 계산합니다.
 
-    Example: ``math.sqrt(4)``
+Example: ``math.sqrt(4)``
 
-    :param x: A number
-    :return: The square root of ``x``
-    """
+:param x: 숫자
+:return: The square root of ``x``"""
     ...
 
 def tan(x: float) -> float:
-    """Calculate the tangent of ``x``.
+    """``x``의 탄젠트를 계산합니다.
 
-    Example: ``math.tan(0)``
+Example: ``math.tan(0)``
 
-    :param x: A number
-    :return: The tangent of ``x``.
-    """
+:param x: 숫자
+:return: The tangent of ``x``."""
     ...
 
 def trunc(x: float) -> int:
-    """Round a number towards 0.
+    """숫자를 0으로 반올림합니다.
 
-    Example: ``math.trunc(-0.9)``
+Example: ``math.trunc(-0.9)``
 
-    :param x: A number
-    :return: ``x`` rounded towards zero.
-    """
+:param x: 숫자
+:return: ``x`` rounded towards zero."""
     ...
-
 e: float
-"""Base of the natural logarithm"""
-
+"""자연 알고리즘 베이스"""
 pi: float
-"""The ratio of a circle's circumference to its diameter"""
+"""원의 원주와 지름의 비율"""

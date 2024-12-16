@@ -1,65 +1,56 @@
-"""Pack and unpack primitive data types.
-"""
-
+"""壓縮和解壓縮原始資料類型。"""
 from _typeshed import ReadableBuffer, WriteableBuffer
 from typing import Any, Tuple, Union
 
 def calcsize(fmt: str) -> int:
-    """Get the number of bytes needed to store the given ``fmt``.
+    """取得存儲特定 ``fmt`` 所需的位元組數。
 
-    Example: ``struct.calcsize('hf')``
+Example: ``struct.calcsize('hf')``
 
-    :param fmt: A format string.
-    :return The number of bytes needed to store such a value.
-    """
+:param fmt: 格式字串。
+:return The number of bytes needed to store such a value."""
     ...
 
 def pack(fmt: str, v1: Any, *vn: Any) -> bytes:
-    """Pack values according to a format string.
+    """根據格式字串，壓縮數值。
 
-    Example: ``struct.pack('hf', 1, 3.1415)``
+Example: ``struct.pack('hf', 1, 3.1415)``
 
-    :param fmt: The format string.
-    :param v1: The first value.
-    :param *vn: The remaining values.
-    :return A bytes object encoding the values.
-    """
+:param fmt: 格式字串。
+:param v1: 首位數值。
+:param *vn: 剩餘數值。
+:return A bytes object encoding the values."""
     ...
 
-def pack_into(
-    fmt: str, buffer: WriteableBuffer, offset: int, v1: Any, *vn: Any
-) -> None:
-    """Pack values according to a format string.
+def pack_into(fmt: str, buffer: WriteableBuffer, offset: int, v1: Any, *vn: Any) -> None:
+    """根據格式字串，壓縮數值。
 
-    Example: ``struct.pack_info('hf', buffer, 1, 3.1415)``
+Example: ``struct.pack_info('hf', buffer, 1, 3.1415)``
 
-    :param fmt: The format string.
-    :param buffer: The target buffer to write into.
-    :param offset: The offset into the buffer. May be negative to count from the end of the buffer.
-    :param v1: The first value.
-    :param *vn: The remaining values.
-    """
+:param fmt: 格式字串。
+:param buffer: 要寫入的緩衝區。
+:param offset: 緩衝區內的位移。從緩衝區結尾開始計數，該位移可能為負數。
+:param v1: 首位數值。
+:param *vn: 剩餘數值。"""
     ...
 
 def unpack(fmt: str, data: ReadableBuffer) -> Tuple[Any, ...]:
-    """Unpack data according to a format string.
+    """根據格式字串，解壓縮數值。
 
-    Example: ``v1, v2 = struct.unpack('hf', buffer)``
+Example: ``v1, v2 = struct.unpack('hf', buffer)``
 
-    :param fmt: The format string.
-    :param data: The data.
-    :return: A tuple of the unpacked values.
-    """
+:param fmt: 格式字串。
+:param data: 資料。
+:return: A tuple of the unpacked values."""
     ...
 
-def unpack_from(fmt: str, buffer: ReadableBuffer, offset: int = 0) -> Tuple:
-    """Unpack data from a buffer according to a format string.
+def unpack_from(fmt: str, buffer: ReadableBuffer, offset: int=0) -> Tuple:
+    """根據格式字串，從緩衝區解壓縮資料。
 
-    Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
+Example: ``v1, v2 = struct.unpack_from('hf', buffer)``
 
-    :param fmt: The format string.
-    :param buffer: The source buffer to read from.
-    :param offset: The offset into the buffer. May be negative to count from the end of the buffer.
-    :return: A tuple of the unpacked values.
-    """
+:param fmt: 格式字串。
+:param buffer: 要讀取的來源緩衝區。
+:param offset: 緩衝區內的位移。從緩衝區結尾開始計數，該位移可能為負數。
+:return: A tuple of the unpacked values."""
     ...

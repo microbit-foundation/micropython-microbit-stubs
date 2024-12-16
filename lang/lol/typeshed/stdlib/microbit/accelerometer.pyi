@@ -1,115 +1,103 @@
-"""Measure the acceleration of the micro:bit and recognise gestures.
-"""
-
+"""crwdns329920:0crwdne329920:0 (crwdns329918:0crwdne329918:0)"""
 from typing import Tuple
 
 def get_x() -> int:
-    """Get the acceleration measurement in the ``x`` axis in milli-g.
+    """crwdns329924:0``x``crwdne329924:0 (crwdns329922:0crwdne329922:0)
 
-    Example: ``accelerometer.get_x()``
+Example: ``accelerometer.get_x()``
 
-    :return: A positive or negative integer depending on direction in the range +/- 2000mg.
-    """
+:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
     ...
 
 def get_y() -> int:
-    """Get the acceleration measurement in the ``y`` axis in milli-g.
+    """crwdns329928:0``y``crwdne329928:0 (crwdns329926:0crwdne329926:0)
 
-    Example: ``accelerometer.get_y()``
+Example: ``accelerometer.get_y()``
 
-    :return: A positive or negative integer depending on direction in the range +/- 2000mg.
-    """
+:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
     ...
 
 def get_z() -> int:
-    """Get the acceleration measurement in the ``z`` axis in milli-g.
+    """crwdns329932:0``z``crwdne329932:0 (crwdns329930:0crwdne329930:0)
 
-    Example: ``accelerometer.get_z()``
+Example: ``accelerometer.get_z()``
 
-    :return: A positive or negative integer depending on direction in the range +/- 2000mg.
-    """
+:return: A positive or negative integer depending on direction in the range +/- 2000mg."""
     ...
 
 def get_values() -> Tuple[int, int, int]:
-    """Get the acceleration measurements in all axes at once as a tuple.
+    """crwdns329936:0crwdne329936:0 (crwdns329934:0crwdne329934:0)
 
-    Example: ``x, y, z = accelerometer.get_values()``
+Example: ``x, y, z = accelerometer.get_values()``
 
-    :return: a three-element tuple of integers ordered as X, Y, Z, each value a positive or negative integer depending on direction in the range +/- 2000mg
-    """
+:return: a three-element tuple of integers ordered as X, Y, Z, each value a positive or negative integer depending on direction in the range +/- 2000mg"""
     ...
 
 def get_strength() -> int:
-    """Get the acceleration measurement of all axes combined, as a positive integer. This is the Pythagorean sum of the X, Y and Z axes.
+    """crwdns335824:0crwdne335824:0 (crwdns335822:0crwdne335822:0)
 
-    Example: ``accelerometer.get_strength()``
+Example: ``accelerometer.get_strength()``
 
-    :return: The combined acceleration strength of all the axes, in milli-g.
-    """
+:return: The combined acceleration strength of all the axes, in milli-g."""
     ...
 
 def current_gesture() -> str:
-    """Get the name of the current gesture.
+    """crwdns329940:0crwdne329940:0 (crwdns329938:0crwdne329938:0)
 
-    Example: ``accelerometer.current_gesture()``
+Example: ``accelerometer.current_gesture()``
 
-    MicroPython understands the following gesture names: ``"up"``, ``"down"``,
-    ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
-    ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
-    represented as strings.
+MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+represented as strings.
 
-    :return: The current gesture
-    """
+:return: The current gesture"""
     ...
 
 def is_gesture(name: str) -> bool:
-    """Check if the named gesture is currently active.
+    """crwdns329944:0crwdne329944:0 (crwdns329942:0crwdne329942:0)
 
-    Example: ``accelerometer.is_gesture('shake')``
+Example: ``accelerometer.is_gesture('shake')``
 
-    MicroPython understands the following gesture names: ``"up"``, ``"down"``,
-    ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
-    ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
-    represented as strings.
+MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+represented as strings.
 
-    :param name: The gesture name.
-    :return: ``True`` if the gesture is active, ``False`` otherwise.
-    """
+:param name: (crwdns329946:0crwdne329946:0) crwdns329948:0crwdne329948:0
+:return: ``True`` if the gesture is active, ``False`` otherwise."""
     ...
 
 def was_gesture(name: str) -> bool:
-    """Check if the named gesture was active since the last call.
+    """crwdns329952:0crwdne329952:0 (crwdns329950:0crwdne329950:0)
 
-    Example: ``accelerometer.was_gesture('shake')``
+Example: ``accelerometer.was_gesture('shake')``
 
-    MicroPython understands the following gesture names: ``"up"``, ``"down"``,
-    ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
-    ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
-    represented as strings.
+MicroPython understands the following gesture names: ``"up"``, ``"down"``,
+``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+represented as strings.
 
-    :param name: The gesture name.
-    :return: ``True`` if the gesture was active since the last call, ``False`` otherwise.
-    """
+:param name: (crwdns329954:0crwdne329954:0) crwdns329956:0crwdne329956:0
+:return: ``True`` if the gesture was active since the last call, ``False`` otherwise."""
 
 def get_gestures() -> Tuple[str, ...]:
-    """Return a tuple of the gesture history.
+    """crwdns329960:0crwdne329960:0 (crwdns329958:0crwdne329958:0)
 
-    Example: ``accelerometer.get_gestures()``
+Example: ``accelerometer.get_gestures()``
 
-    Clears the gesture history before returning.
+Clears the gesture history before returning.
 
-    Gestures are not updated in the background so there needs to be constant
-    calls to some accelerometer method to do the gesture detection. Usually
-    gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
+Gestures are not updated in the background so there needs to be constant
+calls to some accelerometer method to do the gesture detection. Usually
+gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
 
-    :return: The history as a tuple, most recent last.
-    """
+:return: The history as a tuple, most recent last."""
     ...
 
 def set_range(value: int) -> None:
-    """Set the accelerometer sensitivity range, in g (standard gravity), to the closest values supported by the hardware, so it rounds to either ``2``, ``4``, or ``8`` g.
+    """crwdns335828:0``2``crwdnd335828:0``4``crwdnd335828:0``8``crwdne335828:0 (crwdns335826:0crwdne335826:0)
 
-    Example: ``accelerometer.set_range(8)``
+Example: ``accelerometer.set_range(8)``
 
-    :param value: New range for the accelerometer, an integer in ``g``.
-    """
+:param value: (crwdns335830:0crwdne335830:0) crwdns335832:0``g``crwdne335832:0"""

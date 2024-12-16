@@ -1,152 +1,130 @@
-"""Communicate between micro:bits with the built-in radio.
-"""
-
+"""Comunicarse entre micro:bits con la radio incorporada."""
 from _typeshed import WriteableBuffer
 from typing import Optional, Tuple
-
 RATE_1MBIT: int
-"""Constant used to indicate a throughput of 1 MBit a second."""
-
+"""Constante utilizada para indicar un rendimiento de 1 Mb por segundo. (tasa de 1 mbit)"""
 RATE_2MBIT: int
-"""Constant used to indicate a throughput of 2 MBit a second."""
+"""Constante utilizada para indicar un rendimiento de 2 Mb por segundo. (tasa de 2 mbit)"""
 
 def on() -> None:
-    """Turns the radio on.
+    """Enciende la radio. (encender)
 
-    Example: ``radio.on()``
+Example: ``radio.on()``
 
-    This needs to be explicitly called since the radio draws power and takes
-    up memory that you may otherwise need.
-    """
+This needs to be explicitly called since the radio draws power and takes
+up memory that you may otherwise need."""
     ...
 
 def off() -> None:
-    """Turns off the radio, saving power and memory.
+    """Apaga la radio, ahorrando energía y memoria. (apagado)
 
-    Example: ``radio.off()``
-    """
+Example: ``radio.off()``"""
     ...
 
-def config(
-    length: int = 32,
-    queue: int = 3,
-    channel: int = 7,
-    power: int = 6,
-    address: int = 0x75626974,
-    group: int = 0,
-    data_rate: int = RATE_1MBIT,
-) -> None:
-    """Configures the radio.
+def config(length: int=32, queue: int=3, channel: int=7, power: int=6, address: int=1969383796, group: int=0, data_rate: int=RATE_1MBIT) -> None:
+    """Configura la radio.
 
-    Example: ``radio.config(group=42)``
+Example: ``radio.config(group=42)``
 
-    The default configuration is suitable for most use.
+The default configuration is suitable for most use.
 
-    :param length: (default=32) defines the maximum length, in bytes, of a message sent via the radio.
-    It can be up to 251 bytes long (254 - 3 bytes for S0, LENGTH and S1 preamble).
-    :param queue: (default=3) specifies the number of messages that can be stored on the incoming message queue.
-    If there are no spaces left on the queue for incoming messages, then the incoming message is dropped.
-    :param channel: (default=7) an integer value from 0 to 83 (inclusive) that defines an arbitrary "channel" to which the radio is tuned.
-    Messages will be sent via this channel and only messages received via this channel will be put onto the incoming message queue. Each step is 1MHz wide, based at 2400MHz.
-    :param power: (default=6) is an integer value from 0 to 7 (inclusive) to indicate the strength of signal used when broadcasting a message.
-    The higher the value the stronger the signal, but the more power is consumed by the device. The numbering translates to positions in the following list of dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4.
-    :param address: (default=0x75626974) an arbitrary name, expressed as a 32-bit address, that's used to filter incoming packets at the hardware level, keeping only those that match the address you set.
-    The default used by other micro:bit related platforms is the default setting used here.
-    :param group: (default=0) an 8-bit value (0-255) used with the ``address`` when filtering messages.
-    Conceptually, "address" is like a house/office address and "group" is like the person at that address to which you want to send your message.
-    :param data_rate: (default=``radio.RATE_1MBIT``) indicates the speed at which data throughput takes place.
-    Can be one of the following constants defined in the ``radio`` module: ``RATE_250KBIT``, ``RATE_1MBIT`` or ``RATE_2MBIT``.
+:param length: (longitud) (valor predeterminado = 32) define la longitud máxima, en bytes, de un mensaje enviado a través de la radio.
+Puede tener hasta 251 bytes de largo (254 - 3 bytes para preámbulos S0, LENGTH y S1).
+:param queue: (cola) (valor predeterminado = 3) especifica el número de mensajes que pueden almacenarse en la cola de mensajes entrantes.
+Si no quedan espacios en la cola para los mensajes entrantes, el mensaje entrante será eliminado.
+:param channel: (canal) (valor predeterminado = 7) un valor entero de 0 a 83 (inclusive) que define un "canal" arbitrario en el cual la radio está sintonizada.
+Los mensajes se enviarán a través de este canal y solo los mensajes recibidos a través de este canal se pondrán en la cola de mensajes entrantes. Cada paso es de 1 MHz de ancho, basado en 2400 MHz.
+:param power: (potencia) (valor predeterminado = 6) es un valor entero de 0 a 7 (inclusive) para indicar la fuerza de la señal usada al transmitir un mensaje.
+Cuanto más alto sea el valor, más fuerte es la señal, pero más energía consume el dispositivo. La numeración se traduce a posiciones en la siguiente lista de valores de dBm (decibelio-milivatio): -30, -20, -16, -12, -8, -4, 0, 4.
+:param address: (dirección) (valor predeterminado = 0x75626974) un nombre arbitrario, expresado como una dirección de 32 bits, que se usa para filtrar los paquetes entrantes a nivel de hardware, manteniendo solo aquellos que coincidan con la dirección que has establecido.
+El valor predeterminado utilizado por otras plataformas relacionadas con el micro:bit es la configuración predeterminada utilizada aquí.
+:param group: (grupo) (valor predeterminado = 0) un valor de 8 bits (0 - 255) usado con el valor de ``address`` al filtrar mensajes.
+Conceptualmente, "address" (dirección) es como una dirección de casa u oficina y "group" (grupo) es la persona que está en esa dirección y a la que quieres enviar un mensaje.
+:param data_rate: (tasa de datos) (valor predeterminado = ``radio.RATE_1MBIT``) indica la velocidad a la que se lleva a cabo el procesamiento de datos.
+Puede ser una de las siguientes constantes definidas en el módulo ``radio``: ``RATE_250KBIT``, ``RATE_1MBIT`` o ``RATE_2MBIT``.
 
-    If ``config`` is not called then the defaults described above are assumed.
-    """
+If ``config`` is not called then the defaults described above are assumed."""
     ...
 
 def reset() -> None:
-    """Reset the settings to their default values.
+    """Restablece la configuración a sus valores predeterminados. (restablecer)
 
-    Example: ``radio.reset()``
+Example: ``radio.reset()``
 
-    The defaults as as per the ``config`` function above.
-    """
+The defaults as as per the ``config`` function above."""
     ...
 
 def send_bytes(message: bytes) -> None:
-    """Sends a message containing bytes.
+    """Envía un mensaje que contiene bytes. (enviar bytes)
 
-    Example: ``radio.send_bytes(b'hello')``
+Example: ``radio.send_bytes(b'hello')``
 
-    :param message: The bytes to send.
-    """
+:param message: (mensaje) Los bytes a enviar."""
     ...
 
 def receive_bytes() -> Optional[bytes]:
-    """Receive the next incoming message on the message queue.
+    """Recibe el siguiente mensaje entrante en la cola de mensajes. (recibir bytes)
 
-    Example: ``radio.receive_bytes()``
+Example: ``radio.receive_bytes()``
 
-    :return: The message bytes if any, otherwise ``None``.
-    """
+:return: The message bytes if any, otherwise ``None``."""
     ...
 
 def receive_bytes_into(buffer: WriteableBuffer) -> Optional[int]:
-    """Copy the next incoming message on the message queue into a buffer.
+    """Copia el siguiente mensaje entrante de la cola de mensajes en un búfer. (recibir bytes en)
 
-    Example: ``radio.receive_bytes_info(buffer)``
+Example: ``radio.receive_bytes_info(buffer)``
 
-    :param buffer: The target buffer. The message is truncated if larger than the buffer.
-    :return: ``None`` if there are no pending messages, otherwise it returns the length of the message (which might be more than the length of the buffer).
-    """
+:param buffer: (búfer) El búfer de destino. El mensaje se trunca si es más grande que el búfer.
+:return: ``None`` if there are no pending messages, otherwise it returns the length of the message (which might be more than the length of the buffer)."""
     ...
 
 def send(message: str) -> None:
-    """Sends a message string.
+    """Envía una cadena de mensaje. (enviar)
 
-    Example: ``radio.send('hello')``
+Example: ``radio.send('hello')``
 
-    This is the equivalent of ``radio.send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
-    prepended to the front (to make it compatible with other platforms that target the micro:bit).
+This is the equivalent of ``radio.send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
+prepended to the front (to make it compatible with other platforms that target the micro:bit).
 
-    :param message: The string to send.
-    """
+:param message: (mensaje) La cadena a enviar."""
     ...
 
 def receive() -> Optional[str]:
-    """Works in exactly the same way as ``receive_bytes`` but returns whatever was sent.
+    """Funciona exactamente del mismo modo que ``receive_bytes``, pero devuelve lo que se envió. (recibir)
 
-    Example: ``radio.receive()``
+Example: ``radio.receive()``
 
-    Equivalent to ``str(receive_bytes(), 'utf8')`` but with a check that the the first
-    three bytes are ``b'\x01\x00\x01'`` (to make it compatible with other platforms that
-    may target the micro:bit).
+Equivalent to ``str(receive_bytes(), 'utf8')`` but with a check that the the first
+three bytes are ``b'\x01\x00\x01'`` (to make it compatible with other platforms that
+may target the micro:bit).
 
-    :return: The message with the prepended bytes stripped and converted to a string.
+:return: The message with the prepended bytes stripped and converted to a string.
 
-    A ``ValueError`` exception is raised if conversion to string fails.
-    """
+A ``ValueError`` exception is raised if conversion to string fails."""
     ...
 
 def receive_full() -> Optional[Tuple[bytes, int, int]]:
-    """Returns a tuple containing three values representing the next incoming message on the message queue.
+    """Devuelve una tupla de tres valores que representan el siguiente mensaje entrante de la cola de mensajes. (recibir completo)
 
-    Example: ``radio.receive_full()``
+Example: ``radio.receive_full()``
 
-    If there are no pending messages then ``None`` is returned.
+If there are no pending messages then ``None`` is returned.
 
-    The three values in the tuple represent:
+The three values in the tuple represent:
 
-    - the next incoming message on the message queue as bytes.
-    - the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
-    - a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
+- the next incoming message on the message queue as bytes.
+- the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
+- a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
 
-    For example::
+For example::
 
-        details = radio.receive_full()
-        if details:
-            msg, rssi, timestamp = details
+    details = radio.receive_full()
+    if details:
+        msg, rssi, timestamp = details
 
-    This function is useful for providing information needed for triangulation
-    and/or trilateration with other micro:bit devices.
+This function is useful for providing information needed for triangulation
+and/or trilateration with other micro:bit devices.
 
-    :return: ``None`` if there is no message, otherwise a tuple of length three with the bytes, strength and timestamp values.
-    """
+:return: ``None`` if there is no message, otherwise a tuple of length three with the bytes, strength and timestamp values."""
     ...
