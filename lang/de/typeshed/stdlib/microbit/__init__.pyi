@@ -37,7 +37,7 @@ When an exception is thrown inside the callback function it deschedules the
 function. To avoid this you can catch exceptions with ``try/except``.
 
 :param callback: Funktion, die in dem angegebenen Intervall aufgerufen wird. Bei Verwendung als Dekorator weglassen.
-:param days: Legt den Tag für die Planung fest.
+:param days: (tage) Legt den Tag für die Planung fest.
 :param h: Legt die Uhrzeit für die Planung fest.
 :param min: Legt die Minute für die Planung fest.
 :param s: Legt die Sekunde für die Planung fest.

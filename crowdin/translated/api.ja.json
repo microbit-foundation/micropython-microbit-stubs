@@ -3460,7 +3460,7 @@
     "description": "(function name) Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.summary": {
-    "message": "バイト列を読み取ります。",
+    "message": "最大 {{nbytes}} バイトを読み取りながら、{{out}} で指定された 1 バイトを書き続ける",
     "description": "Read at most ``nbytes`` while continuously writing the single byte given by ``out``."
   },
   "microbit.spi.read.param-name.nbytes": {

@@ -1,22 +1,22 @@
-"""Steuerung des Garbage Collectors"""
+"""Steuerung der automatischen Speicherbereinigung (Garbage Collector)"""
 from typing import overload
 
 def enable() -> None:
-    """Automatische Garbage Collection aktivieren."""
+    """Automatische Speicherbereinigung aktivieren. (aktivieren)"""
     ...
 
 def disable() -> None:
-    """Automatische Garbage Collection deaktivieren.
+    """Automatische Speicherbereinigung deaktivieren. (deaktivieren)
 
 Heap memory can still be allocated,
 and garbage collection can still be initiated manually using ``gc.collect``."""
 
 def collect() -> None:
-    """Garbage Collection ausführen."""
+    """Speicherbereinigung ausführen. (sammeln)"""
     ...
 
 def mem_alloc() -> int:
-    """Ermittelt die Anzahl der dem Heap-Speicher zugewiesen Bytes.
+    """Ermittelt die Anzahl der dem Heap-Speicher zugewiesen Bytes. (Speicher zuweisen)
 
 :return: The number of bytes allocated.
 
@@ -24,7 +24,7 @@ This function is MicroPython extension."""
     ...
 
 def mem_free() -> int:
-    """Gibt die Anzahl der Bytes des verfügbaren dynamischen Speichers zurück. -1 wird zurückgegeben, wenn dieser Wert unbekannt ist.
+    """Gibt die Anzahl der Bytes des verfügbaren dynamischen Speichers zurück. -1 wird zurückgegeben, wenn dieser Wert unbekannt ist. (Speicher freigeben)
 
 :return: The number of bytes free.
 
@@ -33,7 +33,7 @@ This function is MicroPython extension."""
 
 @overload
 def threshold() -> int:
-    """Den zusätzlichen GC-Zuteilungsschwellwert abfragen.
+    """Den zusätzlichen GC-Zuteilungsschwellwert abfragen. (Schwellenwert)
 
 :return: The GC allocation threshold.
 
@@ -44,7 +44,7 @@ implementations, its signature and semantics are different."""
 
 @overload
 def threshold(amount: int) -> None:
-    """Den zusätzlichen GC-Schwellenwert festlegen.
+    """Den zusätzlichen GC-Schwellenwert festlegen. (Schwellenwert)
 
 Normally, a collection is triggered only when a new allocation
 cannot be satisfied, i.e. on an  out-of-memory (OOM) condition.
@@ -64,5 +64,5 @@ This function is a MicroPython extension. CPython has a similar
 function - ``set_threshold()``, but due to different GC
 implementations, its signature and semantics are different.
 
-:param amount: Die Anzahl der Bytes, nach denen eine Garbage Collection ausgelöst werden soll."""
+:param amount: (Menge) Die Anzahl der Bytes, nach denen eine Speicherbereinigung ausgelöst werden soll."""
     ...

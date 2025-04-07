@@ -23,7 +23,7 @@ def read(nbytes: int, out: int=0) -> bytes:
 Example: ``spi.read(64)``
 
 :param nbytes: Maximum der zu lesenden Bytes.
-:param out: The byte value to write (default 0).
+:param out: Wert der zu schreibenden Bytes (Standard 0).
 :return: The bytes read."""
     ...
 

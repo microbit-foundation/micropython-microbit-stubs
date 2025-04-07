@@ -4,35 +4,35 @@
     "description": "(module name) Control the garbage collector"
   },
   "gc.summary": {
-    "message": "Steuerung des Garbage Collectors",
+    "message": "Steuerung der automatischen Speicherbereinigung (Garbage Collector)",
     "description": "Control the garbage collector"
   },
   "gc.enable": {
-    "message": "enable",
+    "message": "aktivieren",
     "description": "(function name) Enable automatic garbage collection."
   },
   "gc.enable.summary": {
-    "message": "Automatische Garbage Collection aktivieren.",
+    "message": "Automatische Speicherbereinigung aktivieren.",
     "description": "Enable automatic garbage collection."
   },
   "gc.disable": {
-    "message": "disable",
+    "message": "deaktivieren",
     "description": "(function name) Disable automatic garbage collection."
   },
   "gc.disable.summary": {
-    "message": "Automatische Garbage Collection deaktivieren.",
+    "message": "Automatische Speicherbereinigung deaktivieren.",
     "description": "Disable automatic garbage collection."
   },
   "gc.collect": {
-    "message": "collect",
+    "message": "sammeln",
     "description": "(function name) Run a garbage collection."
   },
   "gc.collect.summary": {
-    "message": "Garbage Collection ausführen.",
+    "message": "Speicherbereinigung ausführen.",
     "description": "Run a garbage collection."
   },
   "gc.mem_alloc": {
-    "message": "mem alloc",
+    "message": "Speicher zuweisen",
     "description": "(function name) Get the number of bytes of heap RAM that are allocated."
   },
   "gc.mem_alloc.summary": {
@@ -40,7 +40,7 @@
     "description": "Get the number of bytes of heap RAM that are allocated."
   },
   "gc.mem_free": {
-    "message": "mem free",
+    "message": "Speicher freigeben",
     "description": "(function name) Get the number of bytes of available heap RAM, or -1 if this amount is not known."
   },
   "gc.mem_free.summary": {
@@ -48,7 +48,7 @@
     "description": "Get the number of bytes of available heap RAM, or -1 if this amount is not known."
   },
   "gc.threshold-1": {
-    "message": "threshold",
+    "message": "Schwellenwert",
     "description": "(function name) Query the additional GC allocation threshold."
   },
   "gc.threshold-1.summary": {
@@ -56,7 +56,7 @@
     "description": "Query the additional GC allocation threshold."
   },
   "gc.threshold-2": {
-    "message": "threshold",
+    "message": "Schwellenwert",
     "description": "(function name) Set the additional GC allocation threshold."
   },
   "gc.threshold-2.summary": {
@@ -64,11 +64,11 @@
     "description": "Set the additional GC allocation threshold."
   },
   "gc.threshold-2.param-name.amount": {
-    "message": "amount",
+    "message": "Menge",
     "description": "(parameter name) The number of bytes after which a garbage collection should be triggered."
   },
   "gc.threshold-2.param-doc.amount": {
-    "message": "Die Anzahl der Bytes, nach denen eine Garbage Collection ausgelöst werden soll.",
+    "message": "Die Anzahl der Bytes, nach denen eine Speicherbereinigung ausgelöst werden soll.",
     "description": "Parameter docs"
   },
   "log": {
@@ -112,11 +112,11 @@
     "description": "Hours timestamp format."
   },
   "log.DAYS": {
-    "message": "days",
+    "message": "tage",
     "description": "(field name) Days timestamp format."
   },
   "log.DAYS.summary": {
-    "message": "Tage Zeitstempelformat.",
+    "message": "Zeitstempelformat: Tage",
     "description": "Days timestamp format."
   },
   "log.set_labels": {
@@ -124,11 +124,11 @@
     "description": "(function name) Set up the log file header."
   },
   "log.set_labels.summary": {
-    "message": "Den Logdatei-Header setzen ",
+    "message": "Spaltenüberschrift der Logdatei setzen ",
     "description": "Set up the log file header."
   },
   "log.set_labels.param-name.*labels": {
-    "message": "*labels",
+    "message": "*Beschriftung",
     "description": "(parameter name) Any number of positional arguments, each corresponding to an entry in the log header."
   },
   "log.set_labels.param-doc.*labels": {
@@ -136,7 +136,7 @@
     "description": "Parameter docs"
   },
   "log.set_labels.param-name.timestamp": {
-    "message": "timestamp",
+    "message": "Zeitstempel",
     "description": "(parameter name) Select the timestamp unit that will be automatically added as the first column in every row. Timestamp values can be one of ``log.MILLISECONDS``, ``log.SECONDS``, ``log.MINUTES``, ``log.HOURS``, ``log.DAYS`` or ``None`` to disable the timestamp. The default value is ``log.SECONDS``."
   },
   "log.set_labels.param-doc.timestamp": {
@@ -256,7 +256,7 @@
     "description": "Parameter docs"
   },
   "machine.time_pulse_us": {
-    "message": "zeitimpuls us",
+    "message": "impulsdauer_messen",
     "description": "(function name) Time a pulse on a pin."
   },
   "machine.time_pulse_us.summary": {
@@ -272,7 +272,7 @@
     "description": "Parameter docs"
   },
   "machine.time_pulse_us.param-name.pulse_level": {
-    "message": "pulsstufe",
+    "message": "Impulsstufe",
     "description": "(parameter name) 0 to time a low pulse or 1 to time a high pulse"
   },
   "machine.time_pulse_us.param-doc.pulse_level": {
@@ -856,7 +856,7 @@
     "description": "Parameter docs"
   },
   "microbit.run_every.param-name.days": {
-    "message": "days",
+    "message": "tage",
     "description": "(parameter name) Sets the day mark for the scheduling."
   },
   "microbit.run_every.param-doc.days": {
@@ -3476,7 +3476,7 @@
     "description": "(parameter name) The byte value to write (default 0)."
   },
   "microbit.spi.read.param-doc.out": {
-    "message": "The byte value to write (default 0).",
+    "message": "Wert der zu schreibenden Bytes (Standard 0).",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {
@@ -4532,7 +4532,7 @@
     "description": "(function name) Generate an integer with ``n`` random bits."
   },
   "random.getrandbits.summary": {
-    "message": "Erzeugt einen Integerwert mit {{n}} zufälligen Bits.",
+    "message": "Eine Ganzzahl mit {{n}} zufälligen Bits generieren.",
     "description": "Generate an integer with ``n`` random bits."
   },
   "random.getrandbits.param-name.n": {

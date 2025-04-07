@@ -2,7 +2,7 @@
 from typing import TypeVar, Sequence, Union, overload
 
 def getrandbits(n: int) -> int:
-    """Erzeugt einen Integerwert mit ``n`` zufälligen Bits.
+    """Eine Ganzzahl mit ``n`` zufälligen Bits generieren.
 
 Example: ``random.getrandbits(1)``
 
