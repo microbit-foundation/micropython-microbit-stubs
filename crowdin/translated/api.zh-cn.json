@@ -3476,7 +3476,7 @@
     "description": "(parameter name) The byte value to write (default 0)."
   },
   "microbit.spi.read.param-doc.out": {
-    "message": "The byte value to write (default 0).",
+    "message": "要写入的字节值（默认为0）。",
     "description": "Parameter docs"
   },
   "microbit.spi.write": {

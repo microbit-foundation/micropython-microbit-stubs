@@ -44,7 +44,7 @@ Example: ``machine.enable_irq(interrupt_state)``
     ...
 
 def time_pulse_us(pin: MicroBitDigitalPin, pulse_level: int, timeout_us: int=1000000) -> int:
-    """Gibt die Dauer eines Impulses an einem Pin zurück. (zeitimpuls us)
+    """Gibt die Dauer eines Impulses an einem Pin zurück. (impulsdauer_messen)
 
 Example: ``time_pulse_us(pin0, 1)``
 
@@ -55,7 +55,7 @@ function first waits until the pin input becomes equal to
 starts straight away.
 
 :param pin: Der zu verwendende Pin
-:param pulse_level: (pulsstufe) 0, um einen Low-Impuls oder 1, um einen High-Impuls zu messen
+:param pulse_level: (Impulsstufe) 0, um einen Low-Impuls oder 1, um einen High-Impuls zu messen
 :param timeout_us: Eine Verzögerung in Mikrosekunden
 :return: The duration of the pulse in microseconds, or -1 for a timeout waiting for the level to match ``pulse_level``, or -2 on timeout waiting for the pulse to end"""
     ...
