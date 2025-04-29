@@ -1,3 +1,6 @@
+"""Built-in classes and functions
+"""
+
 import sys
 import types
 from _typeshed import (
@@ -122,6 +125,8 @@ class classmethod(object):  # Special, only valid as a decorator.
     def __get__(self, obj: _T, type: Type[_T] | None = ...) -> Callable[..., Any]: ...
 
 class type(object):
+    """The type class.
+    """
     __base__: type
     __bases__: Tuple[type, ...]
     __basicsize__: int
@@ -141,7 +146,14 @@ class type(object):
         self, name: str, bases: Tuple[type, ...], dict: dict[str, Any], **kwds: Any
     ) -> None: ...
     @overload
-    def __new__(cls, o: object) -> type: ...
+    def __new__(cls, o: object) -> type:
+        """Get the type of an object.
+
+        Example: ``type("hello, world)``
+
+        :return: The type of the object passed in.
+        """
+        ...
     @overload
     def __new__(
         cls: Type[_TT],
@@ -171,15 +183,32 @@ class super(object):
     def __init__(self) -> None: ...
 
 class int:
+    """Get an integer from a number or a string.
+    """
     @overload
     def __new__(
         cls: Type[_T],
         x: str | bytes | SupportsInt | SupportsIndex | _SupportsTrunc = ...,
-    ) -> _T: ...
+    ) -> _T:
+        """Get an integer from a number or a string.
+
+        Example: ``int("1.2")``
+
+        :return: Zero if no argument is provided, or an ``int`` from a number or string truncated toward zero.
+        """
+        ...
     @overload
     def __new__(
         cls: Type[_T], x: str | bytes | bytearray, base: SupportsIndex
-    ) -> _T: ...
+    ) -> _T:
+        """Get an integer from a number or a string.
+
+        Example: ``int("8.3", 2)``
+
+        :param base: (default=10) Allowed bases are 0 and 2–36.
+        :return: Zero if no argument is provided, or an ``int`` from a number or string truncated toward zero.
+        """
+        ...
     def to_bytes(
         self,
         length: SupportsIndex,
@@ -249,9 +278,18 @@ class int:
     def __index__(self) -> int: ...
 
 class float:
+    """Get a float from a number or a string.
+    """
     def __new__(
         cls: Type[_T], x: SupportsFloat | SupportsIndex | str | bytes | bytearray = ...
-    ) -> _T: ...
+    ) -> _T:
+        """Convert a string or number to a floating point number, if possible.
+
+        Example: ``float("1.2")``
+
+        :return: ``0.0`` if no argument is provided, or a ``float`` from a number or string.
+        """
+        ...
     def __add__(self, x: float) -> float: ...
     def __sub__(self, x: float) -> float: ...
     def __mul__(self, x: float) -> float: ...
@@ -325,31 +363,87 @@ class complex:
     def __bool__(self) -> bool: ...
 
 class str(Sequence[str]):
+    """Get a string version of an object or new empty string.
+    """
     @overload
-    def __new__(cls: Type[_T], o: object = ...) -> _T: ...
+    def __new__(cls: Type[_T], object: object = "") -> _T:
+        """Get a string version of an object.
+
+        Example: ``string = str(42)``
+        
+        :param object: (default="") Object to return a string version of.
+        :return: A string reprentation of an object.
+        """
+        ...
     @overload
     def __new__(
-        cls: Type[_T], o: bytes, encoding: str = ..., errors: str = ...
-    ) -> _T: ...
+        cls: Type[_T], object: bytes = b"", encoding: str = "uft-8", errors: str = "strict"
+    ) -> _T:
+        """Get a string version of an object.
+
+        Example: ``string = str(42)``
+        
+        :param object: (default=b"") Object to return a string version of as bytes or a bytearray.
+        :param encoding: (default="uft-8") Encoding used to decode object.
+        :param errors: (default="strict") Something about error handling...
+        :return: A string reprentation of an object.
+        """
+        ...
     def count(
         self,
         x: str,
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
-    ) -> int: ...
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
+    ) -> int:
+        """Get the number of non-overlapping occurences of a substring in the string.
+
+        The optional ``start`` and ``end`` arguments can be used to specify a substring in which to count.
+
+        Example: ``count = "banana".count("na")``
+        
+        :param x: The substring to count.
+        :param start: Optional argument to specify the start of the substring in which to count.
+        :param end: Optional argument to specify the end of the substring in which to count.
+        :return: The number of non-overlapping occurences of a substring in the string as an ``int``.
+        """
+        ...
     def encode(self, encoding: str = ..., errors: str = ...) -> bytes: ...
     def endswith(
         self,
-        __suffix: str | Tuple[str, ...],
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
-    ) -> bool: ...
+        suffix: str | Tuple[str, ...],
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
+    ) -> bool:
+        """Check if the string ends with a substring.
+
+        The optional ``start`` and ``end`` arguments can be used to specify the range to test.
+
+        Example: ``ends_with_hello = "hello, world".endswith("hello")``
+        
+        :param prefix: The prefix to check for.
+        :param start: Optional argument to specify the start of the substring to test.
+        :param end: Optional argument to specify the end of the substring to test.
+        :return: ``True`` if the string ends with the substring, otherwise ``False``.
+        """
+        ...
     def find(
         self,
-        __sub: str,
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
-    ) -> int: ...
+        sub: str,
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
+    ) -> int:
+        """Get the lowest index of where the substring is found.
+
+        The optional ``start`` and ``end`` arguments can be used to specify a substring in which to search.
+
+        Example: ``index = "banana".find("na")``
+        
+        :param sub: The substring to find.
+        :param start: Optional argument to specify the start of the substring in which to search.
+        :param end: Optional argument to specify the end of the substring in which to search.
+        :return: The the lowest index of where the substring is found, -1 if not found.
+        """
+        ...
     def format(self, *args: object, **kwargs: object) -> str: ...
     def index(
         self,
@@ -357,21 +451,93 @@ class str(Sequence[str]):
         __start: SupportsIndex | None = ...,
         __end: SupportsIndex | None = ...,
     ) -> int: ...
-    def isalpha(self) -> bool: ...
-    def isdigit(self) -> bool: ...
-    def islower(self) -> bool: ...
-    def isspace(self) -> bool: ...
-    def isupper(self) -> bool: ...
+    def isalpha(self) -> bool:
+        """Check if all the characters in the string are alphabetical.
+
+        Example: ``"Hello".isalpha()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are alphabetical, otherwise ``False``.
+        """
+        ...
+    def isdigit(self) -> bool:
+        """Check if all the characters in the string are digits.
+
+        Example: ``"123".isdigit()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are digits, otherwise ``False``.
+        """
+        ...
+    def islower(self) -> bool:
+        """Check if all the characters in the string are lower case.
+
+        Example: ``"hello".islower()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are lower case, otherwise ``False``.
+        """
+        ...
+    def isspace(self) -> bool:
+        """Check if all the characters in the string are whitespace characters.
+
+        Example: ``" ".isspace()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are whitespace characters, otherwise ``False``.
+        """
+        ...
+    def isupper(self) -> bool:
+        """Check if all the characters in the string are upper case.
+
+        Example: ``"HELLO".isupper()``
+        
+        :return: ``True`` if the string is at least one character long and all the characters in the string are upper case, otherwise ``False``.
+        """
+        ...
     def join(self, __iterable: Iterable[str]) -> str: ...
-    def lower(self) -> str: ...
-    def lstrip(self, __chars: str | None = ...) -> str: ...
-    def replace(self, __old: str, __new: str, __count: SupportsIndex = ...) -> str: ...
+    def lower(self) -> str:
+        """Get a copy of the string in lower case.
+
+        Example: ``as_lower_case = "HELLO".lower()``
+        
+        :return: A copy of the string in lower case.
+        """
+        ...
+    def lstrip(self, __chars: str | None = ...) -> str:
+        """Get a copy of the string with the leading characters removed.
+
+        Example: ``stripped = "  hello".lstrip()``
+        
+        :param __chars: (default=" ") The characters to be removed. Defaults to whitespace characters if not provided.
+        :return: A copy of the string with the leading characters removed.
+        """
+        ...
+    def replace(self, old: str, new: str, count: SupportsIndex = ...) -> str:
+        """Get a copy of the string with all occurrences of the old substring replaced by new.
+
+        Example: ``replaced = "apple, orange".replace("orange", "banana")``
+        
+        :param old: The substring to replace.
+        :param new: The replacement substring.
+        :param count: Optional argument to specify the number of occurences of the old substring that should be replaced.
+        :return: A copy of the string with all occurrences of the old substring replaced by new.
+        """
+        ...
     def rfind(
         self,
-        __sub: str,
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
-    ) -> int: ...
+        sub: str,
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
+    ) -> int:
+        """Get the highest index of where the substring is found.
+
+        The optional ``start`` and ``end`` arguments can be used to specify a substring in which to search.
+
+        Example: ``index = "banana".rfind("na")``
+
+        :param sub: The substring to find.
+        :param start: Optional argument to specify the start of the substring in which to search.
+        :param end: Optional argument to specify the end of the substring in which to search.
+        :return: The the highest index of where the substring is found, -1 if not found.
+        """
+        ...
     def rindex(
         self,
         __sub: str,
@@ -381,18 +547,53 @@ class str(Sequence[str]):
     def rsplit(
         self, sep: str | None = ..., maxsplit: SupportsIndex = ...
     ) -> list[str]: ...
-    def rstrip(self, __chars: str | None = ...) -> str: ...
+    def rstrip(self, __chars: str | None = ...) -> str:
+        """Get a copy of the string with the trailing characters removed.
+
+        Example: ``stripped = "hello  ".rstrip()``
+        
+        :param __chars: (default=" ") The characters to be removed. Defaults to whitespace characters if not provided.
+        :return: A copy of the string with the trailing characters removed.
+        """
+        ...
     def split(
         self, sep: str | None = ..., maxsplit: SupportsIndex = ...
     ) -> list[str]: ...
     def startswith(
         self,
-        __prefix: str | Tuple[str, ...],
-        __start: SupportsIndex | None = ...,
-        __end: SupportsIndex | None = ...,
-    ) -> bool: ...
-    def strip(self, __chars: str | None = ...) -> str: ...
-    def upper(self) -> str: ...
+        prefix: str | Tuple[str, ...],
+        start: SupportsIndex | None = ...,
+        end: SupportsIndex | None = ...,
+    ) -> bool:
+        """Check if the string starts with a substring.
+
+        The optional ``start`` and ``end`` arguments can be used to specify the range to test.
+
+        Example: ``starts_with_hello = "hello, world".startswith("hello")``
+        
+        :param prefix: The prefix to check for.
+        :param start: Optional argument to specify the start of the substring to test.
+        :param end: Optional argument to specify the end of the substring to test.
+        :return: ``True`` if the string starts with the substring, otherwise ``False``.
+        """
+        ...
+    def strip(self, chars: str | None = ...) -> str:
+        """Get a copy of the string with the leading and trailing characters removed.
+
+        Example: ``stripped = "  hello  ".strip()``
+        
+        :param chars: (default=" ") The characters to be removed. Defaults to whitespace characters if not provided.
+        :return: A copy of the string with the leading and trailing characters removed.
+        """
+        ...
+    def upper(self) -> str:
+        """Get a copy of the string in upper case.
+
+        Example: ``as_upper_case = "hello".upper()``
+        
+        :return: A copy of the string in upper case.
+        """
+        ...
     def __add__(self, s: str) -> str: ...
     # Incompatible with Sequence.__contains__
     def __contains__(self, o: str) -> bool: ...  # type: ignore
@@ -663,30 +864,99 @@ class frozenset(AbstractSet[_T_co], Generic[_T_co]):
         def __class_getitem__(cls, item: Any) -> GenericAlias: ...
 
 class list(MutableSequence[_T], Generic[_T]):
+    """The list data type
+    """
     @overload
     def __init__(self) -> None: ...
     @overload
     def __init__(self, iterable: Iterable[_T]) -> None: ...
-    def clear(self) -> None: ...
+    def clear(self) -> None:
+        """Remove all items from the list.
+        """
+        ...
     def copy(self) -> list[_T]: ...
-    def append(self, __object: _T) -> None: ...
+    def append(self, object: _T) -> None:
+        """Add an item to the end of the list.
+
+        Example: ``[1, 2, 3].append(4)``
+        
+        :param object: An item to add the end of the list.
+        """
+        ...
     def extend(self, __iterable: Iterable[_T]) -> None: ...
-    def pop(self, __index: SupportsIndex = ...) -> _T: ...
+    def pop(self, index: SupportsIndex = ...) -> _T:
+        """Remove and return an item from the list.
+
+        If no ``index`` is provided, the last item in the list is removed.
+        An ``IndexError`` is raised if the ``index`` is outside of the list range.
+
+        Example: ``[1, 2, 3, 4].pop()``
+        
+        :param __index: The index of the item to remove.
+        :return: An item from the list.
+        """
+        ...
     def index(
-        self, __value: _T, __start: SupportsIndex = ..., __stop: SupportsIndex = ...
+        self, value: _T, start: SupportsIndex = ..., stop: SupportsIndex = ...
     ) -> int: ...
-    def count(self, __value: _T) -> int: ...
-    def insert(self, __index: SupportsIndex, __object: _T) -> None: ...
-    def remove(self, __value: _T) -> None: ...
-    def reverse(self) -> None: ...
+    def count(self, value: _T) -> int:
+        """Get the number of times an item appears in the list.
+
+        Example: ``["a", "b", "a"].count("a")``
+        
+        :param value: The item to count.
+        :return: The number of times an item appears in the list.
+        """
+        ...
+    def insert(self, index: SupportsIndex, object: _T) -> None:
+        """Insert an item into the list at a given position.
+
+        Example: ``["a", "b", "a"].insert(2, "c")``
+        
+        :param index: The position at which to insert the item.
+        :param object: The item to insert.
+        """
+        ...
+    def remove(self, value: _T) -> None:
+        """Remove the first occurence of a value from the list.
+
+        A ``ValueError`` is raised if the ``value`` does not appear in the list.
+
+        Example: ``["a", "b", "a"].remove("a")``
+        
+        :param value: The item to remove.
+        """
+        ...
+    def reverse(self) -> None:
+        """Reverses the order of the items in the list, in place.
+
+        Example: ``[3, 2, 1].reverse()`
+        """
+        ...
     @overload
     def sort(
-        self: list[SupportsLessThanT], *, key: None = ..., reverse: bool = ...
-    ) -> None: ...
+        self: list[SupportsLessThanT], *, key: None = None, reverse: bool = False
+    ) -> None:
+        """Sorts the items in the list, in place.
+
+        Example: ``[1, 3, 2].sort()`
+
+        :param key: A function used to specify the comparison between items in the list.
+        :param reverse: A ``bool`` used to reverse the sorting order.
+        """
+        ...
     @overload
     def sort(
-        self, *, key: Callable[[_T], SupportsLessThan], reverse: bool = ...
-    ) -> None: ...
+        self, *, key: Callable[[_T], SupportsLessThan], reverse: bool = False
+    ) -> None:
+        """Sorts the items in the list, in place.
+
+        Example: ``['Watermelon', 'avocado'].sort(str.lower)``
+
+        :param key: A function used to specify the comparison between items in the list.
+        :param reverse: A ``bool`` used to reverse the sorting order.
+        """
+        ...
     def __len__(self) -> int: ...
     def __iter__(self) -> Iterator[_T]: ...
     def __str__(self) -> str: ...
@@ -809,15 +1079,35 @@ class enumerate(Iterator[Tuple[int, _T]], Generic[_T]):
         def __class_getitem__(cls, item: Any) -> GenericAlias: ...
 
 class range(Sequence[int]):
+    """ The range class.
+    """
     start: int
     stop: int
     step: int
     @overload
-    def __init__(self, stop: SupportsIndex) -> None: ...
+    def __init__(self, stop: SupportsIndex) -> None:
+        """Get a range of values from 0 up tp the stop parameter.
+
+        Example: ``rangeTimesTwo = [x * 2 for x in range(5)]``
+        
+        :param stop: An integer to determine the end of the range (exclusive).
+        :return: A range object
+        """
+        ...
     @overload
     def __init__(
         self, start: SupportsIndex, stop: SupportsIndex, step: SupportsIndex = ...
-    ) -> None: ...
+    ) -> None:
+        """Get a range of values from 0 up tp the stop parameter.
+
+        Example: ``rangeTimesTwo = [x * 2 for x in range(1, 11, 2)]``
+        
+        :param start: (default=0) An integer to determine the start of the range (inclusive).
+        :param stop: An integer to determine the end of the range (exclusive).
+        :param step: (default=1) The increment for each value in the range.
+        :return: A range object
+        """
+        ...
     def __len__(self) -> int: ...
     def __contains__(self, o: object) -> bool: ...
     def __iter__(self) -> Iterator[int]: ...
@@ -853,7 +1143,15 @@ class _NotImplementedType(Any):  # type: ignore
 
 NotImplemented: _NotImplementedType
 
-def abs(__x: SupportsAbs[_T]) -> _T: ...
+def abs(x: SupportsAbs[_T]) -> _T:
+    """Get the absolute value of a number.
+
+    Example: ``abs(-42)``
+
+    :param x: A number.
+    :return: The length of or number of items in an object. 
+    """ 
+    ...
 def all(__iterable: Iterable[object]) -> bool: ...
 def any(__iterable: Iterable[object]) -> bool: ...
 def bin(__number: int | SupportsIndex) -> str: ...
@@ -862,7 +1160,15 @@ if sys.version_info >= (3, 7):
     def breakpoint(*args: Any, **kws: Any) -> None: ...
 
 def callable(__obj: object) -> bool: ...
-def chr(__i: int) -> str: ...
+def chr(i: int) -> str:
+    """Get a Unicode string representation of an integer.
+
+    Example: ``chr(97)``
+
+    :param i: An integer within the range 0..1,114,111.
+    :return: A Unicode string representation of a number within a valid range. 
+    """ 
+    ...
 
 # We define this here instead of using os.PathLike to avoid import cycle issues.
 # See https://github.com/python/typeshed/pull/991#issuecomment-288160993
@@ -919,10 +1225,30 @@ def getattr(__o: object, name: str, __default: _T) -> Any | _T: ...
 def globals() -> dict[str, Any]: ...
 def hasattr(__obj: object, __name: str) -> bool: ...
 def hash(__obj: object) -> int: ...
-def help(*args: Any, **kwds: Any) -> None: ...
-def hex(__number: int | SupportsIndex) -> str: ...
+def help(request: object) -> None:
+    """Starts interactive help or provides help for the request object, if valid.
+
+    Example: ``help("print")``
+    """
+    ...
+def hex(number: int | SupportsIndex) -> str:
+    """Get the hexadecimal representation of an integer.
+
+    Example: ``hex(42)``
+    
+    :return: The hexadecimal representation of an integer as a string.
+    """
+    ...
 def id(__obj: object) -> int: ...
-def input(__prompt: Any = ...) -> str: ...
+def input(prompt: object = "") -> str:
+    """Get user input as a string.
+
+    Example: ``prompt("Enter your name: ")``
+
+    :param prompt: (default="") Text prompt seen by users.
+    :return: The length of or number of items in an object.
+    """
+    ...
 @overload
 def iter(__iterable: Iterable[_T]) -> Iterator[_T]: ...
 @overload
@@ -952,7 +1278,15 @@ else:
         __cls: type, __class_or_tuple: type | Tuple[type | Tuple[Any, ...], ...]
     ) -> bool: ...
 
-def len(__obj: Sized) -> int: ...
+def len(obj: Sized) -> int:
+    """Get the length of, or number of items in an object.
+
+    Example: ``len("Hello, world")``
+
+    :param __obj: A sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
+    :return: The length of or number of items in an object.
+    """ 
+    ...
 def locals() -> dict[str, Any]: ...
 
 class map(Iterator[_S], Generic[_S]):
@@ -1104,14 +1438,33 @@ def open(
     closefd: bool = ...,
     opener: _Opener | None = ...,
 ) -> IO[Any]: ...
-def ord(__c: str | bytes) -> int: ...
+def ord(c: str | bytes) -> int:
+    """Get an integer representation of a Unicode character.
+
+    Example: ``ord("a")``
+
+    :param c: A Unicode character.
+    :return: The length of or number of items in an object.
+    """
+    ...
 def print(
     *values: object,
-    sep: str | None = ...,
-    end: str | None = ...,
-    file: SupportsWrite[str] | None = ...,
-    flush: bool = ...,
-) -> None: ...
+    sep: str | None = " ",
+    end: str | None = "\n",
+    file: SupportsWrite[str] | None = None,
+    flush: bool = False,
+) -> None:
+    """Prints values to a stream or standard output, typically the serial console.
+
+    Example: ``print("Hello, world")``
+
+    :param *values: Arguments or literals to print.
+    :param sep: (default=" ") A string separator inserted between values.
+    :param end: (default="\n") A string appended after the last value.
+    :param file: (default=None) A file-like object (stream).
+    :param flush: (default=False) Whether to forcibly flush the stream.
+    """
+    ...
 
 _E = TypeVar("_E", contravariant=True)
 _M = TypeVar("_M", contravariant=True)
@@ -1160,11 +1513,37 @@ class reversed(Iterator[_T], Generic[_T]):
 
 def repr(__obj: object) -> str: ...
 @overload
-def round(number: SupportsRound[Any]) -> int: ...
+def round(number: SupportsRound[Any]) -> int:
+    """Round a number to the nearest integer.
+
+    Example: ``round(42.42)``
+
+    :param number: A number to round to the nearest integer.
+    :return: Round a number to the nearest integer.
+    """
+    ...
 @overload
-def round(number: SupportsRound[Any], ndigits: None) -> int: ...
+def round(number: SupportsRound[Any], ndigits: None) -> int:
+    """Round a number to the nearest integer.
+
+    Example: ``round(42.42, None)``
+
+    :param number: A number to round to the nearest integer.
+    :param ndigits: The number of decimal digits to round to.
+    :return: Round a number to the nearest integer.
+    """
+    ...
 @overload
-def round(number: SupportsRound[_T], ndigits: SupportsIndex) -> _T: ...
+def round(number: SupportsRound[_T], ndigits: SupportsIndex) -> _T:
+    """Round a number to the nearest integer.
+
+    Example: ``round(42.42, 1)``
+
+    :param number: A number to round to the number of decimal digits specified.
+    :param ndigits: The number of decimal digits to round to.
+    :return: The input number rounded to the number of decimal digits specified.
+    """
+    ...
 def setattr(__obj: object, __name: str, __value: Any) -> None: ...
 @overload
 def sorted(
