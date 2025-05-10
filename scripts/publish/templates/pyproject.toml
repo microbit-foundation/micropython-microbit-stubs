@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name            = "micropython-microbit-stubs-{lang}"
+version         = "0.0.1-b2"
+description     = "BBC micro:bit MicroPython type stubs (language: {lang})"
+readme          = "README.md"
+license         = "MIT AND Apache-2.0"
+license-files   = ["LICENSE.md"]
+urls            = {"Homepage" = "https://github.com/microbit-foundation/micropython-microbit-stubs"}
+classifiers = [
+    "Programming Language :: Python :: Implementation :: MicroPython",
+    "Typing :: Stubs Only",
+]
+
+[tool.setuptools]
+packages = ["stdlib"]
+
+package-dir = {"stdlib" = "typeshed/stdlib"}
+
+[tool.setuptools.package-data]
+"*" = ["**/*.pyi"]
