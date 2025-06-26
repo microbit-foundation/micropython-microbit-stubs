@@ -273,6 +273,15 @@ class MicroBitTouchPin(MicroBitAnalogDigitalPin):
 
     CAPACITIVE: int
     RESISTIVE: int
+    def touch_calibrate(self) -> None:
+        """Re-calibrates the touch pin detection. 
+
+        Example: ``pin0.touch_calibrate()``
+        
+        This is useful when a conductive object is connected to the pin to be used as a touch sensor.
+        """
+        ...
+
     def is_touched(self) -> bool:
         """Check if the pin is being touched.
 
