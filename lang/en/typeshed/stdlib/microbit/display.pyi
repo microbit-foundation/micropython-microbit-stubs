@@ -79,6 +79,15 @@ def scroll(
     """
     ...
 
+def rotate(degrees: int) -> None:
+    """Rotate the images shown on the display.
+
+    Example: ``display.rotate(90)``
+
+    :param degrees: The ``degrees`` parameter can be any number, including a negative rotation, and it will be rounded to the nearest multiple of 90 degrees.
+    """
+    ...
+
 def on() -> None:
     """Turn on the LED display.
 
