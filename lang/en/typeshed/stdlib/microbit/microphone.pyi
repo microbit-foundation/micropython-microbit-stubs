@@ -88,7 +88,7 @@ def sound_level_db() -> int:
     """
     ...
 
-def record(duration: int, rate: int = 11_000) -> AudioRecording:
+def record(duration: int, rate: int = 7_812) -> AudioRecording:
     """Record sound into an ``AudioRecording`` for the amount of time indicated by
     ``duration`` at the sampling rate indicated by ``rate``.
 

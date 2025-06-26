@@ -169,7 +169,7 @@ class AudioRecording:
     def __init__(
         self,
         duration: int = -1,
-        rate: int = 11_000
+        rate: int = 7_812
     ):
         """Create a new ``AudioRecording``.
 
@@ -189,6 +189,8 @@ class AudioRecording:
 
     def track(self, start_ms: int = 0, end_ms: int = -1) -> AudioTrack:
         """Create an ``AudioTrack`` instance from a portion of the data in this ``AudioRecording`` instance.
+
+        Out-of-range values will be truncated to the recording limits. If ``end_ms`` is lower than ``start_ms``, an empty track will be created.
 
         Example: ``first_second = my_recording.track(0, 1000)``
 
@@ -212,7 +214,7 @@ class AudioTrack:
 
         When the input buffer has an associated rate (e.g. an ``AudioRecording``
         or ``AudioTrack``), the rate is copied. If the buffer object does not have
-        a rate, the default value of 11_000 is used.
+        a rate, the default value of 7_812 is used.
 
         Example: ``my_track = AudioTrack(bytearray(4096))``
 
