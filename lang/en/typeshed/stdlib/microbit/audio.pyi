@@ -179,6 +179,24 @@ class AudioRecording:
         :param rate: The sampling rate at which data will be stored via the microphone, or played via the ``audio.play()`` function.
         """
 
+    def set_rate(self, sample_rate: int) -> None:
+        """Configure the sampling rate associated with the data in the
+        ``AudioRecording`` instance.
+
+        Example: ``my_recording.set_rate(22_000)``
+
+        :param sample_rate: The sample rate to set.
+        """
+
+    def get_rate(self) -> int:
+        """Get the sampling rate associated with the data in the
+        ``AudioRecording`` instance.
+
+        Example: ``current_rate = my_recording.get_rate()``
+
+         :return: The configured sample rate.
+        """
+
     def copy(self) -> None:
         """Create a copy of the ``AudioRecording``.
 
@@ -246,7 +264,6 @@ class AudioTrack:
     def set_rate(self, sample_rate: int) -> None:
         """Configure the sampling rate associated with the data in the
         ``AudioTrack`` instance.
-
 
         Changes to an ``AudioTrack`` rate won't affect the original source rate,
         so multiple instances pointing to the same buffer can have different

@@ -156,6 +156,6 @@ def set_sensitivity(gain: float) -> None:
 
     The default sensitivity is ``microphone.SENSITIVITY_MEDIUM``.
 
-    :param gain: The microphone gain. Use ``microphone.SENSITIVITY_LOW``, ``microphone.SENSITIVITY_MEDIUM``, ``microphone.SENSITIVITY_HIGH``, or a value between these levels.
+    :param gain: The microphone gain. Use ``microphone.SENSITIVITY_LOW``, ``microphone.SENSITIVITY_MEDIUM``, ``microphone.SENSITIVITY_HIGH``, which all correspond to a number, or a value between these levels.
     """
     ...
