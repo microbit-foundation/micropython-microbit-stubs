@@ -80,11 +80,11 @@ def sound_level() -> int:
     ...
 
 def sound_level_db() -> int:
-    """Get the sound pressure level in decibels.
+    """Get the sound pressure level in decibels (dB) in the range of 52.0 to 110.0 dB.
 
     Example: ``microphone.sound_level_db()``
 
-    :return: A representation of the sound pressure level in decibels (dB).
+    :return: A representation of the sound pressure level in decibels (dB) in the range of 52.0 to 110.0 dB.
     """
     ...
 
