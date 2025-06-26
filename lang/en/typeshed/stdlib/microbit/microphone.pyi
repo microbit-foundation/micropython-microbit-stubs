@@ -10,7 +10,7 @@ def current_event() -> Optional[SoundEvent]:
 
     Example: ``microphone.current_event()``
 
-    :return: The event, ``SoundEvent('loud')`` or ``SoundEvent('quiet')``.
+    :return: The event, ``SoundEvent('loud')``, ``SoundEvent('quiet')`` or ``SoundEvent('clap')``.
     """
     ...
 
@@ -21,7 +21,7 @@ def was_event(event: SoundEvent) -> bool:
 
     This call clears the sound history before returning.
 
-    :param event: The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``
+    :param event: The event to check for, such as ``SoundEvent.LOUD``, ``SoundEvent.QUIET`` or ``SoundEvent.CLAP``.
     :return: ``True`` if sound was heard at least once since the last call, otherwise ``False``.
     """
     ...
@@ -33,7 +33,7 @@ def is_event(event: SoundEvent) -> bool:
 
     This call does not clear the sound event history.
 
-    :param event: The event to check for,  such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``
+    :param event: The event to check for, such as ``SoundEvent.LOUD``, ``SoundEvent.QUIET`` or ``SoundEvent.CLAP``.
     :return: ``True`` if sound was the most recent heard, ``False`` otherwise.
     """
     ...
@@ -50,7 +50,7 @@ def get_events() -> Tuple[SoundEvent, ...]:
     ...
 
 def set_threshold(event: SoundEvent, value: int) -> None:
-    """Set the threshold for a sound event.
+    """Set the threshold for the ``LOUD`` or ``QUIET`` sound events.
 
     Example: ``microphone.set_threshold(SoundEvent.LOUD, 250)``
 
@@ -65,7 +65,7 @@ def set_threshold(event: SoundEvent, value: int) -> None:
     threshold, then the ``SoundEvent.LOUD`` threshold will increase by one unit 
     above the ``SoundEvent.QUIET`` threshold.
 
-    :param event: A sound event, such as ``SoundEvent.LOUD`` or ``SoundEvent.QUIET``.
+    :param event: A ``SoundEvent.LOUD`` or ``SoundEvent.QUIET`` event.
     :param value: The threshold level in the range 0-255. Values outside this range will be clamped.
     """
     ...
