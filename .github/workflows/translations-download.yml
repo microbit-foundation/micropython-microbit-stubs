@@ -1,0 +1,40 @@
+name: translations-download
+
+# Pulls the configured languages from Crowdin, rebuilds lang/<lang>/ and
+# opens (or refreshes) a pull request with whatever changed.
+on:
+  schedule:
+    # Monday mornings UTC, after crowdin-reports has run at 5am. The repos
+    # share one Crowdin token, so each starts at a different minute.
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: translations-download
+  cancel-in-progress: false
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24.x"
+          cache: npm
+      - run: npm ci
+      - uses: microbit-foundation/translations-sync-action@v1
+        with:
+          download: npm run i18n:download
+          post-download: ./scripts/build-translations.sh
+          app-id: ${{ secrets.I18N_APP_ID }}
+          private-key: ${{ secrets.I18N_APP_PRIVATE_KEY }}
+          body: >-
+            Translations downloaded from Crowdin by the translations-download
+            workflow. Review, then merge; the branch is force-pushed on each
+            run. The Python Editor picks the change up from the next npm
+            release of this repository.
+        env:
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.MICROBIT_ORG_CROWDIN_PERSONAL_ACCESS_TOKEN }}

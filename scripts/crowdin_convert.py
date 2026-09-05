@@ -131,9 +131,7 @@ def get_docstring(node: ast.AST):
     docstring = ""
     if isinstance(node, ast.Expr):
         node = node.value
-        if isinstance(node, ast.Str):
-            docstring = node.s
-        elif isinstance(node, ast.Constant) and isinstance(node.value, str):
+        if isinstance(node, ast.Constant) and isinstance(node.value, str):
             docstring = node.value
     elif isinstance(node, NODE_TYPES_WITH_DOCSTRINGS):
         docstring = ast.get_docstring(node)
@@ -261,7 +259,7 @@ def get_translated_json_files() -> list[str]:
     files_to_process: list[str] = []
     for root, dirs, files in os.walk(TRANSLATED_JSON_DIR):
         for name in files:
-            if re.match(r"^api.[a-z_-]+.json$", name):
+            if re.match(r"^api\.[A-Za-z_-]+\.json$", name):
                 file_path = os.path.join(root, name)
                 files_to_process.append(file_path)
     return sorted(files_to_process)
@@ -362,34 +360,36 @@ def replace_english(
     prefix="",
     suffix="",
 ):
+    translated = get_string_by_key(parent_key, translated_json)
+    if translated is None:
+        # Not in Crowdin yet: a docstring added since the last upload. The
+        # English stays until the next upload and download.
+        return docstring
     string_to_replace = convert_from_placeholders(
         get_string_by_key(parent_key, en_json)
     )
-    translated_string = convert_from_placeholders(
-        get_string_by_key(parent_key, translated_json)
-    )
+    translated_string = convert_from_placeholders(translated)
     return docstring.replace(string_to_replace, prefix + translated_string + suffix)
 
 
-def get_string_by_key(key: str, dict: TranslationJSON):
-    result = dict[key]["message"]
+def get_string_by_key(key: str, dict: TranslationJSON) -> str | None:
+    entry = dict.get(key)
+    if entry is None:
+        return None
+    result = entry["message"]
     return result.strip() if result else result
 
 
 def replace_docstring(node, new_docstring):
     if isinstance(node, ast.Expr):
         node = node.value
-        if isinstance(node, ast.Str):
-            node.s = new_docstring
-        elif isinstance(node, ast.Constant) and isinstance(node.value, str):
+        if isinstance(node, ast.Constant) and isinstance(node.value, str):
             node.value = new_docstring
     elif isinstance(node, NODE_TYPES_WITH_DOCSTRINGS):
         if not (node.body and isinstance(node.body[0], ast.Expr)):
             return
         node = node.body[0].value
-        if isinstance(node, ast.Str):
-            node.s = new_docstring
-        elif isinstance(node, ast.Constant) and isinstance(node.value, str):
+        if isinstance(node, ast.Constant) and isinstance(node.value, str):
             node.value = new_docstring
 
 

@@ -1,24 +1,32 @@
 {
-  "name": "micropython-microbit-stubs",
-  "version": "1.0.0",
-  "description": "Temporary home for micro:bit MicroPython stubs.",
-  "scripts": {
-    "test": "python3 scripts/test.py",
-    "i18n:typeshed-to-crowdin": "python3 scripts/crowdin_convert.py typeshed-to-crowdin",
-    "i18n:crowdin-to-typeshed": "python3 scripts/crowdin_convert.py crowdin-to-typeshed",
-    "export-api-ids": "python3 scripts/export_api_ids.py"
-  },
+  "name": "@microbit/micropython-microbit-stubs",
+  "version": "0.0.0",
+  "description": "Type stubs for MicroPython on the BBC micro:bit, with translated API documentation, packaged for the Python Editor's browser Pyright.",
+  "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/microbit-foundation/micropython-microbit-stubs.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/microbit-foundation/micropython-microbit-stubs/issues"
   },
   "homepage": "https://github.com/microbit-foundation/micropython-microbit-stubs#readme",
-  "dependencies": {
+  "files": [
+    "typeshed.*.json"
+  ],
+  "scripts": {
+    "test": "python3 scripts/test.py",
+    "build": "rm -f typeshed.*.json && python3 scripts/browser-package.py",
+    "ci": "npm test && npm run build",
+    "i18n:typeshed-to-crowdin": "python3 scripts/crowdin_convert.py typeshed-to-crowdin",
+    "i18n:crowdin-to-typeshed": "python3 scripts/crowdin_convert.py crowdin-to-typeshed",
+    "i18n:download": "microbit-i18n download",
+    "i18n:upload": "npm run i18n:typeshed-to-crowdin && microbit-i18n upload",
+    "i18n:status": "microbit-i18n status",
+    "export-api-ids": "python3 scripts/export_api_ids.py"
+  },
+  "devDependencies": {
+    "@microbit/i18n-tools": "^0.2.1",
     "pyright": "^1.1.166"
   }
 }
