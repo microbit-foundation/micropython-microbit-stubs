@@ -18,7 +18,7 @@ For correct communication, the parameters have to be the same on both communicat
     ...
 
 def read(nbytes: int, out: int=0) -> bytes:
-    """最大 ``nbytes`` バイトを読み取りながら、``out`` で指定された 1 バイトを書き続ける
+    """``out`` で指定された単一のバイトを連続的に書き込みながら、最大で ``nbytes`` バイトを読み取る。
 
 Example: ``spi.read(64)``
 
