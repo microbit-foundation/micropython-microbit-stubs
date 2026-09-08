@@ -18,7 +18,7 @@ For correct communication, the parameters have to be the same on both communicat
     ...
 
 def read(nbytes: int, out: int=0) -> bytes:
-    """读取字节数。 (读取)
+    """最多读取 ``nbytes`` 个字节，同时持续写入由 ``out`` 指定的单个字节。 (读取)
 
 Example: ``spi.read(64)``
 
