@@ -5,3 +5,4 @@
 *.rst
 /crowdin/*.json
 __pycache__
+*.tgz

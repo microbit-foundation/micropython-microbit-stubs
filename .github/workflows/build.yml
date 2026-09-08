@@ -1,0 +1,38 @@
+name: build
+
+# Tests the stubs on every push. A GitHub release created from a vX.Y.Z tag
+# also publishes the typeshed JSON to npm as @microbit/micropython-microbit-stubs;
+# the versioner takes the version from the tag. Publishing uses the NPM_TOKEN
+# secret, as python-editor-embed does, until npm's trusted publishing can
+# create a package; then this follows makecode-embed.
+on:
+  release:
+    types: [created]
+  push:
+    branches:
+      - "**"
+
+env:
+  # renovate: datasource=npm depName=npm
+  NPM_VERSION: "11"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24.x"
+          registry-url: "https://registry.npmjs.org"
+          cache: npm
+      - run: npm install -g npm@${{ env.NPM_VERSION }} --registry=https://registry.npmjs.org
+      - uses: microbit-foundation/npm-package-versioner-action@v3
+      - run: npm ci
+      - run: npm run ci
+      - run: npm publish --allow-directory=all
+        if: github.event_name == 'release' && github.event.action == 'created'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
