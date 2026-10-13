@@ -13,6 +13,7 @@ const languages = [
   "ko",
   "nl",
   "pl",
+  "pt-BR",
   "zh-CN",
   "zh-TW",
   "lol",
