@@ -2,7 +2,7 @@
 from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
-def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
+def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: Union[MicroBitDigitalPin, None]=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
     """crwdns335834:0crwdne335834:0 (crwdns329966:0crwdne329966:0)
 
 Example: ``audio.play(Sound.GIGGLE)``
