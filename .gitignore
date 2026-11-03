@@ -3,6 +3,9 @@
 /api-ids.json
 /node_modules/
 *.rst
+.idea
+.DS_Store
+scripts/publish/dist
 /crowdin/*.json
 __pycache__
 *.tgz
