@@ -54,7 +54,7 @@ def say(
     speed: int = 72,
     mouth: int = 128,
     throat: int = 128,
-    pin: MicroBitDigitalPin = pin0,
+    pin: Optional[MicroBitDigitalPin] = pin0,
 ) -> None:
     """Say English words.
 
@@ -84,7 +84,7 @@ def sing(
     speed: int = 72,
     mouth: int = 128,
     throat: int = 128,
-    pin: MicroBitDigitalPin = pin0,
+    pin: Optional[MicroBitDigitalPin] = pin0,
 ) -> None:
     """Sing phonemes.
 

@@ -36,7 +36,7 @@ timbre (quality) of the voice.
 See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2-docs/speech.html>`_ for detailed information."""
     ...
 
-def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: MicroBitDigitalPin=pin0) -> None:
+def say(words: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: Optional[MicroBitDigitalPin]=pin0) -> None:
     """Zeg Engelse woorden. (zeg)
 
 Example: ``speech.say('hello world')``
@@ -57,7 +57,7 @@ This is a short-hand equivalent of:
 See `the online documentation <https://microbit-micropython.readthedocs.io/en/v2-docs/speech.html>`_ for detailed information."""
     ...
 
-def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: MicroBitDigitalPin=pin0) -> None:
+def sing(phonemes: str, pitch: int=64, speed: int=72, mouth: int=128, throat: int=128, pin: Optional[MicroBitDigitalPin]=pin0) -> None:
     """Zing fonemen. (zing)
 
 Example: ``speech.sing(' /HEHLOW WERLD')``

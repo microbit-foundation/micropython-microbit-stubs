@@ -7,7 +7,7 @@ from typing import ClassVar, Iterable, Union
 def play(
     source: Union[Iterable[AudioFrame], Sound, SoundEffect],
     wait: bool = True,
-    pin: MicroBitDigitalPin = pin0,
+    pin: Union[MicroBitDigitalPin, None] = pin0,
     return_pin: Union[MicroBitDigitalPin, None] = None,
 ) -> None:
     """Play a built-in sound, sound effect or custom audio frames.

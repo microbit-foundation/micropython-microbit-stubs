@@ -2,7 +2,7 @@
 from ..microbit import MicroBitDigitalPin, Sound, pin0
 from typing import ClassVar, Iterable, Union
 
-def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: MicroBitDigitalPin=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
+def play(source: Union[Iterable[AudioFrame], Sound, SoundEffect], wait: bool=True, pin: Union[MicroBitDigitalPin, None]=pin0, return_pin: Union[MicroBitDigitalPin, None]=None) -> None:
     """播放内置声音、音效或自定义音频帧。 (播放)
 
 Example: ``audio.play(Sound.GIGGLE)``
