@@ -56,6 +56,16 @@ def ticks_us() -> int:
     """
     ...
 
+def ticks_cpu() -> int:
+    """
+    Similar to ticks_ms and ticks_us, but with higher resolution in CPU cycles.
+
+    Example: ``time.ticks_cpu()``
+
+    :return: The counter value in CPU cycles.
+    """
+    ...
+
 def ticks_add(ticks: int, delta: int) -> int:
     """
     Offset ticks value by a given number, which can be either positive or
